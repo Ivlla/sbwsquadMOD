@@ -76,5 +76,7 @@
   "part.squadmc.wheel_left": "left wheel",
   "part.squadmc.wheel_right": "right wheel",
   "part.squadmc.engine": "engine",
-  "part.squadmc.sub_engine": "second engine"
+  "part.squadmc.sub_engine": "second engine",
+  "entity.squadmc.ah_64": "AH-64 Apache",
+  "entity.squadmc.nh_90": "NH90"
 }

@@ -1,0 +1,5 @@
+NH90 and AH-64 Apache: models, textures, vehicle data and sounds from Vintage Vehicle Pack (VVP).
+Authors: zxcnelti, sergeyrendo
+https://legacy.curseforge.com/minecraft/mc-mods/sbw-vintage-vehicle-pack
+https://github.com/sergeyrendo/vvp-sourve
+Used with the authors' permission, as reported by the SquadMC mod owner. Modified for SquadMC.

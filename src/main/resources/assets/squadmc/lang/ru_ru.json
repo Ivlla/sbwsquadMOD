@@ -57,5 +57,7 @@
   "part.squadmc.wheel_right": "правое колесо",
   "part.squadmc.engine": "двигатель",
   "part.squadmc.sub_engine": "второй двигатель",
-  "key.squadmc.engine_toggle": "Запуск/остановка двигателя техники"
+  "key.squadmc.engine_toggle": "Запуск/остановка двигателя техники",
+  "entity.squadmc.ah_64": "AH-64 Apache",
+  "entity.squadmc.nh_90": "NH90"
 }

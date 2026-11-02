@@ -40,6 +40,8 @@ import tech.squadmc.squadmcor.heli.entity.vehicle.M939.M939Entity;
 import tech.squadmc.squadmcor.heli.entity.vehicle.ManHx60.ManHx60Entity;
 import tech.squadmc.squadmcor.heli.entity.vehicle.Kamaz.KamazNoTentEntity;
 import tech.squadmc.squadmcor.heli.entity.vehicle.ManHx60.ManHx60NoTentEntity;
+import tech.squadmc.squadmcor.heli.entity.vehicle.Nh90.Nh90Entity;
+import tech.squadmc.squadmcor.heli.entity.vehicle.Ah64.Ah64Entity;
 
 /** Вертолёты и ракеты Hellfire из Frontline Combat Pack. */
 public final class HeliEntities {
@@ -111,10 +113,17 @@ public final class HeliEntities {
     public static final RegistryObject<EntityType<ManHx60NoTentEntity>> MAN_HX60_NO_TENT = ModEntities.ENTITY_TYPES.register("man_hx60_no_tent",
             () -> EntityType.Builder.of(ManHx60NoTentEntity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,3f).build("man_hx60_no_tent"));
 
+    public static final RegistryObject<EntityType<Nh90Entity>> NH_90 = ModEntities.ENTITY_TYPES.register("nh_90",
+            () -> EntityType.Builder.of(Nh90Entity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3.375f,2.5f).build("nh_90"));
+    public static final RegistryObject<EntityType<Ah64Entity>> AH_64 = ModEntities.ENTITY_TYPES.register("ah_64",
+            () -> EntityType.Builder.of(Ah64Entity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3.375f,2.5f).build("ah_64"));
+
     /** Вызывается из конструктора мода, чтобы регистрации попали в DeferredRegister вовремя. */
     public static void init() {}
 
     public static void addToTab(CreativeModeTab.Output output) {
+        output.accept(ContainerBlockItem.createInstance(NH_90.get()));
+        output.accept(ContainerBlockItem.createInstance(AH_64.get()));
         output.accept(ContainerBlockItem.createInstance(UAZ_452.get()));
         output.accept(ContainerBlockItem.createInstance(KAMAZ.get()));
         output.accept(ContainerBlockItem.createInstance(CH47.get()));
