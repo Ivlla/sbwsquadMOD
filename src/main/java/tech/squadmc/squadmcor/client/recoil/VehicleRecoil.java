@@ -16,16 +16,16 @@ import tech.squadmc.squadmcor.squadmc;
 
 /**
  * Отдача прицела. Сдвигается только камера, а взгляд игрока не меняется, поэтому прицел всегда
- * возвращается туда, куда смотрел. Толчок идёт через пружину с затуханием: быстрый подброс и плавный
- * возврат, сверху короткая дрожь корпуса, которая гаснет сама.
+ * возвращается туда, куда смотрел. Толчок идёт через пружину со слабым затуханием, поэтому экран качается
+ * во все стороны и успокаивается, а сверху идёт короткая дрожь корпуса.
  */
 @Mod.EventBusSubscriber(modid = squadmc.MODID, value = Dist.CLIENT)
 public final class VehicleRecoil {
-    private static final float STIFFNESS = 90F;
-    private static final float DAMPING = 13F;
+    private static final float STIFFNESS = 260F;
+    private static final float DAMPING = 9F;
     private static final float MAX_ANGLE = 14F;
     private static final float TRAUMA_DECAY_PER_SECOND = 1.7F;
-    private static final float TRAUMA_DEGREES = 3.2F;
+    private static final float TRAUMA_DEGREES = 4.5F;
     private static final float ZOOM_SCALE = 0.8F;
     private static final float THIRD_PERSON_SCALE = 0.6F;
     private static final float MAX_FRAME = 0.05F;
@@ -35,7 +35,7 @@ public final class VehicleRecoil {
 
     private VehicleRecoil() {}
 
-    /** { подброс, разброс вбок и по крену, дрожь } */
+    /** { сила толчка, крен, дрожь } */
     private static float[] strength(GunFx.Kind kind) {
         return switch (kind) {
             case SMALL -> new float[]{7F, 4F, 0.12F};
@@ -60,8 +60,11 @@ public final class VehicleRecoil {
         }
         float[] s = strength(kind);
         var random = player.getRandom();
-        pitchVelocity -= s[0] * share * (0.85F + 0.3F * random.nextFloat());
-        yawVelocity += s[1] * share * (random.nextFloat() - 0.5F);
+        // Толчок в случайную сторону: экран качает вверх, вниз, влево и вправо.
+        float angle = random.nextFloat() * Mth.TWO_PI;
+        float force = s[0] * share * (0.75F + 0.5F * random.nextFloat());
+        pitchVelocity += force * Mth.sin(angle);
+        yawVelocity += force * Mth.cos(angle);
         rollVelocity += s[1] * share * (random.nextFloat() - 0.5F) * 1.4F;
         trauma = Math.min(1F, trauma + s[2] * share);
     }
