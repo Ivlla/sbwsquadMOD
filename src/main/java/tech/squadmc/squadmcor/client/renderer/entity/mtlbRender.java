@@ -1,7 +1,6 @@
 package tech.squadmc.squadmcor.client.renderer.entity;
 
 import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
-import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -26,21 +25,4 @@ public class mtlbRender extends OptimizedVehicleRenderer<mtlbEntity> {
     public ResourceLocation getTextureLocation(mtlbEntity entity) {
         return CACHED_RESOURCE_0;
     }
-
-    @Override
-    public void render(mtlbEntity entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
-        poseStack.pushPose();
-
-        float scaleX = 1.2F; // РЁРёСЂРёРЅР°
-        float scaleY = 1.2F; // Р’С‹СЃРѕС‚Р°
-        float scaleZ = 1.2F;  // Р”Р»РёРЅР°
-
-        poseStack.scale(scaleX, scaleY, scaleZ);
-
-
-        super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
-
-        poseStack.popPose();
-    }
 }
-
