@@ -1,0 +1,4 @@
+Launchers, optics, rounds, animations, textures and sounds under the fcl_* names
+are ported from the "Frontline Combat Launchers" pack for Vic's Point Blank
+(pointblank-frontline-combat-launchers-pack). The archive contains no license file.
+All rights to that content remain with its authors.
