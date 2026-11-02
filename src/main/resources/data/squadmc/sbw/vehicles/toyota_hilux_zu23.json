@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:toyota_hilux_zu23",
-  "MaxHealth": 90,
+  "MaxHealth": 300,
   "MaxEnergy": 5000000,
   "TurretPos": [
     0.047664,

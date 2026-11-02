@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:gaz_tigr_rws",
-  "MaxHealth": 190,
+  "MaxHealth": 380,
   "MaxEnergy": 5250000,
   "OBB": [
     {

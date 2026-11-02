@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:btr82",
-  "MaxHealth": 270,
+  "MaxHealth": 500,
   "MaxEnergy": 5000000,
   "Mass": 13.6,
   "UpStep": 1.5,

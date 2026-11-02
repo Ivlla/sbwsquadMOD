@@ -1,7 +1,7 @@
 {
   "ID": "squadmc:t64",
   "Type": "Tank",
-  "MaxHealth": 440,
+  "MaxHealth": 1350,
   "MaxEnergy": 5000000,
   "Mass": 42.4,
   "UpStep": 2.2,

@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:fmtv",
-  "MaxHealth": 150,
+  "MaxHealth": 300,
   "MaxEnergy": 5000000,
   "OBB": [
     {

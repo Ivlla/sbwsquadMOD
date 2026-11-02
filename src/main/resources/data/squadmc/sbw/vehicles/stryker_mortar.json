@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:stryker_mortar",
-  "MaxHealth": 280,
+  "MaxHealth": 600,
   "MaxEnergy": 5000000,
   "TurretPos": [
     0.0052,

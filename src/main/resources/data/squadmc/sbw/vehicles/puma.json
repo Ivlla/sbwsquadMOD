@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:puma",
-  "MaxHealth": 380,
+  "MaxHealth": 1100,
   "MaxEnergy": 5250000,
   "Mass": 13.6,
   "UpStep": 1.5,

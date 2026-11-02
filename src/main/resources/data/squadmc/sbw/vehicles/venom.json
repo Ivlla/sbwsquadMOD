@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:venom",
-  "MaxHealth": 190,
+  "MaxHealth": 380,
   "MaxEnergy": 140000000,
   "TurretPos": [
     0.00325,

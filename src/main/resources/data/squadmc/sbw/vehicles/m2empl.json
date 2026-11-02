@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:m2empl",
-  "MaxHealth": 50,
+  "MaxHealth": 100,
   "MaxEnergy": 5250000,
   "Seats": [
     {

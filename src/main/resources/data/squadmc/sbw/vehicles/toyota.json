@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:toyota",
-  "MaxHealth": 90,
+  "MaxHealth": 300,
   "MaxEnergy": 5000000,
   "OBB": [
     {

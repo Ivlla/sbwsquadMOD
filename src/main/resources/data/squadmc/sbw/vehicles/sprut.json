@@ -1,7 +1,7 @@
 {
   "ID": "squadmc:sprut",
   "Type": "Tank",
-  "MaxHealth": 260,
+  "MaxHealth": 700,
   "MaxEnergy": 20000000,
   "Mass": 18,
   "UpStep": 2.25,

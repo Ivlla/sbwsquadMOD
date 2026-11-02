@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:huey_m134_door_guns",
-  "MaxHealth": 150,
+  "MaxHealth": 300,
   "MaxEnergy": 80000000,
   "OBB": [
     {

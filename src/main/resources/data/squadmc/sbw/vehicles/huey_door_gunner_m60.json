@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:huey_door_gunner_m60",
-  "MaxHealth": 150,
+  "MaxHealth": 300,
   "MaxEnergy": 80000000,
   "TurretPos": [
     -1.77410625,

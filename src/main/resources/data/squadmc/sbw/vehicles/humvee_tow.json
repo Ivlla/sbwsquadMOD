@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:humvee_tow",
-  "MaxHealth": 150,
+  "MaxHealth": 300,
   "MaxEnergy": 5000000,
   "TurretControllerIndex": 1,
   "OBB": [

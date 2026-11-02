@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:motorboat",
-  "MaxHealth": 130,
+  "MaxHealth": 260,
   "MaxEnergy": 500000,
   "OBB": [
     {

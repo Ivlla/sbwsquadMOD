@@ -1,7 +1,7 @@
 {
   "ID": "squadmc:m1a2",
   "Type": "Tank",
-  "MaxHealth": 620,
+  "MaxHealth": 1600,
   "MaxEnergy": 5000000,
   "Mass": 60,
   "UpStep": 2.25,

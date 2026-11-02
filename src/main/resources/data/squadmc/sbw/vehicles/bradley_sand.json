@@ -1,7 +1,7 @@
 {
   "ID": "squadmc:bradley_sand",
   "Type": "APC",
-  "MaxHealth": 340,
+  "MaxHealth": 1000,
   "MaxEnergy": 5000000,
   "Mass": 30.5,
   "UpStep": 2.25,

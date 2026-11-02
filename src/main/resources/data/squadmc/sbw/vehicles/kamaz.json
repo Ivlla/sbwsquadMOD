@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:kamaz",
-  "MaxHealth": 170,
+  "MaxHealth": 350,
   "MaxEnergy": 35000000,
   "OBB": [
     {

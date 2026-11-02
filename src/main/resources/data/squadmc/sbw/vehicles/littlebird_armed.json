@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:littlebird_armed",
-  "MaxHealth": 90,
+  "MaxHealth": 180,
   "MaxEnergy": 23500000,
   "OBB": [
     {

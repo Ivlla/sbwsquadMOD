@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:humvee_m2",
-  "MaxHealth": 170,
+  "MaxHealth": 340,
   "MaxEnergy": 5000000,
   "TurretControllerIndex": 1,
   "OBB": [

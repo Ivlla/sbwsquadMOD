@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:ah_64",
-  "MaxHealth": 360,
+  "MaxHealth": 720,
   "MaxEnergy": 10000000,
   "TurretPos": [
     0.0078625,

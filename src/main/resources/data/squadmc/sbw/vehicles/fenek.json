@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:fenek",
-  "MaxHealth": 160,
+  "MaxHealth": 320,
   "MaxEnergy": 5500000,
   "Mass": 10.5,
   "UpStep": 1.5,

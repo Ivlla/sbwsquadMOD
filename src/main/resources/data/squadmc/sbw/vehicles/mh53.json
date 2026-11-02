@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:mh53",
-  "MaxHealth": 320,
+  "MaxHealth": 640,
   "MaxEnergy": 380000000,
   "OBB": [
     {

@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:empltow",
-  "MaxHealth": 55,
+  "MaxHealth": 110,
   "MaxEnergy": 5250000,
   "Seats": [
     {

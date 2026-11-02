@@ -1,7 +1,7 @@
 {
   "ID": "squadmc:leopard_2a7v",
   "Type": "Tank",
-  "MaxHealth": 580,
+  "MaxHealth": 1550,
   "MaxEnergy": 20000000,
   "Mass": 70,
   "UpStep": 2.25,

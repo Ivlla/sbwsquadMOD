@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:littlebird",
-  "MaxHealth": 90,
+  "MaxHealth": 180,
   "MaxEnergy": 23500000,
   "TurretPos": [
     -0.000316,

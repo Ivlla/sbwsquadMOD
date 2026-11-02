@@ -1,7 +1,7 @@
 {
   "ID": "squadmc:t72av",
   "Type": "Tank",
-  "MaxHealth": 480,
+  "MaxHealth": 1450,
   "MaxEnergy": 5000000,
   "Mass": 60,
   "UpStep": 2.2,

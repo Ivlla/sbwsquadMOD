@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:bmp1",
-  "MaxHealth": 230,
+  "MaxHealth": 550,
   "MaxEnergy": 5000000,
   "TurretPos": [
     0.043375,

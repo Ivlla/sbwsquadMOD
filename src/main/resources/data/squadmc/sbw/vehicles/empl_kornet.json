@@ -1,6 +1,6 @@
 {
   "ID": "fcp:empl_kornet",
-  "MaxHealth": 45,
+  "MaxHealth": 90,
   "MaxEnergy": 5250000,
   "Seats": [
     {

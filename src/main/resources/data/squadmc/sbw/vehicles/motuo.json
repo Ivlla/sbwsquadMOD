@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:motuo",
-  "MaxHealth": 50,
+  "MaxHealth": 100,
   "MaxEnergy": 5000000,
   "OBB": [],
   "Seats": [

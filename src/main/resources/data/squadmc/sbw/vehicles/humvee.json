@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:humvee",
-  "MaxHealth": 170,
+  "MaxHealth": 340,
   "MaxEnergy": 5000000,
   "OBB": [
     {

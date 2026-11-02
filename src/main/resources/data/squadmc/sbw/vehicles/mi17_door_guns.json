@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:mi17_door_guns",
-  "MaxHealth": 260,
+  "MaxHealth": 520,
   "MaxEnergy": 187000000,
   "OBB": [
     {
