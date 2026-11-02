@@ -45,8 +45,20 @@ public final class VehicleRepair {
         }
 
         public boolean needsRepair(VehicleEntity v) {
+            if (lostWheels(v) > 0) return true;
             float max = max(v);
             return max > 0F && health(v) < max;
+        }
+
+        private int lostWheels(VehicleEntity v) {
+            if (!WheelLoss.applies(v)) return 0;
+            return this == LEFT ? WheelLoss.left(v) : this == RIGHT ? WheelLoss.right(v) : 0;
+        }
+
+        /** Процент ремонта для сообщения игроку. */
+        public int percent(VehicleEntity v) {
+            if (lostWheels(v) > 0) return Math.round(100F * WheelLoss.progress(v, this == LEFT));
+            return Math.round(100F * health(v) / max(v));
         }
 
         public Component displayName(VehicleEntity v) {
@@ -79,6 +91,10 @@ public final class VehicleRepair {
 
     /** Добавляет части долю её максимума. Выбитая часть начинает с нуля. */
     public static void repairPart(VehicleEntity vehicle, Part part, float fraction) {
+        if (part.lostWheels(vehicle) > 0) {
+            WheelLoss.repair(vehicle, part == Part.LEFT, fraction);
+            return;
+        }
         float max = part.max(vehicle);
         float health = Math.max(0F, part.health(vehicle));
         part.setHealth(vehicle, Math.min(max, health + max * fraction));

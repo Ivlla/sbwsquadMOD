@@ -82,7 +82,7 @@ public class RepairTorchItem extends Item implements GeoItem {
         if (part != null) {
             VehicleRepair.repairPart(vehicle, part, PART_PER_TICK);
             message(player, Component.translatable("message.squadmc.repair.part", part.displayName(vehicle),
-                    Math.round(100F * part.health(vehicle) / part.max(vehicle))));
+                    part.percent(vehicle)));
             worked = true;
         } else {
             float heal = VehicleRepair.torchHullHeal(vehicle, vehicle.getMaxHealth() * HULL_PER_TICK);

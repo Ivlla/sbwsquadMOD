@@ -5,6 +5,7 @@ import software.bernie.geckolib.cache.object.GeoBone;
 import software.bernie.geckolib.core.animatable.model.CoreGeoBone;
 import software.bernie.geckolib.model.GeoModel;
 import tech.squadmc.squadmcor.repair.VehicleRepair;
+import tech.squadmc.squadmcor.repair.WheelLoss;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -16,8 +17,8 @@ import java.util.WeakHashMap;
 import java.util.regex.Pattern;
 
 /**
- * Вид поломанной ходовой. Выбитая гусеница исчезает целиком. У колёсной техники исчезает одно колесо
- * борта, и чем больше колёс на борту, тем меньше крен. Сторона берётся по положению кости, а не по
+ * Вид поломанной ходовой. Выбитая гусеница исчезает целиком. У колёсной техники исчезает столько
+ * колёс, сколько выбито, и чем больше колёс на борту, тем меньше крен от каждого. Сторона берётся по положению кости, а не по
  * имени: в моделях буквы L и R встречаются перепутанными.
  */
 public final class DamageVisuals {
@@ -58,27 +59,28 @@ public final class DamageVisuals {
             LAYOUTS.put(model, layout);
         }
 
-        boolean left = vehicle.getLeftWheelDamaged();
-        boolean right = vehicle.getRightWheelDamaged();
         boolean tracked = VehicleRepair.isTracked(vehicle);
-        Unit lostLeft = !tracked && left ? pick(layout.leftWheels, vehicle, 1) : null;
-        Unit lostRight = !tracked && right ? pick(layout.rightWheels, vehicle, 2) : null;
+        boolean trackLeft = tracked && vehicle.getLeftWheelDamaged();
+        boolean trackRight = tracked && vehicle.getRightWheelDamaged();
+        List<Unit> lostLeft = tracked ? List.of() : pick(layout.leftWheels, vehicle, 1, WheelLoss.left(vehicle));
+        List<Unit> lostRight = tracked ? List.of() : pick(layout.rightWheels, vehicle, 2, WheelLoss.right(vehicle));
 
-        boolean hide = (tracked && (left || right) && !layout.tracks.isEmpty()) || lostLeft != null || lostRight != null;
+        boolean hide = ((trackLeft || trackRight) && !layout.tracks.isEmpty()) || !lostLeft.isEmpty() || !lostRight.isEmpty();
         if (hide || layout.anythingHidden) {
-            for (Unit unit : layout.tracks) {
-                setHidden(model, unit, tracked && (unit.left ? left : right));
-            }
-            for (Unit unit : layout.leftWheels) setHidden(model, unit, unit == lostLeft);
-            for (Unit unit : layout.rightWheels) setHidden(model, unit, unit == lostRight);
+            for (Unit unit : layout.tracks) setHidden(model, unit, unit.left ? trackLeft : trackRight);
+            for (Unit unit : layout.leftWheels) setHidden(model, unit, lostLeft.contains(unit));
+            for (Unit unit : layout.rightWheels) setHidden(model, unit, lostRight.contains(unit));
             layout.anythingHidden = hide;
         }
 
         Tilt tilt = TILTS.computeIfAbsent(vehicle, v -> new Tilt());
-        float rollSize = tracked ? TRACK_ROLL : WHEEL_ROLL;
-        tilt.targetRoll = (right ? wheelShare(tracked, layout.rightWheels) * rollSize : 0F)
-                - (left ? wheelShare(tracked, layout.leftWheels) * rollSize : 0F);
-        tilt.targetPitch = pitchFor(lostLeft, layout.leftWheels) + pitchFor(lostRight, layout.rightWheels);
+        if (tracked) {
+            tilt.targetRoll = ((trackRight ? 1F : 0F) - (trackLeft ? 1F : 0F)) * TRACK_ROLL;
+            tilt.targetPitch = 0F;
+        } else {
+            tilt.targetRoll = (lostRight.size() * wheelShare(layout.rightWheels) - lostLeft.size() * wheelShare(layout.leftWheels)) * WHEEL_ROLL;
+            tilt.targetPitch = pitchFor(lostLeft, layout.leftWheels) + pitchFor(lostRight, layout.rightWheels);
+        }
     }
 
     /** Текущий крен в градусах: { вокруг продольной оси, вокруг поперечной }. Положительный крен — на правый борт. */
@@ -91,23 +93,28 @@ public final class DamageVisuals {
         return new float[]{tilt.roll, tilt.pitch};
     }
 
-    private static float wheelShare(boolean tracked, List<Unit> side) {
-        return tracked || side.size() <= 2 ? 1F : 2F / side.size();
+    /** Чем больше колёс на борту, тем меньше крен от потери одного. */
+    private static float wheelShare(List<Unit> side) {
+        return side.size() <= 2 ? 1F : 2F / side.size();
     }
 
     /** Без переднего колеса нос опускается, без заднего поднимается. Спереди у моделей отрицательный Z. */
-    private static float pitchFor(Unit lost, List<Unit> side) {
-        if (lost == null || side.size() < 2) return 0F;
+    private static float pitchFor(List<Unit> lost, List<Unit> side) {
+        if (lost.isEmpty() || side.size() < 2) return 0F;
         float front = side.get(0).z;
         float back = side.get(side.size() - 1).z;
         if (back - front < 1F) return 0F;
-        float position = (back + front - 2F * lost.z) / (back - front);
-        return position * WHEEL_PITCH * wheelShare(false, side);
+        float sum = 0F;
+        for (Unit unit : lost) sum += (back + front - 2F * unit.z) / (back - front);
+        return sum * WHEEL_PITCH * wheelShare(side);
     }
 
-    private static Unit pick(List<Unit> side, VehicleEntity vehicle, int salt) {
-        if (side.isEmpty()) return null;
-        return side.get(Math.floorMod(vehicle.getUUID().hashCode() * 31 + salt, side.size()));
+    /** Порядок потери колёс постоянный для машины и одинаковый у всех игроков. */
+    private static List<Unit> pick(List<Unit> side, VehicleEntity vehicle, int salt, int count) {
+        if (side.isEmpty() || count <= 0) return List.of();
+        List<Unit> order = new ArrayList<>(side);
+        java.util.Collections.shuffle(order, new java.util.Random(vehicle.getUUID().getLeastSignificantBits() + salt));
+        return order.subList(0, Math.min(count, order.size()));
     }
 
     private static void setHidden(GeoModel<?> model, Unit unit, boolean hidden) {

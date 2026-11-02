@@ -1,5 +1,6 @@
 package tech.squadmc.squadmcor.client.hud;
 
+import com.atsuishio.superbwarfare.data.vehicle.subdata.EngineType;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.InventoryScreen;
@@ -79,22 +80,27 @@ public class VehicleInteractionOverlay {
             }
 
             // РџРѕРІРѕСЂРѕС‚ Р±Р°С€РЅРё РЅР° A Рё D РґР»СЏ РЅР°РІРѕРґС‡РёРєР°
-            if (vehicle instanceof SquadBaseVehicleEntity squadVehicle && squadVehicle.hasKeyboardTurretTraverse()) {
-                int seatIndex = squadVehicle.getSeatIndex(player);
-                if (seatIndex == 1) {
-                    boolean leftDown = mc.options.keyLeft.isDown();
-                    boolean rightDown = mc.options.keyRight.isDown();
+            if (isGunnerWithTurret(vehicle, player)) {
+                boolean leftDown = mc.options.keyLeft.isDown();
+                boolean rightDown = mc.options.keyRight.isDown();
 
-                    if (leftDown != rightDown) {
-                        float traverseSpeed = squadVehicle.getTurretTraverseSpeed();
-                        float deltaYaw = leftDown ? -traverseSpeed : traverseSpeed;
+                if (leftDown != rightDown) {
+                    float traverseSpeed = vehicle instanceof SquadBaseVehicleEntity squadVehicle ? squadVehicle.getTurretTraverseSpeed() : 2.2F;
+                    float deltaYaw = leftDown ? -traverseSpeed : traverseSpeed;
 
-                        player.setYRot(player.getYRot() + deltaYaw);
-                        player.yHeadRot = player.getYRot();
-                        player.yBodyRot = player.getYRot();
-                    }
+                    player.setYRot(player.getYRot() + deltaYaw);
+                    player.yHeadRot = player.getYRot();
+                    player.yBodyRot = player.getYRot();
                 }
             }
         }
+    }
+
+    /** Наводчик наземной техники с башней поворачивает её на A и D. */
+    private static boolean isGunnerWithTurret(VehicleEntity vehicle, Player player) {
+        if (!vehicle.hasTurret() || vehicle.getFirstPassenger() == player
+                || vehicle.getSeatIndex(player) != vehicle.getTurretControllerIndex()) return false;
+        EngineType type = vehicle.computed().getEngineType();
+        return type == EngineType.TRACK || type == EngineType.WHEEL || type == EngineType.SHIP;
     }
 }

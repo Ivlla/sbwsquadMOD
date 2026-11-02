@@ -6,8 +6,9 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import tech.squadmc.squadmcor.repair.WheelLoss;
 
-/** Без авторегена корпуса. С выбитой гусеницей машина не едет, но поворачивает. Колёсная техника едет. */
+/** Без авторегена корпуса. Без гусеницы или трёх колёс машина не едет, но поворачивает. */
 @Mixin(value = VehicleEntity.class, remap = false)
 public abstract class VehicleEntityRepairMixin {
 
@@ -26,11 +27,11 @@ public abstract class VehicleEntityRepairMixin {
         if (squadmc$running()) cir.setReturnValue(false);
     }
 
-    /** true, если выбита гусеница. */
+    /** Гусеница стоит сразу, колёсная техника при трёх потерянных колёсах. */
     private boolean squadmc$running() {
         VehicleEntity vehicle = (VehicleEntity) (Object) this;
-        if (!vehicle.getLeftWheelDamaged() && !vehicle.getRightWheelDamaged()) return false;
         EngineType type = vehicle.computed().getEngineType();
-        return type == EngineType.TRACK;
+        if (type == EngineType.TRACK) return vehicle.getLeftWheelDamaged() || vehicle.getRightWheelDamaged();
+        return WheelLoss.applies(vehicle) && WheelLoss.total(vehicle) >= WheelLoss.STOP_AT;
     }
 }
