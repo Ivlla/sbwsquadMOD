@@ -2,6 +2,6 @@
   "ID": "squadmc:uaz_452",
   "Model": {
     "Model": "squadmc:geo/uaz_452.geo.json",
-    "Texture": "squadmc:textures/entity/uaz_452/uaz_452_1.png"
+    "Texture": "squadmc:textures/entity/uaz_452/uaz_452.png"
   }
 }
