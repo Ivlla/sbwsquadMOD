@@ -21,6 +21,7 @@ public final class GunFxClient {
     private GunFxClient() {}
 
     public static void play(GunFx.Kind kind, Vec3 pos, Vec3 direction, int vehicleId, int rocket) {
+        tech.squadmc.squadmcor.client.recoil.VehicleRecoil.onShot(kind, vehicleId);
         switch (kind) {
             case SMALL -> MtsFxClient.playDirected(MtsFxPreset.MUZZLE_SMALL, pos, direction);
             case MEDIUM -> MtsFxClient.playDirected(MtsFxPreset.MUZZLE_MEDIUM, pos, direction);

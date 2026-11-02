@@ -292,6 +292,18 @@ public class ModEntities {
                     .clientTrackingRange(360)
                     .build("emplags17"));
 
+    public static final RegistryObject<EntityType<tech.squadmc.squadmcor.entity.MtlbZu23Entity>> MTLB_ZU23 =
+            ENTITY_TYPES.register("mtlb_zu23", () -> EntityType.Builder.<tech.squadmc.squadmcor.entity.MtlbZu23Entity>of(tech.squadmc.squadmcor.entity.MtlbZu23Entity::new, MobCategory.MISC)
+                    .sized(2.8F, 2.8F)
+                    .clientTrackingRange(360)
+                    .build("mtlb_zu23"));
+
+    public static final RegistryObject<EntityType<tech.squadmc.squadmcor.entity.empl.Zu23Entity>> ZU23 =
+            ENTITY_TYPES.register("zu23", () -> EntityType.Builder.<tech.squadmc.squadmcor.entity.empl.Zu23Entity>of(tech.squadmc.squadmcor.entity.empl.Zu23Entity::new, MobCategory.MISC)
+                    .sized(2.1F, 1.8F)
+                    .clientTrackingRange(360)
+                    .build("zu23"));
+
     public static final RegistryObject<EntityType<ZISEntity>> ZIS3 =
             ENTITY_TYPES.register("emplzis3", () -> EntityType.Builder.<ZISEntity>of(ZISEntity::new, MobCategory.MISC)
                     .sized(2.1F, 1.5F)

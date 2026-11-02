@@ -1,0 +1,156 @@
+{
+  "ID": "squadmc:zu23",
+  "MaxHealth": 60,
+  "MaxEnergy": 5250000,
+  "Seats": [
+    {
+      "IsEnclosed": false,
+      "Weapons": [
+        "Cannon"
+      ],
+      "BanHand": true,
+      "Transform": "Turret",
+      "Pose": "Default",
+      "Position": [
+        0.35,
+        -0.45,
+        -0.65
+      ],
+      "CanRotateHead": false,
+      "CameraPos": {
+        "UseFixedCameraPos": true,
+        "Transform": "Barrel",
+        "Position": [
+          0.2,
+          0.45,
+          -0.6
+        ],
+        "Direction": "Barrel"
+      },
+      "MinPitch": -5,
+      "MaxPitch": 85
+    }
+  ],
+  "Weapons": {
+    "Cannon": {
+      "Name": "weapon.squadmc.zu23",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_20mm.png",
+      "DefaultFireMode": "Auto",
+      "AvailableFireModes": "Auto",
+      "Projectile": "superbwarfare:small_cannon_shell",
+      "AmmoType": "superbwarfare:small_shell_he",
+      "ShellType": "HE",
+      "DefaultZoom": 2,
+      "RPM": 900,
+      "Magazine": 100,
+      "EmptyReloadTime": 200,
+      "Velocity": 22,
+      "Damage": 30,
+      "ExplosionDamage": 12,
+      "ExplosionRadius": 2,
+      "Spread": 0.8,
+      "RecoilTime": 24,
+      "RecoilForce": 0.7,
+      "HeatPerShoot": 3,
+      "NaturalCooldown": 1,
+      "ShootAnimationTime": 1,
+      "Crosshair": "@VehicleCommonGun",
+      "CrosshairColor": "0x00FF66",
+      "SoundRadius": 24,
+      "SoundInfo": {
+        "Fire1P": "superbwarfare:bmp_2_cannon_fire_1p",
+        "Fire3P": "superbwarfare:bmp_2_cannon_fire_3p",
+        "Fire3PFar": "superbwarfare:mi_28_cannon_far",
+        "Fire3PVeryFar": "superbwarfare:mi_28_cannon_veryfar",
+        "Change": "superbwarfare:into_cannon",
+        "VehicleReload": "squadmc:m2_reload"
+      },
+      "ShootPos": {
+        "Transform": "Barrel",
+        "Positions": [
+          [
+            -0.169,
+            0.183,
+            3.548
+          ],
+          [
+            0.116,
+            0.183,
+            3.548
+          ]
+        ],
+        "Directions": [
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "TurretPos": [
+    -0.094,
+    0.319,
+    -0.1875
+  ],
+  "BarrelPos": [
+    0.005,
+    0.523,
+    0.248
+  ],
+  "TurretTurnSpeed": [
+    15,
+    15
+  ],
+  "TurretPitchRange": [
+    -5,
+    85
+  ],
+  "TurretControllerIndex": 0,
+  "ThirdPersonCameraPos": [
+    0,
+    1.5,
+    4
+  ],
+  "HasDecoy": false,
+  "UpStep": 2.2,
+  "RotateOffsetHeight": 2.2,
+  "Mass": 12,
+  "VehicleContainerType": "Empty",
+  "DestroyInfo": {
+    "ExplosionDamage": 120,
+    "ExplosionRadius": 7
+  },
+  "VehicleIcon": "superbwarfare:textures/vehicle_icon/lav_150_icon.png",
+  "ContainerIcon": "squadmc:textures/gui/vehicle/type/land_us.png",
+  "Type": "Defense",
+  "CollisionLevel": {
+    "Level": 3,
+    "PowerLimits": [
+      [
+        0,
+        0,
+        true
+      ],
+      [
+        0,
+        0,
+        true
+      ],
+      [
+        0.15,
+        0.09,
+        false
+      ]
+    ]
+  },
+  "HudType": "@Empty",
+  "InertiaRotateRate": 1,
+  "EngineType": "Fixed"
+}

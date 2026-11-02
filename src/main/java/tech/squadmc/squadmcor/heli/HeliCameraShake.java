@@ -38,6 +38,8 @@ public final class HeliCameraShake {
 
     /** Вызывается из пакета выстрела. */
     public static void onFire(int vehicleId, float strength) {
+        // Отдачу выстрела теперь считает VehicleRecoil.
+        if (strength >= 0F) return;
         LocalPlayer player = Minecraft.getInstance().player;
         if (player == null || player.getRootVehicle().getId() != vehicleId) return;
         kick = Math.min(2.5F, kick + strength);
