@@ -1,6 +1,0 @@
-{
-  "Type": "explosion",
-  "Radius": 4.0,
-  "Damage": 60,
-  "DestroyBlocks": false
-}
