@@ -54,7 +54,7 @@
       "Rotation": "Turret"
     },
     {
-      "Part": "WeaponStationBarrel",
+      "Part": "Body",
       "Size": [0.375, 0.375, 0.375],
       "Position": [0, -0.25, -0.125],
       "Transform": "WeaponStationBarrel",
