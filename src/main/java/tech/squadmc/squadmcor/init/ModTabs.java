@@ -19,6 +19,8 @@ public class ModTabs {
                         // Р”РѕР±Р°РІР»СЏРµРј СЃСѓС‰РЅРѕСЃС‚СЊ РІ СЃРїРёСЃРѕРє РїСЂРµРґРјРµС‚РѕРІ РІРєР»Р°РґРєРё
                         output.accept(ModItems.BTR82_ICON.get());
                         output.accept(ModItems.AT4.get());
+                        output.accept(com.atsuishio.superbwarfare.item.container.ContainerBlockItem.createInstance(ModEntities.MTLB_ZU23.get()));
+                        output.accept(com.atsuishio.superbwarfare.item.container.ContainerBlockItem.createInstance(ModEntities.ZU23.get()));
                         output.accept(ModItems.REPAIR_TORCH.get());
                         tech.squadmc.squadmcor.heli.HeliEntities.addToTab(output);
                         // РўСѓС‚ РјРѕР¶РЅРѕ РґРѕР±Р°РІР»СЏС‚СЊ РґСЂСѓРіРёРµ РїСЂРµРґРјРµС‚С‹

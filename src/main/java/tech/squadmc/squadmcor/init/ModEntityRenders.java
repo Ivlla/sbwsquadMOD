@@ -55,6 +55,8 @@ public class ModEntityRenders {
         event.registerEntityRenderer(ModEntities.M1A2_SAND.get(), m1a2Render_sand::new);
         event.registerEntityRenderer(ModEntities.BRADLEY_SAND.get(), bradley_sandRenderer::new);
         event.registerEntityRenderer(ModEntities.MTLB.get(), mtlbRender::new);
+        event.registerEntityRenderer(ModEntities.MTLB_ZU23.get(), tech.squadmc.squadmcor.client.renderer.entity.MtlbZu23Render::new);
+        event.registerEntityRenderer(ModEntities.ZU23.get(), tech.squadmc.squadmcor.client.renderer.entity.empl.Zu23Render::new);
         event.registerEntityRenderer(ModEntities.BRDM2.get(), brdmRender::new);
         event.registerEntityRenderer(ModEntities.TOYOTA_ZU23.get(), ToyotaZU23Render::new);
         event.registerEntityRenderer(ModEntities.M2.get(), m2Render::new);

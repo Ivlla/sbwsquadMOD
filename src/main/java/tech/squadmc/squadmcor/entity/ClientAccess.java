@@ -74,14 +74,10 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
 
                 if (entity.atgmShakeTicks > 0) {
                     float intensity = (entity.atgmShakeTicks / 10.0F) * 10.65F;
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * intensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * intensity);
                     entity.atgmShakeTicks--;
                 }
             }
@@ -104,8 +100,6 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
             } else if (playerSeatIndex == 0) { // Р’РѕРґРёС‚РµР»СЊ вЂ” SmokeLauncher (Р”Р“)
                 // getShootAnimationTimer(0,0) РґРѕСЃС‚РѕРІРµСЂРµРЅ С‚РѕР»СЊРєРѕ С‚СѓС‚, РЅР° РєР»РёРµРЅС‚Рµ.
@@ -148,8 +142,6 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
             }
         }
@@ -173,8 +165,6 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
             }
         }
@@ -196,14 +186,10 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
 
                 if (entity.atgmShakeTicks > 0) {
                     float intensity = (entity.atgmShakeTicks / 10.0F) * 10.65F;
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * intensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * intensity);
                     entity.atgmShakeTicks--;
                 }
             }
@@ -230,14 +216,10 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
 
                 if (entity.towShakeTicks > 0) {
                     float intensity = (entity.towShakeTicks / 10.0F) * 10.65F;
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * intensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * intensity);
                     entity.towShakeTicks--;
                 }
             }
@@ -272,8 +254,6 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
             }
         }
@@ -295,8 +275,6 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
             }
         }
@@ -318,8 +296,6 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
             }
         }
@@ -341,8 +317,6 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
             }
         }
@@ -362,8 +336,6 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
             }
         }
@@ -383,8 +355,6 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
             }
         }
@@ -406,8 +376,6 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
             }
         }
@@ -436,15 +404,11 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
 
                 // 4. Р СљР С•РЎвЂ°Р Р…РЎвЂ№Р в„– РЎвЂљР С•Р В»РЎвЂЎР С•Р С” Р Р† Р СР С•Р СР ВµР Р…РЎвЂљ РЎвЂћР В°Р С”РЎвЂљР С‘РЎвЂЎР ВµРЎРѓР С”Р С•Р С–Р С• Р Р†РЎвЂ№Р В»Р ВµРЎвЂљР В° РЎР‚Р В°Р С”Р ВµРЎвЂљРЎвЂ№ РЎвЂЎР ВµРЎР‚Р ВµР В· 1 РЎРѓР ВµР С”РЎС“Р Р…Р Т‘РЎС“
                 if (entity.missileShakeTicks > 0) {
                     float intensity = (entity.missileShakeTicks / 8.0F) * 3.5F;
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * intensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * intensity);
                     entity.missileShakeTicks--;
                 }
             }
@@ -467,8 +431,6 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
             }
         }
@@ -490,8 +452,6 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
             }
         }
@@ -576,8 +536,6 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
             }
         }
@@ -597,14 +555,10 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
 
                 if (entity.towShakeTicks > 0) {
                     float intensity = (entity.towShakeTicks / 10.0F) * 10.65F;
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * intensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * intensity);
                     entity.towShakeTicks--;
                 }
             }
@@ -625,8 +579,6 @@ public class ClientAccess {
                 }
 
                 if (shakeIntensity > 0) {
-                    mc.player.setXRot(mc.player.getXRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
-                    mc.player.setYRot(mc.player.getYRot() + (entity.getRandom().nextFloat() - 0.5F) * shakeIntensity);
                 }
             }
         }

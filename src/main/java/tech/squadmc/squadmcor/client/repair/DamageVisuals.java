@@ -22,7 +22,7 @@ import java.util.regex.Pattern;
  * имени: в моделях буквы L и R встречаются перепутанными.
  */
 public final class DamageVisuals {
-    private static final Pattern TRACK = Pattern.compile("track|gusen", Pattern.CASE_INSENSITIVE);
+    private static final Pattern TRACK = Pattern.compile("track|gus", Pattern.CASE_INSENSITIVE);
     private static final Pattern WHEEL = Pattern.compile("wheel", Pattern.CASE_INSENSITIVE);
     private static final Pattern NOT_ROAD_WHEEL = Pattern.compile("steer|spare|zapask|rul", Pattern.CASE_INSENSITIVE);
 
