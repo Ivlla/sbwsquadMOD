@@ -80,7 +80,7 @@ public class RepairTorchItem extends Item implements GeoItem {
         Part part = chooseRepair(vehicle, target.obbPart);
         boolean worked;
         if (part != null) {
-            VehicleRepair.repairPart(vehicle, part, PART_PER_TICK);
+            VehicleRepair.repairPart(vehicle, part, PART_PER_TICK, target.hit);
             message(player, Component.translatable("message.squadmc.repair.part", part.displayName(vehicle),
                     part.percent(vehicle)));
             worked = true;

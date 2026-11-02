@@ -68,6 +68,18 @@ public class UralGradEntity extends SquadBaseVehicleEntity {
         }
     }
 
+    /** Эффекты вылетают из той ракеты, которая ушла: она имеет номер на единицу больше остатка. */
+    @Override
+    public void playShootSound3p(@javax.annotation.Nullable net.minecraft.world.entity.LivingEntity living,
+                                 @javax.annotation.Nullable com.atsuishio.superbwarfare.data.gun.GunData data,
+                                 @javax.annotation.Nullable Vec3 pos) {
+        super.playShootSound3p(living, data, pos);
+        if (data == null || pos == null || !(this.level() instanceof net.minecraft.server.level.ServerLevel level)) return;
+        int rocket = data.ammo.get() + 1;
+        tech.squadmc.squadmcor.fx.GunFx.send(level, tech.squadmc.squadmcor.fx.GunFx.Kind.GRAD, pos,
+                tech.squadmc.squadmcor.fx.GunFx.direction(this, living), this.getId(), rocket);
+    }
+
     @Override
     public void tick() {
         super.tick();

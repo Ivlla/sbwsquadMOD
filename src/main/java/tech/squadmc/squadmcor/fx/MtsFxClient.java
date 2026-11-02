@@ -57,6 +57,28 @@ public final class MtsFxClient {
         }
     }
 
+    /** Частицы FACING летят вдоль направления выстрела, а не вдоль нормали поверхности. */
+    @Nullable
+    private static Quaternionf directedFrame;
+
+    public static void playDirected(MtsFxPreset preset, Vec3 pos, Vec3 direction) {
+        Vec3 unit = direction.lengthSqr() < 1.0E-6 ? new Vec3(0, 1, 0) : direction.normalize();
+        directedFrame = new Quaternionf().rotationTo(new Vector3f(0, 1, 0), new Vector3f((float) unit.x, (float) unit.y, (float) unit.z));
+        try {
+            play(preset, false, pos, Direction.UP);
+        } finally {
+            directedFrame = null;
+        }
+    }
+
+    /** Пыль от выстрела на земле под точкой, если земля близко. */
+    public static void playGroundBlast(Vec3 pos, double maxHeight) {
+        ClientLevel level = Minecraft.getInstance().level;
+        if (level == null) return;
+        Vec3 ground = groundBelow(level, pos);
+        if (pos.y - ground.y <= maxHeight) play(MtsFxPreset.GROUND_BLAST, false, ground.add(0, 0.6, 0), Direction.UP);
+    }
+
     private static void playUnchecked(MtsFxPreset preset, boolean vehicleHit, Vec3 pos, Direction normal) {
         Minecraft mc = Minecraft.getInstance();
         ClientLevel level = mc.level;
@@ -156,7 +178,7 @@ public final class MtsFxClient {
 
         // Только FACING разворачивается по нормали поверхности. Ориентации снаряда у SBW здесь нет,
         // поэтому ENTITY и WORLD считаются осью Y вверх.
-        Quaternionf frame = "FACING".equals(def.spawningOrientation) ? fromUp(hit.normal()) : new Quaternionf();
+        Quaternionf frame = "FACING".equals(def.spawningOrientation) ? (directedFrame != null ? directedFrame : fromUp(hit.normal())) : new Quaternionf();
 
         Vec3 position = origin;
         if (def.pos != null) {

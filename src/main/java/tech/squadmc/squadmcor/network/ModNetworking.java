@@ -20,6 +20,7 @@ public class ModNetworking {
         CHANNEL.registerMessage(packetId++, ToggleEnginePacket.class, ToggleEnginePacket::toBytes, ToggleEnginePacket::new, ToggleEnginePacket::handle);
         CHANNEL.registerMessage(packetId++, SmokeGeneratorPulsePacket.class, SmokeGeneratorPulsePacket::toBytes, SmokeGeneratorPulsePacket::new, SmokeGeneratorPulsePacket::handle);
         CHANNEL.registerMessage(packetId++, MtsFxPacket.class, MtsFxPacket::toBytes, MtsFxPacket::new, MtsFxPacket::handle);
+        CHANNEL.registerMessage(packetId++, GunFxPacket.class, GunFxPacket::toBytes, GunFxPacket::new, GunFxPacket::handle);
         CHANNEL.registerMessage(packetId++, tech.squadmc.squadmcor.heli.network.EngineControlPacket.class,
                 tech.squadmc.squadmcor.heli.network.EngineControlPacket::encode,
                 tech.squadmc.squadmcor.heli.network.EngineControlPacket::decode,

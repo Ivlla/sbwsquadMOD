@@ -12,7 +12,8 @@
     "VehicleEntityRepairMixin",
     "VehicleEffectUtilsMixin",
     "RepairToolItemMixin",
-    "VehicleEngineUtilsMixin"
+    "VehicleEngineUtilsMixin",
+    "VehicleShootFxMixin"
   ],
   "client": [
     "VehicleModelDamageMixin",

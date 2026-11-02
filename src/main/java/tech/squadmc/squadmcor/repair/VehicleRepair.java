@@ -52,7 +52,7 @@ public final class VehicleRepair {
 
         private int lostWheels(VehicleEntity v) {
             if (!WheelLoss.applies(v)) return 0;
-            return this == LEFT ? WheelLoss.left(v) : this == RIGHT ? WheelLoss.right(v) : 0;
+            return this == LEFT ? WheelLoss.lost(v, true) : this == RIGHT ? WheelLoss.lost(v, false) : 0;
         }
 
         /** Процент ремонта для сообщения игроку. */
@@ -91,8 +91,12 @@ public final class VehicleRepair {
 
     /** Добавляет части долю её максимума. Выбитая часть начинает с нуля. */
     public static void repairPart(VehicleEntity vehicle, Part part, float fraction) {
+        repairPart(vehicle, part, fraction, null);
+    }
+
+    public static void repairPart(VehicleEntity vehicle, Part part, float fraction, @javax.annotation.Nullable net.minecraft.world.phys.Vec3 point) {
         if (part.lostWheels(vehicle) > 0) {
-            WheelLoss.repair(vehicle, part == Part.LEFT, fraction);
+            WheelLoss.repair(vehicle, part == Part.LEFT, fraction, point);
             return;
         }
         float max = part.max(vehicle);

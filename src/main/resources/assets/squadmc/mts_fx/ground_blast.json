@@ -1,0 +1,80 @@
+{
+ "particles": [
+  {
+   "type": "GENERIC",
+   "spawningOrientation": "WORLD",
+   "renderingOrientation": "PLAYER",
+   "ignoreCollision": true,
+   "randomTexture": true,
+   "hitboxSize": 0.2,
+   "quantity": 26,
+   "duration": 60,
+   "durationRandomness": 20,
+   "transparency": 0.5,
+   "toTransparency": 0.001,
+   "scale": 2,
+   "toScale": 9,
+   "initialVelocity": [
+    0,
+    0.6,
+    0
+   ],
+   "spreadRandomness": [
+    11,
+    0.5,
+    11
+   ],
+   "textures": [
+    "squadmc:mts/core/big_smoke_0",
+    "squadmc:mts/core/big_smoke_1",
+    "squadmc:mts/core/big_smoke_2",
+    "squadmc:mts/core/big_smoke_3",
+    "squadmc:mts/core/big_smoke_4",
+    "squadmc:mts/core/big_smoke_5",
+    "squadmc:mts/core/big_smoke_6",
+    "squadmc:mts/core/big_smoke_7",
+    "squadmc:mts/core/big_smoke_8",
+    "squadmc:mts/core/big_smoke_9",
+    "squadmc:mts/core/big_smoke_10",
+    "squadmc:mts/core/big_smoke_11"
+   ],
+   "color": "B8B4AE",
+   "useBlockColor": true,
+   "getBlockPropertiesFromGround": true
+  },
+  {
+   "type": "BREAK",
+   "stopsOnGround": true,
+   "getBlockPropertiesFromGround": true,
+   "spawningOrientation": "WORLD",
+   "renderingOrientation": "PLAYER",
+   "quantity": 10,
+   "duration": 45,
+   "hitboxSize": 0.2,
+   "color": "7E7E7E",
+   "spreadRandomness": [
+    6.0,
+    3.0,
+    6.0
+   ],
+   "pos": [
+    0.0,
+    0.1,
+    0.0
+   ],
+   "initialVelocity": [
+    0.0,
+    5.0,
+    0.0
+   ],
+   "movementVelocity": [
+    0.0,
+    -0.08,
+    0.0
+   ],
+   "scale": 1.0,
+   "fadeOutTransparencyTime": 15
+  }
+ ],
+ "sounds": []
+}

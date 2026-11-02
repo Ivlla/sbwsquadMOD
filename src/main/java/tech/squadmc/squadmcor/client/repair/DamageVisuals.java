@@ -62,8 +62,8 @@ public final class DamageVisuals {
         boolean tracked = VehicleRepair.isTracked(vehicle);
         boolean trackLeft = tracked && vehicle.getLeftWheelDamaged();
         boolean trackRight = tracked && vehicle.getRightWheelDamaged();
-        List<Unit> lostLeft = tracked ? List.of() : pick(layout.leftWheels, vehicle, 1, WheelLoss.left(vehicle));
-        List<Unit> lostRight = tracked ? List.of() : pick(layout.rightWheels, vehicle, 2, WheelLoss.right(vehicle));
+        List<Unit> lostLeft = tracked ? List.of() : lostUnits(layout.leftWheels, vehicle, true);
+        List<Unit> lostRight = tracked ? List.of() : lostUnits(layout.rightWheels, vehicle, false);
 
         boolean hide = ((trackLeft || trackRight) && !layout.tracks.isEmpty()) || !lostLeft.isEmpty() || !lostRight.isEmpty();
         if (hide || layout.anythingHidden) {
@@ -109,12 +109,20 @@ public final class DamageVisuals {
         return sum * WHEEL_PITCH * wheelShare(side);
     }
 
-    /** Порядок потери колёс постоянный для машины и одинаковый у всех игроков. */
-    private static List<Unit> pick(List<Unit> side, VehicleEntity vehicle, int salt, int count) {
-        if (side.isEmpty() || count <= 0) return List.of();
-        List<Unit> order = new ArrayList<>(side);
-        java.util.Collections.shuffle(order, new java.util.Random(vehicle.getUUID().getLeastSignificantBits() + salt));
-        return order.subList(0, Math.min(count, order.size()));
+    /** Колёса модели по маске сервера: обе нумерации идут спереди назад. */
+    private static List<Unit> lostUnits(List<Unit> side, VehicleEntity vehicle, boolean left) {
+        int mask = WheelLoss.mask(vehicle, left);
+        if (side.isEmpty() || mask == 0) return List.of();
+        int slots = WheelLoss.wheelsOnSide(vehicle, left);
+        List<Unit> lost = new ArrayList<>();
+        for (int i = 0; i < slots; i++) {
+            if ((mask >> i & 1) == 0) continue;
+            int index = slots == side.size() || slots < 2 ? Math.min(i, side.size() - 1)
+                    : Math.round(i * (side.size() - 1F) / (slots - 1F));
+            Unit unit = side.get(index);
+            if (!lost.contains(unit)) lost.add(unit);
+        }
+        return lost;
     }
 
     private static void setHidden(GeoModel<?> model, Unit unit, boolean hidden) {
