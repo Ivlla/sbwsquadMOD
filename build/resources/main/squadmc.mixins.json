@@ -8,9 +8,20 @@
     "HelicopterGroundLiftMixin",
     "SmallRocketEntityMixin",
     "ParticleToolMixin",
-    "ProjectileEntityMixin"
+    "ProjectileEntityMixin",
+    "VehicleEntityRepairMixin",
+    "VehicleEffectUtilsMixin",
+    "RepairToolItemMixin",
+    "VehicleEngineUtilsMixin",
+    "VehicleShootFxMixin"
   ],
-  "client": [],
+  "client": [
+    "VehicleModelDamageMixin",
+    "VehicleRendererTiltMixin",
+    "HelicopterHudGunnerMixin",
+    "VehicleHudEngineBarMixin",
+    "VehicleHudHoverShiftMixin"
+  ],
   "server": [],
   "injectors": {
     "defaultRequire": 1
