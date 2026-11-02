@@ -78,5 +78,12 @@
   "part.squadmc.engine": "engine",
   "part.squadmc.sub_engine": "second engine",
   "entity.squadmc.ah_64": "AH-64 Apache",
+<<<<<<< Updated upstream
   "entity.squadmc.nh_90": "NH90"
+=======
+  "entity.squadmc.nh_90": "NH90",
+  "key.squadmc.thermal": "Thermal sight",
+  "entity.squadmc.mtlb_zu23": "MT-LB with ZU-23-2",
+  "entity.squadmc.zu23": "ZU-23-2"
+>>>>>>> Stashed changes
 }

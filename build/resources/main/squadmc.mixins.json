@@ -20,10 +20,17 @@
     "VehicleRendererTiltMixin",
     "HelicopterHudGunnerMixin",
     "VehicleHudEngineBarMixin",
+<<<<<<< Updated upstream
     "VehicleHudHoverShiftMixin"
+=======
+    "VehicleHudHoverShiftMixin",
+    "ThermalLightTextureMixin",
+    "ThermalEntityLightMixin"
+>>>>>>> Stashed changes
   ],
   "server": [],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "refmap": "squadmc.refmap.json"
 }

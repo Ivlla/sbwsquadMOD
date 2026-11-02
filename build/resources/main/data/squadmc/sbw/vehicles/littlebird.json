@@ -33,7 +33,7 @@
       }
     },
     {
-      "HasThermalImaging": true,
+      "HasThermalImaging": false,
       "Transform": "Vehicle",
       "Position": [0.378609, 0.60, -0.122685],
       "CameraPos": {
