@@ -133,7 +133,8 @@ public abstract class HeliVehicleBase extends GeoVehicleEntity implements Engine
     public double rotorRadius() {
         String id = EngineControl.id(this);
         if (id.contains("littlebird")) return 4.0;
-        if (id.contains("ch53") || id.contains("mh53")) return 12.0;
+        if (id.contains("ch47")) return 11.0;
+        if (id.contains("mh53")) return 12.0;
         if (id.contains("mi8") || id.contains("mi17")) return 10.5;
         return 7.5;
     }

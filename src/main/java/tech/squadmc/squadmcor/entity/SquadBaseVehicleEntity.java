@@ -6,16 +6,17 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import tech.squadmc.squadmcor.heli.entity.vehicle.engine.EngineControl;
+import tech.squadmc.squadmcor.heli.entity.vehicle.engine.EngineControlled;
 import tech.squadmc.squadmcor.smoke.VehicleSmokeCloudEntity;
 import tech.squadmc.squadmcor.smoke.VehicleSmokeSystem;
 
-public abstract class SquadBaseVehicleEntity extends GeoVehicleEntity {
+public abstract class SquadBaseVehicleEntity extends GeoVehicleEntity implements EngineControlled {
 
-    public static final EntityDataAccessor<Boolean> ENGINE_STARTED =
-            SynchedEntityData.defineId(SquadBaseVehicleEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Byte> ENGINE_STATE =
+            SynchedEntityData.defineId(SquadBaseVehicleEntity.class, EntityDataSerializers.BYTE);
     public static final EntityDataAccessor<Boolean> SMOKE_GENERATOR =
             SynchedEntityData.defineId(SquadBaseVehicleEntity.class, EntityDataSerializers.BOOLEAN);
 
@@ -42,16 +43,56 @@ public abstract class SquadBaseVehicleEntity extends GeoVehicleEntity {
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(ENGINE_STARTED, false);
+        this.entityData.define(ENGINE_STATE, EngineControl.OFF);
         this.entityData.define(SMOKE_GENERATOR, false);
     }
 
+    @Override
+    public byte fcp$getEngineState() {
+        return this.entityData.get(ENGINE_STATE);
+    }
+
+    @Override
+    public void fcp$setEngineState(byte state) {
+        this.entityData.set(ENGINE_STATE, state);
+    }
+
     public boolean isEngineStarted() {
-        return this.entityData.get(ENGINE_STARTED);
+        return fcp$getEngineState() == EngineControl.RUNNING;
     }
 
     public void setEngineStarted(boolean started) {
-        this.entityData.set(ENGINE_STARTED, started);
+        fcp$setEngineState(started ? EngineControl.RUNNING : EngineControl.OFF);
+    }
+
+    @Override
+    public boolean forwardInputDown() {
+        return !EngineControl.blocksInput(this) && super.forwardInputDown();
+    }
+
+    @Override
+    public boolean backInputDown() {
+        return !EngineControl.blocksInput(this) && super.backInputDown();
+    }
+
+    @Override
+    public boolean leftInputDown() {
+        return !EngineControl.blocksInput(this) && super.leftInputDown();
+    }
+
+    @Override
+    public boolean rightInputDown() {
+        return !EngineControl.blocksInput(this) && super.rightInputDown();
+    }
+
+    @Override
+    public boolean upInputDown() {
+        return !EngineControl.blocksInput(this) && super.upInputDown();
+    }
+
+    @Override
+    public boolean downInputDown() {
+        return !EngineControl.blocksInput(this) && super.downInputDown();
     }
 
     // --- Р”С‹РјРѕРІР°СЏ СЃРёСЃС‚РµРјР°: accessors ---
@@ -154,53 +195,24 @@ public abstract class SquadBaseVehicleEntity extends GeoVehicleEntity {
     // =========================================================================
     // 3. Р‘Р›РћРљРР РћР’РљРђ Р”Р’РР–Р•РќРРЇ РџР Р Р’Р«РљР›Р®Р§Р•РќРќРћРњ Р”Р’РР“РђРўР•Р›Р•
     // =========================================================================
-    @Override
-    public void move(MoverType type, Vec3 movement) {
-        if (!this.isEngineStarted()) {
-            super.move(type, new Vec3(0.0, Math.min(movement.y, 0.0), 0.0));
-            return;
-        }
-        super.move(type, movement);
-    }
-
-    @Override
-    public void setDeltaMovement(Vec3 delta) {
-        if (!this.isEngineStarted()) {
-            super.setDeltaMovement(new Vec3(0.0, Math.min(delta.y, 0.0), 0.0));
-            return;
-        }
-        super.setDeltaMovement(delta);
-    }
-
-    @Override
-    public void setDeltaMovement(double x, double y, double z) {
-        if (!this.isEngineStarted()) {
-            // Двигатель выключен: стоим на месте по X/Z, но в воде пропускаем вертикаль вверх,
-            // чтобы плавающая техника всплывала (выталкивающая сила не должна обнуляться).
-            super.setDeltaMovement(0.0, this.isInWater() ? y : Math.min(y, 0.0), 0.0);
-            return;
-        }
-        super.setDeltaMovement(x, y, z);
-    }
-
+    /**
+     * Заглушённая машина катится по инерции и останавливается трением. Вода не ограничена:
+     * плавучесть SBW работает и без двигателя, поэтому плавающая техника не тонет.
+     * На суше работает стояночный тормоз, чтобы не сползать со склонов.
+     */
     @Override
     public void tick() {
         if (!this.level().isClientSide) {
             if (this.smokeVolleyCooldown > 0) this.smokeVolleyCooldown--;
-            // РћР±РЅРѕРІР»РµРЅРёРµ Рё Р·Р°РїСѓСЃРє РґС‹РјРѕРіРµРЅРµСЂР°С‚РѕСЂР° С‚РµРїРµСЂСЊ РґРµР»Р°РµС‚ updateSmokeGenerator(),
-            // РІС‹Р·С‹РІР°РµРјС‹Р№ РёР· tick() РєРѕРЅРєСЂРµС‚РЅРѕР№ С‚РµС…РЅРёРєРё (СЃРј. T64Entity) вЂ” РЅР° СЃРІРµР¶РµРј,
-            // Р° РЅРµ РЅР° РїСЂРѕС€Р»РѕРј С‚РёРєРµ.
         }
 
-        double prevX = this.getX();
-        double prevZ = this.getZ();
-
         super.tick();
+        EngineControl.tick(this);
 
-        if (!this.isEngineStarted()) {
-            this.setPos(prevX, this.getY(), prevZ);
+        if (fcp$getEngineState() != EngineControl.RUNNING && this.onGround() && !this.isInWater()) {
             Vec3 delta = this.getDeltaMovement();
-            super.setDeltaMovement(0.0, this.isInWater() ? delta.y : Math.min(delta.y, 0.0), 0.0);
+            double horizontal = delta.horizontalDistanceSqr();
+            super.setDeltaMovement(horizontal < 0.0004 ? new Vec3(0.0, delta.y, 0.0) : new Vec3(delta.x * 0.97, delta.y, delta.z * 0.97));
         }
     }
 }

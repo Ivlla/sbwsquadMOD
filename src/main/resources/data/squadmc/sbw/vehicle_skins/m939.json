@@ -1,0 +1,22 @@
+{
+  "Skins": [
+    {
+      "Id": "vanilla",
+      "Name": "Green",
+      "Texture": "squadmc:textures/entity/m939/m939_green.png",
+      "Priority": 1
+    },
+    {
+      "Id": "sand",
+      "Name": "Sand",
+      "Texture": "squadmc:textures/entity/m939/m939_sand.png",
+      "Priority": 2
+    },
+    {
+      "Id": "black",
+      "Name": "Black",
+      "Texture": "squadmc:textures/entity/m939/m939_black.png",
+      "Priority": 3
+    }
+  ]
+}

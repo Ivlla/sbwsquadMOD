@@ -1,0 +1,7 @@
+{
+  "ID": "squadmc:m939",
+  "Model": {
+    "Model": "squadmc:geo/m939.geo.json",
+    "Texture": "squadmc:textures/entity/m939/m939_green.png"
+  }
+}

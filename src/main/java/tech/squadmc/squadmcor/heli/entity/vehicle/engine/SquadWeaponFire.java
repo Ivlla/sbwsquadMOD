@@ -23,6 +23,7 @@ public final class SquadWeaponFire {
 
     /** Vehicles whose weapons use Squad fire sounds (generated with their squad_weapons profiles). */
     public static final Set<String> VEHICLES = Set.of(
+            "squadmc:rg_33",
                         "squadmc:huey_door_gunner_m134",
             "squadmc:huey_m134_door_guns",
             "squadmc:huey_m134_gunship",
@@ -41,6 +42,7 @@ public final class SquadWeaponFire {
 
     /** Vehicles with a Squad turret traverse loop; SBW's own turret sound is skipped on these. */
     public static final Set<String> TURRETS = Set.of(
+            "squadmc:rg_33",
                         "squadmc:huey_m134_door_guns",
             "squadmc:huey_m134_gunship",
             "squadmc:huey_m60_door_guns",

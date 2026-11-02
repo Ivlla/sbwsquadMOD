@@ -1,0 +1,10 @@
+{
+  "Skins": [
+    {
+      "Id": "vanilla",
+      "Name": "Standard",
+      "Texture": "squadmc:textures/entity/kamaz/kamaz.png",
+      "Priority": 1
+    }
+  ]
+}
