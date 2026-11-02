@@ -121,7 +121,11 @@
       "Transform": "Vehicle",
       "Weapons": [],
       "BanHand": true,
-      "Position": [0.50, 0.30, 0.25],
+      "Position": [
+        0.5,
+        0.3,
+        0.25
+      ],
       "MinPitch": -60,
       "MaxPitch": 60,
       "MinYaw": -95,
@@ -176,7 +180,11 @@
       "IsEnclosed": false,
       "Transform": "Vehicle",
       "BanHand": true,
-      "Position": [-0.50, 0.30, 0.25],
+      "Position": [
+        -0.5,
+        0.3,
+        0.25
+      ],
       "MinPitch": -60,
       "MaxPitch": 60,
       "MinYaw": -95,
@@ -186,7 +194,11 @@
       "IsEnclosed": false,
       "Transform": "Vehicle",
       "BanHand": true,
-      "Position": [0.50, 0.30, -0.9],
+      "Position": [
+        0.5,
+        0.3,
+        -0.9
+      ],
       "MinPitch": -60,
       "MaxPitch": 60,
       "MinYaw": -95,
@@ -196,7 +208,11 @@
       "IsEnclosed": false,
       "Transform": "Vehicle",
       "BanHand": true,
-      "Position": [0, 0.30, -0.9],
+      "Position": [
+        0,
+        0.3,
+        -0.9
+      ],
       "MinPitch": -60,
       "MaxPitch": 60,
       "MinYaw": -95,
@@ -292,13 +308,13 @@
         "Positions": [
           [
             -0.113422,
-            0.091144,
-            2.598019
+            0.0043,
+            -0.2583
           ],
           [
             0.115016,
-            0.091144,
-            2.598019
+            0.0043,
+            -0.2583
           ]
         ],
         "Directions": [

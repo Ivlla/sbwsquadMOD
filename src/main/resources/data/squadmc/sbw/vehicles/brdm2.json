@@ -152,7 +152,11 @@
         "MachineGun",
         "SmokeGrenades"
       ],
-      "Sensitivity": [0.55, 0.73, 1],
+      "Sensitivity": [
+        0.55,
+        0.73,
+        1
+      ],
       "Transform": "Turret",
       "Position": [
         0,
@@ -212,8 +216,16 @@
       "SoundRadius": 5,
       "ShootPos": {
         "Transform": "Turret",
-        "Positions": [[0.0, 0.0, 0.0]],
-        "Directions": ["Turret"]
+        "Positions": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "Directions": [
+          "Turret"
+        ]
       }
     },
     "Cannon": {
@@ -221,7 +233,8 @@
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Projectile": "superbwarfare:small_cannon_shell",
-      "ShellType": "AP", "ApDurability": 100,
+      "ShellType": "AP",
+      "ApDurability": 100,
       "DefaultZoom": 3,
       "RPM": 500,
       "Velocity": 20,
@@ -250,8 +263,16 @@
       "AmmoType": "superbwarfare:ap_5_inches",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[-0.1, 0.0517, -0.6]],
-        "Directions": ["Barrel"]
+        "Positions": [
+          [
+            -0.0008,
+            0.0018,
+            1.0636
+          ]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
       }
     },
     "MachineGun": {
@@ -273,8 +294,16 @@
       "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[0.3, 0.0517, 0.5]],
-        "Directions": ["Barrel"]
+        "Positions": [
+          [
+            -0.1208,
+            0.0218,
+            0.1536
+          ]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
       },
       "Crosshair": "@Empty",
       "Name": "weapon.superbwarfare.7_62mm_coax",
@@ -414,4 +443,3 @@
   ],
   "InertiaRotateRate": 1.0
 }
-
