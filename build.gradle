@@ -123,6 +123,14 @@ dependencies {
     implementation "thedarkcolour:kotlinforforge:4.11.0"
     runtimeOnly fg.deobf("com.github.mcmodderanchor:simplebedrockmodel:2.5.1-forge-mc1.20.1")
 
+    // AAS для запуска в среде разработки: положи jar в libs/ под именем aas-<версия>.jar.
+    // Из run/mods такой jar не запустится: без fg.deobf его mixin не находят методы Minecraft.
+    def aasJar = file('libs').listFiles()?.find { it.name ==~ /aas-.+\.jar/ }
+    if (aasJar != null) {
+        def aasVersion = aasJar.name.replaceAll(/^aas-|\.jar$/, '')
+        runtimeOnly fg.deobf("blank:aas:${aasVersion}")
+    }
+
 }
 
 tasks.named('processResources', ProcessResources).configure {
