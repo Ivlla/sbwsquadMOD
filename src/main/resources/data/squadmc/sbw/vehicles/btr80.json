@@ -364,7 +364,7 @@
       "BypassesArmor": 0.2,
       "Magazine": 50,
       "EmptyReloadTime": 230,
-      "Damage": 5,
+      "Damage": 38,
       "ExplosionDamage": 0,
       "ExplosionRadius": 0,
       "RecoilTime": 29,
