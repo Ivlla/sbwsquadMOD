@@ -1,0 +1,932 @@
+package com.atsuishio.superbwarfare.tools
+
+import com.atsuishio.superbwarfare.data.gun.melee.*
+import com.atsuishio.superbwarfare.tools.MeleeQuery.DebugShape.*
+import com.atsuishio.superbwarfare.tools.MeleeQuery.LOS_EPSILON
+import com.atsuishio.superbwarfare.tools.MeleeQuery.SEGMENT_SAMPLES
+import com.atsuishio.superbwarfare.tools.MeleeQuery.boxHit
+import com.atsuishio.superbwarfare.tools.MeleeQuery.capsuleHit
+import com.atsuishio.superbwarfare.tools.MeleeQuery.isHeadshot
+import com.atsuishio.superbwarfare.tools.MeleeQuery.resolve
+import com.atsuishio.superbwarfare.tools.MeleeQuery.resolveDiag
+import com.atsuishio.superbwarfare.tools.MeleeQuery.yawPitchQuaternion
+import net.minecraft.util.Mth
+import net.minecraft.world.entity.Entity
+import net.minecraft.world.entity.player.Player
+import net.minecraft.world.level.ClipContext
+import net.minecraft.world.level.Level
+import net.minecraft.world.phys.AABB
+import net.minecraft.world.phys.HitResult
+import net.minecraft.world.phys.Vec3
+import org.joml.Quaterniond
+import org.joml.Vector3d
+import kotlin.math.*
+
+/**
+ * 近战判定的**唯一实现**（形状 + 扫掠 + 排序/数量/衰减 + 命中区域）。
+ *
+ * **只在客户端调用**（与现状相同的信任模型：判定在客户端算，服务端只结算）。
+ * 做成独立纯函数类是为了可单测、可被调试工具复用、改动只动一处。
+ *
+ * 判定流程与旧的 `doGunMeleeAttack` 相比有**三处有意修正**：
+ * 1. 距离改为「到目标 **AABB 最近点**」而不是脚底；
+ * 2. 遮挡由 `MeleeHitbox.Occlusion` 统一（旧实现里方块 pick 是死代码、能隔墙打人）；
+ * 3. 俯仰角可单独限制，且角度参照点统一（旧实现用「眼→眼」夹角，现在是「视线 ↔ 到最近点」）。
+ *
+ * 粗筛仍是 `SeekTool.BASIC_FILTER` + `NOT_IN_SMOKE` + 同队排除，
+ * 并统一排除「自己骑的载具」。
+ */
+object MeleeQuery {
+
+    /**
+     * 一次近战判定的命中结果。
+     *
+     * @param entity     命中的实体
+     * @param hitPos     判定体到目标 AABB 的**接触点**（遮挡判定与几何诊断用）
+     * @param zonePos    命中区域（打头/打腿）判定用的点：**准星射线**到该 AABB 的最近点
+     * @param distance   眼睛到该点的距离
+     * @param angle      视线与「眼睛 → 该点」的夹角（度）
+     * @param sampleIndex 是第几个扫掠采样点命中的（0 = 第一次采样）
+     * @param order      在本次结果里的排序下标（服务端按它做衰减）
+     * @param aimed      是否是**准星正对**的那一个目标（只有它能吃到打头倍率）
+     */
+    data class Hit(
+        val entity: Entity,
+        val hitPos: Vec3,
+        val zonePos: Vec3,
+        val distance: Double,
+        val angle: Double,
+        val sampleIndex: Int,
+        val order: Int,
+        val aimed: Boolean,
+        val headshot: Boolean,
+        val legshot: Boolean,
+    )
+
+    /**
+     * 判定参数完全展开后的结构，供调试渲染与 [sampleOffsets] 复用。
+     *
+     * @param eyePos  结算 tick 的玩家眼睛位置（方向基准 = 玩家当前朝向，方案 1）
+     * @param yaw     玩家当前 yaw
+     * @param pitch   玩家当前 pitch
+     * @param reach   近战触及距离 = `(hitbox.Range + MeleeRange) × 本段 RangeMultiplier + player.getEntityReach()`；
+     *                三种形状的前向长度都是它（盒子/胶囊不再各写一个长度字段）
+     */
+    data class Context(
+        val eyePos: Vec3,
+        val yaw: Float,
+        val pitch: Float,
+        val reach: Double,
+    )
+
+    /** 用玩家结算 tick 的当前朝向构造判定上下文 */
+    @JvmStatic
+    fun contextOf(player: Player, action: ResolvedMeleeAction): Context {
+        return Context(
+            eyePos = player.eyePosition,
+            yaw = player.yRot,
+            pitch = player.xRot,
+            reach = action.hitbox.range,
+        )
+    }
+
+    /**
+     * 一次判定里**每个候选实体**的处置结果，只给调试日志用。
+     *
+     * 排查"盒子明明罩住了却打不到"时，光看命中列表是没用的 ——
+     * 必须能看到候选是谁、卡在哪一步（形状不相交 / 被方块挡住）。
+     */
+    enum class RejectReason(val label: String) {
+        /** 命中了 */
+        HIT("hit"),
+
+        /** 粗筛就没找到（不会出现在这里，只用于日志对照） */
+        NOT_COARSE_FILTERED("not-coarse-filtered"),
+
+        /** 形状不相交：角度/距离/盒体尺寸不满足 */
+        SHAPE("shape"),
+
+        /** 形状相交了，但 `Occlusion` 判定视线被方块挡住 */
+        OCCLUSION("occlusion"),
+
+        /** 形状/遮挡都没过，靠 [resolve] 的 `forced` 强行算作命中 */
+        FORCED("forced"),
+    }
+
+    data class CandidateDiag(
+        val entity: Entity,
+        val reason: RejectReason,
+        val distance: Double,
+        val angle: Double,
+        /** 枚举里的 `Cone` 水平夹角（度）；Box/Capsule 恒为 0 */
+        val yawDelta: Double = 0.0,
+        /** 枚举里的 `Cone` 垂直夹角（度）；Box/Capsule 恒为 0 */
+        val pitchDelta: Double = 0.0,
+        val hitPos: Vec3? = null,
+    )
+
+    /** [resolveDiag] 的返回：命中 + 每个候选的处置结果 */
+    data class DiagResult(
+        val hits: List<Hit>,
+        val candidates: List<CandidateDiag>,
+    )
+
+    /**
+     * 与 [resolve] 完全同一条路径，额外收集每个候选的处置结果。
+     *
+     * 只在开了 `melee_debug_log` 时由调用方使用，正常路径仍然走 [resolve]（不产生这份开销）。
+     */
+    @JvmStatic
+    @JvmOverloads
+    fun resolveDiag(
+        level: Level,
+        attacker: Entity,
+        action: ResolvedMeleeAction,
+        context: Context? = null,
+        candidates: List<Entity>? = null,
+        forced: Entity? = null,
+    ): DiagResult {
+        val diags = ArrayList<CandidateDiag>()
+        val hits = resolve(level, attacker, action, context, candidates, diags, forced)
+        return DiagResult(hits, diags)
+    }
+
+    /**
+     * 完整判定：粗筛 → 逐个形状精判 → 排序 → 截断 → 命中区域。
+     *
+     * @param candidates 粗筛结果；传 `null` 时由本方法按 [Context.reach] 自行粗筛
+     * @param diagnostics 非空时收集每个候选的处置结果（调试用）
+     * @param forced 无论形状/遮挡如何都必须命中的目标（刺刀冲锋撞上的那个）
+     */
+    @JvmStatic
+    @JvmOverloads
+    fun resolve(
+        level: Level,
+        attacker: Entity,
+        action: ResolvedMeleeAction,
+        context: Context? = null,
+        candidates: List<Entity>? = null,
+        diagnostics: MutableList<CandidateDiag>? = null,
+        forced: Entity? = null,
+    ): List<Hit> {
+        val player = attacker as? Player ?: return emptyList()
+        val ctx = context ?: contextOf(player, action)
+
+        val entityList = candidates ?: coarseFilter(level, attacker, ctx.reach, action = action)
+
+        val hitbox = action.hitbox
+        val offsets = action.sweep?.sampleOffsets() ?: listOf(0.0)
+        val byEntity = LinkedHashMap<Entity, Hit>()
+        val diagByEntity = LinkedHashMap<Entity, CandidateDiag>()
+
+        // 准星正对的那个目标：只有它能吃打头倍率（别的目标即使入射点落在头部高度也只算普通命中）
+        val aimedTarget = crosshairTarget(level, attacker, ctx, entityList)
+
+        // **准星射线**：命中区域（打头/打腿）量的是"准星落在这个目标的哪个高度"，用的就是它。
+        // 不能用"眼睛到目标 AABB 的最近点"——那个点的 y 会被夹进目标碰撞箱，
+        // 平地上站着打站着时恒等于眼睛高度，于是打哪儿都判成爆头（实测踩过的坑）。
+        val aimLook = lookVector(ctx.yaw, ctx.pitch)
+        val aimEnd = ctx.eyePos.add(aimLook.scale(ctx.reach))
+
+        for ((sampleIndex, offset) in offsets.withIndex()) {
+            val yaw = (ctx.yaw + offset).toFloat()
+            val look = lookVector(yaw, ctx.pitch)
+
+            for (entity in entityList) {
+                if (byEntity.containsKey(entity)) continue
+                val box = entity.boundingBox
+                if (box.xsize <= 0.0 || box.ysize <= 0.0 || box.zsize <= 0.0) continue
+
+                // 形状判定：为诊断顺手把圆锥的两个夹角也算出来（只在诊断开启时算）
+                val shape = when (hitbox.type) {
+                    MeleeHitboxType.CONE -> coneHit(ctx.eyePos, yaw, ctx.pitch, box, hitbox, ctx.reach, diagnostics != null)
+                    MeleeHitboxType.BOX -> ShapeHit(boxHit(ctx.eyePos, yaw, ctx.pitch, look, box, hitbox, ctx.reach))
+                    MeleeHitboxType.CAPSULE -> ShapeHit(capsuleHit(ctx.eyePos, yaw, ctx.pitch, look, box, hitbox, ctx.reach))
+                }
+
+                val delta = ctx.eyePos.vectorTo(shape.point ?: closestPointInBox(box, ctx.eyePos))
+                val distance = delta.length()
+                val angle = angleBetween(lookVector(yaw, ctx.pitch), delta)
+
+                if (shape.point == null) {
+                    if (diagnostics != null && !diagByEntity.containsKey(entity)) {
+                        diagByEntity[entity] = CandidateDiag(
+                            entity, RejectReason.SHAPE, distance, angle,
+                            shape.yawDelta, shape.pitchDelta,
+                        )
+                    }
+                    continue
+                }
+
+                // 接触点：判定体实际碰到目标的地方。遮挡判定用它（横扫时它才反映这一刀的方向）
+                val hitPos = shape.point
+                if (hitbox.occlusion && !hasLineOfSight(level, attacker, ctx.eyePos, hitPos, box)) {
+                    if (diagnostics != null) {
+                        diagByEntity[entity] = CandidateDiag(
+                            entity, RejectReason.OCCLUSION, distance, angle,
+                            shape.yawDelta, shape.pitchDelta, hitPos,
+                        )
+                    }
+                    continue
+                }
+
+                // 命中区域用的点：准星射线到该目标 AABB 的最近点。
+                // 直接瞄准它时就是射线进入碰撞箱的那一点，横扫蹭到时也忠实反映"准星在那个距离上的高度"。
+                val zonePos = closestSegmentToBox(ctx.eyePos, aimEnd, box).second
+
+                val aimed = entity === aimedTarget
+                byEntity[entity] = Hit(
+                    entity = entity,
+                    hitPos = hitPos,
+                    zonePos = zonePos,
+                    distance = distance,
+                    angle = angle,
+                    sampleIndex = sampleIndex,
+                    order = 0,
+                    aimed = aimed,
+                    headshot = aimed && isHeadshot(entity, zonePos),
+                    legshot = isLegshot(entity, zonePos),
+                )
+                if (diagnostics != null) {
+                    diagByEntity[entity] = CandidateDiag(
+                        entity, RejectReason.HIT, distance, angle,
+                        shape.yawDelta, shape.pitchDelta, hitPos,
+                    )
+                }
+            }
+        }
+
+        val forcedHit = resolveForcedHit(forced, byEntity, attacker, ctx, aimEnd, aimedTarget)
+        if (forcedHit != null) {
+            byEntity[forcedHit.entity] = forcedHit
+            if (diagnostics != null) {
+                diagByEntity[forcedHit.entity] = CandidateDiag(
+                    forcedHit.entity, RejectReason.FORCED, forcedHit.distance, forcedHit.angle,
+                    hitPos = forcedHit.hitPos,
+                )
+            }
+        }
+
+        val sorted = sort(byEntity.values, action.sortBy)
+        val limited = when {
+            action.maxTargets <= 0 -> sorted
+            forcedHit == null -> sorted.take(action.maxTargets)
+            // 强行命中的目标不能被 MaxTargets 截掉
+            else -> sorted.take(action.maxTargets).let {
+                if (it.any { hit -> hit.entity === forcedHit.entity }) it else it.dropLast(1) + forcedHit
+            }
+        }
+
+        if (diagnostics != null) {
+            // 被 MaxTargets 截掉的也算"命中"，保留原始判定结论便于排查
+            diagnostics += diagByEntity.values
+        }
+
+        return limited.mapIndexed { index, hit -> hit.copy(order = index) }
+    }
+
+    /**
+     * [resolve] 的 `forced` 那一份 [Hit]，条件不满足时返回 `null`。
+     *
+     * 冲锋刺击是"撞上去"而不是"扫到"：目标在触发的那一 tick 已经被准星射线量过一遍，
+     * 所以这里只复查"还算不算一个合法目标"（见 [isChargeTarget] 与距离），
+     * 形状与遮挡都不再挡它 —— 触发者必须挨打。
+     */
+    private fun resolveForcedHit(
+        target: Entity?,
+        already: Map<Entity, Hit>,
+        attacker: Entity,
+        context: Context,
+        aimEnd: Vec3,
+        aimedTarget: Entity?,
+    ): Hit? {
+        val entity = target?.takeIf { isChargeTarget(attacker, it) } ?: return null
+        if (already.containsKey(entity)) return null
+
+        val box = entity.boundingBox
+        if (box.xsize <= 0.0 || box.ysize <= 0.0 || box.zsize <= 0.0) return null
+
+        val hitPos = closestPointInBox(box, context.eyePos)
+        if (hitPos.distanceTo(context.eyePos) > context.reach + FORCED_REACH_MARGIN) return null
+
+        val zonePos = closestSegmentToBox(context.eyePos, aimEnd, box).second
+        val delta = context.eyePos.vectorTo(hitPos)
+        val aimed = entity === aimedTarget
+
+        return Hit(
+            entity = entity,
+            hitPos = hitPos,
+            zonePos = zonePos,
+            distance = delta.length(),
+            angle = angleBetween(lookVector(context.yaw, context.pitch), delta),
+            sampleIndex = 0,
+            order = 0,
+            aimed = aimed,
+            headshot = aimed && isHeadshot(entity, zonePos),
+            legshot = isLegshot(entity, zonePos),
+        )
+    }
+
+    /**
+     * 能不能作为刺刀冲锋的刺击目标。
+     *
+     * 触发侧（`GunChargeHandler`）与结算侧（[resolveForcedHit]）用的是同一个判据，
+     * 所以"撞上就必定打中"：不合法的东西压根不会触发这一击，而是继续冲锋窗口。
+     * 只有三件事不算数——自己、自己骑着的载具、同队；**不走** `BASIC_FILTER`
+     * （C4 / 阔剑 / 盔甲架这类也照戳，本来就是刺雷的正常目标）。
+     */
+    @JvmStatic
+    fun isChargeTarget(attacker: Entity, target: Entity?): Boolean {
+        if (target == null || target === attacker || target === attacker.vehicle) return false
+        if (target.isRemoved) return false
+        return !SeekTool.IN_SAME_TEAM.test(attacker, target)
+    }
+
+    /**
+     * 粗筛：以玩家为原点、`reach + 扫掠外接半径` 构造 AABB。
+     *
+     * 过滤器沿用 [SeekTool.BASIC_FILTER] + `NOT_IN_SMOKE` + 同队排除，并排除自己骑的载具。
+     *
+     * 三种形状的前向长度都是 [Context.reach]，所以外扩直接用 `reach` 就够。
+     */
+    @JvmStatic
+    @JvmOverloads
+    fun coarseFilter(
+        level: Level,
+        attacker: Entity,
+        reach: Double,
+        sweep: MeleeSweep? = null,
+        action: ResolvedMeleeAction? = null,
+    ): List<Entity> {
+        val lateral = sweep?.maxLateral(reach) ?: 0.0
+        val radius = reach + lateral + 1.0
+        val aabb = AABB(
+            attacker.x - radius, attacker.y - radius, attacker.z - radius,
+            attacker.x + radius, attacker.y + radius, attacker.z + radius,
+        )
+        val vehicle = attacker.vehicle
+
+        return level.getEntities(attacker, aabb) { e ->
+            e !== attacker
+                    && e !== vehicle
+                    && SeekTool.BASIC_FILTER.test(e)
+                    && SeekTool.NOT_IN_SMOKE.test(e)
+                    && !SeekTool.IN_SAME_TEAM.test(attacker, e)
+        }
+    }
+
+    /**
+     * 准星正对的那个实体：从眼睛沿**当前视线**打一条射线，取最先撞到的那个目标。
+     *
+     * 被方块挡住、或超出 [Context.reach] 时返回 `null`（这时谁都吃不到打头倍率）。
+     *
+     * 只用来回答"打头倍率给谁"——判定本身仍然是形状说了算：
+     * 横扫会同时打到好几个目标，但只有枪口/准星指着的那一个才算命中头部。
+     */
+    @JvmStatic
+    @JvmOverloads
+    fun crosshairTarget(
+        level: Level,
+        attacker: Entity,
+        context: Context,
+        candidates: List<Entity>? = null,
+    ): Entity? {
+        if (context.reach <= 0) return null
+
+        val end = context.eyePos.add(lookVector(context.yaw, context.pitch).scale(context.reach))
+
+        // 方块先挡：从眼睛到方块命中点之间的实体都算"被挡住"
+        val blockHit = level.clip(
+            ClipContext(context.eyePos, end, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, attacker)
+        )
+        val maxDistance = if (blockHit.type == HitResult.Type.MISS) {
+            context.reach
+        } else {
+            context.eyePos.distanceTo(blockHit.location)
+        }
+        if (maxDistance <= 0) return null
+
+        // 允许一点点"擦边"（原版投射物同样会 inflate 一点），但比判定体严格得多
+        val list = candidates ?: coarseFilter(level, attacker, context.reach)
+        var best: Entity? = null
+        var bestDistance = maxDistance
+
+        for (entity in list) {
+            if (!entity.isAlive || entity.isSpectator) continue
+            val hit = entity.boundingBox.inflate(CROSSHAIR_INFLATE).clip(context.eyePos, end)
+            if (hit.isEmpty) continue
+            val distance = context.eyePos.distanceTo(hit.get())
+            if (distance > bestDistance) continue
+            bestDistance = distance
+            best = entity
+        }
+        return best
+    }
+
+    // ------------------------------------------------------------------ 形状
+
+    /**
+     * 形状判定的结果。
+     *
+     * @param point 入射点（判定体 ∩ 目标 AABB 的最近点）；`null` = 不相交
+     * @param yawDelta 仅 `Cone`：目标方向与视线的**水平**夹角（度）
+     * @param pitchDelta 仅 `Cone`：目标方向与视线的**垂直**夹角（度）
+     */
+    private data class ShapeHit(
+        val point: Vec3?,
+        val yawDelta: Double = 0.0,
+        val pitchDelta: Double = 0.0,
+    )
+
+    /** 便利构造：只有点、没有角度信息（Box / Capsule） */
+    private fun ShapeHit(point: Vec3?) = ShapeHit(point, 0.0, 0.0)
+
+    /**
+     * 圆锥（兼容旧行为）：`|Δyaw| ≤ Angle/2`、`|Δpitch| ≤ Pitch/2`、距离 ≤ [MeleeHitbox.range]。
+     *
+     * 夹角与距离都量到**目标 AABB 的最近点**（`closestPointInBox`）。
+     * 注意这个点**不是脚底**：它把眼睛夹进 AABB 里，所以站着打站着时 y 会被夹到**眼睛高度**，
+     * 只有俯仰差距大到让最近点落到 box 的顶/底面时才会带垂直分量。
+     * 换句话说"用最近点算俯仰角"本身没问题（实测：平视 0°、俯视 30° 打胸口都在容差内），
+     * 旧实现的「眼→眼」只是同一件事的近似。
+     */
+    private fun coneHit(
+        eyePos: Vec3,
+        yaw: Float,
+        pitch: Float,
+        box: AABB,
+        hitbox: MeleeHitbox,
+        reach: Double,
+        withAngles: Boolean = false,
+    ): ShapeHit {
+        val point = closestPointInBox(box, eyePos)
+        val delta = eyePos.vectorTo(point)
+        if (delta.lengthSqr() > reach * reach) return ShapeHit(null)
+        if (delta.lengthSqr() < EPSILON) return ShapeHit(box.center)
+
+        val horizontal = sqrt(delta.x * delta.x + delta.z * delta.z)
+        val targetYaw = Math.toDegrees(atan2(-delta.x, delta.z)).toFloat()
+        // 注意符号：`asin(delta.y / len)` 得到的是"向上为正"的仰角，
+        // 而 MC 的 pitch 是"向下为正"，所以这里要取负，否则低头/抬头打目标会平白多出一个夹角的偏差。
+        val targetPitch = -Math.toDegrees(asin((delta.y / delta.length()).coerceIn(-1.0, 1.0))).toFloat()
+
+        val yawDelta = abs(Mth.wrapDegrees(targetYaw - yaw)).toDouble()
+        val pitchDelta = abs(Mth.wrapDegrees(targetPitch - pitch)).toDouble()
+        val reportYaw = if (withAngles) yawDelta else 0.0
+        val reportPitch = if (withAngles) pitchDelta else 0.0
+
+        if (yawDelta > hitbox.angle / 2.0) return ShapeHit(null, reportYaw, reportPitch)
+        if (horizontal > EPSILON && pitchDelta > hitbox.pitch / 2.0) {
+            return ShapeHit(null, reportYaw, reportPitch)
+        }
+
+        return ShapeHit(point, reportYaw, reportPitch)
+    }
+
+    /**
+     * 盒体：OBB ∩ 目标 AABB。
+     *
+     * 盒体**跟着视线转**（yaw + pitch，见 [yawPitchQuaternion]）：
+     * 中心 = 眼睛 + 局部上偏移(`YOffset`) + 视线方向 × (`ZFrom` + `reach/2`)，
+     * 半长 = (`Width/2`, `Height/2`, `reach/2`)，局部 +Z 指向视线。
+     *
+     * 前向长度就是 [Context.reach]（近战触及距离），**没有单独的 Length 字段**：
+     * `MeleeRange`、配件的距离加成、动作的 `RangeMultiplier` 都会直接反映到长度上。
+     *
+     * 直接用 [OBB] + [OBB.isColliding]，与载具碰撞判定同一套 SAT 实现。
+     */
+    private fun boxHit(
+        eyePos: Vec3,
+        yaw: Float,
+        pitch: Float,
+        look: Vec3,
+        box: AABB,
+        hitbox: MeleeHitbox,
+        reach: Double,
+    ): Vec3? {
+        val halfLength = max(reach, 0.0) / 2.0
+        val center = eyePos
+            .add(localUpOffset(yaw, pitch, hitbox.yOffset))
+            .add(look.scale(hitbox.zFrom + halfLength))
+
+        val obb = OBB(
+            Vector3d(center.x, center.y, center.z),
+            Vector3d(max(hitbox.width, 0.0) / 2.0, max(hitbox.height, 0.0) / 2.0, halfLength),
+            yawPitchQuaternion(yaw, pitch),
+            OBB.Part.EMPTY,
+        )
+
+        if (!OBB.isColliding(obb, box)) return null
+
+        return closestPointInBox(box, eyePos)
+    }
+
+    /**
+     * 胶囊：线段（沿视线 `ZFrom → ZFrom + reach`）到目标 AABB 的最近距离 ≤ `Radius`。
+     *
+     * 线段长度与 [boxHit] 用的是同一个 [Context.reach]；线段与 [MeleeHitbox.yOffset]
+     * 都跟着视线转。
+     */
+    private fun capsuleHit(
+        eyePos: Vec3,
+        yaw: Float,
+        pitch: Float,
+        look: Vec3,
+        box: AABB,
+        hitbox: MeleeHitbox,
+        reach: Double,
+    ): Vec3? {
+        val startOffset = hitbox.zFrom
+        val endOffset = hitbox.zFrom + max(reach, 0.0)
+        val origin = eyePos.add(localUpOffset(yaw, pitch, hitbox.yOffset))
+        val start = origin.add(look.scale(startOffset))
+        val end = origin.add(look.scale(endOffset))
+
+        val radius = max(hitbox.radius, 0.0)
+        val (segmentPoint, boxPoint) = closestSegmentToBox(start, end, box)
+        if (segmentPoint.distanceTo(boxPoint) > radius) return null
+
+        return boxPoint
+    }
+
+    // ------------------------------------------------------------------ 几何工具
+
+    /**
+     * 把 MC 的 `yaw` + `pitch` 变成"局部坐标 → 世界坐标"的四元数：
+     *
+     * ```
+     * Quaterniond().rotateY(-yaw).rotateX(+pitch)
+     * ```
+     *
+     * 变换后的三根轴：
+     * - 局部 **+Z**（`Length`/`Range`/`ZFrom` 的方向）→ **视线** `(-sin y·cos p, -sin p, cos y·cos p)`
+     * - 局部 **+X**（`Width` 的方向）→ 世界水平右方 `(cos y, 0, sin y)`，**与 pitch 无关**
+     * - 局部 **+Y**（`Height` 的方向）→ `look × right`，即与视线垂直的"上"
+     *
+     * **两个符号都是必须的**（都用 JOML 1.10.5 实测过 yaw ∈ {0, ±45, 90, 135, 180}、
+     * pitch ∈ {-60, -45, -30, 0, 10, 20, 30, 45, 89, 90}）：
+     *
+     * 1. **`-yaw` 不能写成 `+yaw`**：MC 的 yaw 是**从 +Z 朝 +X** 增加的
+     *    （yaw 90° 看向 **-X**），而 JOML 的 `rotateY(θ)` 是右手系绕 +Y，把局部 +Z 转到
+     *    `(sin θ, 0, cos θ)`（θ=90° 指向 **+X**）——两者**手性相反**，写 `+yaw` 会让盒子与朝向
+     *    正好差 180°（yaw 0/180 时看不出来，45°/90° 最明显）。
+     * 2. **`+pitch` 不能写成 `-pitch`**：MC 的 pitch **向下为正**，而 JOML 的 `rotateX(θ)`
+     *    把局部 +Z 转到 `(0, -sin θ, cos θ)`（θ>0 朝 **-Y** = 朝下）——所以正好是 `+pitch`。
+     *
+     * 仓库里的同类转换也都是这个符号，可以对照：`VectorTool.combineRotationsYaw`、
+     * `VehicleMotionUtils` / `VehicleVecUtils` 的 `Axis.YP.rotationDegrees(-vehicle.yRot)`、
+     * `CameraMixin`、`C4Entity` 的 `.rotateY(-yaw)`。
+     *
+     * 之所以单独抽一个函数：判定（[boxHit] / [capsuleHit]）与调试渲染（`MeleeDebugRenderer`）
+     * 必须用**同一个**旋转，否则"看到的盒子"和"判定的盒子"会不一致——这两个符号各写反过一次。
+     */
+    @JvmStatic
+    fun yawPitchQuaternion(yaw: Float, pitch: Float): Quaterniond =
+        Quaterniond()
+            .rotateY(Math.toRadians(-yaw.toDouble()))
+            .rotateX(Math.toRadians(pitch.toDouble()))
+
+    /**
+     * 把 [MeleeHitbox.yOffset]（相对眼睛的垂直偏移）按当前朝向转成世界向量。
+     *
+     * 旧实现是直接 `.add(0, yOffset, 0)`（写死世界 Y）——抬头看天时"向下偏 0.4"的盒体
+     * 会横在头顶而不是贴在视线下方。现在沿 `look × right` 偏移，跟视角一起转。
+     */
+    @JvmStatic
+    fun localUpOffset(yaw: Float, pitch: Float, offset: Double): Vec3 {
+        if (offset == 0.0) return Vec3.ZERO
+        val up = Vector3d(0.0, 1.0, 0.0)
+        yawPitchQuaternion(yaw, pitch).transform(up)
+        return Vec3(up.x * offset, up.y * offset, up.z * offset)
+    }
+
+    /** MC 的朝向约定：yaw 绕 Y、pitch 向下为正，x = -sin(yaw)cos(pitch)、y = -sin(pitch)、z = cos(yaw)cos(pitch) */
+    @JvmStatic
+    fun lookVector(yaw: Float, pitch: Float): Vec3 {
+        val yawRad = Math.toRadians(yaw.toDouble())
+        val pitchRad = Math.toRadians(pitch.toDouble())
+        return Vec3(
+            -sin(yawRad) * cos(pitchRad),
+            -sin(pitchRad),
+            cos(yawRad) * cos(pitchRad),
+        )
+    }
+
+    /** 两个向量之间的夹角（度） */
+    @JvmStatic
+    fun angleBetween(from: Vec3, to: Vec3): Double {
+        val len = from.length() * to.length()
+        if (len < EPSILON) return 0.0
+        val dot = (from.x * to.x + from.y * to.y + from.z * to.z) / len
+        return Math.toDegrees(kotlin.math.acos(dot.coerceIn(-1.0, 1.0)))
+    }
+
+    /** 点 [point] 到 [box] 的最近点（点在盒内时返回 [point] 自身） */
+    @JvmStatic
+    fun closestPointInBox(box: AABB, point: Vec3): Vec3 {
+        return Vec3(
+            point.x.coerceIn(box.minX, box.maxX),
+            point.y.coerceIn(box.minY, box.maxY),
+            point.z.coerceIn(box.minZ, box.maxZ),
+        )
+    }
+
+    /** 线段 `[start, end]` 上离 [point] 最近的点 */
+    @JvmStatic
+    fun closestPointOnSegment(start: Vec3, end: Vec3, point: Vec3): Vec3 {
+        val direction = end.subtract(start)
+        val lengthSqr = direction.lengthSqr()
+        if (lengthSqr < EPSILON) return start
+        val t = (point.subtract(start).dot(direction) / lengthSqr).coerceIn(0.0, 1.0)
+        return start.add(direction.scale(t))
+    }
+
+    /**
+     * 线段与 AABB 的最近点对。
+     *
+     * 用「分段细分 + 收敛」的近似做法：把线段切成 [SEGMENT_SAMPLES] 段，
+     * 取离 AABB 最近的那一段再细分一次。对近战这种「最长几米」的线段精度足够（亚毫米级），
+     * 但比逐面解的解析法短得多、也不容易在退化情形（线段完全在盒内/平行于某面）上出错。
+     */
+    private fun closestSegmentToBox(start: Vec3, end: Vec3, box: AABB): Pair<Vec3, Vec3> {
+        var bestSegmentPoint = start
+        var bestBoxPoint = closestPointInBox(box, start)
+        var bestDistance = bestSegmentPoint.distanceToSqr(bestBoxPoint)
+
+        var segStart = start
+        var step = end.subtract(start).scale(1.0 / SEGMENT_SAMPLES)
+
+        for (i in 0 until SEGMENT_SAMPLES) {
+            val segEnd = if (i == SEGMENT_SAMPLES - 1) end else segStart.add(step)
+            for (j in 0..SUBDIVISION_SAMPLES) {
+                val point = segStart.add(segEnd.subtract(segStart).scale(j.toDouble() / SUBDIVISION_SAMPLES))
+                val boxPoint = closestPointInBox(box, point)
+                val distance = point.distanceToSqr(boxPoint)
+                if (distance < bestDistance) {
+                    bestDistance = distance
+                    bestSegmentPoint = point
+                    bestBoxPoint = boxPoint
+                    if (distance < EPSILON) return bestSegmentPoint to bestBoxPoint
+                }
+            }
+            segStart = segEnd
+        }
+
+        // 收敛：以找到的点为中心再细分一轮
+        val refineStep = step.scale(1.0 / SUBDIVISION_SAMPLES)
+        for (i in -SUBDIVISION_SAMPLES..SUBDIVISION_SAMPLES) {
+            val point = bestSegmentPoint.add(refineStep.scale(i.toDouble()))
+            val clamped = closestPointOnSegment(start, end, point)
+            val boxPoint = closestPointInBox(box, clamped)
+            val distance = clamped.distanceToSqr(boxPoint)
+            if (distance < bestDistance) {
+                bestDistance = distance
+                bestSegmentPoint = clamped
+                bestBoxPoint = boxPoint
+            }
+        }
+
+        return bestSegmentPoint to bestBoxPoint
+    }
+
+    /**
+     * 视线是否通畅（用方块 COLLIDER 射线，不含流体）。
+     *
+     * 近战的距离通常只有 1~4 格，所以"贴在方块上"比"隔着墙"常见得多，两个坑必须绕开：
+     *
+     * 1. **射线起点不能落在方块里**：把眼睛到目标最近点这条射线**按攻击者的碰撞箱修一下**，
+     *    起点推到自身碰撞箱之外。玩家/怪紧贴在一起时，目标 AABB 的最近点会落在攻击者自己的
+     *    碰撞箱内，而 `level.clip` 的起点只要在方块内就会立刻返回 BLOCK → 贴脸砍永远打不中。
+     * 2. **终点不能落在目标表面之外**：入射点正好在目标 AABB 的面上，射线在那里截断即可，
+     *    不需要再往外探 —— 用 `to - dir * 1e-4` 收尾，避免浮点误差把终点推到目标背后的方块里。
+     *
+     * @param targetBox 目标 AABB；非空时用它的最近点作为终点
+     */
+    private fun hasLineOfSight(
+        level: Level,
+        attacker: Entity,
+        from: Vec3,
+        to: Vec3,
+        targetBox: AABB? = null,
+    ): Boolean {
+        val end = targetBox?.let { closestPointInBox(it, from) } ?: to
+        val raw = end.subtract(from)
+        if (raw.lengthSqr() < EPSILON) return true
+
+        val direction = raw.normalize()
+        val start = pushOutside(from, direction, attacker.boundingBox)
+        val stop = end.subtract(direction.scale(LOS_EPSILON))
+        if (start.distanceToSqr(stop) < EPSILON) return true
+
+        val result = level.clip(
+            ClipContext(start, stop, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, attacker)
+        )
+        return result.type != HitResult.Type.BLOCK
+    }
+
+    /**
+     * 把 [point] 沿 [direction] 推到 [box] 之外（`box` 为自身碰撞箱）。
+     *
+     * 点在箱内时，取"沿 direction 到各面距离的最小正值"再多推 [LOS_EPSILON]；
+     * 点在箱外时原样返回。
+     */
+    private fun pushOutside(point: Vec3, direction: Vec3, box: AABB): Vec3 {
+        if (!box.contains(point)) return point
+
+        var t = Double.MAX_VALUE
+        if (direction.x > EPSILON) t = min(t, (box.maxX - point.x) / direction.x)
+        if (direction.x < -EPSILON) t = min(t, (box.minX - point.x) / direction.x)
+        if (direction.y > EPSILON) t = min(t, (box.maxY - point.y) / direction.y)
+        if (direction.y < -EPSILON) t = min(t, (box.minY - point.y) / direction.y)
+        if (direction.z > EPSILON) t = min(t, (box.maxZ - point.z) / direction.z)
+        if (direction.z < -EPSILON) t = min(t, (box.minZ - point.z) / direction.z)
+
+        if (t == Double.MAX_VALUE || t < 0.0) return point
+        return point.add(direction.scale(t + LOS_EPSILON))
+    }
+
+    /**
+     * 打头：复用投射物已验证的阈值（`ProjectileEntity` / `IAdvancedHitDetection`）。
+     *
+     * [zonePos] 必须是**准星射线到目标 AABB 的最近点**（[Hit.zonePos]）：
+     * 用"眼睛到 AABB 的最近点"的话，它的 y 会被夹到眼睛高度，平地上打哪儿都判爆头。
+     */
+    @JvmStatic
+    fun isHeadshot(target: Entity, zonePos: Vec3): Boolean {
+        val local = zonePos.y - target.y
+        return local > (target.eyeHeight - HEADSHOT_MARGIN_BELOW) && local < (target.eyeHeight + HEADSHOT_MARGIN_ABOVE)
+    }
+
+    /** 打腿：`zonePos.y < 0.33 * bbHeight`（相对脚底）；[zonePos] 同 [isHeadshot] */
+    @JvmStatic
+    fun isLegshot(target: Entity, zonePos: Vec3): Boolean {
+        return (zonePos.y - target.y) < LEGSHOT_RATIO * target.bbHeight
+    }
+
+    // ------------------------------------------------------------------ 排序
+
+    private fun sort(hits: Collection<Hit>, sortBy: MeleeSortBy): List<Hit> {
+        return when (sortBy) {
+            MeleeSortBy.ANGLE -> hits.sortedWith(compareBy({ it.angle }, { it.distance }))
+            MeleeSortBy.DISTANCE -> hits.sortedWith(compareBy({ it.distance }, { it.angle }))
+            MeleeSortBy.SWEEP_ORDER -> hits.sortedWith(
+                compareBy({ it.sampleIndex }, { it.angle }, { it.distance })
+            )
+        }
+    }
+
+    // ------------------------------------------------------------------ 调试
+
+    /**
+     * 调试线框用的形状描述。
+     *
+     * **必须能如实画出三种形状**，不能再"统一成盒体近似"——那个近似盒长度只有 `reach/2`、
+     * 宽度却是 `reach×sin(半角)`，画出来又短又粗，于是"盒子里的怪打不到、盒子外的怪反而挨打"
+     * 这种观感全是这一个假盒子造成的。这里改成：
+     *
+     * - [Cone]：**球面窗口**的真实轮廓 —— 四种边界（水平 ±半角、垂直 ±半仰角）在角空间采样后
+     *   投到半径 `reach` 的球面上，再用母线连回顶点；垂直不限（`Pitch >= 180`）时只受水平角限制
+     * - [Box]：带 yaw/pitch 姿态的盒体，前向长度 = `reach`
+     * - [Segment]：线段的胶囊（两端各一个端盖圆）
+     */
+    sealed interface DebugShape {
+        /** 参数：`(start, end, radius)` */
+        data class Segment(val start: Vec3, val end: Vec3, val radius: Double) : DebugShape
+
+        /**
+         * 参数：`(apex, samples, verticalCapped)`
+         *
+         * [outline] 是球面上那一圈**有序**的边界点（首尾相接），[spokes] 是要连回顶点的方向。
+         */
+        data class Cone(
+            val apex: Vec3,
+            val outline: List<Vec3>,
+            val spokes: List<Vec3>,
+            val verticalCapped: Boolean,
+        ) : DebugShape
+
+        /** 参数：`(center, radiusX, radiusY, radiusZ, yaw, pitch)` */
+        data class Box(
+            val center: Vec3,
+            val radiusX: Double,
+            val radiusY: Double,
+            val radiusZ: Double,
+            val yaw: Float,
+            val pitch: Float,
+        ) : DebugShape
+    }
+
+    @JvmStatic
+    fun debugShapes(context: Context, action: ResolvedMeleeAction): List<DebugShape> {
+        val hitbox = action.hitbox
+        val offsets = action.sweep?.sampleOffsets() ?: listOf(0.0)
+
+        return offsets.map { offset ->
+            val yaw = (context.yaw + offset).toFloat()
+            val pitch = context.pitch
+            val look = lookVector(yaw, pitch)
+            when (hitbox.type) {
+                MeleeHitboxType.CONE -> coneDebugShape(context, hitbox, yaw, pitch)
+
+                MeleeHitboxType.BOX -> {
+                    val halfLength = max(context.reach, 0.0) / 2.0
+                    val center = context.eyePos
+                        .add(localUpOffset(yaw, pitch, hitbox.yOffset))
+                        .add(look.scale(hitbox.zFrom + halfLength))
+                    DebugShape.Box(
+                        center, hitbox.width / 2, hitbox.height / 2, halfLength, yaw, pitch,
+                    )
+                }
+
+                MeleeHitboxType.CAPSULE -> {
+                    val origin = context.eyePos.add(localUpOffset(yaw, pitch, hitbox.yOffset))
+                    DebugShape.Segment(
+                        start = origin.add(look.scale(hitbox.zFrom)),
+                        end = origin.add(look.scale(hitbox.zFrom + max(context.reach, 0.0))),
+                        radius = max(hitbox.radius, 0.0),
+                    )
+                }
+            }
+        }
+    }
+
+    /**
+     * 圆锥的线框：把判定真正的边界 —— **角空间里的矩形**（`±Angle/2` × `±Pitch/2`，
+     * `Pitch >= 180` 时垂直方向放开）——采样后投到半径 `reach` 的球面上。
+     *
+     * 旧实现画的是"垂直于视线的平面圆环"，半径 `reach × sin(半角)`：俯仰时那个圆环会横在
+     * 视线前方，和真实判定体（贴着一层球面）完全不是一回事，看起来就是坏的。
+     */
+    private fun coneDebugShape(
+        context: Context,
+        hitbox: MeleeHitbox,
+        yaw: Float,
+        pitch: Float,
+    ): DebugShape.Cone {
+        val halfYaw = (hitbox.angle / 2).coerceIn(0.0, 90.0)
+        val verticalCapped = hitbox.pitch < 180.0
+        val halfPitch = if (verticalCapped) (hitbox.pitch / 2).coerceIn(0.0, 90.0) else 90.0
+
+        // 角空间边界：水平 ±halfYaw、垂直 ±halfPitch
+        val yawSteps = CONE_EDGE_SEGMENTS
+        val pitchSteps = CONE_EDGE_SEGMENTS
+        val outline = ArrayList<Vec3>((yawSteps + pitchSteps) * 2 + 4)
+
+        fun point(dYaw: Double, dPitch: Double): Vec3 {
+            // dPitch 用"向上为正"的直觉，转成 MC 的 pitch 要取负
+            val dir = lookVector(yaw + dYaw.toFloat(), pitch - dPitch.toFloat())
+            return context.eyePos.add(dir.scale(context.reach))
+        }
+
+        // 上边界（dPitch = +halfPitch）从左到右
+        for (i in 0..yawSteps) outline += point(-halfYaw + 2 * halfYaw * i / yawSteps, halfPitch)
+        // 右边界从上到下
+        for (i in 1..pitchSteps) outline += point(halfYaw, halfPitch - 2 * halfPitch * i / pitchSteps)
+        // 下边界从右到左
+        for (i in 1..yawSteps) outline += point(halfYaw - 2 * halfYaw * i / yawSteps, -halfPitch)
+        // 左边界从下到上（不闭合回起点，渲染侧按"首尾相接"处理）
+        for (i in 1..<pitchSteps) outline += point(-halfYaw, -halfPitch + 2 * halfPitch * i / pitchSteps)
+
+        // 母线：顶点 → 四个角 + 四条边中点，够看出锥形了
+        val spokes = listOf(
+            point(-halfYaw, halfPitch),
+            point(halfYaw, halfPitch),
+            point(halfYaw, -halfPitch),
+            point(-halfYaw, -halfPitch),
+            point(0.0, halfPitch),
+            point(0.0, -halfPitch),
+            point(-halfYaw, 0.0),
+            point(halfYaw, 0.0),
+        )
+
+        return DebugShape.Cone(context.eyePos, outline, spokes, verticalCapped)
+    }
+
+    /** 圆锥边界每一条边的采样段数（调试线框） */
+    const val CONE_EDGE_SEGMENTS: Int = 10
+
+    private const val EPSILON = 1.0E-8
+
+    /** 准星射线对目标 AABB 的容差（比判定体严格得多，擦边也算瞄准了就够） */
+    private const val CROSSHAIR_INFLATE = 0.1
+
+    /** 视线射线的收尾余量：起点外推 / 终点内收用 */
+    private const val LOS_EPSILON = 1.0E-4
+    private const val SEGMENT_SAMPLES = 8
+    private const val SUBDIVISION_SAMPLES = 8
+
+    /** 强行命中的距离容差：量的是"眼睛到目标碰撞箱最近点"，比触及距离再放宽一点 */
+    private const val FORCED_REACH_MARGIN = 1.0
+
+    /** 打头判定相对 `eyeHeight` 的下容差 */
+    const val HEADSHOT_MARGIN_BELOW = 0.25
+
+    /** 打头判定相对 `eyeHeight` 的上容差 */
+    const val HEADSHOT_MARGIN_ABOVE = 0.3
+
+    /** 打腿判定的身高比例 */
+    const val LEGSHOT_RATIO = 0.33
+
+    /** 默认动作（没配 `MeleeActions` 时） */
+    val DEFAULT_ACTION: MeleeAction = MeleeAction()
+}

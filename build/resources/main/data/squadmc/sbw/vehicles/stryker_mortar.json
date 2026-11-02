@@ -1,0 +1,457 @@
+{
+  "ID": "squadmc:stryker_mortar",
+  "MaxHealth": 150,
+  "MaxEnergy": 5000000,
+  "TurretPos": [
+    0.0052,
+    1.0613,
+    -2.0625
+  ],
+  "TurretTurnSpeed": [
+    5,
+    5
+  ],
+  "TurretPitchRange": [
+    45,
+    85
+  ],
+  "BarrelPos": [
+    -0.0067,
+    0.1465,
+    0.6626
+  ],
+  "TurretControllerIndex": 1,
+  "OBB": [
+    {
+      "Size": [
+        0.2265625,
+        0.6328125,
+        0.625
+      ],
+      "Position": [
+        1.35,
+        0.75,
+        2.525
+      ],
+      "Part": "WheelLeft"
+    },
+    {
+      "Size": [
+        0.2265625,
+        0.6328125,
+        0.625
+      ],
+      "Position": [
+        1.35,
+        0.75,
+        1.15
+      ],
+      "Part": "WheelLeft"
+    },
+    {
+      "Size": [
+        0.2265625,
+        0.6328125,
+        0.625
+      ],
+      "Position": [
+        1.35,
+        0.75,
+        -2.025
+      ],
+      "Part": "WheelLeft"
+    },
+    {
+      "Size": [
+        0.2265625,
+        0.6328125,
+        0.625
+      ],
+      "Position": [
+        1.35,
+        0.75,
+        -0.55
+      ],
+      "Part": "WheelLeft"
+    },
+    {
+      "Size": [
+        0.2265625,
+        0.6328125,
+        0.625
+      ],
+      "Position": [
+        -1.35,
+        0.75,
+        2.525
+      ],
+      "Part": "WheelRight"
+    },
+    {
+      "Size": [
+        0.2265625,
+        0.6328125,
+        0.625
+      ],
+      "Position": [
+        -1.35,
+        0.75,
+        1.15
+      ],
+      "Part": "WheelRight"
+    },
+    {
+      "Size": [
+        0.2265625,
+        0.6328125,
+        0.625
+      ],
+      "Position": [
+        -1.35,
+        0.75,
+        -2.025
+      ],
+      "Part": "WheelRight"
+    },
+    {
+      "Size": [
+        0.2265625,
+        0.6328125,
+        0.625
+      ],
+      "Position": [
+        -1.35,
+        0.75,
+        -0.55
+      ],
+      "Part": "WheelRight"
+    },
+    {
+      "Size": [
+        1.5,
+        0.625,
+        4.25
+      ],
+      "Position": [
+        0,
+        1.15,
+        0.2
+      ],
+      "Part": "Body"
+    },
+    {
+      "Size": [
+        1.5,
+        0.425,
+        4.25
+      ],
+      "Position": [
+        0,
+        2.2,
+        0.2
+      ],
+      "Part": "Body"
+    }
+  ],
+  "Seats": [
+    {
+      "IsEnclosed": true,
+      "Transform": "Vehicle",
+      "BanHand": true,
+      "Position": [
+        0.5,
+        0.5625,
+        2.1875
+      ],
+      "CameraPos": {
+        "UseFixedCameraPos": true,
+        "Transform": "Vehicle",
+        "Position": [
+          0.5,
+          2.8,
+          2.6
+        ]
+      },
+      "MinYaw": -45,
+      "MaxYaw": 45,
+      "MinPitch": -10,
+      "MaxPitch": 10
+    },
+    {
+      "IsEnclosed": true,
+      "BanHand": true,
+      "Weapons": [
+        "Mortar"
+      ],
+      "Transform": "Vehicle",
+      "Position": [
+        -0.45,
+        1.5,
+        1.55
+      ],
+      "CanRotateHead": true,
+      "Sensitivity": [0.2, 0.3, 0.3],
+      "CameraPos": {
+        "Transform": "Barrel",
+        "UseFixedCameraPos": true,
+        "Position": [
+          0.0,
+          0.8,
+          1.0
+        ],
+        "Direction": "Barrel"
+      },
+      "MinPitch": 45,
+      "MaxPitch": 85,
+      "MinYaw": -180,
+      "MaxYaw": 180
+    },
+    {
+      "Orientation": 90.0,
+      "IsEnclosed": true,
+      "Transform": "Vehicle",
+      "BanHand": true,
+      "Position": [
+        0.75,
+        0.9,
+        -0.6
+      ],
+      "CameraPos": {},
+      "MinPitch": -60,
+      "MaxPitch": 60,
+      "MinYaw": -95,
+      "MaxYaw": 95
+    },
+    {
+      "IsEnclosed": true,
+      "Transform": "Vehicle",
+      "BanHand": true,
+      "Position": [
+        0,
+        0.3,
+        -0.9
+      ],
+      "CameraPos": {},
+      "MinPitch": -60,
+      "MaxPitch": 60,
+      "MinYaw": -95,
+      "MaxYaw": 95
+    },
+    {
+      "IsEnclosed": true,
+      "Transform": "Vehicle",
+      "BanHand": true,
+      "Position": [
+        -0.5,
+        0.3,
+        -0.9
+      ],
+      "CameraPos": {},
+      "MinPitch": -60,
+      "MaxPitch": 60,
+      "MinYaw": -95,
+      "MaxYaw": 95
+    },
+    {
+      "IsEnclosed": true,
+      "Transform": "Vehicle",
+      "BanHand": true,
+      "Position": [
+        0.75,
+        0.75,
+        -2.1
+      ],
+      "CameraPos": {},
+      "Orientation": 90,
+      "MinPitch": -60,
+      "MaxPitch": 60,
+      "MinYaw": -85,
+      "MaxYaw": 85
+    },
+    {
+      "IsEnclosed": true,
+      "Transform": "Vehicle",
+      "BanHand": true,
+      "Position": [
+        -0.75,
+        0.75,
+        -2.1
+      ],
+      "CameraPos": {},
+      "Orientation": -90,
+      "MinPitch": -60,
+      "MaxPitch": 60,
+      "MinYaw": -85,
+      "MaxYaw": 85
+    },
+    {
+      "IsEnclosed": true,
+      "Transform": "Vehicle",
+      "BanHand": true,
+      "Position": [
+        0,
+        0.5,
+        -3.25
+      ],
+      "CameraPos": {},
+      "MinPitch": -60,
+      "MaxPitch": 60,
+      "MinYaw": -85,
+      "MaxYaw": 85
+    }
+  ],
+  "EngineType": "Wheel",
+  "EngineSound": "squadmc:empty",
+  "EngineInfo": {
+    "Buoyancy": 0,
+    "EnergyCostRate": 96,
+    "WheelRotSpeed": 1.25,
+    "WheelDifferential": 0.5,
+    "MaxForwardSpeedRate": 1.02375,
+    "MaxBackwardSpeedRate": 0.33,
+    "Increment": 0.025,
+    "Decrement": 0.02,
+    "SteeringSpeed": 0.1,
+    "EngineSoundVolume": 1.0
+  },
+  "UpStep": 2.2,
+  "Mass": 10,
+  "RotateOffsetHeight": 2.2,
+  "DamageModifiers": [
+    "minecraft:lava - -11",
+    "minecraft:lava * 10",
+    "All * 0.2",
+    "minecraft:arrow * 1.5",
+    "minecraft:trident * 1.5",
+    "minecraft:mob_attack * 2.5",
+    "minecraft:mob_attack_no_aggro * 2",
+    "minecraft:mob_projectile * 1.5",
+    "minecraft:explosion * 6",
+    "minecraft:player_explosion * 6",
+    "superbwarfare:custom_explosion * 2.0",
+    "superbwarfare:projectile_explosion * 2",
+    "superbwarfare:mine * 0.75",
+    "superbwarfare:projectile_hit * 1.25",
+    "superbwarfare:grapeshot_hit * 0.3",
+    "superbwarfare:laser * 1.25",
+    "@#superbwarfare:aerial_bomb * 3",
+    "#superbwarfare:projectile * 0.25",
+    "#superbwarfare:projectile_absolute * 0.85",
+    "superbwarfare:vehicle_strike * 4",
+    "@superbwarfare:mortar_shell * 1.25",
+    "@superbwarfare:gun_grenade * 1.5",
+    "@superbwarfare:javelin_missile * 0.8",
+    "@superbwarfare:igla_9k38_missile * 0.75",
+    "@superbwarfare:wire_guide_missile * 1",
+    "All - 11"
+  ],
+  "VehicleContainerType": "Medium",
+  "DestroyInfo": {
+    "ExplosionDamage": 120,
+    "ExplosionRadius": 7
+  },
+  "Weapons": {
+    "Empty": {
+      "Name": "",
+      "Crosshair": "@Empty",
+      "RPM": 0,
+      "Magazine": 0,
+      "Damage": 0
+    },
+    "Mortar": {
+      "AmmoType": "superbwarfare:small_rocket",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/small_rocket.png",
+      "DefaultZoom": 2,
+      "DefaultFireMode": "Auto",
+      "AvailableFireModes": "Auto",
+      "Magazine": 1,
+      "EmptyReloadTime": 60,
+      "Projectile": "superbwarfare:mortar_shell",
+      "ProjectileLife": 1200,
+      "Spread": 1.5,
+      "Name": "weapon.squadmc.stryker_mortar",
+      "RPM": 120,
+      "Damage": 60,
+      "ExplosionDamage": 100,
+      "ExplosionRadius": 12,
+      "Gravity": 0.1,
+      "Velocity": 8,
+      "SoundInfo": {
+        "Fire1P": "squadmc:mortar_fire_1p",
+        "Fire3P": "squadmc:mortar_fire_1p",
+        "Fire3PFar": "squadmc:mortar_fire_3p_far",
+        "Fire3PVeryFar": "squadmc:mortar_fire_3p_far_very"
+      },
+      "ShootPos": {
+        "Transform": "Barrel",
+        "Positions": [
+          [
+            0.0,
+            0.8,
+            0.5
+          ]
+        ],
+        "Directions": [
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "Crosshair": "@Empty",
+      "SoundRadius": 250
+    }
+  },
+  "ThirdPersonCameraPos": [
+    0,
+    1,
+    5
+  ],
+  "ContainerIcon": "fcp:textures/gui/vehicle/type/land_us.png",
+  "Type": "APC",
+  "CollisionLevel": {
+    "Level": 3,
+    "PowerLimits": [
+      [
+        0,
+        0,
+        true
+      ],
+      [
+        0,
+        0,
+        true
+      ],
+      [
+        0.15,
+        0.09,
+        false
+      ]
+    ]
+  },
+  "HudType": "@Empty",
+  "TerrainCompat": [
+    [
+      1.156,
+      0,
+      1.594
+    ],
+    [
+      -1.156,
+      0,
+      1.594
+    ],
+    [
+      1.156,
+      0,
+      -1.594
+    ],
+    [
+      -1.156,
+      0,
+      -1.594
+    ]
+  ],
+  "InertiaRotateRate": 1.8
+}

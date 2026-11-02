@@ -1,0 +1,44 @@
+{
+  "Spread": 2,
+  "RecoilX": 0.0001,
+  "RecoilY": 0.002,
+  "MaxEnergy": 24000,
+  "Damage": 5,
+  "Velocity": 3,
+  "Magazine": 1,
+  "Weight": 1,
+  "DrawTime": 7,
+  "ZoomTime": 3,
+  "RPM": 60,
+  "Headshot": 0,
+  "EmptyReloadTime": 58,
+  "GunType": "Handgun",
+  "Projectile": "superbwarfare:taser_bullet",
+  "AmmoType": {
+    "Ammo": [
+      "superbwarfare:taser_electrode",
+      "400 fe"
+    ]
+  },
+  "Icon": "superbwarfare:textures/gun_icon/taser_icon.png",
+  "AvailablePerks": [
+    "superbwarfare:striving_for_perfection",
+    "superbwarfare:longer_wire",
+    "superbwarfare:regeneration",
+    "superbwarfare:powerful_attraction",
+    "superbwarfare:intelligent_chip",
+    "superbwarfare:volt_overload",
+    "superbwarfare:quickdraw",
+    "superbwarfare:adrenaline_rush"
+  ],
+  "AvailableAttachments": {
+    "Charm": [
+      "#superbwarfare:attachment/charm"
+    ]
+  },
+  "SoundRadius": 4,
+  "SoundInfo": {
+    "Fire1P": "superbwarfare:taser_fire_1p",
+    "Fire3P": "superbwarfare:taser_fire_3p"
+  }
+}

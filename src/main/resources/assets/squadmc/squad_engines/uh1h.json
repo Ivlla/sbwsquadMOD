@@ -1,0 +1,87 @@
+{
+ "_comment": "Generated from the Squad SDK: UH1H_engine_rpm_rotors_Cue.uasset (+ start/stop cues).",
+ "vehicles": [
+  "squadmc:huey",
+  "squadmc:huey_m60_door_guns",
+  "squadmc:huey_m60_gunship",
+  "squadmc:huey_m134_door_guns",
+  "squadmc:huey_m134_gunship",
+  "squadmc:huey_rockets",
+  "squadmc:huey_door_gunner_m60",
+  "squadmc:huey_door_gunner_m134"
+ ],
+ "mode": "helicopter",
+ "rotor_pitch": [
+  0.85,
+  1.0
+ ],
+ "rpm": {
+  "max": 1500,
+  "load": 500,
+  "rise": 75,
+  "fall": 50
+ },
+ "exterior_volume": 0.4348,
+ "interior_volume": 0.5,
+ "start": {
+  "exterior": {
+   "sound": "squadmc:squad.uh1h.engine.uh1_engine_rotors_start_close_01",
+   "volume": 3,
+   "duration": 20.76
+  },
+  "interior": {
+   "sound": "squadmc:squad.uh1h.engine.uh1_engine_rotors_start_int_01",
+   "volume": 2,
+   "duration": 20.0
+  }
+ },
+ "stop": {
+  "exterior": {
+   "sound": "squadmc:squad.uh1h.engine.uh1_engine_rotors_stop_close_01",
+   "volume": 3,
+   "duration": 16.19
+  },
+  "interior": {
+   "sound": "squadmc:squad.uh1h.engine.uh1_engine_rotors_stop_int_01",
+   "volume": 2,
+   "duration": 20.26
+  }
+ },
+ "layers": [
+  {
+   "sound": "squadmc:squad.uh1h.engine.uh1_engine_rotors_idle_int_01",
+   "interior": true,
+   "gain": 2
+  },
+  {
+   "sound": "squadmc:squad.uh1h.engine.uh1_engine_rotors_idle_close_01",
+   "gain": 2,
+   "distance_fade": [
+    0,
+    0,
+    110,
+    160
+   ]
+  },
+  {
+   "sound": "squadmc:squad.uh1h.engine.uh1_engine_rotors_idle_mid_01",
+   "gain": 2.3,
+   "distance_fade": [
+    100,
+    130,
+    300,
+    400
+   ]
+  },
+  {
+   "sound": "squadmc:squad.uh1h.engine.uh1_engine_rotors_idle_far_01",
+   "gain": 1.5,
+   "distance_fade": [
+    250,
+    280,
+    600,
+    9000
+   ]
+  }
+ ]
+}

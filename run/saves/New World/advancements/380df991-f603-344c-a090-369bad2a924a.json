@@ -1,0 +1,39 @@
+{
+  "superbwarfare:main/physics_excalibur": {
+    "criteria": {
+      "0": "2026-06-30 23:28:10 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2026-06-30 23:27:49 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2026-06-30 23:28:45 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:plains": "2026-06-30 23:27:50 +0300"
+    },
+    "done": false
+  },
+  "superbwarfare:main/root": {
+    "criteria": {
+      "0": "2026-06-30 23:27:49 +0300"
+    },
+    "done": true
+  },
+  "superbwarfare:main/super_container": {
+    "criteria": {
+      "0": "2026-06-30 23:27:56 +0300"
+    },
+    "done": true
+  },
+  "DataVersion": 3465
+}

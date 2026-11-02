@@ -1,0 +1,74 @@
+{
+  "DefaultZoom": 1.5,
+  "Spread": 3,
+  "Headshot": 2.5,
+  "Damage": 48,
+  "Weight": 3,
+  "DrawTime": 10,
+  "ZoomTime": 10,
+  "BypassesArmor": 0.25,
+  "Velocity": 24,
+  "RPM": 200,
+  "DefaultFireMode": "Charge",
+  "AvailableFireModes": [
+    {
+      "Mode": "Charge",
+      "Name": "HoldManual",
+      "Charge": {
+        "Duration": 10,
+        "Trigger": "OnRelease",
+        "PowerMode": "Current",
+        "MinPower": 0.5
+      }
+    }
+  ],
+  "ActionSteps": [
+    {
+      "Timeline": "RELOAD_EMPTY",
+      "Progress": 0.85,
+      "Action": "CLOSE_STRIKE",
+      "Value": false
+    }
+  ],
+  "Magazine": 1,
+  "BoltActionTime": 1,
+  "EmptyReloadTime": 8,
+  "AutoReload": true,
+  "GunType": "Special",
+  "DamageReduce": {
+    "Rate": 0.007,
+    "MinDistance": 50
+  },
+  "AmmoType": "minecraft:arrow",
+  "Icon": "superbwarfare:textures/gun_icon/bocek_icon.png",
+  "AvailablePerks": [
+    "superbwarfare:striving_for_perfection",
+    "@Ammo",
+    "superbwarfare:field_doctor",
+    "superbwarfare:intelligent_chip",
+    "superbwarfare:monster_hunter",
+    "superbwarfare:cupid_arrow",
+    "superbwarfare:brain_storm",
+    "superbwarfare:battle_of_wits",
+    "!superbwarfare:micro_missile",
+    "!superbwarfare:cluster_bomb",
+    "superbwarfare:quickdraw",
+    "superbwarfare:adrenaline_rush",
+    "superbwarfare:snapshot_sights",
+    "superbwarfare:triple_tap",
+    "superbwarfare:soul_reaver",
+    "superbwarfare:steady_resolve"
+  ],
+  "SoundInfo": {
+    "Fire1P": "superbwarfare:bocek_zoom_fire_1p",
+    "Fire3P": "superbwarfare:bocek_zoom_fire_3p",
+    "Fire1PShatter": "superbwarfare:bocek_shatter_cap_fire_1p",
+    "Fire3PShatter": "superbwarfare:bocek_shatter_cap_fire_3p"
+  },
+  "SoundRadius": 2,
+  "AvailableAttachments": {
+    "Charm": [
+      "#superbwarfare:attachment/charm"
+    ]
+  }
+}

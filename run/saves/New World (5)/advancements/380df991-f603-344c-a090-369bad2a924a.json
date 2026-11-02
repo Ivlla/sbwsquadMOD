@@ -1,0 +1,254 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2026-07-03 00:39:57 +0300"
+    },
+    "done": true
+  },
+  "superbwarfare:main/root": {
+    "criteria": {
+      "0": "2026-07-03 00:39:57 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:plains": "2026-07-03 00:39:58 +0300"
+    },
+    "done": false
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "minecraft:skeleton": "2026-07-03 18:21:29 +0300",
+      "minecraft:spider": "2026-07-03 18:58:11 +0300",
+      "minecraft:creeper": "2026-07-03 18:21:47 +0300",
+      "minecraft:slime": "2026-07-03 00:57:08 +0300",
+      "minecraft:enderman": "2026-07-03 19:20:17 +0300",
+      "minecraft:zombie": "2026-07-03 18:21:32 +0300"
+    },
+    "done": false
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2026-07-03 00:57:08 +0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "minecraft:slime": "2026-07-03 00:57:08 +0300"
+    },
+    "done": true
+  },
+  "superbwarfare:main/super_container": {
+    "criteria": {
+      "0": "2026-07-03 00:57:57 +0300"
+    },
+    "done": true
+  },
+  "superbwarfare:main/physics_excalibur": {
+    "criteria": {
+      "0": "2026-07-03 00:58:01 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/lead": {
+    "criteria": {
+      "has_slime_ball": "2026-07-03 16:21:34 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/sticky_piston": {
+    "criteria": {
+      "has_slime_ball": "2026-07-03 16:21:34 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/slime_block": {
+    "criteria": {
+      "has_slime_ball": "2026-07-03 16:21:34 +0300"
+    },
+    "done": true
+  },
+  "superbwarfare:recipes/misc/vehicle_damage_analyzer": {
+    "criteria": {
+      "has_observer": "2026-07-03 22:33:40 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/redstone_torch": {
+    "criteria": {
+      "has_redstone": "2026-07-03 22:33:41 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/clock": {
+    "criteria": {
+      "has_redstone": "2026-07-03 22:33:41 +0300"
+    },
+    "done": true
+  },
+  "superbwarfare:recipes/misc/battery": {
+    "criteria": {
+      "has_redstone": "2026-07-03 22:33:41 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/note_block": {
+    "criteria": {
+      "has_redstone": "2026-07-03 22:33:41 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/target": {
+    "criteria": {
+      "has_redstone": "2026-07-03 22:33:41 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/compass": {
+    "criteria": {
+      "has_redstone": "2026-07-03 22:33:41 +0300"
+    },
+    "done": true
+  },
+  "superbwarfare:recipes/misc/laser_unit": {
+    "criteria": {
+      "has_redstone": "2026-07-03 22:33:41 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/dropper": {
+    "criteria": {
+      "has_redstone": "2026-07-03 22:33:41 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/redstone_block": {
+    "criteria": {
+      "has_redstone": "2026-07-03 22:33:41 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/piston": {
+    "criteria": {
+      "has_redstone": "2026-07-03 22:33:41 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/clay": {
+    "criteria": {
+      "has_clay_ball": "2026-07-04 01:47:56 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/brick": {
+    "criteria": {
+      "has_clay_ball": "2026-07-04 01:47:56 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/terracotta": {
+    "criteria": {
+      "has_clay_block": "2026-07-04 20:56:05 +0300"
+    },
+    "done": true
+  },
+  "superbwarfare:recipes/misc/high_energy_explosives": {
+    "criteria": {
+      "has_gunpowder": "2026-07-04 21:08:17 +0300"
+    },
+    "done": true
+  },
+  "superbwarfare:recipes/misc/gs_head": {
+    "criteria": {
+      "has_gunpowder": "2026-07-04 21:08:17 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/firework_rocket_simple": {
+    "criteria": {
+      "has_gunpowder": "2026-07-04 21:08:17 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/tnt": {
+    "criteria": {
+      "has_gunpowder": "2026-07-04 21:08:17 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/bow": {
+    "criteria": {
+      "has_string": "2026-07-04 21:08:18 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/tools/fishing_rod": {
+    "criteria": {
+      "has_string": "2026-07-04 21:08:18 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2026-07-04 21:08:18 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/tripwire_hook": {
+    "criteria": {
+      "has_string": "2026-07-04 21:08:18 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/bone_meal": {
+    "criteria": {
+      "has_bone": "2026-07-04 21:08:18 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/candle": {
+    "criteria": {
+      "has_string": "2026-07-04 21:08:18 +0300"
+    },
+    "done": true
+  },
+  "superbwarfare:recipes/misc/armor_plate": {
+    "criteria": {
+      "has_string": "2026-07-04 21:08:18 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/fermented_spider_eye": {
+    "criteria": {
+      "has_spider_eye": "2026-07-04 21:08:18 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/white_wool_from_string": {
+    "criteria": {
+      "has_string": "2026-07-04 21:08:18 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/crossbow": {
+    "criteria": {
+      "has_string": "2026-07-04 21:08:18 +0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/loom": {
+    "criteria": {
+      "has_string": "2026-07-04 21:08:18 +0300"
+    },
+    "done": true
+  },
+  "superbwarfare:recipes/combat/ptkm_1r": {
+    "criteria": {
+      "has_ap_5_inches": "2026-07-04 21:08:45 +0300"
+    },
+    "done": true
+  },
+  "DataVersion": 3465
+}

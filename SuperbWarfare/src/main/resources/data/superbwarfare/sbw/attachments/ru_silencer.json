@@ -1,0 +1,27 @@
+{
+  "Slot": "Muzzle",
+  "Level": 0,
+  "Modifiers": [
+    {
+      "Prop": "Velocity",
+      "Op": "Add",
+      "Value": 1.5
+    },
+    {
+      "Prop": "Spread",
+      "Op": "Mul",
+      "Value": 0.95
+    },
+    {
+      "Prop": "Weight",
+      "Op": "Add",
+      "Value": 0.2
+    }
+  ],
+  "Bone": "muzzle_pos",
+  "IsSilenced": true,
+  "SoundRadiusMultiplier": 0.6,
+  "MuzzleFlashScale": 0.35,
+  "Model": "superbwarfare:models/bedrock/attachment/ru_silencer.geo.json",
+  "Texture": "superbwarfare:textures/bedrock/attachment/ru_silencer.png"
+}

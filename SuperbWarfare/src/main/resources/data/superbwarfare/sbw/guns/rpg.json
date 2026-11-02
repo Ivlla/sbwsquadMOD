@@ -1,0 +1,111 @@
+{
+  "Spread": 5,
+  "RecoilX": 0.008,
+  "RecoilY": 0.018,
+  "Damage": 300,
+  "Projectile": "superbwarfare:rpg_rocket_tbg",
+  "ExplosionDamage": 150,
+  "ExplosionRadius": 11,
+  "ZoomReload": false,
+  "Headshot": 0,
+  "Velocity": 4,
+  "Magazine": 1,
+  "Weight": 7,
+  "RPM": 120,
+  "MeleeDamage": 5,
+  "MeleeDuration": 16,
+  "MeleeComboReset": 15,
+  "MeleeHitbox": {
+    "Type": "Box",
+    "Range": 2.0,
+    "Width": 1.8,
+    "Height": 1.8,
+    "YOffset": -0.2,
+    "Occlusion": true
+  },
+  "MeleeSweep": {
+    "From": 0,
+    "To": 0
+  },
+  "MeleeActions": [
+    {
+      "Animation": "hit",
+      "Duration": 24,
+      "HitTime": 10,
+      "RangeMultiplier": 1.3,
+      "MaxTargets": 1,
+      "Knockback": 0.4,
+      "Cooldown": 40,
+      "Effects": [
+        {
+          "Effect": "superbwarfare:warhead_stab",
+          "Chance": 0.35,
+          "Cooldown": 200
+        }
+      ]
+    }
+  ],
+  "DrawTime": 14,
+  "ZoomTime": 9,
+  "EmptyReloadTime": 98,
+  "BoltActionTime": 2,
+  "ProjectileBone": [
+    "ammoType0",
+    "ammoType0_dummy"
+  ],
+  "ActionSteps": [
+    {
+      "Timeline": "RELOAD_EMPTY",
+      "Progress": 0.05,
+      "Action": "CLOSE_STRIKE",
+      "Value": false
+    }
+  ],
+  "Gravity": 0.03,
+  "ProjectileLife": 100,
+  "GunType": "DirectLauncher",
+  "AmmoType": [
+    "superbwarfare:rpg_rocket_tbg",
+    {
+      "Ammo": "superbwarfare:rpg_rocket_standard",
+      "ProjectileBone": [
+        "ammoType1",
+        "ammoType1_dummy"
+      ],
+      "Projectile": "superbwarfare:rpg_rocket_standard",
+      "Override": {
+        "Damage": 450,
+        "ExplosionDamage": 40,
+        "ExplosionRadius": 5,
+        "Velocity": 6,
+        "Gravity": 0.015,
+        "Icon": "superbwarfare:textures/gun_icon/rpg_standard_icon.png"
+      }
+    }
+  ],
+  "Icon": "superbwarfare:textures/gun_icon/rpg_tbg_icon.png",
+  "AvailablePerks": [
+    "superbwarfare:striving_for_perfection",
+    "superbwarfare:cluster_bomb",
+    "superbwarfare:powerful_attraction",
+    "superbwarfare:intelligent_chip",
+    "superbwarfare:monster_hunter",
+    "superbwarfare:vorpal_weapon",
+    "superbwarfare:micro_missile",
+    "superbwarfare:battle_of_wits",
+    "superbwarfare:quickdraw",
+    "superbwarfare:adrenaline_rush"
+  ],
+  "AvailableAttachments": {
+    "Charm": [
+      "#superbwarfare:attachment/charm"
+    ]
+  },
+  "SoundRadius": 12,
+  "SoundInfo": {
+    "Fire1P": "superbwarfare:rpg_fire_1p",
+    "Fire3P": "superbwarfare:rpg_fire_3p",
+    "Fire3PFar": "superbwarfare:rpg_far",
+    "Fire3PVeryFar": "superbwarfare:rpg_veryfar"
+  }
+}

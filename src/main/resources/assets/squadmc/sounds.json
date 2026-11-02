@@ -1,0 +1,855 @@
+{
+  "btr82_cannon_fire": {
+    "category": "player",
+    "subtitle": "subtitles.squadmc.btr82_cannon_fire",
+    "sounds": [
+      { "name": "squadmc:btr82sounds/1p/btr82_fire1", "stream": false },
+      { "name": "squadmc:btr82sounds/1p/btr82_fire2", "stream": false },
+      { "name": "squadmc:btr82sounds/1p/btr82_fire3", "stream": false },
+      { "name": "squadmc:btr82sounds/1p/btr82_fire4", "stream": false },
+      { "name": "squadmc:btr82sounds/1p/btr82_fire5", "stream": false },
+      { "name": "squadmc:btr82sounds/1p/btr82_fire6", "stream": false },
+      { "name": "squadmc:btr82sounds/1p/btr82_fire7", "stream": false },
+      { "name": "squadmc:btr82sounds/1p/btr82_fire8", "stream": false },
+      { "name": "squadmc:btr82sounds/1p/btr82_fire9", "stream": false },
+      { "name": "squadmc:btr82sounds/1p/btr82_fire10", "stream": false },
+      { "name": "squadmc:btr82sounds/1p/btr82_fire11", "stream": false }
+    ]
+  },
+  "btr82_cannon_fire_3p": {
+    "category": "player",
+    "subtitle": "subtitles.squadmc.btr82_cannon_fire_3p",
+    "sounds": [
+      { "name": "squadmc:btr82sounds/3p/btr82_fire1_3p", "stream": false },
+      { "name": "squadmc:btr82sounds/3p/btr82_fire2_3p", "stream": false },
+      { "name": "squadmc:btr82sounds/3p/btr82_fire3_3p", "stream": false },
+      { "name": "squadmc:btr82sounds/3p/btr82_fire4_3p", "stream": false },
+      { "name": "squadmc:btr82sounds/3p/btr82_fire5_3p", "stream": false },
+      { "name": "squadmc:btr82sounds/3p/btr82_fire6_3p", "stream": false },
+      { "name": "squadmc:btr82sounds/3p/btr82_fire7_3p", "stream": false }
+    ]
+  },
+  "btr82_cannon_fire_3p_far": {
+    "category": "player",
+    "subtitle": "subtitles.squadmc.btr82_cannon_fire_3p_far",
+    "sounds": [
+      { "name": "squadmc:btr82sounds/3p_far/btr82_fire1_3p_far", "stream": false },
+      { "name": "squadmc:btr82sounds/3p_far/btr82_fire2_3p_far", "stream": false },
+      { "name": "squadmc:btr82sounds/3p_far/btr82_fire3_3p_far", "stream": false },
+      { "name": "squadmc:btr82sounds/3p_far/btr82_fire4_3p_far", "stream": false },
+      { "name": "squadmc:btr82sounds/3p_far/btr82_fire5_3p_far", "stream": false },
+      { "name": "squadmc:btr82sounds/3p_far/btr82_fire6_3p_far", "stream": false },
+      { "name": "squadmc:btr82sounds/3p_far/btr82_fire7_3p_far", "stream": false },
+      { "name": "squadmc:btr82sounds/3p_far/btr82_fire8_3p_far", "stream": false },
+      { "name": "squadmc:btr82sounds/3p_far/btr82_fire9_3p_far", "stream": false },
+      { "name": "squadmc:btr82sounds/3p_far/btr82_fire10_3p_far", "stream": false },
+      { "name": "squadmc:btr82sounds/3p_far/btr82_fire11_3p_far", "stream": false },
+      { "name": "squadmc:btr82sounds/3p_far/btr82_fire12_3p_far", "stream": false }
+    ]
+  },
+  "btr82_cannon_fire_3p_far_very": {
+    "category": "player",
+    "subtitle": "subtitles.squadmc.btr82_cannon_fire_3p_far_very",
+    "sounds": [
+      { "name": "squadmc:btr82sounds/3p_veryfar/btr82_fire1_3p_far_very", "stream": false },
+      { "name": "squadmc:btr82sounds/3p_veryfar/btr82_fire2_3p_far_very", "stream": false },
+      { "name": "squadmc:btr82sounds/3p_veryfar/btr82_fire3_3p_far_very", "stream": false },
+      { "name": "squadmc:btr82sounds/3p_veryfar/btr82_fire4_3p_far_very", "stream": false },
+      { "name": "squadmc:btr82sounds/3p_veryfar/btr82_fire5_3p_far_very", "stream": false },
+      { "name": "squadmc:btr82sounds/3p_veryfar/btr82_fire6_3p_far_very", "stream": false },
+      { "name": "squadmc:btr82sounds/3p_veryfar/btr82_fire7_3p_far_very", "stream": false },
+      { "name": "squadmc:btr82sounds/3p_veryfar/btr82_fire8_3p_far_very", "stream": false }
+    ]
+  },
+
+  "pkt_coax": {
+    "category": "player",
+    "subtitle": "subtitles.squadmc.pkt_coax",
+    "sounds": [
+      { "name": "squadmc:pktsounds/pkt_veh_fire_int_01", "stream": false },
+      { "name": "squadmc:pktsounds/pkt_veh_fire_int_02", "stream": false },
+      { "name": "squadmc:pktsounds/pkt_veh_fire_int_03", "stream": false },
+      { "name": "squadmc:pktsounds/pkt_veh_fire_int_04", "stream": false },
+      { "name": "squadmc:pktsounds/pkt_veh_fire_int_05", "stream": false },
+      { "name": "squadmc:pktsounds/pkt_veh_fire_int_06", "stream": false },
+      { "name": "squadmc:pktsounds/pkt_veh_fire_int_07", "stream": false },
+      { "name": "squadmc:pktsounds/pkt_veh_fire_int_08", "stream": false },
+      { "name": "squadmc:pktsounds/pkt_veh_fire_int_09", "stream": false },
+      { "name": "squadmc:pktsounds/pkt_veh_fire_int_10", "stream": false },
+      { "name": "squadmc:pktsounds/pkt_veh_fire_int_11", "stream": false },
+      { "name": "squadmc:pktsounds/pkt_veh_fire_int_12", "stream": false },
+      { "name": "squadmc:pktsounds/pkt_veh_fire_int_13", "stream": false },
+      { "name": "squadmc:pktsounds/pkt_veh_fire_int_14", "stream": false },
+      { "name": "squadmc:pktsounds/pkt_veh_fire_int_15", "stream": false },
+      { "name": "squadmc:pktsounds/pkt_veh_fire_int_16", "stream": false },
+      { "name": "squadmc:pktsounds/pkt_veh_fire_int_17", "stream": false },
+      { "name": "squadmc:pktsounds/pkt_veh_fire_int_18", "stream": false }
+    ]
+  },
+  "bmp2_cannon_fire_3p": {
+    "category": "player",
+    "subtitle": "subtitles.squadmc.bmp2_cannon_fire_3p",
+    "sounds": [
+      { "name": "squadmc:bmp2sounds/3p/bmp2_fire1_3p", "stream": false },
+      { "name": "squadmc:bmp2sounds/3p/bmp2_fire2_3p", "stream": false },
+      { "name": "squadmc:bmp2sounds/3p/bmp2_fire3_3p", "stream": false },
+      { "name": "squadmc:bmp2sounds/3p/bmp2_fire4_3p", "stream": false },
+      { "name": "squadmc:bmp2sounds/3p/bmp2_fire5_3p", "stream": false },
+      { "name": "squadmc:bmp2sounds/3p/bmp2_fire6_3p", "stream": false },
+      { "name": "squadmc:bmp2sounds/3p/bmp2_fire7_3p", "stream": false },
+      { "name": "squadmc:bmp2sounds/3p/bmp2_fire8_3p", "stream": false }
+    ]
+  },
+  "bmp2_cannon_fire_3p_far": {
+    "category": "player",
+    "subtitle": "subtitles.squadmc.bmp2_cannon_fire_3p_far",
+    "sounds": [
+      { "name": "squadmc:bmp2sounds/3p_far/bmp2_fire1_3p_far", "stream": false },
+      { "name": "squadmc:bmp2sounds/3p_far/bmp2_fire2_3p_far", "stream": false },
+      { "name": "squadmc:bmp2sounds/3p_far/bmp2_fire3_3p_far", "stream": false },
+      { "name": "squadmc:bmp2sounds/3p_far/bmp2_fire4_3p_far", "stream": false },
+      { "name": "squadmc:bmp2sounds/3p_far/bmp2_fire5_3p_far", "stream": false }
+    ]
+  },
+
+  "btr82_engine_idle_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:btr82sounds/engine/idle_1p", "stream": false }]
+  },
+  "btr82_engine_idle_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:btr82sounds/engine/idle_3p", "stream": false, "attenuation_distance": 40 }]
+  },
+  "btr82_engine_running_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:btr82sounds/engine/running_1p", "stream": false }]
+  },
+  "btr82_engine_running_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:btr82sounds/engine/running_3p", "stream": false, "attenuation_distance": 80 }]
+  },
+
+  "bmp2_engine_idle_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bmp2sounds/engine/bmp2_engine_idle_1p", "stream": false }]
+  },
+  "bmp2_engine_idle_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bmp2sounds/engine/bmp2_engine_idle_3p", "stream": false, "attenuation_distance": 40 }]
+  },
+  "bmp2_engine_running_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bmp2sounds/engine/bmp2_engine_running_1p", "stream": false }]
+  },
+  "bmp2_engine_running_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bmp2sounds/engine/bmp2_engine_running_3p", "stream": false, "attenuation_distance": 80 }]
+  },
+
+  "empty": {
+    "category": "neutral",
+    "sounds": []
+  },
+
+  "btr82_smoke_launch": {
+    "category": "neutral",
+    "subtitle": "subtitles.squadmc.btr82_smoke_launch",
+    "sounds": [
+      { "name": "squadmc:btr82sounds/smoke/smoke_launch_01", "stream": false },
+      { "name": "squadmc:btr82sounds/smoke/smoke_launch_02", "stream": false },
+      { "name": "squadmc:btr82sounds/smoke/smoke_launch_03", "stream": false },
+      { "name": "squadmc:btr82sounds/smoke/smoke_launch_04", "stream": false },
+      { "name": "squadmc:btr82sounds/smoke/smoke_launch_05", "stream": false },
+      { "name": "squadmc:btr82sounds/smoke/smoke_launch_06", "stream": false }
+    ]
+  },
+  "btr82_smoke_explode": {
+    "category": "neutral",
+    "subtitle": "subtitles.squadmc.btr82_smoke_explode",
+    "sounds": [
+      { "name": "squadmc:btr82sounds/smoke/smoke_explode", "stream": false }
+    ]
+  },
+
+  "btr80_kpvt_1p": {
+    "category": "neutral",
+    "subtitle": "subtitles.squadmc.btr80_kpvt",
+    "sounds": [
+      { "name": "squadmc:btr80sounds/kpvt/1p/kpvt_fire_1p_initial_01", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/1p/kpvt_fire_1p_initial_02", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/1p/kpvt_fire_1p_initial_03", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/1p/kpvt_fire_1p_initial_04", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/1p/kpvt_fire_1p_initial_05", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/1p/kpvt_fire_1p_initial_06", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/1p/kpvt_fire_1p_initial_07", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/1p/kpvt_fire_1p_initial_08", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/1p/kpvt_fire_1p_initial_09", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/1p/kpvt_fire_1p_initial_10", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/1p/kpvt_fire_1p_initial_11", "stream": false }
+    ]
+  },
+  "btr80_kpvt_3p": {
+    "category": "neutral",
+    "subtitle": "subtitles.squadmc.btr80_kpvt",
+    "sounds": [
+      { "name": "squadmc:btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_01", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_02", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_03", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_04", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_05", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_06", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_07", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_08", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_09", "stream": false },
+      { "name": "squadmc:btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_10", "stream": false }
+    ]
+  },
+
+  "reload_kpvt": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:btr80sounds/kpvt/reload_kpvt", "stream": false }
+    ]
+  },
+
+  "konkurs_prefire_1p": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:bmp2sounds/kornet_1p/prefire_kornet_1p", "stream": false }
+    ]
+  },
+  "konkurs_prefire_3p": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:bmp2sounds/kornet_3p/prefire_kornet_3p", "stream": false }
+    ]
+  },
+  "konkurs_launch_blast": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:bmp2sounds/konkurs_launch_blast", "stream": false }
+    ]
+  },
+
+  "lav25_engine_idle_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:lav25sounds/engine/idle_1p", "stream": false }]
+  },
+  "lav25_engine_idle_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:lav25sounds/engine/idle_3p", "stream": false, "attenuation_distance": 40 }]
+  },
+  "lav25_engine_running_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:lav25sounds/engine/running_1p", "stream": false }]
+  },
+  "lav25_engine_running_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:lav25sounds/engine/running_3p", "stream": false, "attenuation_distance": 80 }]
+  },
+
+  "bradley_engine_idle_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bmp2sounds/engine/bmp2_engine_idle_1p", "stream": false }]
+  },
+  "bradley_engine_idle_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bradleysounds/engine/bradley_idle_3p", "stream": false, "attenuation_distance": 40 }]
+  },
+  "bradley_engine_running_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bradleysounds/engine/bradley_running_1p", "stream": false }]
+  },
+  "bradley_engine_running_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bradleysounds/engine/bradley_running_3p", "stream": false, "attenuation_distance": 80 }]
+  },
+
+  "bradley_cannon_fire_1p": {
+    "category": "player",
+    "sounds": [
+      { "name": "squadmc:bradleysounds/1pbradley_25mm_initial_semi_1p_01", "stream": false },
+      { "name": "squadmc:bradleysounds/1p/bradley_25mm_initial_semi_1p_02", "stream": false },
+      { "name": "squadmc:bradleysounds/1p/bradley_25mm_initial_semi_1p_03", "stream": false },
+      { "name": "squadmc:bradleysounds/1p/bradley_25mm_initial_semi_1p_04", "stream": false },
+      { "name": "squadmc:bradleysounds/1p/bradley_25mm_initial_semi_1p_05", "stream": false },
+      { "name": "squadmc:bradleysounds/1p/bradley_25mm_initial_semi_1p_06", "stream": false },
+      { "name": "squadmc:bradleysounds/1p/bradley_25mm_initial_semi_1p_07", "stream": false },
+      { "name": "squadmc:bradleysounds/1p/bradley_25mm_initial_semi_1p_08", "stream": false },
+      { "name": "squadmc:bradleysounds/1p/bradley_25mm_initial_semi_1p_09", "stream": false },
+      { "name": "squadmc:bradleysounds/1p/bradley_25mm_initial_semi_1p_10", "stream": false }
+    ]
+  },
+  "bradley_cannon_fire_3p": {
+    "category": "player",
+    "sounds": [
+      { "name": "squadmc:bradleysounds/3p/bradley_25mm_initial_close_01", "stream": false },
+      { "name": "squadmc:bradleysounds/3p/bradley_25mm_initial_close_02", "stream": false },
+      { "name": "squadmc:bradleysounds/3p/bradley_25mm_initial_close_03", "stream": false },
+      { "name": "squadmc:bradleysounds/3p/bradley_25mm_initial_close_04", "stream": false },
+      { "name": "squadmc:bradleysounds/3p/bradley_25mm_initial_close_05", "stream": false }
+    ]
+  },
+  "bradley_cannon_fire_3p_far": {
+    "category": "player",
+    "sounds": [
+      { "name": "squadmc:bradleysounds/3p_far/bradley_25mm_mid_01", "stream": false },
+      { "name": "squadmc:bradleysounds/3p_far/bradley_25mm_mid_02", "stream": false },
+      { "name": "squadmc:bradleysounds/3p_far/bradley_25mm_mid_03", "stream": false },
+      { "name": "squadmc:bradleysounds/3p_far/bradley_25mm_mid_04", "stream": false },
+      { "name": "squadmc:bradleysounds/3p_far/bradley_25mm_mid_05", "stream": false }
+    ]
+  },
+  "bradley_cannon_fire_3p_far_very": {
+    "category": "player",
+    "sounds": [
+      { "name": "squadmc:bradleysounds/3p_veryfar/bradley_25mm_far_01", "stream": false },
+      { "name": "squadmc:bradleysounds/3p_veryfar/bradley_25mm_far_02", "stream": false },
+      { "name": "squadmc:bradleysounds/3p_veryfar/bradley_25mm_far_03", "stream": false },
+      { "name": "squadmc:bradleysounds/3p_veryfar/bradley_25mm_far_04", "stream": false },
+      { "name": "squadmc:bradleysounds/3p_veryfar/bradley_25mm_far_05", "stream": false },
+      { "name": "squadmc:bradleysounds/3p_veryfar/bradley_25mm_far_06", "stream": false },
+      { "name": "squadmc:bradleysounds/3p_veryfar/bradley_25mm_far_07", "stream": false },
+      { "name": "squadmc:bradleysounds/3p_veryfar/bradley_25mm_far_08", "stream": false }
+    ]
+  },
+  "tow_prefire_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bmp2sounds/kornet_3p/prefire_kornet_1p", "stream": false }]
+  },
+  "tow_prefire_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bmp2sounds/kornet_3p/prefire_kornet_3p", "stream": false }]
+  },
+  "tow_launch_blast": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bmp2sounds/konkurs_launch_blast", "stream": false }]
+  },
+
+  "bmd4_engine_idle_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bmd4sounds/engine/bmd4_engine_idle_1p", "stream": false }]
+  },
+  "bmd4_engine_idle_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bmd4sounds/engine/bmd4_engine_idle_3p", "stream": false, "attenuation_distance": 40 }]
+  },
+  "bmd4_engine_running_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bmd4sounds/engine/bmd4_engine_running_1p", "stream": false }]
+  },
+  "bmd4_engine_running_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bmd4sounds/engine/bmd4_engine_running_3p", "stream": false, "attenuation_distance": 80 }]
+  },
+
+  "reload_120mm_mechan": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:reload120mm_mechan/reload_120mm", "stream": false }]
+  },
+  "reload_120mm_auto": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:reload120mm_auto/reload_120mm", "stream": false }]
+  },
+
+  "120mm_fire_1p": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:bmd4sounds/cannon/1p/120mm_fire_1p_01", "stream": false },
+      { "name": "squadmc:bmd4sounds/cannon/1p/120mm_fire_1p_02", "stream": false }
+    ]
+  },
+  "120mm_fire_3p": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:bmd4sounds/cannon/3p/120mm_fire_close_initial_01", "stream": false },
+      { "name": "squadmc:bmd4sounds/cannon/3p/120mm_fire_close_initial_02", "stream": false },
+      { "name": "squadmc:bmd4sounds/cannon/3p/120mm_fire_close_initial_03", "stream": false },
+      { "name": "squadmc:bmd4sounds/cannon/3p/120mm_fire_close_initial_04", "stream": false },
+      { "name": "squadmc:bmd4sounds/cannon/3p/120mm_fire_close_initial_05", "stream": false }
+    ]
+  },
+  "120mm_fire_3p_far": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:bmd4sounds/cannon/3p_far/120mm_fire_mid_initial_01", "stream": false },
+      { "name": "squadmc:bmd4sounds/cannon/3p_far/120mm_fire_mid_initial_02", "stream": false },
+      { "name": "squadmc:bmd4sounds/cannon/3p_far/120mm_fire_mid_initial_03", "stream": false },
+      { "name": "squadmc:bmd4sounds/cannon/3p_far/120mm_fire_mid_initial_04", "stream": false },
+      { "name": "squadmc:bmd4sounds/cannon/3p_far/120mm_fire_mid_initial_05", "stream": false }
+    ]
+  },
+  "120mm_fire_3p_far_very": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:bmd4sounds/cannon/3p_veryfar/120mm_fire_far_initial_01", "stream": false },
+      { "name": "squadmc:bmd4sounds/cannon/3p_veryfar/120mm_fire_far_initial_02", "stream": false },
+      { "name": "squadmc:bmd4sounds/cannon/3p_veryfar/120mm_fire_far_initial_03", "stream": false },
+      { "name": "squadmc:bmd4sounds/cannon/3p_veryfar/120mm_fire_far_initial_04", "stream": false },
+      { "name": "squadmc:bmd4sounds/cannon/3p_veryfar/120mm_fire_far_initial_05", "stream": false }
+    ]
+  },
+
+  "t72av_engine_running_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:t72avsounds/engine/t72av_engine_running_1p", "stream": false }]
+  },
+  "t72av_engine_running_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:t72avsounds/engine/t72av_engine_running_3p", "stream": false, "attenuation_distance": 110 }]
+  },
+  "t72av_engine_idle_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:t72avsounds/engine/t72av_engine_idle_3p", "stream": false, "attenuation_distance": 54 }]
+  },
+  "t72av_engine_idle_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:t72avsounds/engine/t72av_engine_idle_1p", "stream": false }]
+  },
+
+  "bmp1_engine_running_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bmp1sounds/engine/bmp1_engine_running_1p", "stream": false }]
+  },
+  "bmp1_engine_running_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bmp1sounds/engine/bmp1_engine_running_3p", "stream": false, "attenuation_distance": 80 }]
+  },
+  "bmp1_engine_idle_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bmp1sounds/engine/bmp1_engine_idle_3p", "stream": false, "attenuation_distance": 40 }]
+  },
+  "bmp1_engine_idle_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:bmp1sounds/engine/bmp1_engine_idle_1p", "stream": false }]
+  },
+
+  "at3_fire_1p": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:bmp1sounds/malytka_at3/1p/at3_fire_1p_01", "stream": false },
+      { "name": "squadmc:bmp1sounds/malytka_at3/1p/at3_fire_1p_02", "stream": false },
+      { "name": "squadmc:bmp1sounds/malytka_at3/1p/at3_fire_1p_03", "stream": false }
+    ]
+  },
+  "at3_fire_3p": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:bmp1sounds/malytka_at3/3p/at3_fire_3p", "stream": false }
+    ]
+  },
+  "at3_reload": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:bmp1sounds/malytka_at3/reload/reload_at3", "stream": false }
+    ]
+  },
+
+  "bmp1_fire_1p": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:bmp1sounds/1p/bmp1_cannon_fire_1p_initial_02", "stream": false },
+      { "name": "squadmc:bmp1sounds/1p/bmp1_cannon_fire_1p_initial_03", "stream": false },
+      { "name": "squadmc:bmp1sounds/1p/bmp1_cannon_fire_1p_initial_04", "stream": false }
+    ]
+  },
+  "bmp1_fire_3p": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:bmp1sounds/3p/bmp1_cannon_fire_close_01", "stream": false },
+      { "name": "squadmc:bmp1sounds/3p/bmp1_cannon_fire_close_02", "stream": false },
+      { "name": "squadmc:bmp1sounds/3p/bmp1_cannon_fire_close_03", "stream": false },
+      { "name": "squadmc:bmp1sounds/3p/bmp1_cannon_fire_close_04", "stream": false }
+    ]
+  },
+  "bmp1_fire_3p_far": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:bmp1sounds/3p_far/bmp1_cannon_fire_mid_01", "stream": false },
+      { "name": "squadmc:bmp1sounds/3p_far/bmp1_cannon_fire_mid_02", "stream": false },
+      { "name": "squadmc:bmp1sounds/3p_far/bmp1_cannon_fire_mid_03", "stream": false },
+      { "name": "squadmc:bmp1sounds/3p_far/bmp1_cannon_fire_mid_04", "stream": false }
+    ]
+  },
+  "bmp1_fire_3p_far_very": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:bmp1sounds/3p_far_very/bmp1_cannon_fire_far_01", "stream": false },
+      { "name": "squadmc:bmp1sounds/3p_far_very/bmp1_cannon_fire_far_02", "stream": false },
+      { "name": "squadmc:bmp1sounds/3p_far_very/bmp1_cannon_fire_far_03", "stream": false }
+    ]
+  },
+
+  "humvee_idle_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:humveesounds/engine/humvee_engine_idle_1p", "stream": false }]
+  },
+  "humvee_idle_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:humveesounds/engine/humvee_engine_idle_3p", "stream": false, "attenuation_distance": 20 }]
+  },
+  "humvee_running_1p_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:humveesounds/engine/humvee_engine_running_1p_3p", "stream": false, "attenuation_distance": 40 }]
+  },
+
+  "m2_reload": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:humveesounds/m2/m2_reload", "stream": false }]
+  },
+  "m2_fire": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:humveesounds/m2/1p/m2_fire_02", "stream": false },
+      { "name": "squadmc:humveesounds/m2/1p/m2_fire_03", "stream": false },
+      { "name": "squadmc:humveesounds/m2/1p/m2_fire_04", "stream": false },
+      { "name": "squadmc:humveesounds/m2/1p/m2_fire_05", "stream": false },
+      { "name": "squadmc:humveesounds/m2/1p/m2_fire_06", "stream": false },
+      { "name": "squadmc:humveesounds/m2/1p/m2_fire_07", "stream": false },
+      { "name": "squadmc:humveesounds/m2/1p/m2_fire_08", "stream": false },
+      { "name": "squadmc:humveesounds/m2/1p/m2_fire_09", "stream": false },
+      { "name": "squadmc:humveesounds/m2/1p/m2_fire_10", "stream": false },
+      { "name": "squadmc:humveesounds/m2/1p/m2_fire_11", "stream": false },
+      { "name": "squadmc:humveesounds/m2/1p/m2_fire_12", "stream": false },
+      { "name": "squadmc:humveesounds/m2/1p/m2_fire_13", "stream": false },
+      { "name": "squadmc:humveesounds/m2/1p/m2_fire_14", "stream": false },
+      { "name": "squadmc:humveesounds/m2/1p/m2_fire_15", "stream": false }
+    ]
+  },
+
+  "m1a2_idle_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:m1a2sounds/engine/idle_3p", "stream": false, "attenuation_distance": 54 }]
+  },
+  "m1a2_idle_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:m1a2sounds/engine/idle_1p", "stream": false }]
+  },
+  "m1a2_running_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:m1a2sounds/engine/running_1p", "stream": false }]
+  },
+  "m1a2_running_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:m1a2sounds/engine/running_3p", "stream": false, "attenuation_distance": 110 }]
+  },
+
+  "grad_fire_1p": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:urals/grad/1p/grad_fire_close_initial_01", "stream": false },
+      { "name": "squadmc:urals/grad/1p/grad_fire_close_initial_02", "stream": false },
+      { "name": "squadmc:urals/grad/1p/grad_fire_close_initial_03", "stream": false },
+      { "name": "squadmc:urals/grad/1p/grad_fire_close_initial_04", "stream": false },
+      { "name": "squadmc:urals/grad/1p/grad_fire_close_initial_05", "stream": false }
+    ]
+  },
+  "grad_fire_3p": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:urals/grad/3p/grad_fire_mid_initial_01", "stream": false },
+      { "name": "squadmc:urals/grad/3p/grad_fire_mid_initial_02", "stream": false },
+      { "name": "squadmc:urals/grad/3p/grad_fire_mid_initial_03", "stream": false },
+      { "name": "squadmc:urals/grad/3p/grad_fire_mid_initial_04", "stream": false },
+      { "name": "squadmc:urals/grad/3p/grad_fire_mid_initial_05", "stream": false },
+      { "name": "squadmc:urals/grad/3p/grad_fire_mid_initial_06", "stream": false },
+      { "name": "squadmc:urals/grad/3p/grad_fire_mid_initial_07", "stream": false },
+      { "name": "squadmc:urals/grad/3p/grad_fire_mid_initial_08", "stream": false }
+    ]
+  },
+
+  "ural_idle_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:urals/ural/engine/ural_engine_idle_int", "stream": false }]
+  },
+  "ural_idle_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:urals/ural/engine/ural_exhaust_idle_ext", "stream": false, "attenuation_distance": 20 }]
+  },
+  "ural_running_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:urals/ural/engine/ural_engine_throttle_loaded_int", "stream": false }]
+  },
+  "ural_running_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:urals/ural/engine/ural_engine_throttle_loeaded_ext", "stream": false, "attenuation_distance": 40 }]
+  },
+
+  "motou_idle": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:motousounds/engine/minsk_engine_idle_01", "stream": false, "attenuation_distance": 10 }]
+  },
+  "motou_running": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:motousounds/engine/minsk_engine_throttle_03", "stream": false, "attenuation_distance": 20 }]
+  },
+
+  "mortar_fire_1p": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:strykermortarsounds/mortar/1p/mortar_120mm_fire_close_01", "stream": false },
+      { "name": "squadmc:strykermortarsounds/mortar/1p/mortar_120mm_fire_close_02", "stream": false },
+      { "name": "squadmc:strykermortarsounds/mortar/1p/mortar_120mm_fire_close_03", "stream": false },
+      { "name": "squadmc:strykermortarsounds/mortar/1p/mortar_120mm_fire_close_04", "stream": false }
+    ]
+  },
+  "mortar_fire_3p_far": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:strykermortarsounds/mortar/3p/mortar_120mm_fire_mid_01", "stream": false },
+      { "name": "squadmc:strykermortarsounds/mortar/3p/mortar_120mm_fire_mid_02", "stream": false },
+      { "name": "squadmc:strykermortarsounds/mortar/3p/mortar_120mm_fire_mid_03", "stream": false },
+      { "name": "squadmc:strykermortarsounds/mortar/3p/mortar_120mm_fire_mid_04", "stream": false }
+    ]
+  },
+  "mortar_fire_3p_far_very": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:strykermortarsounds/mortar/3p_far_very/mortar_120mm_fire_far_01", "stream": false },
+      { "name": "squadmc:strykermortarsounds/mortar/3p_far_very/mortar_120mm_fire_far_02", "stream": false },
+      { "name": "squadmc:strykermortarsounds/mortar/3p_far_very/mortar_120mm_fire_far_03", "stream": false },
+      { "name": "squadmc:strykermortarsounds/mortar/3p_far_very/mortar_120mm_fire_far_04", "stream": false },
+      { "name": "squadmc:strykermortarsounds/mortar/3p_far_very/mortar_120mm_fire_far_05", "stream": false }
+    ]
+  },
+  "grad_fire_3p_far": {
+    "category": "neutral",
+    "sounds": [
+      { "name": "squadmc:urals/grad/3p_far/grad_proj_flyby_close_01", "stream": false },
+      { "name": "squadmc:urals/grad/3p_far/grad_proj_flyby_close_02", "stream": false },
+      { "name": "squadmc:urals/grad/3p_far/grad_proj_flyby_close_03", "stream": false },
+      { "name": "squadmc:urals/grad/3p_far/grad_proj_flyby_close_04", "stream": false },
+      { "name": "squadmc:urals/grad/3p_far/grad_proj_flyby_close_05", "stream": false },
+      { "name": "squadmc:urals/grad/3p_far/grad_proj_flyby_close_06", "stream": false },
+      { "name": "squadmc:urals/grad/3p_far/grad_proj_flyby_close_07", "stream": false },
+      { "name": "squadmc:urals/grad/3p_far/grad_proj_flyby_close_08", "stream": false },
+      { "name": "squadmc:urals/grad/3p_far/grad_proj_flyby_close_09", "stream": false },
+      { "name": "squadmc:urals/grad/3p_far/grad_proj_flyby_close_10", "stream": false }
+    ]
+  },
+
+  "mtlb_idle_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:mtlbsounds/engine/idle_3p", "stream": false, "attenuation_distance": 40 }]
+  },
+  "mtlb_idle_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:mtlbsounds/engine/idle_1p", "stream": false }]
+  },
+  "mtlb_running_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:mtlbsounds/engine/running_1p", "stream": false }]
+  },
+  "mtlb_running_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:mtlbsounds/engine/running_3p", "stream": false, "attenuation_distance": 80 }]
+  },
+
+  "brdm2_idle_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:brdm2sounds/engine/brdm_3p_idle", "stream": false, "attenuation_distance": 40 }]
+  },
+  "brdm2_idle_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:brdm2sounds/engine/brdm_1p_idle", "stream": false }]
+  },
+  "brdm2_running_1p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:brdm2sounds/engine/brdm_engine_1p_throttle", "stream": false }]
+  },
+  "brdm2_running_3p": {
+    "category": "neutral",
+    "sounds": [{ "name": "squadmc:brdm2sounds/engine/brdm_engine_3p_throttle", "stream": false, "attenuation_distance": 80 }]
+  },
+
+  "hit_heavy": {
+    "category": "neutral",
+    "subtitle": "subtitles.squadmc.hit_heavy",
+    "sounds": [
+      { "name": "squadmc:hit/explod_heavy01", "stream": false },
+      { "name": "squadmc:hit/explod_heavy02", "stream": false },
+      { "name": "squadmc:hit/explod_heavy03", "stream": false }
+    ]
+  },
+  "hit_medium": {
+    "category": "neutral",
+    "subtitle": "subtitles.squadmc.hit_medium",
+    "sounds": [
+      { "name": "squadmc:hit/explod_medium01", "stream": false },
+      { "name": "squadmc:hit/explod_medium02", "stream": false },
+      { "name": "squadmc:hit/explod_medium03", "stream": false },
+      { "name": "squadmc:hit/explod_medium04", "stream": false },
+      { "name": "squadmc:hit/explod_medium05", "stream": false }
+    ]
+  },
+  "hit_small": {
+    "category": "neutral",
+    "subtitle": "subtitles.squadmc.hit_small",
+    "sounds": [
+      { "name": "squadmc:hit/explod_small01", "stream": false },
+      { "name": "squadmc:hit/explod_small02", "stream": false },
+      { "name": "squadmc:hit/explod_small03", "stream": false },
+      { "name": "squadmc:hit/explod_small04", "stream": false },
+      { "name": "squadmc:hit/explod_small05", "stream": false },
+      { "name": "squadmc:hit/explod_small06", "stream": false },
+      { "name": "squadmc:hit/explod_small07", "stream": false }
+    ]
+  },
+  "mts.bomblet_close0": { "category": "block", "sounds": [ { "name": "squadmc:mts/bomblet_close0", "stream": false } ] },
+  "mts.bomblet_close1": { "category": "block", "sounds": [ { "name": "squadmc:mts/bomblet_close1", "stream": false } ] },
+  "mts.bomblet_close2": { "category": "block", "sounds": [ { "name": "squadmc:mts/bomblet_close2", "stream": false } ] },
+  "mts.bomblet_close3": { "category": "block", "sounds": [ { "name": "squadmc:mts/bomblet_close3", "stream": false } ] },
+  "mts.bomblet_close4": { "category": "block", "sounds": [ { "name": "squadmc:mts/bomblet_close4", "stream": false } ] },
+  "mts.bomblet_close5": { "category": "block", "sounds": [ { "name": "squadmc:mts/bomblet_close5", "stream": false } ] },
+  "mts.bomblet_distant0": { "category": "block", "sounds": [ { "name": "squadmc:mts/bomblet_distant0", "stream": false } ] },
+  "mts.bomblet_distant1": { "category": "block", "sounds": [ { "name": "squadmc:mts/bomblet_distant1", "stream": false } ] },
+  "mts.bomblet_distant2": { "category": "block", "sounds": [ { "name": "squadmc:mts/bomblet_distant2", "stream": false } ] },
+  "mts.bomblet_distant3": { "category": "block", "sounds": [ { "name": "squadmc:mts/bomblet_distant3", "stream": false } ] },
+  "mts.bullethit_outside1": { "category": "block", "sounds": [ { "name": "squadmc:mts/bullethit_outside1", "stream": false } ] },
+  "mts.bullethit_outside2": { "category": "block", "sounds": [ { "name": "squadmc:mts/bullethit_outside2", "stream": false } ] },
+  "mts.bullethit_outside3": { "category": "block", "sounds": [ { "name": "squadmc:mts/bullethit_outside3", "stream": false } ] },
+  "mts.bullethit_outside4": { "category": "block", "sounds": [ { "name": "squadmc:mts/bullethit_outside4", "stream": false } ] },
+  "mts.bullethit_outside5": { "category": "block", "sounds": [ { "name": "squadmc:mts/bullethit_outside5", "stream": false } ] },
+  "mts.bullethit_outside6": { "category": "block", "sounds": [ { "name": "squadmc:mts/bullethit_outside6", "stream": false } ] },
+  "mts.bullethit_water0": { "category": "block", "sounds": [ { "name": "squadmc:mts/bullethit_water0", "stream": false } ] },
+  "mts.bullethit_water1": { "category": "block", "sounds": [ { "name": "squadmc:mts/bullethit_water1", "stream": false } ] },
+  "mts.bullethit_water10": { "category": "block", "sounds": [ { "name": "squadmc:mts/bullethit_water10", "stream": false } ] },
+  "mts.bullethit_water2": { "category": "block", "sounds": [ { "name": "squadmc:mts/bullethit_water2", "stream": false } ] },
+  "mts.bullethit_water3": { "category": "block", "sounds": [ { "name": "squadmc:mts/bullethit_water3", "stream": false } ] },
+  "mts.bullethit_water4": { "category": "block", "sounds": [ { "name": "squadmc:mts/bullethit_water4", "stream": false } ] },
+  "mts.bullethit_water5": { "category": "block", "sounds": [ { "name": "squadmc:mts/bullethit_water5", "stream": false } ] },
+  "mts.bullethit_water6": { "category": "block", "sounds": [ { "name": "squadmc:mts/bullethit_water6", "stream": false } ] },
+  "mts.bullethit_water7": { "category": "block", "sounds": [ { "name": "squadmc:mts/bullethit_water7", "stream": false } ] },
+  "mts.bullethit_water8": { "category": "block", "sounds": [ { "name": "squadmc:mts/bullethit_water8", "stream": false } ] },
+  "mts.bullethit_water9": { "category": "block", "sounds": [ { "name": "squadmc:mts/bullethit_water9", "stream": false } ] },
+  "mts.debrissettle_dirtsmall0": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_dirtsmall0", "stream": false } ] },
+  "mts.debrissettle_dirtsmall1": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_dirtsmall1", "stream": false } ] },
+  "mts.debrissettle_dirtsmall2": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_dirtsmall2", "stream": false } ] },
+  "mts.debrissettle_dirtsmall3": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_dirtsmall3", "stream": false } ] },
+  "mts.debrissettle_sand0": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_sand0", "stream": false } ] },
+  "mts.debrissettle_sand1": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_sand1", "stream": false } ] },
+  "mts.debrissettle_sand2": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_sand2", "stream": false } ] },
+  "mts.debrissettle_sandsmall0": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_sandsmall0", "stream": false } ] },
+  "mts.debrissettle_sandsmall1": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_sandsmall1", "stream": false } ] },
+  "mts.debrissettle_sandsmall2": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_sandsmall2", "stream": false } ] },
+  "mts.debrissettle_stonesmall0": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_stonesmall0", "stream": false } ] },
+  "mts.debrissettle_stonesmall1": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_stonesmall1", "stream": false } ] },
+  "mts.debrissettle_stonesmall2": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_stonesmall2", "stream": false } ] },
+  "mts.debrissettle_stonesmall3": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_stonesmall3", "stream": false } ] },
+  "mts.debrissettle_water0": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_water0", "stream": false } ] },
+  "mts.debrissettle_water1": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_water1", "stream": false } ] },
+  "mts.debrissettle_woodlarge0": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_woodlarge0", "stream": false } ] },
+  "mts.debrissettle_woodlarge1": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_woodlarge1", "stream": false } ] },
+  "mts.debrissettle_woodlarge2": { "category": "block", "sounds": [ { "name": "squadmc:mts/debrissettle_woodlarge2", "stream": false } ] },
+  "mts.explosion1": { "category": "block", "sounds": [ { "name": "squadmc:mts/explosion1", "stream": false } ] },
+  "mts.explosion2": { "category": "block", "sounds": [ { "name": "squadmc:mts/explosion2", "stream": false } ] },
+  "mts.explosion3": { "category": "block", "sounds": [ { "name": "squadmc:mts/explosion3", "stream": false } ] },
+  "mts.explosion4": { "category": "block", "sounds": [ { "name": "squadmc:mts/explosion4", "stream": false } ] },
+  "mts.explosion_distant2": { "category": "block", "sounds": [ { "name": "squadmc:mts/explosion_distant2", "stream": false } ] },
+  "mts.explosion_distant3": { "category": "block", "sounds": [ { "name": "squadmc:mts/explosion_distant3", "stream": false } ] },
+  "mts.explosion_distant4": { "category": "block", "sounds": [ { "name": "squadmc:mts/explosion_distant4", "stream": false } ] },
+  "mts.explosion_distant_heavy": { "category": "block", "sounds": [ { "name": "squadmc:mts/explosion_distant_heavy", "stream": false } ] },
+  "mts.explosion_distant_heavy1": { "category": "block", "sounds": [ { "name": "squadmc:mts/explosion_distant_heavy1", "stream": false } ] },
+  "mts.explosion_distant_heavy2": { "category": "block", "sounds": [ { "name": "squadmc:mts/explosion_distant_heavy2", "stream": false } ] },
+  "mts.explosion_heavy": { "category": "block", "sounds": [ { "name": "squadmc:mts/explosion_heavy", "stream": false } ] },
+  "mts.explosion_heavy1": { "category": "block", "sounds": [ { "name": "squadmc:mts/explosion_heavy1", "stream": false } ] },
+  "mts.rocketboom0": { "category": "block", "sounds": [ { "name": "squadmc:mts/rocketboom0", "stream": false } ] },
+  "mts.rocketboom1": { "category": "block", "sounds": [ { "name": "squadmc:mts/rocketboom1", "stream": false } ] },
+  "mts.rocketboom2": { "category": "block", "sounds": [ { "name": "squadmc:mts/rocketboom2", "stream": false } ] },
+  "mts.rocketboom3": { "category": "block", "sounds": [ { "name": "squadmc:mts/rocketboom3", "stream": false } ] },
+  "mts.rocketboom_distant0": { "category": "block", "sounds": [ { "name": "squadmc:mts/rocketboom_distant0", "stream": false } ] },
+  "mts.rocketboom_distant1": { "category": "block", "sounds": [ { "name": "squadmc:mts/rocketboom_distant1", "stream": false } ] },
+  "mts.rocketboom_distant2": { "category": "block", "sounds": [ { "name": "squadmc:mts/rocketboom_distant2", "stream": false } ] },
+  "mts.rocketboom_distant3": { "category": "block", "sounds": [ { "name": "squadmc:mts/rocketboom_distant3", "stream": false } ] },
+  "littlebird_engine_idle": {"sounds": [{"name": "squadmc:littlebird/littlebird_engine_idle", "stream": true}]},
+  "squad.loach.engine.littlebird_engine_rotor_close": {"sounds": [{"name": "squadmc:squad/loach/engine/littlebird_engine_rotor_close", "stream": false, "attenuation_distance": 192}]},
+  "squad.loach.engine.littlebird_engine_rotor_far": {"sounds": [{"name": "squadmc:squad/loach/engine/littlebird_engine_rotor_far", "stream": false, "attenuation_distance": 512}]},
+  "squad.loach.engine.littlebird_engine_rotor_idle_int": {"sounds": [{"name": "squadmc:squad/loach/engine/littlebird_engine_rotor_idle_int", "stream": false}]},
+  "squad.loach.engine.littlebird_engine_rotor_mid": {"sounds": [{"name": "squadmc:squad/loach/engine/littlebird_engine_rotor_mid", "stream": false, "attenuation_distance": 400}]},
+  "squad.loach.engine.littlebird_engine_rotor_start_close": {"sounds": [{"name": "squadmc:squad/loach/engine/littlebird_engine_rotor_start_close", "stream": false, "attenuation_distance": 192}]},
+  "squad.loach.engine.littlebird_engine_rotor_start_int": {"sounds": [{"name": "squadmc:squad/loach/engine/littlebird_engine_rotor_start_int", "stream": false}]},
+  "squad.loach.engine.littlebird_engine_rotor_stop_close": {"sounds": [{"name": "squadmc:squad/loach/engine/littlebird_engine_rotor_stop_close", "stream": false, "attenuation_distance": 192}]},
+  "squad.loach.engine.littlebird_engine_rotor_stop_int": {"sounds": [{"name": "squadmc:squad/loach/engine/littlebird_engine_rotor_stop_int", "stream": false}]},
+  "squad.mi8.engine.mi8_engine_idle_close_01": {"sounds": [{"name": "squadmc:squad/mi8/engine/mi8_engine_idle_close_01", "stream": false, "attenuation_distance": 192}]},
+  "squad.mi8.engine.mi8_engine_idle_far_03": {"sounds": [{"name": "squadmc:squad/mi8/engine/mi8_engine_idle_far_03", "stream": false, "attenuation_distance": 512}]},
+  "squad.mi8.engine.mi8_engine_idle_int_01": {"sounds": [{"name": "squadmc:squad/mi8/engine/mi8_engine_idle_int_01", "stream": false}]},
+  "squad.mi8.engine.mi8_engine_idle_medium_01": {"sounds": [{"name": "squadmc:squad/mi8/engine/mi8_engine_idle_medium_01", "stream": false, "attenuation_distance": 400}]},
+  "squad.mi8.engine.mi8_engine_start_close_01": {"sounds": [{"name": "squadmc:squad/mi8/engine/mi8_engine_start_close_01", "stream": false, "attenuation_distance": 192}]},
+  "squad.mi8.engine.mi8_engine_start_int_01": {"sounds": [{"name": "squadmc:squad/mi8/engine/mi8_engine_start_int_01", "stream": false}]},
+  "squad.mi8.engine.mi8_engine_stop_close_01": {"sounds": [{"name": "squadmc:squad/mi8/engine/mi8_engine_stop_close_01", "stream": false, "attenuation_distance": 192}]},
+  "squad.mi8.engine.mi8_engine_stop_int_01": {"sounds": [{"name": "squadmc:squad/mi8/engine/mi8_engine_stop_int_01", "stream": false}]},
+  "squad.silent": {"sounds": [{"name": "squadmc:squad/silent", "stream": false, "attenuation_distance": 1}]},
+  "squad.turrets.doorgun.loop": {"sounds": [{"name": "squadmc:squad/turrets/doorgun/loop", "stream": false, "attenuation_distance": 48}]},
+  "squad.uh1h.engine.uh1_engine_rotors_idle_close_01": {"sounds": [{"name": "squadmc:squad/uh1h/engine/uh1_engine_rotors_idle_close_01", "stream": false, "attenuation_distance": 192}]},
+  "squad.uh1h.engine.uh1_engine_rotors_idle_far_01": {"sounds": [{"name": "squadmc:squad/uh1h/engine/uh1_engine_rotors_idle_far_01", "stream": false, "attenuation_distance": 512}]},
+  "squad.uh1h.engine.uh1_engine_rotors_idle_int_01": {"sounds": [{"name": "squadmc:squad/uh1h/engine/uh1_engine_rotors_idle_int_01", "stream": false}]},
+  "squad.uh1h.engine.uh1_engine_rotors_idle_mid_01": {"sounds": [{"name": "squadmc:squad/uh1h/engine/uh1_engine_rotors_idle_mid_01", "stream": false, "attenuation_distance": 400}]},
+  "squad.uh1h.engine.uh1_engine_rotors_start_close_01": {"sounds": [{"name": "squadmc:squad/uh1h/engine/uh1_engine_rotors_start_close_01", "stream": false, "attenuation_distance": 192}]},
+  "squad.uh1h.engine.uh1_engine_rotors_start_int_01": {"sounds": [{"name": "squadmc:squad/uh1h/engine/uh1_engine_rotors_start_int_01", "stream": false}]},
+  "squad.uh1h.engine.uh1_engine_rotors_stop_close_01": {"sounds": [{"name": "squadmc:squad/uh1h/engine/uh1_engine_rotors_stop_close_01", "stream": false, "attenuation_distance": 192}]},
+  "squad.uh1h.engine.uh1_engine_rotors_stop_int_01": {"sounds": [{"name": "squadmc:squad/uh1h/engine/uh1_engine_rotors_stop_int_01", "stream": false}]},
+  "squad.uh1y.engine.uh1y_engine_rotors_idle_close_01": {"sounds": [{"name": "squadmc:squad/uh1y/engine/uh1y_engine_rotors_idle_close_01", "stream": false, "attenuation_distance": 192}]},
+  "squad.uh1y.engine.uh1y_engine_rotors_idle_far_01": {"sounds": [{"name": "squadmc:squad/uh1y/engine/uh1y_engine_rotors_idle_far_01", "stream": false, "attenuation_distance": 512}]},
+  "squad.uh1y.engine.uh1y_engine_rotors_idle_int_01": {"sounds": [{"name": "squadmc:squad/uh1y/engine/uh1y_engine_rotors_idle_int_01", "stream": false}]},
+  "squad.uh1y.engine.uh1y_engine_rotors_idle_mid_01": {"sounds": [{"name": "squadmc:squad/uh1y/engine/uh1y_engine_rotors_idle_mid_01", "stream": false, "attenuation_distance": 400}]},
+  "squad.uh1y.engine.uh1y_engine_rotors_start_close_01": {"sounds": [{"name": "squadmc:squad/uh1y/engine/uh1y_engine_rotors_start_close_01", "stream": false, "attenuation_distance": 192}]},
+  "squad.uh1y.engine.uh1y_engine_rotors_start_int_01": {"sounds": [{"name": "squadmc:squad/uh1y/engine/uh1y_engine_rotors_start_int_01", "stream": false}]},
+  "squad.uh1y.engine.uh1y_engine_rotors_stop_close_01": {"sounds": [{"name": "squadmc:squad/uh1y/engine/uh1y_engine_rotors_stop_close_01", "stream": false, "attenuation_distance": 192}]},
+  "squad.uh1y.engine.uh1y_engine_rotors_stop_int_01": {"sounds": [{"name": "squadmc:squad/uh1y/engine/uh1y_engine_rotors_stop_int_01", "stream": false}]},
+  "squad.uh60.engine.uh60_engine_rotors_idle_close_01": {"sounds": [{"name": "squadmc:squad/uh60/engine/uh60_engine_rotors_idle_close_01", "stream": false, "attenuation_distance": 192}]},
+  "squad.uh60.engine.uh60_engine_rotors_idle_far_01": {"sounds": [{"name": "squadmc:squad/uh60/engine/uh60_engine_rotors_idle_far_01", "stream": false, "attenuation_distance": 512}]},
+  "squad.uh60.engine.uh60_engine_rotors_idle_int_01": {"sounds": [{"name": "squadmc:squad/uh60/engine/uh60_engine_rotors_idle_int_01", "stream": false}]},
+  "squad.uh60.engine.uh60_engine_rotors_idle_mid_01": {"sounds": [{"name": "squadmc:squad/uh60/engine/uh60_engine_rotors_idle_mid_01", "stream": false, "attenuation_distance": 400}]},
+  "squad.uh60.engine.uh60_engine_rotors_start_close_01": {"sounds": [{"name": "squadmc:squad/uh60/engine/uh60_engine_rotors_start_close_01", "stream": false, "attenuation_distance": 192}]},
+  "squad.uh60.engine.uh60_engine_rotors_start_int_01": {"sounds": [{"name": "squadmc:squad/uh60/engine/uh60_engine_rotors_start_int_01", "stream": false}]},
+  "squad.uh60.engine.uh60_engine_rotors_stop_close_01": {"sounds": [{"name": "squadmc:squad/uh60/engine/uh60_engine_rotors_stop_close_01", "stream": false, "attenuation_distance": 192}]},
+  "squad.uh60.engine.uh60_engine_rotors_stop_int_01": {"sounds": [{"name": "squadmc:squad/uh60/engine/uh60_engine_rotors_stop_int_01", "stream": false}]},
+  "squad.weapons.common.coax_reload_1p": {"sounds": [{"name": "squadmc:squad/weapons/common/coax_reload_1p", "stream": false}]},
+  "squad.weapons.common.coax_reload_3p": {"sounds": [{"name": "squadmc:squad/weapons/common/coax_reload_3p", "stream": false, "attenuation_distance": 32}]},
+  "squad.weapons.common.pkp_doorgun_reload_1p": {"sounds": [{"name": "squadmc:squad/weapons/common/pkp_doorgun_reload_1p", "stream": false}]},
+  "squad.weapons.common.pkp_doorgun_reload_3p": {"sounds": [{"name": "squadmc:squad/weapons/common/pkp_doorgun_reload_3p", "stream": false, "attenuation_distance": 32}]},
+  "squad.weapons.common.switch_82a": {"sounds": [{"name": "squadmc:squad/weapons/common/switch_82a", "stream": false}]},
+  "squad.weapons.common.switch_launcher": {"sounds": [{"name": "squadmc:squad/weapons/common/switch_launcher", "stream": false}]},
+  "squad.weapons.common.switch_pkt": {"sounds": [{"name": "squadmc:squad/weapons/common/switch_pkt", "stream": false}]},
+  "squad.weapons.ffar.1p_shot_1": {"sounds": [{"name": "squadmc:squad/weapons/ffar/1p_shot_1_01", "stream": false}, {"name": "squadmc:squad/weapons/ffar/1p_shot_1_02", "stream": false}, {"name": "squadmc:squad/weapons/ffar/1p_shot_1_03", "stream": false}, {"name": "squadmc:squad/weapons/ffar/1p_shot_1_04", "stream": false}, {"name": "squadmc:squad/weapons/ffar/1p_shot_1_05", "stream": false}, {"name": "squadmc:squad/weapons/ffar/1p_shot_1_06", "stream": false}, {"name": "squadmc:squad/weapons/ffar/1p_shot_1_07", "stream": false}, {"name": "squadmc:squad/weapons/ffar/1p_shot_1_08", "stream": false}, {"name": "squadmc:squad/weapons/ffar/1p_shot_1_09", "stream": false}, {"name": "squadmc:squad/weapons/ffar/1p_shot_1_10", "stream": false}, {"name": "squadmc:squad/weapons/ffar/1p_shot_1_11", "stream": false}]},
+  "squad.weapons.ffar.3p_shot_2": {"sounds": [{"name": "squadmc:squad/weapons/ffar/3p_shot_2_01", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/ffar/3p_shot_2_02", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/ffar/3p_shot_2_03", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/ffar/3p_shot_2_04", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/ffar/3p_shot_2_05", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/ffar/3p_shot_2_06", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/ffar/3p_shot_2_07", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/ffar/3p_shot_2_08", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/ffar/3p_shot_2_09", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/ffar/3p_shot_2_10", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/ffar/3p_shot_2_11", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.ffar.3p_shot_3": {"sounds": [{"name": "squadmc:squad/weapons/ffar/3p_shot_3_01", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/ffar/3p_shot_3_02", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/ffar/3p_shot_3_03", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/ffar/3p_shot_3_04", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/ffar/3p_shot_3_05", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/ffar/3p_shot_3_06", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.m134.1p_loop_2": {"sounds": [{"name": "squadmc:squad/weapons/m134/1p_loop_2", "stream": false}]},
+  "squad.weapons.m134.1p_loop_3": {"sounds": [{"name": "squadmc:squad/weapons/m134/1p_loop_3", "stream": false}]},
+  "squad.weapons.m134.1p_start_1": {"sounds": [{"name": "squadmc:squad/weapons/m134/1p_start_1", "stream": false}]},
+  "squad.weapons.m134.1p_tail_4": {"sounds": [{"name": "squadmc:squad/weapons/m134/1p_tail_4_01", "stream": false}, {"name": "squadmc:squad/weapons/m134/1p_tail_4_02", "stream": false}, {"name": "squadmc:squad/weapons/m134/1p_tail_4_03", "stream": false}]},
+  "squad.weapons.m134.1p_tail_5": {"sounds": [{"name": "squadmc:squad/weapons/m134/1p_tail_5_01", "stream": false}, {"name": "squadmc:squad/weapons/m134/1p_tail_5_02", "stream": false}, {"name": "squadmc:squad/weapons/m134/1p_tail_5_03", "stream": false}, {"name": "squadmc:squad/weapons/m134/1p_tail_5_04", "stream": false}, {"name": "squadmc:squad/weapons/m134/1p_tail_5_05", "stream": false}, {"name": "squadmc:squad/weapons/m134/1p_tail_5_06", "stream": false}, {"name": "squadmc:squad/weapons/m134/1p_tail_5_07", "stream": false}]},
+  "squad.weapons.m134.3p_loop_10": {"sounds": [{"name": "squadmc:squad/weapons/m134/3p_loop_10", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.m134.3p_loop_7": {"sounds": [{"name": "squadmc:squad/weapons/m134/3p_loop_7", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.m134.3p_loop_8": {"sounds": [{"name": "squadmc:squad/weapons/m134/3p_loop_8", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.m134.3p_loop_9": {"sounds": [{"name": "squadmc:squad/weapons/m134/3p_loop_9", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.m134.3p_start_6": {"sounds": [{"name": "squadmc:squad/weapons/m134/3p_start_6", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.m134.3p_tail_11": {"sounds": [{"name": "squadmc:squad/weapons/m134/3p_tail_11_01", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/m134/3p_tail_11_02", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/m134/3p_tail_11_03", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.m134.3p_tail_12": {"sounds": [{"name": "squadmc:squad/weapons/m134/3p_tail_12_01", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/m134/3p_tail_12_02", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/m134/3p_tail_12_03", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/m134/3p_tail_12_04", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/m134/3p_tail_12_05", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/m134/3p_tail_12_06", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/m134/3p_tail_12_07", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.m134.3p_tail_13": {"sounds": [{"name": "squadmc:squad/weapons/m134/3p_tail_13_01", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/m134/3p_tail_13_02", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/m134/3p_tail_13_03", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/m134/3p_tail_13_04", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/m134/3p_tail_13_05", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.m134.3p_tail_14": {"sounds": [{"name": "squadmc:squad/weapons/m134/3p_tail_14_01", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/m134/3p_tail_14_02", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/m134/3p_tail_14_03", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.pkt.1p_loop": {"sounds": [{"name": "squadmc:squad/weapons/pkt/1p_loop", "stream": false}]},
+  "squad.weapons.pkt.1p_start": {"sounds": [{"name": "squadmc:squad/weapons/pkt/1p_start", "stream": false}]},
+  "squad.weapons.pkt.1p_tail": {"sounds": [{"name": "squadmc:squad/weapons/pkt/1p_tail_01", "stream": false}, {"name": "squadmc:squad/weapons/pkt/1p_tail_02", "stream": false}, {"name": "squadmc:squad/weapons/pkt/1p_tail_03", "stream": false}, {"name": "squadmc:squad/weapons/pkt/1p_tail_04", "stream": false}, {"name": "squadmc:squad/weapons/pkt/1p_tail_05", "stream": false}]},
+  "squad.weapons.pkt.3p_close_loop": {"sounds": [{"name": "squadmc:squad/weapons/pkt/3p_close_loop", "stream": false, "attenuation_distance": 64}]},
+  "squad.weapons.pkt.3p_close_start": {"sounds": [{"name": "squadmc:squad/weapons/pkt/3p_close_start", "stream": false, "attenuation_distance": 24}]},
+  "squad.weapons.pkt.3p_close_tail": {"sounds": [{"name": "squadmc:squad/weapons/pkt/3p_close_tail", "stream": false, "attenuation_distance": 64}]},
+  "squad.weapons.pkt.3p_mid_loop": {"sounds": [{"name": "squadmc:squad/weapons/pkt/3p_mid_loop", "stream": false, "attenuation_distance": 160}]},
+  "squad.weapons.pkt.3p_mid_tail": {"sounds": [{"name": "squadmc:squad/weapons/pkt/3p_mid_tail", "stream": false, "attenuation_distance": 160}]},
+  "squad.weapons.pkt.echo_close": {"sounds": [{"name": "squadmc:squad/weapons/pkt/echo_close_01", "stream": false}, {"name": "squadmc:squad/weapons/pkt/echo_close_02", "stream": false}, {"name": "squadmc:squad/weapons/pkt/echo_close_03", "stream": false}, {"name": "squadmc:squad/weapons/pkt/echo_close_04", "stream": false}, {"name": "squadmc:squad/weapons/pkt/echo_close_05", "stream": false}]},
+  "squad.weapons.pkt.echo_mid": {"sounds": [{"name": "squadmc:squad/weapons/pkt/echo_mid_01", "stream": false}, {"name": "squadmc:squad/weapons/pkt/echo_mid_02", "stream": false}, {"name": "squadmc:squad/weapons/pkt/echo_mid_03", "stream": false}, {"name": "squadmc:squad/weapons/pkt/echo_mid_04", "stream": false}, {"name": "squadmc:squad/weapons/pkt/echo_mid_05", "stream": false}, {"name": "squadmc:squad/weapons/pkt/echo_mid_06", "stream": false}]},
+  "squad.weapons.zu23.1p_loop_2": {"sounds": [{"name": "squadmc:squad/weapons/zu23/1p_loop_2", "stream": false}]},
+  "squad.weapons.zu23.1p_start_1": {"sounds": [{"name": "squadmc:squad/weapons/zu23/1p_start_1", "stream": false}]},
+  "squad.weapons.zu23.1p_tail_3": {"sounds": [{"name": "squadmc:squad/weapons/zu23/1p_tail_3", "stream": false}]},
+  "squad.weapons.zu23.1p_tail_4": {"sounds": [{"name": "squadmc:squad/weapons/zu23/1p_tail_4_01", "stream": false}, {"name": "squadmc:squad/weapons/zu23/1p_tail_4_02", "stream": false}, {"name": "squadmc:squad/weapons/zu23/1p_tail_4_03", "stream": false}, {"name": "squadmc:squad/weapons/zu23/1p_tail_4_04", "stream": false}]},
+  "squad.weapons.zu23.3p_loop_7": {"sounds": [{"name": "squadmc:squad/weapons/zu23/3p_loop_7", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.zu23.3p_loop_8": {"sounds": [{"name": "squadmc:squad/weapons/zu23/3p_loop_8", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.zu23.3p_loop_9": {"sounds": [{"name": "squadmc:squad/weapons/zu23/3p_loop_9", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.zu23.3p_start_5": {"sounds": [{"name": "squadmc:squad/weapons/zu23/3p_start_5", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.zu23.3p_start_6": {"sounds": [{"name": "squadmc:squad/weapons/zu23/3p_start_6_01", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/zu23/3p_start_6_02", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/zu23/3p_start_6_03", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/zu23/3p_start_6_04", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/zu23/3p_start_6_05", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/zu23/3p_start_6_06", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.zu23.3p_tail_10": {"sounds": [{"name": "squadmc:squad/weapons/zu23/3p_tail_10", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.zu23.3p_tail_11": {"sounds": [{"name": "squadmc:squad/weapons/zu23/3p_tail_11_01", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/zu23/3p_tail_11_02", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/zu23/3p_tail_11_03", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/zu23/3p_tail_11_04", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.zu23.3p_tail_12": {"sounds": [{"name": "squadmc:squad/weapons/zu23/3p_tail_12", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.zu23.3p_tail_13": {"sounds": [{"name": "squadmc:squad/weapons/zu23/3p_tail_13_01", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/zu23/3p_tail_13_02", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/zu23/3p_tail_13_03", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/zu23/3p_tail_13_04", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/zu23/3p_tail_13_05", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/zu23/3p_tail_13_06", "stream": false, "attenuation_distance": 256}, {"name": "squadmc:squad/weapons/zu23/3p_tail_13_07", "stream": false, "attenuation_distance": 256}]},
+  "squad.weapons.zu23.3p_tail_14": {"sounds": [{"name": "squadmc:squad/weapons/zu23/3p_tail_14", "stream": false, "attenuation_distance": 256}]}
+}

@@ -1,0 +1,7 @@
+{
+  "ID": "squadmc:littlebird_armed",
+  "Model": {
+    "Model": "squadmc:geo/littlebird_armed.geo.json",
+    "Texture": "squadmc:textures/entity/toyota.png"
+  }
+}

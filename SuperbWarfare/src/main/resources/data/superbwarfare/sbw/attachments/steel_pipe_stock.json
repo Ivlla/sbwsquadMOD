@@ -1,0 +1,39 @@
+{
+  "Slot": "Stock",
+  "Modifiers": [
+    {
+      "Prop": "RecoilX",
+      "Op": "Mul",
+      "Value": 0.92
+    },
+    {
+      "Prop": "RecoilY",
+      "Op": "Mul",
+      "Value": 0.94
+    },
+    {
+      "Prop": "Recoil",
+      "Op": "Add",
+      "Value": 0.1
+    },
+    {
+      "Prop": "Weight",
+      "Op": "Add",
+      "Value": 0.2
+    },
+    {
+      "Prop": "MeleeDamage",
+      "Op": "Add",
+      "Value": 5
+    }
+  ],
+  "Override": {
+    "MeleeSound": {
+      "Hit": "superbwarfare:steel_pipe_hit"
+    }
+  },
+  "Bone": "custom_stock_adapter",
+  "UsesGunStock": false,
+  "Model": "superbwarfare:models/bedrock/attachment/steel_pipe_stock.geo.json",
+  "Texture": "superbwarfare:textures/bedrock/attachment/steel_pipe_stock.png"
+}

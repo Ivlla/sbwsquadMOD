@@ -1,0 +1,781 @@
+package com.atsuishio.superbwarfare.data
+
+import com.atsuishio.superbwarfare.Mod
+import com.atsuishio.superbwarfare.data.attachment.AttachmentDefinition
+import com.atsuishio.superbwarfare.data.attachment.AttachmentMountBone
+import com.atsuishio.superbwarfare.data.attachment.AttachmentRenderMode
+import com.atsuishio.superbwarfare.data.attachment.AttachmentSlots
+import com.atsuishio.superbwarfare.data.gun.DefaultGunData
+import com.atsuishio.superbwarfare.data.gun.GunProp
+import com.atsuishio.superbwarfare.data.gun.RightClickAction
+import com.atsuishio.superbwarfare.data.gun.melee.MeleeEffectBehavior
+import com.atsuishio.superbwarfare.data.gun.melee.MeleeEffectSpec
+import com.atsuishio.superbwarfare.data.gun.melee.MeleeHitboxType
+import com.atsuishio.superbwarfare.data.gun.melee.isMeleeProjectileMarker
+import com.atsuishio.superbwarfare.data.gun.value.AttachmentType
+import com.atsuishio.superbwarfare.init.ModMeleeEffects
+import com.atsuishio.superbwarfare.item.attachment.AttachmentProvider
+import com.atsuishio.superbwarfare.item.attachment.SubWeaponItem
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.serializer
+import net.minecraft.resources.FileToIdConverter
+import net.minecraft.resources.ResourceLocation
+import net.minecraft.server.packs.resources.ResourceManager
+import net.minecraft.tags.ItemTags
+import net.minecraftforge.fml.loading.FMLEnvironment
+import net.minecraftforge.registries.ForgeRegistries
+
+/**
+ * 数据包严格校验器。
+ *
+ * 背景：`DataLoader.JSON` 开着 `ignoreUnknownKeys = true`，所以数据文件里键名写错（或者迁移
+ * `@SerializedName` → `@SerialName` 时漏改）**不会报错**，只会让该字段静默地留在默认值上。
+ * 本校验器用一份除 `ignoreUnknownKeys` 外与 [DataLoader.JSON] 完全一致的 Json 配置重新解析
+ * 每个 kotlinx 数据文件，把这类问题变成显式的错误日志。
+ *
+ * 覆盖范围：
+ * - 覆盖 `LOADED_DATA` / `LOADED_RESOURCE` 里的全部数据集（所有数据集都已迁到 kotlinx）。
+ * - 因为所有属性都有默认值，**缺键不是错误**（这是数据包部分覆写的前提）；
+ *   真正会被抓到的是「JSON 里有、数据类里没有」的键和类型不匹配。
+ *
+ * 触发方式：开发环境（`FMLEnvironment.production == false`）在每次数据包 reload 后自动运行；
+ * 生产环境默认关闭，可用 `-Dsuperbwarfare.validateData=true` 或环境变量 `SBW_VALIDATE_DATA=true` 打开。
+ */
+object DataValidator {
+
+    @JvmField
+    val ENABLED: Boolean = !FMLEnvironment.production
+            || System.getProperty("superbwarfare.validateData") == "true"
+            || System.getenv("SBW_VALIDATE_DATA")?.lowercase() == "true"
+
+    /** 严格模式：除未知键外，其余设置与 [DataLoader.JSON] 保持一致，避免两边漂移 */
+    private val STRICT: Json = Json(DataLoader.JSON) {
+        ignoreUnknownKeys = false
+    }
+
+    /**
+     * 允许出现在数据文件里、但数据类不声明的顶层键。
+     *
+     * `ID` 是历史遗留：真实 id 由文件路径决定（见 [ComplexJsonResourceReloadListener]），
+     * 写进 JSON 里没有任何作用，这里放行只是为了不打扰已有数据包。
+     */
+    private val TOLERATED_TOP_LEVEL_KEYS = setOf("ID")
+
+    /** 弹种 / 开火模式的 `Override` 里用来改弹丸数量的键名 */
+    private const val PROJECTILE_AMOUNT_KEY = "ProjectileAmount"
+
+    data class Issue(val directory: String, val file: String, val message: String)
+
+    data class Report(val checked: Int, val issues: List<Issue>) {
+        val ok: Boolean get() = issues.isEmpty()
+    }
+
+    /**
+     * 校验 [data] 中所有数据集（现在全部是 kotlinx）的全部 JSON 文件。
+     *
+     * @param resourceManager 当前数据包资源管理器
+     * @param data 要校验的数据集，默认 [DataLoader.LOADED_DATA]
+     */
+    @JvmOverloads
+    fun validate(
+        resourceManager: ResourceManager,
+        data: Map<String, DataLoader.GeneralData<*>> = DataLoader.LOADED_DATA
+    ): Report {
+        var checked = 0
+        val issues = mutableListOf<Issue>()
+        val warnings = mutableListOf<Issue>()
+
+        for ((directory, general) in data) {
+            val serializer = try {
+                STRICT.serializersModule.serializer(general.type)
+            } catch (exception: Exception) {
+                issues += Issue(directory, "<serializer>", firstLine(exception))
+                continue
+            }
+
+            val converter = FileToIdConverter.json(directory)
+            for (entry in converter.listMatchingResources(resourceManager).entries) {
+                val id = converter.fileToId(entry.key).toString()
+                checked++
+                try {
+                    val text = entry.value.openAsReader().use { it.readText() }
+                    val decoded = STRICT.decodeFromString(serializer, text.withoutToleratedKeys())
+                    // 再往返一次：IDBasedData.copy() 与 JsonOverrideApplier.computeProperties 都依赖
+                    // "编码回 JsonElement 再解析" 这条路，这里顺带保证所有数据类都能往返
+                    val roundTripped =
+                        STRICT.decodeFromJsonElement(serializer, STRICT.encodeToJsonElement(serializer, decoded))
+                    // 与 `ComplexJsonResourceReloadListener` 一样，把文件路径打戳进 `IDBasedData`：
+                    // 校验里有依赖 id 的规则（如 `SubWeapon.Data` 缺省时按配件 id 去找枪数据），
+                    // `id` 不是序列化字段，往返一趟会丢掉 —— 不打戳就会报
+                    // "SubWeapon points at gun data ''" 这种假错误。
+                    stampId(roundTripped, id)
+                    validateDerivedState(roundTripped) { warning ->
+                        warnings += Issue(directory, id, warning)
+                    }
+                } catch (exception: Exception) {
+                    issues += Issue(directory, id, firstLine(exception))
+                }
+            }
+        }
+
+        if (warnings.isNotEmpty()) {
+            Mod.LOGGER.warn("[DataValidator] {} non-fatal data warning(s):", warnings.size)
+            for (warning in warnings) {
+                Mod.LOGGER.warn("[DataValidator]   {}/{} -> {}", warning.directory, warning.file, warning.message)
+            }
+        }
+
+        return Report(checked, issues)
+    }
+
+    /**
+     * 把文件路径决定的 id 打戳进 [decoded]（见 [IDBasedData]）。
+     *
+     * 数据加载器本来就会做这件事（`ComplexJsonResourceReloadListener`），但校验器是**另起一份**
+     * 解码结果，`id` 又不在序列化字段里 —— 不补这一刀，凡是读 `getId()` 的校验规则都会拿到空串。
+     */
+    private fun stampId(decoded: Any, id: String) {
+        (decoded as? IDBasedData<*>)?.id = id
+    }
+
+    /**
+     * 触发那些"解码时不会走到"的派生状态。
+     *
+     * 枪械数据里的弹药来源（[com.atsuishio.superbwarfare.data.gun.AmmoConsumer.sources]）和开火模式
+     * 都是 lazy / 缓存派生的，只解码不访问就验证不到；这里主动读一遍，把解析异常暴露出来。
+     *
+     * 这里刻意**不**判断 [com.atsuishio.superbwarfare.data.gun.AmmoConsumer.isValid]：
+     * 声明了 `AmmoSlot`/`Override` 但没写 `Ammo` 的条目是合法的（例如 Secondary Cataclysm 的
+     * 近战模式，`ProjectileAmount: 0` 且 `AmmoSlot: "Melee"`，本来就不需要弹药来源）。
+     *
+     * @param warn 非致命问题的回调（例如"能跑但建议迁移"的写法）。不传就当没有。
+     */
+    private fun validateDerivedState(decoded: Any, warn: (String) -> Unit = {}) {
+        when (decoded) {
+            is DefaultGunData -> {
+                for (entry in decoded.ammoConsumers) {
+                    // 强制求值 lazy 派生出来的 sources
+                    entry.value.primary.type
+                }
+
+                decoded.fireModes.size
+                decoded.availablePerks()
+                validateAvailableAttachments(decoded, warn)
+                validateAttachmentConflicts(decoded, warn)
+
+                validateMeleeData(decoded, warn)
+            }
+
+            is AttachmentDefinition -> validateAttachmentData(decoded, warn)
+
+            // `sbw/melee_effects` 里的预设文件本身（枪械数据里的 Effects 条目在 validateMeleeData 里查）
+            is MeleeEffectSpec -> validateMeleeEffectPreset(decoded, warn)
+        }
+    }
+
+    /**
+     * `AvailableAttachments` 的校验规则。
+     *
+     * 要抓的是"写错了不报错、只是这个配件再也不出现在改装界面里"这类问题：
+     * - 槽位键不在 [AttachmentType] 里（键写错＝整条声明没人读）
+     * - 条目既不是合法 id、也不是合法标签 id
+     * - `#标签` 指向一个**不存在或为空**的物品标签（展开成空表）
+     * - 展开后一条配件都不剩（全是 `!` 排除，或标签全空）
+     *
+     * 这里**刻意重写一遍** [com.atsuishio.superbwarfare.data.attachment.AvailableAttachments]
+     * 的展开逻辑，而不是调它：校验器跑在"数据刚解码、还没打戳 id"的时刻，而那一层要按枪械数据 id 做缓存，
+     * 在校验期调它只会把半成品灌进缓存。两边必须保持"按声明顺序、`!` 只影响它前面的条目"这**同一条**语义
+     * （否则会出现"校验说解析不出东西、实际能用"这种自相矛盾的报告）。
+     *
+     * **不做**的是"这个物品是不是该槽位的配件"：标签本来就允许混装，
+     * 真装错的话 `GunData.canInstall` 会在运行时挡掉，不必在这里重复一遍。
+     */
+    private fun validateAvailableAttachments(data: DefaultGunData, warn: (String) -> Unit) {
+        for ((slotKey, declarations) in data.availableAttachments) {
+            if (AttachmentType.entries.none { it.attachmentName == slotKey }) {
+                warn(
+                    "AvailableAttachments key '$slotKey' is not a known attachment slot " +
+                            "(${AttachmentType.entries.joinToString(", ") { it.attachmentName }}); " +
+                            "the whole declaration is ignored"
+                )
+            }
+
+            val accepted = mutableSetOf<ResourceLocation>()
+            val excluded = mutableSetOf<ResourceLocation>()
+            var declared = 0
+
+            for (declaration in declarations) {
+                val raw = declaration.value.id.trim()
+                if (raw.isEmpty()) {
+                    warn("AvailableAttachments['$slotKey'] contains an empty entry")
+                    continue
+                }
+                declared++
+
+                val negated = raw.startsWith("!")
+                val body = (if (negated) raw.substring(1) else raw).trim()
+                val tagged = body.startsWith("#")
+                val target = (if (tagged) body.substring(1) else body).trim()
+
+                val id = ResourceLocation.tryParse(target)
+                if (id == null) {
+                    warn(
+                        "AvailableAttachments['$slotKey'] entry '$raw' is not a valid " +
+                                (if (tagged) "item tag id" else "item id")
+                    )
+                    continue
+                }
+
+                val members = if (tagged) {
+                    val tag = runCatching { ForgeRegistries.ITEMS.tags()?.getTag(ItemTags.create(id)) }
+                        .getOrNull()
+                    if (tag == null || tag.isEmpty) {
+                        warn(
+                            "AvailableAttachments['$slotKey'] entry '$raw' points at an empty or " +
+                                    "missing item tag; it contributes nothing"
+                        )
+                        continue
+                    }
+                    tag.mapNotNull { ForgeRegistries.ITEMS.getKey(it) }
+                } else {
+                    val item = ForgeRegistries.ITEMS.getValue(id)
+                    if (item == null) {
+                        warn("AvailableAttachments['$slotKey'] entry '$raw' is not a registered item")
+                        continue
+                    }
+                    if (item !is AttachmentProvider) {
+                        warn(
+                            "AvailableAttachments['$slotKey'] entry '$raw' is not an attachment item " +
+                                    "(no attachment data can be resolved from it)"
+                        )
+                        continue
+                    }
+                    listOf(id)
+                }
+
+                for (member in members) {
+                    if (negated) {
+                        accepted -= member
+                        excluded += member
+                    } else if (member !in excluded) {
+                        accepted += member
+                    }
+                }
+            }
+
+            // 全被 `!` 排除掉、或者标签全空时，这个槽位在改装界面上会显示成"无可用配件"，
+            // 而数据里明明写了一大段 —— 这是最难自己发现的一种写法错误
+            if (accepted.isEmpty() && declared > 0) {
+                warn("AvailableAttachments['$slotKey'] resolves to nothing after exclusions")
+            }
+        }
+    }
+
+    /**
+     * `AttachmentConflicts` 的校验规则。
+     *
+     * 抓的还是"写错了不报错、只是这条互斥永远不生效"：键和值都得是 `AttachmentType` 的名字，
+     * 指向自己等于什么都没写。判据见 `AttachmentSlots.gunConflicts`，那边对认不出来的名字是静默跳过，
+     * 所以这里报出来是唯一能发现手滑的地方。
+     *
+     * **不做**的是"这两个槽位是不是真的装得下两个"：那是几何问题，读不到模型就判不了。
+     */
+    private fun validateAttachmentConflicts(data: DefaultGunData, warn: (String) -> Unit) {
+        val known = AttachmentType.entries.joinToString(", ") { it.attachmentName }
+
+        for ((slotKey, others) in data.attachmentConflicts) {
+            if (AttachmentType.entries.none { it.attachmentName == slotKey }) {
+                warn(
+                    "AttachmentConflicts key '$slotKey' is not a known attachment slot ($known); " +
+                            "the entry is ignored"
+                )
+            }
+
+            for (other in others) {
+                if (AttachmentType.entries.none { it.attachmentName == other }) {
+                    warn("AttachmentConflicts['$slotKey'] names '$other', which is not a known attachment slot ($known)")
+                } else if (other == slotKey) {
+                    warn("AttachmentConflicts['$slotKey'] names its own slot; the entry does nothing")
+                }
+            }
+        }
+    }
+
+    /**
+     * 配件数据的校验规则。
+     *
+     * 抓的是几类"写错了不报错、只会静默失效"的问题：
+     * - 槽位没有登记进 `AttachmentSlots`（**致命**：`AttachmentSlots.of` 会直接抛异常）
+     * - 槽位的渲染走注册表通用路径，却没写 `Model`/`Texture`（装了但枪上看不见）
+     * - `Bone` 写在"约定骨骼"槽位上（渲染不看它）
+     * - `Override` 里写了不是枪械属性的键（宽松解析会静默忽略）
+     * - `ExtraSlots` 里的槽位没登记，或各槽位解析挂载骨骼的方式不一致（同一条 `Bone` 会被解释成不同骨骼）
+     *
+     * **不做**骨骼是否存在的校验：那要读客户端模型，只能等资源加载完再查。
+     */
+    private fun validateAttachmentData(data: AttachmentDefinition, warn: (String) -> Unit) {
+        // `ExtraSlots` 里的名字写错就是"这件配件在那根导轨上永远装不上"，所以和主槽位一样是致命的
+        for (type in data.acceptedSlots) {
+            if (AttachmentSlots.ofOrNull(type) == null) {
+                error("Attachment slot $type is not registered in AttachmentSlots.ALL")
+            }
+        }
+
+        val slot = AttachmentSlots.of(data.slot)
+        if (slot.renderMode == AttachmentRenderMode.GENERIC && (data.model == null || data.texture == null)) {
+            warn(
+                "slot ${data.slot} is rendered generically, but " +
+                        (if (data.model == null) "Model" else "Texture") +
+                        " is missing; the attachment will not show up on the gun"
+            )
+        }
+
+        // 逐个槽位查：多槽位配件的主槽位可能不是 Fixed，但 `ExtraSlots` 里那个是
+        val acceptedMounts = data.acceptedSlots.mapNotNull { AttachmentSlots.ofOrNull(it)?.mountBone }
+        for (mountBone in acceptedMounts) {
+            if (mountBone is AttachmentMountBone.Fixed && data.bone != null) {
+                warn("Bone=${data.bone} is ignored: slot ${data.slot} also mounts on the convention bone '${mountBone.name}'")
+                break
+            }
+        }
+
+        // `Bone` 只有单个值，而 `ExtraSlots` 里的槽位可能一个走"约定骨骼"、一个走配件自己声明的骨骼 ——
+        // 那时同一条 `Bone` 会在不同槽位上被解释成不同的东西，只能靠人确认
+        if (acceptedMounts.distinctBy { it::class }.size > 1) {
+            warn(
+                "slots ${data.acceptedSlots.joinToString(", ") { it.name }} resolve their mount bone " +
+                        "differently (some Fixed, some FromDefinition); a single 'Bone' cannot mean both"
+            )
+        }
+
+        for (key in data.override?.keys.orEmpty()) {
+            if (GunProp.entries.none { it.serializationName == key }) {
+                warn("Override key '$key' is not a registered gun property and will be ignored")
+            }
+        }
+
+        // 点名自己装的槽位是空转的（`AttachmentSlots.conflicts` 第一行就把 type == other 排除掉了）
+        val selfConflict = data.conflictsWith.filter { it in data.acceptedSlots }
+        if (selfConflict.isNotEmpty()) {
+            warn("ConflictsWith contains its own slot(s) ${selfConflict.joinToString(", ") { it.name }}: the entry does nothing")
+        }
+
+        if (data.allowSharedMount && data.conflictsWith.isNotEmpty()) {
+            warn(
+                "AllowSharedMount is set, so ConflictsWith " +
+                        data.conflictsWith.joinToString(", ") { it.name } + " will be ignored"
+            )
+        }
+
+        validateSubWeaponData(data, warn)
+        validateShieldData(data, warn)
+    }
+
+    /**
+     * 枪盾定义的校验
+     */
+    private fun validateShieldData(data: AttachmentDefinition, warn: (String) -> Unit) {
+        val info = data.shield ?: return
+
+        if (AttachmentType.UPPER_RAIL !in data.acceptedSlots) {
+            warn("attachment ${data.getId()} declares Shield but is not installable on UpperRail")
+        }
+        if (info.durability <= 0.0) {
+            warn("Shield.Durability must be > 0, got ${info.durability}")
+        }
+        if (info.resist !in 0.0..100.0) {
+            warn("Shield.Resist is clamped to 0~100, got ${info.resist}")
+        }
+        if (info.coverAngle !in 0.0..180.0) {
+            warn("Shield.CoverAngle is clamped to 0~180, got ${info.coverAngle}")
+        }
+        if (info.rechargeRate < 0.0) {
+            warn("Shield.RechargeRate must be >= 0, got ${info.rechargeRate}")
+        }
+        if (info.rechargeDelay < 0) {
+            warn("Shield.RechargeDelay must be >= 0, got ${info.rechargeDelay}")
+        }
+        if (info.brokenLockout < 0) {
+            warn("Shield.BrokenLockout must be >= 0, got ${info.brokenLockout}")
+        }
+        if (info.energyPerCharge < 0.0) {
+            warn("Shield.EnergyPerCharge must be >= 0, got ${info.energyPerCharge}")
+        }
+        if (info.breakOverflow !in 0.0..100.0) {
+            warn("Shield.BreakOverflow is clamped to 0~100, got ${info.breakOverflow}")
+        }
+        if (info.energyPerCharge > 0.0 && data.modifiers.none { it.prop == GunProp.MAX_ENERGY.serializationName }) {
+            warn("attachment ${data.getId()} charges FE but grants no MaxEnergy; it can only recharge from other sources")
+        }
+        if (data.model == null || data.texture == null) {
+            warn("attachment ${data.getId()} declares Shield but has no Model/Texture, so the shield face cannot be hidden")
+        }
+    }
+
+    /**
+     * 副武器定义的校验。
+     *
+     * 要抓的是"数据写错了但装了以后什么都不会发生"这类问题：
+     * - 副武器的枪数据解析不出来（**致命**：`SubWeaponItem` 拿不到 `GunData`，G 键会静默失灵）；
+     * - 对应物品不是 `SubWeaponItem`（它是普通配件，装了不受 G 控制）；
+     * - 开火动画候选链里混进了空名字。
+     *
+     * 注意 `Data` 为空的**正常**含义是"用附件自身 id"，所以这里要按同一条规则去查
+     * `CustomData.GUN_DATA`，不能因为字段为空就跳过。
+     */
+    private fun validateSubWeaponData(data: AttachmentDefinition, warn: (String) -> Unit) {
+        val info = data.subWeapon ?: return
+
+        val attachmentId = data.getId()
+        val gunDataId = info.data?.takeIf { it.isNotBlank() } ?: attachmentId
+        if (CustomData.GUN_DATA[gunDataId] == null) {
+            error(
+                "SubWeapon points at gun data '$gunDataId', which is not present in sbw/guns"
+            )
+        }
+
+        // 动画候选链：空名字会拼出一个毫无意义的 clip 名（`animation.ak_12.`），
+        // 只能靠运行时日志发现，这里提前拦掉。
+        // clip **是否存在**同样查不了（要读客户端的动画文件），那部分仍然靠运行时日志。
+        for (candidate in info.fireAnimationCandidates()) {
+            require(candidate.isNotBlank()) {
+                "SubWeapon.Animation contains a blank clip name; " +
+                        "candidates are tried in order, e.g. [\"fire_sub_weapon\", \"fire\"]"
+            }
+        }
+
+        validateSubWeaponReload(gunDataId, warn)
+
+        // 物品存在性与类型只能在注册表可用之后查；数据包侧注册表可能还没就绪，查不到就只提示
+        val item = ResourceLocation.tryParse(attachmentId)?.let { ForgeRegistries.ITEMS.getValue(it) }
+        if (item == null) {
+            warn("attachment '$attachmentId' has no registered item; it cannot be installed")
+        } else if (item !is SubWeaponItem) {
+            warn(
+                "attachment '$attachmentId' declares SubWeapon but its item is " +
+                        "${item.javaClass.simpleName}, not SubWeaponItem; it will not be usable with G"
+            )
+        }
+    }
+
+    /**
+     * 副武器**装填**相关的校验：`Magazine > 1` 的副武器最常写歪的两处。
+     *
+     * 两处都能跑起来，但表现不像一把枪（而且不会报任何错），所以在数据侧点出来：
+     * - 没写 `EmptyReloadTime`：打空后的装填是 **0 tick**，瞬间装满；
+     * - 开了 `TacticalReload` 却没写 `NormalReloadTime`：没打空时的装填同样是 0 tick。
+     *
+     * 换弹时长只在 `Magazine > 1` 时才有坑：单发副武器（GP-25 这种）只有"空仓"一种装填。
+     */
+    private fun validateSubWeaponReload(gunDataId: String, warn: (String) -> Unit) {
+        val gunData = CustomData.GUN_DATA[gunDataId] ?: return
+
+        // 数值一律取 0 级（换弹时间是 `SingleOrList`，按枪械等级取值）
+        val magazine = gunData.magazine.list.getOrElse(0) { 0 }
+        if (magazine <= 1) return
+
+        if (gunData.emptyReloadTime.list.getOrElse(0) { 0 } <= 0) {
+            warn(
+                "SubWeapon gun data '$gunDataId' has Magazine=$magazine but no EmptyReloadTime; " +
+                        "reloading an empty magazine would finish instantly"
+            )
+        }
+
+        if (gunData.tacticalReload && gunData.normalReloadTime.list.getOrElse(0) { 0 } <= 0) {
+            warn(
+                "SubWeapon gun data '$gunDataId' turns on TacticalReload but has no NormalReloadTime; " +
+                        "a partial reload would finish instantly"
+            )
+        }
+    }
+
+    /**
+     * 近战相关数据的校验规则。
+     *
+     * 分两类：
+     * - **致命**（抛异常，由调用方记成 `Issue`）：参数自相矛盾到无法判定，比如
+     *   `Cone` 的总张角不是正数、`Box` 三轴有非正数、`ZFrom + Length <= 0`（判定体整个在身后）、
+     *   负的 `HitTime`、`HitTime` 超过本段时长（永远不会结算）。
+     * - **警告**（走 `warn` 回调）：能跑但建议改，比如靠 `ProjectileAmount <= 0` 隐式表达近战
+     *   （应迁移到 `"Projectile": "@melee"`）、旧的无 `@` 前缀标记写法。
+     *
+     * 注意：动作表里的字段是**可选**的（不写就走全局继承），所以这里只校验"写了的那部分"。
+     */
+    private fun validateMeleeData(data: DefaultGunData, warn: (String) -> Unit) {
+        val hitbox = data.meleeHitbox
+        if (hitbox != null) {
+            require(hitbox.range >= 0) { "MeleeHitbox.Range must be >= 0, got ${hitbox.range}" }
+            require(hitbox.angle >= 0) { "MeleeHitbox.Angle must be >= 0, got ${hitbox.angle}" }
+            require(hitbox.pitch >= 0) { "MeleeHitbox.Pitch must be >= 0, got ${hitbox.pitch}" }
+
+            when (hitbox.type) {
+                MeleeHitboxType.CONE -> {
+                    require(hitbox.angle > 0) { "MeleeHitbox.Angle must be > 0 for a Cone, got ${hitbox.angle}" }
+                    require(hitbox.pitch > 0) { "MeleeHitbox.Pitch must be > 0 for a Cone, got ${hitbox.pitch}" }
+                }
+
+                MeleeHitboxType.BOX -> {
+                    require(hitbox.width > 0) { "MeleeHitbox.Width must be > 0 for a Box, got ${hitbox.width}" }
+                    require(hitbox.height > 0) { "MeleeHitbox.Height must be > 0 for a Box, got ${hitbox.height}" }
+                    // 盒子的前向长度 = 近战触及距离（Range + MeleeRange，再乘动作倍率），没有单独的 Length
+                    require(hitbox.zFrom + hitbox.rangeOr(data.meleeRange) > 0) {
+                        "MeleeHitbox Box is entirely behind the player: " +
+                                "ZFrom=${hitbox.zFrom} + (Range|MeleeRange)=${hitbox.rangeOr(data.meleeRange)} <= 0"
+                    }
+                }
+
+                MeleeHitboxType.CAPSULE -> {
+                    require(hitbox.radius > 0) { "MeleeHitbox.Radius must be > 0 for a Capsule, got ${hitbox.radius}" }
+                    require(hitbox.zFrom + hitbox.rangeOr(data.meleeRange) > 0) {
+                        "MeleeHitbox Capsule is entirely behind the player: " +
+                                "ZFrom=${hitbox.zFrom} + (Range|MeleeRange)=${hitbox.rangeOr(data.meleeRange)} <= 0"
+                    }
+                }
+            }
+        }
+
+        val sweep = data.meleeSweep
+        if (sweep != null) {
+            require(sweep.steps >= 0) { "MeleeSweep.Steps must be >= 0 (0 = auto), got ${sweep.steps}" }
+            require(sweep.span <= 360.0) { "MeleeSweep spans ${sweep.span} degrees, which exceeds a full turn" }
+        }
+
+        require(data.meleeComboReset >= 0) { "MeleeComboReset must be >= 0, got ${data.meleeComboReset}" }
+
+        require(data.meleeChainWindow >= 0) { "MeleeChainWindow must be >= 0, got ${data.meleeChainWindow}" }
+
+        // 消耗只有在"真的能打出近战"时才有意义
+        if (data.consumeOnMeleeHit && data.meleeDamage <= 0) {
+            warn("ConsumeOnMeleeHit is true but MeleeDamage=${data.meleeDamage}; no melee hit can ever land")
+        }
+
+        // 冲锋撞人那一下可以有自己的 Duration/HitTime，但同样不能"永远打不到"
+        val charge = data.bayonetCharge
+        require(
+            charge.strikeHitTime <= 0 || charge.strikeDuration <= 0 || charge.strikeHitTime <= charge.strikeDuration
+        ) {
+            "BayonetCharge resolves at StrikeHitTime=${charge.strikeHitTime} but the strike lasts " +
+                    "StrikeDuration=${charge.strikeDuration} ticks; it would never hit"
+        }
+
+        if (data.rightClickAction == RightClickAction.BAYONET_CHARGE && charge.duration <= 0) {
+            warn("RightClickAction is BayonetCharge but BayonetCharge.Duration is ${charge.duration}; right-click does nothing")
+        }
+
+        // 撞人那一击走的是 `hasMeleeAttack()`（`MeleeDamage > 0`）那条门禁，没近战就只剩加速
+        if (charge.duration > 0 && data.meleeDamage <= 0) {
+            warn(
+                "BayonetCharge.Duration=${charge.duration} but MeleeDamage=${data.meleeDamage}; " +
+                        "the strike can never land, only the speed effect applies"
+            )
+        }
+
+        for ((index, action) in data.meleeActions.list.withIndex()) {
+            require(action.duration == null || action.duration > 0) {
+                "MeleeActions[$index].Duration must be > 0 when written, got ${action.duration}"
+            }
+            val hitTimes = action.hitTimes?.list.orEmpty()
+            for (hitTime in hitTimes) {
+                require(hitTime >= 0) {
+                    "MeleeActions[$index].HitTime must be >= 0, got $hitTime"
+                }
+            }
+            require(action.maxTargets == null || action.maxTargets >= 0) {
+                "MeleeActions[$index].MaxTargets must be >= 0 (0 = unlimited), got ${action.maxTargets}"
+            }
+            require(action.falloff == null || action.falloff in 0.0..1.0) {
+                "MeleeActions[$index].Falloff must be within [0, 1], got ${action.falloff}"
+            }
+            require(action.cooldown == null || action.cooldown >= 0) {
+                "MeleeActions[$index].Cooldown must be >= 0, got ${action.cooldown}"
+            }
+            require(action.durability == null || action.durability >= 0) {
+                "MeleeActions[$index].Durability must be >= 0, got ${action.durability}"
+            }
+            require(action.damageMultiplier == null || action.damageMultiplier >= 0) {
+                "MeleeActions[$index].DamageMultiplier must be >= 0, got ${action.damageMultiplier}"
+            }
+            require(action.rangeMultiplier == null || action.rangeMultiplier >= 0) {
+                "MeleeActions[$index].RangeMultiplier must be >= 0, got ${action.rangeMultiplier}"
+            }
+            require(action.bypassesArmor == null || action.bypassesArmor in 0.0..1.0) {
+                "MeleeActions[$index].BypassesArmor must be within [0, 1], got ${action.bypassesArmor}"
+            }
+            require(action.headshot == null || action.headshot >= 0) {
+                "MeleeActions[$index].Headshot must be >= 0, got ${action.headshot}"
+            }
+            require(action.legshot == null || action.legshot >= 0) {
+                "MeleeActions[$index].Legshot must be >= 0, got ${action.legshot}"
+            }
+
+            // HitTime 超过本段时长时结算永远不会发生，这是最容易写错的一处
+            val effectiveDuration = action.duration ?: data.meleeDuration
+            for (hitTime in hitTimes.ifEmpty { listOf(data.meleeDamageTime) }) {
+                require(hitTime <= effectiveDuration) {
+                    "MeleeActions[$index] resolves at HitTime=$hitTime but the swing only lasts " +
+                            "Duration=$effectiveDuration ticks; it would never hit"
+                }
+            }
+
+            // 动画候选链：空候选会拼出一个毫无意义的名字，只能靠运行时日志发现，这里提前拦掉。
+            // clip **是否存在**查不了（要读客户端的动画文件），那部分仍然靠运行时日志。
+            for (candidate in action.animationCandidates()) {
+                require(candidate.isNotBlank()) {
+                    "MeleeActions[$index].Animation contains a blank clip name; " +
+                            "candidates are tried in order, e.g. [\"hit_bayonet\", \"hit\"]"
+                }
+            }
+
+            for ((effectIndex, effect) in action.effects.orEmpty().withIndex()) {
+                validateMeleeEffectEntry(
+                    effect.value,
+                    "MeleeActions[$index].Effects[$effectIndex]",
+                    fatal = { message -> error(message) },
+                    warn = warn,
+                )
+            }
+        }
+
+        val projectileMarker = data.projectile.value.itemId
+
+        // 迁移提示：靠 `ProjectileAmount <= 0` 隐式表达"近战专属"，建议改成显式的 `@melee`。
+        //
+        // 只对「**本身就是近战专属**的枪」提示：`ProjectileAmount <= 0` 在别处是合法写法
+        // （例如霰弹枪的一个弹种把弹丸数覆盖成 0，那把枪平时照样开枪），
+        // 所以弹种/开火模式的 `Override` 里一旦能改回 `ProjectileAmount`，就不该催迁移。
+        if (!projectileMarker.isMeleeProjectileMarker()
+            && data.projectileAmount <= 0
+            && data.meleeDamage > 0
+            && !anyModifierTouchesProjectileAmount(data)
+        ) {
+            warn(
+                "melee is expressed implicitly (ProjectileAmount=${data.projectileAmount} && " +
+                        "MeleeDamage=${data.meleeDamage}); migrate to \"Projectile\": \"@melee\""
+            )
+        }
+
+        // 迁移提示：旧的裸标记写法
+        val normalizedMarker = projectileMarker.trim().lowercase()
+        if (projectileMarker != projectileMarker.trim() || normalizedMarker == "empty" || normalizedMarker == "ray") {
+            warn(
+                "Projectile marker '$projectileMarker' has no '@' prefix; " +
+                    "engine markers should be written as \"@empty\" / \"@ray\" / \"@melee\""
+            )
+        }
+    }
+
+    /**
+     * 近战额外效果条目 / 预设的校验规则。
+     *
+     * 抓的是两类问题：
+     * - **致命**：`Effect`/`Type` 都没写，或者写了却**解析不出任何已登记行为**
+     *   （宽松解析会让它静默失效 —— 数据里写了"概率爆炸"结果什么都没发生，是最难查的一类）；
+     * - **警告**：数值越界、行为自己的必填字段缺失（由 [MeleeEffectBehavior.validate] 提供）。
+     *
+     * @param where 出错时的定位前缀，例如 `MeleeActions[2].Effects[0]`
+     * @param fatal 致命问题的回调（条目走 `error`，预设文件同理）
+     */
+    private fun validateMeleeEffectEntry(
+        effect: MeleeEffectSpec,
+        where: String,
+        fatal: (String) -> Unit,
+        warn: (String) -> Unit,
+    ) {
+        if (effect.effect == null && effect.type == null) {
+            fatal("$where has neither 'Effect' (preset id) nor 'Type' (behavior id)")
+            return
+        }
+
+        effect.chance?.let { require(it in 0.0..1.0) { "$where has Chance=$it, must be within [0, 1]" } }
+        effect.cooldown?.let { require(it >= 0) { "$where has Cooldown=$it, must be >= 0" } }
+        effect.damage?.let { require(it >= 0) { "$where has Damage=$it, must be >= 0" } }
+        effect.radius?.let { require(it >= 0) { "$where has Radius=$it, must be >= 0" } }
+        effect.fireTime?.let { require(it >= 0) { "$where has FireTime=$it, must be >= 0" } }
+        effect.knockback?.let { require(it >= 0) { "$where has Knockback=$it, must be >= 0" } }
+        effect.lift?.let { require(it >= 0) { "$where has Lift=$it, must be >= 0" } }
+        effect.duration?.let { require(it >= 0) { "$where has Duration=$it, must be >= 0" } }
+        effect.amplifier?.let { require(it >= 0) { "$where has Amplifier=$it, must be >= 0" } }
+        effect.count?.let { require(it >= 0) { "$where has Count=$it, must be >= 0" } }
+        effect.amplitude?.let { require(it >= 0) { "$where has Amplitude=$it, must be >= 0" } }
+
+        val names = listOfNotNull(effect.effect, effect.type).joinToString(" / ")
+        val resolved = effect.resolve()
+        if (resolved == null) {
+            fatal(
+                "$where ('$names') does not resolve to a registered melee effect; " +
+                        "registered behaviors: ${ModMeleeEffects.ids().joinToString(", ")}"
+            )
+            return
+        }
+
+        ModMeleeEffects.get(resolved.type)?.validate(resolved)?.let { warn("$where ($names) -> $it") }
+    }
+
+    /**
+     * `sbw/melee_effects` 目录下预设文件自身的校验。
+     *
+     * 预设至少要写 `Type`（也可以写 `Effect` 去别名另一个预设）；条目侧引用它时会再做一次同样的校验。
+     */
+    private fun validateMeleeEffectPreset(data: MeleeEffectSpec, warn: (String) -> Unit) {
+        validateMeleeEffectEntry(
+            data,
+            "melee effect preset",
+            fatal = { message -> error(message) },
+            warn = warn,
+        )
+    }
+
+    /**
+     * 是否有任何弹种把 `ProjectileAmount` 覆盖成别的值。
+     *
+     * 有的话说明"不发射"只是某个弹种的局部行为，不是这把枪的定位——
+     * 此时不该提示迁移到 `@melee`（那把枪平时还是要开枪的）。
+     */
+    private fun anyModifierTouchesProjectileAmount(data: DefaultGunData): Boolean {
+        for (entry in data.ammoConsumers) {
+            val override = entry.value.override ?: continue
+            if (override.containsKey(PROJECTILE_AMOUNT_KEY)) return true
+        }
+        return false
+    }
+
+    /** 校验并输出报告；未启用时直接返回 */
+    fun validateAndLog(resourceManager: ResourceManager, data: Map<String, DataLoader.GeneralData<*>>) {
+        if (!ENABLED) return
+
+        val report = validate(resourceManager, data)
+        if (report.ok) {
+            Mod.LOGGER.info("[DataValidator] all {} data files are valid", report.checked)
+            return
+        }
+
+        // 故意用英文输出：日志文件/控制台经常是 GBK，中文会变乱码
+        Mod.LOGGER.error(
+            "[DataValidator] {} of {} files failed validation:",
+            report.issues.size,
+            report.checked
+        )
+        for (issue in report.issues) {
+            Mod.LOGGER.error("[DataValidator]   {}/{} -> {}", issue.directory, issue.file, issue.message)
+        }
+    }
+
+    /**
+     * 去掉数据类不声明的顶层遗留键，让严格解析不因它们误报。
+     * 不是合法 JSON 对象时原样返回，交给严格解析去报错。
+     */
+    private fun String.withoutToleratedKeys(): String {
+        val element = try {
+            STRICT.parseToJsonElement(this)
+        } catch (_: Exception) {
+            return this
+        }
+        val obj = element as? JsonObject ?: return this
+        if (obj.keys.none { it in TOLERATED_TOP_LEVEL_KEYS }) return this
+        return JsonObject(obj.filterKeys { it !in TOLERATED_TOP_LEVEL_KEYS }).toString()
+    }
+
+    private fun firstLine(exception: Exception): String =
+        (exception.message ?: exception.toString()).lineSequence().first()
+}

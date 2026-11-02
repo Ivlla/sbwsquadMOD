@@ -1,0 +1,20 @@
+{
+  "Slot": "Muzzle",
+  "Level": 1,
+  "Bone": "muzzle_pos",
+  "CanRotate": true,
+  "Modifiers": [
+    {
+      "Prop": "Weight",
+      "Op": "Add",
+      "Value": 0.2
+    }
+  ],
+  "Override": {
+    "SpreadPattern": {
+      "Type": "XShape"
+    }
+  },
+  "Model": "superbwarfare:models/bedrock/attachment/cross_muzzle.geo.json",
+  "Texture": "superbwarfare:textures/bedrock/attachment/cross_muzzle.png"
+}

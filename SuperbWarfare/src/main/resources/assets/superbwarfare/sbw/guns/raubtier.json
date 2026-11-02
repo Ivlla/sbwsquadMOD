@@ -1,0 +1,17 @@
+{
+  "SlotIcon": "superbwarfare:textures/item/raubtier_icon.png",
+  "Animation": {
+    "Idle": "animation.raubtier.idle",
+    "ReloadNormal": "animation.raubtier.reload_normal",
+    "ReloadEmpty": "animation.raubtier.reload_empty",
+    "Fire": "animation.raubtier.fire"
+  },
+  "ZoomingTranslateMultiply": 1.0,
+  "Model": {
+    "Animation": "superbwarfare:animations/bedrock/gun/raubtier.animation.json",
+    "Model": "superbwarfare:models/bedrock/gun/raubtier.geo.json",
+    "Texture": "superbwarfare:textures/bedrock/gun/raubtier.png"
+  },
+  "HideCrosshairWhenZoom": false,
+  "SprintOffset": [12, 0, 0]
+}

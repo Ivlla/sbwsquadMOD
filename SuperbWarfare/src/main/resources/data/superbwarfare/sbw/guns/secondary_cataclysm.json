@@ -1,0 +1,230 @@
+{
+  "Spread": 5,
+  "ZoomReload": false,
+  "RecoilX": 0.004,
+  "RecoilY": 0.023,
+  "MaxEnergy": 24000,
+  "Damage": 80,
+  "ExplosionDamage": 50,
+  "ExplosionRadius": 5,
+  "Headshot": 2,
+  "Velocity": 3.75,
+  "Magazine": 8,
+  "Weight": 9,
+  "DrawTime": 17,
+  "ZoomTime": 11,
+  "ReloadTypes": [
+    "Iterative"
+  ],
+  "ChargeAction": [
+    {
+      "OneShotCost": 3000,
+      "OnlyZooming": true,
+      "Override": {
+        "Damage": 160,
+        "ExplosionDamage": 60,
+        "ExplosionRadius": 6,
+        "Velocity": 20,
+        "RecoilX": 0.012,
+        "RecoilY": 0.05,
+        "ShootAnimation": "animation.secondary_cataclysm.fire_charge",
+        "SoundInfo": {
+          "Fire1P": "superbwarfare:secondary_cataclysm_fire_1p_charge",
+          "Fire3P": "superbwarfare:secondary_cataclysm_fire_3p_charge",
+          "Fire3PFar": "superbwarfare:secondary_cataclysm_far_charge",
+          "Fire3PVeryFar": "superbwarfare:secondary_cataclysm_veryfar_charge"
+        }
+      }
+    }
+  ],
+  "PrepareTime": 16,
+  "IterativeTime": 18,
+  "FinishTime": 18,
+  "MeleeDamage": 15,
+  "MeleeActions": [
+    {
+      "Animation": [
+        "bayonet_hit",
+        "hit"
+      ],
+      "Duration": 16,
+      "HitTime": 4,
+      "Hitbox": {
+        "Type": "Box",
+        "Range": 2.0,
+        "Width": 1.0,
+        "Height": 1.6,
+        "YOffset": -0.3,
+        "Occlusion": true
+      },
+      "Sweep": {
+        "From": 0,
+        "To": 0
+      },
+      "MaxTargets": 2,
+      "Knockback": 0.3,
+      "Headshot": 1.5,
+      "Legshot": 0.75
+    }
+  ],
+  "MeleeSound": {
+    "Hit": "superbwarfare:bayonet_hit"
+  },
+  "BayonetCharge": {
+    "RequiresBayonet": false,
+    "Duration": 180,
+    "Speed": 2,
+    "Cooldown": 300,
+    "Sound": "superbwarfare:lunge_mine_growl",
+    "StrikeDuration": 18,
+    "StrikeHitTime": 1,
+    "StrikeDamage": 50
+  },
+  "SoundRadius": 8,
+  "RPM": 240,
+  "Projectile": "superbwarfare:gun_grenade",
+  "ProjectileSplitCount": 1,
+  "ProjectileSplitAmount": 6,
+  "GunType": "CurvedLauncher",
+  "ProjectileBone": "he_head",
+  "AmmoType": [
+    "superbwarfare:grenade_40mm",
+    {
+      "Ammo": "superbwarfare:smoke_gun_grenade",
+      "ProjectileBone": "smoke_head",
+      "Projectile": "superbwarfare:smoke_gun_grenade",
+      "Override": {
+        "Damage": 30,
+        "ExplosionDamage": 0,
+        "ExplosionRadius": 0,
+        "ChargeAction": [
+          {
+            "OneShotCost": 3000,
+            "OnlyZooming": true,
+            "Override": {
+              "Damage": 60,
+              "Velocity": 20,
+              "RecoilX": 0.012,
+              "RecoilY": 0.05,
+              "ShootAnimation": "animation.secondary_cataclysm.fire_charge",
+              "SoundInfo": {
+                "Fire1P": "superbwarfare:secondary_cataclysm_fire_1p_charge",
+                "Fire3P": "superbwarfare:secondary_cataclysm_fire_3p_charge",
+                "Fire3PFar": "superbwarfare:secondary_cataclysm_far_charge",
+                "Fire3PVeryFar": "superbwarfare:secondary_cataclysm_veryfar_charge"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Ammo": "@ShotgunAmmo",
+      "AmmoSlot": "Default",
+      "Projectile": "superbwarfare:projectile",
+      "ProjectileBone": "grape_head",
+      "Override": {
+        "Spread": 3,
+        "ZoomSpreadRate": 0.8,
+        "Damage": 10,
+        "BypassesArmor": 0.2,
+        "ExplosionDamage": 0,
+        "ExplosionRadius": 0,
+        "ProjectileAmount": 8,
+        "Velocity": 10,
+        "RecoilX": 0.009,
+        "RecoilY": 0.018,
+        "ChargeAction": [
+          {
+            "OneShotCost": 3000,
+            "OnlyZooming": true,
+            "Override": {
+              "Damage": 20,
+              "Velocity": 13,
+              "RecoilX": 0.0016,
+              "RecoilY": 0.018,
+              "BypassesArmor": 0.6,
+              "ZoomSpreadRate": 0.1,
+              "Headshot": 2,
+              "ShootAnimation": "animation.secondary_cataclysm.fire_charge",
+              "SoundInfo": {
+                "Fire1P": "superbwarfare:secondary_cataclysm_fire_1p_charge",
+                "Fire3P": "superbwarfare:secondary_cataclysm_fire_3p_charge",
+                "Fire3PFar": "superbwarfare:secondary_cataclysm_far_charge",
+                "Fire3PVeryFar": "superbwarfare:secondary_cataclysm_veryfar_charge"
+              }
+            }
+          }
+        ],
+        "Crosshair": "@GunDefault",
+        "GunType": "Shotgun",
+        "DamageReduce": {
+          "Type": "Shotgun"
+        }
+      }
+    }
+  ],
+  "Icon": "superbwarfare:textures/gun_icon/secondary_cataclysm_icon.png",
+  "AvailablePerks": [
+    "superbwarfare:striving_for_perfection",
+    "superbwarfare:cluster_bomb",
+    "superbwarfare:powerful_attraction",
+    "superbwarfare:intelligent_chip",
+    "superbwarfare:monster_hunter",
+    "superbwarfare:vorpal_weapon",
+    "superbwarfare:micro_missile",
+    "superbwarfare:regeneration",
+    "superbwarfare:eager_edge",
+    "superbwarfare:one_two_punch",
+    "superbwarfare:cast_no_shadows",
+    "superbwarfare:battle_of_wits",
+    "superbwarfare:quickdraw",
+    "superbwarfare:adrenaline_rush",
+    "superbwarfare:snapshot_sights"
+  ],
+  "AvailableAttachments": {
+    "Scope": [
+      "superbwarfare:scope_raiser",
+      "superbwarfare:scope_coyote",
+      "superbwarfare:scope_aimpoint_t2",
+      "superbwarfare:scope_eotech_551",
+      "superbwarfare:scope_drs_th",
+      "superbwarfare:scope_okp_7",
+      "superbwarfare:scope_pkas",
+      "superbwarfare:scope_bruiser",
+      "superbwarfare:scope_ranger",
+      "superbwarfare:scope_1p_78",
+      "superbwarfare:scope_pk_a",
+      "superbwarfare:scope_acog",
+      "superbwarfare:scope_qmk171",
+      "superbwarfare:scope_hamr",
+      "superbwarfare:scope_elcan_4x",
+      "superbwarfare:scope_lpvo",
+      "superbwarfare:scope_sniper",
+      "superbwarfare:scope_winefox",
+      "superbwarfare:steel_pipe_scope",
+      "superbwarfare:scope_spyglass"
+    ],
+    "Charm": [
+      "#superbwarfare:attachment/charm"
+    ],
+    "UpperRail": [
+      "superbwarfare:peq_15",
+      "superbwarfare:standard_gun_shield",
+      "superbwarfare:pistol_laser",
+      "superbwarfare:hyperion_shield_module"
+    ],
+    "LeftRail": [
+      "superbwarfare:peq_15",
+      "superbwarfare:range_finder",
+      "superbwarfare:pistol_laser"
+    ]
+  },
+  "SoundInfo": {
+    "Fire1P": "superbwarfare:secondary_cataclysm_fire_1p",
+    "Fire3P": "superbwarfare:secondary_cataclysm_fire_3p",
+    "Fire3PFar": "superbwarfare:secondary_cataclysm_far",
+    "Fire3PVeryFar": "superbwarfare:secondary_cataclysm_veryfar"
+  },
+  "Crosshair": "@GunGrenade"
+}

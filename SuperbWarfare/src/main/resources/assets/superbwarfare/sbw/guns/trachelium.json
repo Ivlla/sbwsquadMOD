@@ -1,0 +1,58 @@
+{
+  "Description": [
+    {
+      "Text": "Component#des.superbwarfare.trachelium_1",
+      "Color": "0xAAAAAA",
+      "Italic": true
+    },
+    {
+      "Text": "Component#des.superbwarfare.trachelium_2",
+      "Color": "0xAAAAAA"
+    }
+  ],
+  "SlotIcon": "superbwarfare:textures/item/trachelium_icon.png",
+  "Animation": {
+    "Idle": "animation.trachelium.idle",
+    "Edit": "animation.trachelium.edit",
+    "Fire": "animation.trachelium.fire",
+    "FireStock": "animation.trachelium.fire_stock",
+    "ReloadEmpty": "animation.trachelium.reload",
+    "Charge": "animation.trachelium.charge",
+    "IdleHandGuard": "animation.trachelium.idle_hand_guard",
+    "FireHandGuard": "animation.trachelium.fire_hand_guard",
+    "EditHandGuard": "animation.trachelium.edit_hand_guard",
+    "ReloadEmptyHandGuard": "animation.trachelium.reload_hand_guard"
+  },
+  "SprintOffset": [0, 4, 4],
+  "ShootRecoil": {
+    "Offset": [0.7, 1.0, 0.5],
+    "Rotation": [0.2, 0.2, 0.5],
+    "ZoomRate": 0.5,
+    "Speed": 1.0
+  },
+  "TriggerSound": null,
+  "ZoomingTranslateMultiply": 0.5,
+  "Model": {
+    "Animation": "superbwarfare:animations/bedrock/gun/trachelium.animation.json",
+    "Model": "superbwarfare:models/bedrock/gun/trachelium.geo.json",
+    "Texture": "superbwarfare:textures/bedrock/gun/trachelium.png",
+    "LODModel": "superbwarfare:models/bedrock/gun_lod/trachelium.geo.json",
+    "LODTexture": "superbwarfare:textures/bedrock/gun_lod/trachelium.png"
+  },
+  "FlareSize": 0.6,
+  "HasSmoke": true,
+  "Smoke": {
+    "Size": 0.45,
+    "Growth": 0.25,
+    "Lifetime": 0.3,
+    "Speed": 0.4,
+    "Count": 2,
+    "Opacity": 0.9,
+    "Drag": 2,
+    "RandomSize": 0.05,
+    "RandomGrowth": 0.2,
+    "RandomLifetime": 0.2,
+    "RandomSpeed": 0.2,
+    "RandomOpacity": 0.1
+  }
+}

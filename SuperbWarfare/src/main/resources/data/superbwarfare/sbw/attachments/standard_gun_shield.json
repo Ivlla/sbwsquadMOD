@@ -1,0 +1,34 @@
+{
+  "Slot": "UpperRail",
+  "Level": 0,
+  "Modifiers": [
+    {
+      "Prop": "MaxEnergy",
+      "Op": "Add",
+      "Value": 10000
+    },
+    {
+      "Prop": "Weight",
+      "Op": "Add",
+      "Value": 0.5
+    },
+    {
+      "Prop": "ZoomTime",
+      "Op": "Mul",
+      "Value": 1.2
+    }
+  ],
+  "Model": "superbwarfare:models/bedrock/attachment/standard_gun_shield.geo.json",
+  "Texture": "superbwarfare:textures/bedrock/attachment/standard_gun_shield.png",
+  "Shield": {
+    "Durability": 50.0,
+    "Resist": 100.0,
+    "CoverAngle": 60.0,
+    "RechargeRate": 10.0,
+    "RechargeDelay": 60,
+    "BrokenLockout": 40,
+    "EnergyPerCharge": 50,
+    "BreakOverflow": 0.8,
+    "RechargeSound": "superbwarfare:shield_recharge"
+  }
+}

@@ -1,0 +1,242 @@
+package com.atsuishio.superbwarfare.config.client
+
+import com.atsuishio.superbwarfare.config.buildClientConfig
+import com.atsuishio.superbwarfare.config.client.DisplayConfig.MELEE_HITBOX_RENDER
+
+object DisplayConfig {
+
+    @JvmField
+    val ENABLE_GUN_LOD = buildClientConfig {
+        push("display")
+
+        comment("Set true to enable gun lod")
+        comment("是否启用枪械低模")
+        define("enable_gun_lod", false)
+    }
+
+    @JvmField
+    val LENS_ZOOM_RATIO = buildClientConfig {
+        comment("Share of the scope zoom handled inside the lens instead of the world FOV. 0 = all zoom from the world FOV, 1 = the world FOV stays untouched and the lens does all the work")
+        comment("开镜倍率中由镜内放大承担的比例。0 = 完全由世界 FOV 放大，1 = 世界视野不变、全部由镜片放大")
+        defineInRange("lens_zoom_ratio", 0.5, 0.0, 1.0)
+    }
+
+    @JvmField
+    val LENS_HARD_EDGE = buildClientConfig {
+        comment("Blend the magnified scope image towards nearest-neighbour screen texels. 0 = smooth upscaling, 1 = fully blocky (hard pixel edges)")
+        comment("镜内放大画面的块状化程度。0 = 平滑放大，1 = 完全按屏幕像素取整，产生硬边")
+        defineInRange("lens_hard_edge", 1.0, 0.0, 1.0)
+    }
+
+    @JvmField
+    val ENABLE_SPECIAL_PROJECTILE_EFFECTS = buildClientConfig {
+        comment("Enable screen post-processing effects for special projectiles, such as gravity-ball lensing. Projectile models remain visible when disabled")
+        comment("启用特殊投射物的屏幕后处理效果（如重力球的引力透镜）；关闭后仍显示弹体本身")
+        define("enable_special_projectile_effects", true)
+    }
+
+    @JvmField
+    val VEHICLE_LOD_DISTANCE = buildClientConfig {
+        comment("The global LOD distance for rendering vehicles. Set -1 to disable this config")
+        comment("渲染载具低模的最小全局距离，设置为-1则不生效")
+        defineInRange("vehicle_lod_distance", 64, -1, Int.MAX_VALUE)
+    }
+
+    @JvmField
+    val WEAPON_HUD_X_OFFSET = buildClientConfig {
+        comment("The x offset of weapon hud")
+        comment("枪械HUD的水平方向偏移量")
+        defineInRange("weapon_hud_x_offset", 0, -1000, 1000)
+    }
+
+    @JvmField
+    val WEAPON_HUD_Y_OFFSET = buildClientConfig {
+        comment("The y offset of weapon hud")
+        comment("枪械HUD的竖直方向偏移量")
+        defineInRange("weapon_hud_y_offset", 0, -1000, 1000)
+    }
+
+    @JvmField
+    val ENABLE_HEAT_BAR_HUD = buildClientConfig {
+        comment("Set true to enable heat bar hud")
+        comment("是否启用武器过热条HUD")
+        define("enable_heat_bar_hud", true)
+    }
+
+    @JvmField
+    val HEAT_BAR_HUD_X_OFFSET = buildClientConfig {
+        comment("The x offset of heat bar hud")
+        comment("武器过热条HUD的水平偏移量")
+        defineInRange("heat_bar_hud_x_offset", 0, -1000, 1000)
+    }
+
+    @JvmField
+    val HEAT_BAR_HUD_Y_OFFSET = buildClientConfig {
+        comment("The y offset of heat bar hud")
+        comment("武器过热条HUD的竖直偏移量")
+        defineInRange("heat_bar_hud_y_offset", 0, -1000, 1000)
+    }
+
+    @JvmField
+    val KILL_INDICATION = buildClientConfig {
+        comment("Set true if you want to show kill indication while killing an entity")
+        comment("是否开启准星周围的击杀提示")
+        define("kill_indication", true)
+    }
+
+    @JvmField
+    val AMMO_HUD = buildClientConfig {
+        comment("Set true to show ammo and gun info on HUD")
+        comment("是否开启枪械和弹药HUD")
+        define("ammo_hud", true)
+    }
+
+    @JvmField
+    val ADVANCED_AMMO_HUD = buildClientConfig {
+        comment("Show ammo source slots and type indices, and fire mode indices when more than 3 modes are available")
+        comment("是否开启高级弹药显示HUD（显示弹种框和序号，开火模式超过3种时显示模式序号）")
+        define("advanced_ammo_hud", true)
+    }
+
+    @JvmField
+    val REDUCED_AMMO_HUD_MOTION = buildClientConfig {
+        comment("Reduce ammo HUD motion and replace reload blinking with a dimmed weapon icon")
+        comment("减少弹药HUD动态效果，使用静态暗色枪械图标代替换弹闪烁")
+        define("reduced_ammo_hud_motion", false)
+    }
+
+    @JvmField
+    val VEHICLE_INFO = buildClientConfig {
+        comment("Set true to display vehicle info when aiming at a vehicle")
+        comment("是否开启看向载具时的信息显示")
+        define("vehicle_info", true)
+    }
+
+    @JvmField
+    val IFF_HUD = buildClientConfig {
+        comment("Set true to display IFF HUD")
+        comment("是否开启敌我识别装置位置HUD")
+        define("iff_hud", true)
+    }
+
+    @JvmField
+    val FLOAT_CROSS_HAIR = buildClientConfig {
+        comment("Set true to enable float cross hair")
+        comment("是否开启浮动准星")
+        define("float_cross_hair", true)
+    }
+
+    @JvmField
+    val CROSSHAIR_TRAJECTORY_SMOOTHING = buildClientConfig {
+        comment("Time constant (in seconds) of the low-pass filter applied to the crosshair trajectory offset. Larger = steadier crosshair while firing, but it follows the real impact point more slowly. 0 disables the filter")
+        comment("准星弹道偏移的低通滤波时间常数（秒）。越大，连射时准星越稳，但跟着真实弹着点走也越慢；0 = 关闭滤波")
+        defineInRange("crosshair_trajectory_smoothing", 0.06, 0.0, 0.5)
+    }
+
+    @JvmField
+    val ARMOR_PLATE_HUD = buildClientConfig {
+        comment("Set true to enable armor plate hud")
+        comment("是否开启护甲板HUD")
+        define("armor_plate_hud", true)
+    }
+
+    @JvmField
+    val STAMINA_HUD = buildClientConfig {
+        comment("Set true to enable stamina hud")
+        comment("是否开启耐力条HUD")
+        define("stamina_hud", true)
+    }
+
+    @JvmField
+    val DOG_TAG_NAME_VISIBLE = buildClientConfig {
+        comment("Set true to show the name of dog tag in kill messages")
+        comment("是否开启击杀提示的狗牌名称显示")
+        define("dog_tag_name_visible", true)
+    }
+
+    @JvmField
+    val DOG_TAG_ICON_VISIBLE = buildClientConfig {
+        comment("Set true to show the icon of dog tag in kill messages")
+        comment("是否开启击杀提示的狗牌图标显示")
+        define("dog_tag_icon_visible", false)
+    }
+
+    @JvmField
+    val WEAPON_SCREEN_SHAKE = buildClientConfig {
+        comment("The strength of screen shaking while firing with a weapon")
+        comment("使用武器开火时的屏幕晃动强度")
+        defineInRange("weapon_screen_shake", 100, 0, 100)
+    }
+
+    @JvmField
+    val EXPLOSION_SCREEN_SHAKE = buildClientConfig {
+        comment("The strength of screen shaking while exploding")
+        comment("爆炸时的屏幕晃动强度")
+        defineInRange("explosion_screen_shake", 100, 0, 100)
+    }
+
+    @JvmField
+    val SHOCK_SCREEN_SHAKE = buildClientConfig {
+        comment("The strength of screen shaking when shocked")
+        comment("被麻痹时的屏幕晃动强度")
+        defineInRange("shock_screen_shake", 100, 0, 100)
+    }
+
+    @JvmField
+    val ENABLE_VERSION_CHECK_WARNING = buildClientConfig {
+        comment("Set true to enable version check warning when version of this mod has been changed")
+        comment("是否启用版本检查警告")
+        define("enable_version_check_warning", true)
+    }
+
+    @JvmField
+    val ENABLE_FIRE_FLASH_LIGHT = buildClientConfig {
+        comment("Set true to enable flashlights when firing")
+        comment("是否启用开火时照明效果")
+        define("enable_fire_flash_light", true)
+    }
+
+    @JvmField
+    val TACTICAL_MAP_ZOOM = buildClientConfig {
+        comment("Zoom level for the tactical map (1=closest, 10=farthest)")
+        comment("战术地图缩放等级")
+        defineInRange("tactical_map_zoom", 5.0, 0.05, 20.0)
+    }
+
+    /**
+     * 近战调试：打印挥击/命中/未命中原因、动作锁拒绝原因。
+     *
+     * 只影响**日志**。判定体外框另有开关，见 [MELEE_HITBOX_RENDER]。
+     */
+    @JvmField
+    val MELEE_DEBUG_LOG = buildClientConfig {
+        comment("Set true to log melee swing/hit details (action index, hitbox, targets)")
+        comment("是否打印近战调试日志（挥击/命中详情）")
+        define("melee_debug_log", false)
+    }
+
+    /**
+     * 近战判定体外框常显。
+     *
+     * **不是唯一的开启方式**：原版 `F3 + B`（实体 hitbox 显示）同样能开，
+     * 两者任一即可（见 `MeleeDebugRenderer`）。
+     */
+    @JvmField
+    val MELEE_HITBOX_RENDER = buildClientConfig {
+        comment("Set true to always draw the melee hitbox wireframe without pressing F3+B")
+        comment("是否常显近战判定体外框（不按 F3+B 也显示；按 F3+B 也能显示）")
+        define("melee_hitbox_render", false)
+    }
+
+    /**
+     * 子弹破空音效（高速子弹掠过自己时播放一次）。
+     *
+     * 纯客户端判定与播放，开关只影响本机听到的声音，服务端不参与。
+     */
+    @JvmField
+    val ENABLE_BULLET_SONIC_BOOM = buildClientConfig {
+        comment("Set true to play a sonic boom when a fast bullet whizzes past you (client side only)")
+        comment("是否在高速子弹掠过自己时播放破空音效（纯客户端）")
+        define("enable_bullet_sonic_boom", true).also { pop() }
+    }
+}

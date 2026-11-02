@@ -1,0 +1,29 @@
+{
+  "SlotIcon": "superbwarfare:textures/item/bocek_icon.png",
+  "UseCustomSprintAnimation": true,
+  "Animation": {
+    "Idle": "animation.bocek.idle",
+    "Fire": "animation.bocek.fire",
+    "Edit": "animation.bocek.edit",
+    "Charge": "animation.bocek.pull",
+    "ReloadEmpty": "animation.bocek.reload",
+    "CloseStrike": "animation.bocek.empty",
+    "Run": "animation.bocek.sprint"
+  },
+  "ShootRecoil": {
+    "Offset": [0.7, 1.0, 0.5],
+    "Rotation": [0.2, 0.2, 0.5],
+    "ZoomRate": 0.5,
+    "Speed": 1.0
+  },
+  "ZoomingTranslateMultiply": 1.0,
+  "TriggerSound": null,
+  "Model": {
+    "Animation": "superbwarfare:animations/bedrock/gun/bocek.animation.json",
+    "Model": "superbwarfare:models/bedrock/gun/bocek.geo.json",
+    "Texture": "superbwarfare:textures/bedrock/gun/bocek.png"
+  },
+  "HasReflectionSound": false,
+  "FlareSize": 0
+}
+

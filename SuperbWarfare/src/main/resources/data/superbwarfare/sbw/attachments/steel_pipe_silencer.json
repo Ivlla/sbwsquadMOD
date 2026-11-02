@@ -1,0 +1,25 @@
+{
+  "Slot": "Muzzle",
+  "Level": 1,
+  "Bone": "muzzle_pos",
+  "Modifiers": [
+    {
+      "Prop": "Weight",
+      "Op": "Add",
+      "Value": 0.2
+    }
+  ],
+  "IsSilenced": true,
+  "Override": {
+    "SoundInfo": {
+      "Fire1P": "superbwarfare:steel_pipe_drop",
+      "Fire3P": "superbwarfare:steel_pipe_drop",
+      "Fire3PFar": "superbwarfare:empty",
+      "Fire3PVeryFar": "superbwarfare:empty",
+      "Fire1PSilent": "superbwarfare:steel_pipe_drop",
+      "Fire3PSilent": "superbwarfare:steel_pipe_drop"
+    }
+  },
+  "Model": "superbwarfare:models/bedrock/attachment/steel_pipe_silencer.geo.json",
+  "Texture": "superbwarfare:textures/bedrock/attachment/steel_pipe_silencer.png"
+}

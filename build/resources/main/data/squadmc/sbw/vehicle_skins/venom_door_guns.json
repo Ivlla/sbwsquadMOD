@@ -1,0 +1,22 @@
+{
+  "Skins": [
+    {
+      "Id": "vanilla",
+      "Name": "Standard",
+      "Texture": "squadmc:textures/entity/huey/venom_1.png",
+      "Priority": 1
+    },
+    {
+      "Id": "thanos",
+      "Name": "Thanos",
+      "Texture": "squadmc:textures/entity/huey/venom_2.png",
+      "Priority": 2
+    },
+    {
+      "Id": "canada",
+      "Name": "Canada",
+      "Texture": "squadmc:textures/entity/huey/venom_canada.png",
+      "Priority": 3
+    }
+  ]
+}

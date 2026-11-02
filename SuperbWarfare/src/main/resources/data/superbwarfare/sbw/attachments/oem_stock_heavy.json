@@ -1,0 +1,37 @@
+{
+  "Slot": "Stock",
+  "Modifiers": [
+    {
+      "Prop": "RecoilX",
+      "Op": "Mul",
+      "Value": 0.89
+    },
+    {
+      "Prop": "RecoilY",
+      "Op": "Mul",
+      "Value": 0.89
+    },
+    {
+      "Prop": "Sway",
+      "Op": "Mul",
+      "Value": 0.8
+    },
+    {
+      "Prop": "Weight",
+      "Op": "Add",
+      "Value": 0.36
+    },
+    {
+      "Prop": "ZoomTime",
+      "Op": "Mul",
+      "Value": 1.1
+    },
+    {
+      "Prop": "MeleeDamage",
+      "Op": "Add",
+      "Value": 5
+    }
+  ],
+  "Bone": "oem_stock_heavy",
+  "UsesGunStock": true
+}

@@ -1,0 +1,46 @@
+
+modLoader = "javafml"
+
+loaderVersion = "${loader_version_range}"
+
+license = "${mod_license}"
+
+[[mods]]
+
+modId = "squadmc"
+
+version = "${mod_version}"
+
+displayName = "SquadMcVehicles"
+
+authors = "Ivlla"
+
+
+
+description = '''This a mod for SquadMC Server.
+Helicopters are based on Frontline Combat Pack by Commissar_Mado (modified, see FCP_LICENSE.txt):
+https://github.com/CommissarMado/Frontline-Combat-Pack
+Squad helicopter and weapon sounds come from that pack.
+Explosion effects are based on the MTS Official Pack by DonBruce64'''
+
+[[dependencies.squadmc]] #optional
+modId = "forge"
+mandatory = true
+versionRange = "${forge_version_range}" #mandatory
+ordering = "NONE"
+side = "BOTH"# Here's another dependency
+
+[[dependencies.squadmc]]
+modId = "minecraft"
+mandatory = true
+versionRange = "${minecraft_version_range}"
+ordering = "NONE"
+side = "BOTH"
+
+
+[[dependencies.squadmc]]
+modId = "superbwarfare"
+mandatory = true
+versionRange = "[0.8.9.2,)"
+ordering = "NONE"
+side = "BOTH"

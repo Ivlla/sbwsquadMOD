@@ -1,0 +1,16 @@
+{
+  "blend": {
+    "func": "add",
+    "srcrgb": "1",
+    "dstrgb": "1-srcalpha",
+    "srcalpha": "1",
+    "dstalpha": "1-srcalpha"
+  },
+  "vertex": "squadmc:smoke_composite",
+  "fragment": "squadmc:smoke_composite",
+  "attributes": ["Position", "UV0"],
+  "samplers": [
+    { "name": "GlassColor" }
+  ],
+  "uniforms": []
+}

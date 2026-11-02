@@ -1,0 +1,292 @@
+// NOTE: Not updated for 0.8.8, wait for future documentation
+
+// Example gun data, check out DefaultGunData.java and GunProp.java for more info
+{
+  // Gun item's registry ID, MUST NOT be null and MUST be GunItem
+  "ID": "superbwarfare:gun_id",
+  // Max durability, set this to zero to disable durability
+  "MaxDurability": 0,
+  // Durability cost per shoot, only available when MaxDurability is greater than 0
+  "DurabilityPerShoot": 1,
+  // Recoil on horizontal direction
+  "RecoilX": 0,
+  // Recoil on vertical direction
+  "RecoilY": 0,
+  // REALISTIC recoil, will knockback shooters when shooting
+  "Recoil": 0,
+  // Default zoom when aiming
+  "DefaultZoom": 1.25,
+  // Minimum zoom
+  "MinZoom": 1.25,
+  // Maximum zoom
+  "MaxZoom": 1.25,
+  // Fire spread
+  "Spread": 0,
+  // Projectile damage
+  "Damage": 0,
+  // Headshot damage multiplier, only available for superbwarfare:projectile
+  "Headshot": 1.5,
+  // Projectile velocity
+  "Velocity": 0,
+  // Magazine, set this to zero to make guns use backpack ammo directly
+  "Magazine": 0,
+  // Melee damage, when this is greater than zero, you can perform melee attacks by pressing V
+  // When MeleeDamage is greater than zero and ProjectileAmount equals zero, gun will be considered melee only, and you can perform melee attack by holding fire key
+  "MeleeDamage": 0,
+  // Melee attack duration in ticks
+  "MeleeDuration": 16,
+  // In which tick will melee damage be applied
+  "MeleeDamageTime": 6,
+  // Damage type applied on a melee hit, must be a registered damage type id
+  "MeleeDamageType": "superbwarfare:gun_melee",
+  // Damage type applied when the melee hit is a headshot
+  "MeleeHeadshotDamageType": "superbwarfare:gun_melee_headshot",
+  // Consume the gun on a landed melee hit (non-creative players only)
+  // "Landed" includes targets whose damage was refused but still ran the MeleeActions effects,
+  // so a one-shot weapon like the lunge mine is spent as soon as its warhead goes off
+  "ConsumeOnMeleeHit": false,
+  /*
+   * Melee swing sections. A section may override any global Melee* field above:
+   *   Animation, Duration, HitTime, Hitbox, Sweep, DamageMultiplier, RangeMultiplier,
+   *   MaxTargets, Falloff, SortBy, Knockback, BypassesArmor, Headshot, Legshot,
+   *   Durability, Cooldown, Swing (sound), Hit (sound), Heavy
+   * "Effects" entries run on the server once the section connects. An entry either references a
+   * preset in `data/<ns>/sbw/melee_effects/<id>.json` or names a behavior directly, and every
+   * field written on the entry overrides the preset:
+   *   "superbwarfare:warhead_stab"                                    // preset only
+   *   { "Effect": "superbwarfare:warhead_stab", "Chance": 0.35 }       // preset + overrides
+   *   { "Type": "superbwarfare:explosion", "Chance": 1.0,
+   *     "Radius": 4.0, "Damage": 60, "DestroyBlocks": false }          // inline, no preset
+   * Trigger: "Hit" (default), "FirstHit", "Swing", "Kill"
+   * HitTime may be a list to resolve several hits within one section (a multi-strike heavy):
+   *   "HitTime": [8, 12, 16, 20, 24, 28]
+   * Each entry runs its own hitbox query and sends its own hit packet on the server.
+   * The rpg's blast stays the preset `warhead_stab` (Radius 4.0 / Damage 60); a gun with its own
+   * numbers writes them inline like the above -- see lunge_mine.json, whose blast is tunable on
+   * its own. An explosion also hurts the wielder standing inside its radius.
+   */
+  "MeleeActions": [
+    {
+      "Animation": "hit",
+      "Duration": 16,
+      "HitTime": 6,
+      "Effects": [
+        {
+          "Type": "superbwarfare:explosion",
+          "Chance": 1.0,
+          "Radius": 4.0,
+          "Damage": 60
+        }
+      ]
+    }
+  ],
+  /*
+   * Behavior of right click
+   * Available values: "Aim", "HeavyStrike", "BayonetCharge"
+   * "HeavyStrike" performs the MeleeActions section marked with "Heavy": true (the first section when none is marked)
+   * "BayonetCharge" runs the BayonetCharge block below instead of aiming
+   */
+  "RightClickAction": "Aim",
+  /*
+   * Declaring this block enables charging with a bayonet installed, by right click when
+   * RightClickAction is "BayonetCharge", otherwise by pressing the bayonet charge
+   * key (default C) while sprinting
+   * Duration: how long the charge window lasts, in ticks (0 or omitted = not chargeable)
+   * RequiresBayonet: true by default; the installed Muzzle attachment must declare
+   * IsBayonet: true. Set false for weapons with a built-in bayonet or charge ability
+   * (such as secondary_cataclysm and lunge_mine); Duration must still be positive
+   * Speed: level of the temporary movement speed modifier held during the charge,
+   * same maths as the vanilla Speed effect (+20% per level, 0 = +20%); the
+   * modifier is removed the moment the charge ends
+   * Cooldown: FULL cooldown length in ticks, i.e. what the cooldown bar fills up in.
+   * The cooldown only starts when the charge window ends (not when it is triggered), and
+   * it lasts that fraction of Cooldown which the window actually spent: a charge cut
+   * short (a landed strike) carries its progress over, so spending 80% of the window
+   * only costs 80% of the cooldown. That fraction is floored at half, so even a charge
+   * that barely started costs half of Cooldown and its cooldown bar starts halfway up.
+   * If the window expires without triggering an attack, recovery starts from an empty
+   * bar at twice the normal speed, taking half of Cooldown. An attack triggered on the
+   * final tick still uses the normal attack cooldown; cancelling also uses normal speed.
+   * Kept as a per player variable, not as a vanilla item cooldown, so the gun stays usable
+   * while it runs
+   * Sound: played when the charge starts, broadcast to everyone within 32 blocks
+   * (a fixed 32 block range, so the " <range>" suffix of a SoundEvent is ignored here)
+   * StrikeDuration: length of the strike landing on a target, in ticks
+   * StrikeHitTime: tick of the strike (counted from its start) at which the hit resolves
+   * StrikeDuration/StrikeHitTime are independent of MeleeActions.Duration/HitTime;
+   * omit them (or write 0) to reuse the section that the strike plays
+   * StrikeDamage: absolute damage of that strike (ignores MeleeDamage and attachment
+   * bonuses); headshot/legshot multipliers and falloff still apply on top of it;
+   * omit it (or write 0) to reuse the damage of the section that the strike plays
+   */
+  "BayonetCharge": {
+    "RequiresBayonet": true,
+    "Duration": 180,
+    "Speed": 2,
+    "Cooldown": 300,
+    "Sound": "superbwarfare:lunge_mine_growl",
+    "StrikeDuration": 15,
+    "StrikeHitTime": 7,
+    "StrikeDamage": 50
+  },
+  /*
+   * Default projectile data
+   * Can be pure String like "Projectile": "superbwarfare:projectile"
+   * Can also be overridden by AmmoType
+   */
+  "Projectile": {
+    /*
+     * Projectile entity's registry ID, can be "empty"
+     */
+    "Type": "superbwarfare:projectile",
+    /* NBT data replacer
+     * You can write anything here, Json data will be parsed to NBT data, then been set into the projectile entity
+     * check out LaunchableEntityTool.java for more info
+     */
+    "Data": {
+      "owner": "@sbw:owner"
+    }
+  },
+  /*
+   * Model bones that draw the default round, hidden together with every "ProjectileBone" declared
+   * by AmmoType except the ones of the selected ammo type.
+   * May be a single name or a list of them, so one ammo type can draw several bones at once.
+   */
+  "ProjectileBone": "bullet",
+  // Ammo cost per shoot
+  "AmmoCostPerShoot": 1,
+  // Projectile amount spawned per shoot, set this to zero will prevent gun from shooting
+  "ProjectileAmount": 1,
+  // Gun weight, affects movement speed, projectile velocity, tactical sprint cost, etc
+  "Weight": 7,
+  // Default fire mode
+  "DefaultFireMode": "Auto",
+  // Available fire modes, can be "Semi", "Auto", or "Burst"
+  "AvailableFireModes": [
+    "Semi",
+    "Auto"
+  ],
+  // Available reload types, can be "Magazine", "Clip" and "Iterative"
+  "ReloadTypes": [
+    "Magazine"
+  ],
+  "SeekType": "None",
+  // Should guns start reloading automatically when needed
+  "AutoReload": false,
+  // Shoots per click when fire mode is "Burst"
+  "BurstAmount": 0,
+  // Bypasses armor rate, only available for superbwarfare:projectile
+  "BypassesArmor": 0.05,
+  /* Available ammo types
+   * can be pure string, list of string, or list of AmmoConsumer objects
+   * Example:
+   * "AmmoType": "@HandgunAmmo"
+   * "AmmoType": ["@HandgunAmmo"]
+   */
+  "AmmoType": [
+    {
+      /*
+       * Ammo type, will be parsed at runtime
+       *
+       * format: <ammo loaded from each ammo> <ammo><NBT tag for items>
+       *
+       * amount and NBT tag can be omitted
+       * ammo started with @ will be considered as player ammo defined in Ammo.java
+       *
+       * example:
+       * "Ammo": "@HandgunAmmo"
+       * "Ammo": "1 tacz:ammo{AmmoId:\"tacz:40mm\"}"
+       */
+      "Ammo": "@HandgunAmmo",
+      /*
+       * What slot will the current ammo type use
+       * Different ammo type with the same slot will conflict with each other
+       * And you have to withdraw ammo and then reload
+       */
+      "AmmoSlot": "Default",
+      // Projectile info override, same as defined above
+      "Projectile": "superbwarfare:projectile",
+      // Model bone override, shown only while this ammo type is selected
+      // Also accepts a list, e.g. ["bullet", "bullet_dummy"]
+      "ProjectileBone": "bullet",
+      // Gun property override, check out GunProp.java for mor info
+      "Override": {
+        "Damage": 810
+      }
+    }
+  ],
+  // Normal reload time in ticks
+  "NormalReloadTime": 0,
+  // Empty reload time in ticks
+  "EmptyReloadTime": 0,
+  // Bolt action time in ticks, when this is greater than zero, guns will require bolt after shoot
+  "BoltActionTime": 0,
+  // Prepare time in ticks
+  "PrepareTime": 0,
+  // Prepare load time in ticks
+  "PrepareLoadTime": 0,
+  "PrepareAmmoLoadTime": 1,
+  "PrepareEmptyTime": 0,
+  "IterativeTime": 0,
+  "IterativeAmmoLoadTime": 1,
+  // ammo cost when performing iterative load
+  "IterativeLoadAmount": 1,
+  "FinishTime": 0,
+  // Magazine levels that hold a drum magazine, counted the same way as the entries of "Magazine"
+  // (0 is the original magazine). Drum levels play the *_drum reload animations, and may override the
+  // reload ActionSteps below with the RELOAD_NORMAL_DRUM / RELOAD_EMPTY_DRUM timelines.
+  "DrumLevels": [],
+  // Data-driven reload/bolt behaviours. Each step fires once, when the progress of its timeline passes
+  // "Progress" (0.0 = the timeline starts, 1.0 = it is complete).
+  // "Timeline": "RELOAD" (any reload), "RELOAD_NORMAL", "RELOAD_EMPTY", "RELOAD_NORMAL_DRUM",
+  //   "RELOAD_EMPTY_DRUM", "RELOAD_FINISH", "RELOAD_PREPARE_LOAD", "NO_AMMO", "BOLT".
+  //   A *_DRUM timeline only fires while the installed magazine level is listed in "DrumLevels", and
+  //   whenever such an entry exists it replaces its non-drum counterpart for drum levels.
+  // "Action": "HOLD_OPEN", "CLOSE_STRIKE", "CLOSE_HAMMER", "EMPTY", "HIDE_BULLET_CHAIN".
+  //   HIDE_BULLET_CHAIN marks where the reload animation has attached the new belt: set it to false
+  //   at that point and the belt is drawn full again. Everywhere else (state true) the belt is drawn
+  //   from the remaining ammo, one `bullet_N` bone per round — no per-gun threshold needed.
+  "ActionSteps": [],
+  // Sound radius in blocks
+  "SoundRadius": 0,
+  // Fire RPM
+  "RPM": 600,
+  // Explosion damage, only available for ExplosiveProjectile.java
+  "ExplosionDamage": 0,
+  // Explosion radius, only available for ExplosiveProjectile.java
+  "ExplosionRadius": 0,
+  // Gravity(default: NaN), only available for CustomGravityEntity.java
+  "Gravity": 0,
+  // Shoot delay before actually fire and pressing fire key
+  "ShootDelay": 0,
+  // heat added per shoot(heat is between 0 and 100)
+  "HeatPerShoot": 0,
+  // heat decreased per tick in natural situation
+  "NaturalCooldown": 0.25,
+  // rate of heat decreased per tick in water
+  "InWaterCooldownRate": 1.1,
+  // rate of heat decreased per tick in powder snow
+  "InSnowCooldownRate": 1.5,
+  // rate of heat decreased per tick in fire
+  "InFireCooldownRate": 0.6,
+  // rate of heat decreased per tick in lava
+  "InLavaCooldownRate": 0.2,
+  // Available perks for guns
+  "AvailablePerks": [
+    "@Ammo",
+    "superbwarfare:field_doctor",
+    "superbwarfare:powerful_attraction",
+    "superbwarfare:intelligent_chip",
+    "superbwarfare:monster_hunter",
+    "superbwarfare:vorpal_weapon",
+    "!superbwarfare:micro_missile",
+    "!superbwarfare:longer_wire",
+    "!superbwarfare:cupid_arrow"
+  ],
+  "DamageReduce": {
+    // Available values: "Shotgun", "Sniper", "Heavy", "Handgun", "Rifle", "Smg", "Empty"
+    "Type": "Shotgun",
+    "Rate": 0,
+    "MinDistance": 0
+  }
+}

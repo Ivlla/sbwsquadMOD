@@ -1,0 +1,6 @@
+PASS: 22340 vertices compared with GeckoLib, max error=3.0517578E-5; cache reuse/reload
+original: 123.070 us/pass, 97016.0 bytes/pass
+cached: 48.627 us/pass, 0.0 bytes/pass
+cached: 48.581 us/pass, 0.0 bytes/pass
+original: 117.091 us/pass, 97016.3 bytes/pass
+Synthetic CPU/allocations only; not an in-game FPS measurement.

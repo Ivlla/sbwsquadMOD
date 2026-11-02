@@ -1,0 +1,16 @@
+{
+  "Skins": [
+    {
+      "Id": "vanilla",
+      "Name": "Pave Low Black",
+      "Texture": "squadmc:textures/entity/ch53/ch53_1.png",
+      "Priority": 1
+    },
+    {
+      "Id": "gunship_gray",
+      "Name": "Gunship Gray",
+      "Texture": "squadmc:textures/entity/ch53/ch53_2.png",
+      "Priority": 2
+    }
+  ]
+}

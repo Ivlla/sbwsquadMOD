@@ -1,0 +1,154 @@
+{
+  "Spread": 2.5,
+  "RecoilX": 0.003,
+  "RecoilY": 0.04,
+  "Damage": 4,
+  "RPM": 120,
+  "Headshot": 1.5,
+  "MeleeDamage": 5,
+  "MeleeDuration": 16,
+  "MeleeComboReset": 15,
+  "MeleeHitbox": {
+    "Type": "Box",
+    "Range": 1.5,
+    "Width": 1.8,
+    "Height": 1.8,
+    "YOffset": -0.2,
+    "Occlusion": true
+  },
+  "MeleeSweep": {
+    "From": 0,
+    "To": 0
+  },
+  "MeleeActions": [
+    {
+      "Animation": "hit",
+      "Duration": 16,
+      "HitTime": 6,
+      "MaxTargets": 8,
+      "Falloff": 0.1,
+      "SortBy": "Angle",
+      "Knockback": 0.3,
+      "Headshot": 1.25,
+      "Legshot": 0.75
+    }
+  ],
+  "BayonetCharge": {
+    "Duration": 180,
+    "Speed": 2,
+    "Cooldown": 300,
+    "Sound": "superbwarfare:lunge_mine_growl",
+    "StrikeDuration": 18,
+    "StrikeHitTime": 1,
+    "StrikeDamage": 50
+  },
+  "Velocity": 10,
+  "Magazine": 6,
+  "ZoomSpreadRate": 0.75,
+  "ProjectileAmount": 10,
+  "Weight": 4,
+  "DrawTime": 11,
+  "ZoomTime": 6,
+  "ReloadTypes": [
+    "Iterative"
+  ],
+  "PrepareTime": 12,
+  "PrepareLoadTime": 50,
+  "PrepareAmmoLoadTime": 10,
+  "IterativeTime": 16,
+  "IterativeAmmoLoadTime": 3,
+  "FinishTime": 16,
+  "BypassesArmor": 0.05,
+  "SoundRadius": 16,
+  "BoltActionTime": 10,
+  "GunType": "Shotgun",
+  "DamageReduce": {
+    "Type": "Shotgun"
+  },
+  "AmmoType": "@ShotgunAmmo",
+  "Icon": "superbwarfare:textures/gun_icon/m_1897_icon.png",
+  "ActionSteps": [
+    {
+      "Timeline": "RELOAD_PREPARE_LOAD",
+      "Progress": 0.17,
+      "Action": "CLOSE_STRIKE",
+      "Value": false
+    },
+    {
+      "Timeline": "RELOAD_PREPARE_LOAD",
+      "Progress": 0.17,
+      "Action": "EMPTY",
+      "Value": false
+    },
+    {
+      "Timeline": "BOLT",
+      "Progress": 0.22222,
+      "Action": "CLOSE_STRIKE",
+      "Value": false
+    },
+    {
+      "Timeline": "NO_AMMO",
+      "Action": "CLOSE_STRIKE",
+      "Value": true
+    }
+  ],
+  "AvailablePerks": [
+    "superbwarfare:striving_for_perfection",
+    "@Ammo",
+    "superbwarfare:field_doctor",
+    "superbwarfare:heal_clip",
+    "superbwarfare:subsistence",
+    "superbwarfare:powerful_attraction",
+    "superbwarfare:intelligent_chip",
+    "superbwarfare:backpack_linked_magazine",
+    "superbwarfare:cast_no_shadows",
+    "superbwarfare:eager_edge",
+    "superbwarfare:fourth_times_charm",
+    "superbwarfare:quickdraw",
+    "superbwarfare:snapshot_sights",
+    "superbwarfare:adrenaline_rush",
+    "superbwarfare:kill_clip",
+    "superbwarfare:gutshot_straight",
+    "superbwarfare:monster_hunter",
+    "superbwarfare:vorpal_weapon",
+    "superbwarfare:high_impact_reserves",
+    "superbwarfare:one_two_punch",
+    "superbwarfare:brain_storm",
+    "superbwarfare:target_lock",
+    "!superbwarfare:micro_missile",
+    "!superbwarfare:longer_wire",
+    "!superbwarfare:cupid_arrow",
+    "!superbwarfare:shatter_caps",
+    "!superbwarfare:cluster_bomb",
+    "superbwarfare:soul_reaver",
+    "superbwarfare:steady_resolve"
+  ],
+  "AvailableAttachments": {
+    "Muzzle": [
+      "superbwarfare:meowlencer",
+      "superbwarfare:hissilencer",
+      "superbwarfare:silaowuncer",
+      "superbwarfare:silencer_superb_12",
+      "superbwarfare:loudspeaker",
+      "superbwarfare:triangular_muzzle",
+      "superbwarfare:love_muzzle",
+      "superbwarfare:star_muzzle",
+      "superbwarfare:linear_muzzle",
+      "superbwarfare:cross_muzzle",
+      "superbwarfare:bayonet_m1917",
+      "superbwarfare:milencer",
+      "superbwarfare:steel_pipe_silencer"
+    ],
+    "Charm": [
+      "#superbwarfare:attachment/charm"
+    ]
+  },
+  "SoundInfo": {
+    "Fire1P": "superbwarfare:m_1897_fire_1p",
+    "Fire3P": "superbwarfare:m_1897_fire_3p",
+    "Fire3PFar": "superbwarfare:m_870_far",
+    "Fire3PVeryFar": "superbwarfare:m_870_veryfar",
+    "Fire1PSilent": "superbwarfare:m_870_fire_1p_s",
+    "Fire3PSilent": "superbwarfare:m_870_fire_3p_s"
+  }
+}

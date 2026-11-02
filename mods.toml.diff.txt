@@ -1,0 +1,14 @@
+Добавить в конец src/main/resources/META-INF/mods.toml мода squadmc (после
+существующей зависимости от superbwarfare):
+
+[[dependencies.squadmc]]
+modId = "aasgranate"
+mandatory = false
+versionRange = "[1.0.0,)"
+ordering = "AFTER"
+side = "BOTH"
+
+mandatory = false — техника продолжит грузиться и без aasgranate, просто
+дымогенератор/дымовые шашки останутся со старыми частицами-заглушками
+(код в tick() уже проверяет ModList.get().isLoaded("aasgranate") перед
+вызовом AasSmokeApi).

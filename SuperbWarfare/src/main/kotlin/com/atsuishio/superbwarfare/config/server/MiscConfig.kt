@@ -1,0 +1,237 @@
+package com.atsuishio.superbwarfare.config.server
+
+import com.atsuishio.superbwarfare.config.buildServerConfig
+
+object MiscConfig {
+    @JvmField
+    val SEND_KILL_FEEDBACK = buildServerConfig {
+        push("misc")
+
+        comment("Set true to enable kill feedback sending")
+        comment("是否在服务端启用击杀提示播报")
+        define("send_kill_feedback", true)
+    }
+
+    @JvmField
+    val FORCE_DAMAGE_MODE = buildServerConfig {
+        comment("Set true to enable force damage")
+        comment("是否开启强制伤害模式")
+        define("force_damage_mode", false)
+    }
+
+    @JvmField
+    val FORCE_MOB_EFFECT_MODE = buildServerConfig {
+        comment("Set true to bypass mob effect immunity checks for mob effects")
+        comment("是否开启强制施加药水效果模式")
+        define("force_mob_effect_mode", false)
+    }
+
+    @JvmField
+    val REALISTIC_SHOOT_MODE = buildServerConfig {
+        comment("Set true to enable realistic shoot mode, where bullets will gain the same angle as the gun instead of player's sights angle")
+        comment("The shoot angle of this mode is affected by client resources, please enable it with caution")
+        comment("是否开启拟真开火模式，开启后子弹会按照枪口方向射出，而不是原版的玩家视线方向")
+        comment("本模式的开火角度会受客户端资源影响，请慎重开启")
+        define("realistic_shoot_mode", false)
+    }
+
+    @JvmField
+    val DROP_AMMO_BOX = buildServerConfig {
+        comment("Whether to drop an ammo box after the player dies")
+        comment("玩家在死亡时，是否掉落弹药")
+        define("drop_ammo_box", false)
+    }
+
+    @JvmField
+    val DEFAULT_ARMOR_LEVEL = buildServerConfig {
+        comment("The default maximum armor level for normal armors")
+        comment("普通护甲能加的防弹插板数量")
+        defineInRange("default_armor_level", 1, 0, 10000000)
+    }
+
+    @JvmField
+    val MILITARY_ARMOR_LEVEL = buildServerConfig {
+        comment("The maximum armor level for armors with superbwarfare:military_armor tag")
+        comment("军事护甲能加的防弹插板数量")
+        defineInRange("military_armor_level", 2, 0, 10000000)
+    }
+
+    @JvmField
+    val HEAVY_MILITARY_ARMOR_LEVEL = buildServerConfig {
+        comment("The maximum armor level for armors with superbwarfare:military_armor_heavy tag(will override superbwarfare:military_armor tag!)")
+        comment("重型护甲能加的防弹插板数量")
+        defineInRange("heavy_military_armor_level", 3, 0, 10000000)
+    }
+
+    @JvmField
+    val ARMOR_POINT_PER_LEVEL = buildServerConfig {
+        comment("The points per level for armor plate")
+        comment("防弹插板提供的伤害吸收量")
+        defineInRange("armor_point_per_level", 15, 0, 10000000)
+    }
+
+    @JvmField
+    val CHARGING_STATION_MAX_ENERGY = buildServerConfig {
+        comment("Max energy storage of charging station")
+        comment("充电站的最大存储能量")
+        defineInRange("charging_station_max_energy", 4000000, 1, Int.MAX_VALUE)
+    }
+
+    @JvmField
+    val WEAPON_REPAIR_STATION_CAPACITY = buildServerConfig {
+        comment("Weapon repair station storage (repair energy, not FE)")
+        comment("武器维修站储能上限（维修能量，非 FE）")
+        defineInRange("weapon_repair_station_capacity", 10000, 1, Int.MAX_VALUE)
+    }
+
+    @JvmField
+    val WEAPON_REPAIR_STATION_ENERGY_COST = buildServerConfig {
+        comment("Repair energy consumed per durability point")
+        comment("每恢复 1 点耐久消耗的维修能量")
+        defineInRange("weapon_repair_station_energy_cost", 1, 1, 10000)
+    }
+
+    @JvmField
+    val WEAPON_REPAIR_STATION_FE_PER_REPAIR_ENERGY = buildServerConfig {
+        comment("FE consumed per point of repair energy")
+        comment("每转换 1 点维修能量所需的 FE")
+        defineInRange("weapon_repair_station_fe_per_repair_energy", 100, 1, Int.MAX_VALUE)
+    }
+
+    @JvmField
+    val WEAPON_REPAIR_STATION_MAX_FE = buildServerConfig {
+        comment("Weapon repair station FE buffer capacity")
+        comment("武器维修站的 FE 存储上限")
+        defineInRange("weapon_repair_station_max_fe", 100000, 1, Int.MAX_VALUE)
+    }
+
+    @JvmField
+    val WEAPON_REPAIR_STATION_FE_TRANSFER_RATE = buildServerConfig {
+        comment("Maximum FE accepted per transfer")
+        comment("武器维修站每次传输最多接收的 FE")
+        defineInRange("weapon_repair_station_fe_transfer_rate", Int.MAX_VALUE, 1, Int.MAX_VALUE)
+    }
+
+    @JvmField
+    val WEAPON_REPAIR_STATION_REPAIR_INTERVAL = buildServerConfig {
+        comment("Ticks per durability point (20 ticks = 1 second)")
+        comment("每恢复 1 点耐久所需游戏刻")
+        defineInRange("weapon_repair_station_repair_interval", 1, 1, 1200)
+    }
+
+    @JvmField
+    val CHARGING_STATION_GENERATE_SPEED = buildServerConfig {
+        comment("How much FE energy can charging station generate per tick")
+        comment("充电站每游戏刻的发电数量")
+        defineInRange("charging_station_generate_speed", 128, 1, Int.MAX_VALUE)
+    }
+
+    @JvmField
+    val CHARGING_STATION_TRANSFER_SPEED = buildServerConfig {
+        comment("How much FE energy can charging station transfer per tick")
+        comment("充电站每游戏刻的最大传输能量数值")
+        defineInRange("charging_station_transfer_speed", 100000, 1, Int.MAX_VALUE)
+    }
+
+    @JvmField
+    val CHARGING_STATION_CHARGE_RADIUS = buildServerConfig {
+        comment("The charging radius of the charging station")
+        comment("充电站的最大传输能量范围")
+        defineInRange("charging_station_charge_radius", 8, 0, 128)
+    }
+
+    @JvmField
+    val CHARGING_STATION_DEFAULT_FUEL_TIME = buildServerConfig {
+        comment("The default fuel time of the charging station")
+        comment("充电站的默认燃料燃烧时长")
+        defineInRange("charging_station_default_fuel_time", 1600, 1, Int.MAX_VALUE)
+    }
+
+    @JvmField
+    val ARTILLERY_INDICATOR_LIST_SIZE = buildServerConfig {
+        comment("The max size of artillery indicator binding list")
+        comment("火炮指示器的最大绑定数量")
+        defineInRange("artillery_indicator_list_size", 32, 1, Int.MAX_VALUE)
+    }
+
+    @JvmField
+    val MINE_HITBOX_INVISIBLE = buildServerConfig {
+        comment("Set true to make mine hitbox invisible")
+        comment("是否隐藏地雷的碰撞箱")
+        define("mine_hitbox_invisible", false)
+    }
+
+    @JvmField
+    val BLUEPRINT_RESEARCH_TABLE_MAX_FUEL = buildServerConfig {
+        comment("The max fuel count of blueprint research table")
+        comment("蓝图研究台的最大燃料值")
+        defineInRange("blueprint_research_table_max_fuel", 8, 1, 128)
+    }
+
+    @JvmField
+    val STEEL_COIL_AWAKE_PERCENTAGE = buildServerConfig {
+        comment("The minimum health percentage for activating steel coils")
+        comment("激怒钢卷所需的最小生命值比例")
+        defineInRange("steel_coil_awake_percentage", 0.99, 0.0, 1.0)
+    }
+
+    @JvmField
+    val CREEPING_SENPAI_ADVANCED_PATHFINDING = buildServerConfig {
+        comment("Enable advanced wall and ceiling pathfinding for Creeping Senpai (higher server CPU usage)")
+        comment("When disabled, use ordinary spider-style wall climbing. Changes apply to existing entities on their next AI tick.")
+        comment("是否开启爬行先辈的高级墙面与天花板寻路（增加服务端 CPU 开销），关闭则使用普通蜘蛛式爬墙")
+        comment("修改后在已有实体的下一次 AI 更新时生效")
+        define("creeping_senpai_advanced_pathfinding", true)
+    }
+
+    @JvmField
+    val THROW_MEDICAL_KIT = buildServerConfig {
+        push("medical kit")
+
+        comment("Set true to enable player throwing medical kits")
+        comment("是否允许玩家投掷医疗包")
+        define("throw_medical_kit", true)
+    }
+
+    @JvmField
+    val MEDICAL_KIT_HEAL_AMOUNT = buildServerConfig {
+        comment("The healing value of using medical kits")
+        comment("使用医疗包的固定治疗数值")
+        defineInRange("medical_kit_heal_amount", 5, 0, Int.MAX_VALUE)
+    }
+
+    @JvmField
+    val MEDICAL_KIT_HEAL_PERCENTAGE = buildServerConfig {
+        comment("The percentage of the player's health restored using the medical kit")
+        comment("使用医疗包治疗的玩家生命值比例")
+        defineInRange("medical_kit_heal_percentage", 0.25, 0.0, 1.0)
+    }
+
+    @JvmField
+    val MEDICAL_KIT_ENTITY_HEAL_AMOUNT = buildServerConfig {
+        comment("The healing value of picking up medical kit entity")
+        comment("拾取医疗包实体的固定治疗数值")
+        defineInRange("medical_kit_entity_heal_amount", 5, 0, Int.MAX_VALUE)
+    }
+
+    @JvmField
+    val MEDICAL_KIT_ENTITY_HEAL_PERCENTAGE = buildServerConfig {
+        comment("The percentage of the player's health restored picking up medical kit entity")
+        comment("拾取医疗包实体治疗的玩家生命值比例")
+        defineInRange("medical_kit_entity_heal_percentage", 0.25, 0.0, 1.0).also { pop() }
+    }
+
+    @JvmField
+    val HIDE_COMBAT_HUD = buildServerConfig {
+        comment("Set true to hide all combat HUD elements (crosshair, hit markers, kill indicators, lock-on frames)")
+        comment("是否隐藏所有战斗HUD元素（准星、命中标记、击杀指示器、锁定框）")
+        define("hide_combat_hud", false)
+    }
+
+    @JvmField
+    val SMOKE_HIDE_TARGET = buildServerConfig {
+        comment("Set true to allow smoke to prevent entities from being set as target")
+        comment("是否允许烟雾弹消除生物仇恨")
+        define("smoke_hide_target", false).also { pop() }
+    }
+}

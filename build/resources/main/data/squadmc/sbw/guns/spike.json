@@ -1,0 +1,39 @@
+{
+  "ID": "squadmc:spike",
+  "DefaultZoom": 3,
+  "Spread": 0,
+  "Magazine": 1,
+  "Weight": 10,
+  "EmptyReloadTime": 78,
+  "Damage": 500,
+  "ExplosionDamage": 0,
+  "ExplosionRadius": 0,
+  "Headshot": 0,
+  "ZoomReload": false,
+  "SeekTime": 0,
+  "SeekAngle": 0,
+  "SeekRange": 0,
+  "MaxTargetHeight": 64,
+  "SeekType": "None",
+  "GunType": "DirectLauncher",
+  "AvailableFireModes": [
+    {
+      "Mode": "Semi",
+      "Name": "Top"
+    }
+  ],
+  "AmmoType": "superbwarfare:javelin_missile",
+  "Icon": "superbwarfare:textures/gun_icon/javelin_icon.png",
+  "AvailablePerks": [],
+  "SoundInfo": {
+    "Fire1P": "superbwarfare:javelin_fire_1p",
+    "Fire3P": "superbwarfare:javelin_fire_3p",
+    "Fire3PFar": "superbwarfare:javelin_far",
+    "ReloadEmpty": "superbwarfare:javelin_reload_empty",
+    "CancellableSounds": [
+      "superbwarfare:javelin_reload_empty"
+    ]
+  },
+  "RPM": 30,
+  "AutoReload": false
+}

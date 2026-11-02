@@ -1,0 +1,101 @@
+{
+ "particles": [
+  {
+   "type": "GENERIC",
+   "spawningOrientation": "WORLD",
+   "renderingOrientation": "PLAYER",
+   "ignoreCollision": true,
+   "hitboxSize": 0.2,
+   "conds": [
+    {
+     "variable": "bullet_hit",
+     "min": 1,
+     "max": 1
+    }
+   ],
+   "quantity": 1,
+   "duration": 100,
+   "transparency": 0.5,
+   "toTransparency": 0.001,
+   "scale": 3.2,
+   "toScale": 7.0,
+   "textures": [
+    "squadmc:mts/core/big_smoke_0",
+    "squadmc:mts/core/big_smoke_1",
+    "squadmc:mts/core/big_smoke_2",
+    "squadmc:mts/core/big_smoke_3",
+    "squadmc:mts/core/big_smoke_4",
+    "squadmc:mts/core/big_smoke_5",
+    "squadmc:mts/core/big_smoke_6",
+    "squadmc:mts/core/big_smoke_7",
+    "squadmc:mts/core/big_smoke_8",
+    "squadmc:mts/core/big_smoke_9",
+    "squadmc:mts/core/big_smoke_10",
+    "squadmc:mts/core/big_smoke_11"
+   ],
+   "textureDelays": [
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10
+   ],
+   "randomTexture": true,
+   "colorList": [
+    "C4C0BB",
+    "B9B4AD",
+    "D2D0CD",
+    "ADA79F",
+    "A39A8D",
+    "99958F",
+    "DDDBD8"
+   ],
+   "randomColor": true,
+   "spreadRandomness": [
+    0.2,
+    0.2,
+    0.2
+   ],
+   "initialVelocity": [
+    0,
+    0,
+    -0.5
+   ]
+  },
+  {
+   "type": "GENERIC",
+   "spawningOrientation": "WORLD",
+   "renderingOrientation": "PLAYER",
+   "ignoreCollision": true,
+   "hitboxSize": 0.2,
+   "conds": [
+    {
+     "variable": "bullet_hit",
+     "min": 1,
+     "max": 1
+    }
+   ],
+   "isBright": true,
+   "quantity": 1,
+   "duration": 5,
+   "transparency": 1,
+   "toTransparency": 0.001,
+   "scale": 1.8,
+   "toScale": 0.4,
+   "textures": [
+    "squadmc:mts/bullets/sparkbullet0_translucent",
+    "squadmc:mts/bullets/sparkbullet1_translucent",
+    "squadmc:mts/bullets/sparkbullet2_translucent"
+   ],
+   "randomTexture": true
+  }
+ ],
+ "sounds": []
+}

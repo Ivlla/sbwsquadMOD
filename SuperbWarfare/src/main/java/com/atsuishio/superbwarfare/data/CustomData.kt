@@ -1,0 +1,107 @@
+package com.atsuishio.superbwarfare.data
+
+import com.atsuishio.superbwarfare.data.CustomData.ATTACHMENTS
+import com.atsuishio.superbwarfare.data.attachment.AttachmentDefinition
+import com.atsuishio.superbwarfare.data.gun.DefaultGunData
+import com.atsuishio.superbwarfare.data.gun.GunData
+import com.atsuishio.superbwarfare.data.gun.ProjectileInfo
+import com.atsuishio.superbwarfare.data.gun.melee.MeleeEffectSpec
+import com.atsuishio.superbwarfare.data.gun_skin.GunSkin
+import com.atsuishio.superbwarfare.data.gun_skin.GunSkinData
+import com.atsuishio.superbwarfare.data.mob_guns.DefaultMobGunData
+import com.atsuishio.superbwarfare.data.mob_guns.MobGunData
+import com.atsuishio.superbwarfare.data.vehicle.DefaultVehicleData
+import com.atsuishio.superbwarfare.data.vehicle.VehicleData
+import com.atsuishio.superbwarfare.data.vehicle_skin.VehicleSkin
+import com.atsuishio.superbwarfare.data.vehicle_skin.VehicleSkinData
+import com.atsuishio.superbwarfare.resource.gun.DefaultGunResource
+import com.atsuishio.superbwarfare.resource.gun.GunResource
+import com.atsuishio.superbwarfare.resource.vehicle.DefaultVehicleResource
+import com.atsuishio.superbwarfare.resource.vehicle.VehicleResource
+
+object CustomData {
+
+    // Data
+
+    @JvmField
+    val LAUNCHABLE_ENTITY = DataLoader.createData("sbw/launchable", ProjectileInfo::class.java)
+
+    @JvmField
+    val VEHICLE_DATA = DataLoader.createData(
+        "sbw/vehicles", DefaultVehicleData::class.java, true
+    ) { data ->
+        // Clamp the shared datapack defaults once, so VehicleData.compute() can hand them out
+        // read-only without copying whenever a vehicle has no per-instance override.
+        data.values.forEach { (it as? DefaultVehicleData)?.limit() }
+        GunData.DATA_VERSION++
+        VehicleData.dataCache.invalidateAll()
+    }
+
+    @JvmField
+    val GUN_DATA = DataLoader.createData(
+        "sbw/guns", DefaultGunData::class.java, true
+    ) { map ->
+        // Must run after the map itself was (re)loaded: vehicle weapons share one item id and
+        // register their per-weapon baselines here so GunData can resolve them from the stack.
+        VehicleData.registerWeaponDefaults(map)
+        // Bump the version instead of flushing GunData.DATA_CACHE: recreating instances for stacks that
+        // are still in use would leave two GunData objects writing the same item, each with its own state
+        // snapshot, and their full-tag writes would overwrite each other. Live instances pick the new
+        // data up through DATA_VERSION instead.
+        GunData.DATA_VERSION++
+    }
+
+    @JvmField
+    val ATTACHMENTS = DataLoader.createData(
+        "sbw/attachments", AttachmentDefinition::class.java, true
+    ) { _ ->
+        // Attachment definitions feed the computed properties, so live instances must recompute theirs.
+        GunData.DATA_VERSION++
+    }
+
+    @JvmField
+    val MOB_GUNS = DataLoader.createData(
+        "sbw/mob_guns", DefaultMobGunData::class.java
+    ) { map ->
+        // 重建「生物 -> 数据文件」索引、失效每个生物的缓存，并让已加载的生物立刻换上新参数，
+        // 这样 /reload 对已经生成的持枪生物同样生效
+        MobGunData.onDataReload(map)
+    }
+
+    /**
+     * 近战额外效果的**预设表**（`sbw/melee_effects/<id>.json`）。
+     *
+     * 与 [ATTACHMENTS] 不同，这里**不参与 PMC**，也不需要同步到客户端 ——
+     * 效果的结算全在服务端（`Chance` 用服务端 `level.random` roll），
+     * 客户端拿到的 `ResolvedMeleeAction.effects` 是 `by lazy` 的，永远不会被求值。
+     */
+    @JvmField
+    val MELEE_EFFECTS = DataLoader.createData(
+        "sbw/melee_effects", MeleeEffectSpec::class.java
+    )
+
+    @JvmField
+    val VEHICLE_SKINS = DataLoader.createData(
+        "sbw/vehicle_skins", VehicleSkinData::class.java, true
+    ) { _ -> VehicleSkin.DATA_CACHE.invalidateAll() }
+
+    @JvmField
+    val GUN_SKINS = DataLoader.createData(
+        "sbw/gun_skins", GunSkinData::class.java, true
+    ) { _ -> GunSkin.DATA_CACHE.invalidateAll() }
+
+    // Resource
+
+    @JvmField
+    val GUN_RESOURCE = DataLoader.createResource(
+        "sbw/guns", DefaultGunResource::class.java
+    ) { _ -> GunResource.RESOURCE_CACHE.invalidateAll() }
+
+    @JvmField
+    val VEHICLE_RESOURCE = DataLoader.createResource(
+        "sbw/vehicles", DefaultVehicleResource::class.java
+    ) { _ -> VehicleResource.RESOURCE_CACHE.invalidateAll() }
+
+    // 务必在Mod加载时调用该方法，确保上面的静态数据加载成功
+    fun load() {}
+}

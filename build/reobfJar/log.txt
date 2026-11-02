@@ -1,0 +1,1297 @@
+Java Launcher: C:\Users\user\.jdks\ms-17.0.18\bin\java.exe
+Arguments: '--input, C:\Users\user\Desktop\mods\colaba3stran\build\libs\squadmc-2.1.4-SNAPSHOT.jar, --output, C:\Users\user\Desktop\mods\colaba3stran\build\reobfJar\output.jar, --names, C:\Users\user\Desktop\mods\colaba3stran\build\reobfJar\mappings.tsrg, --lib, C:\Users\user\.gradle\caches\forge_gradle\deobf_dependencies\top\theillusivec4\curios\curios-forge\5.4.2+1.20.1_mapped_parchment_2023.08.13-1.20.1\curios-forge-5.4.2+1.20.1_mapped_parchment_2023.08.13-1.20.1-api.jar, --lib, C:\Users\user\.gradle\caches\forge_gradle\deobf_dependencies\software\bernie\geckolib\geckolib-forge-1.20.1\4.8.4_mapped_parchment_2023.08.13-1.20.1\geckolib-forge-1.20.1-4.8.4_mapped_parchment_2023.08.13-1.20.1.jar, --lib, C:\Users\user\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\superb-warfare-1218165\7292685_mapped_parchment_2023.08.13-1.20.1\superb-warfare-1218165-7292685_mapped_parchment_2023.08.13-1.20.1.jar, --lib, C:\Users\user\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.20.1-47.2.0_mapped_parchment_2023.08.13-1.20.1\forge-1.20.1-47.2.0_mapped_parchment_2023.08.13-1.20.1.jar, --lib, C:\Users\user\.gradle\caches\forge_gradle\minecraft_repo\versions\1.20.1\client-extra.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlloader\1.20.1-47.2.0\7811231940c0a8b6008453bbc64fdf7fa1280fe9\fmlloader-1.20.1-47.2.0.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\JarJarSelector\0.3.19\376cc9c8ea60720cf027c01fc033de915699801c\JarJarSelector-0.3.19.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\JarJarMetadata\0.3.19\83feaa9b770e6ac0e96ee4fc23fa89325c5fe2\JarJarMetadata-0.3.19.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\31.1-jre\60458f877d055d0c9114d9e1a2efb737b4bc282c\guava-31.1-jre.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.2\25ea2e8b0c338a877313bd4672d3fe056ea78f0d\jsr305-3.0.2.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\ca.weblite\java-objc-bridge\1.1\1227f9e0666314f9de41477e3ec277e542ed7f7b\java-objc-bridge-1.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\forgespi\7.0.1\3b4972a0cdb135853dba219be61a79b22cff1309\forgespi-7.0.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mergetool\1.1.5\f3da18e12c696d35a47c82cbb2cc8b5aa15e1154\mergetool-1.1.5-api.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\24.0.1\13c5c75c4206580aa4d683bffee658caae6c9f43\annotations-24.0.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\cpw.mods\securejarhandler\2.1.10\51e6a22c6c716beb11e244bf5b8be480f51dd6b5\securejarhandler-2.1.10.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\cpw.mods\modlauncher\10.0.9\6d9443f56f50bb85cea383686ff9c867391458b\modlauncher-10.0.9.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.openjdk.nashorn\nashorn-core\15.3\43977e804697048fc8d81d333a36c17d07a5b3dd\nashorn-core-15.3.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-commons\9.5\19ab5b5800a3910d30d3a3e64fdb00fd0cb42de0\asm-commons-9.5.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-util\9.5\64b5a1fc8c1b15ed2efd6a063e976bc8d3dc5ffe\asm-util-9.5.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-analysis\9.5\490bacc77de7cbc0be1a30bb3471072d705be4a4\asm-analysis-9.5.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-tree\9.5\fd33c8b6373abaa675be407082fdfda35021254a\asm-tree-9.5.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm\9.5\dc6ea1875f4d64fbc85e1691c95b96a3d8569c90\asm-9.5.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\accesstransformers\8.0.4\272d240aa73f42195b2a68e2ebd8b701ecf41f63\accesstransformers-8.0.4.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.antlr\antlr4\4.9.1\e92af8ab33e428461927b484e90bb155a4f3a052\antlr4-4.9.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.antlr\antlr4-runtime\4.9.1\428664f05d2b7f7b7610204b5aa7c1763f62011a\antlr4-runtime-4.9.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.2.0\ffd3c6debac0a388c9e33ac43c9f5eafb91cb466\fmlcore-1.20.1-47.2.0.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\eventbus\6.0.5\699143dd438431d06b57416944f7cedbe52e1475\eventbus-6.0.5.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\coremods\5.0.1\386b00279628b105b2d507539c46e134e96f6237\coremods-5.0.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\unsafe\0.2.0\54d7a0a5e8fdb71b973025caa46f341ae5904f39\unsafe-0.2.0.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.electronwill.night-config\toml\3.6.4\51d6cefb2b55ee55ee26b16391212fb2c7dfb4f4\toml-3.6.4.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.electronwill.night-config\core\3.6.4\510f174abbf1c947494db50ef2445683bd52c230\core-3.6.4.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.apache.maven\maven-artifact\3.8.5\4433f50c07debefaed0553bd0068f4f48d449313\maven-artifact-3.8.5.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.jodah\typetools\0.6.3\a01aaa6ddaea9ec07ec4f209487b7a46a526283a\typetools-0.6.3.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecrell\terminalconsoleappender\1.2.0\96d02cd3b384ff015a8fef4223bcb4ccf1717c95\terminalconsoleappender-1.2.0.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.jline\jline-reader\3.12.1\4382ab1382c7b6f379377ed5f665dc2f6e1218bc\jline-reader-3.12.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.jline\jline-terminal\3.12.1\c777448314e050d980a6b697c140f3bfe9eb7416\jline-terminal-3.12.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.spongepowered\mixin\0.8.5\9d1c0c3a304ae6697ecd477218fa61b850bf57fc\mixin-0.8.5.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\cpw.mods\bootstraplauncher\1.1.2\c546e00443d8432cda6baa1c860346980742628\bootstraplauncher-1.1.2.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\JarJarFileSystems\0.3.19\2464eb7d6b9ddb9db36a82cf8a95193e5c6fe020\JarJarFileSystems-0.3.19.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlearlydisplay\1.20.1-47.2.0\4c56a03dcedcb909c7eaa8469dd5a36c493a0008\fmlearlydisplay-1.20.1-47.2.0.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.2.0\7f9181f85acc66547685a72020713fc8cbde98\javafmllanguage-1.20.1-47.2.0.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.2.0\7872f5205685fdd26fae39b1be79b0e60ca5b7bd\lowcodelanguage-1.20.1-47.2.0.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.2.0\d501d161cabed08b3c139a2c6217b02a39f3c3e9\mclanguage-1.20.1-47.2.0.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.github.oshi\oshi-core\6.2.2\54f5efc19bca95d709d9a37d19ffcbba3d21c1a6\oshi-core-6.2.2.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.10\dd9b193aef96e973d5a11ab13cd17430c2e4306b\gson-2.10.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.google.guava\failureaccess\1.0.1\1dcf1de382a0bf95a3d8b0849546c88bac1292c9\failureaccess-1.0.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.ibm.icu\icu4j\71.1\9e7d3304c23f9ba5cb71915f7cce23231a57a445\icu4j-71.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.mojang\authlib\4.0.43\2ff9d747a77570a07a60d32ac77eb6162ad2a2d9\authlib-4.0.43.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.mojang\blocklist\1.0.10\5c685c5ffa94c4cd39496c7184c1d122e515ecef\blocklist-1.0.10.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.mojang\brigadier\1.1.8\5244ce82c3337bba4a196a3ce858bfaecc74404a\brigadier-1.1.8.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.mojang\datafixerupper\6.0.8\3ba4a30557a9b057760af4011f909ba619fc5125\datafixerupper-6.0.8.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.mojang\logging\1.1.1\832b8e6674a9b325a5175a3a6267dfaf34c85139\logging-1.1.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.mojang\patchy\2.2.10\da05971b07cbb379d002cf7eaec6a2048211fefc\patchy-2.2.10.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.mojang\text2speech\1.17.9\3cad216e3a7f0c19b4b394388bc9ffc446f13b14\text2speech-1.17.9.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpclient\4.5.13\e5f6cae5ca7ecaac1ec2827a9e2d65ae2869cada\httpclient-4.5.13.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.15\49d94806b6e3dc933dacbd8acb0fdbab8ebd1e5d\commons-codec-1.15.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\commons-io\commons-io\2.11.0\a2503f302b11ebde7ebc3df41daebe0e4eea3689\commons-io-2.11.0.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\commons-logging\commons-logging\1.2\4bfc12adfe4842bf07b657f0369c4cb522955686\commons-logging-1.2.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\io.netty\netty-handler\4.1.82.Final\644041d1fa96a5d3130a29e8978630d716d76e38\netty-handler-4.1.82.Final.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec\4.1.82.Final\b77200379acb345a9ffdece1c605e591ac3e4e0a\netty-codec-4.1.82.Final.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-classes-epoll\4.1.82.Final\e7c7dd18deac93105797f30057c912651ea76521\netty-transport-classes-epoll-4.1.82.Final.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-unix-common\4.1.82.Final\3e895b35ca1b8a0eca56cacff4c2dde5d2c6abce\netty-transport-native-unix-common-4.1.82.Final.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport\4.1.82.Final\e431a218d91acb6476ccad5f5aafde50aa3945ca\netty-transport-4.1.82.Final.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\io.netty\netty-buffer\4.1.82.Final\a544270cf1ae8b8077082f5036436a9a9971ea71\netty-buffer-4.1.82.Final.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\io.netty\netty-resolver\4.1.82.Final\38f665ae8dcd29032eea31245ba7806bed2e0fa8\netty-resolver-4.1.82.Final.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\io.netty\netty-common\4.1.82.Final\22d148e85c3f5ebdacc0ce1f5aabb1d420f73f3\netty-common-4.1.82.Final.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\it.unimi.dsi\fastutil\8.5.9\bb7ea75ecdb216654237830b3a96d87ad91f8cc5\fastutil-8.5.9.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.java.dev.jna\jna-platform\5.12.1\97406a297c852f4a41e688a176ec675f72e8329\jna-platform-5.12.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.java.dev.jna\jna\5.12.1\b1e93a735caea94f503e95e6fe79bf9cdc1e985d\jna-5.12.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\net.sf.jopt-simple\jopt-simple\5.0.4\4fdac2fbe92dfad86aa6e9301736f6b4342a3f5c\jopt-simple-5.0.4.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-compress\1.21\4ec95b60d4e86b5c95a0e919cb172a0af98011ef\commons-compress-1.21.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-lang3\3.12.0\c6842c86792ff03b9f1d1fe2aab8dc23aa6c6f0e\commons-lang3-3.12.0.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpcore\4.4.15\7f2e0c573eaa7a74bac2e89b359e1f73d92a0a1d\httpcore-4.4.15.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-core\2.19.0\3b6eeb4de4c49c0fe38a4ee27188ff5fee44d0bb\log4j-core-2.19.0.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-slf4j2-impl\2.19.0\5c04bfdd63ce9dceb2e284b81e96b6a70010ee10\log4j-slf4j2-impl-2.19.0.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-api\2.19.0\ea1b37f38c327596b216542bc636cfdc0b8036fa\log4j-api-2.19.0.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.joml\joml\1.10.5\22566d58af70ad3d72308bab63b8339906deb649\joml-1.10.5.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-glfw\3.3.1\cbac1b8d30cb4795149c1ef540f912671a8616d0\lwjgl-glfw-3.3.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-glfw\3.3.1\ed892f945cf7e79c8756796f32d00fa4ceaf573b\lwjgl-glfw-3.3.1-natives-windows.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-glfw\3.3.1\beda65ee503443e60aa196d58ed31f8d001dc22a\lwjgl-glfw-3.3.1-natives-windows-arm64.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-glfw\3.3.1\b997e3391d6ce8f05487e7335d95c606043884a1\lwjgl-glfw-3.3.1-natives-windows-x86.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-jemalloc\3.3.1\a817bcf213db49f710603677457567c37d53e103\lwjgl-jemalloc-3.3.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-jemalloc\3.3.1\948a89b76a16aa324b046ae9308891216ffce5f9\lwjgl-jemalloc-3.3.1-natives-windows.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-jemalloc\3.3.1\cae85c4edb219c88b6a0c26a87955ad98dc9519d\lwjgl-jemalloc-3.3.1-natives-windows-arm64.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-jemalloc\3.3.1\fb476c8ec110e1c137ad3ce8a7f7bfe6b11c6324\lwjgl-jemalloc-3.3.1-natives-windows-x86.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-openal\3.3.1\2623a6b8ae1dfcd880738656a9f0243d2e6840bd\lwjgl-openal-3.3.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-openal\3.3.1\30a474d0e57193d7bc128849a3ab66bc9316fdb1\lwjgl-openal-3.3.1-natives-windows.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-openal\3.3.1\40d65f1a7368a2aa47336f9cb69f5a190cf9975a\lwjgl-openal-3.3.1-natives-windows-arm64.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-openal\3.3.1\888349f7b1be6fbae58bf8edfb9ef12def04c4e3\lwjgl-openal-3.3.1-natives-windows-x86.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\831a5533a21a5f4f81bbc51bb13e9899319b5411\lwjgl-opengl-3.3.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\c1807e9bd571402787d7e37e3029776ae2513bb8\lwjgl-opengl-3.3.1-natives-windows.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\527d78f1e9056aff3ed02ce93019c73c5e8f1721\lwjgl-opengl-3.3.1-natives-windows-arm64.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\deef3eb9b178ff2ff3ce893cc72ae741c3a17974\lwjgl-opengl-3.3.1-natives-windows-x86.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-stb\3.3.1\b119297cf8ed01f247abe8685857f8e7fcf5980f\lwjgl-stb-3.3.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-stb\3.3.1\86315914ac119efdb02dc9e8e978ade84f1702af\lwjgl-stb-3.3.1-natives-windows.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-stb\3.3.1\fde63cdd2605c00636721a6c8b961e41d1f6b247\lwjgl-stb-3.3.1-natives-windows-arm64.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-stb\3.3.1\a8d41f419eecb430b7c91ea2ce2c5c451cae2091\lwjgl-stb-3.3.1-natives-windows-x86.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-tinyfd\3.3.1\ff1914111ef2e3e0110ef2dabc8d8cdaad82347\lwjgl-tinyfd-3.3.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-tinyfd\3.3.1\a5d830475ec0958d9fdba1559efa99aef211e6ff\lwjgl-tinyfd-3.3.1-natives-windows.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-tinyfd\3.3.1\83a5e780df610829ff3a737822b4f931cffecd91\lwjgl-tinyfd-3.3.1-natives-windows-arm64.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-tinyfd\3.3.1\842eedd876fae354abc308c98a263f6bbc9e8a4d\lwjgl-tinyfd-3.3.1-natives-windows-x86.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\ae58664f88e18a9bb2c77b063833ca7aaec484cb\lwjgl-3.3.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\36c37f16ab611b3aa11f3bcf80b1d509b4ce6b\lwjgl-3.3.1-natives-windows.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\f46cadcf95675908fd3a550d63d9d709cb68998\lwjgl-3.3.1-natives-windows-arm64.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\3b14f4beae9dd39791ec9e12190a9380cd8a3ce6\lwjgl-3.3.1-natives-windows-x86.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.machinezoo.noexception\noexception\1.7.1\b65330c98e38a1f915fa54a6e5eca496505e3f0a\noexception-1.7.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\2.0.1\f48d81adce2abf5ad3cfe463df517952749e03bc\slf4j-api-2.0.1.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.codehaus.plexus\plexus-utils\3.3.0\cf43b5391de623b36fe066a21127baef82c64022\plexus-utils-3.3.0.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.google.guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\b421526c5f297295adef1c886e5246c39d4ac629\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.checkerframework\checker-qual\3.12.0\d5692f0526415fcc6de94bb5bfbd3afd9dd3b3e5\checker-qual-3.12.0.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.google.errorprone\error_prone_annotations\2.11.0\c5a0ace696d3f8b1c1d8cc036d8c03cc0cbe6b69\error_prone_annotations-2.11.0.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\com.google.j2objc\j2objc-annotations\1.3\ba035118bc8bac37d7eff77700720999acd9986d\j2objc-annotations-1.3.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.antlr\ST4\4.3\92f2c1ad8d84abcbeead6cf7f2c53a04166293c2\ST4-4.3.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.antlr\antlr-runtime\3.5.2\cd9cd41361c155f3af0f653009dcecb08d8b4afd\antlr-runtime-3.5.2.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.abego.treelayout\org.abego.treelayout.core\1.0.3\457216e8e6578099ae63667bb1e4439235892028\org.abego.treelayout.core-1.0.3.jar, --lib, C:\Users\user\.gradle\caches\modules-2\files-2.1\org.glassfish\javax.json\1.0.4\3178f73569fd7a1e5ffc464e680f7a8cc784b85a\javax.json-1.0.4.jar, --disable-abstract-param'
+Classpath:
+ - C:\Users\user\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\renamer\2.0.4\renamer-2.0.4-all.jar
+Working directory: C:\Users\user\Desktop\mods\colaba3stran\build\reobfJar
+Main class: net.minecraftforge.renamer.Main
+====================================
+Forge Renamer v2.0.4
+lib: C:\Users\user\.gradle\caches\forge_gradle\deobf_dependencies\top\theillusivec4\curios\curios-forge\5.4.2+1.20.1_mapped_parchment_2023.08.13-1.20.1\curios-forge-5.4.2+1.20.1_mapped_parchment_2023.08.13-1.20.1-api.jar
+lib: C:\Users\user\.gradle\caches\forge_gradle\deobf_dependencies\software\bernie\geckolib\geckolib-forge-1.20.1\4.8.4_mapped_parchment_2023.08.13-1.20.1\geckolib-forge-1.20.1-4.8.4_mapped_parchment_2023.08.13-1.20.1.jar
+lib: C:\Users\user\.gradle\caches\forge_gradle\deobf_dependencies\curse\maven\superb-warfare-1218165\7292685_mapped_parchment_2023.08.13-1.20.1\superb-warfare-1218165-7292685_mapped_parchment_2023.08.13-1.20.1.jar
+lib: C:\Users\user\.gradle\caches\forge_gradle\minecraft_user_repo\net\minecraftforge\forge\1.20.1-47.2.0_mapped_parchment_2023.08.13-1.20.1\forge-1.20.1-47.2.0_mapped_parchment_2023.08.13-1.20.1.jar
+lib: C:\Users\user\.gradle\caches\forge_gradle\minecraft_repo\versions\1.20.1\client-extra.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlloader\1.20.1-47.2.0\7811231940c0a8b6008453bbc64fdf7fa1280fe9\fmlloader-1.20.1-47.2.0.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\JarJarSelector\0.3.19\376cc9c8ea60720cf027c01fc033de915699801c\JarJarSelector-0.3.19.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\JarJarMetadata\0.3.19\83feaa9b770e6ac0e96ee4fc23fa89325c5fe2\JarJarMetadata-0.3.19.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\31.1-jre\60458f877d055d0c9114d9e1a2efb737b4bc282c\guava-31.1-jre.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.2\25ea2e8b0c338a877313bd4672d3fe056ea78f0d\jsr305-3.0.2.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\ca.weblite\java-objc-bridge\1.1\1227f9e0666314f9de41477e3ec277e542ed7f7b\java-objc-bridge-1.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\forgespi\7.0.1\3b4972a0cdb135853dba219be61a79b22cff1309\forgespi-7.0.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mergetool\1.1.5\f3da18e12c696d35a47c82cbb2cc8b5aa15e1154\mergetool-1.1.5-api.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\24.0.1\13c5c75c4206580aa4d683bffee658caae6c9f43\annotations-24.0.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\cpw.mods\securejarhandler\2.1.10\51e6a22c6c716beb11e244bf5b8be480f51dd6b5\securejarhandler-2.1.10.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\cpw.mods\modlauncher\10.0.9\6d9443f56f50bb85cea383686ff9c867391458b\modlauncher-10.0.9.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.openjdk.nashorn\nashorn-core\15.3\43977e804697048fc8d81d333a36c17d07a5b3dd\nashorn-core-15.3.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-commons\9.5\19ab5b5800a3910d30d3a3e64fdb00fd0cb42de0\asm-commons-9.5.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-util\9.5\64b5a1fc8c1b15ed2efd6a063e976bc8d3dc5ffe\asm-util-9.5.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-analysis\9.5\490bacc77de7cbc0be1a30bb3471072d705be4a4\asm-analysis-9.5.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-tree\9.5\fd33c8b6373abaa675be407082fdfda35021254a\asm-tree-9.5.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm\9.5\dc6ea1875f4d64fbc85e1691c95b96a3d8569c90\asm-9.5.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\accesstransformers\8.0.4\272d240aa73f42195b2a68e2ebd8b701ecf41f63\accesstransformers-8.0.4.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.antlr\antlr4\4.9.1\e92af8ab33e428461927b484e90bb155a4f3a052\antlr4-4.9.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.antlr\antlr4-runtime\4.9.1\428664f05d2b7f7b7610204b5aa7c1763f62011a\antlr4-runtime-4.9.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.2.0\ffd3c6debac0a388c9e33ac43c9f5eafb91cb466\fmlcore-1.20.1-47.2.0.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\eventbus\6.0.5\699143dd438431d06b57416944f7cedbe52e1475\eventbus-6.0.5.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\coremods\5.0.1\386b00279628b105b2d507539c46e134e96f6237\coremods-5.0.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\unsafe\0.2.0\54d7a0a5e8fdb71b973025caa46f341ae5904f39\unsafe-0.2.0.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.electronwill.night-config\toml\3.6.4\51d6cefb2b55ee55ee26b16391212fb2c7dfb4f4\toml-3.6.4.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.electronwill.night-config\core\3.6.4\510f174abbf1c947494db50ef2445683bd52c230\core-3.6.4.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.apache.maven\maven-artifact\3.8.5\4433f50c07debefaed0553bd0068f4f48d449313\maven-artifact-3.8.5.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.jodah\typetools\0.6.3\a01aaa6ddaea9ec07ec4f209487b7a46a526283a\typetools-0.6.3.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecrell\terminalconsoleappender\1.2.0\96d02cd3b384ff015a8fef4223bcb4ccf1717c95\terminalconsoleappender-1.2.0.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.jline\jline-reader\3.12.1\4382ab1382c7b6f379377ed5f665dc2f6e1218bc\jline-reader-3.12.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.jline\jline-terminal\3.12.1\c777448314e050d980a6b697c140f3bfe9eb7416\jline-terminal-3.12.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.spongepowered\mixin\0.8.5\9d1c0c3a304ae6697ecd477218fa61b850bf57fc\mixin-0.8.5.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\cpw.mods\bootstraplauncher\1.1.2\c546e00443d8432cda6baa1c860346980742628\bootstraplauncher-1.1.2.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\JarJarFileSystems\0.3.19\2464eb7d6b9ddb9db36a82cf8a95193e5c6fe020\JarJarFileSystems-0.3.19.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlearlydisplay\1.20.1-47.2.0\4c56a03dcedcb909c7eaa8469dd5a36c493a0008\fmlearlydisplay-1.20.1-47.2.0.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.2.0\7f9181f85acc66547685a72020713fc8cbde98\javafmllanguage-1.20.1-47.2.0.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.2.0\7872f5205685fdd26fae39b1be79b0e60ca5b7bd\lowcodelanguage-1.20.1-47.2.0.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.2.0\d501d161cabed08b3c139a2c6217b02a39f3c3e9\mclanguage-1.20.1-47.2.0.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.github.oshi\oshi-core\6.2.2\54f5efc19bca95d709d9a37d19ffcbba3d21c1a6\oshi-core-6.2.2.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.10\dd9b193aef96e973d5a11ab13cd17430c2e4306b\gson-2.10.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.google.guava\failureaccess\1.0.1\1dcf1de382a0bf95a3d8b0849546c88bac1292c9\failureaccess-1.0.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.ibm.icu\icu4j\71.1\9e7d3304c23f9ba5cb71915f7cce23231a57a445\icu4j-71.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.mojang\authlib\4.0.43\2ff9d747a77570a07a60d32ac77eb6162ad2a2d9\authlib-4.0.43.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.mojang\blocklist\1.0.10\5c685c5ffa94c4cd39496c7184c1d122e515ecef\blocklist-1.0.10.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.mojang\brigadier\1.1.8\5244ce82c3337bba4a196a3ce858bfaecc74404a\brigadier-1.1.8.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.mojang\datafixerupper\6.0.8\3ba4a30557a9b057760af4011f909ba619fc5125\datafixerupper-6.0.8.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.mojang\logging\1.1.1\832b8e6674a9b325a5175a3a6267dfaf34c85139\logging-1.1.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.mojang\patchy\2.2.10\da05971b07cbb379d002cf7eaec6a2048211fefc\patchy-2.2.10.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.mojang\text2speech\1.17.9\3cad216e3a7f0c19b4b394388bc9ffc446f13b14\text2speech-1.17.9.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpclient\4.5.13\e5f6cae5ca7ecaac1ec2827a9e2d65ae2869cada\httpclient-4.5.13.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.15\49d94806b6e3dc933dacbd8acb0fdbab8ebd1e5d\commons-codec-1.15.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\commons-io\commons-io\2.11.0\a2503f302b11ebde7ebc3df41daebe0e4eea3689\commons-io-2.11.0.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\commons-logging\commons-logging\1.2\4bfc12adfe4842bf07b657f0369c4cb522955686\commons-logging-1.2.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\io.netty\netty-handler\4.1.82.Final\644041d1fa96a5d3130a29e8978630d716d76e38\netty-handler-4.1.82.Final.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec\4.1.82.Final\b77200379acb345a9ffdece1c605e591ac3e4e0a\netty-codec-4.1.82.Final.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-classes-epoll\4.1.82.Final\e7c7dd18deac93105797f30057c912651ea76521\netty-transport-classes-epoll-4.1.82.Final.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-unix-common\4.1.82.Final\3e895b35ca1b8a0eca56cacff4c2dde5d2c6abce\netty-transport-native-unix-common-4.1.82.Final.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport\4.1.82.Final\e431a218d91acb6476ccad5f5aafde50aa3945ca\netty-transport-4.1.82.Final.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\io.netty\netty-buffer\4.1.82.Final\a544270cf1ae8b8077082f5036436a9a9971ea71\netty-buffer-4.1.82.Final.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\io.netty\netty-resolver\4.1.82.Final\38f665ae8dcd29032eea31245ba7806bed2e0fa8\netty-resolver-4.1.82.Final.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\io.netty\netty-common\4.1.82.Final\22d148e85c3f5ebdacc0ce1f5aabb1d420f73f3\netty-common-4.1.82.Final.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\it.unimi.dsi\fastutil\8.5.9\bb7ea75ecdb216654237830b3a96d87ad91f8cc5\fastutil-8.5.9.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.java.dev.jna\jna-platform\5.12.1\97406a297c852f4a41e688a176ec675f72e8329\jna-platform-5.12.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.java.dev.jna\jna\5.12.1\b1e93a735caea94f503e95e6fe79bf9cdc1e985d\jna-5.12.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\net.sf.jopt-simple\jopt-simple\5.0.4\4fdac2fbe92dfad86aa6e9301736f6b4342a3f5c\jopt-simple-5.0.4.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-compress\1.21\4ec95b60d4e86b5c95a0e919cb172a0af98011ef\commons-compress-1.21.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-lang3\3.12.0\c6842c86792ff03b9f1d1fe2aab8dc23aa6c6f0e\commons-lang3-3.12.0.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpcore\4.4.15\7f2e0c573eaa7a74bac2e89b359e1f73d92a0a1d\httpcore-4.4.15.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-core\2.19.0\3b6eeb4de4c49c0fe38a4ee27188ff5fee44d0bb\log4j-core-2.19.0.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-slf4j2-impl\2.19.0\5c04bfdd63ce9dceb2e284b81e96b6a70010ee10\log4j-slf4j2-impl-2.19.0.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-api\2.19.0\ea1b37f38c327596b216542bc636cfdc0b8036fa\log4j-api-2.19.0.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.joml\joml\1.10.5\22566d58af70ad3d72308bab63b8339906deb649\joml-1.10.5.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-glfw\3.3.1\cbac1b8d30cb4795149c1ef540f912671a8616d0\lwjgl-glfw-3.3.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-glfw\3.3.1\ed892f945cf7e79c8756796f32d00fa4ceaf573b\lwjgl-glfw-3.3.1-natives-windows.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-glfw\3.3.1\beda65ee503443e60aa196d58ed31f8d001dc22a\lwjgl-glfw-3.3.1-natives-windows-arm64.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-glfw\3.3.1\b997e3391d6ce8f05487e7335d95c606043884a1\lwjgl-glfw-3.3.1-natives-windows-x86.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-jemalloc\3.3.1\a817bcf213db49f710603677457567c37d53e103\lwjgl-jemalloc-3.3.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-jemalloc\3.3.1\948a89b76a16aa324b046ae9308891216ffce5f9\lwjgl-jemalloc-3.3.1-natives-windows.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-jemalloc\3.3.1\cae85c4edb219c88b6a0c26a87955ad98dc9519d\lwjgl-jemalloc-3.3.1-natives-windows-arm64.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-jemalloc\3.3.1\fb476c8ec110e1c137ad3ce8a7f7bfe6b11c6324\lwjgl-jemalloc-3.3.1-natives-windows-x86.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-openal\3.3.1\2623a6b8ae1dfcd880738656a9f0243d2e6840bd\lwjgl-openal-3.3.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-openal\3.3.1\30a474d0e57193d7bc128849a3ab66bc9316fdb1\lwjgl-openal-3.3.1-natives-windows.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-openal\3.3.1\40d65f1a7368a2aa47336f9cb69f5a190cf9975a\lwjgl-openal-3.3.1-natives-windows-arm64.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-openal\3.3.1\888349f7b1be6fbae58bf8edfb9ef12def04c4e3\lwjgl-openal-3.3.1-natives-windows-x86.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\831a5533a21a5f4f81bbc51bb13e9899319b5411\lwjgl-opengl-3.3.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\c1807e9bd571402787d7e37e3029776ae2513bb8\lwjgl-opengl-3.3.1-natives-windows.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\527d78f1e9056aff3ed02ce93019c73c5e8f1721\lwjgl-opengl-3.3.1-natives-windows-arm64.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\deef3eb9b178ff2ff3ce893cc72ae741c3a17974\lwjgl-opengl-3.3.1-natives-windows-x86.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-stb\3.3.1\b119297cf8ed01f247abe8685857f8e7fcf5980f\lwjgl-stb-3.3.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-stb\3.3.1\86315914ac119efdb02dc9e8e978ade84f1702af\lwjgl-stb-3.3.1-natives-windows.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-stb\3.3.1\fde63cdd2605c00636721a6c8b961e41d1f6b247\lwjgl-stb-3.3.1-natives-windows-arm64.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-stb\3.3.1\a8d41f419eecb430b7c91ea2ce2c5c451cae2091\lwjgl-stb-3.3.1-natives-windows-x86.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-tinyfd\3.3.1\ff1914111ef2e3e0110ef2dabc8d8cdaad82347\lwjgl-tinyfd-3.3.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-tinyfd\3.3.1\a5d830475ec0958d9fdba1559efa99aef211e6ff\lwjgl-tinyfd-3.3.1-natives-windows.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-tinyfd\3.3.1\83a5e780df610829ff3a737822b4f931cffecd91\lwjgl-tinyfd-3.3.1-natives-windows-arm64.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-tinyfd\3.3.1\842eedd876fae354abc308c98a263f6bbc9e8a4d\lwjgl-tinyfd-3.3.1-natives-windows-x86.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\ae58664f88e18a9bb2c77b063833ca7aaec484cb\lwjgl-3.3.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\36c37f16ab611b3aa11f3bcf80b1d509b4ce6b\lwjgl-3.3.1-natives-windows.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\f46cadcf95675908fd3a550d63d9d709cb68998\lwjgl-3.3.1-natives-windows-arm64.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\3b14f4beae9dd39791ec9e12190a9380cd8a3ce6\lwjgl-3.3.1-natives-windows-x86.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.machinezoo.noexception\noexception\1.7.1\b65330c98e38a1f915fa54a6e5eca496505e3f0a\noexception-1.7.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\2.0.1\f48d81adce2abf5ad3cfe463df517952749e03bc\slf4j-api-2.0.1.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.codehaus.plexus\plexus-utils\3.3.0\cf43b5391de623b36fe066a21127baef82c64022\plexus-utils-3.3.0.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.google.guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\b421526c5f297295adef1c886e5246c39d4ac629\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.checkerframework\checker-qual\3.12.0\d5692f0526415fcc6de94bb5bfbd3afd9dd3b3e5\checker-qual-3.12.0.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.google.errorprone\error_prone_annotations\2.11.0\c5a0ace696d3f8b1c1d8cc036d8c03cc0cbe6b69\error_prone_annotations-2.11.0.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\com.google.j2objc\j2objc-annotations\1.3\ba035118bc8bac37d7eff77700720999acd9986d\j2objc-annotations-1.3.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.antlr\ST4\4.3\92f2c1ad8d84abcbeead6cf7f2c53a04166293c2\ST4-4.3.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.antlr\antlr-runtime\3.5.2\cd9cd41361c155f3af0f653009dcecb08d8b4afd\antlr-runtime-3.5.2.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.abego.treelayout\org.abego.treelayout.core\1.0.3\457216e8e6578099ae63667bb1e4439235892028\org.abego.treelayout.core-1.0.3.jar
+lib: C:\Users\user\.gradle\caches\modules-2\files-2.1\org.glassfish\javax.json\1.0.4\3178f73569fd7a1e5ffc464e680f7a8cc784b85a\javax.json-1.0.4.jar
+log: null
+input: C:\Users\user\Desktop\mods\colaba3stran\build\libs\squadmc-2.1.4-SNAPSHOT.jar
+output: C:\Users\user\Desktop\mods\colaba3stran\build\reobfJar\output.jar
+threads: 12
+Names: C:\Users\user\Desktop\mods\colaba3stran\build\reobfJar\mappings.tsrg(reversed: false)
+Fix Annotations: false
+Fix Records: false
+Fix Identifiers: false
+Fix SourceFile: false
+Fix Line Numbers: false
+Strip codesigning signatures: false
+Adding Libraries to Inheritance
+Reading Input: C:\Users\user\Desktop\mods\colaba3stran\build\libs\squadmc-2.1.4-SNAPSHOT.jar
+Adding input to inheritance map
+Processing entries
+Conflicting propagated mapping for com/atsuishio/superbwarfare/client/particle/CustomSmokeOption/writeToString()Ljava/lang/String; from net/minecraft/core/particles/ParticleOptions/writeToString()Ljava/lang/String;: writeToString -> m_5942_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/client/particle/CustomSmokeOption/getType()Lnet/minecraft/core/particles/ParticleType; from net/minecraft/core/particles/ParticleOptions/getType()Lnet/minecraft/core/particles/ParticleType;: getType -> m_6012_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/client/particle/CustomSmokeOption/writeToNetwork(Lnet/minecraft/network/FriendlyByteBuf;)V from net/minecraft/core/particles/ParticleOptions/writeToNetwork(Lnet/minecraft/network/FriendlyByteBuf;)V: writeToNetwork -> m_7711_
+Conflicting propagated mapping for net/minecraft/world/entity/LivingEntity/lambda$addAdditionalSaveData$3(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/nbt/Tag;)V from net/minecraft/world/entity/player/Player/lambda$addAdditionalSaveData$3(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/nbt/Tag;)V: lambda$addAdditionalSaveData$3 -> m_219754_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/canBeCollidedWith()Z from net/minecraft/world/entity/Entity/canBeCollidedWith()Z: canBeCollidedWith -> m_5829_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/getPickResult()Lnet/minecraft/world/item/ItemStack; from net/minecraft/world/entity/Entity/getPickResult()Lnet/minecraft/world/item/ItemStack;: getPickResult -> m_142340_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/canAddPassenger(Lnet/minecraft/world/entity/Entity;)Z from net/minecraft/world/entity/Entity/canAddPassenger(Lnet/minecraft/world/entity/Entity;)Z: canAddPassenger -> m_7310_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/setDeltaMovement(Lnet/minecraft/world/phys/Vec3;)V from net/minecraft/world/entity/Entity/setDeltaMovement(Lnet/minecraft/world/phys/Vec3;)V: setDeltaMovement -> m_20256_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/remove(Lnet/minecraft/world/entity/Entity$RemovalReason;)V from net/minecraft/world/entity/Entity/remove(Lnet/minecraft/world/entity/Entity$RemovalReason;)V: remove -> m_142687_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/addDeltaMovement(Lnet/minecraft/world/phys/Vec3;)V from net/minecraft/world/entity/Entity/addDeltaMovement(Lnet/minecraft/world/phys/Vec3;)V: addDeltaMovement -> m_246865_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from net/minecraft/world/entity/Entity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/getFirstPassenger()Lnet/minecraft/world/entity/Entity; from net/minecraft/world/entity/Entity/getFirstPassenger()Lnet/minecraft/world/entity/Entity;: getFirstPassenger -> m_146895_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/lavaHurt()V from net/minecraft/world/entity/Entity/lavaHurt()V: lavaHurt -> m_20093_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/playStepSound(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V from net/minecraft/world/entity/Entity/playStepSound(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V: playStepSound -> m_7355_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/isPickable()Z from net/minecraft/world/entity/Entity/isPickable()Z: isPickable -> m_6087_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/addPassenger(Lnet/minecraft/world/entity/Entity;)V from net/minecraft/world/entity/Entity/addPassenger(Lnet/minecraft/world/entity/Entity;)V: addPassenger -> m_20348_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/canFreeze()Z from net/minecraft/world/entity/Entity/canFreeze()Z: canFreeze -> m_142079_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/skipAttackInteraction(Lnet/minecraft/world/entity/Entity;)Z from net/minecraft/world/entity/Entity/skipAttackInteraction(Lnet/minecraft/world/entity/Entity;)Z: skipAttackInteraction -> m_7313_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/removePassenger(Lnet/minecraft/world/entity/Entity;)V from net/minecraft/world/entity/Entity/removePassenger(Lnet/minecraft/world/entity/Entity;)V: removePassenger -> m_20351_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/interact(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult; from net/minecraft/world/entity/Entity/interact(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;: interact -> m_6096_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/onSyncedDataUpdated(Ljava/util/List;)V from net/minecraft/world/entity/Entity/onSyncedDataUpdated(Ljava/util/List;)V: onSyncedDataUpdated -> m_269505_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/getDismountLocationForPassenger(Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/phys/Vec3; from net/minecraft/world/entity/Entity/getDismountLocationForPassenger(Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/phys/Vec3;: getDismountLocationForPassenger -> m_7688_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/getAddEntityPacket()Lnet/minecraft/network/protocol/Packet; from net/minecraft/world/entity/Entity/getAddEntityPacket()Lnet/minecraft/network/protocol/Packet;: getAddEntityPacket -> m_5654_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/lerpTo(DDDFFIZ)V from net/minecraft/world/entity/Entity/lerpTo(DDDFFIZ)V: lerpTo -> m_6453_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/defineSynchedData()V from net/minecraft/world/entity/Entity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/baseTick()V from net/minecraft/world/entity/Entity/baseTick()V: baseTick -> m_6075_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from net/minecraft/world/entity/Entity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/onPassengerTurned(Lnet/minecraft/world/entity/Entity;)V from net/minecraft/world/entity/Entity/onPassengerTurned(Lnet/minecraft/world/entity/Entity;)V: onPassengerTurned -> m_7340_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/positionRider(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity$MoveFunction;)V from net/minecraft/world/entity/Entity/positionRider(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/entity/Entity$MoveFunction;)V: positionRider -> m_19956_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/move(Lnet/minecraft/world/entity/MoverType;Lnet/minecraft/world/phys/Vec3;)V from net/minecraft/world/entity/Entity/move(Lnet/minecraft/world/entity/MoverType;Lnet/minecraft/world/phys/Vec3;)V: move -> m_6478_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/hurt(Lnet/minecraft/world/damagesource/DamageSource;F)Z from net/minecraft/world/entity/Entity/hurt(Lnet/minecraft/world/damagesource/DamageSource;F)Z: hurt -> m_6469_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/push(DDD)V from net/minecraft/world/entity/Entity/push(DDD)V: push -> m_5997_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/openCustomInventoryScreen(Lnet/minecraft/world/entity/player/Player;)V from net/minecraft/world/entity/HasCustomInventoryScreen/openCustomInventoryScreen(Lnet/minecraft/world/entity/player/Player;)V: openCustomInventoryScreen -> m_213583_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/removeItem(II)Lnet/minecraft/world/item/ItemStack; from net/minecraft/world/Container/removeItem(II)Lnet/minecraft/world/item/ItemStack;: removeItem -> m_7407_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/getItem(I)Lnet/minecraft/world/item/ItemStack; from net/minecraft/world/Container/getItem(I)Lnet/minecraft/world/item/ItemStack;: getItem -> m_8020_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/isEmpty()Z from net/minecraft/world/entity/vehicle/ContainerEntity/isEmpty()Z: isEmpty -> m_7983_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/setChanged()V from net/minecraft/world/Container/setChanged()V: setChanged -> m_6596_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/stillValid(Lnet/minecraft/world/entity/player/Player;)Z from net/minecraft/world/Container/stillValid(Lnet/minecraft/world/entity/player/Player;)Z: stillValid -> m_6542_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/canPlaceItem(ILnet/minecraft/world/item/ItemStack;)Z from net/minecraft/world/Container/canPlaceItem(ILnet/minecraft/world/item/ItemStack;)Z: canPlaceItem -> m_7013_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/setLootTableSeed(J)V from net/minecraft/world/entity/vehicle/ContainerEntity/setLootTableSeed(J)V: setLootTableSeed -> m_214065_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/canTakeItem(Lnet/minecraft/world/Container;ILnet/minecraft/world/item/ItemStack;)Z from net/minecraft/world/Container/canTakeItem(Lnet/minecraft/world/Container;ILnet/minecraft/world/item/ItemStack;)Z: canTakeItem -> m_271862_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/getLootTable()Lnet/minecraft/resources/ResourceLocation; from net/minecraft/world/entity/vehicle/ContainerEntity/getLootTable()Lnet/minecraft/resources/ResourceLocation;: getLootTable -> m_214142_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/getContainerSize()I from net/minecraft/world/Container/getContainerSize()I: getContainerSize -> m_6643_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/stopOpen(Lnet/minecraft/world/entity/player/Player;)V from net/minecraft/world/Container/stopOpen(Lnet/minecraft/world/entity/player/Player;)V: stopOpen -> m_5785_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/setItem(ILnet/minecraft/world/item/ItemStack;)V from net/minecraft/world/Container/setItem(ILnet/minecraft/world/item/ItemStack;)V: setItem -> m_6836_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/createMenu(ILnet/minecraft/world/entity/player/Inventory;Lnet/minecraft/world/entity/player/Player;)Lnet/minecraft/world/inventory/AbstractContainerMenu; from net/minecraft/world/inventory/MenuConstructor/createMenu(ILnet/minecraft/world/entity/player/Inventory;Lnet/minecraft/world/entity/player/Player;)Lnet/minecraft/world/inventory/AbstractContainerMenu;: createMenu -> m_7208_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/clearContent()V from net/minecraft/world/Clearable/clearContent()V: clearContent -> m_6211_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/getItemStacks()Lnet/minecraft/core/NonNullList; from net/minecraft/world/entity/vehicle/ContainerEntity/getItemStacks()Lnet/minecraft/core/NonNullList;: getItemStacks -> m_213659_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/countItem(Lnet/minecraft/world/item/Item;)I from net/minecraft/world/Container/countItem(Lnet/minecraft/world/item/Item;)I: countItem -> m_18947_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/removeItemNoUpdate(I)Lnet/minecraft/world/item/ItemStack; from net/minecraft/world/Container/removeItemNoUpdate(I)Lnet/minecraft/world/item/ItemStack;: removeItemNoUpdate -> m_8016_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/getLootTableSeed()J from net/minecraft/world/entity/vehicle/ContainerEntity/getLootTableSeed()J: getLootTableSeed -> m_213803_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/clearItemStacks()V from net/minecraft/world/entity/vehicle/ContainerEntity/clearItemStacks()V: clearItemStacks -> m_213775_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/setLootTable(Lnet/minecraft/resources/ResourceLocation;)V from net/minecraft/world/entity/vehicle/ContainerEntity/setLootTable(Lnet/minecraft/resources/ResourceLocation;)V: setLootTable -> m_214199_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/setDeltaMovement(Lnet/minecraft/world/phys/Vec3;)V from com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/setDeltaMovement(Lnet/minecraft/world/phys/Vec3;)V: setDeltaMovement -> m_20256_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V from net/minecraft/world/entity/Entity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/defineSynchedData()V from com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/move(Lnet/minecraft/world/entity/MoverType;Lnet/minecraft/world/phys/Vec3;)V from com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/move(Lnet/minecraft/world/entity/MoverType;Lnet/minecraft/world/phys/Vec3;)V: move -> m_6478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/setDeltaMovement(DDD)V from net/minecraft/world/entity/Entity/setDeltaMovement(DDD)V: setDeltaMovement -> m_20334_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/bmp2Entity/handleEntityEvent(B)V from net/minecraft/world/entity/Entity/handleEntityEvent(B)V: handleEntityEvent -> m_7822_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/bradleyEntity/handleEntityEvent(B)V from net/minecraft/world/entity/Entity/handleEntityEvent(B)V: handleEntityEvent -> m_7822_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/brdmEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/FenekEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/HumveeEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/bmp2Entity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/btr82Entity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/bmd4Entity/handleEntityEvent(B)V from net/minecraft/world/entity/Entity/handleEntityEvent(B)V: handleEntityEvent -> m_7822_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/brdmEntity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/FenekEntity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/bradleyEntity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/btr82Entity/defineSynchedData()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/HumveeEntity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/FenekEntity/defineSynchedData()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/HumveeEntity/defineSynchedData()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/brdmEntity/defineSynchedData()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/bmd4Entity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/FMTVEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/FenekEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/HumveeEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/brdmEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/FMTVEntity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/FMTVEntity/defineSynchedData()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/FMTVEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/HumveeTowEntity/handleEntityEvent(B)V from net/minecraft/world/entity/Entity/handleEntityEvent(B)V: handleEntityEvent -> m_7822_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/HumveeTowEntity/tick()V from tech/squadmc/squadmcor/entity/HumveeEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/T64Entity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/T64Entity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/T64Entity/defineSynchedData()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/T64Entity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/Bmp1Entity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/Bmp1Entity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/Bmp1Entity/defineSynchedData()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/Bmp1Entity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/lav25Entity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/UralGradEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/UralEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/PumaEntity/handleEntityEvent(B)V from net/minecraft/world/entity/Entity/handleEntityEvent(B)V: handleEntityEvent -> m_7822_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/StrykerMortalEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/lav25Entity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/UralGradEntity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/lav25Entity/defineSynchedData()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/UralEntity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/StrykerMortalEntity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/UralEntity/defineSynchedData()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/StrykerMortalEntity/defineSynchedData()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/PumaEntity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/UralGradEntity/defineSynchedData()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/lav25Entity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/UralEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/StrykerMortalEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/UralGradEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/m1a2Entity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/sprutEntity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/empl/TowEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/empl/TowEntity/interact(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult; from com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/interact(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;: interact -> m_6096_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/empl/TowEntity/defineSynchedData()V from com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/StrykerM2Entity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/empl/TowEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/StrykerM2Entity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/StrykerM2Entity/defineSynchedData()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/StrykerM2Entity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/empl/TowEntity/baseTick()V from com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/baseTick()V: baseTick -> m_6075_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/T72AVEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/T72AVEntity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/T72AVEntity/defineSynchedData()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/T72AVEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/empl/ZISEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/empl/ZISEntity/tick()V from net/minecraft/world/entity/Entity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/empl/ZISEntity/interact(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult; from com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/interact(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;: interact -> m_6096_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/empl/ZISEntity/defineSynchedData()V from com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/leopardEntity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/empl/ZISEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/empl/ZISEntity/baseTick()V from com/atsuishio/superbwarfare/entity/vehicle/base/VehicleEntity/baseTick()V: baseTick -> m_6075_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/t80Entity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/item/gun/GunItem/isEnchantable(Lnet/minecraft/world/item/ItemStack;)Z from net/minecraft/world/item/Item/isEnchantable(Lnet/minecraft/world/item/ItemStack;)Z: isEnchantable -> m_8120_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/item/gun/GunItem/canAttackBlock(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;)Z from net/minecraft/world/item/Item/canAttackBlock(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;)Z: canAttackBlock -> m_6777_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/item/gun/GunItem/getBarWidth(Lnet/minecraft/world/item/ItemStack;)I from net/minecraft/world/item/Item/getBarWidth(Lnet/minecraft/world/item/ItemStack;)I: getBarWidth -> m_142158_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/item/gun/GunItem/getBarColor(Lnet/minecraft/world/item/ItemStack;)I from net/minecraft/world/item/Item/getBarColor(Lnet/minecraft/world/item/ItemStack;)I: getBarColor -> m_142159_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/item/gun/GunItem/isBarVisible(Lnet/minecraft/world/item/ItemStack;)Z from net/minecraft/world/item/Item/isBarVisible(Lnet/minecraft/world/item/ItemStack;)Z: isBarVisible -> m_142522_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/item/gun/GunItem/getTooltipImage(Lnet/minecraft/world/item/ItemStack;)Ljava/util/Optional; from net/minecraft/world/item/Item/getTooltipImage(Lnet/minecraft/world/item/ItemStack;)Ljava/util/Optional;: getTooltipImage -> m_142422_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/mtlbEntity/handleEntityEvent(B)V from net/minecraft/world/entity/Entity/handleEntityEvent(B)V: handleEntityEvent -> m_7822_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/item/gun/GunItem/inventoryTick(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/Entity;IZ)V from net/minecraft/world/item/Item/inventoryTick(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/Entity;IZ)V: inventoryTick -> m_6883_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/item/gun/GunItem/isFoil(Lnet/minecraft/world/item/ItemStack;)Z from net/minecraft/world/item/Item/isFoil(Lnet/minecraft/world/item/ItemStack;)Z: isFoil -> m_5812_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/mtlbEntity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/MotorcycleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/MotorcycleEntity/tick()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/MotorcycleEntity/defineSynchedData()V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/MotorcycleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for software/bernie/geckolib/renderer/GeoEntityRenderer/shouldShowName(Lnet/minecraft/world/entity/Entity;)Z from net/minecraft/client/renderer/entity/EntityRenderer/shouldShowName(Lnet/minecraft/world/entity/Entity;)Z: shouldShowName -> m_6512_
+Conflicting propagated mapping for software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from net/minecraft/client/renderer/entity/EntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for software/bernie/geckolib/renderer/GeoEntityRenderer/render(Lnet/minecraft/world/entity/Entity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V from net/minecraft/client/renderer/entity/EntityRenderer/render(Lnet/minecraft/world/entity/Entity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V: render -> m_7392_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/client/renderer/entity/VehicleRenderer/render(Lnet/minecraft/world/entity/Entity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V from software/bernie/geckolib/renderer/GeoEntityRenderer/render(Lnet/minecraft/world/entity/Entity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V: render -> m_7392_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/client/renderer/entity/VehicleRenderer/shouldRender(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/client/renderer/culling/Frustum;DDD)Z from net/minecraft/client/renderer/entity/EntityRenderer/shouldRender(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/client/renderer/culling/Frustum;DDD)Z: shouldRender -> m_5523_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/brdmRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/bradleyRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/btr80Renderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/btr82Renderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/bradley_sandRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/bmd4Renderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/bmp2Renderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/Bmp1Renderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/empl/AGSRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/empl/m2Render/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/getGravity()F from net/minecraft/world/entity/projectile/ThrowableProjectile/getGravity()F: getGravity -> m_7139_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/remove(Lnet/minecraft/world/entity/Entity$RemovalReason;)V from net/minecraft/world/entity/Entity/remove(Lnet/minecraft/world/entity/Entity$RemovalReason;)V: remove -> m_142687_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from net/minecraft/world/entity/projectile/ThrowableItemProjectile/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/onHitEntity(Lnet/minecraft/world/phys/EntityHitResult;)V from net/minecraft/world/entity/projectile/Projectile/onHitEntity(Lnet/minecraft/world/phys/EntityHitResult;)V: onHitEntity -> m_5790_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/tick()V from net/minecraft/world/entity/projectile/ThrowableProjectile/tick()V: tick -> m_8119_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/shouldRenderAtSqrDistance(D)Z from net/minecraft/world/entity/projectile/ThrowableProjectile/shouldRenderAtSqrDistance(D)Z: shouldRenderAtSqrDistance -> m_6783_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/getAddEntityPacket()Lnet/minecraft/network/protocol/Packet; from net/minecraft/world/entity/projectile/Projectile/getAddEntityPacket()Lnet/minecraft/network/protocol/Packet;: getAddEntityPacket -> m_5654_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from net/minecraft/world/entity/projectile/ThrowableItemProjectile/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/onHitBlock(Lnet/minecraft/world/phys/BlockHitResult;)V from net/minecraft/world/entity/projectile/Projectile/onHitBlock(Lnet/minecraft/world/phys/BlockHitResult;)V: onHitBlock -> m_8060_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/empl/TowRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/empl/ZISRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/DestroyableProjectile/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/FMTVRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/Gaz_tigrMGRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/FMTVRednderGreen/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/Gaz_tigrRWSRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/Gaz_tigrRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/HumveeRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/HumveeTowRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/DestroyableProjectile/isPickable()Z from net/minecraft/world/entity/Entity/isPickable()Z: isPickable -> m_6087_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/leopardRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/m1a2Render/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/DestroyableProjectile/defineSynchedData()V from net/minecraft/world/entity/projectile/ThrowableItemProjectile/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/DestroyableProjectile/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/m1a2Render_sand/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/MalyutkaRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/DestroyableProjectile/hurt(Lnet/minecraft/world/damagesource/DamageSource;F)Z from net/minecraft/world/entity/Entity/hurt(Lnet/minecraft/world/damagesource/DamageSource;F)Z: hurt -> m_6469_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/MotorcycleRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/HumveeM2Render/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/mtlbRender/render(Lnet/minecraft/world/entity/Entity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V from com/atsuishio/superbwarfare/client/renderer/entity/VehicleRenderer/render(Lnet/minecraft/world/entity/Entity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V: render -> m_7392_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/mtlbRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/MissileProjectile/getGravity()F from com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/getGravity()F: getGravity -> m_7139_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/MissileProjectile/updateRotation()V from net/minecraft/world/entity/projectile/Projectile/updateRotation()V: updateRotation -> m_37283_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/lav25Renderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/PumaRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/SpikeMissileRenderer/render(Lnet/minecraft/world/entity/Entity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V from software/bernie/geckolib/renderer/GeoEntityRenderer/render(Lnet/minecraft/world/entity/Entity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V: render -> m_7392_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/sprutRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/MissileProjectile/shoot(DDDFF)V from net/minecraft/world/entity/projectile/Projectile/shoot(DDDFF)V: shoot -> m_6686_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/MotorboatRender/render(Lnet/minecraft/world/entity/Entity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V from com/atsuishio/superbwarfare/client/renderer/entity/VehicleRenderer/render(Lnet/minecraft/world/entity/Entity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V: render -> m_7392_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/FenekRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/MotorboatRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/StrykerMortarRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/MissileProjectile/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from com/atsuishio/superbwarfare/entity/projectile/DestroyableProjectile/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/T64Renderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/t80Render/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/T72AVRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/ToyotaRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/StrykerM2Render/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/MissileProjectile/isNoGravity()Z from net/minecraft/world/entity/Entity/isNoGravity()Z: isNoGravity -> m_20068_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/ToyotaZU23Render/render(Lnet/minecraft/world/entity/Entity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V from com/atsuishio/superbwarfare/client/renderer/entity/VehicleRenderer/render(Lnet/minecraft/world/entity/Entity;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V: render -> m_7392_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/ToyotaZU23Render/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/MissileProjectile/defineSynchedData()V from com/atsuishio/superbwarfare/entity/projectile/DestroyableProjectile/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/MissileProjectile/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from com/atsuishio/superbwarfare/entity/projectile/DestroyableProjectile/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/UazDshkaRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/UAZRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/UralGradRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/entity/UralRender/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation; from software/bernie/geckolib/renderer/GeoEntityRenderer/getTextureLocation(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/resources/ResourceLocation;: getTextureLocation -> m_5478_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/projectile/SpikeMissileEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from com/atsuishio/superbwarfare/entity/projectile/MissileProjectile/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/projectile/MalyutkaEntity/onHitEntity(Lnet/minecraft/world/phys/EntityHitResult;)V from com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/onHitEntity(Lnet/minecraft/world/phys/EntityHitResult;)V: onHitEntity -> m_5790_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/projectile/MalyutkaEntity/tick()V from com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/projectile/SpikeMissileEntity/onHitEntity(Lnet/minecraft/world/phys/EntityHitResult;)V from com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/onHitEntity(Lnet/minecraft/world/phys/EntityHitResult;)V: onHitEntity -> m_5790_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/projectile/SpikeMissileEntity/tick()V from com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/projectile/MalyutkaEntity/getDefaultItem()Lnet/minecraft/world/item/Item; from net/minecraft/world/entity/projectile/ThrowableItemProjectile/getDefaultItem()Lnet/minecraft/world/item/Item;: getDefaultItem -> m_7881_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/projectile/MalyutkaEntity/onHitBlock(Lnet/minecraft/world/phys/BlockHitResult;)V from com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/onHitBlock(Lnet/minecraft/world/phys/BlockHitResult;)V: onHitBlock -> m_8060_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/projectile/SpikeMissileEntity/getDefaultItem()Lnet/minecraft/world/item/Item; from net/minecraft/world/entity/projectile/ThrowableItemProjectile/getDefaultItem()Lnet/minecraft/world/item/Item;: getDefaultItem -> m_7881_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/projectile/SpikeMissileEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from com/atsuishio/superbwarfare/entity/projectile/MissileProjectile/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/projectile/SpikeMissileEntity/onHitBlock(Lnet/minecraft/world/phys/BlockHitResult;)V from com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/onHitBlock(Lnet/minecraft/world/phys/BlockHitResult;)V: onHitBlock -> m_8060_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/projectile/SpikeMissileEntity/canHitEntity(Lnet/minecraft/world/entity/Entity;)Z from net/minecraft/world/entity/projectile/Projectile/canHitEntity(Lnet/minecraft/world/entity/Entity;)Z: canHitEntity -> m_5603_
+Conflicting propagated mapping for software/bernie/geckolib/renderer/GeoItemRenderer/renderByItem(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemDisplayContext;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V from net/minecraft/client/renderer/BlockEntityWithoutLevelRenderer/renderByItem(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemDisplayContext;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V: renderByItem -> m_108829_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/renderer/item/AT4ItemRenderer/renderByItem(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemDisplayContext;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V from software/bernie/geckolib/renderer/GeoItemRenderer/renderByItem(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemDisplayContext;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V: renderByItem -> m_108829_
+Conflicting propagated mapping for tech/squadmc/squadmcor/smoke/VehicleSmokeCloudEntity/canAddPassenger(Lnet/minecraft/world/entity/Entity;)Z from net/minecraft/world/entity/Entity/canAddPassenger(Lnet/minecraft/world/entity/Entity;)Z: canAddPassenger -> m_7310_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/Bmd4EngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/smoke/VehicleSmokeCloudEntity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from net/minecraft/world/entity/Entity/readAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: readAdditionalSaveData -> m_7378_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/Bmp1EngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/smoke/VehicleSmokeCloudEntity/isPickable()Z from net/minecraft/world/entity/Entity/isPickable()Z: isPickable -> m_6087_
+Conflicting propagated mapping for tech/squadmc/squadmcor/smoke/VehicleSmokeCloudEntity/tick()V from net/minecraft/world/entity/Entity/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/Bmp2EngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/smoke/VehicleSmokeCloudEntity/defineSynchedData()V from net/minecraft/world/entity/Entity/defineSynchedData()V: defineSynchedData -> m_8097_
+Conflicting propagated mapping for tech/squadmc/squadmcor/smoke/VehicleSmokeCloudEntity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V from net/minecraft/world/entity/Entity/addAdditionalSaveData(Lnet/minecraft/nbt/CompoundTag;)V: addAdditionalSaveData -> m_7380_
+Conflicting propagated mapping for tech/squadmc/squadmcor/smoke/VehicleSmokeCloudEntity/isPushable()Z from net/minecraft/world/entity/Entity/isPushable()Z: isPushable -> m_6094_
+Conflicting propagated mapping for tech/squadmc/squadmcor/smoke/VehicleSmokeCloudEntity/getBoundingBoxForCulling()Lnet/minecraft/world/phys/AABB; from net/minecraft/world/entity/Entity/getBoundingBoxForCulling()Lnet/minecraft/world/phys/AABB;: getBoundingBoxForCulling -> m_6921_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/BradleyEngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/Brdm2EngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/Btr82EngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/FenekEngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/FMTVEngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/HumveeEngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/Lav25EngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/leopardEngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/m1a2EngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/MotorcycleEngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/MtlbSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/PumaEngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/sprutEngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/StrykerM2EngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/StrykerMortarEngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/T64EngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/T72AVEngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/t80EngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/UralEngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/client/sound/UralGradEngineSoundInstance/tick()V from net/minecraft/client/resources/sounds/TickableSoundInstance/tick()V: tick -> m_7788_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/TDADummyProjectile/onHitEntity(Lnet/minecraft/world/phys/EntityHitResult;)V from net/minecraft/world/entity/projectile/Projectile/onHitEntity(Lnet/minecraft/world/phys/EntityHitResult;)V: onHitEntity -> m_5790_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/TDADummyProjectile/tick()V from net/minecraft/world/entity/projectile/ThrowableProjectile/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/TDADummyProjectile/getDefaultItem()Lnet/minecraft/world/item/Item; from net/minecraft/world/entity/projectile/ThrowableItemProjectile/getDefaultItem()Lnet/minecraft/world/item/Item;: getDefaultItem -> m_7881_
+Conflicting propagated mapping for net/minecraftforge/client/gui/overlay/ForgeGui/clearCache()V from net/minecraft/client/gui/Gui/clearCache()V: clearCache -> m_93091_
+Conflicting propagated mapping for net/minecraftforge/client/gui/overlay/ForgeGui/render(Lnet/minecraft/client/gui/GuiGraphics;F)V from net/minecraft/client/gui/Gui/render(Lnet/minecraft/client/gui/GuiGraphics;F)V: render -> m_280421_
+Conflicting propagated mapping for net/minecraftforge/client/gui/overlay/ForgeGui/renderPortalOverlay(Lnet/minecraft/client/gui/GuiGraphics;F)V from net/minecraft/client/gui/Gui/renderPortalOverlay(Lnet/minecraft/client/gui/GuiGraphics;F)V: renderPortalOverlay -> m_280379_
+Conflicting propagated mapping for net/minecraftforge/client/gui/overlay/ForgeGui/renderJumpMeter(Lnet/minecraft/world/entity/PlayerRideableJumping;Lnet/minecraft/client/gui/GuiGraphics;I)V from net/minecraft/client/gui/Gui/renderJumpMeter(Lnet/minecraft/world/entity/PlayerRideableJumping;Lnet/minecraft/client/gui/GuiGraphics;I)V: renderJumpMeter -> m_280069_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/TDADummyProjectile/onHitBlock(Lnet/minecraft/world/phys/BlockHitResult;)V from net/minecraft/world/entity/projectile/Projectile/onHitBlock(Lnet/minecraft/world/phys/BlockHitResult;)V: onHitBlock -> m_8060_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/KonkursDummyProjectile/shoot(DDDFF)V from net/minecraft/world/entity/projectile/Projectile/shoot(DDDFF)V: shoot -> m_6686_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/KonkursDummyProjectile/tick()V from net/minecraft/world/entity/projectile/ThrowableProjectile/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/KonkursDummyProjectile/getDefaultItem()Lnet/minecraft/world/item/Item; from net/minecraft/world/entity/projectile/ThrowableItemProjectile/getDefaultItem()Lnet/minecraft/world/item/Item;: getDefaultItem -> m_7881_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/TowDummyProjectile/shoot(DDDFF)V from net/minecraft/world/entity/projectile/Projectile/shoot(DDDFF)V: shoot -> m_6686_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/TowDummyProjectile/tick()V from net/minecraft/world/entity/projectile/ThrowableProjectile/tick()V: tick -> m_8119_
+Conflicting propagated mapping for tech/squadmc/squadmcor/entity/TowDummyProjectile/getDefaultItem()Lnet/minecraft/world/item/Item; from net/minecraft/world/entity/projectile/ThrowableItemProjectile/getDefaultItem()Lnet/minecraft/world/item/Item;: getDefaultItem -> m_7881_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/WireGuideMissileEntity/onHitEntity(Lnet/minecraft/world/phys/EntityHitResult;)V from com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/onHitEntity(Lnet/minecraft/world/phys/EntityHitResult;)V: onHitEntity -> m_5790_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/WireGuideMissileEntity/tick()V from com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/tick()V: tick -> m_8119_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/WireGuideMissileEntity/getDefaultItem()Lnet/minecraft/world/item/Item; from net/minecraft/world/entity/projectile/ThrowableItemProjectile/getDefaultItem()Lnet/minecraft/world/item/Item;: getDefaultItem -> m_7881_
+Conflicting propagated mapping for com/atsuishio/superbwarfare/entity/projectile/WireGuideMissileEntity/onHitBlock(Lnet/minecraft/world/phys/BlockHitResult;)V from com/atsuishio/superbwarfare/entity/projectile/FastThrowableProjectile/onHitBlock(Lnet/minecraft/world/phys/BlockHitResult;)V: onHitBlock -> m_8060_
+Conflicting propagated mapping for net/minecraftforge/event/BuildCreativeModeTabContentsEvent/accept(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/CreativeModeTab$TabVisibility;)V from net/minecraft/world/item/CreativeModeTab$Output/accept(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/CreativeModeTab$TabVisibility;)V: accept -> m_246267_
+Adding extras
+Sorting
+Writing Output: C:\Users\user\Desktop\mods\colaba3stran\build\reobfJar\output.jar
+  META-INF/
+  META-INF/MANIFEST.MF
+  META-INF/mods.toml
+  assets/
+  assets/squadmc/
+  assets/squadmc/animations/
+  assets/squadmc/animations/at4.animation.json
+  assets/squadmc/animations/btr82.animation.json
+  assets/squadmc/geo/
+  assets/squadmc/geo/bmd_4.geo.json
+  assets/squadmc/geo/bmp1.geo.json
+  assets/squadmc/geo/bmp2.geo.json
+  assets/squadmc/geo/bradley.geo.json
+  assets/squadmc/geo/brdm2.geo.json
+  assets/squadmc/geo/btr80.geo.json
+  assets/squadmc/geo/btr82.geo.json
+  assets/squadmc/geo/fenek.geo.json
+  assets/squadmc/geo/fmtv.geo.json
+  assets/squadmc/geo/gaz_tigrs/
+  assets/squadmc/geo/gaz_tigrs/gaz_tigr.geo.json
+  assets/squadmc/geo/gaz_tigrs/gaz_tigr_mg.geo.json
+  assets/squadmc/geo/gaz_tigrs/gaz_tigr_rws.geo.json
+  assets/squadmc/geo/humvees/
+  assets/squadmc/geo/humvees/humvee.geo.json
+  assets/squadmc/geo/humvees/humvee_m2.geo.json
+  assets/squadmc/geo/humvees/humvee_tow.geo.json
+  assets/squadmc/geo/item/
+  assets/squadmc/geo/item/at4.geo.json
+  assets/squadmc/geo/lav25.geo.json
+  assets/squadmc/geo/leopard_2a7v.geo.json
+  assets/squadmc/geo/m1a2.geo.json
+  assets/squadmc/geo/m1a2_sep.geo.json
+  assets/squadmc/geo/malyutka.geo.json
+  assets/squadmc/geo/motuo.geo.json
+  assets/squadmc/geo/mtlb.geo.json
+  assets/squadmc/geo/puma.geo.json
+  assets/squadmc/geo/rubber_boat.geo.json
+  assets/squadmc/geo/sprut.geo.json
+  assets/squadmc/geo/stryker_m2.geo.json
+  assets/squadmc/geo/stryker_mortar.geo.json
+  assets/squadmc/geo/t64.geo.json
+  assets/squadmc/geo/t72av.geo.json
+  assets/squadmc/geo/t80_u.geo.json
+  assets/squadmc/geo/tom_7.geo.json
+  assets/squadmc/geo/toyotas/
+  assets/squadmc/geo/toyotas/toyota_hilux.geo.json
+  assets/squadmc/geo/toyotas/toyota_hilux_zu23.geo.json
+  assets/squadmc/geo/turrets/
+  assets/squadmc/geo/turrets/empl_ags17.geo.json
+  assets/squadmc/geo/turrets/empl_dshk.geo.json
+  assets/squadmc/geo/turrets/empl_kornet.geo.json
+  assets/squadmc/geo/turrets/empl_m2.geo.json
+  assets/squadmc/geo/turrets/empl_tow.geo.json
+  assets/squadmc/geo/turrets/empl_zis3.geo.json
+  assets/squadmc/geo/uaz/
+  assets/squadmc/geo/uaz/uaz.geo.json
+  assets/squadmc/geo/uaz/uaz_dshka.geo.json
+  assets/squadmc/geo/ural.geo.json
+  assets/squadmc/geo/ural_grad.geo.json
+  assets/squadmc/lang/
+  assets/squadmc/lang/en_us.json
+  assets/squadmc/lang/ru_ru.json
+  assets/squadmc/models/
+  assets/squadmc/models/displaysettings/
+  assets/squadmc/models/displaysettings/spike.item.json
+  assets/squadmc/models/item/
+  assets/squadmc/models/item/at4.json
+  assets/squadmc/models/item/spike.json
+  assets/squadmc/particles/
+  assets/squadmc/particles/muzzle_flash.json
+  assets/squadmc/particles/muzzle_flash.png
+  assets/squadmc/sbw/
+  assets/squadmc/sbw/guns/
+  assets/squadmc/sbw/guns/spike.json
+  assets/squadmc/shaders/
+  assets/squadmc/shaders/core/
+  assets/squadmc/shaders/core/smoke_cloud.fsh
+  assets/squadmc/shaders/core/smoke_cloud.json
+  assets/squadmc/shaders/core/smoke_cloud.vsh
+  assets/squadmc/shaders/core/smoke_composite.fsh
+  assets/squadmc/shaders/core/smoke_composite.json
+  assets/squadmc/shaders/core/smoke_composite.vsh
+  assets/squadmc/sounds.json
+  assets/squadmc/sounds/
+  assets/squadmc/sounds/bmd4sounds/
+  assets/squadmc/sounds/bmd4sounds/cannon/
+  assets/squadmc/sounds/bmd4sounds/cannon/1p/
+  assets/squadmc/sounds/bmd4sounds/cannon/1p/120mm_fire_1p_01.ogg
+  assets/squadmc/sounds/bmd4sounds/cannon/1p/120mm_fire_1p_02.ogg
+  assets/squadmc/sounds/bmd4sounds/cannon/3p/
+  assets/squadmc/sounds/bmd4sounds/cannon/3p/120mm_fire_close_initial_01.ogg
+  assets/squadmc/sounds/bmd4sounds/cannon/3p/120mm_fire_close_initial_02.ogg
+  assets/squadmc/sounds/bmd4sounds/cannon/3p/120mm_fire_close_initial_03.ogg
+  assets/squadmc/sounds/bmd4sounds/cannon/3p/120mm_fire_close_initial_04.ogg
+  assets/squadmc/sounds/bmd4sounds/cannon/3p/120mm_fire_close_initial_05.ogg
+  assets/squadmc/sounds/bmd4sounds/cannon/3p_far/
+  assets/squadmc/sounds/bmd4sounds/cannon/3p_far/120mm_fire_mid_initial_01.ogg
+  assets/squadmc/sounds/bmd4sounds/cannon/3p_far/120mm_fire_mid_initial_02.ogg
+  assets/squadmc/sounds/bmd4sounds/cannon/3p_far/120mm_fire_mid_initial_03.ogg
+  assets/squadmc/sounds/bmd4sounds/cannon/3p_far/120mm_fire_mid_initial_04.ogg
+  assets/squadmc/sounds/bmd4sounds/cannon/3p_far/120mm_fire_mid_initial_05.ogg
+  assets/squadmc/sounds/bmd4sounds/cannon/3p_veryfar/
+  assets/squadmc/sounds/bmd4sounds/cannon/3p_veryfar/120mm_fire_far_initial_01.ogg
+  assets/squadmc/sounds/bmd4sounds/cannon/3p_veryfar/120mm_fire_far_initial_02.ogg
+  assets/squadmc/sounds/bmd4sounds/cannon/3p_veryfar/120mm_fire_far_initial_03.ogg
+  assets/squadmc/sounds/bmd4sounds/cannon/3p_veryfar/120mm_fire_far_initial_04.ogg
+  assets/squadmc/sounds/bmd4sounds/engine/
+  assets/squadmc/sounds/bmd4sounds/engine/bmd4_engine_idle_1p.ogg
+  assets/squadmc/sounds/bmd4sounds/engine/bmd4_engine_idle_3p.ogg
+  assets/squadmc/sounds/bmd4sounds/engine/bmd4_engine_running_1p.ogg
+  assets/squadmc/sounds/bmd4sounds/engine/bmd4_engine_running_3p.ogg
+  assets/squadmc/sounds/bmp1sounds/
+  assets/squadmc/sounds/bmp1sounds/1p/
+  assets/squadmc/sounds/bmp1sounds/1p/bmp1_cannon_fire_1p_initial_02.ogg
+  assets/squadmc/sounds/bmp1sounds/1p/bmp1_cannon_fire_1p_initial_03.ogg
+  assets/squadmc/sounds/bmp1sounds/1p/bmp1_cannon_fire_1p_initial_04.ogg
+  assets/squadmc/sounds/bmp1sounds/3p/
+  assets/squadmc/sounds/bmp1sounds/3p/bmp1_cannon_fire_close_01.ogg
+  assets/squadmc/sounds/bmp1sounds/3p/bmp1_cannon_fire_close_02.ogg
+  assets/squadmc/sounds/bmp1sounds/3p/bmp1_cannon_fire_close_03.ogg
+  assets/squadmc/sounds/bmp1sounds/3p/bmp1_cannon_fire_close_04.ogg
+  assets/squadmc/sounds/bmp1sounds/3p_far/
+  assets/squadmc/sounds/bmp1sounds/3p_far/bmp1_cannon_fire_mid_01.ogg
+  assets/squadmc/sounds/bmp1sounds/3p_far/bmp1_cannon_fire_mid_02.ogg
+  assets/squadmc/sounds/bmp1sounds/3p_far/bmp1_cannon_fire_mid_03.ogg
+  assets/squadmc/sounds/bmp1sounds/3p_far/bmp1_cannon_fire_mid_04.ogg
+  assets/squadmc/sounds/bmp1sounds/3p_far_very/
+  assets/squadmc/sounds/bmp1sounds/3p_far_very/bmp1_cannon_fire_far_01.ogg
+  assets/squadmc/sounds/bmp1sounds/3p_far_very/bmp1_cannon_fire_far_02.ogg
+  assets/squadmc/sounds/bmp1sounds/3p_far_very/bmp1_cannon_fire_far_03.ogg
+  assets/squadmc/sounds/bmp1sounds/engine/
+  assets/squadmc/sounds/bmp1sounds/engine/bmp1_engine_idle_1p.ogg
+  assets/squadmc/sounds/bmp1sounds/engine/bmp1_engine_idle_3p.ogg
+  assets/squadmc/sounds/bmp1sounds/engine/bmp1_engine_running_1p.ogg
+  assets/squadmc/sounds/bmp1sounds/engine/bmp1_engine_running_3p.ogg
+  assets/squadmc/sounds/bmp1sounds/malytka_at3/
+  assets/squadmc/sounds/bmp1sounds/malytka_at3/1p/
+  assets/squadmc/sounds/bmp1sounds/malytka_at3/1p/at3_fire_1p_01.ogg
+  assets/squadmc/sounds/bmp1sounds/malytka_at3/1p/at3_fire_1p_02.ogg
+  assets/squadmc/sounds/bmp1sounds/malytka_at3/1p/at3_fire_1p_03.ogg
+  assets/squadmc/sounds/bmp1sounds/malytka_at3/3p/
+  assets/squadmc/sounds/bmp1sounds/malytka_at3/3p/at3_fire_3p.ogg
+  assets/squadmc/sounds/bmp1sounds/malytka_at3/reload/
+  assets/squadmc/sounds/bmp1sounds/malytka_at3/reload/reload_at3.ogg
+  assets/squadmc/sounds/bmp2sounds/
+  assets/squadmc/sounds/bmp2sounds/3p/
+  assets/squadmc/sounds/bmp2sounds/3p/bmp2_fire1_3p.ogg
+  assets/squadmc/sounds/bmp2sounds/3p/bmp2_fire2_3p.ogg
+  assets/squadmc/sounds/bmp2sounds/3p/bmp2_fire3_3p.ogg
+  assets/squadmc/sounds/bmp2sounds/3p/bmp2_fire4_3p.ogg
+  assets/squadmc/sounds/bmp2sounds/3p/bmp2_fire5_3p.ogg
+  assets/squadmc/sounds/bmp2sounds/3p/bmp2_fire6_3p.ogg
+  assets/squadmc/sounds/bmp2sounds/3p/bmp2_fire7_3p.ogg
+  assets/squadmc/sounds/bmp2sounds/3p/bmp2_fire8_3p.ogg
+  assets/squadmc/sounds/bmp2sounds/3p_far/
+  assets/squadmc/sounds/bmp2sounds/3p_far/bmp2_fire1_3p_far.ogg
+  assets/squadmc/sounds/bmp2sounds/3p_far/bmp2_fire2_3p_far.ogg
+  assets/squadmc/sounds/bmp2sounds/3p_far/bmp2_fire3_3p_far.ogg
+  assets/squadmc/sounds/bmp2sounds/3p_far/bmp2_fire4_3p_far.ogg
+  assets/squadmc/sounds/bmp2sounds/3p_far/bmp2_fire5_3p_far.ogg
+  assets/squadmc/sounds/bmp2sounds/engine/
+  assets/squadmc/sounds/bmp2sounds/engine/bmp2_engine_idle_1p.ogg
+  assets/squadmc/sounds/bmp2sounds/engine/bmp2_engine_idle_3p.ogg
+  assets/squadmc/sounds/bmp2sounds/engine/bmp2_engine_running_1p.ogg
+  assets/squadmc/sounds/bmp2sounds/engine/bmp2_engine_running_3p.ogg
+  assets/squadmc/sounds/bmp2sounds/konkurs_launch_blast.ogg
+  assets/squadmc/sounds/bmp2sounds/kornet_1p/
+  assets/squadmc/sounds/bmp2sounds/kornet_1p/prefire_kornet_1p.ogg
+  assets/squadmc/sounds/bmp2sounds/kornet_3p/
+  assets/squadmc/sounds/bmp2sounds/kornet_3p/prefire_kornet_3p.ogg
+  assets/squadmc/sounds/bradleysounds/
+  assets/squadmc/sounds/bradleysounds/1p/
+  assets/squadmc/sounds/bradleysounds/1p/bradley_25mm_initial_semi_1p_01.ogg
+  assets/squadmc/sounds/bradleysounds/1p/bradley_25mm_initial_semi_1p_02.ogg
+  assets/squadmc/sounds/bradleysounds/1p/bradley_25mm_initial_semi_1p_03.ogg
+  assets/squadmc/sounds/bradleysounds/1p/bradley_25mm_initial_semi_1p_04.ogg
+  assets/squadmc/sounds/bradleysounds/1p/bradley_25mm_initial_semi_1p_05.ogg
+  assets/squadmc/sounds/bradleysounds/1p/bradley_25mm_initial_semi_1p_06.ogg
+  assets/squadmc/sounds/bradleysounds/1p/bradley_25mm_initial_semi_1p_07.ogg
+  assets/squadmc/sounds/bradleysounds/1p/bradley_25mm_initial_semi_1p_08.ogg
+  assets/squadmc/sounds/bradleysounds/1p/bradley_25mm_initial_semi_1p_09.ogg
+  assets/squadmc/sounds/bradleysounds/1p/bradley_25mm_initial_semi_1p_10.ogg
+  assets/squadmc/sounds/bradleysounds/3p/
+  assets/squadmc/sounds/bradleysounds/3p/bradley_25mm_initial_close_01.ogg
+  assets/squadmc/sounds/bradleysounds/3p/bradley_25mm_initial_close_02.ogg
+  assets/squadmc/sounds/bradleysounds/3p/bradley_25mm_initial_close_03.ogg
+  assets/squadmc/sounds/bradleysounds/3p/bradley_25mm_initial_close_04.ogg
+  assets/squadmc/sounds/bradleysounds/3p/bradley_25mm_initial_close_05.ogg
+  assets/squadmc/sounds/bradleysounds/3p_far/
+  assets/squadmc/sounds/bradleysounds/3p_far/bradley_25mm_mid_01.ogg
+  assets/squadmc/sounds/bradleysounds/3p_far/bradley_25mm_mid_02.ogg
+  assets/squadmc/sounds/bradleysounds/3p_far/bradley_25mm_mid_03.ogg
+  assets/squadmc/sounds/bradleysounds/3p_far/bradley_25mm_mid_04.ogg
+  assets/squadmc/sounds/bradleysounds/3p_far/bradley_25mm_mid_05.ogg
+  assets/squadmc/sounds/bradleysounds/3p_veryfar/
+  assets/squadmc/sounds/bradleysounds/3p_veryfar/bradley_25mm_far_01.ogg
+  assets/squadmc/sounds/bradleysounds/3p_veryfar/bradley_25mm_far_02.ogg
+  assets/squadmc/sounds/bradleysounds/3p_veryfar/bradley_25mm_far_03.ogg
+  assets/squadmc/sounds/bradleysounds/3p_veryfar/bradley_25mm_far_04.ogg
+  assets/squadmc/sounds/bradleysounds/3p_veryfar/bradley_25mm_far_05.ogg
+  assets/squadmc/sounds/bradleysounds/3p_veryfar/bradley_25mm_far_06.ogg
+  assets/squadmc/sounds/bradleysounds/3p_veryfar/bradley_25mm_far_07.ogg
+  assets/squadmc/sounds/bradleysounds/3p_veryfar/bradley_25mm_far_08.ogg
+  assets/squadmc/sounds/bradleysounds/engine/
+  assets/squadmc/sounds/bradleysounds/engine/bradley_idle_1p.ogg
+  assets/squadmc/sounds/bradleysounds/engine/bradley_idle_3p.ogg
+  assets/squadmc/sounds/bradleysounds/engine/bradley_running_1p.ogg
+  assets/squadmc/sounds/bradleysounds/engine/bradley_running_3p.ogg
+  assets/squadmc/sounds/brdm2sounds/
+  assets/squadmc/sounds/brdm2sounds/engine/
+  assets/squadmc/sounds/brdm2sounds/engine/brdm_1p_idle.ogg
+  assets/squadmc/sounds/brdm2sounds/engine/brdm_3p_idle.ogg
+  assets/squadmc/sounds/brdm2sounds/engine/brdm_engine_1p_throttle.ogg
+  assets/squadmc/sounds/brdm2sounds/engine/brdm_engine_3p_throttle.ogg
+  assets/squadmc/sounds/btr80sounds/
+  assets/squadmc/sounds/btr80sounds/kpvt/
+  assets/squadmc/sounds/btr80sounds/kpvt/1p/
+  assets/squadmc/sounds/btr80sounds/kpvt/1p/kpvt_fire_1p_initial_01.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/1p/kpvt_fire_1p_initial_02.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/1p/kpvt_fire_1p_initial_03.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/1p/kpvt_fire_1p_initial_04.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/1p/kpvt_fire_1p_initial_05.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/1p/kpvt_fire_1p_initial_06.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/1p/kpvt_fire_1p_initial_07.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/1p/kpvt_fire_1p_initial_08.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/1p/kpvt_fire_1p_initial_09.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/1p/kpvt_fire_1p_initial_10.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/1p/kpvt_fire_1p_initial_11.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_01.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_02.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_03.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_04.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_05.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_06.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_07.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_08.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_09.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_10.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_11.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_12.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_13.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_14.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_15.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_16.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_17.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_18.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_19.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/3p/kpvt_fire_3p_initial_far_20.ogg
+  assets/squadmc/sounds/btr80sounds/kpvt/reload_kpvt.ogg
+  assets/squadmc/sounds/btr82sounds/
+  assets/squadmc/sounds/btr82sounds/1p/
+  assets/squadmc/sounds/btr82sounds/1p/btr82_fire1.ogg
+  assets/squadmc/sounds/btr82sounds/1p/btr82_fire10.ogg
+  assets/squadmc/sounds/btr82sounds/1p/btr82_fire2.ogg
+  assets/squadmc/sounds/btr82sounds/1p/btr82_fire3.ogg
+  assets/squadmc/sounds/btr82sounds/1p/btr82_fire4.ogg
+  assets/squadmc/sounds/btr82sounds/1p/btr82_fire5.ogg
+  assets/squadmc/sounds/btr82sounds/1p/btr82_fire6.ogg
+  assets/squadmc/sounds/btr82sounds/1p/btr82_fire7.ogg
+  assets/squadmc/sounds/btr82sounds/1p/btr82_fire8.ogg
+  assets/squadmc/sounds/btr82sounds/1p/btr82_fire9.ogg
+  assets/squadmc/sounds/btr82sounds/3p/
+  assets/squadmc/sounds/btr82sounds/3p/btr82_fire1_3p.ogg
+  assets/squadmc/sounds/btr82sounds/3p/btr82_fire2_3p.ogg
+  assets/squadmc/sounds/btr82sounds/3p/btr82_fire3_3p.ogg
+  assets/squadmc/sounds/btr82sounds/3p/btr82_fire4_3p.ogg
+  assets/squadmc/sounds/btr82sounds/3p/btr82_fire5_3p.ogg
+  assets/squadmc/sounds/btr82sounds/3p/btr82_fire6_3p.ogg
+  assets/squadmc/sounds/btr82sounds/3p/btr82_fire7_3p.ogg
+  assets/squadmc/sounds/btr82sounds/3p_far/
+  assets/squadmc/sounds/btr82sounds/3p_far/btr82_fire10_3p_far.ogg
+  assets/squadmc/sounds/btr82sounds/3p_far/btr82_fire11_3p_far.ogg
+  assets/squadmc/sounds/btr82sounds/3p_far/btr82_fire12_3p_far.ogg
+  assets/squadmc/sounds/btr82sounds/3p_far/btr82_fire1_3p_far.ogg
+  assets/squadmc/sounds/btr82sounds/3p_far/btr82_fire2_3p_far.ogg
+  assets/squadmc/sounds/btr82sounds/3p_far/btr82_fire3_3p_far.ogg
+  assets/squadmc/sounds/btr82sounds/3p_far/btr82_fire4_3p_far.ogg
+  assets/squadmc/sounds/btr82sounds/3p_far/btr82_fire5_3p_far.ogg
+  assets/squadmc/sounds/btr82sounds/3p_far/btr82_fire6_3p_far.ogg
+  assets/squadmc/sounds/btr82sounds/3p_far/btr82_fire7_3p_far.ogg
+  assets/squadmc/sounds/btr82sounds/3p_far/btr82_fire8_3p_far.ogg
+  assets/squadmc/sounds/btr82sounds/3p_far/btr82_fire9_3p_far.ogg
+  assets/squadmc/sounds/btr82sounds/3p_veryfar/
+  assets/squadmc/sounds/btr82sounds/3p_veryfar/btr82_fire1_3p_far_very.ogg
+  assets/squadmc/sounds/btr82sounds/3p_veryfar/btr82_fire2_3p_far_very.ogg
+  assets/squadmc/sounds/btr82sounds/3p_veryfar/btr82_fire3_3p_far_very.ogg
+  assets/squadmc/sounds/btr82sounds/3p_veryfar/btr82_fire4_3p_far_very.ogg
+  assets/squadmc/sounds/btr82sounds/3p_veryfar/btr82_fire5_3p_far_very.ogg
+  assets/squadmc/sounds/btr82sounds/3p_veryfar/btr82_fire6_3p_far_very.ogg
+  assets/squadmc/sounds/btr82sounds/3p_veryfar/btr82_fire7_3p_far_very.ogg
+  assets/squadmc/sounds/btr82sounds/3p_veryfar/btr82_fire8_3p_far_very.ogg
+  assets/squadmc/sounds/btr82sounds/engine/
+  assets/squadmc/sounds/btr82sounds/engine/idle_1p.ogg
+  assets/squadmc/sounds/btr82sounds/engine/idle_3p.ogg
+  assets/squadmc/sounds/btr82sounds/engine/running_1p.ogg
+  assets/squadmc/sounds/btr82sounds/engine/running_3p.ogg
+  assets/squadmc/sounds/btr82sounds/smoke/
+  assets/squadmc/sounds/btr82sounds/smoke/smoke_explode.ogg
+  assets/squadmc/sounds/btr82sounds/smoke/smoke_launch_01.ogg
+  assets/squadmc/sounds/btr82sounds/smoke/smoke_launch_02.ogg
+  assets/squadmc/sounds/btr82sounds/smoke/smoke_launch_03.ogg
+  assets/squadmc/sounds/btr82sounds/smoke/smoke_launch_04.ogg
+  assets/squadmc/sounds/btr82sounds/smoke/smoke_launch_05.ogg
+  assets/squadmc/sounds/btr82sounds/smoke/smoke_launch_06.ogg
+  assets/squadmc/sounds/humveesounds/
+  assets/squadmc/sounds/humveesounds/engine/
+  assets/squadmc/sounds/humveesounds/engine/humvee_engine_idle_1p.ogg
+  assets/squadmc/sounds/humveesounds/engine/humvee_engine_idle_3p.ogg
+  assets/squadmc/sounds/humveesounds/engine/humvee_engine_running_1p_3p.ogg
+  assets/squadmc/sounds/humveesounds/m2/
+  assets/squadmc/sounds/humveesounds/m2/1p/
+  assets/squadmc/sounds/humveesounds/m2/1p/m2_fire_02.ogg
+  assets/squadmc/sounds/humveesounds/m2/1p/m2_fire_03.ogg
+  assets/squadmc/sounds/humveesounds/m2/1p/m2_fire_04.ogg
+  assets/squadmc/sounds/humveesounds/m2/1p/m2_fire_05.ogg
+  assets/squadmc/sounds/humveesounds/m2/1p/m2_fire_06.ogg
+  assets/squadmc/sounds/humveesounds/m2/1p/m2_fire_07.ogg
+  assets/squadmc/sounds/humveesounds/m2/1p/m2_fire_08.ogg
+  assets/squadmc/sounds/humveesounds/m2/1p/m2_fire_09.ogg
+  assets/squadmc/sounds/humveesounds/m2/1p/m2_fire_10.ogg
+  assets/squadmc/sounds/humveesounds/m2/1p/m2_fire_11.ogg
+  assets/squadmc/sounds/humveesounds/m2/1p/m2_fire_12.ogg
+  assets/squadmc/sounds/humveesounds/m2/1p/m2_fire_13.ogg
+  assets/squadmc/sounds/humveesounds/m2/1p/m2_fire_14.ogg
+  assets/squadmc/sounds/humveesounds/m2/1p/m2_fire_15.ogg
+  assets/squadmc/sounds/humveesounds/m2/m2_reload.ogg
+  assets/squadmc/sounds/lav25sounds/
+  assets/squadmc/sounds/lav25sounds/engine/
+  assets/squadmc/sounds/lav25sounds/engine/idle_1p.ogg
+  assets/squadmc/sounds/lav25sounds/engine/idle_3p.ogg
+  assets/squadmc/sounds/lav25sounds/engine/running_1p.ogg
+  assets/squadmc/sounds/lav25sounds/engine/running_3p.ogg
+  assets/squadmc/sounds/m1a2sounds/
+  assets/squadmc/sounds/m1a2sounds/engine/
+  assets/squadmc/sounds/m1a2sounds/engine/idle_1p.ogg
+  assets/squadmc/sounds/m1a2sounds/engine/idle_3p.ogg
+  assets/squadmc/sounds/m1a2sounds/engine/running_1p.ogg
+  assets/squadmc/sounds/m1a2sounds/engine/running_3p.ogg
+  assets/squadmc/sounds/motousounds/
+  assets/squadmc/sounds/motousounds/engine/
+  assets/squadmc/sounds/motousounds/engine/minsk_engine_idle_01.ogg
+  assets/squadmc/sounds/motousounds/engine/minsk_engine_throttle_03.ogg
+  assets/squadmc/sounds/mtlbsounds/
+  assets/squadmc/sounds/mtlbsounds/engine/
+  assets/squadmc/sounds/mtlbsounds/engine/idle_1p.ogg
+  assets/squadmc/sounds/mtlbsounds/engine/idle_3p.ogg
+  assets/squadmc/sounds/mtlbsounds/engine/running_1p.ogg
+  assets/squadmc/sounds/mtlbsounds/engine/running_3p.ogg
+  assets/squadmc/sounds/mtlbsounds/fire/
+  assets/squadmc/sounds/mtlbsounds/fire/reload/
+  assets/squadmc/sounds/mtlbsounds/fire/reload/nsv_reload_interior_1p.ogg
+  assets/squadmc/sounds/pktsounds/
+  assets/squadmc/sounds/pktsounds/pkt_veh_fire_int_01.ogg
+  assets/squadmc/sounds/pktsounds/pkt_veh_fire_int_02.ogg
+  assets/squadmc/sounds/pktsounds/pkt_veh_fire_int_03.ogg
+  assets/squadmc/sounds/pktsounds/pkt_veh_fire_int_04.ogg
+  assets/squadmc/sounds/pktsounds/pkt_veh_fire_int_05.ogg
+  assets/squadmc/sounds/pktsounds/pkt_veh_fire_int_06.ogg
+  assets/squadmc/sounds/pktsounds/pkt_veh_fire_int_07.ogg
+  assets/squadmc/sounds/pktsounds/pkt_veh_fire_int_08.ogg
+  assets/squadmc/sounds/pktsounds/pkt_veh_fire_int_09.ogg
+  assets/squadmc/sounds/pktsounds/pkt_veh_fire_int_10.ogg
+  assets/squadmc/sounds/pktsounds/pkt_veh_fire_int_11.ogg
+  assets/squadmc/sounds/pktsounds/pkt_veh_fire_int_12.ogg
+  assets/squadmc/sounds/pktsounds/pkt_veh_fire_int_13.ogg
+  assets/squadmc/sounds/pktsounds/pkt_veh_fire_int_14.ogg
+  assets/squadmc/sounds/pktsounds/pkt_veh_fire_int_15.ogg
+  assets/squadmc/sounds/pktsounds/pkt_veh_fire_int_16.ogg
+  assets/squadmc/sounds/pktsounds/pkt_veh_fire_int_17.ogg
+  assets/squadmc/sounds/pktsounds/pkt_veh_fire_int_18.ogg
+  assets/squadmc/sounds/reload120mm_auto/
+  assets/squadmc/sounds/reload120mm_auto/reload_120mm.ogg
+  assets/squadmc/sounds/reload120mm_mechan/
+  assets/squadmc/sounds/reload120mm_mechan/reload_120mm.ogg
+  assets/squadmc/sounds/strykermortarsounds/
+  assets/squadmc/sounds/strykermortarsounds/mortar/
+  assets/squadmc/sounds/strykermortarsounds/mortar/1p/
+  assets/squadmc/sounds/strykermortarsounds/mortar/1p/mortar_120mm_fire_close_01.ogg
+  assets/squadmc/sounds/strykermortarsounds/mortar/1p/mortar_120mm_fire_close_02.ogg
+  assets/squadmc/sounds/strykermortarsounds/mortar/1p/mortar_120mm_fire_close_03.ogg
+  assets/squadmc/sounds/strykermortarsounds/mortar/1p/mortar_120mm_fire_close_04.ogg
+  assets/squadmc/sounds/strykermortarsounds/mortar/3p/
+  assets/squadmc/sounds/strykermortarsounds/mortar/3p/mortar_120mm_fire_mid_01.ogg
+  assets/squadmc/sounds/strykermortarsounds/mortar/3p/mortar_120mm_fire_mid_02.ogg
+  assets/squadmc/sounds/strykermortarsounds/mortar/3p/mortar_120mm_fire_mid_03.ogg
+  assets/squadmc/sounds/strykermortarsounds/mortar/3p/mortar_120mm_fire_mid_04.ogg
+  assets/squadmc/sounds/strykermortarsounds/mortar/3p_far/
+  assets/squadmc/sounds/strykermortarsounds/mortar/3p_far/mortar_120mm_fire_far_01.ogg
+  assets/squadmc/sounds/strykermortarsounds/mortar/3p_far/mortar_120mm_fire_far_02.ogg
+  assets/squadmc/sounds/strykermortarsounds/mortar/3p_far/mortar_120mm_fire_far_03.ogg
+  assets/squadmc/sounds/strykermortarsounds/mortar/3p_far/mortar_120mm_fire_far_04.ogg
+  assets/squadmc/sounds/strykermortarsounds/mortar/3p_far/mortar_120mm_fire_far_05.ogg
+  assets/squadmc/sounds/t72avsounds/
+  assets/squadmc/sounds/t72avsounds/engine/
+  assets/squadmc/sounds/t72avsounds/engine/t72av_engine_idle_1p.ogg
+  assets/squadmc/sounds/t72avsounds/engine/t72av_engine_idle_3p.ogg
+  assets/squadmc/sounds/t72avsounds/engine/t72av_engine_running_1p.ogg
+  assets/squadmc/sounds/t72avsounds/engine/t72av_engine_running_3p.ogg
+  assets/squadmc/sounds/urals/
+  assets/squadmc/sounds/urals/grad/
+  assets/squadmc/sounds/urals/grad/1p/
+  assets/squadmc/sounds/urals/grad/1p/grad_fire_close_initial_01.ogg
+  assets/squadmc/sounds/urals/grad/1p/grad_fire_close_initial_02.ogg
+  assets/squadmc/sounds/urals/grad/1p/grad_fire_close_initial_03.ogg
+  assets/squadmc/sounds/urals/grad/1p/grad_fire_close_initial_04.ogg
+  assets/squadmc/sounds/urals/grad/1p/grad_fire_close_initial_05.ogg
+  assets/squadmc/sounds/urals/grad/3p/
+  assets/squadmc/sounds/urals/grad/3p/grad_fire_mid_initial_01.ogg
+  assets/squadmc/sounds/urals/grad/3p/grad_fire_mid_initial_02.ogg
+  assets/squadmc/sounds/urals/grad/3p/grad_fire_mid_initial_03.ogg
+  assets/squadmc/sounds/urals/grad/3p/grad_fire_mid_initial_04.ogg
+  assets/squadmc/sounds/urals/grad/3p/grad_fire_mid_initial_05.ogg
+  assets/squadmc/sounds/urals/grad/3p/grad_fire_mid_initial_06.ogg
+  assets/squadmc/sounds/urals/grad/3p/grad_fire_mid_initial_07.ogg
+  assets/squadmc/sounds/urals/grad/3p/grad_fire_mid_initial_08.ogg
+  assets/squadmc/sounds/urals/grad/3p_far/
+  assets/squadmc/sounds/urals/grad/3p_far/grad_proj_flyby_close_01.ogg
+  assets/squadmc/sounds/urals/grad/3p_far/grad_proj_flyby_close_02.ogg
+  assets/squadmc/sounds/urals/grad/3p_far/grad_proj_flyby_close_03.ogg
+  assets/squadmc/sounds/urals/grad/3p_far/grad_proj_flyby_close_04.ogg
+  assets/squadmc/sounds/urals/grad/3p_far/grad_proj_flyby_close_05.ogg
+  assets/squadmc/sounds/urals/grad/3p_far/grad_proj_flyby_close_06.ogg
+  assets/squadmc/sounds/urals/grad/3p_far/grad_proj_flyby_close_07.ogg
+  assets/squadmc/sounds/urals/grad/3p_far/grad_proj_flyby_close_08.ogg
+  assets/squadmc/sounds/urals/grad/3p_far/grad_proj_flyby_close_09.ogg
+  assets/squadmc/sounds/urals/grad/3p_far/grad_proj_flyby_close_10.ogg
+  assets/squadmc/sounds/urals/ural/
+  assets/squadmc/sounds/urals/ural/engine/
+  assets/squadmc/sounds/urals/ural/engine/ural_engine_idle_int.ogg
+  assets/squadmc/sounds/urals/ural/engine/ural_engine_throttle_loaded_int.ogg
+  assets/squadmc/sounds/urals/ural/engine/ural_engine_throttle_loeaded_ext.ogg
+  assets/squadmc/sounds/urals/ural/engine/ural_exhaust_idle_ext.ogg
+  assets/squadmc/textures/
+  assets/squadmc/textures/entity/
+  assets/squadmc/textures/entity/bmd4.png
+  assets/squadmc/textures/entity/bmp1.png
+  assets/squadmc/textures/entity/bmp2.png
+  assets/squadmc/textures/entity/boat.png
+  assets/squadmc/textures/entity/bradley.png
+  assets/squadmc/textures/entity/brdm2.png
+  assets/squadmc/textures/entity/btr_82.png
+  assets/squadmc/textures/entity/fennek.png
+  assets/squadmc/textures/entity/fmtv_green.png
+  assets/squadmc/textures/entity/fmtv_iraq.png
+  assets/squadmc/textures/entity/gaz_tigrs/
+  assets/squadmc/textures/entity/gaz_tigrs/gaz_tigr.png
+  assets/squadmc/textures/entity/humvees/
+  assets/squadmc/textures/entity/humvees/humvee__tow_iraq.png
+  assets/squadmc/textures/entity/humvees/humvee_m2_green.png
+  assets/squadmc/textures/entity/humvees/humvee_m2_iraq.png
+  assets/squadmc/textures/entity/humvees/humvee_tow_green.png
+  assets/squadmc/textures/entity/lav25.png
+  assets/squadmc/textures/entity/leopard_2a7v_camo.png
+  assets/squadmc/textures/entity/m1a2.png
+  assets/squadmc/textures/entity/m1a2_sand.png
+  assets/squadmc/textures/entity/m3a3_texture_sand.png
+  assets/squadmc/textures/entity/malyutka.png
+  assets/squadmc/textures/entity/motuo.png
+  assets/squadmc/textures/entity/mtlb.png
+  assets/squadmc/textures/entity/puma.png
+  assets/squadmc/textures/entity/sprut.png
+  assets/squadmc/textures/entity/stryker.png
+  assets/squadmc/textures/entity/t64.png
+  assets/squadmc/textures/entity/t72av.png
+  assets/squadmc/textures/entity/t80.png
+  assets/squadmc/textures/entity/tom_7.png
+  assets/squadmc/textures/entity/toyotas/
+  assets/squadmc/textures/entity/toyotas/toyota_hilux.png
+  assets/squadmc/textures/entity/turrets/
+  assets/squadmc/textures/entity/turrets/ags17.png
+  assets/squadmc/textures/entity/turrets/dshk.png
+  assets/squadmc/textures/entity/turrets/kornet.png
+  assets/squadmc/textures/entity/turrets/m2.png
+  assets/squadmc/textures/entity/turrets/tow.png
+  assets/squadmc/textures/entity/turrets/zis3.png
+  assets/squadmc/textures/entity/uaz/
+  assets/squadmc/textures/entity/uaz/uaz_dshka.png
+  assets/squadmc/textures/entity/uaz/uaz_ruined.png
+  assets/squadmc/textures/entity/ural.png
+  assets/squadmc/textures/entity/ural_green.png
+  assets/squadmc/textures/item/
+  assets/squadmc/textures/item/at4.png
+  assets/squadmc/textures/item/fcl_at4.icon.png
+  assets/squadmc/textures/overlay/
+  assets/squadmc/textures/overlay/abrams_main.png
+  assets/squadmc/textures/overlay/bmp1_scope.png
+  assets/squadmc/textures/overlay/bradley_cross.png
+  assets/squadmc/textures/overlay/bradley_cross_tow.png
+  assets/squadmc/textures/overlay/btr82_scope.png
+  assets/squadmc/textures/overlay/engine_icon.png
+  assets/squadmc/textures/overlay/enter_icon.png
+  assets/squadmc/textures/overlay/gunner.png
+  assets/squadmc/textures/overlay/konkurs_scope.png
+  assets/squadmc/textures/overlay/lav25_scope.png
+  assets/squadmc/textures/overlay/leopard_scope.png
+  assets/squadmc/textures/overlay/outline_digital-4x3.png
+  assets/squadmc/textures/overlay/outline_kord-rws.png
+  assets/squadmc/textures/overlay/outline_stryker-rws.png
+  assets/squadmc/textures/overlay/pkt_scope.png
+  assets/squadmc/textures/overlay/puma_scope.png
+  assets/squadmc/textures/overlay/sprut_scope.png
+  assets/squadmc/textures/overlay/t72_scope.png
+  assets/squadmc/textures/overlay/t80_scope.png
+  assets/squadmc/textures/overlay/tow_cross.png
+  assets/squadmc/textures/overlay/triplex.png
+  assets/squadmc/textures/overlay/tv_frame.png
+  assets/squadmc/textures/overlay/vehicle/
+  assets/squadmc/textures/overlay/vehicle/weapon/
+  assets/squadmc/textures/overlay/vehicle/weapon/icons/
+  assets/squadmc/textures/overlay/vehicle/weapon/icons/cannon_120mmapi.png
+  assets/squadmc/textures/overlay/vehicle/weapon/icons/cannon_120mmhei.png
+  assets/squadmc/textures/overlay/vehicle/weapon/icons/cannon_30mmapi.png
+  assets/squadmc/textures/overlay/vehicle/weapon/icons/cannon_30mmhei.png
+  assets/squadmc/textures/overlay/vehicle/weapon/icons/malyutka.png
+  assets/squadmc/textures/overlay/vehicle/weapon/icons/smoke_bombs.png
+  assets/squadmc/textures/overlay/vehicle/weapon/icons/smoke_generator.png
+  data/
+  data/minecraft/
+  data/minecraft/tags/
+  data/minecraft/tags/damage_type/
+  data/minecraft/tags/damage_type/bypasses_armor.json
+  data/minecraft/tags/damage_type/bypasses_cooldown.json
+  data/minecraft/tags/damage_type/bypasses_enchantments.json
+  data/minecraft/tags/damage_type/bypasses_resistance.json
+  data/minecraft/tags/damage_type/bypasses_shield.json
+  data/minecraft/tags/damage_type/is_projectile.json
+  data/squadmc/
+  data/squadmc/damage_type/
+  data/squadmc/damage_type/spike_hit.json
+  data/squadmc/sbw/
+  data/squadmc/sbw/guns/
+  data/squadmc/sbw/guns/at4.json
+  data/squadmc/sbw/guns/spike.json
+  data/squadmc/sbw/vehicles/
+  data/squadmc/sbw/vehicles/bmd4.json
+  data/squadmc/sbw/vehicles/bmp1.json
+  data/squadmc/sbw/vehicles/bmp2.json
+  data/squadmc/sbw/vehicles/bradley.json
+  data/squadmc/sbw/vehicles/bradley_sand.json
+  data/squadmc/sbw/vehicles/brdm2.json
+  data/squadmc/sbw/vehicles/btr80.json
+  data/squadmc/sbw/vehicles/btr82.json
+  data/squadmc/sbw/vehicles/fenek.json
+  data/squadmc/sbw/vehicles/fmtv.json
+  data/squadmc/sbw/vehicles/fmtv_green.json
+  data/squadmc/sbw/vehicles/gaz_tigrs/
+  data/squadmc/sbw/vehicles/gaz_tigrs/gaz_tigr.json
+  data/squadmc/sbw/vehicles/gaz_tigrs/gaz_tigr_mg.json
+  data/squadmc/sbw/vehicles/gaz_tigrs/gaz_tigr_rws.json
+  data/squadmc/sbw/vehicles/grad.json
+  data/squadmc/sbw/vehicles/humvees/
+  data/squadmc/sbw/vehicles/humvees/humvee.json
+  data/squadmc/sbw/vehicles/humvees/humvee_tow.json
+  data/squadmc/sbw/vehicles/humvees/humveem2.json
+  data/squadmc/sbw/vehicles/lav25.json
+  data/squadmc/sbw/vehicles/leopard.json
+  data/squadmc/sbw/vehicles/m1a2.json
+  data/squadmc/sbw/vehicles/m1a2_sand.json
+  data/squadmc/sbw/vehicles/motorboat.json
+  data/squadmc/sbw/vehicles/motuo.json
+  data/squadmc/sbw/vehicles/mtlb.json
+  data/squadmc/sbw/vehicles/puma.json
+  data/squadmc/sbw/vehicles/sprut.json
+  data/squadmc/sbw/vehicles/stryker_m2.json
+  data/squadmc/sbw/vehicles/stryker_mortar.json
+  data/squadmc/sbw/vehicles/t64.json
+  data/squadmc/sbw/vehicles/t72av.json
+  data/squadmc/sbw/vehicles/t80.json
+  data/squadmc/sbw/vehicles/toyota/
+  data/squadmc/sbw/vehicles/toyota/toyota.json
+  data/squadmc/sbw/vehicles/toyota/toyota_hilux_zu23.json
+  data/squadmc/sbw/vehicles/turrets/
+  data/squadmc/sbw/vehicles/turrets/empl_ags17.json
+  data/squadmc/sbw/vehicles/turrets/empl_dshk.json
+  data/squadmc/sbw/vehicles/turrets/empl_kornet.json
+  data/squadmc/sbw/vehicles/turrets/empl_m2.json
+  data/squadmc/sbw/vehicles/turrets/empl_mg3.json
+  data/squadmc/sbw/vehicles/turrets/empl_mk19.json
+  data/squadmc/sbw/vehicles/turrets/empl_tow.json
+  data/squadmc/sbw/vehicles/turrets/empl_zis3.json
+  data/squadmc/sbw/vehicles/uaz/
+  data/squadmc/sbw/vehicles/uaz/uaz.json
+  data/squadmc/sbw/vehicles/uaz/uaz_dshka.json
+  data/squadmc/sbw/vehicles/ural_green.json
+  data/superbwarfare/
+  data/superbwarfare/tags/
+  data/superbwarfare/tags/damage_type/
+  data/superbwarfare/tags/damage_type/bypasses_vehicle.json
+  extensiontest.mixins.json111
+  pack.mcmeta
+  tech/
+  tech/squadmc/
+  tech/squadmc/squadmcor/
+  tech/squadmc/squadmcor/client/
+  tech/squadmc/squadmcor/client/ClientAccess.class
+  tech/squadmc/squadmcor/client/SpikeClient$Registration.class
+  tech/squadmc/squadmcor/client/SpikeClient.class
+  tech/squadmc/squadmcor/client/hud/
+  tech/squadmc/squadmcor/client/hud/Bmd4ReticleOverlay.class
+  tech/squadmc/squadmcor/client/hud/Bmp2ReticleOverlay.class
+  tech/squadmc/squadmcor/client/hud/BradleyReticleOverlay.class
+  tech/squadmc/squadmcor/client/hud/Brdm2ReticleOverlay.class
+  tech/squadmc/squadmcor/client/hud/Btr80ReticleOverlay.class
+  tech/squadmc/squadmcor/client/hud/Btr82ReticleOverlay.class
+  tech/squadmc/squadmcor/client/hud/FMTVReticleOverlay.class
+  tech/squadmc/squadmcor/client/hud/FenekReticleOverlay.class
+  tech/squadmc/squadmcor/client/hud/Gaz_tigrRWSReticleOverlay.class
+  tech/squadmc/squadmcor/client/hud/HumveeReticleOverlay.class
+  tech/squadmc/squadmcor/client/hud/HumveeTowReticleOverlay.class
+  tech/squadmc/squadmcor/client/hud/Lav25ReticleOverlay.class
+  tech/squadmc/squadmcor/client/hud/PumaReticleOverlay.class
+  tech/squadmc/squadmcor/client/hud/StrykerMortarReticleOverlay.class
+  tech/squadmc/squadmcor/client/hud/UralGradReticleOverlay.class
+  tech/squadmc/squadmcor/client/hud/UralRetricleOverlay.class
+  tech/squadmc/squadmcor/client/hud/VehicleInteractionOverlay.class
+  tech/squadmc/squadmcor/client/model/
+  tech/squadmc/squadmcor/client/model/Bmp1Model.class
+  tech/squadmc/squadmcor/client/model/FMTVModel.class
+  tech/squadmc/squadmcor/client/model/FMTVModelGreen.class
+  tech/squadmc/squadmcor/client/model/FenekModel.class
+  tech/squadmc/squadmcor/client/model/Gaz_tigrMGModel.class
+  tech/squadmc/squadmcor/client/model/Gaz_tigrModel.class
+  tech/squadmc/squadmcor/client/model/Gaz_tigrRWSModel.class
+  tech/squadmc/squadmcor/client/model/HumveeM2Model.class
+  tech/squadmc/squadmcor/client/model/HumveeModel.class
+  tech/squadmc/squadmcor/client/model/HumveeTowModel.class
+  tech/squadmc/squadmcor/client/model/MalyutkaModel.class
+  tech/squadmc/squadmcor/client/model/MotorboatModel.class
+  tech/squadmc/squadmcor/client/model/MotorcycleModel.class
+  tech/squadmc/squadmcor/client/model/PumaModel.class
+  tech/squadmc/squadmcor/client/model/StrykerM2Model.class
+  tech/squadmc/squadmcor/client/model/StrykerMortatModel.class
+  tech/squadmc/squadmcor/client/model/T64Model.class
+  tech/squadmc/squadmcor/client/model/T72AVModel.class
+  tech/squadmc/squadmcor/client/model/ToyotaModel.class
+  tech/squadmc/squadmcor/client/model/ToyotaZU23Model.class
+  tech/squadmc/squadmcor/client/model/UAZModel.class
+  tech/squadmc/squadmcor/client/model/UazDshkaModel.class
+  tech/squadmc/squadmcor/client/model/UralGradModel.class
+  tech/squadmc/squadmcor/client/model/UralModel.class
+  tech/squadmc/squadmcor/client/model/bmd4Model.class
+  tech/squadmc/squadmcor/client/model/bmp2Model.class
+  tech/squadmc/squadmcor/client/model/bradleyModel.class
+  tech/squadmc/squadmcor/client/model/bradleyModel_sand.class
+  tech/squadmc/squadmcor/client/model/brdmModel.class
+  tech/squadmc/squadmcor/client/model/btr80Model.class
+  tech/squadmc/squadmcor/client/model/btr82Model.class
+  tech/squadmc/squadmcor/client/model/empl/
+  tech/squadmc/squadmcor/client/model/empl/AGSModel.class
+  tech/squadmc/squadmcor/client/model/empl/M2Model.class
+  tech/squadmc/squadmcor/client/model/empl/TowModel.class
+  tech/squadmc/squadmcor/client/model/empl/ZISModel.class
+  tech/squadmc/squadmcor/client/model/item/
+  tech/squadmc/squadmcor/client/model/item/AT4ItemModel.class
+  tech/squadmc/squadmcor/client/model/lav25Model.class
+  tech/squadmc/squadmcor/client/model/leopardModel.class
+  tech/squadmc/squadmcor/client/model/m1a2Model.class
+  tech/squadmc/squadmcor/client/model/m1a2Model_sand.class
+  tech/squadmc/squadmcor/client/model/mtlbModel.class
+  tech/squadmc/squadmcor/client/model/sprutModel.class
+  tech/squadmc/squadmcor/client/model/t80Model.class
+  tech/squadmc/squadmcor/client/performance/
+  tech/squadmc/squadmcor/client/performance/CachedFloatField$1.class
+  tech/squadmc/squadmcor/client/performance/CachedFloatField$Lookup.class
+  tech/squadmc/squadmcor/client/performance/CachedFloatField.class
+  tech/squadmc/squadmcor/client/performance/CachedVehicleMesh.class
+  tech/squadmc/squadmcor/client/performance/OptimizedVehicleRenderer.class
+  tech/squadmc/squadmcor/client/performance/VehicleMeshCache.class
+  tech/squadmc/squadmcor/client/renderer/
+  tech/squadmc/squadmcor/client/renderer/entity/
+  tech/squadmc/squadmcor/client/renderer/entity/Bmp1Renderer.class
+  tech/squadmc/squadmcor/client/renderer/entity/FMTVRednderGreen.class
+  tech/squadmc/squadmcor/client/renderer/entity/FMTVRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/FenekRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/Gaz_tigrMGRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/Gaz_tigrRWSRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/Gaz_tigrRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/HumveeM2Render.class
+  tech/squadmc/squadmcor/client/renderer/entity/HumveeRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/HumveeTowRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/MalyutkaRenderer.class
+  tech/squadmc/squadmcor/client/renderer/entity/MotorboatRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/MotorcycleRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/PumaRenderer.class
+  tech/squadmc/squadmcor/client/renderer/entity/SpikeMissileRenderer$Model.class
+  tech/squadmc/squadmcor/client/renderer/entity/SpikeMissileRenderer.class
+  tech/squadmc/squadmcor/client/renderer/entity/StrykerM2Render.class
+  tech/squadmc/squadmcor/client/renderer/entity/StrykerMortarRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/T64Renderer.class
+  tech/squadmc/squadmcor/client/renderer/entity/T72AVRenderer.class
+  tech/squadmc/squadmcor/client/renderer/entity/ToyotaRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/ToyotaZU23Render.class
+  tech/squadmc/squadmcor/client/renderer/entity/UAZRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/UazDshkaRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/UralGradRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/UralRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/bmd4Renderer.class
+  tech/squadmc/squadmcor/client/renderer/entity/bmp2Renderer.class
+  tech/squadmc/squadmcor/client/renderer/entity/bradleyRenderer.class
+  tech/squadmc/squadmcor/client/renderer/entity/bradley_sandRenderer.class
+  tech/squadmc/squadmcor/client/renderer/entity/brdmRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/btr80Renderer.class
+  tech/squadmc/squadmcor/client/renderer/entity/btr82Renderer.class
+  tech/squadmc/squadmcor/client/renderer/entity/empl/
+  tech/squadmc/squadmcor/client/renderer/entity/empl/AGSRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/empl/TowRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/empl/ZISRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/empl/m2Render.class
+  tech/squadmc/squadmcor/client/renderer/entity/lav25Renderer.class
+  tech/squadmc/squadmcor/client/renderer/entity/leopardRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/m1a2Render.class
+  tech/squadmc/squadmcor/client/renderer/entity/m1a2Render_sand.class
+  tech/squadmc/squadmcor/client/renderer/entity/mtlbRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/sprutRender.class
+  tech/squadmc/squadmcor/client/renderer/entity/t80Render.class
+  tech/squadmc/squadmcor/client/renderer/item/
+  tech/squadmc/squadmcor/client/renderer/item/AT4ItemRenderer$1.class
+  tech/squadmc/squadmcor/client/renderer/item/AT4ItemRenderer.class
+  tech/squadmc/squadmcor/client/smoke/
+  tech/squadmc/squadmcor/client/smoke/IrisCompat.class
+  tech/squadmc/squadmcor/client/smoke/SmokeBillboard.class
+  tech/squadmc/squadmcor/client/smoke/SmokePipeline.class
+  tech/squadmc/squadmcor/client/smoke/SmokePuffCache$Puff.class
+  tech/squadmc/squadmcor/client/smoke/SmokePuffCache.class
+  tech/squadmc/squadmcor/client/smoke/SmokePuffTexture.class
+  tech/squadmc/squadmcor/client/smoke/SmokeRenderTypes.class
+  tech/squadmc/squadmcor/client/smoke/SmokeShaders.class
+  tech/squadmc/squadmcor/client/smoke/SmokeTimeOfDay.class
+  tech/squadmc/squadmcor/client/smoke/SmokeTransparencyHook.class
+  tech/squadmc/squadmcor/client/smoke/VehicleSmokeCloudRenderer.class
+  tech/squadmc/squadmcor/client/smoke/VehicleSmokeStageRenderer.class
+  tech/squadmc/squadmcor/client/sound/
+  tech/squadmc/squadmcor/client/sound/Bmd4EngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/Bmd4SoundManager.class
+  tech/squadmc/squadmcor/client/sound/Bmp1EngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/Bmp1SoundManager.class
+  tech/squadmc/squadmcor/client/sound/Bmp2EngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/Bmp2SoundManager.class
+  tech/squadmc/squadmcor/client/sound/BradleyEngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/BradleySoundManager.class
+  tech/squadmc/squadmcor/client/sound/Brdm2EngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/Brdm2SoundManager.class
+  tech/squadmc/squadmcor/client/sound/Btr82EngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/Btr82SoundManager.class
+  tech/squadmc/squadmcor/client/sound/FMTVEngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/FMTVSoundManager.class
+  tech/squadmc/squadmcor/client/sound/FenekEngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/FenekSoundManager.class
+  tech/squadmc/squadmcor/client/sound/HumveeEngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/HumveeSoundManager.class
+  tech/squadmc/squadmcor/client/sound/Lav25EngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/Lav25SoundManager.class
+  tech/squadmc/squadmcor/client/sound/MotorcycleEngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/MotorcycleSoundManager.class
+  tech/squadmc/squadmcor/client/sound/MtlbSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/MtlbSoundManager.class
+  tech/squadmc/squadmcor/client/sound/PumaEngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/PumaSoundManager.class
+  tech/squadmc/squadmcor/client/sound/StrykerM2EngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/StrykerM2SoundManager.class
+  tech/squadmc/squadmcor/client/sound/StrykerMortarEngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/StrykerMortarSoundManager.class
+  tech/squadmc/squadmcor/client/sound/T64EngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/T64SoundManager.class
+  tech/squadmc/squadmcor/client/sound/T72AVEngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/T72AVSoundManager.class
+  tech/squadmc/squadmcor/client/sound/UralEngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/UralGradEngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/UralGradSoundManager.class
+  tech/squadmc/squadmcor/client/sound/UralSoundManager.class
+  tech/squadmc/squadmcor/client/sound/leopardEngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/leopardSoundManager.class
+  tech/squadmc/squadmcor/client/sound/m1a2EngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/m1a2SoundManager.class
+  tech/squadmc/squadmcor/client/sound/sprutEngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/sprutSoundManager.class
+  tech/squadmc/squadmcor/client/sound/t80EngineSoundInstance.class
+  tech/squadmc/squadmcor/client/sound/t80SoundManager.class
+  tech/squadmc/squadmcor/entity/
+  tech/squadmc/squadmcor/entity/Bmp1Entity.class
+  tech/squadmc/squadmcor/entity/ClientAccess.class
+  tech/squadmc/squadmcor/entity/FMTVEntity.class
+  tech/squadmc/squadmcor/entity/FMTVEntityGreen.class
+  tech/squadmc/squadmcor/entity/FenekEntity.class
+  tech/squadmc/squadmcor/entity/Gaz_tigrEntity.class
+  tech/squadmc/squadmcor/entity/Gaz_tigrMGEntity.class
+  tech/squadmc/squadmcor/entity/Gaz_tigrRWSEntity.class
+  tech/squadmc/squadmcor/entity/HumveeEntity.class
+  tech/squadmc/squadmcor/entity/HumveeM2Entity.class
+  tech/squadmc/squadmcor/entity/HumveeTowEntity.class
+  tech/squadmc/squadmcor/entity/KonkursDummyProjectile.class
+  tech/squadmc/squadmcor/entity/MotorboatEntity.class
+  tech/squadmc/squadmcor/entity/MotorcycleEntity.class
+  tech/squadmc/squadmcor/entity/PumaEntity.class
+  tech/squadmc/squadmcor/entity/SquadBaseVehicleEntity.class
+  tech/squadmc/squadmcor/entity/StrykerM2Entity.class
+  tech/squadmc/squadmcor/entity/StrykerMortalEntity.class
+  tech/squadmc/squadmcor/entity/T64Entity.class
+  tech/squadmc/squadmcor/entity/T72AVEntity.class
+  tech/squadmc/squadmcor/entity/TDADummyProjectile.class
+  tech/squadmc/squadmcor/entity/TowDummyProjectile.class
+  tech/squadmc/squadmcor/entity/ToyotaEntity.class
+  tech/squadmc/squadmcor/entity/ToyotaZU23Entity.class
+  tech/squadmc/squadmcor/entity/UAZEntity.class
+  tech/squadmc/squadmcor/entity/UazDshkaEntity.class
+  tech/squadmc/squadmcor/entity/UralEntity.class
+  tech/squadmc/squadmcor/entity/UralGradEntity.class
+  tech/squadmc/squadmcor/entity/bmd4Entity.class
+  tech/squadmc/squadmcor/entity/bmp2Entity.class
+  tech/squadmc/squadmcor/entity/bradleyEntity.class
+  tech/squadmc/squadmcor/entity/bradley_sandEntity.class
+  tech/squadmc/squadmcor/entity/brdmEntity.class
+  tech/squadmc/squadmcor/entity/btr80Entity.class
+  tech/squadmc/squadmcor/entity/btr82Entity.class
+  tech/squadmc/squadmcor/entity/empl/
+  tech/squadmc/squadmcor/entity/empl/AGSEntity.class
+  tech/squadmc/squadmcor/entity/empl/M2Entity.class
+  tech/squadmc/squadmcor/entity/empl/TowEntity.class
+  tech/squadmc/squadmcor/entity/empl/ZISEntity.class
+  tech/squadmc/squadmcor/entity/lav25Entity.class
+  tech/squadmc/squadmcor/entity/leopardEntity.class
+  tech/squadmc/squadmcor/entity/m1a2Entity.class
+  tech/squadmc/squadmcor/entity/m1a2Entity_sand.class
+  tech/squadmc/squadmcor/entity/mtlbEntity.class
+  tech/squadmc/squadmcor/entity/projectile/
+  tech/squadmc/squadmcor/entity/projectile/MalyutkaEntity.class
+  tech/squadmc/squadmcor/entity/projectile/SpikeMissileEntity.class
+  tech/squadmc/squadmcor/entity/sprutEntity.class
+  tech/squadmc/squadmcor/entity/t80Entity.class
+  tech/squadmc/squadmcor/hud/
+  tech/squadmc/squadmcor/hud/Bmp1ReticleOverlay.class
+  tech/squadmc/squadmcor/hud/StrykerM2ReticleOverlay.class
+  tech/squadmc/squadmcor/hud/T64ReticleOverlay.class
+  tech/squadmc/squadmcor/hud/T72AVReticleOverlay.class
+  tech/squadmc/squadmcor/hud/leopardReticleOverlay.class
+  tech/squadmc/squadmcor/hud/m1a2ReticleOverlay.class
+  tech/squadmc/squadmcor/hud/m1a2sandReticleOverlay.class
+  tech/squadmc/squadmcor/hud/mtlbReticleOverlay.class
+  tech/squadmc/squadmcor/hud/sprutReticleOverlay.class
+  tech/squadmc/squadmcor/hud/t80ReticleOverlay.class
+  tech/squadmc/squadmcor/hud/towReticleOverlay.class
+  tech/squadmc/squadmcor/hud/zisReticleOverlay.class
+  tech/squadmc/squadmcor/init/
+  tech/squadmc/squadmcor/init/ModEntities.class
+  tech/squadmc/squadmcor/init/ModEntityRenders.class
+  tech/squadmc/squadmcor/init/ModItems.class
+  tech/squadmc/squadmcor/init/ModParticles.class
+  tech/squadmc/squadmcor/init/ModSounds.class
+  tech/squadmc/squadmcor/init/ModTabs.class
+  tech/squadmc/squadmcor/init/SpikeContent.class
+  tech/squadmc/squadmcor/item/
+  tech/squadmc/squadmcor/item/AT4Item$1.class
+  tech/squadmc/squadmcor/item/AT4Item.class
+  tech/squadmc/squadmcor/item/SpikeItem.class
+  tech/squadmc/squadmcor/network/
+  tech/squadmc/squadmcor/network/ModNetworking.class
+  tech/squadmc/squadmcor/network/SmokeGeneratorPulsePacket.class
+  tech/squadmc/squadmcor/network/SpikeNetwork$ScopeState.class
+  tech/squadmc/squadmcor/network/SpikeNetwork$ShotFired.class
+  tech/squadmc/squadmcor/network/SpikeNetwork.class
+  tech/squadmc/squadmcor/network/ToggleEnginePacket.class
+  tech/squadmc/squadmcor/smoke/
+  tech/squadmc/squadmcor/smoke/VehicleSmokeCloudEntity.class
+  tech/squadmc/squadmcor/smoke/VehicleSmokeEmitter.class
+  tech/squadmc/squadmcor/smoke/VehicleSmokeSystem.class
+  tech/squadmc/squadmcor/spike/
+  tech/squadmc/squadmcor/spike/SpikeControl.class
+  tech/squadmc/squadmcor/spike/SpikeControlSession.class
+  tech/squadmc/squadmcor/spike/SpikeTrigger.class
+  tech/squadmc/squadmcor/squadmc.class

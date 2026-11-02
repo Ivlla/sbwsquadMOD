@@ -1,0 +1,329 @@
+package com.atsuishio.superbwarfare.data.vehicle
+
+import com.atsuishio.superbwarfare.Mod.Companion.loc
+import com.atsuishio.superbwarfare.config.server.VehicleConfig
+import com.atsuishio.superbwarfare.data.*
+import com.atsuishio.superbwarfare.data.gun.DefaultGunData
+import com.atsuishio.superbwarfare.data.vehicle.subdata.*
+import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModify
+import com.atsuishio.superbwarfare.serialization.kserializer.SerializedResourceLocation
+import com.atsuishio.superbwarfare.serialization.kserializer.SerializedSoundEvent
+import com.atsuishio.superbwarfare.serialization.kserializer.SerializedVec2
+import com.atsuishio.superbwarfare.serialization.kserializer.SerializedVec3
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
+import net.minecraft.sounds.SoundEvents
+import net.minecraft.world.phys.Vec2
+import net.minecraft.world.phys.Vec3
+import net.minecraftforge.common.ForgeConfigSpec
+import java.util.*
+import kotlin.math.max
+
+@Suppress("unused")
+@Serializable
+class DefaultVehicleData : IDBasedData<DefaultVehicleData> {
+    @Transient
+    @kotlinx.serialization.Transient
+    private var id = ""
+
+    @JvmField
+    @Transient
+    @kotlinx.serialization.Transient
+    var isDefaultData: Boolean = true
+
+    override fun getId(): String {
+        return this.id
+    }
+
+    override fun setId(id: String) {
+        this.id = id
+    }
+
+    @SerialName("MaxHealth")
+    var maxHealth: Float = 50f
+
+    @SerialName("RepairCooldown")
+    var repairCooldown: Int = getConfigOrDefault(VehicleConfig.REPAIR_COOLDOWN)
+
+    @SerialName("RepairAmount")
+    var repairAmount: Float = getConfigOrDefault(VehicleConfig.REPAIR_AMOUNT).toFloat()
+
+    /**
+     * 开始自动扣血时的血量比例
+     */
+    @SerialName("SelfHurtPercent")
+    var selfHurtPercent: Float = 0.1f
+
+    /**
+     * 自动扣血每tick扣血量
+     */
+    @SerialName("SelfHurtAmount")
+    var selfHurtAmount: Float = 0.1f
+
+    @SerialName("MaxEnergy")
+    var maxEnergy: Int = Int.MAX_VALUE
+
+    @SerialName("OBB")
+    var obb: MutableList<OBBInfo> = mutableListOf()
+
+    @SerialName("Seats")
+    private var seats: SingleOrList<SeatInfo>? = SingleOrList()
+
+    @SerialName("Radar")
+    var radar: SingleOrList<RadarInfo>? = SingleOrList()
+    fun seats(): MutableList<SeatInfo> {
+        if (seats == null) return mutableListOf()
+        return Collections.unmodifiableList(seats!!.list)
+    }
+
+    @SerialName("UpStep")
+    var upStep: Float = 0f
+
+    @JvmField
+    @SerialName("TrackDistanceMultiply")
+    var trackDistanceMultiply: Double = 1.0
+
+    @SerialName("KeepChunkLoaded")
+    var keepChunkLoaded: Boolean = true
+
+    @SerialName("MouseSensitivity")
+    var mouseSensitivity: Double = 0.4
+
+    @SerialName("PassengerRenderScale")
+    var passengerRenderScale: Float = 1f
+
+    @SerialName("AllowFreeCam")
+    var allowFreeCam: Boolean = false
+
+    @SerialName("HasDecoy")
+    var hasDecoy: Boolean = false
+
+    // 用于判断诱饵弹类型是烟雾弹还是干扰弹
+    @SerialName("SmokeDecoy")
+    var smokeDecoy: Boolean = true
+
+    @JvmField
+    @SerialName("ApplyDefaultDamageModifiers")
+    var applyDefaultDamageModifiers: Boolean = true
+
+    @SerialName("SendHitParticles")
+    var sendHitParticles: Boolean = true
+
+    @JvmField
+    @SerialName("DamageModifiers")
+    var damageModifiers: SingleOrList<StringOrObject<DamageModify>> = SingleOrList()
+
+    @SerialName("Mass")
+    var mass: Float = 1f
+
+    @SerialName("TowForceFactor")
+    var towForceFactor: Float = 1f
+
+    @SerialName("DecoyMagazineSize")
+    var decoyMagazineSize: Int = 8
+
+    @SerialName("DecoyReloadTime")
+    var decoyReloadTime: Int = 500
+
+    @SerialName("DestroyInfo")
+    var destroyInfo: DestroyInfo = DestroyInfo()
+
+    @SerialName("SeekInfo")
+    var seekInfo: SeekInfo? = null
+
+    @SerialName("VehicleContainerType")
+    var vehicleContainerType: VehicleContainerType = VehicleContainerType.MEDIUM
+
+    @SerialName("HasUpgradeSlots")
+    var hasUpgradeSlots: Boolean = false
+
+    @SerialName("VehicleIcon")
+    var vehicleIcon: SerializedResourceLocation = loc("textures/gun_icon/default_icon.png")
+
+    @SerialName("ContainerIcon")
+    var containerIcon: SerializedResourceLocation? = null
+
+    @SerialName("HUDColor")
+    var hudColor: ModColor = ModColor(0x66FF00)
+
+    @SerialName("LaserColor")
+    var laserColor: ModColor = ModColor(0xFF0000)
+
+    @SerialName("LaserScale")
+    var laserScale: Float = 0.035f
+
+    @SerialName("Type")
+    var type: VehicleType = VehicleType.EMPTY
+
+    @SerialName("EngineType")
+    var engineType: EngineType = EngineType.EMPTY
+
+    @SerialName("EngineInfo")
+    var engineInfo: JsonObject = JsonObject(emptyMap())
+
+    // 引擎音效
+    @SerialName("EngineSound")
+    var engineSound: SerializedSoundEvent = SoundEvents.EMPTY
+
+    // 喇叭音效
+    @SerialName("HornSound")
+    var hornSound: SerializedSoundEvent = SoundEvents.EMPTY
+
+    // 第三人称视角
+    @SerialName("ThirdPersonCameraPos")
+    var thirdPersonCameraPos: SerializedVec3 = Vec3(0.0, 1.0, 3.0)
+
+    @SerialName("HasLowHealthWarning")
+    var hasLowHealthWarning: Boolean = true
+
+    @SerialName("ForwardTowed")
+    var forwardTowed: Boolean = true
+
+    @SerialName("RotateOffsetHeight")
+    var rotateOffsetHeight: Float = 0f
+
+    @SerialName("Weapons")
+    private var weapons: MutableMap<String, JsonObject> = mutableMapOf()
+
+    @Transient
+    @kotlinx.serialization.Transient
+    private var processedWeapons: MutableMap<String, DefaultGunData>? = null
+
+    fun weapons(): MutableMap<String, DefaultGunData> {
+        if (processedWeapons != null) return processedWeapons!!
+
+        val map = hashMapOf<String, DefaultGunData>()
+
+        for (entry in weapons.entries) {
+            // kotlinx JsonObject 不可变，不需要 deepCopy
+            var value = entry.value
+
+            val template = (value["Template"] as? JsonPrimitive)?.takeIf { it.isString }?.content
+
+            if (template != null) {
+                value = JsonObject(value - "Template")
+                val templateValue = weapons[template]
+                if (templateValue != null) {
+                    // 模板在前、本武器声明的键在后，后者优先
+                    value = JsonObject(templateValue + value)
+                }
+            }
+
+            map[entry.key] =
+                DataLoader.JSON.decodeFromJsonElement(
+                    DefaultGunData.serializer(),
+                    value
+                )
+        }
+
+        processedWeapons = Collections.unmodifiableMap(map)
+        return processedWeapons!!
+    }
+
+    /**
+     * Weapon keys declared by this vehicle, without parsing any per-weapon [DefaultGunData].
+     *
+     * Callers that only need the weapon key set (e.g. building the runtime gun map) should prefer this
+     * over [weapons], which decodes every weapon baseline.
+     */
+    fun weaponKeys(): Set<String> = weapons.keys.toSet()
+
+    /**
+     * 碰撞等级，范围是0~4
+     * 0 - 无法撞坏方块
+     * 1 - 允许撞坏软方块
+     * 2 - 允许撞坏普通方块
+     * 3 - 允许撞坏硬方块
+     * 4 - 允许野兽撞击模式
+     */
+    @SerialName("CollisionLevel")
+    var collisionLevel: CollisionLevel = CollisionLevel()
+
+    // 主武器位
+    @SerialName("TurretPos")
+    var turretPos: SerializedVec3? = null
+
+    @SerialName("TurretTurnSpeed")
+    var turretTurnSpeed: SerializedVec2 = Vec2(5f, 5f)
+
+    @SerialName("TurretYawRange")
+    var turretYawRange: SerializedVec2 = Vec2(-514f, 514f)
+
+    @SerialName("TurretPitchRange")
+    var turretPitchRange: SerializedVec2 = Vec2(-10f, 30f)
+
+    @SerialName("TurretControllerIndex")
+    var turretControllerIndex: Int = 0
+
+    @SerialName("TurretCustomPitch")
+    var turretCustomPitch: Float = 0f
+
+    @SerialName("HudType")
+    var hudType: String = "@Empty"
+
+    @SerialName("BarrelPos")
+    var barrelPos: SerializedVec3 = Vec3.ZERO
+
+    // 乘客位武器
+    @SerialName("PassengerWeaponStationPos")
+    var passengerWeaponStationPos: SerializedVec3? = null
+
+    @SerialName("PassengerWeaponStationBarrelPos")
+    var passengerWeaponStationBarrelPos: SerializedVec3 = Vec3.ZERO
+
+    @SerialName("PassengerWeaponStationTurnSpeed")
+    var passengerWeaponStationTurnSpeed: SerializedVec2 = Vec2(5f, 5f)
+
+    @SerialName("PassengerWeaponStationYawRange")
+    var passengerWeaponStationYawRange: SerializedVec2 = Vec2(-514f, 514f)
+
+    @SerialName("PassengerWeaponStationPitchRange")
+    var passengerWeaponStationPitchRange: SerializedVec2 = Vec2(-10f, 30f)
+
+    @SerialName("PassengerWeaponStationControllerIndex")
+    var passengerWeaponStationControllerIndex: Int = 1
+
+    @JvmField
+    @SerialName("UsePassengerCreativeAmmoBox")
+    var usePassengerCreativeAmmoBox: Boolean = true
+
+    @SerialName("Gravity")
+    var gravity: Double = 0.06
+
+    @SerialName("TerrainCompat")
+    var terrainCompat: MutableList<SerializedVec3> = mutableListOf()
+
+    @SerialName("TerrainCompatRotateRate")
+    var terrainCompatRotateRate: Float = 1f
+
+    // 受惯性影响的旋转幅度
+    @SerialName("InertiaRotateRate")
+    var inertiaRotateRate: Float = 0f
+
+    @SerialName("PartHealth")
+    var partHealth: PartHealth = PartHealth()
+
+    override fun limit() {
+        this.maxHealth = max(this.maxHealth, 0f)
+        this.repairCooldown = max(this.repairCooldown, 0)
+        this.maxEnergy = max(this.maxEnergy, 0)
+        // In-place: this runs on the shared datapack default, so avoid re-allocating the list.
+        for (info in this.obb) {
+            info.limit()
+        }
+
+        this.collisionLevel.level = this.collisionLevel.level.coerceIn(0, 4)
+    }
+
+    companion object {
+        private fun <T> getConfigOrDefault(config: ForgeConfigSpec.ConfigValue<T>): T {
+            return try {
+                config.get()
+            } catch (exception: Exception) {
+                config.getDefault()
+            }
+        }
+    }
+}

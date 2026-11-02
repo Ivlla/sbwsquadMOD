@@ -1,0 +1,15 @@
+{
+  "values": [
+    "#superbwarfare:attachment/scope",
+    "#superbwarfare:attachment/magazine",
+    "#superbwarfare:attachment/muzzle",
+    "#superbwarfare:attachment/stock",
+    "#superbwarfare:attachment/grip",
+    "#superbwarfare:attachment/subweapon",
+    "#superbwarfare:attachment/charm",
+    "#superbwarfare:attachment/lower_rail",
+    "#superbwarfare:attachment/upper_rail",
+    "#superbwarfare:attachment/left_rail",
+    "#superbwarfare:attachment/right_rail"
+  ]
+}

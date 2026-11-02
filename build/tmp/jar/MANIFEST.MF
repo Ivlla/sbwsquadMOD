@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Specification-Title: squadmc
+Specification-Vendor: Ivlla
+Specification-Version: 1
+Implementation-Title: extensiontest
+Implementation-Version: 2.1.4-SNAPSHOT
+Implementation-Vendor: Ivlla
+Implementation-Timestamp: 2026-10-07T10:39:34+0300
+

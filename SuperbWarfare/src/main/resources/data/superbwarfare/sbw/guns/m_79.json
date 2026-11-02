@@ -1,0 +1,90 @@
+{
+  "Spread": 3.5,
+  "RecoilX": 0.004,
+  "RecoilY": 0.023,
+  "Damage": 100,
+  "Projectile": "superbwarfare:gun_grenade",
+  "ExplosionDamage": 80,
+  "ExplosionRadius": 5,
+  "Headshot": 2,
+  "Velocity": 3.75,
+  "Magazine": 1,
+  "Weight": 4,
+  "MeleeDamage": 5,
+  "MeleeDuration": 16,
+  "MeleeComboReset": 15,
+  "MeleeHitbox": {
+    "Type": "Box",
+    "Range": 1.5,
+    "Width": 1.8,
+    "Height": 1.8,
+    "YOffset": -0.2,
+    "Occlusion": true
+  },
+  "MeleeSweep": {
+    "From": 0,
+    "To": 0
+  },
+  "MeleeActions": [
+    {
+      "Animation": "hit",
+      "Duration": 16,
+      "HitTime": 6,
+      "MaxTargets": 8,
+      "Falloff": 0.1,
+      "SortBy": "Angle",
+      "Knockback": 0.3,
+      "Headshot": 1.25,
+      "Legshot": 0.75
+    }
+  ],
+  "DrawTime": 11,
+  "ZoomTime": 6,
+  "SoundRadius": 12,
+  "RPM": 120,
+  "EmptyReloadTime": 39,
+  "GunType": "CurvedLauncher",
+  "ProjectileBone": "he_head",
+  "Gravity": 0.07,
+  "AmmoType": [
+    "superbwarfare:grenade_40mm",
+    {
+      "Ammo": "superbwarfare:smoke_gun_grenade",
+      "ProjectileBone": "smoke_head",
+      "Projectile": "superbwarfare:smoke_gun_grenade",
+      "Override": {
+        "Damage": 20,
+        "ExplosionDamage": 0,
+        "ExplosionRadius": 0
+      }
+    }
+  ],
+  "Icon": "superbwarfare:textures/gun_icon/m_79_icon.png",
+  "AvailablePerks": [
+    "superbwarfare:striving_for_perfection",
+    "@Ammo",
+    "superbwarfare:powerful_attraction",
+    "superbwarfare:intelligent_chip",
+    "superbwarfare:monster_hunter",
+    "superbwarfare:vorpal_weapon",
+    "superbwarfare:battle_of_wits",
+    "!superbwarfare:longer_wire",
+    "!superbwarfare:cupid_arrow",
+    "!superbwarfare:shatter_caps",
+    "superbwarfare:quickdraw",
+    "superbwarfare:adrenaline_rush",
+    "superbwarfare:snapshot_sights"
+  ],
+  "AvailableAttachments": {
+    "Charm": [
+      "#superbwarfare:attachment/charm"
+    ]
+  },
+  "SoundInfo": {
+    "Fire1P": "superbwarfare:m_79_fire_1p",
+    "Fire3P": "superbwarfare:m_79_fire_3p",
+    "Fire3PFar": "superbwarfare:m_79_far",
+    "Fire3PVeryFar": "superbwarfare:m_79_veryfar"
+  },
+  "Crosshair": "@GunGrenade"
+}

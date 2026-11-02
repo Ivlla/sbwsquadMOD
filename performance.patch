@@ -1,0 +1,2939 @@
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/Bmp1Model.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/Bmp1Model.java
+@@ -6,22 +6,26 @@
+ import tech.squadmc.squadmcor.entity.Bmp1Entity;
+ 
+ public class Bmp1Model extends VehicleModel<Bmp1Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/bmp1.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/bmp1.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     public Bmp1Model() {}
+ 
+     @Override
+     public ResourceLocation getModelResource(Bmp1Entity animatable) {
+-        return new ResourceLocation("squadmc", "geo/bmp1.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(Bmp1Entity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/bmp1.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(Bmp1Entity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/FMTVModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/FMTVModel.java
+@@ -7,20 +7,24 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class FMTVModel extends VehicleModel<FMTVEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/fmtv.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/fmtv_iraq.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(FMTVEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/fmtv.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(FMTVEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/fmtv_iraq.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(FMTVEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/FMTVModelGreen.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/FMTVModelGreen.java
+@@ -7,20 +7,24 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class FMTVModelGreen extends VehicleModel<FMTVEntityGreen> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/fmtv.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/fmtv_green.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(FMTVEntityGreen animatable) {
+-        return new ResourceLocation("squadmc", "geo/fmtv.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(FMTVEntityGreen animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/fmtv_green.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(FMTVEntityGreen animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/FenekModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/FenekModel.java
+@@ -9,20 +9,24 @@
+ import tech.squadmc.squadmcor.squadmc;
+ 
+ public class FenekModel extends VehicleModel<FenekEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation(squadmc.MODID, "geo/fenek.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation(squadmc.MODID, "textures/entity/fennek.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation(squadmc.MODID, "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(FenekEntity animatable) {
+-        return new ResourceLocation(squadmc.MODID, "geo/fenek.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(FenekEntity animatable) {
+-        return new ResourceLocation(squadmc.MODID, "textures/entity/fennek.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(FenekEntity animatable) {
+-        return new ResourceLocation(squadmc.MODID, "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/Gaz_tigrMGModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/Gaz_tigrMGModel.java
+@@ -7,20 +7,24 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class Gaz_tigrMGModel extends VehicleModel<Gaz_tigrMGEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/gaz_tigrs/gaz_tigr_mg.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/gaz_tigrs/gaz_tigr.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(Gaz_tigrMGEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/gaz_tigrs/gaz_tigr_mg.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(Gaz_tigrMGEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/gaz_tigrs/gaz_tigr.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(Gaz_tigrMGEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/Gaz_tigrModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/Gaz_tigrModel.java
+@@ -7,20 +7,24 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class Gaz_tigrModel extends VehicleModel<Gaz_tigrEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/gaz_tigrs/gaz_tigr.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/gaz_tigrs/gaz_tigr.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(Gaz_tigrEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/gaz_tigrs/gaz_tigr.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(Gaz_tigrEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/gaz_tigrs/gaz_tigr.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(Gaz_tigrEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/Gaz_tigrRWSModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/Gaz_tigrRWSModel.java
+@@ -6,20 +6,24 @@
+ import tech.squadmc.squadmcor.entity.Gaz_tigrRWSEntity;
+ 
+ public class Gaz_tigrRWSModel extends VehicleModel<Gaz_tigrRWSEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/gaz_tigrs/gaz_tigr_rws.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/gaz_tigrs/gaz_tigr.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(Gaz_tigrRWSEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/gaz_tigrs/gaz_tigr_rws.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(Gaz_tigrRWSEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/gaz_tigrs/gaz_tigr.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(Gaz_tigrRWSEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/HumveeM2Model.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/HumveeM2Model.java
+@@ -7,20 +7,24 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class HumveeM2Model extends VehicleModel<HumveeM2Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/humvees/humvee_m2.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/humvees/humvee_m2_green.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(HumveeM2Entity animatable) {
+-        return new ResourceLocation("squadmc", "geo/humvees/humvee_m2.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(HumveeM2Entity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/humvees/humvee_m2_green.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(HumveeM2Entity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/HumveeModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/HumveeModel.java
+@@ -7,20 +7,24 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class HumveeModel extends VehicleModel<HumveeEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/humvees/humvee.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/humvees/humvee_m2_green.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(HumveeEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/humvees/humvee.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(HumveeEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/humvees/humvee_m2_green.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(HumveeEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/HumveeTowModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/HumveeTowModel.java
+@@ -8,20 +8,24 @@
+ import tech.squadmc.squadmcor.entity.HumveeTowEntity;
+ 
+ public class HumveeTowModel extends VehicleModel<HumveeTowEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/humvees/humvee_tow.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/humvees/humvee_tow_green.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(HumveeTowEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/humvees/humvee_tow.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(HumveeTowEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/humvees/humvee_tow_green.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(HumveeTowEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/MotorboatModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/MotorboatModel.java
+@@ -5,19 +5,23 @@
+ import tech.squadmc.squadmcor.entity.MotorboatEntity;
+ 
+ public class MotorboatModel extends VehicleModel<MotorboatEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/rubber_boat.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/boat.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(MotorboatEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/rubber_boat.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(MotorboatEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/boat.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(MotorboatEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json"); // Р‘Р°Р·РѕРІС‹Р№ idle
++        return CACHED_RESOURCE_2; // Р‘Р°Р·РѕРІС‹Р№ idle
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/MotorcycleModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/MotorcycleModel.java
+@@ -7,20 +7,24 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class MotorcycleModel extends VehicleModel<MotorcycleEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/motuo.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/motuo.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(MotorcycleEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/motuo.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(MotorcycleEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/motuo.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(MotorcycleEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/PumaModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/PumaModel.java
+@@ -8,6 +8,10 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class PumaModel extends VehicleModel<PumaEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/puma.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/puma.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     private static final int TRACK_COUNT = 61;
+     private static final int MAX_IDX = 61;
+@@ -83,17 +87,17 @@
+ 
+     @Override
+     public ResourceLocation getModelResource(PumaEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/puma.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(PumaEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/puma.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(PumaEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/StrykerM2Model.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/StrykerM2Model.java
+@@ -7,20 +7,24 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class StrykerM2Model extends VehicleModel<StrykerM2Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/stryker_m2.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/stryker.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(StrykerM2Entity animatable) {
+-        return new ResourceLocation("squadmc", "geo/stryker_m2.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(StrykerM2Entity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/stryker.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(StrykerM2Entity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/StrykerMortatModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/StrykerMortatModel.java
+@@ -7,20 +7,24 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class StrykerMortatModel extends VehicleModel<StrykerMortalEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/stryker_mortar.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/stryker.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(StrykerMortalEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/stryker_mortar.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(StrykerMortalEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/stryker.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(StrykerMortalEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/T64Model.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/T64Model.java
+@@ -9,22 +9,26 @@
+ import tech.squadmc.squadmcor.squadmc;
+ 
+ public class T64Model extends VehicleModel<T64Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation(squadmc.MODID, "geo/t64.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation(squadmc.MODID, "textures/entity/t64.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation(squadmc.MODID, "animations/btr82.animation.json");
++
+ 
+     public T64Model() {}
+ 
+     @Override
+     public ResourceLocation getModelResource(T64Entity animatable) {
+-        return new ResourceLocation(squadmc.MODID, "geo/t64.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(T64Entity animatable) {
+-        return new ResourceLocation(squadmc.MODID, "textures/entity/t64.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(T64Entity animatable) {
+-        return new ResourceLocation(squadmc.MODID, "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/T72AVModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/T72AVModel.java
+@@ -9,6 +9,10 @@
+ import java.lang.reflect.Field;
+ 
+ public class T72AVModel extends VehicleModel<T72AVEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/t72av.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/t72av.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+ 
+     private static Field cachedYawField = null;
+@@ -19,17 +23,17 @@
+ 
+     @Override
+     public ResourceLocation getModelResource(T72AVEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/t72av.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(T72AVEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/t72av.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(T72AVEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/ToyotaModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/ToyotaModel.java
+@@ -7,20 +7,24 @@
+ import tech.squadmc.squadmcor.entity.ToyotaEntity;
+ 
+ public class ToyotaModel extends VehicleModel<ToyotaEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/toyotas/toyota_hilux.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/toyotas/toyota_hilux.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(ToyotaEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/toyotas/toyota_hilux.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(ToyotaEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/toyotas/toyota_hilux.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(ToyotaEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/ToyotaZU23Model.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/ToyotaZU23Model.java
+@@ -6,20 +6,24 @@
+ import tech.squadmc.squadmcor.entity.ToyotaZU23Entity;
+ 
+ public class ToyotaZU23Model extends VehicleModel<ToyotaZU23Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/toyotas/toyota_hilux_zu23.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/toyotas/toyota_hilux.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(ToyotaZU23Entity animatable) {
+-        return new ResourceLocation("squadmc", "geo/toyotas/toyota_hilux_zu23.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(ToyotaZU23Entity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/toyotas/toyota_hilux.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(ToyotaZU23Entity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/UAZModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/UAZModel.java
+@@ -6,20 +6,24 @@
+ import tech.squadmc.squadmcor.entity.UAZEntity;
+ 
+ public class UAZModel extends VehicleModel<UAZEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/uaz/uaz.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/uaz/uaz_ruined.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(UAZEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/uaz/uaz.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(UAZEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/uaz/uaz_ruined.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(UAZEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/UazDshkaModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/UazDshkaModel.java
+@@ -6,20 +6,24 @@
+ import tech.squadmc.squadmcor.entity.UazDshkaEntity;
+ 
+ public class UazDshkaModel extends VehicleModel<UazDshkaEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/uaz/uaz_dshka.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/uaz/uaz_dshka.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(UazDshkaEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/uaz/uaz_dshka.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(UazDshkaEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/uaz/uaz_dshka.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(UazDshkaEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/UralGradModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/UralGradModel.java
+@@ -7,20 +7,24 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class UralGradModel extends VehicleModel<UralGradEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/ural_grad.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/ural.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(UralGradEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/ural_grad.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(UralGradEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/ural.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(UralGradEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/UralModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/UralModel.java
+@@ -7,20 +7,24 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class UralModel extends VehicleModel<UralEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/ural.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/ural_green.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(UralEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/ural.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(UralEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/ural_green.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(UralEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/bmd4Model.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/bmd4Model.java
+@@ -12,6 +12,10 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class bmd4Model extends VehicleModel<bmd4Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/bmd_4.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/bmd4.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     private static final float TRACK_Z_OFFSET = 0.0F;
+     private static final float TRACK_Y_OFFSET = 0.0F;
+@@ -26,17 +30,17 @@
+ 
+     @Override
+     public ResourceLocation getModelResource(bmd4Entity animatable) {
+-        return new ResourceLocation("squadmc", "geo/bmd_4.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(bmd4Entity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/bmd4.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(bmd4Entity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/bmp2Model.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/bmp2Model.java
+@@ -12,6 +12,10 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class bmp2Model extends VehicleModel<bmp2Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/bmp2.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/bmp2.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     private static final float TRACK_Z_OFFSET = 0.0F;
+     private static final float TRACK_Y_OFFSET = 0.0F;
+@@ -42,17 +46,17 @@
+ 
+     @Override
+     public ResourceLocation getModelResource(bmp2Entity animatable) {
+-        return new ResourceLocation("squadmc", "geo/bmp2.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(bmp2Entity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/bmp2.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(bmp2Entity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/bradleyModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/bradleyModel.java
+@@ -8,6 +8,10 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class bradleyModel extends VehicleModel<bradleyEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/bradley.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/bradley.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     private ResourceLocation lastModel = null;
+ 
+@@ -23,7 +27,7 @@
+ 
+     @Override
+     public ResourceLocation getModelResource(bradleyEntity vehicle) {
+-        ResourceLocation model = new ResourceLocation("squadmc", "geo/bradley.geo.json");
++        ResourceLocation model = CACHED_RESOURCE_0;
+         if (this.lastModel != null && !this.lastModel.equals(model)) {
+             this.init = false;
+             this.TRANSFORMS.clear();
+@@ -34,12 +38,12 @@
+ 
+     @Override
+     public ResourceLocation getTextureResource(bradleyEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/bradley.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(bradleyEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/bradleyModel_sand.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/bradleyModel_sand.java
+@@ -8,6 +8,10 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class bradleyModel_sand extends VehicleModel<bradley_sandEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/bradley.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/m3a3_texture_sand.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     private ResourceLocation lastModel = null;
+ 
+@@ -23,7 +27,7 @@
+ 
+     @Override
+     public ResourceLocation getModelResource(bradley_sandEntity vehicle) {
+-        ResourceLocation model = new ResourceLocation("squadmc", "geo/bradley.geo.json");
++        ResourceLocation model = CACHED_RESOURCE_0;
+         if (this.lastModel != null && !this.lastModel.equals(model)) {
+             this.init = false;
+             this.TRANSFORMS.clear();
+@@ -34,12 +38,12 @@
+ 
+     @Override
+     public ResourceLocation getTextureResource(bradley_sandEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/m3a3_texture_sand.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(bradley_sandEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/brdmModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/brdmModel.java
+@@ -7,20 +7,24 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class brdmModel extends VehicleModel<brdmEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/brdm2.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/brdm2.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(brdmEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/brdm2.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(brdmEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/brdm2.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(brdmEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/btr80Model.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/btr80Model.java
+@@ -7,23 +7,27 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class btr80Model extends VehicleModel<btr80Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/btr80.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/btr_82.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(btr80Entity animatable) {
+         // РџСѓС‚СЊ Рє РІР°С€РµР№ РјРѕРґРµР»Рё Р‘РўР -80
+-        return new ResourceLocation("squadmc", "geo/btr80.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(btr80Entity animatable) {
+         // РџСѓС‚СЊ Рє С‚РµРєСЃС‚СѓСЂРµ Р‘РўР -80
+-        return new ResourceLocation("squadmc", "textures/entity/btr_82.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(btr80Entity animatable) {
+         // РџРµСЂРµРёСЃРїРѕР»СЊР·СѓРµРј С„Р°Р№Р» Р°РЅРёРјР°С†РёР№ РѕС‚ Р‘РўР -82, РµСЃР»Рё РєРѕСЃС‚Рё РєРѕР»РµСЃ Рё Р±Р°С€РЅРё РЅР°Р·С‹РІР°СЋС‚СЃСЏ С‚Р°Рє Р¶Рµ
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/btr82Model.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/btr82Model.java
+@@ -8,6 +8,10 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class btr82Model extends VehicleModel<btr82Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/btr82.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/btr_82.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+     private ResourceLocation lastModel = null;
+     private static final int TRACK_COUNT = 75;
+     private static final int MAX_IDX = 75;
+@@ -17,18 +21,18 @@
+ 
+     @Override
+     public ResourceLocation getModelResource(btr82Entity animatable) {
+-        return new ResourceLocation("squadmc", "geo/btr82.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(btr82Entity animatable) {
+ 
+-        return new ResourceLocation("squadmc", "textures/entity/btr_82.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(btr82Entity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     public boolean hideForTurretControllerWhileZooming() {
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/empl/AGSModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/empl/AGSModel.java
+@@ -2,25 +2,35 @@
+ 
+ import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
+ import net.minecraft.resources.ResourceLocation;
++import tech.squadmc.squadmcor.client.performance.CachedFloatField;
+ import net.minecraft.util.Mth;
+ import tech.squadmc.squadmcor.entity.empl.AGSEntity;
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class AGSModel extends VehicleModel<AGSEntity> {
++    private static final CachedFloatField YAW_FIELD = new CachedFloatField("turretYRot", "turretYaw");
++    private static final CachedFloatField PREV_YAW_FIELD = new CachedFloatField("prevTurretYRot", "turretYRotO", "prevTurretYaw");
++    private static final CachedFloatField PITCH_FIELD = new CachedFloatField("turretXRot", "turretPitch");
++    private static final CachedFloatField PREV_PITCH_FIELD = new CachedFloatField("prevTurretXRot", "turretXRotO", "prevTurretPitch");
++
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/turrets/empl_ags17.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/turrets/ags17.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(AGSEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/turrets/empl_ags17.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(AGSEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/turrets/ags17.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(AGSEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+@@ -48,37 +58,20 @@
+ 
+     // Р РµС„Р»РµРєСЃРёРІРЅРѕРµ РїРѕР»СѓС‡РµРЅРёРµ Р·РЅР°С‡РµРЅРёР№ РїРѕР»РµР№ Р±РµР· РїСЂСЏРјС‹С… РІС‹Р·РѕРІРѕРІ РјРµС‚РѕРґРѕРІ
+     private float getTurretYRot(AGSEntity vehicle) {
+-        return getFieldFloat(vehicle, "turretYRot", "turretYaw");
++        return YAW_FIELD.get(vehicle);
+     }
+ 
+     private float getPrevTurretYRot(AGSEntity vehicle) {
+-        return getFieldFloat(vehicle, "prevTurretYRot", "turretYRotO", "prevTurretYaw");
++        return PREV_YAW_FIELD.get(vehicle);
+     }
+ 
+     private float getTurretXRot(AGSEntity vehicle) {
+-        return getFieldFloat(vehicle, "turretXRot", "turretPitch");
++        return PITCH_FIELD.get(vehicle);
+     }
+ 
+     private float getPrevTurretXRot(AGSEntity vehicle) {
+-        return getFieldFloat(vehicle, "prevTurretXRot", "turretXRotO", "prevTurretPitch");
++        return PREV_PITCH_FIELD.get(vehicle);
+     }
+ 
+-    private float getFieldFloat(Object obj, String... fieldNames) {
+-        Class<?> clazz = obj.getClass();
+-        while (clazz != null && clazz != Object.class) {
+-            for (String name : fieldNames) {
+-                try {
+-                    java.lang.reflect.Field field = clazz.getDeclaredField(name);
+-                    field.setAccessible(true);
+-                    return field.getFloat(obj);
+-                } catch (NoSuchFieldException e) {
+-                    // РџРµСЂРµС…РѕРґРёРј Рє СЃР»РµРґСѓСЋС‰РµРјСѓ РёРјРµРЅРё РёР»Рё СЃСѓРїРµСЂРєР»Р°СЃСЃСѓ
+-                } catch (Exception e) {
+-                    return 0.0F;
+-                }
+-            }
+-            clazz = clazz.getSuperclass();
+-        }
+-        return 0.0F;
+-    }
++
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/empl/M2Model.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/empl/M2Model.java
+@@ -2,25 +2,35 @@
+ 
+ import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
+ import net.minecraft.resources.ResourceLocation;
++import tech.squadmc.squadmcor.client.performance.CachedFloatField;
+ import net.minecraft.util.Mth;
+ import tech.squadmc.squadmcor.entity.empl.M2Entity;
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class M2Model extends VehicleModel<M2Entity> {
++    private static final CachedFloatField YAW_FIELD = new CachedFloatField("turretYRot", "turretYaw");
++    private static final CachedFloatField PREV_YAW_FIELD = new CachedFloatField("prevTurretYRot", "turretYRotO", "prevTurretYaw");
++    private static final CachedFloatField PITCH_FIELD = new CachedFloatField("turretXRot", "turretPitch");
++    private static final CachedFloatField PREV_PITCH_FIELD = new CachedFloatField("prevTurretXRot", "turretXRotO", "prevTurretPitch");
++
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/turrets/empl_m2.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/turrets/m2.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(M2Entity animatable) {
+-        return new ResourceLocation("squadmc", "geo/turrets/empl_m2.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(M2Entity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/turrets/m2.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(M2Entity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json"); // Р‘Р°Р·РѕРІС‹Р№ idle
++        return CACHED_RESOURCE_2; // Р‘Р°Р·РѕРІС‹Р№ idle
+     }
+ 
+     @Override
+@@ -48,37 +58,20 @@
+ 
+     // Р РµС„Р»РµРєСЃРёРІРЅРѕРµ РїРѕР»СѓС‡РµРЅРёРµ Р·РЅР°С‡РµРЅРёР№ РїРѕР»РµР№ Р±РµР· РїСЂСЏРјС‹С… РІС‹Р·РѕРІРѕРІ РјРµС‚РѕРґРѕРІ
+     private float getTurretYRot(M2Entity vehicle) {
+-        return getFieldFloat(vehicle, "turretYRot", "turretYaw");
++        return YAW_FIELD.get(vehicle);
+     }
+ 
+     private float getPrevTurretYRot(M2Entity vehicle) {
+-        return getFieldFloat(vehicle, "prevTurretYRot", "turretYRotO", "prevTurretYaw");
++        return PREV_YAW_FIELD.get(vehicle);
+     }
+ 
+     private float getTurretXRot(M2Entity vehicle) {
+-        return getFieldFloat(vehicle, "turretXRot", "turretPitch");
++        return PITCH_FIELD.get(vehicle);
+     }
+ 
+     private float getPrevTurretXRot(M2Entity vehicle) {
+-        return getFieldFloat(vehicle, "prevTurretXRot", "turretXRotO", "prevTurretPitch");
++        return PREV_PITCH_FIELD.get(vehicle);
+     }
+ 
+-    private float getFieldFloat(Object obj, String... fieldNames) {
+-        Class<?> clazz = obj.getClass();
+-        while (clazz != null && clazz != Object.class) {
+-            for (String name : fieldNames) {
+-                try {
+-                    java.lang.reflect.Field field = clazz.getDeclaredField(name);
+-                    field.setAccessible(true);
+-                    return field.getFloat(obj);
+-                } catch (NoSuchFieldException e) {
+-                    // РџРµСЂРµС…РѕРґРёРј Рє СЃР»РµРґСѓСЋС‰РµРјСѓ РёРјРµРЅРё РёР»Рё СЃСѓРїРµСЂРєР»Р°СЃСЃСѓ
+-                } catch (Exception e) {
+-                    return 0.0F;
+-                }
+-            }
+-            clazz = clazz.getSuperclass();
+-        }
+-        return 0.0F;
+-    }
++
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/empl/TowModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/empl/TowModel.java
+@@ -2,25 +2,35 @@
+ 
+ import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
+ import net.minecraft.resources.ResourceLocation;
++import tech.squadmc.squadmcor.client.performance.CachedFloatField;
+ import net.minecraft.util.Mth;
+ import tech.squadmc.squadmcor.entity.empl.TowEntity;
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class TowModel extends VehicleModel<TowEntity> {
++    private static final CachedFloatField YAW_FIELD = new CachedFloatField("turretYRot", "turretYaw");
++    private static final CachedFloatField PREV_YAW_FIELD = new CachedFloatField("prevTurretYRot", "turretYRotO", "prevTurretYaw");
++    private static final CachedFloatField PITCH_FIELD = new CachedFloatField("turretXRot", "turretPitch");
++    private static final CachedFloatField PREV_PITCH_FIELD = new CachedFloatField("prevTurretXRot", "turretXRotO", "prevTurretPitch");
++
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/turrets/empl_tow.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/turrets/tow.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(TowEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/turrets/empl_tow.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(TowEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/turrets/tow.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(TowEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json"); // Р‘Р°Р·РѕРІС‹Р№ idle
++        return CACHED_RESOURCE_2; // Р‘Р°Р·РѕРІС‹Р№ idle
+     }
+ 
+     @Override
+@@ -48,37 +58,20 @@
+ 
+     // Р РµС„Р»РµРєСЃРёРІРЅРѕРµ РїРѕР»СѓС‡РµРЅРёРµ Р·РЅР°С‡РµРЅРёР№ РїРѕР»РµР№ Р±РµР· РїСЂСЏРјС‹С… РІС‹Р·РѕРІРѕРІ РјРµС‚РѕРґРѕРІ
+     private float getTurretYRot(TowEntity vehicle) {
+-        return getFieldFloat(vehicle, "turretYRot", "turretYaw");
++        return YAW_FIELD.get(vehicle);
+     }
+ 
+     private float getPrevTurretYRot(TowEntity vehicle) {
+-        return getFieldFloat(vehicle, "prevTurretYRot", "turretYRotO", "prevTurretYaw");
++        return PREV_YAW_FIELD.get(vehicle);
+     }
+ 
+     private float getTurretXRot(TowEntity vehicle) {
+-        return getFieldFloat(vehicle, "turretXRot", "turretPitch");
++        return PITCH_FIELD.get(vehicle);
+     }
+ 
+     private float getPrevTurretXRot(TowEntity vehicle) {
+-        return getFieldFloat(vehicle, "prevTurretXRot", "turretXRotO", "prevTurretPitch");
++        return PREV_PITCH_FIELD.get(vehicle);
+     }
+ 
+-    private float getFieldFloat(Object obj, String... fieldNames) {
+-        Class<?> clazz = obj.getClass();
+-        while (clazz != null && clazz != Object.class) {
+-            for (String name : fieldNames) {
+-                try {
+-                    java.lang.reflect.Field field = clazz.getDeclaredField(name);
+-                    field.setAccessible(true);
+-                    return field.getFloat(obj);
+-                } catch (NoSuchFieldException e) {
+-                    // РџРµСЂРµС…РѕРґРёРј Рє СЃР»РµРґСѓСЋС‰РµРјСѓ РёРјРµРЅРё РёР»Рё СЃСѓРїРµСЂРєР»Р°СЃСЃСѓ
+-                } catch (Exception e) {
+-                    return 0.0F;
+-                }
+-            }
+-            clazz = clazz.getSuperclass();
+-        }
+-        return 0.0F;
+-    }
++
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/empl/ZISModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/empl/ZISModel.java
+@@ -2,25 +2,35 @@
+ 
+ import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
+ import net.minecraft.resources.ResourceLocation;
++import tech.squadmc.squadmcor.client.performance.CachedFloatField;
+ import net.minecraft.util.Mth;
+ import tech.squadmc.squadmcor.entity.empl.ZISEntity;
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class ZISModel extends VehicleModel<ZISEntity> {
++    private static final CachedFloatField YAW_FIELD = new CachedFloatField("turretYRot", "turretYaw");
++    private static final CachedFloatField PREV_YAW_FIELD = new CachedFloatField("prevTurretYRot", "turretYRotO", "prevTurretYaw");
++    private static final CachedFloatField PITCH_FIELD = new CachedFloatField("turretXRot", "turretPitch");
++    private static final CachedFloatField PREV_PITCH_FIELD = new CachedFloatField("prevTurretXRot", "turretXRotO", "prevTurretPitch");
++
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/turrets/empl_zis3.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/turrets/zis3.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(ZISEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/turrets/empl_zis3.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(ZISEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/turrets/zis3.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(ZISEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json"); // Р‘Р°Р·РѕРІС‹Р№ idle
++        return CACHED_RESOURCE_2; // Р‘Р°Р·РѕРІС‹Р№ idle
+     }
+ 
+     @Override
+@@ -48,37 +58,20 @@
+ 
+     // Р РµС„Р»РµРєСЃРёРІРЅРѕРµ РїРѕР»СѓС‡РµРЅРёРµ Р·РЅР°С‡РµРЅРёР№ РїРѕР»РµР№ Р±РµР· РїСЂСЏРјС‹С… РІС‹Р·РѕРІРѕРІ РјРµС‚РѕРґРѕРІ
+     private float getTurretYRot(ZISEntity vehicle) {
+-        return getFieldFloat(vehicle, "turretYRot", "turretYaw");
++        return YAW_FIELD.get(vehicle);
+     }
+ 
+     private float getPrevTurretYRot(ZISEntity vehicle) {
+-        return getFieldFloat(vehicle, "prevTurretYRot", "turretYRotO", "prevTurretYaw");
++        return PREV_YAW_FIELD.get(vehicle);
+     }
+ 
+     private float getTurretXRot(ZISEntity vehicle) {
+-        return getFieldFloat(vehicle, "turretXRot", "turretPitch");
++        return PITCH_FIELD.get(vehicle);
+     }
+ 
+     private float getPrevTurretXRot(ZISEntity vehicle) {
+-        return getFieldFloat(vehicle, "prevTurretXRot", "turretXRotO", "prevTurretPitch");
++        return PREV_PITCH_FIELD.get(vehicle);
+     }
+ 
+-    private float getFieldFloat(Object obj, String... fieldNames) {
+-        Class<?> clazz = obj.getClass();
+-        while (clazz != null && clazz != Object.class) {
+-            for (String name : fieldNames) {
+-                try {
+-                    java.lang.reflect.Field field = clazz.getDeclaredField(name);
+-                    field.setAccessible(true);
+-                    return field.getFloat(obj);
+-                } catch (NoSuchFieldException e) {
+-                    // РџРµСЂРµС…РѕРґРёРј Рє СЃР»РµРґСѓСЋС‰РµРјСѓ РёРјРµРЅРё РёР»Рё СЃСѓРїРµСЂРєР»Р°СЃСЃСѓ
+-                } catch (Exception e) {
+-                    return 0.0F;
+-                }
+-            }
+-            clazz = clazz.getSuperclass();
+-        }
+-        return 0.0F;
+-    }
++
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/lav25Model.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/lav25Model.java
+@@ -7,20 +7,24 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class lav25Model extends VehicleModel<lav25Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/lav25.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/lav25.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     @Override
+     public ResourceLocation getModelResource(lav25Entity animatable) {
+-        return new ResourceLocation("squadmc", "geo/lav25.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(lav25Entity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/lav25.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(lav25Entity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/leopardModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/leopardModel.java
+@@ -8,6 +8,10 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class leopardModel extends VehicleModel<leopardEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/leopard_2a7v.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/leopard_2a7v_camo.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     private static final int TRACK_COUNT = 71;
+     private static final int MAX_IDX = 71;
+@@ -93,17 +97,17 @@
+ 
+     @Override
+     public ResourceLocation getModelResource(leopardEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/leopard_2a7v.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(leopardEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/leopard_2a7v_camo.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(leopardEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/m1a2Model.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/m1a2Model.java
+@@ -8,6 +8,10 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class m1a2Model extends VehicleModel<m1a2Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/m1a2_sep.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/m1a2.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     private static final float TRACK_Z_OFFSET = 0.0F;
+     private static final float TRACK_Y_OFFSET = 0.0F;
+@@ -23,17 +27,17 @@
+ 
+     @Override
+     public ResourceLocation getModelResource(m1a2Entity animatable) {
+-        return new ResourceLocation("squadmc", "geo/m1a2_sep.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(m1a2Entity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/m1a2.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(m1a2Entity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json"); // РР»Рё РєР°СЃС‚РѕРјРЅР°СЏ Р°РЅРёРјР°С†РёСЏ, РµСЃР»Рё РµСЃС‚СЊ
++        return CACHED_RESOURCE_2; // РР»Рё РєР°СЃС‚РѕРјРЅР°СЏ Р°РЅРёРјР°С†РёСЏ, РµСЃР»Рё РµСЃС‚СЊ
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/m1a2Model_sand.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/m1a2Model_sand.java
+@@ -8,6 +8,10 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class m1a2Model_sand extends VehicleModel<m1a2Entity_sand> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/m1a2_sep.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/m1a2_sand.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     private static final float TRACK_Z_OFFSET = 0.0F;
+     private static final float TRACK_Y_OFFSET = 0.0F;
+@@ -23,17 +27,17 @@
+ 
+     @Override
+     public ResourceLocation getModelResource(m1a2Entity_sand animatable) {
+-        return new ResourceLocation("squadmc", "geo/m1a2_sep.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(m1a2Entity_sand animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/m1a2_sand.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(m1a2Entity_sand animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json"); // РР»Рё РєР°СЃС‚РѕРјРЅР°СЏ Р°РЅРёРјР°С†РёСЏ, РµСЃР»Рё РµСЃС‚СЊ
++        return CACHED_RESOURCE_2; // РР»Рё РєР°СЃС‚РѕРјРЅР°СЏ Р°РЅРёРјР°С†РёСЏ, РµСЃР»Рё РµСЃС‚СЊ
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/mtlbModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/mtlbModel.java
+@@ -12,6 +12,10 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class mtlbModel extends VehicleModel<mtlbEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/mtlb.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/mtlb.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     private static final float TRACK_Z_OFFSET = 0.0F;
+     private static final float TRACK_Y_OFFSET = 0.0F;
+@@ -42,17 +46,17 @@
+ 
+     @Override
+     public ResourceLocation getModelResource(mtlbEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/mtlb.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(mtlbEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/mtlb.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(mtlbEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/sprutModel.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/sprutModel.java
+@@ -8,6 +8,10 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class sprutModel extends VehicleModel<sprutEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/sprut.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/sprut.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     private static final float TRACK_Z_OFFSET = 0.0F;
+     private static final float TRACK_Y_OFFSET = 0.0F;
+@@ -21,17 +25,17 @@
+ 
+     @Override
+     public ResourceLocation getModelResource(sprutEntity animatable) {
+-        return new ResourceLocation("squadmc", "geo/sprut.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(sprutEntity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/sprut.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(sprutEntity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/model/t80Model.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/model/t80Model.java
+@@ -12,6 +12,10 @@
+ import org.jetbrains.annotations.Nullable;
+ 
+ public class t80Model extends VehicleModel<t80Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/t80_u.geo.json");
++    private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/t80.png");
++    private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
++
+ 
+     private static final float TRACK_Z_OFFSET = 0.0F;
+     private static final float TRACK_Y_OFFSET = 0.0F;
+@@ -26,17 +30,17 @@
+ 
+     @Override
+     public ResourceLocation getModelResource(t80Entity animatable) {
+-        return new ResourceLocation("squadmc", "geo/t80_u.geo.json");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+     public ResourceLocation getTextureResource(t80Entity animatable) {
+-        return new ResourceLocation("squadmc", "textures/entity/t80.png");
++        return CACHED_RESOURCE_1;
+     }
+ 
+     @Override
+     public ResourceLocation getAnimationResource(t80Entity animatable) {
+-        return new ResourceLocation("squadmc", "animations/btr82.animation.json");
++        return CACHED_RESOURCE_2;
+     }
+ 
+     @Override
+--- /dev/null
++++ b/src/main/java/tech/squadmc/squadmcor/client/performance/CachedFloatField.java
+@@ -0,0 +1,46 @@
++package tech.squadmc.squadmcor.client.performance;
++
++import java.lang.reflect.Field;
++
++/** Resolve legacy field aliases once per entity class, including missing fields. */
++public final class CachedFloatField {
++    private final String[] names;
++    private record Lookup(Field field) {}
++    private final ClassValue<Lookup> fields = new ClassValue<>() {
++        @Override
++        protected Lookup computeValue(Class<?> type) {
++            for (Class<?> current = type; current != null && current != Object.class;
++                 current = current.getSuperclass()) {
++                for (String name : names) {
++                    try {
++                        Field field = current.getDeclaredField(name);
++                        Class<?> valueType = field.getType();
++                        if (valueType != float.class && valueType != int.class && valueType != short.class
++                                && valueType != byte.class && valueType != char.class) return new Lookup(null);
++                        if (!field.trySetAccessible()) return new Lookup(null);
++                        return new Lookup(field);
++                    } catch (NoSuchFieldException ignored) {
++                        // Same alias/parent priority as the original model code.
++                    } catch (RuntimeException ignored) {
++                        return new Lookup(null);
++                    }
++                }
++            }
++            return new Lookup(null);
++        }
++    };
++
++    public CachedFloatField(String... names) {
++        this.names = names.clone();
++    }
++
++    public float get(Object instance) {
++        Field field = fields.get(instance.getClass()).field();
++        if (field == null) return 0.0F;
++        try {
++            return field.getFloat(instance);
++        } catch (IllegalAccessException | IllegalArgumentException ignored) {
++            return 0.0F;
++        }
++    }
++}
+--- /dev/null
++++ b/src/main/java/tech/squadmc/squadmcor/client/performance/CachedVehicleMesh.java
+@@ -0,0 +1,96 @@
++package tech.squadmc.squadmcor.client.performance;
++
++import com.mojang.blaze3d.vertex.PoseStack;
++import com.mojang.blaze3d.vertex.VertexConsumer;
++import org.joml.Matrix3f;
++import org.joml.Matrix4f;
++import org.joml.Vector3f;
++import org.joml.Vector4f;
++import software.bernie.geckolib.cache.object.GeoCube;
++import software.bernie.geckolib.cache.object.GeoQuad;
++import software.bernie.geckolib.cache.object.GeoVertex;
++import software.bernie.geckolib.util.RenderUtils;
++
++import java.util.List;
++
++/** Static cube geometry in bone space. Bone animation is still applied every frame. */
++public final class CachedVehicleMesh {
++    private final float[] data;
++    private final int[] vertexCounts;
++    private final byte[] flatCubeMasks;
++    private final Vector3f position = new Vector3f();
++    private final Vector3f normal = new Vector3f();
++
++    public CachedVehicleMesh(List<GeoCube> cubes) {
++        int faces = 0;
++        int values = 0;
++        for (GeoCube cube : cubes) {
++            for (GeoQuad quad : cube.quads()) {
++                if (quad == null) continue;
++                faces++;
++                values += 3 + 5 * quad.vertices().length;
++            }
++        }
++        data = new float[values];
++        vertexCounts = new int[faces];
++        flatCubeMasks = new byte[faces];
++        PoseStack local = new PoseStack();
++        Vector4f point = new Vector4f();
++        int offset = 0;
++        int face = 0;
++        for (GeoCube cube : cubes) {
++            local.pushPose();
++            RenderUtils.translateToPivotPoint(local, cube);
++            RenderUtils.rotateMatrixAroundCube(local, cube);
++            RenderUtils.translateAwayFromPivotPoint(local, cube);
++            Matrix4f transform = local.last().pose();
++            Matrix3f normals = local.last().normal();
++            int mask = 0;
++            if (cube.size().y == 0 || cube.size().z == 0) mask |= 1;
++            if (cube.size().x == 0 || cube.size().z == 0) mask |= 2;
++            if (cube.size().x == 0 || cube.size().y == 0) mask |= 4;
++            for (GeoQuad quad : cube.quads()) {
++                if (quad == null) continue;
++                vertexCounts[face] = quad.vertices().length;
++                flatCubeMasks[face++] = (byte) mask;
++                normals.transform(normal.set(quad.normal()));
++                data[offset++] = normal.x;
++                data[offset++] = normal.y;
++                data[offset++] = normal.z;
++                for (GeoVertex vertex : quad.vertices()) {
++                    Vector3f source = vertex.position();
++                    transform.transform(point.set(source.x, source.y, source.z, 1));
++                    data[offset++] = point.x;
++                    data[offset++] = point.y;
++                    data[offset++] = point.z;
++                    data[offset++] = vertex.texU();
++                    data[offset++] = vertex.texV();
++                }
++            }
++            local.popPose();
++        }
++    }
++
++    /** Called on the render thread; scratch vectors never escape this method. */
++    public void render(PoseStack poseStack, VertexConsumer buffer, int light, int overlay,
++                       float red, float green, float blue, float alpha) {
++        Matrix4f transform = poseStack.last().pose();
++        Matrix3f normals = poseStack.last().normal();
++        int offset = 0;
++        for (int face = 0; face < vertexCounts.length; face++) {
++            normals.transform(data[offset], data[offset + 1], data[offset + 2], normal);
++            offset += 3;
++            int mask = flatCubeMasks[face];
++            // GeckoLib fixes flat-cube normals AFTER the full world transform.
++            if ((mask & 1) != 0 && normal.x < 0) normal.x = -normal.x;
++            if ((mask & 2) != 0 && normal.y < 0) normal.y = -normal.y;
++            if ((mask & 4) != 0 && normal.z < 0) normal.z = -normal.z;
++            for (int vertex = 0; vertex < vertexCounts[face]; vertex++) {
++                transform.transformPosition(data[offset], data[offset + 1], data[offset + 2], position);
++                buffer.vertex(position.x, position.y, position.z, red, green, blue, alpha,
++                        data[offset + 3], data[offset + 4], overlay, light, normal.x, normal.y, normal.z);
++                offset += 5;
++            }
++        }
++    }
++}
+--- /dev/null
++++ b/src/main/java/tech/squadmc/squadmcor/client/performance/OptimizedVehicleRenderer.java
+@@ -0,0 +1,42 @@
++package tech.squadmc.squadmcor.client.performance;
++
++import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
++import com.mojang.blaze3d.vertex.PoseStack;
++import com.mojang.blaze3d.vertex.VertexConsumer;
++import net.minecraft.client.renderer.MultiBufferSource;
++import net.minecraft.client.renderer.entity.EntityRendererProvider;
++import software.bernie.geckolib.cache.object.BakedGeoModel;
++import software.bernie.geckolib.cache.object.GeoBone;
++import software.bernie.geckolib.core.animatable.GeoAnimatable;
++import software.bernie.geckolib.model.GeoModel;
++
++public abstract class OptimizedVehicleRenderer<T extends VehicleEntity & GeoAnimatable> extends VehicleRenderer<T> {
++    // JVM switch for comparison/fallback, without replacing source files.
++    private static final boolean CACHE_ENABLED = !Boolean.getBoolean("squadmc.disableVehicleMeshCache");
++    private final VehicleMeshCache meshes = new VehicleMeshCache();
++
++    protected OptimizedVehicleRenderer(EntityRendererProvider.Context context, GeoModel<T> model) {
++        super(context, model);
++    }
++
++    @Override
++    public void preRender(PoseStack poseStack, T vehicle, BakedGeoModel model, MultiBufferSource buffers,
++                          VertexConsumer buffer, boolean isReRender, float partialTick, int light,
++                          int overlay, float red, float green, float blue, float alpha) {
++        meshes.useModel(model);
++        super.preRender(poseStack, vehicle, model, buffers, buffer, isReRender, partialTick,
++                light, overlay, red, green, blue, alpha);
++    }
++
++    @Override
++    public void renderCubesOfBone(PoseStack poseStack, GeoBone bone, VertexConsumer buffer,
++                                int light, int overlay, float red, float green, float blue, float alpha) {
++        if (!CACHE_ENABLED) {
++            super.renderCubesOfBone(poseStack, bone, buffer, light, overlay, red, green, blue, alpha);
++            return;
++        }
++        if (bone.isHidden() || bone.getCubes().isEmpty()) return;
++        meshes.get(bone).render(poseStack, buffer, light, overlay, red, green, blue, alpha);
++    }
++}
+--- /dev/null
++++ b/src/main/java/tech/squadmc/squadmcor/client/performance/VehicleMeshCache.java
+@@ -0,0 +1,28 @@
++package tech.squadmc.squadmcor.client.performance;
++
++import software.bernie.geckolib.cache.object.BakedGeoModel;
++import software.bernie.geckolib.cache.object.GeoBone;
++
++import java.util.IdentityHashMap;
++
++/** One model per renderer; resource reloads/LOD changes release the previous cache. */
++public final class VehicleMeshCache {
++    private BakedGeoModel model;
++    private final IdentityHashMap<GeoBone, CachedVehicleMesh> bones = new IdentityHashMap<>();
++
++    public void useModel(BakedGeoModel current) {
++        if (model != current) {
++            bones.clear();
++            model = current;
++        }
++    }
++
++    public CachedVehicleMesh get(GeoBone bone) {
++        CachedVehicleMesh mesh = bones.get(bone);
++        if (mesh == null) {
++            mesh = new CachedVehicleMesh(bone.getCubes());
++            bones.put(bone, mesh);
++        }
++        return mesh;
++    }
++}
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/Bmp1Renderer.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/Bmp1Renderer.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.Bmp1Model;
+ import tech.squadmc.squadmcor.entity.Bmp1Entity;
+ 
+-public class Bmp1Renderer extends VehicleRenderer<Bmp1Entity> {
++public class Bmp1Renderer extends OptimizedVehicleRenderer<Bmp1Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/bmp1.png");
++
+     public Bmp1Renderer(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new Bmp1Model());
+     }
+@@ -20,6 +22,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(Bmp1Entity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/bmp1.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/FMTVRednderGreen.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/FMTVRednderGreen.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.FMTVModelGreen;
+ import tech.squadmc.squadmcor.entity.FMTVEntityGreen;
+ 
+-public class FMTVRednderGreen extends VehicleRenderer<FMTVEntityGreen> {
++public class FMTVRednderGreen extends OptimizedVehicleRenderer<FMTVEntityGreen> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/fmtv_green.png");
++
+ 
+     public FMTVRednderGreen(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new FMTVModelGreen());
+@@ -21,6 +23,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(FMTVEntityGreen entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/fmtv_green.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/FMTVRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/FMTVRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.FMTVModel;
+ import tech.squadmc.squadmcor.entity.FMTVEntity;
+ 
+-public class FMTVRender extends VehicleRenderer<FMTVEntity> {
++public class FMTVRender extends OptimizedVehicleRenderer<FMTVEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/fmtv_iraq.png");
++
+ 
+     public FMTVRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new FMTVModel());
+@@ -21,6 +23,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(FMTVEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/fmtv_iraq.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/FenekRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/FenekRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -9,7 +9,9 @@
+ import tech.squadmc.squadmcor.entity.FenekEntity;
+ import tech.squadmc.squadmcor.squadmc;
+ 
+-public class FenekRender extends VehicleRenderer<FenekEntity> {
++public class FenekRender extends OptimizedVehicleRenderer<FenekEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation(squadmc.MODID, "textures/entity/fennek.png");
++
+     public FenekRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new FenekModel());
+     }
+@@ -21,6 +23,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(FenekEntity entity) {
+-        return new ResourceLocation(squadmc.MODID, "textures/entity/fennek.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/Gaz_tigrMGRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/Gaz_tigrMGRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -10,7 +10,9 @@
+ 
+ 
+ 
+-public class Gaz_tigrMGRender extends VehicleRenderer<Gaz_tigrMGEntity> {
++public class Gaz_tigrMGRender extends OptimizedVehicleRenderer<Gaz_tigrMGEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/gaz_tigrs/gaz_tigr.png");
++
+     public Gaz_tigrMGRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new Gaz_tigrMGModel());
+     }
+@@ -22,7 +24,7 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(Gaz_tigrMGEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/gaz_tigrs/gaz_tigr.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/Gaz_tigrRWSRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/Gaz_tigrRWSRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.Gaz_tigrRWSModel;
+ import tech.squadmc.squadmcor.entity.Gaz_tigrRWSEntity;
+ 
+-public class Gaz_tigrRWSRender extends VehicleRenderer<Gaz_tigrRWSEntity> {
++public class Gaz_tigrRWSRender extends OptimizedVehicleRenderer<Gaz_tigrRWSEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/gaz_tigrs/gaz_tigr.png");
++
+     public Gaz_tigrRWSRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new Gaz_tigrRWSModel());
+     }
+@@ -20,6 +22,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(Gaz_tigrRWSEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/gaz_tigrs/gaz_tigr.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/Gaz_tigrRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/Gaz_tigrRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -10,7 +10,9 @@
+ 
+ 
+ 
+-public class Gaz_tigrRender extends VehicleRenderer<Gaz_tigrEntity> {
++public class Gaz_tigrRender extends OptimizedVehicleRenderer<Gaz_tigrEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/gaz_tigrs/gaz_tigr.png");
++
+     public Gaz_tigrRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new Gaz_tigrModel());
+     }
+@@ -22,7 +24,7 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(Gaz_tigrEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/gaz_tigrs/gaz_tigr.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/HumveeM2Render.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/HumveeM2Render.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -10,7 +10,9 @@
+ import tech.squadmc.squadmcor.entity.HumveeTowEntity;
+ 
+ 
+-public class HumveeM2Render extends VehicleRenderer<HumveeM2Entity> {
++public class HumveeM2Render extends OptimizedVehicleRenderer<HumveeM2Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/humvees/humvee_m2_green.png");
++
+     public HumveeM2Render(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new HumveeM2Model());
+     }
+@@ -22,7 +24,7 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(HumveeM2Entity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/humvees/humvee_m2_green.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/HumveeRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/HumveeRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -11,7 +11,9 @@
+ import tech.squadmc.squadmcor.entity.HumveeTowEntity;
+ 
+ 
+-public class HumveeRender extends VehicleRenderer<HumveeEntity> {
++public class HumveeRender extends OptimizedVehicleRenderer<HumveeEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/humvees/humvee_m2_green.png");
++
+     public HumveeRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new HumveeModel());
+     }
+@@ -23,7 +25,7 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(HumveeEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/humvees/humvee_m2_green.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/HumveeTowRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/HumveeTowRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.HumveeTowModel;
+ import tech.squadmc.squadmcor.entity.HumveeTowEntity;
+ 
+-public class HumveeTowRender extends VehicleRenderer<HumveeTowEntity> {
++public class HumveeTowRender extends OptimizedVehicleRenderer<HumveeTowEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/humvees/humvee_tow_green.png");
++
+     public HumveeTowRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new HumveeTowModel());
+     }
+@@ -20,7 +22,7 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(HumveeTowEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/humvees/humvee_tow_green.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/MotorboatRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/MotorboatRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import com.mojang.blaze3d.vertex.PoseStack;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+@@ -9,7 +9,9 @@
+ import tech.squadmc.squadmcor.client.model.MotorboatModel;
+ import tech.squadmc.squadmcor.entity.MotorboatEntity;
+ 
+-public class MotorboatRender extends VehicleRenderer<MotorboatEntity> {
++public class MotorboatRender extends OptimizedVehicleRenderer<MotorboatEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/boat.png");
++
+ 
+     public MotorboatRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new MotorboatModel());
+@@ -22,7 +24,7 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(MotorboatEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/boat.png");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/MotorcycleRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/MotorcycleRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.MotorcycleModel;
+ import tech.squadmc.squadmcor.entity.MotorcycleEntity;
+ 
+-public class MotorcycleRender extends VehicleRenderer<MotorcycleEntity> {
++public class MotorcycleRender extends OptimizedVehicleRenderer<MotorcycleEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/motuo.png");
++
+ 
+     public MotorcycleRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new MotorcycleModel());
+@@ -21,7 +23,7 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(MotorcycleEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/motuo.png");
++        return CACHED_RESOURCE_0;
+     }
+ 
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/PumaRenderer.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/PumaRenderer.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.PumaModel;
+ import tech.squadmc.squadmcor.entity.PumaEntity;
+ 
+-public class PumaRenderer extends VehicleRenderer<PumaEntity> {
++public class PumaRenderer extends OptimizedVehicleRenderer<PumaEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/puma.png");
++
+     public PumaRenderer(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new PumaModel());
+     }
+@@ -20,6 +22,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(PumaEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/puma.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/StrykerM2Render.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/StrykerM2Render.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.StrykerM2Model;
+ import tech.squadmc.squadmcor.entity.StrykerM2Entity;
+ 
+-public class StrykerM2Render extends VehicleRenderer<StrykerM2Entity> {
++public class StrykerM2Render extends OptimizedVehicleRenderer<StrykerM2Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/stryker.png");
++
+ 
+     public StrykerM2Render(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new StrykerM2Model());
+@@ -22,6 +24,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(StrykerM2Entity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/stryker.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/StrykerMortarRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/StrykerMortarRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.StrykerMortatModel;
+ import tech.squadmc.squadmcor.entity.StrykerMortalEntity;
+ 
+-public class StrykerMortarRender extends VehicleRenderer<StrykerMortalEntity> {
++public class StrykerMortarRender extends OptimizedVehicleRenderer<StrykerMortalEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/stryker.png");
++
+ 
+     public StrykerMortarRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new StrykerMortatModel());
+@@ -22,6 +24,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(StrykerMortalEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/stryker.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/T64Renderer.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/T64Renderer.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -9,7 +9,9 @@
+ import tech.squadmc.squadmcor.entity.T64Entity;
+ import tech.squadmc.squadmcor.squadmc;
+ 
+-public class T64Renderer extends VehicleRenderer<T64Entity> {
++public class T64Renderer extends OptimizedVehicleRenderer<T64Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation(squadmc.MODID, "textures/entity/t64.png");
++
+     public T64Renderer(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new T64Model());
+     }
+@@ -21,6 +23,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(T64Entity entity) {
+-        return new ResourceLocation(squadmc.MODID, "textures/entity/t64.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/T72AVRenderer.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/T72AVRenderer.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -9,7 +9,9 @@
+ import tech.squadmc.squadmcor.entity.T72AVEntity;
+ 
+ 
+-public class T72AVRenderer extends VehicleRenderer<T72AVEntity> {
++public class T72AVRenderer extends OptimizedVehicleRenderer<T72AVEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/t72av.png");
++
+     public T72AVRenderer(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new T72AVModel());
+     }
+@@ -21,6 +23,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(T72AVEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/t72av.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/ToyotaRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/ToyotaRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.ToyotaModel;
+ import tech.squadmc.squadmcor.entity.ToyotaEntity;
+ 
+-public class ToyotaRender extends VehicleRenderer<ToyotaEntity> {
++public class ToyotaRender extends OptimizedVehicleRenderer<ToyotaEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/toyotas/toyota_hilux.png");
++
+     public ToyotaRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new ToyotaModel());
+     }
+@@ -20,6 +22,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(ToyotaEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/toyotas/toyota_hilux.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/ToyotaZU23Render.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/ToyotaZU23Render.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import com.mojang.blaze3d.vertex.PoseStack;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+@@ -9,7 +9,9 @@
+ import tech.squadmc.squadmcor.client.model.ToyotaZU23Model;
+ import tech.squadmc.squadmcor.entity.ToyotaZU23Entity;
+ 
+-public class ToyotaZU23Render extends VehicleRenderer<ToyotaZU23Entity> {
++public class ToyotaZU23Render extends OptimizedVehicleRenderer<ToyotaZU23Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/toyotas/toyota_hilux.png");
++
+     public ToyotaZU23Render(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new ToyotaZU23Model());
+     }
+@@ -21,7 +23,7 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(ToyotaZU23Entity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/toyotas/toyota_hilux.png");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/UAZRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/UAZRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.UAZModel;
+ import tech.squadmc.squadmcor.entity.UAZEntity;
+ 
+-public class UAZRender extends VehicleRenderer<UAZEntity> {
++public class UAZRender extends OptimizedVehicleRenderer<UAZEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/uaz/uaz_ruined.png");
++
+     public UAZRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new UAZModel());
+     }
+@@ -20,6 +22,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(UAZEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/uaz/uaz_ruined.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/UazDshkaRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/UazDshkaRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.UazDshkaModel;
+ import tech.squadmc.squadmcor.entity.UazDshkaEntity;
+ 
+-public class UazDshkaRender extends VehicleRenderer<UazDshkaEntity> {
++public class UazDshkaRender extends OptimizedVehicleRenderer<UazDshkaEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/uaz/uaz_dshka.png");
++
+     public UazDshkaRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new UazDshkaModel());
+     }
+@@ -20,6 +22,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(UazDshkaEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/uaz/uaz_dshka.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/UralGradRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/UralGradRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.UralGradModel;
+ import tech.squadmc.squadmcor.entity.UralGradEntity;
+ 
+-public class UralGradRender extends VehicleRenderer<UralGradEntity> {
++public class UralGradRender extends OptimizedVehicleRenderer<UralGradEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/ural.png");
++
+ 
+     public UralGradRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new UralGradModel());
+@@ -22,6 +24,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(UralGradEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/ural.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/UralRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/UralRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.UralModel;
+ import tech.squadmc.squadmcor.entity.UralEntity;
+ 
+-public class UralRender extends VehicleRenderer<UralEntity> {
++public class UralRender extends OptimizedVehicleRenderer<UralEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/ural_green.png");
++
+ 
+     public UralRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new UralModel());
+@@ -21,6 +23,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(UralEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/ural_green.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/bmd4Renderer.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/bmd4Renderer.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.bmd4Model;
+ import tech.squadmc.squadmcor.entity.bmd4Entity;
+ 
+-public class bmd4Renderer extends VehicleRenderer<bmd4Entity> {
++public class bmd4Renderer extends OptimizedVehicleRenderer<bmd4Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/bmd4.png");
++
+     public bmd4Renderer(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new bmd4Model());
+     }
+@@ -20,6 +22,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(bmd4Entity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/bmd4.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/bmp2Renderer.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/bmp2Renderer.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.bmp2Model;
+ import tech.squadmc.squadmcor.entity.bmp2Entity;
+ 
+-public class bmp2Renderer extends VehicleRenderer<bmp2Entity> {
++public class bmp2Renderer extends OptimizedVehicleRenderer<bmp2Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/bmp2.png");
++
+     public bmp2Renderer(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new bmp2Model());
+     }
+@@ -20,7 +22,7 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(bmp2Entity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/bmp2.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/bradleyRenderer.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/bradleyRenderer.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.bradleyModel;
+ import tech.squadmc.squadmcor.entity.bradleyEntity;
+ 
+-public class bradleyRenderer extends VehicleRenderer<bradleyEntity> {
++public class bradleyRenderer extends OptimizedVehicleRenderer<bradleyEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/bradley.png");
++
+     public bradleyRenderer(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new bradleyModel());
+     }
+@@ -20,6 +22,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(bradleyEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/bradley.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/bradley_sandRenderer.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/bradley_sandRenderer.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.bradleyModel_sand;
+ import tech.squadmc.squadmcor.entity.bradley_sandEntity;
+ 
+-public class bradley_sandRenderer extends VehicleRenderer<bradley_sandEntity> {
++public class bradley_sandRenderer extends OptimizedVehicleRenderer<bradley_sandEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/m3a3_texture_sand.png");
++
+     public bradley_sandRenderer(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new bradleyModel_sand());
+     }
+@@ -20,6 +22,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(bradley_sandEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/m3a3_texture_sand.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/brdmRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/brdmRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.brdmModel;
+ import tech.squadmc.squadmcor.entity.brdmEntity;
+ 
+-public class brdmRender extends VehicleRenderer<brdmEntity> {
++public class brdmRender extends OptimizedVehicleRenderer<brdmEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/brdm2.png");
++
+     public brdmRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new brdmModel());
+     }
+@@ -20,6 +22,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(brdmEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/brdm2.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/btr80Renderer.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/btr80Renderer.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.btr80Model;
+ import tech.squadmc.squadmcor.entity.btr80Entity;
+ 
+-public class btr80Renderer extends VehicleRenderer<btr80Entity> {
++public class btr80Renderer extends OptimizedVehicleRenderer<btr80Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/btr_82.png");
++
+     public btr80Renderer(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new btr80Model());
+     }
+@@ -20,6 +22,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(btr80Entity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/btr_82.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/btr82Renderer.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/btr82Renderer.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.btr82Model; // РСЃРїСЂР°РІР»РµРЅ РїСѓС‚СЊ РёРјРїРѕСЂС‚Р°
+ import tech.squadmc.squadmcor.entity.btr82Entity;
+ 
+-public class btr82Renderer extends VehicleRenderer<btr82Entity> {
++public class btr82Renderer extends OptimizedVehicleRenderer<btr82Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/btr_82.png");
++
+     public btr82Renderer(EntityRendererProvider.Context renderManager) { // РРјСЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ btr82Renderer
+         super(renderManager, new btr82Model());
+     }
+@@ -20,7 +22,7 @@
+     @Override
+     public ResourceLocation getTextureLocation(btr82Entity entity) {
+ 
+-        return new ResourceLocation("squadmc", "textures/entity/btr_82.png");
++        return CACHED_RESOURCE_0;
+     }
+ 
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/empl/AGSRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/empl/AGSRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity.empl;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -10,7 +10,9 @@
+ 
+ 
+ 
+-public class AGSRender extends VehicleRenderer<AGSEntity> {
++public class AGSRender extends OptimizedVehicleRenderer<AGSEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/turrets/ags17.png");
++
+     public AGSRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new AGSModel());
+     }
+@@ -22,7 +24,7 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(AGSEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/turrets/ags17.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/empl/TowRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/empl/TowRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity.empl;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -10,7 +10,9 @@
+ 
+ 
+ 
+-public class TowRender extends VehicleRenderer<TowEntity> {
++public class TowRender extends OptimizedVehicleRenderer<TowEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/turrets/tow.png");
++
+     public TowRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new TowModel());
+     }
+@@ -22,7 +24,7 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(TowEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/turrets/tow.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/empl/ZISRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/empl/ZISRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity.empl;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -10,7 +10,9 @@
+ 
+ 
+ 
+-public class ZISRender extends VehicleRenderer<ZISEntity> {
++public class ZISRender extends OptimizedVehicleRenderer<ZISEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/turrets/zis3.png");
++
+     public ZISRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new ZISModel());
+     }
+@@ -22,7 +24,7 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(ZISEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/turrets/zis3.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/empl/m2Render.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/empl/m2Render.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity.empl;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -10,7 +10,9 @@
+ 
+ 
+ 
+-public class m2Render extends VehicleRenderer<M2Entity> {
++public class m2Render extends OptimizedVehicleRenderer<M2Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/turrets/m2.png");
++
+     public m2Render(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new M2Model());
+     }
+@@ -22,7 +24,7 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(M2Entity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/turrets/m2.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+ 
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/lav25Renderer.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/lav25Renderer.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.lav25Model;
+ import tech.squadmc.squadmcor.entity.lav25Entity;
+ 
+-public class lav25Renderer extends VehicleRenderer<lav25Entity> {
++public class lav25Renderer extends OptimizedVehicleRenderer<lav25Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/lav25.png");
++
+     public lav25Renderer(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new lav25Model());
+     }
+@@ -20,6 +22,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(lav25Entity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/lav25.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/leopardRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/leopardRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.leopardModel;
+ import tech.squadmc.squadmcor.entity.leopardEntity;
+ 
+-public class leopardRender extends VehicleRenderer<leopardEntity> {
++public class leopardRender extends OptimizedVehicleRenderer<leopardEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/leopard_2a7v_camo.png");
++
+     public leopardRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new leopardModel());
+     }
+@@ -20,6 +22,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(leopardEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/leopard_2a7v_camo.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/m1a2Render.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/m1a2Render.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.m1a2Model;
+ import tech.squadmc.squadmcor.entity.m1a2Entity;
+ 
+-public class m1a2Render extends VehicleRenderer<m1a2Entity> {
++public class m1a2Render extends OptimizedVehicleRenderer<m1a2Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/m1a2.png");
++
+     public m1a2Render(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new m1a2Model());
+     }
+@@ -20,6 +22,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(m1a2Entity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/m1a2.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/m1a2Render_sand.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/m1a2Render_sand.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.m1a2Model_sand;
+ import tech.squadmc.squadmcor.entity.m1a2Entity_sand;
+ 
+-public class m1a2Render_sand extends VehicleRenderer<m1a2Entity_sand> {
++public class m1a2Render_sand extends OptimizedVehicleRenderer<m1a2Entity_sand> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/m1a2_sand.png");
++
+     public m1a2Render_sand(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new m1a2Model_sand());
+     }
+@@ -20,6 +22,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(m1a2Entity_sand entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/m1a2_sand.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/mtlbRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/mtlbRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import com.mojang.blaze3d.vertex.PoseStack;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+@@ -9,7 +9,9 @@
+ import tech.squadmc.squadmcor.client.model.mtlbModel;
+ import tech.squadmc.squadmcor.entity.mtlbEntity;
+ 
+-public class mtlbRender extends VehicleRenderer<mtlbEntity> {
++public class mtlbRender extends OptimizedVehicleRenderer<mtlbEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/mtlb.png");
++
+     public mtlbRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new mtlbModel());
+     }
+@@ -22,7 +24,7 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(mtlbEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/mtlb.png");
++        return CACHED_RESOURCE_0;
+     }
+ 
+     @Override
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/sprutRender.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/sprutRender.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -8,7 +8,9 @@
+ import tech.squadmc.squadmcor.client.model.sprutModel;
+ import tech.squadmc.squadmcor.entity.sprutEntity;
+ 
+-public class sprutRender extends VehicleRenderer<sprutEntity> {
++public class sprutRender extends OptimizedVehicleRenderer<sprutEntity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/sprut.png");
++
+     public sprutRender(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new sprutModel());
+     }
+@@ -20,6 +22,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(sprutEntity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/sprut.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
+--- a/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/t80Render.java
++++ b/src/main/java/tech/squadmc/squadmcor/client/renderer/entity/t80Render.java
+@@ -1,6 +1,6 @@
+ package tech.squadmc.squadmcor.client.renderer.entity;
+ 
+-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
++import tech.squadmc.squadmcor.client.performance.OptimizedVehicleRenderer;
+ import net.minecraft.client.renderer.MultiBufferSource;
+ import net.minecraft.client.renderer.RenderType;
+ import net.minecraft.client.renderer.entity.EntityRendererProvider;
+@@ -9,7 +9,9 @@
+ import tech.squadmc.squadmcor.entity.t80Entity;
+ 
+ 
+-public class t80Render extends VehicleRenderer<t80Entity> {
++public class t80Render extends OptimizedVehicleRenderer<t80Entity> {
++    private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "textures/entity/t80.png");
++
+     public t80Render(EntityRendererProvider.Context renderManager) {
+         super(renderManager, new t80Model());
+     }
+@@ -21,6 +23,6 @@
+ 
+     @Override
+     public ResourceLocation getTextureLocation(t80Entity entity) {
+-        return new ResourceLocation("squadmc", "textures/entity/t80.png");
++        return CACHED_RESOURCE_0;
+     }
+ }
