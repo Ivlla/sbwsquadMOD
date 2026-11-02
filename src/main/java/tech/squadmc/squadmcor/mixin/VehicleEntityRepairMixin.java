@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-/** Без авторегена корпуса. С выбитой гусеницей или колесом машина не едет, но поворачивает. */
+/** Без авторегена корпуса. С выбитой гусеницей машина не едет, но поворачивает. Колёсная техника едет. */
 @Mixin(value = VehicleEntity.class, remap = false)
 public abstract class VehicleEntityRepairMixin {
 
@@ -26,11 +26,11 @@ public abstract class VehicleEntityRepairMixin {
         if (squadmc$running()) cir.setReturnValue(false);
     }
 
-    /** true, если ходовая выбита. */
+    /** true, если выбита гусеница. */
     private boolean squadmc$running() {
         VehicleEntity vehicle = (VehicleEntity) (Object) this;
         if (!vehicle.getLeftWheelDamaged() && !vehicle.getRightWheelDamaged()) return false;
         EngineType type = vehicle.computed().getEngineType();
-        return type == EngineType.TRACK || type == EngineType.WHEEL;
+        return type == EngineType.TRACK;
     }
 }

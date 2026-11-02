@@ -18,11 +18,17 @@ public abstract class HelicopterHudGunnerMixin {
     private static final ResourceLocation SQUADMC$CROSSHAIR =
             new ResourceLocation("superbwarfare", "textures/overlay/vehicle/crosshair/third_camera_2.png");
 
+    /** Экран прицела только там, где у стрелка есть оптика. Бортовые пулемёты стреляют без него. */
+    private static boolean squadmc$hasSensor(VehicleEntity vehicle) {
+        String id = net.minecraft.world.entity.EntityType.getKey(vehicle.getType()).getPath();
+        return id.equals("ah_64") || id.equals("mh60l") || id.equals("littlebird_heavy");
+    }
+
     @Inject(method = "render", at = @At("HEAD"), cancellable = true)
     private void squadmc$gunnerHud(VehicleEntity vehicle, Player player, ForgeGui gui, GuiGraphics graphics,
                                    float partialTick, int width, int height, CallbackInfo ci) {
         int seat = vehicle.getSeatIndex(player);
-        if (seat == 0 || (seat == vehicle.getTurretControllerIndex() && vehicle.hasTurret())) return;
+        if (seat == 0 || (seat == vehicle.getTurretControllerIndex() && vehicle.hasTurret() && squadmc$hasSensor(vehicle))) return;
         ci.cancel();
         if (vehicle.getGunData(seat) == null) return;
         RenderSystem.enableBlend();
