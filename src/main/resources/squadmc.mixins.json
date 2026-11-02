@@ -20,10 +20,13 @@
     "VehicleRendererTiltMixin",
     "HelicopterHudGunnerMixin",
     "VehicleHudEngineBarMixin",
-    "VehicleHudHoverShiftMixin"
+    "VehicleHudHoverShiftMixin",
+    "ThermalLightTextureMixin",
+    "ThermalEntityLightMixin"
   ],
   "server": [],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "refmap": "squadmc.refmap.json"
 }
