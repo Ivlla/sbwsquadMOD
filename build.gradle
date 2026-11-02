@@ -118,18 +118,11 @@ dependencies {
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.20.1:4.8.4')
     // SBW 0.8.9.2: положи jar в libs/ под именем superbwarfare-0.8.9.2.jar
     implementation fg.deobf("blank:superbwarfare:0.8.9.2")
-    implementation fg.deobf(files("libs/aas-beta-1.8.0.jar"))
+    // files(...) проходит мимо fg.deobf, поэтому AAS подключён по имени из папки libs
+    implementation fg.deobf("blank:aas-beta:1.8.0")
     // SBW 0.8.9 написан на Kotlin и требует эти моды
     implementation "thedarkcolour:kotlinforforge:4.11.0"
     runtimeOnly fg.deobf("com.github.mcmodderanchor:simplebedrockmodel:2.5.1-forge-mc1.20.1")
-
-    // AAS для запуска в среде разработки: положи jar в libs/ под именем aas-<версия>.jar.
-    // Из run/mods такой jar не запустится: без fg.deobf его mixin не находят методы Minecraft.
-    def aasJar = file('libs').listFiles()?.find { it.name ==~ /aas-.+\.jar/ }
-    if (aasJar != null) {
-        def aasVersion = aasJar.name.replaceAll(/^aas-|\.jar$/, '')
-        runtimeOnly fg.deobf("blank:aas:${aasVersion}")
-    }
 
 }
 
