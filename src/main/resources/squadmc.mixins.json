@@ -11,7 +11,8 @@
     "ProjectileEntityMixin",
     "VehicleEntityRepairMixin",
     "VehicleEffectUtilsMixin",
-    "RepairToolItemMixin"
+    "RepairToolItemMixin",
+    "VehicleEngineUtilsMixin"
   ],
   "client": [
     "VehicleModelDamageMixin",

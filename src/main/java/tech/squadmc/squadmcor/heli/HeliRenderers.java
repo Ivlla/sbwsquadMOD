@@ -37,6 +37,8 @@ import tech.squadmc.squadmcor.heli.client.renderer.ManHx60.ManHx60Renderer;
 import tech.squadmc.squadmcor.heli.client.renderer.Uaz.UAZ452Renderer;
 import tech.squadmc.squadmcor.heli.client.renderer.Rg33.RG33Renderer;
 import tech.squadmc.squadmcor.heli.client.renderer.M939.M939Renderer;
+import tech.squadmc.squadmcor.heli.client.renderer.Nh90.Nh90Renderer;
+import tech.squadmc.squadmcor.heli.client.renderer.Ah64.Ah64Renderer;
 
 @Mod.EventBusSubscriber(modid = squadmc.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public final class HeliRenderers {
@@ -44,6 +46,8 @@ public final class HeliRenderers {
 
     @SubscribeEvent
     public static void register(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(HeliEntities.NH_90.get(), Nh90Renderer::new);
+        event.registerEntityRenderer(HeliEntities.AH_64.get(), Ah64Renderer::new);
         event.registerEntityRenderer(HeliEntities.UAZ_452.get(), UAZ452Renderer::new);
         event.registerEntityRenderer(HeliEntities.KAMAZ.get(), KamazRenderer::new);
         event.registerEntityRenderer(HeliEntities.CH47.get(), Ch47Renderer::new);

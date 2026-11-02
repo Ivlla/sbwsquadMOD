@@ -7,68 +7,103 @@ uniform float Aspect;
 in vec2 uv;
 out vec4 fragColor;
 
-vec2 hash2(vec2 p) {
-    p = vec2(dot(p, vec2(127.1, 311.7)), dot(p, vec2(269.5, 183.3)));
-    return fract(sin(p + Seed) * 43758.5453);
+float hash(vec2 p) {
+    return fract(sin(dot(p, vec2(127.1, 311.7)) + Seed) * 43758.5453);
 }
 
-// Расстояние до ближайшей границы осколка и случайное значение осколка.
-vec2 shards(vec2 p) {
+vec2 hash2(vec2 p) {
+    return vec2(hash(p), hash(p + 19.19));
+}
+
+float noise(vec2 p) {
+    vec2 i = floor(p);
+    vec2 f = fract(p);
+    f = f * f * (3.0 - 2.0 * f);
+    return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), f.x),
+               mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), f.x), f.y);
+}
+
+float fbm(vec2 p) {
+    return 0.55 * noise(p) + 0.3 * noise(p * 2.1 + 5.2) + 0.15 * noise(p * 4.3 + 9.1);
+}
+
+float segment(vec2 p, vec2 a, vec2 b, out float along) {
+    vec2 ab = b - a;
+    along = clamp(dot(p - a, ab) / dot(ab, ab), 0.0, 1.0);
+    return length(p - a - ab * along);
+}
+
+// Трещина: ломаная из двух отрезков, толщина рваная и сходит на нет к концу.
+float crack(vec2 p, vec2 a, vec2 mid, vec2 b, float width) {
+    float t1, t2;
+    float d1 = segment(p, a, mid, t1);
+    float d2 = segment(p, mid, b, t2);
+    float t = d1 < d2 ? t1 * 0.5 : 0.5 + t2 * 0.5;
+    float d = min(d1, d2);
+    float rough = 0.45 + 1.1 * fbm(p * 26.0);
+    float w = width * rough * (1.0 - t * 0.75);
+    return 1.0 - smoothstep(w * 0.45, w * 1.5, d);
+}
+
+float cellEdge(vec2 p) {
     vec2 cell = floor(p);
     vec2 local = fract(p);
-    vec2 nearest = vec2(0.0);
-    vec2 nearestCell = vec2(0.0);
-    float best = 8.0;
+    float first = 8.0;
+    float second = 8.0;
     for (int y = -1; y <= 1; y++) {
         for (int x = -1; x <= 1; x++) {
             vec2 offset = vec2(float(x), float(y));
             vec2 r = offset + hash2(cell + offset) - local;
             float d = dot(r, r);
-            if (d < best) {
-                best = d;
-                nearest = r;
-                nearestCell = offset;
+            if (d < first) {
+                second = first;
+                first = d;
+            } else if (d < second) {
+                second = d;
             }
         }
     }
-    float edge = 8.0;
-    for (int y = -2; y <= 2; y++) {
-        for (int x = -2; x <= 2; x++) {
-            vec2 offset = nearestCell + vec2(float(x), float(y));
-            vec2 r = offset + hash2(cell + offset) - local;
-            vec2 delta = r - nearest;
-            if (dot(delta, delta) > 0.00001) {
-                edge = min(edge, dot(0.5 * (nearest + r), normalize(delta)));
-            }
-        }
-    }
-    return vec2(edge, hash2(cell + nearestCell).x);
+    return sqrt(second) - sqrt(first);
 }
 
 void main() {
     vec2 p = vec2((uv.x - 0.5) * Aspect, uv.y - 0.5);
-    vec2 impact = (hash2(vec2(3.0, 7.0)) - 0.5) * vec2(0.5 * Aspect, 0.45);
+    vec2 impact = (hash2(vec2(3.0, 7.0)) - 0.5) * vec2(0.22 * Aspect, 0.22);
     vec2 d = p - impact;
     float radius = length(d);
+    float cracks = 0.0;
 
-    // Деление на радиус вытягивает осколки вдоль лучей от точки удара и мельчит их в центре.
-    vec2 warped = d / (radius + 0.16) * 5.0;
-    vec2 result = shards(warped);
-    float line = 1.0 - smoothstep(0.0, 0.03, result.x);
+    // Длинные лучи от точки удара.
+    for (int i = 0; i < 9; i++) {
+        float fi = float(i);
+        float angle = (fi + 1.1 * hash(vec2(fi, 1.0))) * 6.2832 / 9.0;
+        float reach = 0.35 + 0.85 * hash(vec2(fi, 2.0));
+        float bend = (hash(vec2(fi, 3.0)) - 0.5) * 0.45;
+        vec2 dir = vec2(cos(angle), sin(angle));
+        vec2 dir2 = vec2(cos(angle + bend), sin(angle + bend));
+        vec2 mid = impact + dir * reach * 0.5;
+        cracks = max(cracks, crack(p, impact, mid, mid + dir2 * reach * 0.5, 0.0025 + 0.0035 * hash(vec2(fi, 4.0))));
+    }
 
-    vec2 wide = shards(p * 3.5 + 11.0);
-    float wideLine = (1.0 - smoothstep(0.0, 0.012, wide.x)) * 0.35;
+    // Отдельные трещины поперёк стекла.
+    for (int i = 0; i < 5; i++) {
+        float fi = float(i);
+        vec2 a = (hash2(vec2(fi, 11.0)) - 0.5) * vec2(Aspect, 1.0) * 1.3;
+        vec2 b = (hash2(vec2(fi, 13.0)) - 0.5) * vec2(Aspect, 1.0) * 1.3;
+        vec2 mid = mix(a, b, 0.5) + (hash2(vec2(fi, 17.0)) - 0.5) * 0.12;
+        cracks = max(cracks, crack(p, a, mid, b, 0.0036) * 0.8);
+    }
 
-    float falloff = 1.0 - smoothstep(0.15, 1.05, radius);
-    float cracks = max(line * falloff, wideLine * (0.35 + falloff));
+    // Рваная сетка мелких сколов вокруг удара: местами линия пропадает, местами расплывается.
+    vec2 warp = p + (vec2(fbm(p * 7.0), fbm(p * 7.0 + 31.0)) - 0.5) * 0.09;
+    float nearImpact = 1.0 - smoothstep(0.1, 0.42, radius);
+    float gaps = smoothstep(0.42, 0.62, fbm(p * 9.0 + 3.0));
+    float chips = (1.0 - smoothstep(0.0, 0.05 + 0.1 * fbm(p * 24.0), cellEdge(warp * 11.0))) * gaps * nearImpact;
+    cracks = max(cracks, chips);
 
-    // Осколки по-разному преломляют свет и немного затемняют обзор.
-    float tint = (result.y - 0.5) * 0.10 * falloff;
-    float dark = 0.10 + 0.22 * falloff * falloff;
-    float centre = (1.0 - smoothstep(0.0, 0.07, radius)) * 0.65;
+    // Тёмное пятно размытия вдоль сетки у самого центра.
+    float smudge = (1.0 - smoothstep(0.0, 0.2, radius)) * gaps * 0.3;
 
-    vec3 color = mix(vec3(0.03) + tint, vec3(0.86, 0.92, 0.95), cracks);
-    color = mix(color, vec3(0.92), centre);
-    float alpha = max(max(cracks * 0.85, dark + abs(tint)), centre) * Amount;
-    fragColor = vec4(color, alpha);
+    float alpha = max(cracks * 0.9, smudge) * Amount;
+    fragColor = vec4(vec3(0.015, 0.018, 0.025), alpha);
 }

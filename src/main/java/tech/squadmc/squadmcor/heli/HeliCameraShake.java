@@ -49,7 +49,8 @@ public final class HeliCameraShake {
         if (event.phase != TickEvent.Phase.END) return;
         Minecraft mc = Minecraft.getInstance();
         kick *= KICK_DECAY;
-        if (mc.player == null || !(mc.player.getRootVehicle() instanceof HeliVehicleBase heli) || mc.isPaused()) {
+        if (mc.player == null || !(mc.player.getRootVehicle() instanceof HeliVehicleBase heli)
+                || !tech.squadmc.squadmcor.heli.entity.vehicle.engine.EngineControl.isHelicopter(heli) || mc.isPaused()) {
             intensityRotor = intensityBuffet = intensityDamage = 0F;
             return;
         }
@@ -80,7 +81,8 @@ public final class HeliCameraShake {
     @SubscribeEvent
     public static void onCamera(ViewportEvent.ComputeCameraAngles event) {
         Minecraft mc = Minecraft.getInstance();
-        if (mc.player == null || !(mc.player.getRootVehicle() instanceof HeliVehicleBase)) return;
+        if (mc.player == null || !(mc.player.getRootVehicle() instanceof HeliVehicleBase heli)
+                || !tech.squadmc.squadmcor.heli.entity.vehicle.engine.EngineControl.isHelicopter(heli)) return;
         if (intensityRotor <= 0F && intensityBuffet <= 0F && intensityDamage <= 0F && kick < 0.01F) return;
 
         float t = (mc.player.tickCount + (float) event.getPartialTick());

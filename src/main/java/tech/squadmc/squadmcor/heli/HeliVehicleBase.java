@@ -28,10 +28,23 @@ import tech.squadmc.squadmcor.network.ModNetworking;
 import javax.annotation.Nullable;
 
 /** Общая база вертолётов: запуск двигателя, звуки Squad, скины, отдача оружия на камеру. */
-public abstract class HeliVehicleBase extends GeoVehicleEntity implements EngineControlled {
+public abstract class HeliVehicleBase extends GeoVehicleEntity implements EngineControlled, tech.squadmc.squadmcor.repair.WheelLoss.Holder {
 
     private static final EntityDataAccessor<Byte> ENGINE_STATE =
             SynchedEntityData.defineId(HeliVehicleBase.class, EntityDataSerializers.BYTE);
+
+    private static final EntityDataAccessor<Byte> WHEELS_LOST =
+            SynchedEntityData.defineId(HeliVehicleBase.class, EntityDataSerializers.BYTE);
+
+    @Override
+    public byte squadmc$getWheelsLost() {
+        return this.entityData.get(WHEELS_LOST);
+    }
+
+    @Override
+    public void squadmc$setWheelsLost(byte packed) {
+        this.entityData.set(WHEELS_LOST, packed);
+    }
 
     public HeliVehicleBase(EntityType<? extends VehicleEntity> type, Level world) {
         super(type, world);
@@ -40,6 +53,7 @@ public abstract class HeliVehicleBase extends GeoVehicleEntity implements Engine
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
+        this.entityData.define(WHEELS_LOST, (byte) 0);
         this.entityData.define(ENGINE_STATE, EngineControl.OFF);
     }
 
@@ -122,6 +136,7 @@ public abstract class HeliVehicleBase extends GeoVehicleEntity implements Engine
     public void tick() {
         super.tick();
         EngineControl.tick(this);
+        tech.squadmc.squadmcor.repair.WheelLoss.tick(this);
     }
 
     /** Запас (в блоках) для отсечения рендера, потому что лопасти намного шире хитбокса. */
@@ -155,12 +170,14 @@ public abstract class HeliVehicleBase extends GeoVehicleEntity implements Engine
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
+        compound.putByte("WheelsLost", squadmc$getWheelsLost());
         compound.putByte("HeliEngineState", fcp$getEngineState());
     }
 
     @Override
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
+        squadmc$setWheelsLost(compound.getByte("WheelsLost"));
         if (compound.contains("HeliEngineState")) fcp$setEngineState(compound.getByte("HeliEngineState"));
     }
 }

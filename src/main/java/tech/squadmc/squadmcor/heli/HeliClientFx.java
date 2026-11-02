@@ -80,7 +80,7 @@ public final class HeliClientFx {
         if (mc.level == null || mc.player == null || mc.isPaused()) return;
 
         for (Entity entity : mc.level.entitiesForRendering()) {
-            if (entity instanceof HeliVehicleBase heli && heli.distanceToSqr(mc.player) < DOWNWASH_RANGE * DOWNWASH_RANGE) {
+            if (entity instanceof HeliVehicleBase heli && EngineControl.isHelicopter(heli) && heli.distanceToSqr(mc.player) < DOWNWASH_RANGE * DOWNWASH_RANGE) {
                 downwash(mc, mc.level, heli);
             }
         }
