@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:stryker_m2",
-  "MaxHealth": 250,
+  "MaxHealth": 300,
   "MaxEnergy": 5000000,
   "TurretPos": [
     -0.664887,
@@ -361,7 +361,7 @@
     "minecraft:mob_attack * 2.5",
     "minecraft:mob_attack_no_aggro * 2",
     "minecraft:mob_projectile * 1.5",
-    "All * 0.35",
+    "All * 0.3",
     "minecraft:explosion * 5",
     "minecraft:player_explosion * 5",
     "superbwarfare:custom_explosion * 2",
@@ -452,7 +452,7 @@
       "EmptyReloadTime": 160,
       "Magazine": 200,
       "Velocity": 25,
-      "Damage": 20,
+      "Damage": 18,
       "BypassesArmor": 0.2,
       "HeatPerShoot": 5,
       "NaturalCooldown": 1,

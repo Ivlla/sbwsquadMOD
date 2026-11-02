@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:ah_64",
-  "MaxHealth": 350,
+  "MaxHealth": 360,
   "MaxEnergy": 10000000,
   "TurretPos": [
     0.0078625,
@@ -210,7 +210,7 @@
       "DefaultZoom": 3,
       "RPM": 300,
       "Velocity": 30,
-      "Damage": 70,
+      "Damage": 75,
       "ExplosionDamage": 0,
       "ExplosionRadius": 0,
       "HeatPerShoot": 7,
@@ -237,9 +237,10 @@
             "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm_he.png",
             "Velocity": 15,
             "Damage": 5,
-            "ExplosionDamage": 25,
+            "ExplosionDamage": 26,
             "ExplosionRadius": 3,
-            "Name": "weapon.superbwarfare.30mm_2a42_he"
+            "Name": "weapon.superbwarfare.30mm_2a42_he",
+            "ShellType": "HE"
           }
         }
       ],
@@ -351,7 +352,7 @@
       "EmptyReloadTime": 260,
       "Projectile": "superbwarfare:kh_39",
       "Name": "weapon.squadmc.hellfire_missile",
-      "Damage": 700,
+      "Damage": 750,
       "ExplosionDamage": 180,
       "ExplosionRadius": 6.6,
       "Velocity": 8,

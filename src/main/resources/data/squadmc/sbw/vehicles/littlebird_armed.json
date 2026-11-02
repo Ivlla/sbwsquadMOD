@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:littlebird_armed",
-  "MaxHealth": 120,
+  "MaxHealth": 90,
   "MaxEnergy": 23500000,
   "OBB": [
     {
@@ -182,7 +182,7 @@
       "DefaultZoom": 3,
       "RPM": 1500,
       "Velocity": 30,
-      "Damage": 9.5,
+      "Damage": 6.5,
       "Magazine": 1000,
       "HeatPerShoot": 1,
       "NaturalCooldown": 1,

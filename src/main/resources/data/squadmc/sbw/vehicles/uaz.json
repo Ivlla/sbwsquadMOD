@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:uaz",
-  "MaxHealth": 120,
+  "MaxHealth": 110,
   "MaxEnergy": 5000000,
   "OBB": [
     {

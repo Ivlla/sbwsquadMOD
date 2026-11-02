@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:bmd4",
-  "MaxHealth": 260,
+  "MaxHealth": 240,
   "MaxEnergy": 4000000,
   "TurretPos": [
     0,
@@ -312,9 +312,9 @@
       "DefaultZoom": 3,
       "RPM": 300,
       "Velocity": 20,
-      "Damage": 85,
-      "ExplosionDamage": 0,
-      "ExplosionRadius": 0,
+      "Damage": 5,
+      "ExplosionDamage": 22,
+      "ExplosionRadius": 3,
       "HeatPerShoot": 5,
       "NaturalCooldown": 1,
       "RecoilTime": 31,
@@ -341,7 +341,7 @@
             "ShellType": "HE",
             "Velocity": 22,
             "Damage": 5,
-            "ExplosionDamage": 30,
+            "ExplosionDamage": 22,
             "ExplosionRadius": 3,
             "Name": "weapon.squadmc.30mm_he"
           }
@@ -440,7 +440,7 @@
       "Spread": 0.4,
       "Projectile": "superbwarfare:projectile",
       "RPM": 700,
-      "Damage": 9.5,
+      "Damage": 9,
       "BypassesArmor": 0.3,
       "Velocity": 30,
       "RecoilTime": 20,
@@ -536,7 +536,7 @@
   "DamageModifiers": [
     "minecraft:lava - 11",
     "minecraft:lava * 10",
-    "All * 0.25",
+    "All * 0.33",
     "minecraft:explosion * 6",
     "minecraft:player_explosion * 6",
     "superbwarfare:custom_explosion * 2",

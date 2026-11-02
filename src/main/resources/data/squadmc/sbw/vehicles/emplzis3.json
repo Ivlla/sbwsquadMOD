@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:emplzis3",
-  "MaxHealth": 100,
+  "MaxHealth": 110,
   "MaxEnergy": 5250000,
   "Seats": [
     {
@@ -47,7 +47,7 @@
       "Magazine": 1,
       "EmptyReloadTime": 1450,
       "Velocity": 40,
-      "Damage": 500,
+      "Damage": 520,
       "ExplosionDamage": 20,
       "ExplosionRadius": 1,
       "RecoilTime": 42,

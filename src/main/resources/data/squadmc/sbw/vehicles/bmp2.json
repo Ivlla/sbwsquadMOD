@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:bmp2",
-  "MaxHealth": 300,
+  "MaxHealth": 280,
   "MaxEnergy": 5000000,
   "TurretPos": [
     -0.003112,
@@ -239,7 +239,7 @@
       "Projectile": "squadmc:konkurs_dummy",
       "Magazine": 1,
       "EmptyReloadTime": 250,
-      "Damage": 650,
+      "Damage": 720,
       "ExplosionDamage": 70,
       "ExplosionRadius": 7,
       "Velocity": 3.5,
@@ -280,7 +280,7 @@
       "RPM": 550,
       "Velocity": 20,
       "Damage": 5,
-      "ExplosionDamage": 25,
+      "ExplosionDamage": 20,
       "ExplosionRadius": 3,
       "HeatPerShoot": 5,
       "NaturalCooldown": 1,
@@ -306,12 +306,12 @@
           "Override": {
             "Icon": "squadmc:textures/overlay/vehicle/weapon/icons/cannon_30mmapi.png",
             "BypassesArmor": 0.4,
-            "ShellType": "HE",
+            "ShellType": "AP",
             "Velocity": 20,
-            "Damage": 5,
-            "ExplosionDamage": 25,
-            "ExplosionRadius": 3,
-            "Name": "weapon.squadmc.30mm_he"
+            "Damage": 48,
+            "ExplosionDamage": 0,
+            "ExplosionRadius": 0,
+            "Name": "weapon.squadmc.30mm_ap"
           }
         }
       ],
@@ -338,7 +338,7 @@
       "CrosshairColor": "0x66FF00",
       "Projectile": "superbwarfare:projectile",
       "RPM": 650,
-      "Damage": 9.5,
+      "Damage": 9,
       "BypassesArmor": 0.1,
       "Velocity": 30,
       "RecoilTime": 22,
@@ -441,7 +441,7 @@
     "minecraft:mob_attack * 2.5",
     "minecraft:mob_attack_no_aggro * 2",
     "minecraft:mob_projectile * 1.5",
-    "All * 0.25",
+    "All * 0.27",
     "minecraft:explosion * 6",
     "minecraft:player_explosion * 6",
     "superbwarfare:custom_explosion * 2",

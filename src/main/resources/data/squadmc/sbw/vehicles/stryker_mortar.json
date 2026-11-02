@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:stryker_mortar",
-  "MaxHealth": 250,
+  "MaxHealth": 280,
   "MaxEnergy": 5000000,
   "TurretPos": [
     0.0052,
@@ -329,7 +329,7 @@
     "minecraft:mob_attack * 2.5",
     "minecraft:mob_attack_no_aggro * 2",
     "minecraft:mob_projectile * 1.5",
-    "All * 0.35",
+    "All * 0.3",
     "minecraft:explosion * 5",
     "minecraft:player_explosion * 5",
     "superbwarfare:custom_explosion * 2",

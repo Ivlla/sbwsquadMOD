@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:huey_door_gunner_m134",
-  "MaxHealth": 200,
+  "MaxHealth": 150,
   "MaxEnergy": 80000000,
   "TurretPos": [
     -1.75108125,
@@ -345,7 +345,7 @@
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 1500,
-      "Damage": 9.5,
+      "Damage": 6.5,
       "BypassesArmor": 0.2,
       "Velocity": 25,
       "RecoilTime": 16,

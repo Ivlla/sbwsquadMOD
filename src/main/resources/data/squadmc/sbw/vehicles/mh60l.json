@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:mh60l",
-  "MaxHealth": 200,
+  "MaxHealth": 240,
   "MaxEnergy": 136000000,
   "TurretPos": [
     -0.00523,
@@ -375,7 +375,7 @@
       "EmptyReloadTime": 200,
       "Projectile": "squadmc:lock_on_hellfire",
       "Name": "weapon.squadmc.hellfire_missile_entity",
-      "Damage": 700,
+      "Damage": 520,
       "ExplosionDamage": 19.4,
       "ExplosionRadius": 6,
       "AddShooterDeltaMovement": true,
@@ -467,7 +467,7 @@
       "Projectile": "squadmc:wire_guided_hellfire",
       "Magazine": 4,
       "EmptyReloadTime": 200,
-      "Damage": 700,
+      "Damage": 520,
       "ExplosionDamage": 19.4,
       "ExplosionRadius": 6,
       "Velocity": 3,

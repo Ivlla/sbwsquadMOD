@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:ural_green",
-  "MaxHealth": 250,
+  "MaxHealth": 190,
   "MaxEnergy": 5000000,
   "OBB": [
     {

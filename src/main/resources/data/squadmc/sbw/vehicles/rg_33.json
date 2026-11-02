@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:rg_33",
-  "MaxHealth": 220,
+  "MaxHealth": 260,
   "MaxEnergy": 30000000,
   "OBB": [
     {
@@ -337,7 +337,7 @@
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 500,
-      "Damage": 20,
+      "Damage": 18,
       "BypassesArmor": 2,
       "Velocity": 25,
       "RecoilTime": 32,
@@ -424,7 +424,7 @@
     "minecraft:mob_attack * 0.4",
     "minecraft:mob_attack_no_aggro * 0.4",
     "minecraft:mob_projectile * 0.4",
-    "All * 0.35",
+    "All * 0.28",
     "minecraft:explosion * 5",
     "minecraft:player_explosion * 5",
     "superbwarfare:custom_explosion * 2",

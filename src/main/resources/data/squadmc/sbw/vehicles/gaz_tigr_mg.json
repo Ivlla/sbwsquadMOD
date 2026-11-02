@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:gaz_tigr_mg",
-  "MaxHealth": 175,
+  "MaxHealth": 190,
   "MaxEnergy": 5250000,
   "OBB": [
     {
@@ -247,7 +247,7 @@
       "Magazine": 120,
       "EmptyReloadTime": 160,
       "Velocity": 25,
-      "Damage": 9.5,
+      "Damage": 9,
       "BypassesArmor": 0.2,
       "NaturalCooldown": 1,
       "HeatPerShoot": 3.5,
@@ -329,7 +329,7 @@
     "minecraft:mob_attack * 2.5",
     "minecraft:mob_attack_no_aggro * 2",
     "minecraft:mob_projectile * 1.5",
-    "All * 0.35",
+    "All * 0.4",
     "minecraft:explosion * 5",
     "minecraft:player_explosion * 5",
     "superbwarfare:custom_explosion * 2",

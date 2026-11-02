@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:grad",
-  "MaxHealth": 150,
+  "MaxHealth": 170,
   "MaxEnergy": 5000000,
   "TurretPos": [
     0.011025,

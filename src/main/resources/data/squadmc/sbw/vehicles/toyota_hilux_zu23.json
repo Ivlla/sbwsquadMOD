@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:toyota_hilux_zu23",
-  "MaxHealth": 120,
+  "MaxHealth": 90,
   "MaxEnergy": 5000000,
   "TurretPos": [
     0.047664,
@@ -244,7 +244,7 @@
     "minecraft:mob_attack * 0.4",
     "minecraft:mob_attack_no_aggro * 0.4",
     "minecraft:mob_projectile * 0.4",
-    "All * 0.8",
+    "All * 0.9",
     "minecraft:explosion * 4",
     "minecraft:player_explosion * 4",
     "superbwarfare:custom_explosion * 1.25",
@@ -281,8 +281,8 @@
       "Magazine": 100,
       "EmptyReloadTime": 200,
       "Velocity": 22,
-      "Damage": 50,
-      "ExplosionDamage": 14,
+      "Damage": 26,
+      "ExplosionDamage": 12,
       "ExplosionRadius": 2,
       "Spread": 0.8,
       "RecoilTime": 24,

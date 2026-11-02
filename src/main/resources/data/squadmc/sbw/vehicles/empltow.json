@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:empltow",
-  "MaxHealth": 60,
+  "MaxHealth": 55,
   "MaxEnergy": 5250000,
   "Seats": [
     {
@@ -50,7 +50,7 @@
       "Projectile": "superbwarfare:wire_guide_missile",
       "Magazine": 1,
       "EmptyReloadTime": 250,
-      "Damage": 700,
+      "Damage": 780,
       "ExplosionDamage": 70,
       "ExplosionRadius": 7,
       "Velocity": 3.5,

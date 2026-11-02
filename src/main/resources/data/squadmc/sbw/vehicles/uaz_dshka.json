@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:uaz_dshka",
-  "MaxHealth": 120,
+  "MaxHealth": 110,
   "MaxEnergy": 5000000,
   "TurretPos": [
     -0.163688,
@@ -167,7 +167,7 @@
       "Magazine": 100,
       "EmptyReloadTime": 20,
       "Velocity": 25,
-      "Damage": 20,
+      "Damage": 22,
       "BypassesArmor": 0.2,
       "HeatPerShoot": 0,
       "NaturalCooldown": 1,

@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:m2empl",
-  "MaxHealth": 60,
+  "MaxHealth": 50,
   "MaxEnergy": 5250000,
   "Seats": [
     {
@@ -43,7 +43,7 @@
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 500,
-      "Damage": 20,
+      "Damage": 18,
       "BypassesArmor": 2,
       "ShellType": "AP",
       "ApDurability": 100,

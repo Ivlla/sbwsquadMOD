@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:brdm2",
-  "MaxHealth": 200,
+  "MaxHealth": 180,
   "MaxEnergy": 5500000,
   "OBB": [
     {
@@ -241,7 +241,7 @@
       "BypassesArmor": 0.2,
       "Magazine": 50,
       "EmptyReloadTime": 230,
-      "Damage": 45,
+      "Damage": 5,
       "ExplosionDamage": 0,
       "ExplosionRadius": 0,
       "RecoilTime": 29,
@@ -283,7 +283,7 @@
       "CrosshairColor": "0x66FF00",
       "Projectile": "superbwarfare:projectile",
       "RPM": 650,
-      "Damage": 9.5,
+      "Damage": 9,
       "BypassesArmor": 0.3,
       "Velocity": 30,
       "RecoilTime": 22,
@@ -367,7 +367,7 @@
     "minecraft:mob_attack * 2.5",
     "minecraft:mob_attack_no_aggro * 2",
     "minecraft:mob_projectile * 1.5",
-    "All * 0.35",
+    "All * 0.38",
     "minecraft:explosion * 5",
     "minecraft:player_explosion * 5",
     "superbwarfare:custom_explosion * 2",

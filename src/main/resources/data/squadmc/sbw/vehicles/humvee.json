@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:humvee",
-  "MaxHealth": 150,
+  "MaxHealth": 170,
   "MaxEnergy": 5000000,
   "OBB": [
     {
@@ -187,7 +187,7 @@
     "minecraft:player_attack * 0.4",
     "minecraft:lava - -4",
     "minecraft:lava * 4",
-    "All * 0.8",
+    "All * 0.65",
     "minecraft:explosion * 4",
     "minecraft:player_explosion * 4",
     "superbwarfare:custom_explosion * 1.25",

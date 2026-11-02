@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:nh_90",
-  "MaxHealth": 250,
+  "MaxHealth": 210,
   "MaxEnergy": 10000000,
   "OBB": [
     {

@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:uaz_452",
-  "MaxHealth": 120,
+  "MaxHealth": 100,
   "MaxEnergy": 8600000,
   "PassengerRenderScale": 0.85,
   "OBB": [

@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:mi8_amtsh",
-  "MaxHealth": 200,
+  "MaxHealth": 290,
   "MaxEnergy": 187000000,
   "OBB": [
     {
@@ -578,8 +578,8 @@
       "Magazine": 100,
       "EmptyReloadTime": 200,
       "Velocity": 22,
-      "Damage": 50,
-      "ExplosionDamage": 14,
+      "Damage": 24,
+      "ExplosionDamage": 12,
       "ExplosionRadius": 2,
       "Spread": 0.8,
       "RecoilTime": 24,

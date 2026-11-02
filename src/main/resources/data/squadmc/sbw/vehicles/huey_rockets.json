@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:huey_rockets",
-  "MaxHealth": 200,
+  "MaxHealth": 150,
   "MaxEnergy": 80000000,
   "OBB": [
     {

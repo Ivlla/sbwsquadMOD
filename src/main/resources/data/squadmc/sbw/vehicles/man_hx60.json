@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:man_hx60",
-  "MaxHealth": 150,
+  "MaxHealth": 160,
   "MaxEnergy": 30000000,
   "OBB": [
     {

@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:littlebird_heavy",
-  "MaxHealth": 120,
+  "MaxHealth": 100,
   "MaxEnergy": 23500000,
   "TurretPos": [
     -0.000316,
@@ -201,7 +201,7 @@
       "DefaultZoom": 3,
       "RPM": 1500,
       "Velocity": 30,
-      "Damage": 9.5,
+      "Damage": 6.5,
       "Magazine": 1000,
       "HeatPerShoot": 1,
       "NaturalCooldown": 1,
@@ -242,7 +242,7 @@
       "Projectile": "squadmc:wire_guided_hellfire",
       "Magazine": 2,
       "EmptyReloadTime": 400,
-      "Damage": 700,
+      "Damage": 620,
       "ExplosionDamage": 19.4,
       "ExplosionRadius": 6,
       "Velocity": 3,

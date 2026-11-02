@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:mtlb_zu23",
-  "MaxHealth": 180,
+  "MaxHealth": 170,
   "MaxEnergy": 5000000,
   "TurretPos": [
     -0.094,
@@ -237,8 +237,8 @@
       "Magazine": 100,
       "EmptyReloadTime": 200,
       "Velocity": 22,
-      "Damage": 50,
-      "ExplosionDamage": 14,
+      "Damage": 26,
+      "ExplosionDamage": 12,
       "ExplosionRadius": 2,
       "Spread": 0.8,
       "RecoilTime": 24,
@@ -325,7 +325,7 @@
     "minecraft:mob_attack * 2.5",
     "minecraft:mob_attack_no_aggro * 2",
     "minecraft:mob_projectile * 1.5",
-    "All * 0.35",
+    "All * 0.42",
     "minecraft:explosion * 5",
     "minecraft:player_explosion * 5",
     "superbwarfare:custom_explosion * 2",

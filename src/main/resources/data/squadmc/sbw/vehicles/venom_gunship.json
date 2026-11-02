@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:venom_gunship",
-  "MaxHealth": 200,
+  "MaxHealth": 190,
   "MaxEnergy": 140000000,
   "TurretPos": [
     0.00325,
@@ -469,7 +469,7 @@
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 1500,
-      "Damage": 9.5,
+      "Damage": 6.5,
       "BypassesArmor": 0.2,
       "Velocity": 25,
       "RecoilTime": 16,
@@ -518,7 +518,7 @@
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 1500,
-      "Damage": 9.5,
+      "Damage": 6.5,
       "BypassesArmor": 0.2,
       "Velocity": 25,
       "RecoilTime": 16,

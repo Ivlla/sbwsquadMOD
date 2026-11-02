@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:mi8_door_guns",
-  "MaxHealth": 200,
+  "MaxHealth": 230,
   "MaxEnergy": 187000000,
   "OBB": [
     {
@@ -479,7 +479,7 @@
       "CrosshairColor": "0xFFC700",
       "Projectile": "superbwarfare:projectile",
       "RPM": 750,
-      "Damage": 9.5,
+      "Damage": 9,
       "BypassesArmor": 0.2,
       "Velocity": 25,
       "RecoilTime": 16,
@@ -523,7 +523,7 @@
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 750,
-      "Damage": 9.5,
+      "Damage": 9,
       "BypassesArmor": 0.2,
       "Velocity": 25,
       "RecoilTime": 16,

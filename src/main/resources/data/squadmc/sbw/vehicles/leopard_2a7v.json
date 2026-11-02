@@ -1,7 +1,7 @@
 {
   "ID": "squadmc:leopard_2a7v",
   "Type": "Tank",
-  "MaxHealth": 550,
+  "MaxHealth": 580,
   "MaxEnergy": 20000000,
   "Mass": 70,
   "UpStep": 2.25,
@@ -270,7 +270,7 @@
       "EmptyReloadTime": 120,
       "DefaultZoom": 3,
       "Velocity": 30,
-      "Damage": 800,
+      "Damage": 830,
       "ExplosionDamage": 80,
       "ExplosionRadius": 4,
       "Spread": 0.02,
@@ -316,7 +316,7 @@
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 450,
-      "Damage": 9.5,
+      "Damage": 8,
       "BypassesArmor": 0.2,
       "Velocity": 25,
       "RecoilTime": 16,
@@ -358,7 +358,7 @@
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 450,
-      "Damage": 9.5,
+      "Damage": 8,
       "BypassesArmor": 0.2,
       "Velocity": 25,
       "RecoilTime": 16,
@@ -453,7 +453,7 @@
     "minecraft:mob_attack_no_aggro * 0",
     "minecraft:mob_projectile * 0",
     "minecraft:player_attack * 0",
-    "All * 0.2",
+    "All * 0.19",
     "minecraft:explosion * 6",
     "minecraft:player_explosion * 6",
     "superbwarfare:custom_explosion * 2",
@@ -469,7 +469,7 @@
     "@superbwarfare:mortar_shell * 0.5",
     "@superbwarfare:gun_grenade * 1.25",
     "@#superbwarfare:at_rocket * 1.1",
-    "All - 3"
+    "All - 4"
   ],
   "DestroyInfo": {
     "ExplosionDamage": 200,

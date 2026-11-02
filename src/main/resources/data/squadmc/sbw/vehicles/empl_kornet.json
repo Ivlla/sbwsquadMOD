@@ -1,6 +1,6 @@
 {
   "ID": "fcp:empl_kornet",
-  "MaxHealth": 60,
+  "MaxHealth": 45,
   "MaxEnergy": 5250000,
   "Seats": [
     {
@@ -40,7 +40,7 @@
       "Projectile": "superbwarfare:wire_guide_missile",
       "Magazine": 1,
       "EmptyReloadTime": 250,
-      "Damage": 800,
+      "Damage": 860,
       "ExplosionDamage": 70,
       "ExplosionRadius": 7,
       "Velocity": 3.5,

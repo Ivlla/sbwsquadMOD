@@ -1,7 +1,7 @@
 {
   "ID": "squadmc:m1a2",
   "Type": "Tank",
-  "MaxHealth": 550,
+  "MaxHealth": 620,
   "MaxEnergy": 5000000,
   "Mass": 60,
   "UpStep": 2.25,
@@ -316,7 +316,7 @@
       "EmptyReloadTime": 120,
       "DefaultZoom": 3,
       "Velocity": 30,
-      "Damage": 800,
+      "Damage": 780,
       "ExplosionDamage": 80,
       "ExplosionRadius": 4,
       "Spread": 0.02,
@@ -361,7 +361,7 @@
       "DefaultZoom": 3,
       "RPM": 450,
       "Velocity": 25,
-      "Damage": 9.5,
+      "Damage": 10,
       "BypassesArmor": 0.2,
       "Spread": 0.25,
       "RecoilTime": 16,
@@ -401,7 +401,7 @@
       "DefaultZoom": 3,
       "RPM": 450,
       "Velocity": 25,
-      "Damage": 20,
+      "Damage": 18,
       "BypassesArmor": 0.2,
       "Spread": 0.25,
       "RecoilTime": 16,
@@ -494,7 +494,7 @@
     "minecraft:mob_attack * 2.5",
     "minecraft:mob_attack_no_aggro * 2",
     "minecraft:mob_projectile * 1.5",
-    "All * 0.2",
+    "All * 0.18",
     "minecraft:explosion * 6",
     "minecraft:player_explosion * 6",
     "superbwarfare:custom_explosion * 2",
@@ -510,7 +510,7 @@
     "@superbwarfare:mortar_shell * 0.5",
     "@superbwarfare:gun_grenade * 1.25",
     "@#superbwarfare:at_rocket * 1.1",
-    "All - 3"
+    "All - 4"
   ],
   "DestroyInfo": {
     "ExplosionDamage": 200,

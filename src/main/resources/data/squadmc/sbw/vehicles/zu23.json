@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:zu23",
-  "MaxHealth": 60,
+  "MaxHealth": 70,
   "MaxEnergy": 5250000,
   "Seats": [
     {
@@ -45,8 +45,8 @@
       "Magazine": 100,
       "EmptyReloadTime": 200,
       "Velocity": 22,
-      "Damage": 50,
-      "ExplosionDamage": 14,
+      "Damage": 26,
+      "ExplosionDamage": 12,
       "ExplosionRadius": 2,
       "Spread": 0.8,
       "RecoilTime": 24,
