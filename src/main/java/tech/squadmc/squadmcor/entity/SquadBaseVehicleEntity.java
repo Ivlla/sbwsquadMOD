@@ -36,17 +36,17 @@ public abstract class SquadBaseVehicleEntity extends GeoVehicleEntity implements
     private int smokeGraceTicks = 0;
     private static final int SMOKE_GRACE_TICKS = 6;
 
-    private static final EntityDataAccessor<Byte> WHEELS_LOST =
-            SynchedEntityData.defineId(SquadBaseVehicleEntity.class, EntityDataSerializers.BYTE);
+    private static final EntityDataAccessor<Integer> WHEELS_LOST =
+            SynchedEntityData.defineId(SquadBaseVehicleEntity.class, EntityDataSerializers.INT);
 
     @Override
-    public byte squadmc$getWheelsLost() {
+    public int squadmc$getWheelsLost() {
         return this.entityData.get(WHEELS_LOST);
     }
 
     @Override
-    public void squadmc$setWheelsLost(byte packed) {
-        this.entityData.set(WHEELS_LOST, packed);
+    public void squadmc$setWheelsLost(int mask) {
+        this.entityData.set(WHEELS_LOST, mask);
     }
 
     public SquadBaseVehicleEntity(EntityType<? extends SquadBaseVehicleEntity> type, Level world) {
@@ -56,7 +56,7 @@ public abstract class SquadBaseVehicleEntity extends GeoVehicleEntity implements
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(WHEELS_LOST, (byte) 0);
+        this.entityData.define(WHEELS_LOST, 0);
         this.entityData.define(ENGINE_STATE, EngineControl.OFF);
         this.entityData.define(SMOKE_GENERATOR, false);
     }
@@ -173,7 +173,7 @@ public abstract class SquadBaseVehicleEntity extends GeoVehicleEntity implements
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
-        compound.putByte("WheelsLost", squadmc$getWheelsLost());
+        compound.putInt("WheelsLostMask", squadmc$getWheelsLost());
         compound.putBoolean("EngineStarted", this.isEngineStarted());
         compound.putInt("SmokeCharges", this.smokeCharges);
         compound.putBoolean("SmokeGenerator", this.isSmokeGeneratorOn());
@@ -182,7 +182,7 @@ public abstract class SquadBaseVehicleEntity extends GeoVehicleEntity implements
     @Override
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
-        squadmc$setWheelsLost(compound.getByte("WheelsLost"));
+        squadmc$setWheelsLost(compound.getInt("WheelsLostMask"));
         if (compound.contains("EngineStarted")) {
             this.setEngineStarted(compound.getBoolean("EngineStarted"));
         }

@@ -13,7 +13,12 @@ public enum MtsFxPreset {
     ROCKET_TRAIL("rocket_trail"),
     ROCKET_LAUNCH("rocket_launch"),
     HIT_762("bullet762"),
-    HIT_AP_37MM("bullet3700solid");
+    HIT_AP_37MM("bullet3700solid"),
+    MUZZLE_SMALL("muzzle_small"),
+    MUZZLE_MEDIUM("muzzle_medium"),
+    MUZZLE_HEAVY("muzzle_heavy"),
+    GROUND_BLAST("ground_blast"),
+    GRAD_BLAST("grad_blast");
 
     public final String file;
 

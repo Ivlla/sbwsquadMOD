@@ -33,17 +33,17 @@ public abstract class HeliVehicleBase extends GeoVehicleEntity implements Engine
     private static final EntityDataAccessor<Byte> ENGINE_STATE =
             SynchedEntityData.defineId(HeliVehicleBase.class, EntityDataSerializers.BYTE);
 
-    private static final EntityDataAccessor<Byte> WHEELS_LOST =
-            SynchedEntityData.defineId(HeliVehicleBase.class, EntityDataSerializers.BYTE);
+    private static final EntityDataAccessor<Integer> WHEELS_LOST =
+            SynchedEntityData.defineId(HeliVehicleBase.class, EntityDataSerializers.INT);
 
     @Override
-    public byte squadmc$getWheelsLost() {
+    public int squadmc$getWheelsLost() {
         return this.entityData.get(WHEELS_LOST);
     }
 
     @Override
-    public void squadmc$setWheelsLost(byte packed) {
-        this.entityData.set(WHEELS_LOST, packed);
+    public void squadmc$setWheelsLost(int mask) {
+        this.entityData.set(WHEELS_LOST, mask);
     }
 
     public HeliVehicleBase(EntityType<? extends VehicleEntity> type, Level world) {
@@ -53,7 +53,7 @@ public abstract class HeliVehicleBase extends GeoVehicleEntity implements Engine
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(WHEELS_LOST, (byte) 0);
+        this.entityData.define(WHEELS_LOST, 0);
         this.entityData.define(ENGINE_STATE, EngineControl.OFF);
     }
 
@@ -117,8 +117,7 @@ public abstract class HeliVehicleBase extends GeoVehicleEntity implements Engine
         boolean cannon = projectile.contains("cannon");
         float kick = rocket ? HeliFirePacket.ROCKET : missile ? HeliFirePacket.MISSILE : cannon ? HeliFirePacket.CANNON : HeliFirePacket.GUN;
 
-        if ((rocket || missile) && pos != null) MtsFxServer.rocketLaunch(level, pos);
-        ModNetworking.CHANNEL.send(PacketDistributor.TRACKING_ENTITY.with(() -> this),
+                ModNetworking.CHANNEL.send(PacketDistributor.TRACKING_ENTITY.with(() -> this),
                 new HeliFirePacket(this.getId(), kick));
     }
 
@@ -170,14 +169,14 @@ public abstract class HeliVehicleBase extends GeoVehicleEntity implements Engine
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
-        compound.putByte("WheelsLost", squadmc$getWheelsLost());
+        compound.putInt("WheelsLostMask", squadmc$getWheelsLost());
         compound.putByte("HeliEngineState", fcp$getEngineState());
     }
 
     @Override
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
-        squadmc$setWheelsLost(compound.getByte("WheelsLost"));
+        squadmc$setWheelsLost(compound.getInt("WheelsLostMask"));
         if (compound.contains("HeliEngineState")) fcp$setEngineState(compound.getByte("HeliEngineState"));
     }
 }

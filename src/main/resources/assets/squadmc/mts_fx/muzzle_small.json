@@ -1,0 +1,63 @@
+{
+ "particles": [
+  {
+   "type": "GENERIC",
+   "spawningOrientation": "FACING",
+   "renderingOrientation": "PLAYER",
+   "ignoreCollision": true,
+   "isBright": true,
+   "isBlended": true,
+   "hitboxSize": 0.2,
+   "quantity": 1,
+   "duration": 2,
+   "transparency": 0.9,
+   "scale": 1.8,
+   "toScale": 0.5,
+   "textures": [
+    "squadmc:mts/bullets/bombflare_translucent"
+   ],
+   "color": "FFD496"
+  },
+  {
+   "type": "GENERIC",
+   "spawningOrientation": "FACING",
+   "renderingOrientation": "PLAYER",
+   "ignoreCollision": true,
+   "randomTexture": true,
+   "hitboxSize": 0.2,
+   "quantity": 1,
+   "duration": 16,
+   "durationRandomness": 5,
+   "transparency": 0.28,
+   "toTransparency": 0.001,
+   "scale": 0.7,
+   "toScale": 2.4,
+   "initialVelocity": [
+    0,
+    1.6,
+    0
+   ],
+   "spreadRandomness": [
+    0.5,
+    0.5,
+    0.5
+   ],
+   "textures": [
+    "squadmc:mts/core/big_smoke_0",
+    "squadmc:mts/core/big_smoke_1",
+    "squadmc:mts/core/big_smoke_2",
+    "squadmc:mts/core/big_smoke_3",
+    "squadmc:mts/core/big_smoke_4",
+    "squadmc:mts/core/big_smoke_5",
+    "squadmc:mts/core/big_smoke_6",
+    "squadmc:mts/core/big_smoke_7",
+    "squadmc:mts/core/big_smoke_8",
+    "squadmc:mts/core/big_smoke_9",
+    "squadmc:mts/core/big_smoke_10",
+    "squadmc:mts/core/big_smoke_11"
+   ],
+   "color": "B8B4AE"
+  }
+ ],
+ "sounds": []
+}

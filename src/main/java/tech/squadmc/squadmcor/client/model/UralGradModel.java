@@ -7,6 +7,14 @@ import tech.squadmc.squadmcor.entity.UralGradEntity;
 import org.jetbrains.annotations.Nullable;
 
 public class UralGradModel extends VehicleModel<UralGradEntity> {
+    private static final java.util.regex.Pattern ROCKET_BONE = java.util.regex.Pattern.compile("rocket(\\d+)");
+    private static final java.util.Map<Integer, float[]> ROCKET_PIVOTS = new java.util.concurrent.ConcurrentHashMap<>();
+
+    /** Положение кости rocketN в модели, null пока модель не отрисована. */
+    public static float[] rocketPivot(int number) {
+        return ROCKET_PIVOTS.get(number);
+    }
+
     private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/ural_grad.geo.json");
     private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/ural.png");
     private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
@@ -29,6 +37,16 @@ public class UralGradModel extends VehicleModel<UralGradEntity> {
 
     @Override
     public VehicleModel.@Nullable TransformContext<UralGradEntity> collectTransform(String boneName) {
+        java.util.regex.Matcher rocket = ROCKET_BONE.matcher(boneName);
+        if (rocket.matches()) {
+            int number = Integer.parseInt(rocket.group(1));
+            return (bone, vehicle, state) -> {
+                ROCKET_PIVOTS.put(number, new float[]{bone.getPivotX(), bone.getPivotY(), bone.getPivotZ()});
+                var data = vehicle.getGunData("Rocket");
+                bone.setHidden(data == null || number > data.ammo.get());
+            };
+        }
+
         // Р­С„С„РµРєС‚ РѕС‚РєР°С‚Р° РїСѓСЃРєРѕРІРѕР№ СѓСЃС‚Р°РЅРѕРІРєРё РїСЂРё РІС‹СЃС‚СЂРµР»Рµ (РµСЃР»Рё РІ geo РЅР°СЃС‚СЂРѕРµРЅР° РєРѕСЃС‚СЊ BarrelOccilator)
         if (boneName.equals("BarrelOccilator")) {
             return (bone, vehicle, state) -> {

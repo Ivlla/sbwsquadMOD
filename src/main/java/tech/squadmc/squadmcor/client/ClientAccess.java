@@ -498,69 +498,6 @@ public class ClientAccess {
     public static void handleUralGradClientTick(UralGradEntity entity) {
         UralGradSoundManager.updateSounds(entity);
 
-        if (entity.getShootAnimationTimer(1, 0) > 0) {
-            float turretYaw = entity.getYRot() - entity.getTurretYRot();
-            float turretPitch = entity.getTurretXRot();
-
-            float f = -turretPitch * ((float)Math.PI / 180F);
-            float f1 = (float)Math.sin(f);
-            float f2 = (float)Math.cos(f);
-            float f3 = -turretYaw * ((float)Math.PI / 180F);
-
-            double lx = Math.sin(f3) * f2;
-            double ly = f1;
-            double lz = Math.cos(f3) * f2;
-
-            Vec3 lookVec = new Vec3(lx, ly, lz);
-
-            Vec3 turretCenterLocal = new Vec3(0.011, 2.5, -2.57);
-            float bodyYawRad = -entity.getYRot() * ((float)Math.PI / 180F);
-            double tx = turretCenterLocal.x * Math.cos(bodyYawRad) - turretCenterLocal.z * Math.sin(bodyYawRad);
-            double tz = turretCenterLocal.x * Math.sin(bodyYawRad) + turretCenterLocal.z * Math.cos(bodyYawRad);
-            Vec3 turretPivotWorld = entity.position().add(tx, turretCenterLocal.y, tz);
-
-            double distanceBack = 1.95;
-            Vec3 smokeSpawnPos = turretPivotWorld.subtract(lookVec.scale(distanceBack));
-
-            Vec3 jetVelocity = lookVec.scale(-1.3);
-            for (int i = 0; i < 3; i++) {
-                double rx = (entity.getRandom().nextDouble() - 0.5) * 0.3;
-                double ry = (entity.getRandom().nextDouble() - 0.5) * 0.3;
-                double rz = (entity.getRandom().nextDouble() - 0.5) * 0.3;
-
-                double vx = jetVelocity.x + (entity.getRandom().nextDouble() - 0.5) * 0.25;
-                double vy = jetVelocity.y + (entity.getRandom().nextDouble() - 0.5) * 0.15;
-                double vz = jetVelocity.z + (entity.getRandom().nextDouble() - 0.5) * 0.25;
-
-                entity.level().addParticle(net.minecraft.core.particles.ParticleTypes.FIREWORK,
-                        smokeSpawnPos.x + rx, smokeSpawnPos.y + ry, smokeSpawnPos.z + rz,
-                        vx, vy, vz);
-                entity.level().addParticle(net.minecraft.core.particles.ParticleTypes.FLAME,
-                        smokeSpawnPos.x + rx, smokeSpawnPos.y + ry, smokeSpawnPos.z + rz,
-                        vx * 0.8, vy * 0.8, vz * 0.8);
-            }
-
-            double groundY = entity.getY() + 0.15;
-            Vec3 groundSmokePos = new Vec3(smokeSpawnPos.x, groundY, smokeSpawnPos.z);
-
-            for (int i = 0; i < 6; i++) {
-                double rx = (entity.getRandom().nextDouble() - 0.5) * 1.5;
-                double rz = (entity.getRandom().nextDouble() - 0.5) * 1.5;
-
-                double vx = (rx * 0.03) + (lookVec.x * -0.04);
-                double vy = 0.001 + entity.getRandom().nextDouble() * 0.003;
-                double vz = (rz * 0.03) + (lookVec.z * -0.04);
-
-                entity.level().addParticle(net.minecraft.core.particles.ParticleTypes.CAMPFIRE_COSY_SMOKE,
-                        groundSmokePos.x + rx, groundSmokePos.y, groundSmokePos.z + rz,
-                        vx, vy, vz);
-
-                entity.level().addParticle(net.minecraft.core.particles.ParticleTypes.CLOUD,
-                        groundSmokePos.x + rx, groundSmokePos.y, groundSmokePos.z + rz,
-                        vx * 0.6, vy * 0.4, vz * 0.6);
-            }
-        }
-
         Minecraft mc = Minecraft.getInstance();
         if (mc.player != null && mc.player.getVehicle() == entity) {
             int playerSeatIndex = entity.getSeatIndex(mc.player);
