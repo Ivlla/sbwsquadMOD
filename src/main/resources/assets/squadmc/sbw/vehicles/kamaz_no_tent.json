@@ -1,0 +1,7 @@
+{
+  "ID": "squadmc:kamaz_no_tent",
+  "Model": {
+    "Model": "squadmc:geo/kamaz.geo.json",
+    "Texture": "squadmc:textures/entity/kamaz/kamaz.png"
+  }
+}

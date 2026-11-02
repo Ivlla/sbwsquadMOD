@@ -1,0 +1,7 @@
+{
+  "ID": "squadmc:kamaz",
+  "Model": {
+    "Model": "squadmc:geo/kamaz.geo.json",
+    "Texture": "squadmc:textures/entity/kamaz/kamaz.png"
+  }
+}

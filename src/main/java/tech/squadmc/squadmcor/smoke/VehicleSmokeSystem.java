@@ -64,7 +64,7 @@ public final class VehicleSmokeSystem {
         for (Vec3 local : vehicle.getSmokeLauncherPoints()) {
             VehicleSmokeCloudEntity cloud =
                     new VehicleSmokeCloudEntity(ModEntities.VEHICLE_SMOKE_CLOUD.get(), level);
-            cloud.setPos(localToWorld(vehicle, local).add(0.0, 0.35, 0.0));
+            cloud.setPos(aboveFluid(level, localToWorld(vehicle, local).add(0.0, 0.35, 0.0)));
             cloud.configure(LAUNCHER_RADIUS, LAUNCHER_HEIGHT,
                     LAUNCHER_GROW_TICKS, LAUNCHER_HOLD_TICKS, LAUNCHER_FADE_TICKS);
             level.addFreshEntity(cloud);
@@ -101,12 +101,20 @@ public final class VehicleSmokeSystem {
 
         VehicleSmokeCloudEntity puff =
                 new VehicleSmokeCloudEntity(ModEntities.VEHICLE_SMOKE_CLOUD.get(), level);
-        puff.setPos(puffPos);
+        puff.setPos(aboveFluid(level, puffPos));
         puff.configure(GENERATOR_RADIUS, GENERATOR_HEIGHT,
                 GENERATOR_GROW_TICKS, GENERATOR_HOLD_TICKS, GENERATOR_FADE_TICKS);
         puff.setIntensity(GENERATOR_INTENSITY);
         level.addFreshEntity(puff);
     }
+    /** Под водой облако скрыто поверхностью, поэтому точка спавна поднимается над ней. */
+    private static Vec3 aboveFluid(Level level, Vec3 pos) {
+        net.minecraft.core.BlockPos.MutableBlockPos cursor = net.minecraft.core.BlockPos.containing(pos).mutable();
+        if (level.getFluidState(cursor).isEmpty()) return pos;
+        for (int i = 0; i < 32 && !level.getFluidState(cursor).isEmpty(); i++) cursor.move(net.minecraft.core.Direction.UP);
+        return new Vec3(pos.x, cursor.getY() + 0.35, pos.z);
+    }
+
     public static Vec3 localToWorldWithYaw(Entity vehicle, Vec3 local, float yRotDeg) {
         float yawRad = -yRotDeg * ((float) Math.PI / 180F);
         double ox = local.x * Math.cos(yawRad) - local.z * Math.sin(yawRad);

@@ -16,6 +16,7 @@ public class ModItems {
 
     // === РћР”РќРћР РђР—РћР’Р«Р™ Р“Р РђРќРђРўРћРњР•Рў AT4 ===
     public static final RegistryObject<Item> AT4 = ITEMS.register("at4", AT4Item::new);
+    public static final RegistryObject<Item> REPAIR_TORCH = ITEMS.register("repair_torch", tech.squadmc.squadmcor.repair.RepairTorchItem::new);
 
     // РџСѓСЃС‚РѕР№ РѕС‚СЃС‚СЂРµР»СЏРЅРЅС‹Р№ С‚СѓР±СѓСЃ
     public static final RegistryObject<Item> AT4_USED = ITEMS.register("at4_used", () ->

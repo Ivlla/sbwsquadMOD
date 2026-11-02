@@ -1,0 +1,12 @@
+{
+  "blend": { "func": "add", "srcrgb": "srcalpha", "dstrgb": "1-srcalpha" },
+  "vertex": "squadmc:cracked_glass",
+  "fragment": "squadmc:cracked_glass",
+  "attributes": [ "Position" ],
+  "samplers": [],
+  "uniforms": [
+    { "name": "Seed", "type": "float", "count": 1, "values": [ 0.0 ] },
+    { "name": "Amount", "type": "float", "count": 1, "values": [ 1.0 ] },
+    { "name": "Aspect", "type": "float", "count": 1, "values": [ 1.78 ] }
+  ]
+}

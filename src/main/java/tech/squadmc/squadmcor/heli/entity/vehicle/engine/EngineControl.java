@@ -43,7 +43,7 @@ public final class EngineControl {
         put(m, 400, "squadmc:mh60l");
         put(m, 400, "squadmc:huey", "squadmc:huey_m60_door_guns", "squadmc:huey_m60_gunship", "squadmc:huey_m134_door_guns", "squadmc:huey_m134_gunship");
         put(m, 400, "squadmc:venom", "squadmc:venom_gunship", "squadmc:venom_door_guns");
-        put(m, 400, "squadmc:mi8", "squadmc:mi17", "squadmc:mi8_door_guns", "squadmc:mi17_door_guns", "squadmc:mi8_mtv", "squadmc:mi8_amtsh", "squadmc:ch53a", "squadmc:ch53e", "squadmc:mh53");
+        put(m, 400, "squadmc:mi8", "squadmc:mi17", "squadmc:mi8_door_guns", "squadmc:mi17_door_guns", "squadmc:mi8_mtv", "squadmc:mi8_amtsh", "squadmc:mh53");
         put(m, 400, "squadmc:huey_rockets", "squadmc:huey_door_gunner_m60", "squadmc:huey_door_gunner_m134");
         return Map.copyOf(m);
     }
@@ -78,9 +78,9 @@ public final class EngineControl {
     }
 
     public static boolean appliesTo(VehicleEntity vehicle) {
-        if (!(vehicle instanceof EngineControlled) || !START_TICKS.containsKey(id(vehicle))) return false;
+        if (!(vehicle instanceof EngineControlled)) return false;
         EngineType type = vehicle.computed().getEngineType();
-        return type == EngineType.WHEEL || type == EngineType.TRACK || type == EngineType.HELICOPTER;
+        return type == EngineType.WHEEL || type == EngineType.TRACK || type == EngineType.HELICOPTER || type == EngineType.SHIP;
     }
 
     public static boolean isHelicopter(VehicleEntity vehicle) {
@@ -98,7 +98,10 @@ public final class EngineControl {
     }
 
     public static int startTicks(VehicleEntity vehicle) {
-        return START_TICKS.getOrDefault(id(vehicle), 40);
+        Integer ticks = START_TICKS.get(id(vehicle));
+        if (ticks != null) return ticks;
+        if (isHelicopter(vehicle)) return 400;
+        return vehicle.computed().getEngineType() == EngineType.TRACK ? 60 : 40;
     }
 
     public static byte state(VehicleEntity vehicle) {

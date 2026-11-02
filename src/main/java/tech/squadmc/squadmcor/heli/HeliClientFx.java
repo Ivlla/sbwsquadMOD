@@ -134,7 +134,7 @@ public final class HeliClientFx {
     }
 
     private static void engineHint(Minecraft mc) {
-        if (mc.screen != null || !(mc.player.getVehicle() instanceof HeliVehicleBase heli)
+        if (mc.screen != null || !(mc.player.getVehicle() instanceof com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity heli)
                 || heli.getFirstPassenger() != mc.player || !EngineControl.appliesTo(heli)) return;
         byte state = EngineControl.state(heli);
         if (state == EngineControl.OFF) {

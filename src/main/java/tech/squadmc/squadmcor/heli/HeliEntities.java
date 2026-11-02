@@ -11,8 +11,6 @@ import tech.squadmc.squadmcor.init.ModEntities;
 import tech.squadmc.squadmcor.heli.entity.vehicle.Littlebird.LittlebirdEntity;
 import tech.squadmc.squadmcor.heli.entity.vehicle.Littlebird.LittlebirdArmedEntity;
 import tech.squadmc.squadmcor.heli.entity.vehicle.Littlebird.LittlebirdHeavyEntity;
-import tech.squadmc.squadmcor.heli.entity.vehicle.Ch53.Ch53aEntity;
-import tech.squadmc.squadmcor.heli.entity.vehicle.Ch53.Ch53eEntity;
 import tech.squadmc.squadmcor.heli.entity.vehicle.Ch53.Mh53Entity;
 import tech.squadmc.squadmcor.heli.entity.vehicle.Uh60.Mh60lEntity;
 import tech.squadmc.squadmcor.heli.entity.vehicle.Huey.HueyEntity;
@@ -34,6 +32,14 @@ import tech.squadmc.squadmcor.heli.entity.vehicle.Mi8.MI8AMTShEntity;
 import tech.squadmc.squadmcor.heli.entity.vehicle.Huey.HueyRocketsEntity;
 import tech.squadmc.squadmcor.heli.entity.vehicle.Huey.HueyDoorGunnerM60Entity;
 import tech.squadmc.squadmcor.heli.entity.vehicle.Huey.HueyDoorGunnerM134Entity;
+import tech.squadmc.squadmcor.heli.entity.vehicle.Uaz.UAZ452Entity;
+import tech.squadmc.squadmcor.heli.entity.vehicle.Kamaz.KamazEntity;
+import tech.squadmc.squadmcor.heli.entity.vehicle.Ch47.Ch47Entity;
+import tech.squadmc.squadmcor.heli.entity.vehicle.Rg33.RG33Entity;
+import tech.squadmc.squadmcor.heli.entity.vehicle.M939.M939Entity;
+import tech.squadmc.squadmcor.heli.entity.vehicle.ManHx60.ManHx60Entity;
+import tech.squadmc.squadmcor.heli.entity.vehicle.Kamaz.KamazNoTentEntity;
+import tech.squadmc.squadmcor.heli.entity.vehicle.ManHx60.ManHx60NoTentEntity;
 
 /** Вертолёты и ракеты Hellfire из Frontline Combat Pack. */
 public final class HeliEntities {
@@ -45,10 +51,6 @@ public final class HeliEntities {
             () -> EntityType.Builder.of(LittlebirdArmedEntity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(2f,2f).build("littlebird_armed"));
     public static final RegistryObject<EntityType<LittlebirdHeavyEntity>> LITTLEBIRD_HEAVY = ModEntities.ENTITY_TYPES.register("littlebird_heavy",
             () -> EntityType.Builder.of(LittlebirdHeavyEntity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(2f,2f).build("littlebird_heavy"));
-    public static final RegistryObject<EntityType<Ch53aEntity>> CH53A = ModEntities.ENTITY_TYPES.register("ch53a",
-            () -> EntityType.Builder.of(Ch53aEntity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,2f).build("ch53a"));
-    public static final RegistryObject<EntityType<Ch53eEntity>> CH53E = ModEntities.ENTITY_TYPES.register("ch53e",
-            () -> EntityType.Builder.of(Ch53eEntity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,2f).build("ch53e"));
     public static final RegistryObject<EntityType<Mh53Entity>> MH53 = ModEntities.ENTITY_TYPES.register("mh53",
             () -> EntityType.Builder.of(Mh53Entity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,2f).build("mh53"));
     public static final RegistryObject<EntityType<Mh60lEntity>> MH60L = ModEntities.ENTITY_TYPES.register("mh60l",
@@ -92,15 +94,38 @@ public final class HeliEntities {
     public static final RegistryObject<EntityType<HueyDoorGunnerM134Entity>> HUEY_DOOR_GUNNER_M134 = ModEntities.ENTITY_TYPES.register("huey_door_gunner_m134",
             () -> EntityType.Builder.of(HueyDoorGunnerM134Entity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,2f).build("huey_door_gunner_m134"));
 
+    public static final RegistryObject<EntityType<UAZ452Entity>> UAZ_452 = ModEntities.ENTITY_TYPES.register("uaz_452",
+            () -> EntityType.Builder.of(UAZ452Entity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(2f,2f).build("uaz_452"));
+    public static final RegistryObject<EntityType<KamazEntity>> KAMAZ = ModEntities.ENTITY_TYPES.register("kamaz",
+            () -> EntityType.Builder.of(KamazEntity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,2f).build("kamaz"));
+    public static final RegistryObject<EntityType<Ch47Entity>> CH47 = ModEntities.ENTITY_TYPES.register("ch47",
+            () -> EntityType.Builder.of(Ch47Entity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,2f).build("ch47"));
+    public static final RegistryObject<EntityType<RG33Entity>> RG_33 = ModEntities.ENTITY_TYPES.register("rg_33",
+            () -> EntityType.Builder.of(RG33Entity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,2f).build("rg_33"));
+    public static final RegistryObject<EntityType<M939Entity>> M939 = ModEntities.ENTITY_TYPES.register("m939",
+            () -> EntityType.Builder.of(M939Entity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,3f).build("m939"));
+    public static final RegistryObject<EntityType<ManHx60Entity>> MAN_HX60 = ModEntities.ENTITY_TYPES.register("man_hx60",
+            () -> EntityType.Builder.of(ManHx60Entity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,3f).build("man_hx60"));
+    public static final RegistryObject<EntityType<KamazNoTentEntity>> KAMAZ_NO_TENT = ModEntities.ENTITY_TYPES.register("kamaz_no_tent",
+            () -> EntityType.Builder.of(KamazNoTentEntity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,2f).build("kamaz_no_tent"));
+    public static final RegistryObject<EntityType<ManHx60NoTentEntity>> MAN_HX60_NO_TENT = ModEntities.ENTITY_TYPES.register("man_hx60_no_tent",
+            () -> EntityType.Builder.of(ManHx60NoTentEntity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,3f).build("man_hx60_no_tent"));
+
     /** Вызывается из конструктора мода, чтобы регистрации попали в DeferredRegister вовремя. */
     public static void init() {}
 
     public static void addToTab(CreativeModeTab.Output output) {
+        output.accept(ContainerBlockItem.createInstance(UAZ_452.get()));
+        output.accept(ContainerBlockItem.createInstance(KAMAZ.get()));
+        output.accept(ContainerBlockItem.createInstance(CH47.get()));
+        output.accept(ContainerBlockItem.createInstance(RG_33.get()));
+        output.accept(ContainerBlockItem.createInstance(M939.get()));
+        output.accept(ContainerBlockItem.createInstance(MAN_HX60.get()));
+        output.accept(ContainerBlockItem.createInstance(KAMAZ_NO_TENT.get()));
+        output.accept(ContainerBlockItem.createInstance(MAN_HX60_NO_TENT.get()));
         output.accept(ContainerBlockItem.createInstance(LITTLEBIRD.get()));
         output.accept(ContainerBlockItem.createInstance(LITTLEBIRD_ARMED.get()));
         output.accept(ContainerBlockItem.createInstance(LITTLEBIRD_HEAVY.get()));
-        output.accept(ContainerBlockItem.createInstance(CH53A.get()));
-        output.accept(ContainerBlockItem.createInstance(CH53E.get()));
         output.accept(ContainerBlockItem.createInstance(MH53.get()));
         output.accept(ContainerBlockItem.createInstance(MH60L.get()));
         output.accept(ContainerBlockItem.createInstance(HUEY.get()));
