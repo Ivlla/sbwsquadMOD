@@ -1,0 +1,90 @@
+{
+ "Spread": 4,
+ "RecoilX": 0.008,
+ "RecoilY": 0.018,
+ "Damage": 420,
+ "Projectile": "superbwarfare:rpg_rocket_standard",
+ "ExplosionDamage": 60,
+ "ExplosionRadius": 6,
+ "ZoomReload": false,
+ "Headshot": 0,
+ "Velocity": 6.33,
+ "Magazine": 1,
+ "Weight": 10,
+ "DrawTime": 16,
+ "ZoomTime": 9,
+ "EmptyReloadTime": 88,
+ "RPM": 88,
+ "Gravity": 0.006,
+ "ProjectileLife": 140,
+ "GunType": "DirectLauncher",
+ "AmmoType": [
+  {
+   "Ammo": "squadmc:fcl_carlgustaf_heat551crs",
+   "Projectile": "superbwarfare:rpg_rocket_standard",
+   "Override": {
+    "Damage": 420,
+    "ExplosionDamage": 60,
+    "ExplosionRadius": 6,
+    "Velocity": 6.33,
+    "Gravity": 0.006,
+    "EmptyReloadTime": 88,
+    "Icon": "squadmc:textures/item/fcl_carlgustaf_icon.png"
+   }
+  },
+  {
+   "Ammo": "squadmc:fcl_carlgustaf_heat758",
+   "Projectile": "superbwarfare:rpg_rocket_standard",
+   "Override": {
+    "Damage": 560,
+    "ExplosionDamage": 70,
+    "ExplosionRadius": 5,
+    "Velocity": 6.33,
+    "Gravity": 0.006,
+    "EmptyReloadTime": 88,
+    "Icon": "squadmc:textures/item/fcl_carlgustaf_icon.png"
+   }
+  },
+  {
+   "Ammo": "squadmc:fcl_carlgustaf_hedp502",
+   "Projectile": "superbwarfare:rpg_rocket_standard",
+   "Override": {
+    "Damage": 300,
+    "ExplosionDamage": 120,
+    "ExplosionRadius": 8,
+    "Velocity": 6.33,
+    "Gravity": 0.006,
+    "EmptyReloadTime": 88,
+    "Icon": "squadmc:textures/item/fcl_carlgustaf_icon.png"
+   }
+  },
+  {
+   "Ammo": "squadmc:fcl_carlgustaf_he448",
+   "Projectile": "superbwarfare:rpg_rocket_standard",
+   "Override": {
+    "Damage": 100,
+    "ExplosionDamage": 220,
+    "ExplosionRadius": 12,
+    "Velocity": 6.33,
+    "Gravity": 0.006,
+    "EmptyReloadTime": 88,
+    "Icon": "squadmc:textures/item/fcl_carlgustaf_icon.png"
+   }
+  }
+ ],
+ "Icon": "squadmc:textures/item/fcl_carlgustaf_icon.png",
+ "AvailablePerks": [
+  "superbwarfare:powerful_attraction",
+  "superbwarfare:intelligent_chip",
+  "superbwarfare:monster_hunter",
+  "superbwarfare:vorpal_weapon",
+  "superbwarfare:micro_missile",
+  "superbwarfare:battle_of_wits"
+ ],
+ "SoundInfo": {
+  "Fire1P": "squadmc:fcl_carlgustaf",
+  "Fire3P": "squadmc:fcl_carlgustaf",
+  "Fire3PFar": "superbwarfare:rpg_far",
+  "Fire3PVeryFar": "superbwarfare:rpg_veryfar"
+ }
+}

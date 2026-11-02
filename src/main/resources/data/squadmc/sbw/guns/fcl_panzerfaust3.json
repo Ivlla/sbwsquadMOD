@@ -1,0 +1,77 @@
+{
+ "Spread": 4,
+ "RecoilX": 0.008,
+ "RecoilY": 0.018,
+ "Damage": 600,
+ "Projectile": "superbwarfare:rpg_rocket_standard",
+ "ExplosionDamage": 70,
+ "ExplosionRadius": 5,
+ "ZoomReload": false,
+ "Headshot": 0,
+ "Velocity": 5.5,
+ "Magazine": 1,
+ "Weight": 11,
+ "DrawTime": 16,
+ "ZoomTime": 9,
+ "EmptyReloadTime": 66,
+ "RPM": 88,
+ "Gravity": 0.018,
+ "ProjectileLife": 140,
+ "GunType": "DirectLauncher",
+ "AmmoType": [
+  {
+   "Ammo": "squadmc:fcl_panzerfaust3_tandem",
+   "Projectile": "superbwarfare:rpg_rocket_standard",
+   "Override": {
+    "Damage": 600,
+    "ExplosionDamage": 70,
+    "ExplosionRadius": 5,
+    "Velocity": 5.5,
+    "Gravity": 0.018,
+    "EmptyReloadTime": 66,
+    "Icon": "squadmc:textures/item/fcl_panzerfaust3_icon.png"
+   }
+  },
+  {
+   "Ammo": "squadmc:fcl_panzerfaust3_heat",
+   "Projectile": "superbwarfare:rpg_rocket_standard",
+   "Override": {
+    "Damage": 480,
+    "ExplosionDamage": 60,
+    "ExplosionRadius": 5,
+    "Velocity": 5.5,
+    "Gravity": 0.018,
+    "EmptyReloadTime": 66,
+    "Icon": "squadmc:textures/item/fcl_panzerfaust3_icon.png"
+   }
+  },
+  {
+   "Ammo": "squadmc:fcl_panzerfaust3_bunkerfaust",
+   "Projectile": "superbwarfare:rpg_rocket_standard",
+   "Override": {
+    "Damage": 220,
+    "ExplosionDamage": 210,
+    "ExplosionRadius": 11,
+    "Velocity": 5.5,
+    "Gravity": 0.018,
+    "EmptyReloadTime": 66,
+    "Icon": "squadmc:textures/item/fcl_panzerfaust3_icon.png"
+   }
+  }
+ ],
+ "Icon": "squadmc:textures/item/fcl_panzerfaust3_icon.png",
+ "AvailablePerks": [
+  "superbwarfare:powerful_attraction",
+  "superbwarfare:intelligent_chip",
+  "superbwarfare:monster_hunter",
+  "superbwarfare:vorpal_weapon",
+  "superbwarfare:micro_missile",
+  "superbwarfare:battle_of_wits"
+ ],
+ "SoundInfo": {
+  "Fire1P": "squadmc:fcl_panzerfaust3",
+  "Fire3P": "squadmc:fcl_panzerfaust3",
+  "Fire3PFar": "superbwarfare:rpg_far",
+  "Fire3PVeryFar": "superbwarfare:rpg_veryfar"
+ }
+}

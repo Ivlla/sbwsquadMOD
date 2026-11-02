@@ -1,0 +1,51 @@
+{
+ "Spread": 4,
+ "RecoilX": 0.008,
+ "RecoilY": 0.018,
+ "Damage": 300,
+ "Projectile": "superbwarfare:rpg_rocket_standard",
+ "ExplosionDamage": 40,
+ "ExplosionRadius": 5,
+ "ZoomReload": false,
+ "Headshot": 0,
+ "Velocity": 4.4,
+ "Magazine": 1,
+ "Weight": 5,
+ "DrawTime": 16,
+ "ZoomTime": 9,
+ "EmptyReloadTime": 51,
+ "RPM": 88,
+ "Gravity": 0.032,
+ "ProjectileLife": 140,
+ "GunType": "DirectLauncher",
+ "AmmoType": [
+  {
+   "Ammo": "squadmc:fcl_m72_rocket",
+   "Projectile": "superbwarfare:rpg_rocket_standard",
+   "Override": {
+    "Damage": 300,
+    "ExplosionDamage": 40,
+    "ExplosionRadius": 5,
+    "Velocity": 4.4,
+    "Gravity": 0.032,
+    "EmptyReloadTime": 51,
+    "Icon": "squadmc:textures/item/fcl_m72_icon.png"
+   }
+  }
+ ],
+ "Icon": "squadmc:textures/item/fcl_m72_icon.png",
+ "AvailablePerks": [
+  "superbwarfare:powerful_attraction",
+  "superbwarfare:intelligent_chip",
+  "superbwarfare:monster_hunter",
+  "superbwarfare:vorpal_weapon",
+  "superbwarfare:micro_missile",
+  "superbwarfare:battle_of_wits"
+ ],
+ "SoundInfo": {
+  "Fire1P": "squadmc:fcl_m72",
+  "Fire3P": "squadmc:fcl_m72",
+  "Fire3PFar": "superbwarfare:rpg_far",
+  "Fire3PVeryFar": "superbwarfare:rpg_veryfar"
+ }
+}

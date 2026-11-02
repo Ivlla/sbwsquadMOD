@@ -160,6 +160,51 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> HIT_MEDIUM = register("hit_medium");
     public static final RegistryObject<SoundEvent> HIT_SMALL  = register("hit_small");
 
+    // Launcher pack sounds, played by name from gun data and animations
+    static {
+        for (String name : new String[]{
+                "fcl_at4",
+                "fcl_carlgustaf_close",
+                "fcl_carlgustaf_load",
+                "fcl_carlgustaf_open",
+                "fcl_carlgustaf_unload",
+                "fcl_carlgustafm3",
+                "fcl_carlgustafm4",
+                "fcl_dzj08",
+                "fcl_dzj08_sightfinish",
+                "fcl_dzj08_sightstart",
+                "fcl_m72",
+                "fcl_m72_button",
+                "fcl_m72_leanout",
+                "fcl_m72_open",
+                "fcl_panzerfaust3",
+                "fcl_pf98",
+                "fcl_pf98_load",
+                "fcl_pf98_turn",
+                "fcl_pf98_unload",
+                "fcl_rpg26",
+                "fcl_rpg26_foresight",
+                "fcl_rpg26_pin",
+                "fcl_rpg26_rearsight",
+                "fcl_rpg28",
+                "fcl_rpg28_pin",
+                "fcl_rpg29",
+                "fcl_rpg29_load",
+                "fcl_rpg29_reloadend",
+                "fcl_rpg29_reloadstart",
+                "fcl_rpg29m",
+                "fcl_rpg7v2",
+                "fcl_rpg7v2_maghit",
+                "fcl_rpg7v2_magin",
+                "fcl_rpg7v2_rocketraise",
+                "fcl_rpg7v2_safety",
+                "fcl_smaw",
+                "fcl_smaw_rifle",
+        }) {
+            register(name);
+        }
+    }
+
     private static RegistryObject<SoundEvent> register(String name) {
         return REGISTRY.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(squadmc.MODID, name)));
     }

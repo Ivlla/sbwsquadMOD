@@ -18,7 +18,7 @@ public class ModTabs {
                     .displayItems((parameters, output) -> {
                         // Р”РѕР±Р°РІР»СЏРµРј СЃСѓС‰РЅРѕСЃС‚СЊ РІ СЃРїРёСЃРѕРє РїСЂРµРґРјРµС‚РѕРІ РІРєР»Р°РґРєРё
                         output.accept(ModItems.BTR82_ICON.get());
-                        output.accept(ModItems.AT4.get());
+                        ModItems.FCL_ITEMS.forEach(item -> output.accept(item.get()));
                         output.accept(com.atsuishio.superbwarfare.item.container.ContainerBlockItem.createInstance(ModEntities.MTLB_ZU23.get()));
                         output.accept(com.atsuishio.superbwarfare.item.container.ContainerBlockItem.createInstance(ModEntities.ZU23.get()));
                         output.accept(ModItems.REPAIR_TORCH.get());

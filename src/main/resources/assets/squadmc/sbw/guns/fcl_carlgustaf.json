@@ -1,0 +1,20 @@
+{
+ "ID": "squadmc:fcl_carlgustaf",
+ "Animation": {
+  "Idle": "animation.model.idle",
+  "Reload": "animation.model.reloadheat551crs",
+  "Run": "animation.model.running"
+ },
+ "Model": {
+  "Animation": "squadmc:animations/item/fcl_carlgustaf.animation.json",
+  "Model": "squadmc:geo/item/fcl_carlgustaf.geo.json",
+  "Texture": "squadmc:textures/item/fcl_carlgustaf.png"
+ },
+ "FlarePosition": [
+  0,
+  0,
+  0.15
+ ],
+ "FlareSize": 2.2,
+ "HideCrosshairWhenZoom": true
+}

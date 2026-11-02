@@ -1,0 +1,51 @@
+{
+ "Spread": 4,
+ "RecoilX": 0.008,
+ "RecoilY": 0.018,
+ "Damage": 190,
+ "Projectile": "superbwarfare:rpg_rocket_standard",
+ "ExplosionDamage": 210,
+ "ExplosionRadius": 10,
+ "ZoomReload": false,
+ "Headshot": 0,
+ "Velocity": 5.5,
+ "Magazine": 1,
+ "Weight": 8,
+ "DrawTime": 16,
+ "ZoomTime": 9,
+ "EmptyReloadTime": 51,
+ "RPM": 88,
+ "Gravity": 0.016,
+ "ProjectileLife": 140,
+ "GunType": "DirectLauncher",
+ "AmmoType": [
+  {
+   "Ammo": "squadmc:fcl_dzj08_round",
+   "Projectile": "superbwarfare:rpg_rocket_standard",
+   "Override": {
+    "Damage": 190,
+    "ExplosionDamage": 210,
+    "ExplosionRadius": 10,
+    "Velocity": 5.5,
+    "Gravity": 0.016,
+    "EmptyReloadTime": 51,
+    "Icon": "squadmc:textures/item/fcl_dzj08_icon.png"
+   }
+  }
+ ],
+ "Icon": "squadmc:textures/item/fcl_dzj08_icon.png",
+ "AvailablePerks": [
+  "superbwarfare:powerful_attraction",
+  "superbwarfare:intelligent_chip",
+  "superbwarfare:monster_hunter",
+  "superbwarfare:vorpal_weapon",
+  "superbwarfare:micro_missile",
+  "superbwarfare:battle_of_wits"
+ ],
+ "SoundInfo": {
+  "Fire1P": "squadmc:fcl_dzj08",
+  "Fire3P": "squadmc:fcl_dzj08",
+  "Fire3PFar": "superbwarfare:rpg_far",
+  "Fire3PVeryFar": "superbwarfare:rpg_veryfar"
+ }
+}
