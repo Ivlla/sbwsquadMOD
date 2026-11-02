@@ -1,6 +1,6 @@
 {
   "ID": "fcp:empl_kornet",
-  "MaxHealth": 40,
+  "MaxHealth": 60,
   "MaxEnergy": 5250000,
   "Seats": [
     {
@@ -40,11 +40,15 @@
       "Projectile": "superbwarfare:wire_guide_missile",
       "Magazine": 1,
       "EmptyReloadTime": 250,
-      "Damage": 600,
+      "Damage": 800,
       "ExplosionDamage": 70,
       "ExplosionRadius": 7,
       "Velocity": 3.5,
-      "ShootShake": [8, 10, 60],
+      "ShootShake": [
+        8,
+        10,
+        60
+      ],
       "ShootAnimationTime": 10,
       "ShootPos": {
         "Transform": "Barrel",
@@ -132,4 +136,3 @@
   "InertiaRotateRate": 1,
   "EngineType": "Fixed"
 }
-

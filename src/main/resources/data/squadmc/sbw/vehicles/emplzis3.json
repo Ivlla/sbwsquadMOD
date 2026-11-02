@@ -4,7 +4,11 @@
   "MaxEnergy": 5250000,
   "Seats": [
     {
-      "Sensitivity": [0.8, 0.8, 0.8],
+      "Sensitivity": [
+        0.8,
+        0.8,
+        0.8
+      ],
       "IsEnclosed": false,
       "CameraPos": {
         "UseFixedCameraPos": true,
@@ -37,13 +41,13 @@
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
       "Projectile": "superbwarfare:cannon_shell",
-      "ShellType": "AP", "ApDurability": 100,
-      "ShellType": "AP", "ApDurability": 100,
+      "ShellType": "AP",
+      "ApDurability": 100,
       "DefaultZoom": 3,
       "Magazine": 1,
       "EmptyReloadTime": 1450,
       "Velocity": 40,
-      "Damage": 800,
+      "Damage": 500,
       "ExplosionDamage": 20,
       "ExplosionRadius": 1,
       "RecoilTime": 42,
@@ -59,7 +63,6 @@
           "Ammo": "superbwarfare:he_5_inches",
           "Override": {
             "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/he_shell.png",
-            "ShellType": "HE",
             "ShellType": "HE",
             "ExplosionDamage": 120,
             "ExplosionRadius": 10,
@@ -155,4 +158,3 @@
     25
   ]
 }
-

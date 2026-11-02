@@ -1,6 +1,6 @@
 {
   "ID": "fcp:empl_mk19",
-  "MaxHealth": 40,
+  "MaxHealth": 60,
   "MaxEnergy": 5250000,
   "Seats": [
     {
@@ -143,4 +143,3 @@
     75
   ]
 }
-
