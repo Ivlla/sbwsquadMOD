@@ -81,5 +81,6 @@
   "entity.squadmc.nh_90": "NH90",
   "key.squadmc.thermal": "Thermal sight",
   "entity.squadmc.mtlb_zu23": "MT-LB with ZU-23-2",
-  "entity.squadmc.zu23": "ZU-23-2"
+  "entity.squadmc.zu23": "ZU-23-2",
+  "weapon.squadmc.zu23": "ZU-23-2 23mm"
 }

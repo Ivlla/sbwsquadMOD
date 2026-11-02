@@ -70,6 +70,10 @@ public class ClientAccess {
                     new tech.squadmc.squadmcor.network.SmokeGeneratorPulsePacket());
         }
     }
+    public static void handleMtlbClientTick(tech.squadmc.squadmcor.entity.mtlbEntity entity) {
+        tech.squadmc.squadmcor.client.sound.MtlbSoundManager.updateSounds(entity);
+    }
+
     public static void handleBmd4ClientTick(bmd4Entity entity) {
         Bmd4SoundManager.updateSounds(entity);
 

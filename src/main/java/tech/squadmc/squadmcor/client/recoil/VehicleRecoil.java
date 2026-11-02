@@ -23,11 +23,11 @@ import tech.squadmc.squadmcor.squadmc;
 public final class VehicleRecoil {
     private static final float STIFFNESS = 90F;
     private static final float DAMPING = 13F;
-    private static final float MAX_ANGLE = 9F;
+    private static final float MAX_ANGLE = 14F;
     private static final float TRAUMA_DECAY_PER_SECOND = 1.7F;
-    private static final float TRAUMA_DEGREES = 1.6F;
-    private static final float ZOOM_SCALE = 0.55F;
-    private static final float THIRD_PERSON_SCALE = 0.45F;
+    private static final float TRAUMA_DEGREES = 3.2F;
+    private static final float ZOOM_SCALE = 0.8F;
+    private static final float THIRD_PERSON_SCALE = 0.6F;
     private static final float MAX_FRAME = 0.05F;
 
     private static float pitch, pitchVelocity, yaw, yawVelocity, roll, rollVelocity, trauma;
@@ -38,11 +38,11 @@ public final class VehicleRecoil {
     /** { подброс, разброс вбок и по крену, дрожь } */
     private static float[] strength(GunFx.Kind kind) {
         return switch (kind) {
-            case SMALL -> new float[]{3F, 2F, 0.05F};
-            case MEDIUM -> new float[]{10F, 5F, 0.14F};
-            case HEAVY -> new float[]{55F, 16F, 0.95F};
-            case ROCKET -> new float[]{12F, 7F, 0.3F};
-            case GRAD -> new float[]{14F, 9F, 0.35F};
+            case SMALL -> new float[]{7F, 4F, 0.12F};
+            case MEDIUM -> new float[]{22F, 11F, 0.28F};
+            case HEAVY -> new float[]{120F, 34F, 1F};
+            case ROCKET -> new float[]{26F, 15F, 0.55F};
+            case GRAD -> new float[]{30F, 18F, 0.6F};
             default -> new float[]{0F, 0F, 0F};
         };
     }

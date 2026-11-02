@@ -27,6 +27,17 @@ public abstract class VehicleEntityRepairMixin {
         if (squadmc$running()) cir.setReturnValue(false);
     }
 
+    /** Качку корпуса от выстрела заменяет VehicleRecoil: трясётся только экран, пушка и прицел стоят на месте. */
+    @Inject(method = "getRecoilShake", at = @At("HEAD"), cancellable = true)
+    private void squadmc$noRecoilShake(CallbackInfoReturnable<Double> cir) {
+        cir.setReturnValue(0.0);
+    }
+
+    @Inject(method = "getRecoilShakeO", at = @At("HEAD"), cancellable = true)
+    private void squadmc$noRecoilShakeO(CallbackInfoReturnable<Double> cir) {
+        cir.setReturnValue(0.0);
+    }
+
     /** Без гусеницы машина стоит сразу, колёсная по правилам WheelLoss. */
     private boolean squadmc$running() {
         VehicleEntity vehicle = (VehicleEntity) (Object) this;

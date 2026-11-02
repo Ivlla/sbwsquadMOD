@@ -62,5 +62,6 @@
   "entity.squadmc.nh_90": "NH90",
   "key.squadmc.thermal": "Тепловизор",
   "entity.squadmc.mtlb_zu23": "МТ-ЛБ с ЗУ-23-2",
-  "entity.squadmc.zu23": "ЗУ-23-2"
+  "entity.squadmc.zu23": "ЗУ-23-2",
+  "weapon.squadmc.zu23": "ЗУ-23-2 23 мм"
 }

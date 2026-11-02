@@ -118,18 +118,18 @@
       "Transform": "Turret",
       "Pose": "Default",
       "Position": [
-        0.35,
+        0.5,
         -0.75,
-        -0.65
+        -0.55
       ],
       "CanRotateHead": false,
       "CameraPos": {
         "UseFixedCameraPos": true,
         "Transform": "Barrel",
         "Position": [
-          0.2,
-          0.45,
-          -0.6
+          0,
+          0.75,
+          -0.9
         ],
         "Direction": "Barrel"
       },

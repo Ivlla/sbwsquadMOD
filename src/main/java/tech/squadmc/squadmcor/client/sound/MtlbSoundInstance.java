@@ -16,8 +16,8 @@ public class MtlbSoundInstance extends AbstractTickableSoundInstance {
 
     public MtlbSoundInstance(mtlbEntity vehicle, boolean isFirstPerson, boolean isIdle) {
         super(isIdle ?
-                        (isFirstPerson ? ModSounds.MTLB_ENGINE_IDLE_1P.get() : ModSounds.MTLB_ENGINE_IDLE_3P.get()) :
-                        (isFirstPerson ? ModSounds.MTLB_ENGINE_RUNNING_1P.get() : ModSounds.MTLB_ENGINE_RUNNING_3P.get()),
+                        (isFirstPerson ? ModSounds.BMD4_ENGINE_IDLE_1P.get() : ModSounds.BMD4_ENGINE_IDLE_3P.get()) :
+                        (isFirstPerson ? ModSounds.BMD4_ENGINE_RUNNING_1P.get() : ModSounds.BMD4_ENGINE_RUNNING_3P.get()),
                 SoundSource.NEUTRAL, SoundInstance.createUnseededRandom());
 
         this.vehicle = vehicle;

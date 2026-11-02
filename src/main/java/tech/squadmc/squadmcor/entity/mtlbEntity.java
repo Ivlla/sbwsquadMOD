@@ -25,6 +25,11 @@ public class mtlbEntity extends SquadBaseVehicleEntity {
     public void tick() {
         super.tick();
 
+        if (this.level().isClientSide) {
+            net.minecraftforge.fml.DistExecutor.unsafeRunWhenOn(net.minecraftforge.api.distmarker.Dist.CLIENT,
+                    () -> () -> tech.squadmc.squadmcor.client.ClientAccess.handleMtlbClientTick(this));
+        }
+
         // Дымогенератор (VehicleSmokeSystem): клиент шлёт пульс, сервер тикает генератор
         if (this.level().isClientSide) {
             net.minecraftforge.fml.DistExecutor.unsafeRunWhenOn(net.minecraftforge.api.distmarker.Dist.CLIENT, () -> () ->
