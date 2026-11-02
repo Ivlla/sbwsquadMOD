@@ -1,11 +1,17 @@
 {
   "mappings": {
+    "tech/squadmc/squadmcor/mixin/VehicleHudHoverShiftMixin": {
+      "Lnet/minecraft/client/gui/GuiGraphics;drawString(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;IIIZ)I": "Lnet/minecraft/client/gui/GuiGraphics;m_280614_(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;IIIZ)I"
+    },
     "tech/squadmc/squadmcor/mixin/SmallRocketEntityMixin": {
       "tick": "Lcom/atsuishio/superbwarfare/entity/projectile/SmallRocketEntity;m_8119_()V"
     }
   },
   "data": {
     "searge": {
+      "tech/squadmc/squadmcor/mixin/VehicleHudHoverShiftMixin": {
+        "Lnet/minecraft/client/gui/GuiGraphics;drawString(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;IIIZ)I": "Lnet/minecraft/client/gui/GuiGraphics;m_280614_(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;IIIZ)I"
+      },
       "tech/squadmc/squadmcor/mixin/SmallRocketEntityMixin": {
         "tick": "Lcom/atsuishio/superbwarfare/entity/projectile/SmallRocketEntity;m_8119_()V"
       }
