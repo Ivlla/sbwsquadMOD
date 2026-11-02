@@ -59,5 +59,6 @@
   "part.squadmc.sub_engine": "второй двигатель",
   "key.squadmc.engine_toggle": "Запуск/остановка двигателя техники",
   "entity.squadmc.ah_64": "AH-64 Apache",
-  "entity.squadmc.nh_90": "NH90"
+  "entity.squadmc.nh_90": "NH90",
+  "key.squadmc.thermal": "Тепловизор"
 }

@@ -78,5 +78,6 @@
   "part.squadmc.engine": "engine",
   "part.squadmc.sub_engine": "second engine",
   "entity.squadmc.ah_64": "AH-64 Apache",
-  "entity.squadmc.nh_90": "NH90"
+  "entity.squadmc.nh_90": "NH90",
+  "key.squadmc.thermal": "Thermal sight"
 }

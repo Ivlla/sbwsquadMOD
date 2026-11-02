@@ -930,5 +930,7 @@
   "engine_start.technical": {"sounds": [{"name": "squadmc:squad/technical/engine/technical_engine_start_01", "attenuation_distance": 64}]},
   "engine_start.ural375": {"sounds": [{"name": "squadmc:squad/ural375/engine/ural_engine_start_ext", "attenuation_distance": 64}]},
   "engine_start.us_truck": {"sounds": [{"name": "squadmc:squad/us_truck/engine/us_truck_engine_start_ext_01", "attenuation_distance": 64}]},
-  "engine_start.gwagon": {"sounds": [{"name": "squadmc:squad/gwagon/engine/gwagon_engine_start_ext_01", "attenuation_distance": 64}]}
+  "engine_start.gwagon": {"sounds": [{"name": "squadmc:squad/gwagon/engine/gwagon_engine_start_ext_01", "attenuation_distance": 64}]},
+  "thermal.flir_on": {"sounds": ["squadmc:thermal/flir_on"]},
+  "thermal.flir_off": {"sounds": ["squadmc:thermal/flir_off"]}
 }

@@ -1,0 +1,55 @@
+{
+  "targets": [
+    "swap"
+  ],
+  "passes": [
+    {
+      "name": "squadmc:thermal",
+      "intarget": "minecraft:main",
+      "outtarget": "swap",
+      "uniforms": [
+        {
+          "name": "Palette",
+          "values": [
+            0.0
+          ]
+        },
+        {
+          "name": "PixelSize",
+          "values": [
+            3.0
+          ]
+        },
+        {
+          "name": "Noise",
+          "values": [
+            0.05
+          ]
+        },
+        {
+          "name": "Scanlines",
+          "values": [
+            0.03
+          ]
+        },
+        {
+          "name": "Softness",
+          "values": [
+            0.5
+          ]
+        },
+        {
+          "name": "Contrast",
+          "values": [
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "blit",
+      "intarget": "swap",
+      "outtarget": "minecraft:main"
+    }
+  ]
+}

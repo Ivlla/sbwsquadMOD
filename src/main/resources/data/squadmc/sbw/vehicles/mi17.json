@@ -40,7 +40,7 @@
         "Direction": "Barrel"
       },
       "BanHand": true,
-      "HasThermalImaging": true,
+      "HasThermalImaging": false,
       "MinPitch": -65,
       "MaxPitch": 15,
       "MinYaw": -75,
