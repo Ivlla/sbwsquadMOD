@@ -21,12 +21,6 @@ public class FclLauncherModel extends CustomGunModel<FclLauncherItem> {
     /** The launchers render at scale 1 while SBW's procedural motion is tuned for its scale 4 guns. */
     private static final float MOTION_SCALE = 4f;
 
-    private final FclLauncherSpec spec;
-
-    public FclLauncherModel(FclLauncherSpec spec) {
-        this.spec = spec;
-    }
-
     @Override
     public void setCustomAnimations(FclLauncherItem animatable, long instanceId, AnimationState<FclLauncherItem> animationState) {
         Player player = Minecraft.getInstance().player;
@@ -51,11 +45,12 @@ public class FclLauncherModel extends CustomGunModel<FclLauncherItem> {
         recoil.setPosZ(recoil.getPosZ() * MOTION_SCALE);
         CrossHairOverlay.gunRot = recoil.getRotZ();
 
-        float[] aim = this.spec.aim[this.spec.clampScope(data.attachment.get(AttachmentType.SCOPE))];
+        FclLauncherSpec spec = animatable.spec;
+        float[] aim = spec.aim[spec.clampScope(data.attachment.get(AttachmentType.SCOPE))];
         gun.setPosX(aim[0] * zp);
         gun.setPosY(aim[1] * zp - 0.2f * MOTION_SCALE * zpz);
         gun.setPosZ(aim[2] * zp + 0.15f * MOTION_SCALE * zpz);
-        gun.setRotZ(-this.spec.displayRoll * Mth.DEG_TO_RAD * zp);
+        gun.setRotZ(-spec.displayRoll * Mth.DEG_TO_RAD * zp);
 
         ClientEventHandler.gunRootMove(getAnimationProcessor(), 0, 0, 0, true);
         root.setPosX(root.getPosX() * MOTION_SCALE);

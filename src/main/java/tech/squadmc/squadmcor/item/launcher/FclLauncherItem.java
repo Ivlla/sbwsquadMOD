@@ -39,7 +39,7 @@ public class FclLauncherItem extends GunGeoItem {
 
     @Override
     public Supplier<? extends GeoItemRenderer<? extends Item>> getRenderer() {
-        return () -> new FclLauncherRenderer(this.spec);
+        return FclLauncherRenderer::new;
     }
 
     @Override

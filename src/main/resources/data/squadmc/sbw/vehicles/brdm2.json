@@ -415,7 +415,7 @@
       ]
     ]
   },
-  "EngineSound": "squadmc:Empty",
+  "EngineSound": "squadmc:empty",
   "HudType": "@Empty",
   "TerrainCompat": [
     [
