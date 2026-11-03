@@ -4623,5 +4623,13 @@
         "name": "squadmc:tigr/mk19/mk19_fire_3p_far"
       }
     ]
+  },
+  "vehicle_burn": {
+    "sounds": [
+      {
+        "name": "squadmc:vehicle_burn",
+        "stream": true
+      }
+    ]
   }
 }

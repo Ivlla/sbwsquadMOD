@@ -125,5 +125,12 @@
   "entity.squadmc.m113": "M113",
   "weapon.squadmc.ags30": "AGS-30",
   "weapon.squadmc.m2hb": "M2HB",
-  "key.squadmc.vehicle_debug": "Toggle Vehicle Debug Overlay"
+  "key.squadmc.vehicle_debug": "Toggle Vehicle Debug Overlay",
+  "entity.squadmc.vehicle_wreck": "Vehicle Wreck",
+  "item.squadmc.fcl_carlgustaf_scope": "Carl Gustaf M3 (Scoped)",
+  "item.squadmc.fcl_carlgustafm4_scope": "Carl Gustaf M4 (Scoped)",
+  "item.squadmc.fcl_rpg29_scope": "RPG-29 Vampir (Scoped)",
+  "item.squadmc.fcl_rpg29m_scope": "RPG-29M (Scoped)",
+  "item.squadmc.fcl_rpg7v2_scope": "RPG-7V2 (Scoped)",
+  "item.squadmc.fcl_smaw_scope": "Mk 153 SMAW (Scoped)"
 }

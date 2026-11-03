@@ -13,7 +13,8 @@
     "VehicleEffectUtilsMixin",
     "RepairToolItemMixin",
     "VehicleEngineUtilsMixin",
-    "VehicleShootFxMixin"
+    "VehicleShootFxMixin",
+    "VehicleWaterStepMixin"
   ],
   "client": [
     "VehicleModelDamageMixin",

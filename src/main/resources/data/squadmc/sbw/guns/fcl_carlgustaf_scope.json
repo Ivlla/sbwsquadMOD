@@ -82,8 +82,8 @@
   "superbwarfare:battle_of_wits"
  ],
  "SoundInfo": {
-  "Fire1P": "squadmc:fcl_carlgustaf",
-  "Fire3P": "squadmc:fcl_carlgustaf",
+  "Fire1P": "squadmc:fcl_carlgustafm3",
+  "Fire3P": "squadmc:fcl_carlgustafm3",
   "Fire3PFar": "superbwarfare:rpg_far",
   "Fire3PVeryFar": "superbwarfare:rpg_veryfar"
  }
