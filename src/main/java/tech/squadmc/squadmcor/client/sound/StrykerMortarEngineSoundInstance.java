@@ -7,7 +7,7 @@ import net.minecraft.util.Mth;
 import tech.squadmc.squadmcor.entity.StrykerMortalEntity;
 import tech.squadmc.squadmcor.init.ModSounds;
 
-public class StrykerMortarEngineSoundInstance extends AbstractTickableSoundInstance {
+public class StrykerMortarEngineSoundInstance extends AbstractTickableSoundInstance implements EngineAudibleRange.Source {
     private final StrykerMortalEntity vehicle;
     private final boolean isFirstPerson;
     private final boolean isIdle;
@@ -70,6 +70,11 @@ public class StrykerMortarEngineSoundInstance extends AbstractTickableSoundInsta
             float speedFactor = (float) (speed * 1.4D);
             this.pitch = Mth.clamp(0.80F + speedFactor, 0.80F, 1.20F);
         }
+    }
+
+    @Override
+    public int audibleRange() {
+        return EngineAudibleRange.range(this.vehicle, this.isIdle);
     }
 
     public void startFadeOut() {

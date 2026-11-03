@@ -7,7 +7,7 @@ import net.minecraft.util.Mth;
 import tech.squadmc.squadmcor.entity.MotorcycleEntity;
 import tech.squadmc.squadmcor.init.ModSounds;
 
-public class MotorcycleEngineSoundInstance extends AbstractTickableSoundInstance {
+public class MotorcycleEngineSoundInstance extends AbstractTickableSoundInstance implements EngineAudibleRange.Source {
     private final MotorcycleEntity vehicle;
     private final boolean isFirstPerson;
     private final boolean isIdle;
@@ -70,6 +70,11 @@ public class MotorcycleEngineSoundInstance extends AbstractTickableSoundInstance
             float speedFactor = (float) (speed * 1.9D);
             this.pitch = Mth.clamp(0.85F + speedFactor, 0.85F, 1.45F);
         }
+    }
+
+    @Override
+    public int audibleRange() {
+        return EngineAudibleRange.range(this.vehicle, this.isIdle);
     }
 
     public void startFadeOut() {

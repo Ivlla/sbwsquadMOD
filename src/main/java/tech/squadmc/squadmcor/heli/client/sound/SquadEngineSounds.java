@@ -1,6 +1,8 @@
 // Based on Frontline Combat Pack by Commissar_Mado (see FCP_LICENSE.txt). Modified for SquadMC.
 package tech.squadmc.squadmcor.heli.client.sound;
 
+import tech.squadmc.squadmcor.client.sound.EngineAudibleRange;
+
 import com.atsuishio.superbwarfare.data.vehicle.subdata.EngineInfo;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import tech.squadmc.squadmcor.squadmc;
@@ -39,13 +41,6 @@ import java.util.Map;
 @Mod.EventBusSubscriber(modid = squadmc.MODID, value = Dist.CLIENT)
 public final class SquadEngineSounds {
 
-    private static final double RANGE = 128.0;
-    /**
-     * Helicopters carry medium (100-400 blocks) and far (250+) rotor layers, so they must stay
-     * tracked well past the ground range or those layers never get to play. The client only has the
-     * entity within the server's view distance anyway, so this is an upper bound.
-     */
-    private static final double HELICOPTER_RANGE = 512.0;
     /** Ticks over which the idle crossfades in at the end of a start sound. */
     private static final int IDLE_HANDOVER = 6;
     private static final SoundSource SOURCE = SoundSource.NEUTRAL;
@@ -71,7 +66,7 @@ public final class SquadEngineSounds {
             if (!(entity instanceof VehicleEntity vehicle) || ACTIVE.containsKey(vehicle.getId())) continue;
             SquadEngineProfile profile = SquadEngineProfiles.get(EngineControl.id(vehicle));
             if (profile == null) continue;
-            double range = range(profile);
+            double range = EngineAudibleRange.movingRange(vehicle);
             if (vehicle.distanceToSqr(mc.player) > range * range) continue;
             ACTIVE.put(vehicle.getId(), new EngineAudio(vehicle, profile));
         }
@@ -84,10 +79,6 @@ public final class SquadEngineSounds {
                 it.remove();
             }
         }
-    }
-
-    private static double range(SquadEngineProfile profile) {
-        return profile.helicopter ? HELICOPTER_RANGE : RANGE;
     }
 
     public static void stopAll() {
@@ -130,7 +121,7 @@ public final class SquadEngineSounds {
 
         /** @return false once this vehicle no longer needs audio. */
         boolean tick(Minecraft mc) {
-            double range = range(profile);
+            double range = EngineAudibleRange.movingRange(vehicle);
             if (vehicle.isRemoved() || vehicle.distanceToSqr(mc.player) > range * range * 1.1) return false;
 
             inside = mc.player.getVehicle() == vehicle && mc.options.getCameraType().isFirstPerson();
@@ -248,8 +239,7 @@ public final class SquadEngineSounds {
             SoundInstance instance = inside
                     ? new SimpleSoundInstance(shot.sound(), SOURCE, volume, 1f, RandomSource.create(), false, 0,
                     SoundInstance.Attenuation.NONE, 0, 0, 0, true)
-                    : new SimpleSoundInstance(shot.sound(), SOURCE, volume, 1f, RandomSource.create(), false, 0,
-                    SoundInstance.Attenuation.LINEAR, vehicle.getX(), vehicle.getY(), vehicle.getZ(), false);
+                    : new EngineAudibleRange.OneShot(vehicle, shot.sound(), SOURCE, volume, RandomSource.create());
             mc.getSoundManager().play(instance);
             return instance;
         }
@@ -265,7 +255,7 @@ public final class SquadEngineSounds {
     }
 
     /** One looping layer; reads its volume/pitch from the owning EngineAudio every sound tick. */
-    private static final class LayerSound extends AbstractTickableSoundInstance {
+    private static final class LayerSound extends AbstractTickableSoundInstance implements EngineAudibleRange.Source {
         private final EngineAudio audio;
         private final SquadEngineProfile.Layer layer;
         /** Left behind by a set switch: fades to silence, then stops. */
@@ -291,6 +281,16 @@ public final class SquadEngineSounds {
         @Override
         public boolean canStartSilent() {
             return true;
+        }
+
+        @Override
+        public int audibleRange() {
+            return layer.interior ? 0 : EngineAudibleRange.movingRange(audio.vehicle);
+        }
+
+        @Override
+        public float rangeGain() {
+            return layer.interior ? 1f : EngineAudibleRange.idleGain(audio.vehicle);
         }
 
         @Override

@@ -7,7 +7,7 @@ import net.minecraft.util.Mth;
 import tech.squadmc.squadmcor.entity.leopardEntity;
 import tech.squadmc.squadmcor.init.ModSounds;
 
-public class leopardEngineSoundInstance extends AbstractTickableSoundInstance {
+public class leopardEngineSoundInstance extends AbstractTickableSoundInstance implements EngineAudibleRange.Source {
     private final leopardEntity vehicle;
     private final boolean isFirstPerson;
     private final boolean isIdle;
@@ -69,6 +69,11 @@ public class leopardEngineSoundInstance extends AbstractTickableSoundInstance {
             float speedFactor = (float) (speed * 1.6D);
             this.pitch = Mth.clamp(0.9F + speedFactor, 0.9F, 1.35F);
         }
+    }
+
+    @Override
+    public int audibleRange() {
+        return EngineAudibleRange.range(this.vehicle, this.isIdle);
     }
 
     public void startFadeOut() {

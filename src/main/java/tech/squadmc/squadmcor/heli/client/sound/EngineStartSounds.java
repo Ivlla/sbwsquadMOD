@@ -1,5 +1,6 @@
 package tech.squadmc.squadmcor.heli.client.sound;
 
+import tech.squadmc.squadmcor.client.sound.EngineAudibleRange;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
@@ -77,8 +78,8 @@ public final class EngineStartSounds {
         Byte last = LAST_STATE.put(vehicle, state);
         if (last == null || last == state || EngineControl.usesSquadSound(vehicle)) return;
         if (state == EngineControl.STARTING) {
-            SoundInstance sound = new SimpleSoundInstance(SoundEvent.createVariableRangeEvent(new ResourceLocation(soundFor(vehicle))),
-                    SoundSource.NEUTRAL, 1.5F, 1F, vehicle.getRandom(), vehicle.getX(), vehicle.getY(), vehicle.getZ());
+            SoundInstance sound = new EngineAudibleRange.OneShot(vehicle, SoundEvent.createVariableRangeEvent(new ResourceLocation(soundFor(vehicle))),
+                    SoundSource.NEUTRAL, 1.5F, vehicle.getRandom());
             mc.getSoundManager().play(sound);
             PLAYING.put(vehicle, sound);
         } else if (state == EngineControl.OFF) {

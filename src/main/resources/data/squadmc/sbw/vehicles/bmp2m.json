@@ -450,7 +450,7 @@
         ],
         "BoundUpWithAmmoAmount": true
       },
-      "Crosshair": "@VehicleCommonMissile",
+      "Crosshair": "@Empty",
       "CrosshairColor": "0x00FF66",
       "SoundRadius": 32,
       "SoundInfo": {
@@ -482,7 +482,7 @@
       "RecoilForce": 0.31,
       "ShootAnimationTime": 3,
       "Spread": 0.8,
-      "Crosshair": "@VehicleRuApc",
+      "Crosshair": "@Empty",
       "CrosshairColor": "0x66FF00",
       "Name": "weapon.squadmc.ags30",
       "SoundInfo": {
@@ -526,7 +526,7 @@
       "ShootAnimationTime": 3,
       "Spread": 0.5,
       "CrosshairColor": "0xFFC700",
-      "Crosshair": "@VehicleRuApc",
+      "Crosshair": "@Empty",
       "Name": "weapon.squadmc.30mm_he",
       "SoundInfo": {
         "Fire1P": "squadmc:btr82_cannon_fire",
@@ -589,7 +589,7 @@
       "RecoilForce": 0.05,
       "ShootAnimationTime": 1,
       "Spread": 0.25,
-      "Crosshair": "@VehicleCommonGun",
+      "Crosshair": "@Empty",
       "CrosshairColor": "0xFFC700",
       "Name": "weapon.superbwarfare.7_62mm_coax",
       "SoundInfo": {
@@ -681,7 +681,7 @@
       ]
     ]
   },
-  "HudType": "@Land",
+  "HudType": "@Empty",
   "TerrainCompat": [
     [
       1.36,

@@ -22,7 +22,9 @@
     "VehicleHudEngineBarMixin",
     "VehicleHudHoverShiftMixin",
     "ThermalLightTextureMixin",
-    "ThermalEntityLightMixin"
+    "ThermalEntityLightMixin",
+    "EngineSoundRangeMixin",
+    "VehicleSoundInstanceAccessor"
   ],
   "server": [],
   "injectors": {

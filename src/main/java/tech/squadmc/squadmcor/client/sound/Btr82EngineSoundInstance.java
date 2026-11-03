@@ -7,7 +7,7 @@ import net.minecraft.util.Mth;
 import tech.squadmc.squadmcor.entity.btr82Entity;
 import tech.squadmc.squadmcor.init.ModSounds;
 
-public class Btr82EngineSoundInstance extends AbstractTickableSoundInstance {
+public class Btr82EngineSoundInstance extends AbstractTickableSoundInstance implements EngineAudibleRange.Source {
     private final btr82Entity vehicle;
     private final boolean isFirstPerson;
     private final boolean isIdle;
@@ -71,6 +71,11 @@ public class Btr82EngineSoundInstance extends AbstractTickableSoundInstance {
             float speedFactor = (float)(speed * 1.5D);
             this.pitch = Mth.clamp(0.85F + speedFactor, 0.85F, 1.25F);
         }
+    }
+
+    @Override
+    public int audibleRange() {
+        return EngineAudibleRange.range(this.vehicle, this.isIdle);
     }
 
     public void startFadeOut() {

@@ -7,7 +7,7 @@ import net.minecraft.util.Mth;
 import tech.squadmc.squadmcor.entity.sprutEntity;
 import tech.squadmc.squadmcor.init.ModSounds;
 
-public class sprutEngineSoundInstance extends AbstractTickableSoundInstance {
+public class sprutEngineSoundInstance extends AbstractTickableSoundInstance implements EngineAudibleRange.Source {
     private final sprutEntity vehicle;
     private final boolean isFirstPerson;
     private final boolean isIdle;
@@ -70,6 +70,11 @@ public class sprutEngineSoundInstance extends AbstractTickableSoundInstance {
             float speedFactor = (float)(speed * 1.8D);
             this.pitch = Mth.clamp(0.85F + speedFactor, 0.85F, 1.3F);
         }
+    }
+
+    @Override
+    public int audibleRange() {
+        return EngineAudibleRange.range(this.vehicle, this.isIdle);
     }
 
     public void startFadeOut() {

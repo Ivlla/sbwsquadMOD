@@ -7,7 +7,7 @@ import net.minecraft.util.Mth;
 import tech.squadmc.squadmcor.entity.bradleyEntity;
 import tech.squadmc.squadmcor.init.ModSounds;
 
-public class BradleyEngineSoundInstance extends AbstractTickableSoundInstance {
+public class BradleyEngineSoundInstance extends AbstractTickableSoundInstance implements EngineAudibleRange.Source {
     private final bradleyEntity vehicle;
     private final boolean isFirstPerson;
     private final boolean isIdle;
@@ -71,6 +71,11 @@ public class BradleyEngineSoundInstance extends AbstractTickableSoundInstance {
             float speedFactor = (float)(speed * 1.5D);
             this.pitch = Mth.clamp(0.85F + speedFactor, 0.85F, 1.3F);
         }
+    }
+
+    @Override
+    public int audibleRange() {
+        return EngineAudibleRange.range(this.vehicle, this.isIdle);
     }
 
     public void startFadeOut() {

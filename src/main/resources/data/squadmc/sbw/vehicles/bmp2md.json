@@ -393,7 +393,7 @@
       "ShootAnimationTime": 3,
       "Spread": 0.5,
       "CrosshairColor": "0xFFC700",
-      "Crosshair": "@VehicleRuApc",
+      "Crosshair": "@Empty",
       "Name": "weapon.squadmc.30mm_he",
       "SoundInfo": {
         "Fire1P": "squadmc:btr82_cannon_fire",
@@ -456,7 +456,7 @@
       "RecoilForce": 0.05,
       "ShootAnimationTime": 1,
       "Spread": 0.25,
-      "Crosshair": "@VehicleCommonGun",
+      "Crosshair": "@Empty",
       "CrosshairColor": "0xFFC700",
       "Name": "weapon.superbwarfare.7_62mm_coax",
       "SoundInfo": {
@@ -548,7 +548,7 @@
       ]
     ]
   },
-  "HudType": "@Land",
+  "HudType": "@Empty",
   "TerrainCompat": [
     [
       1.36,
