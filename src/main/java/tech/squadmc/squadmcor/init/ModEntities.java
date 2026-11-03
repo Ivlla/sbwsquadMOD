@@ -271,6 +271,14 @@ public class ModEntities {
                     .clientTrackingRange(360)
                     .build("m2empl"));
 
+    public static final RegistryObject<EntityType<VehicleWreckEntity>> VEHICLE_WRECK =
+            ENTITY_TYPES.register("vehicle_wreck", () -> EntityType.Builder.<VehicleWreckEntity>of(VehicleWreckEntity::new, MobCategory.MISC)
+                    .sized(2F, 2F)
+                    .clientTrackingRange(32)
+                    .updateInterval(20)
+                    .fireImmune()
+                    .build("vehicle_wreck"));
+
     public static final RegistryObject<EntityType<AGSEntity>> AGS17 =
             ENTITY_TYPES.register("emplags17", () -> EntityType.Builder.<AGSEntity>of(AGSEntity::new, MobCategory.MISC)
                     .sized(0.8F, 0.8F)

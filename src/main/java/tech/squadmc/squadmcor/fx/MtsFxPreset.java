@@ -18,7 +18,9 @@ public enum MtsFxPreset {
     MUZZLE_MEDIUM("muzzle_medium"),
     MUZZLE_HEAVY("muzzle_heavy"),
     GROUND_BLAST("ground_blast"),
-    GRAD_BLAST("grad_blast");
+    GRAD_BLAST("grad_blast"),
+    VEHICLE_FIRE("vehicle_fire"),
+    VEHICLE_SMOKE("vehicle_smoke");
 
     public final String file;
 

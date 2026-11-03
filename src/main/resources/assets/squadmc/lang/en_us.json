@@ -125,5 +125,6 @@
   "entity.squadmc.m113": "M113",
   "weapon.squadmc.ags30": "AGS-30",
   "weapon.squadmc.m2hb": "M2HB",
-  "key.squadmc.vehicle_debug": "Toggle Vehicle Debug Overlay"
+  "key.squadmc.vehicle_debug": "Toggle Vehicle Debug Overlay",
+  "entity.squadmc.vehicle_wreck": "Vehicle Wreck"
 }

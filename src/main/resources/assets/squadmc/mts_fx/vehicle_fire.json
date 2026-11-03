@@ -1,0 +1,52 @@
+{
+ "particles": [
+  {
+   "type": "GENERIC",
+   "isBright": true,
+   "spawningOrientation": "ENTITY",
+   "renderingOrientation": "PLAYER",
+   "quantity": 2,
+   "duration": 28,
+   "movementDuration": 14,
+   "transparency": 1.0,
+   "scale": 3.0,
+   "toScale": 0.020000001,
+   "hitboxSize": 0.2,
+   "textureDelays": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "randomTexture": true,
+   "pos": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "spreadRandomness": [
+    1.2,
+    1.0,
+    1.2
+   ],
+   "initialVelocity": [
+    0.0,
+    2.0,
+    0.0
+   ],
+   "textures": [
+    "squadmc:mts/bullets/fire0",
+    "squadmc:mts/bullets/fire1",
+    "squadmc:mts/bullets/fire2",
+    "squadmc:mts/bullets/fire3",
+    "squadmc:mts/bullets/fire4",
+    "squadmc:mts/bullets/fire5",
+    "squadmc:mts/bullets/fire6"
+   ]
+  }
+ ],
+ "sounds": []
+}

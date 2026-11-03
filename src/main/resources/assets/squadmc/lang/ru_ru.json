@@ -106,5 +106,6 @@
   "entity.squadmc.m113": "M113",
   "weapon.squadmc.ags30": "АГС-30",
   "weapon.squadmc.m2hb": "M2HB",
-  "key.squadmc.vehicle_debug": "Отладка техники"
+  "key.squadmc.vehicle_debug": "Отладка техники",
+  "entity.squadmc.vehicle_wreck": "Обгоревший остов"
 }
