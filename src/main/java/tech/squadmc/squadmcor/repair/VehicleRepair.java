@@ -8,6 +8,8 @@ import net.minecraft.network.chat.Component;
 public final class VehicleRepair {
     /** Горелка лечит корпус только до этой доли максимума. */
     public static final float TORCH_HULL_LIMIT = 0.5F;
+    /** Во сколько раз дольше чинятся башня и гусеницы. */
+    private static final float HEAVY_PART_REPAIR_TIME = 2F;
 
     private VehicleRepair() {}
 
@@ -95,6 +97,9 @@ public final class VehicleRepair {
     }
 
     public static void repairPart(VehicleEntity vehicle, Part part, float fraction, @javax.annotation.Nullable net.minecraft.world.phys.Vec3 point) {
+        if (part == Part.TURRET || (isTracked(vehicle) && (part == Part.LEFT || part == Part.RIGHT))) {
+            fraction /= HEAVY_PART_REPAIR_TIME;
+        }
         if (part.lostWheels(vehicle) > 0) {
             WheelLoss.repair(vehicle, part == Part.LEFT, fraction, point);
             return;

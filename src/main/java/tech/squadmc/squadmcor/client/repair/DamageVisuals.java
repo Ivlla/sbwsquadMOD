@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
  */
 public final class DamageVisuals {
     private static final Pattern TRACK = Pattern.compile("track|gus", Pattern.CASE_INSENSITIVE);
-    private static final Pattern WHEEL = Pattern.compile("wheel", Pattern.CASE_INSENSITIVE);
+    private static final Pattern WHEEL = Pattern.compile("wheel|whell|^wheR", Pattern.CASE_INSENSITIVE);
     private static final Pattern NOT_ROAD_WHEEL = Pattern.compile("steer|spare|zapask|rul", Pattern.CASE_INSENSITIVE);
 
     private static final float TRACK_ROLL = 3F;

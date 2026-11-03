@@ -5,12 +5,14 @@ import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.tools.OBB;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.Vec3;
+import org.joml.Vector3d;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.WeakHashMap;
 
 /**
@@ -25,6 +27,7 @@ public final class WheelLoss {
     private static final int SLOW_AT = 2;
     private static final float SLOW_POWER_FACTOR = 0.96F;
     private static final int RIGHT_SHIFT = 16;
+    private static final double HIT_TRACE_DISTANCE = 64.0;
 
     private static final Map<VehicleEntity, float[]> REPAIR_PROGRESS = new WeakHashMap<>();
 
@@ -124,9 +127,35 @@ public final class WheelLoss {
         int mask = mask(vehicle, left);
         int alive = all & ~mask;
         if (alive == 0) return;
-        Entity shooter = vehicle.getLastDamageSource() == null ? null : vehicle.getLastDamageSource().getDirectEntity();
-        Vec3 point = shooter == null ? null : shooter.position();
+        Entity hitter = vehicle.getLastDamageSource() == null ? null : vehicle.getLastDamageSource().getDirectEntity();
+        Vec3 point = hitter == null ? null : hitPoint(vehicle, left, hitter);
         setMask(vehicle, left, mask | 1 << nearest(vehicle, left, alive, point));
+    }
+
+    /**
+     * Where a projectile struck this side's wheels. Its position alone is unreliable: a fast round
+     * can still be many blocks from the point of impact, so its flight line is traced instead.
+     */
+    private static Vec3 hitPoint(VehicleEntity vehicle, boolean left, Entity hitter) {
+        Vec3 position = hitter.position();
+        Vec3 motion = hitter.getDeltaMovement();
+        if (motion.lengthSqr() < 1.0E-6) return position;
+        Vec3 reach = motion.normalize().scale(HIT_TRACE_DISTANCE);
+        Vector3d from = new Vector3d(position.x - reach.x, position.y - reach.y, position.z - reach.z);
+        Vector3d to = new Vector3d(position.x + reach.x, position.y + reach.y, position.z + reach.z);
+        Vector3d first = null;
+        double firstDistance = Double.MAX_VALUE;
+        for (OBB obb : vehicle.getOBBs()) {
+            if (obb.part != part(left)) continue;
+            Optional<Vector3d> hit = obb.clip(new Vector3d(from), new Vector3d(to));
+            if (hit.isEmpty()) continue;
+            double distance = from.distanceSquared(hit.get());
+            if (distance < firstDistance) {
+                firstDistance = distance;
+                first = hit.get();
+            }
+        }
+        return first == null ? position : new Vec3(first.x, first.y, first.z);
     }
 
     private static boolean sideDisabled(VehicleEntity vehicle, boolean left) {
