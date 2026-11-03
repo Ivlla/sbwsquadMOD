@@ -3,7 +3,6 @@ package tech.squadmc.squadmcor.client.launcher;
 import com.atsuishio.superbwarfare.client.animation.AnimationHelper;
 import com.atsuishio.superbwarfare.client.renderer.CustomGunRenderer;
 import com.atsuishio.superbwarfare.data.gun.GunData;
-import com.atsuishio.superbwarfare.data.gun.value.AttachmentType;
 import com.atsuishio.superbwarfare.item.gun.GunItem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -60,11 +59,12 @@ public class FclLauncherRenderer extends CustomGunRenderer<FclLauncherItem> {
         Integer ammoMask = spec.ammoParts.get(name);
         Integer scope = spec.scopeParts.get(name);
         if (!isRocket && ammoMask == null && scope == null) return false;
-        if (!(stack.getItem() instanceof GunItem)) return scope != null && scope != 0;
+        if (scope != null && scope != spec.scope) return true;
+        if (!(stack.getItem() instanceof GunItem)) return false;
 
         GunData data = GunData.from(stack);
         if (isRocket) return data.ammo.get() <= 0 && !data.reloading();
         if (ammoMask != null && (ammoMask & (1 << data.selectedAmmoType.get())) == 0) return true;
-        return scope != null && scope != spec.clampScope(data.attachment.get(AttachmentType.SCOPE));
+        return scope != null && scope != spec.scope;
     }
 }

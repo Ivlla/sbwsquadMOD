@@ -38,11 +38,17 @@ public class ModItems {
     public static final RegistryObject<Item> FCL_PANZERFAUST3 = launcher(FclLauncherSpec.FCL_PANZERFAUST3);
     public static final RegistryObject<Item> FCL_PF98 = launcher(FclLauncherSpec.FCL_PF98);
     public static final RegistryObject<Item> FCL_CARLGUSTAF = launcher(FclLauncherSpec.FCL_CARLGUSTAF);
+    public static final RegistryObject<Item> FCL_CARLGUSTAF_SCOPE = launcher(FclLauncherSpec.FCL_CARLGUSTAF_SCOPE);
     public static final RegistryObject<Item> FCL_CARLGUSTAFM4 = launcher(FclLauncherSpec.FCL_CARLGUSTAFM4);
+    public static final RegistryObject<Item> FCL_CARLGUSTAFM4_SCOPE = launcher(FclLauncherSpec.FCL_CARLGUSTAFM4_SCOPE);
     public static final RegistryObject<Item> FCL_RPG29 = launcher(FclLauncherSpec.FCL_RPG29);
+    public static final RegistryObject<Item> FCL_RPG29_SCOPE = launcher(FclLauncherSpec.FCL_RPG29_SCOPE);
     public static final RegistryObject<Item> FCL_RPG29M = launcher(FclLauncherSpec.FCL_RPG29M);
+    public static final RegistryObject<Item> FCL_RPG29M_SCOPE = launcher(FclLauncherSpec.FCL_RPG29M_SCOPE);
     public static final RegistryObject<Item> FCL_RPG7V2 = launcher(FclLauncherSpec.FCL_RPG7V2);
+    public static final RegistryObject<Item> FCL_RPG7V2_SCOPE = launcher(FclLauncherSpec.FCL_RPG7V2_SCOPE);
     public static final RegistryObject<Item> FCL_SMAW = launcher(FclLauncherSpec.FCL_SMAW);
+    public static final RegistryObject<Item> FCL_SMAW_SCOPE = launcher(FclLauncherSpec.FCL_SMAW_SCOPE);
 
     static {
         for (String id : new String[]{

@@ -1,0 +1,77 @@
+{
+ "Spread": 4,
+ "RecoilX": 0.008,
+ "RecoilY": 0.018,
+ "Damage": 650,
+ "Projectile": "superbwarfare:rpg_rocket_standard",
+ "ExplosionDamage": 70,
+ "ExplosionRadius": 5,
+ "ZoomReload": false,
+ "Headshot": 0,
+ "Velocity": 6.6,
+ "Magazine": 1,
+ "Weight": 13,
+ "DrawTime": 16,
+ "ZoomTime": 9,
+ "EmptyReloadTime": 82,
+ "RPM": 88,
+ "Gravity": 0.006,
+ "ProjectileLife": 140,
+ "GunType": "DirectLauncher",
+ "AmmoType": [
+  {
+   "Ammo": "squadmc:fcl_rpg29_pg29v",
+   "Projectile": "superbwarfare:rpg_rocket_standard",
+   "Override": {
+    "Damage": 650,
+    "ExplosionDamage": 70,
+    "ExplosionRadius": 5,
+    "Velocity": 6.6,
+    "Gravity": 0.006,
+    "EmptyReloadTime": 82,
+    "Icon": "squadmc:textures/item/fcl_rpg29_icon.png"
+   }
+  },
+  {
+   "Ammo": "squadmc:fcl_rpg29_og29",
+   "Projectile": "superbwarfare:rpg_rocket_standard",
+   "Override": {
+    "Damage": 140,
+    "ExplosionDamage": 210,
+    "ExplosionRadius": 12,
+    "Velocity": 6.6,
+    "Gravity": 0.006,
+    "EmptyReloadTime": 82,
+    "Icon": "squadmc:textures/item/fcl_rpg29_icon.png"
+   }
+  },
+  {
+   "Ammo": "squadmc:fcl_rpg29_mg29",
+   "Projectile": "superbwarfare:rpg_rocket_standard",
+   "Override": {
+    "Damage": 380,
+    "ExplosionDamage": 150,
+    "ExplosionRadius": 8,
+    "Velocity": 6.88,
+    "Gravity": 0.006,
+    "EmptyReloadTime": 82,
+    "Icon": "squadmc:textures/item/fcl_rpg29_icon.png"
+   }
+  }
+ ],
+ "Icon": "squadmc:textures/item/fcl_rpg29_icon.png",
+ "AvailablePerks": [
+  "superbwarfare:powerful_attraction",
+  "superbwarfare:intelligent_chip",
+  "superbwarfare:monster_hunter",
+  "superbwarfare:vorpal_weapon",
+  "superbwarfare:micro_missile",
+  "superbwarfare:battle_of_wits"
+ ],
+ "SoundInfo": {
+  "Fire1P": "squadmc:fcl_rpg29",
+  "Fire3P": "squadmc:fcl_rpg29",
+  "Fire3PFar": "superbwarfare:rpg_far",
+  "Fire3PVeryFar": "superbwarfare:rpg_veryfar"
+ }
+}

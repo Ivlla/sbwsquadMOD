@@ -2,7 +2,6 @@ package tech.squadmc.squadmcor.item.launcher;
 
 import com.atsuishio.superbwarfare.data.gun.GunData;
 import com.atsuishio.superbwarfare.data.gun.ShootParameters;
-import com.atsuishio.superbwarfare.data.gun.value.AttachmentType;
 import com.atsuishio.superbwarfare.event.ClientEventHandler;
 import com.atsuishio.superbwarfare.item.gun.GunGeoItem;
 import com.atsuishio.superbwarfare.item.gun.GunItem;
@@ -89,29 +88,11 @@ public class FclLauncherItem extends GunGeoItem {
 
     @Override
     public int[] getValidScopes() {
-        return this.spec.scopeCount() > 1 ? new int[]{0, 1} : new int[]{0};
-    }
-
-    @Override
-    public boolean hasCustomScope(GunData data) {
-        return this.spec.scopeCount() > 1;
-    }
-
-    @Override
-    public boolean canEditAttachments(GunData data) {
-        return this.spec.scopeCount() > 1;
+        return new int[]{0};
     }
 
     @Override
     public double getCustomZoom(GunData data) {
-        return this.spec.zoom[this.spec.clampScope(data.attachment.get(AttachmentType.SCOPE))];
-    }
-
-    @Override
-    public void init(GunData data) {
-        if (!isInitialized(data) && this.spec.defaultScope != 0) {
-            data.attachment.set(AttachmentType.SCOPE, this.spec.defaultScope);
-        }
-        super.init(data);
+        return this.spec.customZoom();
     }
 }

@@ -3,8 +3,6 @@ package tech.squadmc.squadmcor.client.launcher;
 import com.atsuishio.superbwarfare.client.animation.AnimationHelper;
 import com.atsuishio.superbwarfare.client.model.item.CustomGunModel;
 import com.atsuishio.superbwarfare.client.overlay.CrossHairOverlay;
-import com.atsuishio.superbwarfare.data.gun.GunData;
-import com.atsuishio.superbwarfare.data.gun.value.AttachmentType;
 import com.atsuishio.superbwarfare.event.ClientEventHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
@@ -28,7 +26,6 @@ public class FclLauncherModel extends CustomGunModel<FclLauncherItem> {
         ItemStack stack = player.getMainHandItem();
         if (shouldCancelRender(stack, animationState)) return;
 
-        GunData data = GunData.from(stack);
         CoreGeoBone gun = getAnimationProcessor().getBone("bone");
         CoreGeoBone recoil = getAnimationProcessor().getBone("shen");
         CoreGeoBone root = getAnimationProcessor().getBone("root");
@@ -46,7 +43,7 @@ public class FclLauncherModel extends CustomGunModel<FclLauncherItem> {
         CrossHairOverlay.gunRot = recoil.getRotZ();
 
         FclLauncherSpec spec = animatable.spec;
-        float[] aim = spec.aim[spec.clampScope(data.attachment.get(AttachmentType.SCOPE))];
+        float[] aim = spec.aimOffset();
         gun.setPosX(aim[0] * zp);
         gun.setPosY(aim[1] * zp - 0.2f * MOTION_SCALE * zpz);
         gun.setPosZ(aim[2] * zp + 0.15f * MOTION_SCALE * zpz);

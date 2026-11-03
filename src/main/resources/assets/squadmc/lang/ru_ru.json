@@ -107,5 +107,11 @@
   "weapon.squadmc.ags30": "АГС-30",
   "weapon.squadmc.m2hb": "M2HB",
   "key.squadmc.vehicle_debug": "Отладка техники",
-  "entity.squadmc.vehicle_wreck": "Обгоревший остов"
+  "entity.squadmc.vehicle_wreck": "Обгоревший остов",
+  "item.squadmc.fcl_carlgustaf_scope": "Carl Gustaf M3 (с прицелом)",
+  "item.squadmc.fcl_carlgustafm4_scope": "Carl Gustaf M4 (с прицелом)",
+  "item.squadmc.fcl_rpg29_scope": "РПГ-29 «Вампир» (с прицелом)",
+  "item.squadmc.fcl_rpg29m_scope": "РПГ-29М (с прицелом)",
+  "item.squadmc.fcl_rpg7v2_scope": "РПГ-7В2 (с прицелом)",
+  "item.squadmc.fcl_smaw_scope": "Mk 153 SMAW (с прицелом)"
 }

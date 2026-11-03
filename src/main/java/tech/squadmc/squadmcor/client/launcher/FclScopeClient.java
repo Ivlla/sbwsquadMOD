@@ -1,7 +1,5 @@
 package tech.squadmc.squadmcor.client.launcher;
 
-import com.atsuishio.superbwarfare.data.gun.GunData;
-import com.atsuishio.superbwarfare.data.gun.value.AttachmentType;
 import com.atsuishio.superbwarfare.event.ClientEventHandler;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.CameraType;
@@ -33,8 +31,7 @@ public final class FclScopeClient {
         var stack = mc.player.getMainHandItem();
         if (!(stack.getItem() instanceof FclLauncherItem item)) return null;
         if (ClientEventHandler.zoomTime < SCOPE_IN) return null;
-        var spec = item.spec;
-        return spec.pip[spec.clampScope(GunData.from(stack).attachment.get(AttachmentType.SCOPE))];
+        return item.spec.reticle();
     }
 
     @SubscribeEvent

@@ -1,0 +1,20 @@
+{
+ "ID": "squadmc:fcl_smaw_scope",
+ "Animation": {
+  "Idle": "animation.model.idle",
+  "Reload": "animation.model.reload",
+  "Run": "animation.model.running"
+ },
+ "Model": {
+  "Animation": "squadmc:animations/item/fcl_smaw.animation.json",
+  "Model": "squadmc:geo/item/fcl_smaw.geo.json",
+  "Texture": "squadmc:textures/item/fcl_smaw.png"
+ },
+ "FlarePosition": [
+  0,
+  0,
+  0.15
+ ],
+ "FlareSize": 2.2,
+ "HideCrosshairWhenZoom": true
+}

@@ -1,0 +1,19 @@
+{
+ "ID": "squadmc:fcl_rpg7v2_scope",
+ "Animation": {
+  "Idle": "animation.model.idle",
+  "Reload": "animation.model.reload"
+ },
+ "Model": {
+  "Animation": "squadmc:animations/item/fcl_rpg7v2.animation.json",
+  "Model": "squadmc:geo/item/fcl_rpg7v2.geo.json",
+  "Texture": "squadmc:textures/item/fcl_rpg7v2.png"
+ },
+ "FlarePosition": [
+  0,
+  0,
+  0.15
+ ],
+ "FlareSize": 2.2,
+ "HideCrosshairWhenZoom": true
+}

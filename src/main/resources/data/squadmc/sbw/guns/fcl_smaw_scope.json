@@ -1,0 +1,89 @@
+{
+ "Spread": 4,
+ "RecoilX": 0.008,
+ "RecoilY": 0.018,
+ "Damage": 450,
+ "Projectile": "superbwarfare:rpg_rocket_standard",
+ "ExplosionDamage": 70,
+ "ExplosionRadius": 6,
+ "ZoomReload": false,
+ "Headshot": 0,
+ "Velocity": 6.33,
+ "Magazine": 1,
+ "Weight": 11,
+ "DrawTime": 16,
+ "ZoomTime": 9,
+ "EmptyReloadTime": 72,
+ "RPM": 88,
+ "Gravity": 0.028,
+ "ProjectileLife": 140,
+ "GunType": "DirectLauncher",
+ "AmmoType": [
+  {
+   "Ammo": "squadmc:fcl_smaw_heaa",
+   "Projectile": "superbwarfare:rpg_rocket_standard",
+   "Override": {
+    "Damage": 450,
+    "ExplosionDamage": 70,
+    "ExplosionRadius": 6,
+    "Velocity": 6.33,
+    "Gravity": 0.028,
+    "EmptyReloadTime": 72,
+    "Icon": "squadmc:textures/item/fcl_smaw_icon.png"
+   }
+  },
+  {
+   "Ammo": "squadmc:fcl_smaw_hedm",
+   "Projectile": "superbwarfare:rpg_rocket_standard",
+   "Override": {
+    "Damage": 200,
+    "ExplosionDamage": 190,
+    "ExplosionRadius": 10,
+    "Velocity": 6.33,
+    "Gravity": 0.028,
+    "EmptyReloadTime": 72,
+    "Icon": "squadmc:textures/item/fcl_smaw_icon.png"
+   }
+  },
+  {
+   "Ammo": "squadmc:fcl_ammo9x51",
+   "AmmoSlot": "Rifle",
+   "Projectile": "superbwarfare:projectile",
+   "Override": {
+    "Damage": 28,
+    "ExplosionDamage": 0,
+    "ExplosionRadius": 0,
+    "Velocity": 34,
+    "Gravity": 0.05,
+    "Magazine": 6,
+    "RPM": 100,
+    "NormalReloadTime": 52,
+    "EmptyReloadTime": 64,
+    "Icon": "squadmc:textures/item/fcl_smaw_icon.png",
+    "RecoilX": 0.002,
+    "RecoilY": 0.006,
+    "SoundInfo": {
+     "Fire1P": "squadmc:fcl_smaw_rifle",
+     "Fire3P": "squadmc:fcl_smaw_rifle",
+     "Fire3PFar": "superbwarfare:ak_47_far",
+     "Fire3PVeryFar": "superbwarfare:ak_47_veryfar"
+    }
+   }
+  }
+ ],
+ "Icon": "squadmc:textures/item/fcl_smaw_icon.png",
+ "AvailablePerks": [
+  "superbwarfare:powerful_attraction",
+  "superbwarfare:intelligent_chip",
+  "superbwarfare:monster_hunter",
+  "superbwarfare:vorpal_weapon",
+  "superbwarfare:micro_missile",
+  "superbwarfare:battle_of_wits"
+ ],
+ "SoundInfo": {
+  "Fire1P": "squadmc:fcl_smaw",
+  "Fire3P": "squadmc:fcl_smaw",
+  "Fire3PFar": "superbwarfare:rpg_far",
+  "Fire3PVeryFar": "superbwarfare:rpg_veryfar"
+ }
+}

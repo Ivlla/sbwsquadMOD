@@ -5,11 +5,12 @@ import java.util.Map;
 
 /**
  * Per-launcher data ported from the Frontline Combat Launchers pack.
- * Index 0 of the scope arrays is the launcher itself, index 1 is its optic module.
+ * Index 0 of the scope arrays is the launcher itself, index 1 is its optic module. A launcher with
+ * an optic exists as two separate items, one for each.
  * Aim offsets are generated from each model's "scope" bone and its first-person transform.
  */
 public final class FclLauncherSpec {
-    public static final FclLauncherSpec AT4 = new FclLauncherSpec("at4", 0, 6.0f,
+    public static final FclLauncherSpec AT4 = new FclLauncherSpec("at4", 6.0f,
             new String[]{"reload"},
             new String[]{null},
             new String[]{"fire"},
@@ -20,7 +21,7 @@ public final class FclLauncherSpec {
             new double[]{0},
             new String[]{null},
             2.0f);
-    public static final FclLauncherSpec FCL_M72 = new FclLauncherSpec("fcl_m72", 0, 3.5f,
+    public static final FclLauncherSpec FCL_M72 = new FclLauncherSpec("fcl_m72", 3.5f,
             new String[]{"reload"},
             new String[]{null},
             new String[]{"fire"},
@@ -31,7 +32,7 @@ public final class FclLauncherSpec {
             new double[]{0},
             new String[]{null},
             2.0f);
-    public static final FclLauncherSpec FCL_RPG26 = new FclLauncherSpec("fcl_rpg26", 0, 3.0f,
+    public static final FclLauncherSpec FCL_RPG26 = new FclLauncherSpec("fcl_rpg26", 3.0f,
             new String[]{"reload"},
             new String[]{null},
             new String[]{"fire"},
@@ -42,7 +43,7 @@ public final class FclLauncherSpec {
             new double[]{0},
             new String[]{null},
             2.0f);
-    public static final FclLauncherSpec FCL_RPG28 = new FclLauncherSpec("fcl_rpg28", 0, 9.0f,
+    public static final FclLauncherSpec FCL_RPG28 = new FclLauncherSpec("fcl_rpg28", 9.0f,
             new String[]{"reload"},
             new String[]{null},
             new String[]{"fire"},
@@ -53,7 +54,7 @@ public final class FclLauncherSpec {
             new double[]{1.75},
             new String[]{"fcl_rpg28_pip"},
             2.0f);
-    public static final FclLauncherSpec FCL_DZJ08 = new FclLauncherSpec("fcl_dzj08", 0, 3.5f,
+    public static final FclLauncherSpec FCL_DZJ08 = new FclLauncherSpec("fcl_dzj08", 3.5f,
             new String[]{"reload"},
             new String[]{null},
             new String[]{"fire"},
@@ -64,7 +65,7 @@ public final class FclLauncherSpec {
             new double[]{1.75},
             new String[]{"fcl_dzj08_pip"},
             2.0f);
-    public static final FclLauncherSpec FCL_PANZERFAUST3 = new FclLauncherSpec("fcl_panzerfaust3", 0, 2.0f,
+    public static final FclLauncherSpec FCL_PANZERFAUST3 = new FclLauncherSpec("fcl_panzerfaust3", 2.0f,
             new String[]{"reload","reload","reload"},
             new String[]{null,null,null},
             new String[]{"fire","fire","fire"},
@@ -75,7 +76,7 @@ public final class FclLauncherSpec {
             new double[]{1.75},
             new String[]{"fcl_panzerfaust3_pip"},
             2.0f);
-    public static final FclLauncherSpec FCL_PF98 = new FclLauncherSpec("fcl_pf98", 0, 4.0f,
+    public static final FclLauncherSpec FCL_PF98 = new FclLauncherSpec("fcl_pf98", 4.0f,
             new String[]{"reloadheat","reloadhei","reloadhei"},
             new String[]{null,null,null},
             new String[]{"fire","fire","fire"},
@@ -86,7 +87,7 @@ public final class FclLauncherSpec {
             new double[]{2.75},
             new String[]{"fcl_pf98_pip"},
             2.0f);
-    public static final FclLauncherSpec FCL_CARLGUSTAF = new FclLauncherSpec("fcl_carlgustaf", 1, 6.6f,
+    public static final FclLauncherSpec FCL_CARLGUSTAF = new FclLauncherSpec("fcl_carlgustaf", 6.6f,
             new String[]{"reloadheat551crs","reloadheat758","reloadhedp502","reloadhe448"},
             new String[]{null,null,null,null},
             new String[]{"fire","fire","fire","fire"},
@@ -97,7 +98,7 @@ public final class FclLauncherSpec {
             new double[]{0,1.75},
             new String[]{null,"fcl_carlgustaf_pip"},
             2.0f);
-    public static final FclLauncherSpec FCL_CARLGUSTAFM4 = new FclLauncherSpec("fcl_carlgustafm4", 1, 6.6f,
+    public static final FclLauncherSpec FCL_CARLGUSTAFM4 = new FclLauncherSpec("fcl_carlgustafm4", 6.6f,
             new String[]{"reloadheat551crs","reloadheat758","reloadhedp502","reloadhe448"},
             new String[]{null,null,null,null},
             new String[]{"fire","fire","fire","fire"},
@@ -108,7 +109,7 @@ public final class FclLauncherSpec {
             new double[]{0,2.25},
             new String[]{null,"fcl_carlgustafm4_pip"},
             2.0f);
-    public static final FclLauncherSpec FCL_RPG29 = new FclLauncherSpec("fcl_rpg29", 0, 2.5f,
+    public static final FclLauncherSpec FCL_RPG29 = new FclLauncherSpec("fcl_rpg29", 2.5f,
             new String[]{"reloadpg","reloadog","reloadmg"},
             new String[]{null,null,null},
             new String[]{"fire","fire","fire"},
@@ -119,7 +120,7 @@ public final class FclLauncherSpec {
             new double[]{0,1.45},
             new String[]{null,"fcl_1p38_pip"},
             2.0f);
-    public static final FclLauncherSpec FCL_RPG29M = new FclLauncherSpec("fcl_rpg29m", 1, 2.5f,
+    public static final FclLauncherSpec FCL_RPG29M = new FclLauncherSpec("fcl_rpg29m", 2.5f,
             new String[]{"reloadpg","reloadog","reloadmg"},
             new String[]{null,null,null},
             new String[]{"fire","fire","fire"},
@@ -130,7 +131,7 @@ public final class FclLauncherSpec {
             new double[]{0,2.75},
             new String[]{null,"fcl_1p38_pip"},
             2.0f);
-    public static final FclLauncherSpec FCL_RPG7V2 = new FclLauncherSpec("fcl_rpg7v2", 1, 4.5f,
+    public static final FclLauncherSpec FCL_RPG7V2 = new FclLauncherSpec("fcl_rpg7v2", 4.5f,
             new String[]{"reload","reload","reload"},
             new String[]{null,null,null},
             new String[]{"fire","fire","fire"},
@@ -141,7 +142,7 @@ public final class FclLauncherSpec {
             new double[]{0,1.45},
             new String[]{null,"fcl_pgo7_pip"},
             2.0f);
-    public static final FclLauncherSpec FCL_SMAW = new FclLauncherSpec("fcl_smaw", 1, 2.5f,
+    public static final FclLauncherSpec FCL_SMAW = new FclLauncherSpec("fcl_smaw", 2.5f,
             new String[]{"reload","reload","reloadrifleempty"},
             new String[]{null,null,"reloadrifle"},
             new String[]{"fire","fire","firerifle"},
@@ -153,13 +154,16 @@ public final class FclLauncherSpec {
             new String[]{null,"fcl_smaw_pip"},
             2.0f);
 
-    public static final FclLauncherSpec[] ALL = {
-            AT4, FCL_M72, FCL_RPG26, FCL_RPG28, FCL_DZJ08, FCL_PANZERFAUST3, FCL_PF98,
-            FCL_CARLGUSTAF, FCL_CARLGUSTAFM4, FCL_RPG29, FCL_RPG29M, FCL_RPG7V2, FCL_SMAW
-    };
+    public static final FclLauncherSpec FCL_CARLGUSTAF_SCOPE = FCL_CARLGUSTAF.withOptic();
+    public static final FclLauncherSpec FCL_CARLGUSTAFM4_SCOPE = FCL_CARLGUSTAFM4.withOptic();
+    public static final FclLauncherSpec FCL_RPG29_SCOPE = FCL_RPG29.withOptic();
+    public static final FclLauncherSpec FCL_RPG29M_SCOPE = FCL_RPG29M.withOptic();
+    public static final FclLauncherSpec FCL_RPG7V2_SCOPE = FCL_RPG7V2.withOptic();
+    public static final FclLauncherSpec FCL_SMAW_SCOPE = FCL_SMAW.withOptic();
 
     public final String id;
-    public final int defaultScope;
+    /** 0: the launcher's own sights, 1: its optic module. */
+    public final int scope;
     public final float displayRoll;
     public final String[] reload;
     public final String[] reloadNormal;
@@ -171,11 +175,11 @@ public final class FclLauncherSpec {
     public final String[] pip;
     public final float armScale;
 
-    private FclLauncherSpec(String id, int defaultScope, float displayRoll, String[] reload, String[] reloadNormal, String[] fire,
+    private FclLauncherSpec(String id, float displayRoll, String[] reload, String[] reloadNormal, String[] fire,
                             String[][] ammoBones, String[] ironOnly, String[] opticOnly,
                             float[][] aim, double[] zoom, String[] pip, float armScale) {
         this.id = id;
-        this.defaultScope = defaultScope;
+        this.scope = 0;
         this.displayRoll = displayRoll;
         this.reload = reload;
         this.reloadNormal = reloadNormal;
@@ -193,12 +197,35 @@ public final class FclLauncherSpec {
         for (String bone : opticOnly) this.scopeParts.put(bone, 1);
     }
 
-    public int scopeCount() {
-        return this.aim.length;
+    private FclLauncherSpec(FclLauncherSpec base, String id, int scope) {
+        this.id = id;
+        this.scope = scope;
+        this.displayRoll = base.displayRoll;
+        this.reload = base.reload;
+        this.reloadNormal = base.reloadNormal;
+        this.fire = base.fire;
+        this.ammoParts.putAll(base.ammoParts);
+        this.scopeParts.putAll(base.scopeParts);
+        this.aim = base.aim;
+        this.zoom = base.zoom;
+        this.pip = base.pip;
+        this.armScale = base.armScale;
     }
 
-    public int clampScope(int scope) {
-        return Math.max(0, Math.min(scope, scopeCount() - 1));
+    private FclLauncherSpec withOptic() {
+        return new FclLauncherSpec(this, this.id + "_scope", 1);
+    }
+
+    public float[] aimOffset() {
+        return this.aim[this.scope];
+    }
+
+    public double customZoom() {
+        return this.zoom[this.scope];
+    }
+
+    public String reticle() {
+        return this.pip[this.scope];
     }
 
     private static int clampIndex(int index, int length) {
