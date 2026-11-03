@@ -383,7 +383,7 @@
         "Change": "superbwarfare:into_missile"
       },
       "SoundRadius": 54,
-      "AmmoType": "superbwarfare:ap_5_inches",
+      "AmmoType": "superbwarfare:large_shell_ap",
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [

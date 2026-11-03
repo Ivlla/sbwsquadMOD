@@ -313,9 +313,9 @@
       "ShellType": "AP",
       "ApDurability": 100,
       "AmmoType": [
-        "superbwarfare:ap_5_inches",
+        "superbwarfare:large_shell_ap",
         {
-          "Ammo": "superbwarfare:he_5_inches",
+          "Ammo": "superbwarfare:large_shell_he",
           "Override": {
             "Name": "weapon.squadmc.120mm_cannon_he",
             "Icon": "squadmc:textures/overlay/vehicle/weapon/icons/cannon_120mmhei.png",
