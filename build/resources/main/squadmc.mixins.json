@@ -20,10 +20,15 @@
     "VehicleRendererTiltMixin",
     "HelicopterHudGunnerMixin",
     "VehicleHudEngineBarMixin",
-    "VehicleHudHoverShiftMixin"
+    "VehicleHudHoverShiftMixin",
+    "ThermalLightTextureMixin",
+    "ThermalEntityLightMixin",
+    "EngineSoundRangeMixin",
+    "VehicleSoundInstanceAccessor"
   ],
   "server": [],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "refmap": "squadmc.refmap.json"
 }

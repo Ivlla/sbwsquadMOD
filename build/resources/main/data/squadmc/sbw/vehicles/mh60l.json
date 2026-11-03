@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:mh60l",
-  "MaxHealth": 97,
+  "MaxHealth": 480,
   "MaxEnergy": 136000000,
   "TurretPos": [
     -0.00523,
@@ -139,7 +139,7 @@
       ]
     },
     {
-      "HasThermalImaging": true,
+      "HasThermalImaging": false,
       "IsEnclosed": true,
       "Transform": "Vehicle",
       "Position": [
@@ -375,7 +375,7 @@
       "EmptyReloadTime": 200,
       "Projectile": "squadmc:lock_on_hellfire",
       "Name": "weapon.squadmc.hellfire_missile_entity",
-      "Damage": 175,
+      "Damage": 520,
       "ExplosionDamage": 19.4,
       "ExplosionRadius": 6,
       "AddShooterDeltaMovement": true,
@@ -467,7 +467,7 @@
       "Projectile": "squadmc:wire_guided_hellfire",
       "Magazine": 4,
       "EmptyReloadTime": 200,
-      "Damage": 175,
+      "Damage": 520,
       "ExplosionDamage": 19.4,
       "ExplosionRadius": 6,
       "Velocity": 3,
@@ -523,9 +523,9 @@
       "Spread": 0.3,
       "Name": "weapon.squadmc.hydra_rocket",
       "RPM": 400,
-      "Damage": 19.4,
-      "ExplosionDamage": 24.2,
-      "ExplosionRadius": 6,
+      "Damage": 48.5,
+      "ExplosionDamage": 60.5,
+      "ExplosionRadius": 15.0,
       "Gravity": 0.02,
       "Velocity": 16,
       "ShootPos": {
@@ -590,13 +590,23 @@
   "SmokeDecoy": false,
   "DamageModifiers": [
     "minecraft:arrow * 0.15",
-    "minecraft:explosion * 4",
-    "superbwarfare:projectile_hit * 0.7",
-    "#superbwarfare:projectile * 0.05",
-    "superbwarfare:vehicle_strike * 6",
-    "@#superbwarfare:at_rocket * 2",
     "All * 0.8",
-    "All - 8"
+    "minecraft:explosion * 3.5",
+    "minecraft:player_explosion * 3.5",
+    "superbwarfare:custom_explosion * 1.1",
+    "superbwarfare:projectile_explosion * 1.1",
+    "superbwarfare:mine * 1.5",
+    "superbwarfare:projectile_hit * 1.1",
+    "superbwarfare:grapeshot_hit * 0.3",
+    "superbwarfare:laser * 1.25",
+    "@#superbwarfare:aerial_bomb * 3",
+    "#superbwarfare:projectile * 0.6",
+    "#superbwarfare:projectile_absolute * 0.85",
+    "superbwarfare:vehicle_strike * 6",
+    "@superbwarfare:mortar_shell * 1",
+    "@superbwarfare:gun_grenade * 1.25",
+    "@#superbwarfare:at_rocket * 1.1",
+    "All - 1"
   ],
   "DestroyInfo": {
     "ExplosionDamage": 350,
@@ -607,8 +617,20 @@
   "Type": "Helicopter",
   "HudType": "@Helicopter",
   "TerrainCompat": [
-    [0, 0.3, -9.42],
-    [1.75, 0, 1.26],
-    [-1.75, 0, 1.26]
+    [
+      0,
+      0.3,
+      -9.42
+    ],
+    [
+      1.75,
+      0,
+      1.26
+    ],
+    [
+      -1.75,
+      0,
+      1.26
+    ]
   ]
 }

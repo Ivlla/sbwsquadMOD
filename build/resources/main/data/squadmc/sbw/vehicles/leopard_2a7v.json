@@ -1,47 +1,93 @@
 {
   "ID": "squadmc:leopard_2a7v",
   "Type": "Tank",
-  "MaxHealth": 475,
+  "MaxHealth": 1550,
   "MaxEnergy": 20000000,
   "Mass": 70,
   "UpStep": 2.25,
   "RotateOffsetHeight": 3.5,
   "TurretControllerIndex": 1,
   "PassengerWeaponStationControllerIndex": 2,
-
   "OBB": [
     {
-      "Size": [1.1875, 0.7578125, 3.53125],
-      "Position": [0, 1.2578125, 0.65625]
+      "Size": [
+        1.1875,
+        0.7578125,
+        3.53125
+      ],
+      "Position": [
+        0,
+        1.2578125,
+        0.65625
+      ]
     },
     {
-      "Size": [2, 0.2890625, 4.15625],
-      "Position": [0, 1.7890625, 0.03125]
+      "Size": [
+        2,
+        0.2890625,
+        4.15625
+      ],
+      "Position": [
+        0,
+        1.7890625,
+        0.03125
+      ]
     },
     {
       "Part": "MainEngine",
-      "Size": [1.1875, 0.8203125, 0.75],
-      "Position": [0, 1.3203125, -3.625]
+      "Size": [
+        1.1875,
+        0.8203125,
+        0.75
+      ],
+      "Position": [
+        0,
+        1.3203125,
+        -3.625
+      ]
     },
     {
       "Part": "WheelLeft",
-      "Size": [0.375, 0.7578125, 4.0625],
-      "Position": [1.5625, 0.7578125, -0.0625]
+      "Size": [
+        0.375,
+        0.7578125,
+        4.0625
+      ],
+      "Position": [
+        1.5625,
+        0.7578125,
+        -0.0625
+      ]
     },
     {
       "Part": "WheelRight",
-      "Size": [0.375, 0.7578125, 4.0625],
-      "Position": [-1.5625, 0.7578125, -0.0625]
+      "Size": [
+        0.375,
+        0.7578125,
+        4.0625
+      ],
+      "Position": [
+        -1.5625,
+        0.7578125,
+        -0.0625
+      ]
     },
     {
       "Part": "Turret",
-      "Size": [1.375, 0.4765625, 2.34375],
-      "Position": [0.0, 0.25, 0],
+      "Size": [
+        1.375,
+        0.4765625,
+        2.34375
+      ],
+      "Position": [
+        0.0,
+        0.25,
+        0
+      ],
       "Transform": "Turret",
       "Rotation": "Turret"
     }
   ],
-
   "Seats": [
     {
       "BanHand": true,
@@ -49,11 +95,21 @@
       "CameraPos": {
         "Transform": "Vehicle",
         "UseFixedCameraPos": true,
-        "Position": [0.523556, 1.9, 2.220112]
+        "Position": [
+          0.523556,
+          1.9,
+          2.220112
+        ]
       },
       "Transform": "Vehicle",
-      "Position": [0, 0, 0],
-      "Weapons": ["SmokeLauncher"],
+      "Position": [
+        0,
+        0,
+        0
+      ],
+      "Weapons": [
+        "SmokeLauncher"
+      ],
       "MinYaw": -65,
       "MaxYaw": 65,
       "MinPitch": -15,
@@ -63,14 +119,26 @@
       "IsEnclosed": true,
       "HidePassenger": true,
       "Transform": "Turret",
-      "Position": [0.6669625, 0.07, 0.4776875],
+      "Position": [
+        0.6669625,
+        0.07,
+        0.4776875
+      ],
       "CanRotateHead": false,
       "MinPitch": -10,
       "MaxPitch": 30,
-      "Sensitivity": [0.52, 0.72, 0.9],
+      "Sensitivity": [
+        0.52,
+        0.72,
+        0.9
+      ],
       "CameraPos": {
         "Transform": "Barrel",
-        "ZoomPosition": [0, 1, -0.6076875],
+        "ZoomPosition": [
+          0,
+          1,
+          -0.6076875
+        ],
         "Direction": "Barrel"
       },
       "Weapons": [
@@ -83,16 +151,32 @@
       "IsEnclosed": true,
       "HidePassenger": true,
       "Transform": "WeaponStationBarrel",
-      "Position": [0, 0, 0],
+      "Position": [
+        0,
+        0,
+        0
+      ],
       "CanRotateHead": false,
       "MinPitch": -10,
       "MaxPitch": 60,
-      "Sensitivity": [0.57, 0.75, 0.9],
+      "Sensitivity": [
+        0.57,
+        0.75,
+        0.9
+      ],
       "CameraPos": {
         "UseFixedCameraPos": true,
         "Transform": "WeaponStationBarrel",
-        "Position": [0, 0.35, -0.2],
-        "ZoomPosition": [0, 0.0, 1.2],
+        "Position": [
+          0,
+          0.35,
+          -0.2
+        ],
+        "ZoomPosition": [
+          0,
+          0.0,
+          1.2
+        ],
         "Direction": "WeaponStationBarrel"
       },
       "Weapons": [
@@ -100,7 +184,6 @@
       ]
     }
   ],
-
   "Weapons": {
     "SmokeGrenades": {
       "Icon": "squadmc:textures/overlay/vehicle/weapon/icons/smoke_bombs.png",
@@ -120,8 +203,16 @@
       "SoundRadius": 5,
       "ShootPos": {
         "Transform": "Turret",
-        "Positions": [[0.0, 2.5, 0.0]],
-        "Directions": ["Turret"]
+        "Positions": [
+          [
+            0.0,
+            2.5,
+            0.0
+          ]
+        ],
+        "Directions": [
+          "Turret"
+        ]
       }
     },
     "SmokeLauncher": {
@@ -140,8 +231,16 @@
       },
       "ShootPos": {
         "Transform": "Vehicle",
-        "Positions": [[0.0, 1.0, -3.5]],
-        "Directions": ["Vehicle"]
+        "Positions": [
+          [
+            0.0,
+            1.0,
+            -3.5
+          ]
+        ],
+        "Directions": [
+          "Vehicle"
+        ]
       }
     },
     "Cannon": {
@@ -150,7 +249,8 @@
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
       "Projectile": "superbwarfare:cannon_shell",
-      "ShellType": "AP", "ApDurability": 100,
+      "ShellType": "AP",
+      "ApDurability": 100,
       "AmmoType": [
         "superbwarfare:ap_5_inches",
         {
@@ -170,13 +270,17 @@
       "EmptyReloadTime": 120,
       "DefaultZoom": 3,
       "Velocity": 30,
-      "Damage": 800,
+      "Damage": 830,
       "ExplosionDamage": 80,
       "ExplosionRadius": 4,
       "Spread": 0.02,
       "RecoilTime": 42,
       "RecoilForce": 1.0,
-      "ShootShake": [8, 10, 60],
+      "ShootShake": [
+        8,
+        10,
+        60
+      ],
       "ShootAnimationTime": 10,
       "SoundRadius": 32,
       "SoundInfo": {
@@ -189,8 +293,16 @@
       },
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[-0.0625, 0, 4.6875]],
-        "Directions": ["Barrel"]
+        "Positions": [
+          [
+            0,
+            -0.2483,
+            4.9423
+          ]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
       }
     },
     "MachineGun": {
@@ -204,7 +316,7 @@
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 450,
-      "Damage": 40,
+      "Damage": 8,
       "BypassesArmor": 0.2,
       "Velocity": 25,
       "RecoilTime": 16,
@@ -223,8 +335,16 @@
       },
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[0.0, 0.2, 2.0]],
-        "Directions": ["Barrel"]
+        "Positions": [
+          [
+            -0.34,
+            -0.1983,
+            0.8323
+          ]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
       }
     },
     "PassengerMachineGun": {
@@ -238,7 +358,7 @@
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 450,
-      "Damage": 40,
+      "Damage": 8,
       "BypassesArmor": 0.2,
       "Velocity": 25,
       "RecoilTime": 16,
@@ -257,12 +377,19 @@
       },
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
-        "Positions": [[-0.0114, 0.1053, 1.4679]],
-        "Directions": ["WeaponStationBarrel"]
+        "Positions": [
+          [
+            -0.0114,
+            0.1053,
+            1.4679
+          ]
+        ],
+        "Directions": [
+          "WeaponStationBarrel"
+        ]
       }
     }
   },
-
   "HUDColor": "0x00ff66",
   "EngineType": "Track",
   "EngineInfo": {
@@ -280,80 +407,178 @@
     "EngineSoundVolume": 0.6
   },
   "EngineSound": "squadmc:empty",
-
-  "TurretPos": [0, 2.3797, -0.375],
-  "TurretTurnSpeed": [3, 4],
-  "TurretPitchRange": [-10, 30],
-  "BarrelPos": [0, 0.2186, 2.1827],
-
-  "PassengerWeaponStationPos": [1.0114, 0.7853, -0.2257],
-  "PassengerWeaponStationBarrelPos": [0, -0.0625, -0.2031],
-  "PassengerWeaponStationTurnSpeed": [15, 15],
-  "PassengerWeaponStationPitchRange": [-10, 60],
-
+  "TurretPos": [
+    0,
+    2.3797,
+    -0.375
+  ],
+  "TurretTurnSpeed": [
+    3,
+    4
+  ],
+  "TurretPitchRange": [
+    -10,
+    30
+  ],
+  "BarrelPos": [
+    0,
+    0.2186,
+    2.1827
+  ],
+  "PassengerWeaponStationPos": [
+    1.0114,
+    0.7853,
+    -0.2257
+  ],
+  "PassengerWeaponStationBarrelPos": [
+    0,
+    -0.0625,
+    -0.2031
+  ],
+  "PassengerWeaponStationTurnSpeed": [
+    15,
+    15
+  ],
+  "PassengerWeaponStationPitchRange": [
+    -10,
+    60
+  ],
   "HasDecoy": false,
   "DamageModifiers": [
     "minecraft:lava - -20",
     "minecraft:lava * 10",
-    "@minecraft:tnt * 4",
-    "@minecraft:tnt_minecart * 4",
     "minecraft:arrow * 0",
     "minecraft:trident * 0",
     "minecraft:mob_attack * 0",
     "minecraft:mob_attack_no_aggro * 0",
     "minecraft:mob_projectile * 0",
     "minecraft:player_attack * 0",
+    "All * 0.19",
+    "minecraft:explosion * 6",
+    "minecraft:player_explosion * 6",
+    "superbwarfare:custom_explosion * 2",
+    "superbwarfare:projectile_explosion * 2",
+    "superbwarfare:mine * 0.75",
+    "superbwarfare:projectile_hit * 1.25",
+    "superbwarfare:grapeshot_hit * 0.3",
+    "superbwarfare:laser * 1.25",
     "@#superbwarfare:aerial_bomb * 3",
     "#superbwarfare:projectile * 0",
-    "All * 0.2",
-    "superbwarfare:vehicle_strike * 2.5",
-    "minecraft:explosion * 2",
-    "superbwarfare:custom_explosion * 0.65",
-    "superbwarfare:projectile_explosion * 0.65",
-    "superbwarfare:mine * 0.5",
-    "superbwarfare:lunge_mine * 0.5",
-    "superbwarfare:projectile_hit * 1.3",
-    "superbwarfare:grapeshot_hit * 0.1",
-    "#superbwarfare:projectile_absolute * 0.15",
-    "@superbwarfare:igla_9k38_missile * 0.3",
-    "@superbwarfare:small_cannon_shell * 0.25",
-    "@superbwarfare:c4 * 4",
-    "@#superbwarfare:at_rocket * 1.1",
+    "#superbwarfare:projectile_absolute * 0.85",
+    "superbwarfare:vehicle_strike * 4",
+    "@superbwarfare:mortar_shell * 0.5",
     "@superbwarfare:gun_grenade * 1.25",
-    "@superbwarfare:mortar_shell * 1.25",
-    "@superbwarfare:tm_62 * 2.5",
-    "@superbwarfare:wire_guide_missile * 1",
-    "All - 20"
+    "@#superbwarfare:at_rocket * 1.1",
+    "All - 4"
   ],
-
   "DestroyInfo": {
     "ExplosionDamage": 200,
     "ExplosionRadius": 8.7,
     "ExplodeBlocks": false
   },
-
   "CollisionLevel": {
     "Level": 4,
     "PowerLimits": [
-      [0, 0, true],
-      [0, 0, true],
-      [0.1, 0.05, false],
-      [1, 0.3, false]
+      [
+        0,
+        0,
+        true
+      ],
+      [
+        0,
+        0,
+        true
+      ],
+      [
+        0.1,
+        0.05,
+        false
+      ],
+      [
+        1,
+        0.3,
+        false
+      ]
     ]
   },
-
   "TerrainCompat": [
-    [2, 0, 3.0625], [-2, 0, 3.0625],
-    [2, 0, 1.0625], [-2, 0, 1.0625],
-    [2, 0, 1.125], [-2, 0, 1.125],
-    [2, 0, 0.1875], [-2, 0, 0.1875],
-    [2, 0, -0.8125], [-2, 0, -0.8125],
-    [2, 0, -1.8125], [-2, 0, -1.8125],
-    [2, 0, -2.8125], [-2, 0, -2.8125]
+    [
+      2,
+      0,
+      3.0625
+    ],
+    [
+      -2,
+      0,
+      3.0625
+    ],
+    [
+      2,
+      0,
+      1.0625
+    ],
+    [
+      -2,
+      0,
+      1.0625
+    ],
+    [
+      2,
+      0,
+      1.125
+    ],
+    [
+      -2,
+      0,
+      1.125
+    ],
+    [
+      2,
+      0,
+      0.1875
+    ],
+    [
+      -2,
+      0,
+      0.1875
+    ],
+    [
+      2,
+      0,
+      -0.8125
+    ],
+    [
+      -2,
+      0,
+      -0.8125
+    ],
+    [
+      2,
+      0,
+      -1.8125
+    ],
+    [
+      -2,
+      0,
+      -1.8125
+    ],
+    [
+      2,
+      0,
+      -2.8125
+    ],
+    [
+      -2,
+      0,
+      -2.8125
+    ]
   ],
   "InertiaRotateRate": 1.2,
-
-  "ThirdPersonCameraPos": [-0.8669625, 1.5, 5],
+  "ThirdPersonCameraPos": [
+    -0.8669625,
+    1.5,
+    5
+  ],
   "HudType": "@Empty",
   "VehicleIcon": "squadmc:textures/vehicle_icon/leopard.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/land.png"

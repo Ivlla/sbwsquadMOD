@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:brdm2",
-  "MaxHealth": 250,
+  "MaxHealth": 350,
   "MaxEnergy": 5500000,
   "OBB": [
     {
@@ -152,7 +152,11 @@
         "MachineGun",
         "SmokeGrenades"
       ],
-      "Sensitivity": [0.55, 0.73, 1],
+      "Sensitivity": [
+        0.55,
+        0.73,
+        1
+      ],
       "Transform": "Turret",
       "Position": [
         0,
@@ -212,8 +216,16 @@
       "SoundRadius": 5,
       "ShootPos": {
         "Transform": "Turret",
-        "Positions": [[0.0, 0.0, 0.0]],
-        "Directions": ["Turret"]
+        "Positions": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "Directions": [
+          "Turret"
+        ]
       }
     },
     "Cannon": {
@@ -221,16 +233,17 @@
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Projectile": "superbwarfare:small_cannon_shell",
-      "ShellType": "AP", "ApDurability": 100,
+      "ShellType": "AP",
+      "ApDurability": 100,
       "DefaultZoom": 3,
       "RPM": 500,
       "Velocity": 20,
       "BypassesArmor": 0.2,
       "Magazine": 50,
       "EmptyReloadTime": 230,
-      "Damage": 19,
-      "ExplosionDamage": 1,
-      "ExplosionRadius": 1,
+      "Damage": 38,
+      "ExplosionDamage": 0,
+      "ExplosionRadius": 0,
       "RecoilTime": 29,
       "RecoilForce": 0.55,
       "Spread": 0.5,
@@ -250,8 +263,16 @@
       "AmmoType": "superbwarfare:ap_5_inches",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[-0.1, 0.0517, -0.6]],
-        "Directions": ["Barrel"]
+        "Positions": [
+          [
+            -0.0008,
+            0.0018,
+            1.0636
+          ]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
       }
     },
     "MachineGun": {
@@ -262,7 +283,7 @@
       "CrosshairColor": "0x66FF00",
       "Projectile": "superbwarfare:projectile",
       "RPM": 650,
-      "Damage": 9.5,
+      "Damage": 9,
       "BypassesArmor": 0.3,
       "Velocity": 30,
       "RecoilTime": 22,
@@ -273,8 +294,16 @@
       "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[0.3, 0.0517, 0.5]],
-        "Directions": ["Barrel"]
+        "Positions": [
+          [
+            -0.1208,
+            0.0218,
+            0.1536
+          ]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
       },
       "Crosshair": "@Empty",
       "Name": "weapon.superbwarfare.7_62mm_coax",
@@ -333,30 +362,28 @@
   "DamageModifiers": [
     "minecraft:lava - -11",
     "minecraft:lava * 10",
-    "All * 0.3",
     "minecraft:arrow * 1.5",
     "minecraft:trident * 1.5",
     "minecraft:mob_attack * 2.5",
     "minecraft:mob_attack_no_aggro * 2",
     "minecraft:mob_projectile * 1.5",
-    "minecraft:explosion * 6",
-    "minecraft:player_explosion * 6",
-    "superbwarfare:custom_explosion * 2.0",
+    "All * 0.38",
+    "minecraft:explosion * 5",
+    "minecraft:player_explosion * 5",
+    "superbwarfare:custom_explosion * 2",
     "superbwarfare:projectile_explosion * 2",
-    "superbwarfare:mine * 0.75",
-    "superbwarfare:projectile_hit * 1.25",
+    "superbwarfare:mine * 1.5",
+    "superbwarfare:projectile_hit * 2",
     "superbwarfare:grapeshot_hit * 0.3",
     "superbwarfare:laser * 1.25",
     "@#superbwarfare:aerial_bomb * 3",
-    "#superbwarfare:projectile * 0.25",
-    "#superbwarfare:projectile_absolute * 0.95",
-    "superbwarfare:vehicle_strike * 4",
-    "@superbwarfare:mortar_shell * 1.25",
-    "@superbwarfare:gun_grenade * 0.5",
-    "@superbwarfare:javelin_missile * 0.8",
-    "@superbwarfare:igla_9k38_missile * 0.75",
-    "@superbwarfare:wire_guide_missile * 1",
-    "All - 9"
+    "#superbwarfare:projectile * 0.5",
+    "#superbwarfare:projectile_absolute * 0.85",
+    "superbwarfare:vehicle_strike * 3",
+    "@superbwarfare:mortar_shell * 1",
+    "@superbwarfare:gun_grenade * 1.25",
+    "@#superbwarfare:at_rocket * 1.1",
+    "All - 1"
   ],
   "VehicleContainerType": "Medium",
   "DestroyInfo": {
@@ -388,7 +415,7 @@
       ]
     ]
   },
-  "EngineSound": "squadmc:Empty",
+  "EngineSound": "squadmc:empty",
   "HudType": "@Empty",
   "TerrainCompat": [
     [
@@ -414,4 +441,3 @@
   ],
   "InertiaRotateRate": 1.0
 }
-

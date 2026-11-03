@@ -126,9 +126,9 @@
       ],
       "Transform": "Turret",
       "Position": [
-        0,
-        0,
-        0
+        0.4,
+        -0.6,
+        0.5
       ],
       "MinPitch": -10,
       "MaxPitch": 60,
@@ -373,9 +373,9 @@
         "Transform": "Barrel",
         "Positions": [
           [
-            0.3,
-            0.05,
-            0.5
+            -0.47,
+            0.185,
+            0.8
           ]
         ],
         "Directions": [

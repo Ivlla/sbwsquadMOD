@@ -1,38 +1,158 @@
 {
   "ID": "squadmc:huey_m60_door_guns",
-  "MaxHealth": 97,
+  "MaxHealth": 300,
   "MaxEnergy": 80000000,
   "OBB": [
-    {"Size": [1.125, 0.9375, 3], "Position": [0, 1.5, 0], "Part": "Body"},
-    {"Size": [1.125, 0.9375, 0.375], "Position": [0, 1.5, 3.375], "Part": "Body"},
-    {"Size": [1.125, 0.5625, 0.375], "Position": [0, 1.125, 4.125], "Part": "Body"},
-    {"Size": [0.375, 0.75, 1.6875], "Position": [0, 1.7625, -4.6875], "Part": "Body"},
-    {"Size": [0.375, 0.5625, 1.875], "Position": [0, 2.175, -8.25], "Part": "Body"},
-    {"Size": [0.5625, 1.125, 1.125], "Position": [0, 3.8625, -9.9375], "Part": "SubEngine"},
-    {"Size": [0.375, 0.2625, 1.875], "Position": [0, 2.7, -1.5], "Part": "Body"},
-    {"Size": [0.1875, 0.45, 0.1875], "Position": [0, 3.4125, -0.375], "Part": "MainEngine"}
+    {
+      "Size": [
+        1.125,
+        0.9375,
+        3
+      ],
+      "Position": [
+        0,
+        1.5,
+        0
+      ],
+      "Part": "Body"
+    },
+    {
+      "Size": [
+        1.125,
+        0.9375,
+        0.375
+      ],
+      "Position": [
+        0,
+        1.5,
+        3.375
+      ],
+      "Part": "Body"
+    },
+    {
+      "Size": [
+        1.125,
+        0.5625,
+        0.375
+      ],
+      "Position": [
+        0,
+        1.125,
+        4.125
+      ],
+      "Part": "Body"
+    },
+    {
+      "Size": [
+        0.375,
+        0.75,
+        1.6875
+      ],
+      "Position": [
+        0,
+        1.7625,
+        -4.6875
+      ],
+      "Part": "Body"
+    },
+    {
+      "Size": [
+        0.375,
+        0.5625,
+        1.875
+      ],
+      "Position": [
+        0,
+        2.175,
+        -8.25
+      ],
+      "Part": "Body"
+    },
+    {
+      "Size": [
+        0.5625,
+        1.125,
+        1.125
+      ],
+      "Position": [
+        0,
+        3.8625,
+        -9.9375
+      ],
+      "Part": "SubEngine"
+    },
+    {
+      "Size": [
+        0.375,
+        0.2625,
+        1.875
+      ],
+      "Position": [
+        0,
+        2.7,
+        -1.5
+      ],
+      "Part": "Body"
+    },
+    {
+      "Size": [
+        0.1875,
+        0.45,
+        0.1875
+      ],
+      "Position": [
+        0,
+        3.4125,
+        -0.375
+      ],
+      "Part": "MainEngine"
+    }
   ],
   "PassengerRenderScale": 0.85,
   "Seats": [
     {
       "Transform": "Vehicle",
-      "Position": [-0.55, 0.7, 2.4],
-      "Sensitivity": [0, 0, 0],
+      "Position": [
+        -0.55,
+        0.7,
+        2.4
+      ],
+      "Sensitivity": [
+        0,
+        0,
+        0
+      ],
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [-0.55, 2.15, 2.55],
+        "Position": [
+          -0.55,
+          2.15,
+          2.55
+        ],
         "UseAircraftCamera": true,
-        "AircraftCameraPos": [-3, 3, -10]
+        "AircraftCameraPos": [
+          -3,
+          3,
+          -10
+        ]
       },
       "CanRotateHead": false,
       "BanHand": true
     },
     {
       "Transform": "Vehicle",
-      "Position": [0.55, 0.7, 2.4],
+      "Position": [
+        0.55,
+        0.7,
+        2.4
+      ],
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [0.55, 2.15, 2.55]
+        "Position": [
+          0.55,
+          2.15,
+          2.55
+        ]
       },
       "CanRotateHead": true,
       "MinPitch": -50,
@@ -43,11 +163,19 @@
     },
     {
       "Transform": "Vehicle",
-      "Position": [-0.7, 0.7, -0.4],
+      "Position": [
+        -0.7,
+        0.7,
+        -0.4
+      ],
       "CameraPos": {
         "Transform": "RightTurret",
         "UseFixedCameraPos": true,
-        "Position": [0, 0.5, 0],
+        "Position": [
+          0,
+          0.5,
+          0
+        ],
         "Direction": "Passenger"
       },
       "Orientation": 90,
@@ -55,17 +183,27 @@
       "MaxPitch": 15,
       "MinYaw": -75,
       "MaxYaw": 75,
-      "Weapons": ["M60Right"],
+      "Weapons": [
+        "M60Right"
+      ],
       "Crosshair": "@Empty",
       "BanHand": true
     },
     {
       "Transform": "Vehicle",
-      "Position": [0.7, 0.7, -0.4],
+      "Position": [
+        0.7,
+        0.7,
+        -0.4
+      ],
       "CameraPos": {
         "Transform": "LeftTurret",
         "UseFixedCameraPos": true,
-        "Position": [0, 0.5, 0],
+        "Position": [
+          0,
+          0.5,
+          0
+        ],
         "Direction": "Passenger"
       },
       "Orientation": -90,
@@ -73,16 +211,26 @@
       "MaxPitch": 15,
       "MinYaw": -75,
       "MaxYaw": 75,
-      "Weapons": ["M60Left"],
+      "Weapons": [
+        "M60Left"
+      ],
       "Crosshair": "@Empty",
       "BanHand": true
     },
     {
       "Transform": "Vehicle",
-      "Position": [0.55, 0.7, 1.1],
+      "Position": [
+        0.55,
+        0.7,
+        1.1
+      ],
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [0.55, 1.79, 1.1]
+        "Position": [
+          0.55,
+          1.79,
+          1.1
+        ]
       },
       "MinPitch": -50,
       "MaxPitch": 15,
@@ -92,10 +240,18 @@
     },
     {
       "Transform": "Vehicle",
-      "Position": [0, 0.7, 1.1],
+      "Position": [
+        0,
+        0.7,
+        1.1
+      ],
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [0, 1.79, 1.1]
+        "Position": [
+          0,
+          1.79,
+          1.1
+        ]
       },
       "MinPitch": -50,
       "MaxPitch": 15,
@@ -105,10 +261,18 @@
     },
     {
       "Transform": "Vehicle",
-      "Position": [-0.55, 0.7, 1.1],
+      "Position": [
+        -0.55,
+        0.7,
+        1.1
+      ],
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [-0.55, 1.79, 1.1]
+        "Position": [
+          -0.55,
+          1.79,
+          1.1
+        ]
       },
       "MinPitch": -50,
       "MaxPitch": 15,
@@ -118,10 +282,18 @@
     },
     {
       "Transform": "Vehicle",
-      "Position": [-0.7, 0.7, 0.35],
+      "Position": [
+        -0.7,
+        0.7,
+        0.35
+      ],
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [-0.75, 1.79, 0.35]
+        "Position": [
+          -0.75,
+          1.79,
+          0.35
+        ]
       },
       "Orientation": 90,
       "MinPitch": -50,
@@ -131,10 +303,18 @@
     },
     {
       "Transform": "Vehicle",
-      "Position": [0.7, 0.7, 0.35],
+      "Position": [
+        0.7,
+        0.7,
+        0.35
+      ],
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [0.75, 1.79, 0.35]
+        "Position": [
+          0.75,
+          1.79,
+          0.35
+        ]
       },
       "Orientation": -90,
       "MinPitch": -50,
@@ -157,7 +337,7 @@
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 550,
-      "Damage": 8.3,
+      "Damage": 10,
       "BypassesArmor": 0.2,
       "Velocity": 25,
       "RecoilTime": 16,
@@ -168,9 +348,21 @@
       "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "LeftBarrel",
-        "Positions": [[0.00029, 0.09442, 0.79481]],
-        "Directions": ["Passenger"],
-        "DefaultBarrelDirection": [0, 0, 1]
+        "Positions": [
+          [
+            0.00029,
+            0.09442,
+            0.79481
+          ]
+        ],
+        "Directions": [
+          "Passenger"
+        ],
+        "DefaultBarrelDirection": [
+          0,
+          0,
+          1
+        ]
       },
       "Crosshair": "@Empty",
       "Name": "weapon.squadmc.m60",
@@ -192,7 +384,7 @@
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 550,
-      "Damage": 8.3,
+      "Damage": 10,
       "BypassesArmor": 0.2,
       "Velocity": 25,
       "RecoilTime": 16,
@@ -203,9 +395,21 @@
       "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "RightBarrel",
-        "Positions": [[-0.00029, 0.09442, 0.79481]],
-        "Directions": ["Passenger"],
-        "DefaultBarrelDirection": [0, 0, 1]
+        "Positions": [
+          [
+            -0.00029,
+            0.09442,
+            0.79481
+          ]
+        ],
+        "Directions": [
+          "Passenger"
+        ],
+        "DefaultBarrelDirection": [
+          0,
+          0,
+          1
+        ]
       },
       "Crosshair": "@Empty",
       "Name": "weapon.squadmc.m60",
@@ -232,7 +436,11 @@
     "EngineSoundVolume": 1.5
   },
   "EngineSound": "superbwarfare:ah_6_engine",
-  "ThirdPersonCameraPos": [2.5, 3.5, 10],
+  "ThirdPersonCameraPos": [
+    2.5,
+    3.5,
+    10
+  ],
   "UpStep": 1.1,
   "RotateOffsetHeight": 1.5,
   "Mass": 1.0,
@@ -241,22 +449,52 @@
   "SmokeDecoy": false,
   "DamageModifiers": [
     "minecraft:arrow * 0.15",
-    "minecraft:explosion * 4",
-    "superbwarfare:projectile_hit * 0.7",
-    "#superbwarfare:projectile * 0.05",
-    "superbwarfare:vehicle_strike * 6",
-    "@#superbwarfare:at_rocket * 2",
     "All * 0.8",
-    "All - 8"
+    "minecraft:explosion * 3.5",
+    "minecraft:player_explosion * 3.5",
+    "superbwarfare:custom_explosion * 1.1",
+    "superbwarfare:projectile_explosion * 1.1",
+    "superbwarfare:mine * 1.5",
+    "superbwarfare:projectile_hit * 1.1",
+    "superbwarfare:grapeshot_hit * 0.3",
+    "superbwarfare:laser * 1.25",
+    "@#superbwarfare:aerial_bomb * 3",
+    "#superbwarfare:projectile * 0.6",
+    "#superbwarfare:projectile_absolute * 0.85",
+    "superbwarfare:vehicle_strike * 6",
+    "@superbwarfare:mortar_shell * 1",
+    "@superbwarfare:gun_grenade * 1.25",
+    "@#superbwarfare:at_rocket * 1.1",
+    "All - 1"
   ],
-  "DestroyInfo": {"ExplosionDamage": 350, "ExplosionRadius": 12, "CrashPassengers": true},
+  "DestroyInfo": {
+    "ExplosionDamage": 350,
+    "ExplosionRadius": 12,
+    "CrashPassengers": true
+  },
   "ContainerIcon": "squadmc:textures/gui/vehicle/type/air_us.png",
   "Type": "Helicopter",
   "HudType": "@Helicopter",
   "TerrainCompat": [
-    [1.77, 0.11, 1.9],
-    [1.73, -0.01, -1],
-    [-1.72, 0.11, 1.9],
-    [-1.69, -0.01, -1]
+    [
+      1.77,
+      0.11,
+      1.9
+    ],
+    [
+      1.73,
+      -0.01,
+      -1
+    ],
+    [
+      -1.72,
+      0.11,
+      1.9
+    ],
+    [
+      -1.69,
+      -0.01,
+      -1
+    ]
   ]
 }

@@ -1,11 +1,15 @@
 {
   "ID": "squadmc:empltow",
-  "MaxHealth": 40,
+  "MaxHealth": 110,
   "MaxEnergy": 5250000,
   "Seats": [
     {
       "IsEnclosed": false,
-      "Sensitivity": [0.25, 0.35, 0.35],
+      "Sensitivity": [
+        0.25,
+        0.35,
+        0.35
+      ],
       "CameraPos": {
         "UseFixedCameraPos": true,
         "Transform": "Barrel",
@@ -32,7 +36,11 @@
   ],
   "Weapons": {
     "TOW": {
-      "ShootShake": [8, 10, 60],
+      "ShootShake": [
+        8,
+        10,
+        60
+      ],
       "ShootAnimationTime": 10,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
@@ -42,7 +50,7 @@
       "Projectile": "superbwarfare:wire_guide_missile",
       "Magazine": 1,
       "EmptyReloadTime": 250,
-      "Damage": 600,
+      "Damage": 780,
       "ExplosionDamage": 70,
       "ExplosionRadius": 7,
       "Velocity": 3.5,
@@ -132,4 +140,3 @@
   "InertiaRotateRate": 1,
   "EngineType": "Fixed"
 }
-

@@ -1,6 +1,6 @@
 {
   "ID": "squadmc:m2empl",
-  "MaxHealth": 40,
+  "MaxHealth": 100,
   "MaxEnergy": 5250000,
   "Seats": [
     {
@@ -43,9 +43,10 @@
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 500,
-      "Damage": 15,
+      "Damage": 18,
       "BypassesArmor": 2,
-      "ShellType": "AP", "ApDurability": 100,
+      "ShellType": "AP",
+      "ApDurability": 100,
       "Velocity": 25,
       "RecoilTime": 32,
       "EmptyReloadTime": 200,
@@ -61,7 +62,7 @@
           [
             0.0,
             0.1,
-            1.70
+            1.7
           ]
         ],
         "Directions": [
@@ -144,4 +145,3 @@
     75
   ]
 }
-

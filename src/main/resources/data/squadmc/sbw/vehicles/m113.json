@@ -100,28 +100,33 @@
   ],
   "Seats": [
     {
-      "BanHand": true,
       "HidePassenger": true,
-      "IsEnclosed": false,
+      "BanHand": true,
       "Transform": "Vehicle",
       "Position": [
-        0.979,
-        0.823,
-        1.489
+        0.3,
+        1,
+        2.0
       ],
-      "MinPitch": -5,
-      "MaxPitch": 5,
-      "MinYaw": -30,
-      "MaxYaw": 30,
+      "Weapons": [
+        "SmokeLauncher"
+      ],
+      "MinPitch": -10,
+      "MaxPitch": 10,
+      "MinYaw": -45,
+      "MaxYaw": 45,
       "CameraPos": {
-        "UseFixedCameraPos": false,
-        "Transform": "Turret",
-        "Direction": "Barrel",
-        "ZoomPosition": [
-          0.979,
-          2.433,
+        "UseFixedCameraPos": true,
+        "Transform": "Vehicle",
+        "Position": [
+          1.05,
+          2.623,
           1.489
-        ]
+        ],
+        "MinPitch": -10,
+        "MaxPitch": 10,
+        "MinYaw": -45,
+        "MaxYaw": 45
       }
     },
     {
@@ -145,8 +150,8 @@
         "UseFixedCameraPos": false,
         "ZoomPosition": [
           0.0,
-          3.242,
-          -0.205
+          0.7,
+          0.4
         ]
       },
       "MinPitch": -20,
@@ -163,90 +168,70 @@
       ]
     },
     {
-      "BanHand": true,
       "HidePassenger": true,
-      "IsEnclosed": false,
+      "BanHand": true,
       "Transform": "Vehicle",
       "Position": [
-        0.0,
-        0.913,
-        0.658
+        0,
+        2.2,
+        0
       ],
-      "CanRotateBody": true,
       "CameraPos": {
-        "UseFixedCameraPos": false,
-        "Transform": "Turret",
-        "Direction": "Barrel",
-        "ZoomPosition": [
-          0.0,
-          2.523,
-          0.658
+        "UseSimulate3P": true,
+        "Simulate3PPos": [
+          6,
+          1
         ]
       }
     },
     {
-      "BanHand": true,
       "HidePassenger": true,
-      "IsEnclosed": false,
+      "BanHand": true,
       "Transform": "Vehicle",
       "Position": [
-        0.0,
-        0.913,
-        0.658
+        0,
+        2.2,
+        0
       ],
-      "CanRotateBody": true,
       "CameraPos": {
-        "UseFixedCameraPos": false,
-        "Transform": "Turret",
-        "Direction": "Barrel",
-        "ZoomPosition": [
-          0.0,
-          2.523,
-          0.658
+        "UseSimulate3P": true,
+        "Simulate3PPos": [
+          6,
+          1
         ]
       }
     },
     {
-      "BanHand": true,
       "HidePassenger": true,
-      "IsEnclosed": false,
+      "BanHand": true,
       "Transform": "Vehicle",
       "Position": [
-        0.0,
-        0.913,
-        0.658
+        0,
+        2.2,
+        0
       ],
-      "CanRotateBody": true,
       "CameraPos": {
-        "UseFixedCameraPos": false,
-        "Transform": "Turret",
-        "Direction": "Barrel",
-        "ZoomPosition": [
-          0.0,
-          2.523,
-          0.658
+        "UseSimulate3P": true,
+        "Simulate3PPos": [
+          6,
+          1
         ]
       }
     },
     {
-      "BanHand": true,
       "HidePassenger": true,
-      "IsEnclosed": false,
+      "BanHand": true,
       "Transform": "Vehicle",
       "Position": [
-        0.0,
-        0.913,
-        0.658
+        0,
+        2.2,
+        0
       ],
-      "CanRotateBody": true,
       "CameraPos": {
-        "UseFixedCameraPos": false,
-        "Transform": "Turret",
-        "Direction": "Barrel",
-        "ZoomPosition": [
-          0.0,
-          2.523,
-          0.658
+        "UseSimulate3P": true,
+        "Simulate3PPos": [
+          6,
+          1
         ]
       }
     }

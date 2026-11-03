@@ -1,6 +1,6 @@
 {
   "ID": "fcp:empl_mg3",
-  "MaxHealth": 40,
+  "MaxHealth": 80,
   "MaxEnergy": 5250000,
   "Seats": [
     {
@@ -43,7 +43,7 @@
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 1200,
-      "Damage": 5.5,
+      "Damage": 6.5,
       "BypassesArmor": 0.2,
       "Velocity": 25,
       "RecoilTime": 16,
@@ -58,7 +58,7 @@
         "Transform": "Barrel",
         "Positions": [
           [
-            0.00,
+            0.0,
             0.1,
             1.05
           ]
@@ -143,4 +143,3 @@
     75
   ]
 }
-
