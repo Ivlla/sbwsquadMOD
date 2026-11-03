@@ -21,8 +21,8 @@ import tech.squadmc.squadmcor.squadmc;
 public final class VehicleWaterDamage {
 
     private static final int INTERVAL_TICKS = 20;
-    /** Share of maximum health lost per interval, so any vehicle drowns in 20 seconds. */
-    private static final float DAMAGE_FRACTION = 0.05F;
+    /** Share of maximum health lost per interval, so any vehicle drowns in 10 seconds. */
+    private static final float DAMAGE_FRACTION = 0.10F;
 
     private VehicleWaterDamage() {
     }
