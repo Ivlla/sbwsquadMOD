@@ -34,7 +34,7 @@ public final class VehicleWreckClient {
     }
 
     private static Vec3 point(VehicleWreckEntity wreck) {
-        RandomSource random = wreck.getRandom();
+        RandomSource random = wreck.level().random;
         double spread = wreck.getBbWidth() * HULL_SPREAD;
         return wreck.position().add((random.nextDouble() - 0.5) * 2 * spread, wreck.getBbHeight() * 0.7,
                 (random.nextDouble() - 0.5) * 2 * spread);
