@@ -78,7 +78,7 @@ public final class EngineStartSounds {
         Byte last = LAST_STATE.put(vehicle, state);
         if (last == null || last == state || EngineControl.usesSquadSound(vehicle)) return;
         if (state == EngineControl.STARTING) {
-            SoundInstance sound = new EngineAudibleRange.OneShot(vehicle, SoundEvent.createVariableRangeEvent(new ResourceLocation(soundFor(vehicle))),
+            SoundInstance sound = new EngineAudibleRange.OneShot(vehicle, new ResourceLocation(soundFor(vehicle)),
                     SoundSource.NEUTRAL, 1.5F, vehicle.getRandom());
             mc.getSoundManager().play(sound);
             PLAYING.put(vehicle, sound);

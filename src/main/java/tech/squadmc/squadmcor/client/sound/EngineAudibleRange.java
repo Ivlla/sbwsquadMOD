@@ -6,7 +6,7 @@ import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.client.resources.sounds.SoundInstance;
 import net.minecraft.client.sounds.SoundManager;
-import net.minecraft.sounds.SoundEvent;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
@@ -100,7 +100,7 @@ public final class EngineAudibleRange {
     public static final class OneShot extends SimpleSoundInstance implements Source {
         private final int range;
 
-        public OneShot(VehicleEntity vehicle, SoundEvent sound, SoundSource source, float volume, RandomSource random) {
+        public OneShot(VehicleEntity vehicle, ResourceLocation sound, SoundSource source, float volume, RandomSource random) {
             super(sound, source, volume, 1F, random, false, 0, SoundInstance.Attenuation.LINEAR,
                     vehicle.getX(), vehicle.getY(), vehicle.getZ(), false);
             this.range = idleRange(vehicle);
