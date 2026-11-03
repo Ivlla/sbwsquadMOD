@@ -110,15 +110,12 @@ public final class VehicleWreckClient {
         @Override
         public void tick() {
             int age = this.wreck.age();
-            double distance = Minecraft.getInstance().gameRenderer.getMainCamera().getPosition().distanceTo(this.wreck.position());
-            if (this.wreck.isRemoved() || age >= VehicleWreckEntity.FIRE_TICKS || distance >= SOUND_RANGE) {
+            if (this.wreck.isRemoved() || age >= VehicleWreckEntity.FIRE_TICKS) {
                 BURN_SOUNDS.remove(this.wreck);
                 stop();
                 return;
             }
-            // Falloff is applied here as well because OpenAL does not attenuate stereo files at all.
-            float fire = Mth.clamp((VehicleWreckEntity.FIRE_TICKS - age) / (float) FIRE_FADE_TICKS, 0F, 1F);
-            this.volume = fire * (float) (1.0 - distance / SOUND_RANGE);
+            this.volume = Mth.clamp((VehicleWreckEntity.FIRE_TICKS - age) / (float) FIRE_FADE_TICKS, 0F, 1F);
         }
 
         @Override
