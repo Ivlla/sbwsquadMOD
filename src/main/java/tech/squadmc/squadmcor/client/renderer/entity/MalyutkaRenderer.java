@@ -27,7 +27,7 @@ public class MalyutkaRenderer extends GeoEntityRenderer<MalyutkaEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(MalyutkaEntity entity) {
-        return tech.squadmc.squadmcor.client.skin.VehicleSkinTexture.resolve(entity, new ResourceLocation("squadmc", "textures/entity/malyutka.png"));
+        return new ResourceLocation("squadmc", "textures/entity/malyutka.png");
     }
 
     @Override
