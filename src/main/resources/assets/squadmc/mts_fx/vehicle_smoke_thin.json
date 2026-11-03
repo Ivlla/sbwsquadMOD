@@ -1,0 +1,64 @@
+{
+ "particles": [
+  {
+   "type": "GENERIC",
+   "spawningOrientation": "ENTITY",
+   "renderingOrientation": "PLAYER",
+   "ignoreCollision": true,
+   "hitboxSize": 0.2,
+   "randomTexture": true,
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "textures": [
+    "squadmc:mts/core/big_smoke_0",
+    "squadmc:mts/core/big_smoke_1",
+    "squadmc:mts/core/big_smoke_2",
+    "squadmc:mts/core/big_smoke_3",
+    "squadmc:mts/core/big_smoke_4",
+    "squadmc:mts/core/big_smoke_5",
+    "squadmc:mts/core/big_smoke_6",
+    "squadmc:mts/core/big_smoke_7",
+    "squadmc:mts/core/big_smoke_8",
+    "squadmc:mts/core/big_smoke_9",
+    "squadmc:mts/core/big_smoke_10",
+    "squadmc:mts/core/big_smoke_11"
+   ],
+   "textureDelays": [
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20
+   ],
+   "quantity": 1,
+   "duration": 220,
+   "durationRandomness": 30,
+   "scale": 4.0,
+   "toScale": 22.0,
+   "transparency": 0.3,
+   "toTransparency": 0.0001,
+   "color": "4A4744",
+   "spreadRandomness": [
+    0.3,
+    0.2,
+    0.3
+   ],
+   "initialVelocity": [
+    0,
+    0.8,
+    0
+   ]
+  }
+ ],
+ "sounds": []
+}

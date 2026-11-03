@@ -2,40 +2,15 @@
  "particles": [
   {
    "type": "GENERIC",
-   "isBright": true,
    "spawningOrientation": "ENTITY",
    "renderingOrientation": "PLAYER",
-   "quantity": 2,
-   "duration": 28,
-   "movementDuration": 14,
-   "transparency": 1.0,
-   "scale": 3.0,
-   "toScale": 0.020000001,
+   "ignoreCollision": true,
    "hitboxSize": 0.2,
-   "textureDelays": [
-    4,
-    4,
-    4,
-    4,
-    4,
-    4,
-    4
-   ],
    "randomTexture": true,
    "pos": [
-    0.0,
-    0.0,
-    0.0
-   ],
-   "spreadRandomness": [
-    1.2,
-    1.0,
-    1.2
-   ],
-   "initialVelocity": [
-    0.0,
-    2.0,
-    0.0
+    0,
+    0,
+    0
    ],
    "textures": [
     "squadmc:mts/bullets/fire0",
@@ -45,6 +20,128 @@
     "squadmc:mts/bullets/fire4",
     "squadmc:mts/bullets/fire5",
     "squadmc:mts/bullets/fire6"
+   ],
+   "textureDelays": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "isBright": true,
+   "transparency": 1.0,
+   "quantity": 2,
+   "duration": 34,
+   "durationRandomness": 8,
+   "scale": 3.2,
+   "toScale": 0.4,
+   "spreadRandomness": [
+    0.5,
+    0.5,
+    0.5
+   ],
+   "initialVelocity": [
+    0,
+    1.4,
+    0
+   ]
+  },
+  {
+   "type": "GENERIC",
+   "spawningOrientation": "ENTITY",
+   "renderingOrientation": "PLAYER",
+   "ignoreCollision": true,
+   "hitboxSize": 0.2,
+   "randomTexture": true,
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "textures": [
+    "squadmc:mts/bullets/fire0",
+    "squadmc:mts/bullets/fire1",
+    "squadmc:mts/bullets/fire2",
+    "squadmc:mts/bullets/fire3",
+    "squadmc:mts/bullets/fire4",
+    "squadmc:mts/bullets/fire5",
+    "squadmc:mts/bullets/fire6"
+   ],
+   "textureDelays": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "isBright": true,
+   "transparency": 1.0,
+   "quantity": 1,
+   "duration": 22,
+   "durationRandomness": 5,
+   "scale": 5.0,
+   "toScale": 1.5,
+   "spreadRandomness": [
+    0.3,
+    0.3,
+    0.3
+   ],
+   "initialVelocity": [
+    0,
+    2.2,
+    0
+   ]
+  },
+  {
+   "type": "GENERIC",
+   "spawningOrientation": "ENTITY",
+   "renderingOrientation": "PLAYER",
+   "ignoreCollision": true,
+   "hitboxSize": 0.2,
+   "randomTexture": true,
+   "pos": [
+    0,
+    0,
+    0
+   ],
+   "textures": [
+    "squadmc:mts/bullets/fire0",
+    "squadmc:mts/bullets/fire1",
+    "squadmc:mts/bullets/fire2",
+    "squadmc:mts/bullets/fire3",
+    "squadmc:mts/bullets/fire4",
+    "squadmc:mts/bullets/fire5",
+    "squadmc:mts/bullets/fire6"
+   ],
+   "textureDelays": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "isBright": true,
+   "transparency": 1.0,
+   "quantity": 1,
+   "duration": 50,
+   "durationRandomness": 15,
+   "scale": 0.25,
+   "toScale": 0.02,
+   "spreadRandomness": [
+    1.5,
+    1.5,
+    1.5
+   ],
+   "initialVelocity": [
+    0,
+    3.0,
+    0
    ]
   }
  ],

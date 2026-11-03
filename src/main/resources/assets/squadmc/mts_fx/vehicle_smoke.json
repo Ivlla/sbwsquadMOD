@@ -4,44 +4,13 @@
    "type": "GENERIC",
    "spawningOrientation": "ENTITY",
    "renderingOrientation": "PLAYER",
-   "quantity": 1,
-   "duration": 280,
-   "transparency": 0.1,
-   "fadeTransparencyTime": 100,
-   "scale": 6.0,
-   "toScale": 30.0,
    "ignoreCollision": true,
    "hitboxSize": 0.2,
-   "textureDelays": [
-    20,
-    20,
-    20,
-    20,
-    20,
-    20,
-    20,
-    20,
-    20,
-    20,
-    20,
-    20
-   ],
    "randomTexture": true,
-   "color": "292521",
    "pos": [
     0,
     0,
     0
-   ],
-   "spreadRandomness": [
-    0.3,
-    0.3,
-    0.0
-   ],
-   "initialVelocity": [
-    0.0,
-    0.5,
-    0.0
    ],
    "textures": [
     "squadmc:mts/core/big_smoke_0",
@@ -56,6 +25,38 @@
     "squadmc:mts/core/big_smoke_9",
     "squadmc:mts/core/big_smoke_10",
     "squadmc:mts/core/big_smoke_11"
+   ],
+   "textureDelays": [
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20
+   ],
+   "quantity": 1,
+   "duration": 320,
+   "durationRandomness": 40,
+   "scale": 5.0,
+   "toScale": 34.0,
+   "transparency": 0.6,
+   "toTransparency": 0.0001,
+   "color": "1E1B18",
+   "spreadRandomness": [
+    0.4,
+    0.25,
+    0.4
+   ],
+   "initialVelocity": [
+    0,
+    1.1,
+    0
    ]
   }
  ],

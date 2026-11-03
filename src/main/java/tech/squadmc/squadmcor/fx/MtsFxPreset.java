@@ -20,7 +20,8 @@ public enum MtsFxPreset {
     GROUND_BLAST("ground_blast"),
     GRAD_BLAST("grad_blast"),
     VEHICLE_FIRE("vehicle_fire"),
-    VEHICLE_SMOKE("vehicle_smoke");
+    VEHICLE_SMOKE("vehicle_smoke"),
+    VEHICLE_SMOKE_THIN("vehicle_smoke_thin");
 
     public final String file;
 

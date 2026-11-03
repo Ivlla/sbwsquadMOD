@@ -32,6 +32,11 @@ public final class MtsFxServer {
         send(level, pos, new MtsFxPacket(preset, false, pos, Direction.UP));
     }
 
+    /** Гибель техники: тяжёлой — большой взрыв с обломками и огнём, лёгкой — поменьше. */
+    public static void vehicleDeath(ServerLevel level, Vec3 pos, boolean heavy) {
+        send(level, pos, new MtsFxPacket(heavy ? MtsFxPreset.HEAVY_BOMB : MtsFxPreset.BASIC_BOMB, false, pos, Direction.UP));
+    }
+
     /** Вспышка и дым пуска ракеты из направляющей. */
     public static void rocketLaunch(ServerLevel level, Vec3 pos) {
         send(level, pos, new MtsFxPacket(MtsFxPreset.ROCKET_LAUNCH, false, pos, Direction.UP));
