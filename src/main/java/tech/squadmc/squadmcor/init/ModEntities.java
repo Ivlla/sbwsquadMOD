@@ -279,6 +279,15 @@ public class ModEntities {
                     .fireImmune()
                     .build("vehicle_wreck"));
 
+    public static final RegistryObject<EntityType<VehicleWreckPartEntity>> VEHICLE_WRECK_PART =
+            ENTITY_TYPES.register("vehicle_wreck_part", () -> EntityType.Builder.<VehicleWreckPartEntity>of(VehicleWreckPartEntity::new, MobCategory.MISC)
+                    .sized(1F, 1F)
+                    .clientTrackingRange(16)
+                    .updateInterval(20)
+                    .fireImmune()
+                    .noSummon()
+                    .build("vehicle_wreck_part"));
+
     public static final RegistryObject<EntityType<AGSEntity>> AGS17 =
             ENTITY_TYPES.register("emplags17", () -> EntityType.Builder.<AGSEntity>of(AGSEntity::new, MobCategory.MISC)
                     .sized(0.8F, 0.8F)

@@ -22,6 +22,7 @@ public class ModEntityRenders {
         event.registerEntityRenderer(ModEntities.TDA_DUMMY.get(), NoopRenderer::new);
         event.registerEntityRenderer(ModEntities.BMP2.get(), bmp2Renderer::new);
         event.registerEntityRenderer(ModEntities.VEHICLE_WRECK.get(), tech.squadmc.squadmcor.client.wreck.VehicleWreckRenderer::new);
+        event.registerEntityRenderer(ModEntities.VEHICLE_WRECK_PART.get(), net.minecraft.client.renderer.entity.NoopRenderer::new);
         event.registerEntityRenderer(ModEntities.KONKURS_DUMMY.get(), NoopRenderer::new);
 
         // Облако объёмного дыма рисуется stage-проходом (VehicleSmokeStageRenderer) —

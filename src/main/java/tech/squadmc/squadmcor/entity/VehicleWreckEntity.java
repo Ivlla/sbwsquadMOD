@@ -1,8 +1,12 @@
 package tech.squadmc.squadmcor.entity;
 
+import com.atsuishio.superbwarfare.data.vehicle.subdata.OBBInfo;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.tools.OBB;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.FloatTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -17,12 +21,16 @@ import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.network.NetworkHooks;
 import tech.squadmc.squadmcor.client.wreck.VehicleWreckClient;
 import tech.squadmc.squadmcor.fx.MtsFxServer;
 import tech.squadmc.squadmcor.init.ModEntities;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The burnt-out hull left by a destroyed vehicle. It is a separate entity so the vehicle itself is
@@ -36,6 +44,12 @@ public class VehicleWreckEntity extends Entity {
 
     private static final double GRAVITY = 0.04;
     private static final float HEAVY_VEHICLE_HEALTH = 400F;
+    private static final float MAX_PART_WIDTH = 2F;
+    private static final float MIN_PART_WIDTH = 0.5F;
+    /** Spacing as a share of part width, so a rotated hull leaves no gaps between parts. */
+    private static final float PART_OVERLAP = 0.75F;
+    private static final int MAX_PARTS = 64;
+    private static final int PART_SPAWN_TIMEOUT = 100;
 
     private static final EntityDataAccessor<String> SOURCE =
             SynchedEntityData.defineId(VehicleWreckEntity.class, EntityDataSerializers.STRING);
@@ -53,6 +67,10 @@ public class VehicleWreckEntity extends Entity {
             SynchedEntityData.defineId(VehicleWreckEntity.class, EntityDataSerializers.FLOAT);
     private static final EntityDataAccessor<Integer> AGE =
             SynchedEntityData.defineId(VehicleWreckEntity.class, EntityDataSerializers.INT);
+
+    /** Each is {centerX, centerZ, halfX, halfZ, top} relative to the wreck, in vehicle axes. */
+    private final List<float[]> hullBoxes = new ArrayList<>();
+    private boolean partsSpawned = false;
 
     public VehicleWreckEntity(EntityType<? extends VehicleWreckEntity> type, Level level) {
         super(type, level);
@@ -74,7 +92,7 @@ public class VehicleWreckEntity extends Entity {
         level.addFreshEntity(wreck);
     }
 
-    /** Solid over the vehicle's real hull: its own entity box is far smaller than the model. */
+    /** Records the hull: the vehicle's hitboxes without its wheels, which the wreck no longer has. */
     private void takeShapeOf(VehicleEntity vehicle) {
         double halfX = vehicle.getBbWidth() / 2, halfZ = halfX, height = vehicle.getBbHeight();
         for (OBB obb : vehicle.getOBBs()) {
@@ -86,7 +104,52 @@ public class VehicleWreckEntity extends Entity {
         this.entityData.set(HALF_X, (float) halfX);
         this.entityData.set(HALF_Z, (float) halfZ);
         this.entityData.set(HEIGHT, (float) height);
-        setBoundingBox(makeBoundingBox());
+
+        for (OBBInfo info : vehicle.computed().getObb()) {
+            if (info.getPart() == OBB.Part.WHEEL_LEFT || info.getPart() == OBB.Part.WHEEL_RIGHT) continue;
+            Vec3 center = info.getPosition(), size = info.getSize();
+            this.hullBoxes.add(new float[]{(float) center.x, (float) center.z, (float) size.x, (float) size.z, (float) (center.y + size.y)});
+        }
+        if (this.hullBoxes.isEmpty()) {
+            float half = vehicle.getBbWidth() / 2;
+            this.hullBoxes.add(new float[]{0F, 0F, half, half, vehicle.getBbHeight()});
+        }
+    }
+
+    /** Whole hull, for drawing and for placing effects; the wreck's own box is deliberately tiny. */
+    public AABB hullBox() {
+        float halfX = this.entityData.get(HALF_X), halfZ = this.entityData.get(HALF_Z);
+        return new AABB(getX() - halfX, getY(), getZ() - halfZ, getX() + halfX, getY() + this.entityData.get(HEIGHT), getZ() + halfZ);
+    }
+
+    @Override
+    public AABB getBoundingBoxForCulling() {
+        return hullBox();
+    }
+
+    private void spawnHullParts() {
+        this.partsSpawned = true;
+        double yaw = Math.toRadians(getYRot());
+        double cos = Math.cos(yaw), sin = Math.sin(yaw);
+        int spawned = 0;
+        for (float[] box : this.hullBoxes) {
+            float sizeX = box[2] * 2, sizeZ = box[3] * 2;
+            float width = Math.min(MAX_PART_WIDTH, Math.max(MIN_PART_WIDTH, Math.min(sizeX, sizeZ)));
+            float step = width * PART_OVERLAP;
+            int countX = Math.max(1, (int) Math.ceil((sizeX - width) / step) + 1);
+            int countZ = Math.max(1, (int) Math.ceil((sizeZ - width) / step) + 1);
+            for (int ix = 0; ix < countX && spawned < MAX_PARTS; ix++) {
+                for (int iz = 0; iz < countZ && spawned < MAX_PARTS; iz++) {
+                    double localX = box[0] + (countX == 1 ? 0 : -box[2] + width / 2 + ix * (sizeX - width) / (countX - 1));
+                    double localZ = box[1] + (countZ == 1 ? 0 : -box[3] + width / 2 + iz * (sizeZ - width) / (countZ - 1));
+                    VehicleWreckPartEntity part = new VehicleWreckPartEntity(ModEntities.VEHICLE_WRECK_PART.get(), level());
+                    part.setup(this, width, Math.max(0.5F, box[4]));
+                    part.setPos(getX() + localX * cos - localZ * sin, getY(), getZ() + localX * sin + localZ * cos);
+                    level().addFreshEntity(part);
+                    spawned++;
+                }
+            }
+        }
     }
 
     @Override
@@ -104,18 +167,11 @@ public class VehicleWreckEntity extends Entity {
     @Override
     public void onSyncedDataUpdated(EntityDataAccessor<?> key) {
         super.onSyncedDataUpdated(key);
-        if (HALF_X.equals(key) || HALF_Z.equals(key) || HEIGHT.equals(key)) setBoundingBox(makeBoundingBox());
     }
 
     @Override
     public EntityDimensions getDimensions(Pose pose) {
-        return EntityDimensions.scalable(this.entityData.get(HALF_X) * 2, this.entityData.get(HEIGHT));
-    }
-
-    @Override
-    protected AABB makeBoundingBox() {
-        float halfX = this.entityData.get(HALF_X), halfZ = this.entityData.get(HALF_Z);
-        return new AABB(getX() - halfX, getY(), getZ() - halfZ, getX() + halfX, getY() + this.entityData.get(HEIGHT), getZ() + halfZ);
+        return EntityDimensions.fixed(1F, 1F);
     }
 
     @Override
@@ -135,6 +191,7 @@ public class VehicleWreckEntity extends Entity {
             setDeltaMovement(getDeltaMovement().add(0, -GRAVITY, 0));
             move(MoverType.SELF, getDeltaMovement());
         }
+        if (!this.partsSpawned && (onGround() || age >= PART_SPAWN_TIMEOUT)) spawnHullParts();
     }
 
     public String source() {
@@ -163,16 +220,6 @@ public class VehicleWreckEntity extends Entity {
     }
 
     @Override
-    public boolean isPickable() {
-        return !isRemoved();
-    }
-
-    @Override
-    public boolean canBeCollidedWith() {
-        return true;
-    }
-
-    @Override
     protected void readAdditionalSaveData(CompoundTag tag) {
         this.entityData.set(SOURCE, tag.getString("Source"));
         this.entityData.set(TURRET_YAW, tag.getFloat("TurretYaw"));
@@ -182,7 +229,14 @@ public class VehicleWreckEntity extends Entity {
         this.entityData.set(HALF_Z, tag.getFloat("HalfZ"));
         this.entityData.set(HEIGHT, tag.getFloat("Height"));
         this.entityData.set(AGE, tag.getInt("Age"));
-        setBoundingBox(makeBoundingBox());
+        this.hullBoxes.clear();
+        ListTag boxes = tag.getList("HullBoxes", Tag.TAG_LIST);
+        for (int i = 0; i < boxes.size(); i++) {
+            ListTag values = boxes.getList(i);
+            float[] box = new float[values.size()];
+            for (int j = 0; j < box.length; j++) box[j] = values.getFloat(j);
+            this.hullBoxes.add(box);
+        }
     }
 
     @Override
@@ -195,6 +249,13 @@ public class VehicleWreckEntity extends Entity {
         tag.putFloat("HalfZ", this.entityData.get(HALF_Z));
         tag.putFloat("Height", this.entityData.get(HEIGHT));
         tag.putInt("Age", age());
+        ListTag boxes = new ListTag();
+        for (float[] box : this.hullBoxes) {
+            ListTag values = new ListTag();
+            for (float value : box) values.add(FloatTag.valueOf(value));
+            boxes.add(values);
+        }
+        tag.put("HullBoxes", boxes);
     }
 
     @Override

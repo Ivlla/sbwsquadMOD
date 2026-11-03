@@ -86,7 +86,7 @@ public final class VehicleWreckClient {
     }
 
     private static Vec3 point(VehicleWreckEntity wreck, RandomSource random) {
-        AABB box = wreck.getBoundingBox();
+        AABB box = wreck.hullBox();
         double x = wreck.getX() + (random.nextDouble() - 0.5) * box.getXsize() * HULL_SPREAD;
         double z = wreck.getZ() + (random.nextDouble() - 0.5) * box.getZsize() * HULL_SPREAD;
         return new Vec3(x, wreck.getY() + box.getYsize() * 0.6, z);
