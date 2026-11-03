@@ -38,7 +38,7 @@ public final class VehicleWaterDamage {
         }
     }
 
-    private static boolean canFloat(VehicleEntity vehicle) {
+    public static boolean canFloat(VehicleEntity vehicle) {
         JsonObject engine = vehicle.computed().getEngineInfo();
         return engine != null && engine.has("Buoyancy") && engine.get("Buoyancy").getAsDouble() > 0;
     }
