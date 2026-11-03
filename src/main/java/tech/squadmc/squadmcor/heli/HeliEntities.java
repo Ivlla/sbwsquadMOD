@@ -42,6 +42,9 @@ import tech.squadmc.squadmcor.heli.entity.vehicle.Kamaz.KamazNoTentEntity;
 import tech.squadmc.squadmcor.heli.entity.vehicle.ManHx60.ManHx60NoTentEntity;
 import tech.squadmc.squadmcor.heli.entity.vehicle.Nh90.Nh90Entity;
 import tech.squadmc.squadmcor.heli.entity.vehicle.Ah64.Ah64Entity;
+import tech.squadmc.squadmcor.heli.entity.vehicle.Bmp.Bmp2.BMP2MEntity;
+import tech.squadmc.squadmcor.heli.entity.vehicle.Bmp.Bmp2.BMP2MDEntity;
+import tech.squadmc.squadmcor.heli.entity.vehicle.M113.M113Entity;
 
 /** Вертолёты и ракеты Hellfire из Frontline Combat Pack. */
 public final class HeliEntities {
@@ -102,6 +105,12 @@ public final class HeliEntities {
             () -> EntityType.Builder.of(KamazEntity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,2f).build("kamaz"));
     public static final RegistryObject<EntityType<Ch47Entity>> CH47 = ModEntities.ENTITY_TYPES.register("ch47",
             () -> EntityType.Builder.of(Ch47Entity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,2f).build("ch47"));
+    public static final RegistryObject<EntityType<BMP2MEntity>> BMP2M = ModEntities.ENTITY_TYPES.register("bmp2m",
+            () -> EntityType.Builder.of(BMP2MEntity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,2f).build("bmp2m"));
+    public static final RegistryObject<EntityType<BMP2MDEntity>> BMP2MD = ModEntities.ENTITY_TYPES.register("bmp2md",
+            () -> EntityType.Builder.of(BMP2MDEntity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,2f).build("bmp2md"));
+    public static final RegistryObject<EntityType<M113Entity>> M113 = ModEntities.ENTITY_TYPES.register("m113",
+            () -> EntityType.Builder.of(M113Entity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,2f).build("m113"));
     public static final RegistryObject<EntityType<RG33Entity>> RG_33 = ModEntities.ENTITY_TYPES.register("rg_33",
             () -> EntityType.Builder.of(RG33Entity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,2f).build("rg_33"));
     public static final RegistryObject<EntityType<M939Entity>> M939 = ModEntities.ENTITY_TYPES.register("m939",
@@ -122,6 +131,9 @@ public final class HeliEntities {
     public static void init() {}
 
     public static void addToTab(CreativeModeTab.Output output) {
+        output.accept(ContainerBlockItem.createInstance(BMP2M.get()));
+        output.accept(ContainerBlockItem.createInstance(BMP2MD.get()));
+        output.accept(ContainerBlockItem.createInstance(M113.get()));
         output.accept(ContainerBlockItem.createInstance(NH_90.get()));
         output.accept(ContainerBlockItem.createInstance(AH_64.get()));
         output.accept(ContainerBlockItem.createInstance(UAZ_452.get()));

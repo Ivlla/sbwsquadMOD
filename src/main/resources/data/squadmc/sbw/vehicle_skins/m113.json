@@ -1,0 +1,10 @@
+{
+  "Skins": [
+    {
+      "Id": "vanilla",
+      "Name": "Default",
+      "Texture": "squadmc:textures/entity/m113.png",
+      "Priority": 1
+    }
+  ]
+}

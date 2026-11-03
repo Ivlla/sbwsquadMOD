@@ -8,45 +8,47 @@ import java.util.Map;
 
 /** Тепловые приборы. Есть только у техники, которая несёт такой прибор в реальности. */
 public enum ThermalSight {
-    /** Современный прицел высокой чёткости: CITV и GPS Abrams, PERI Leopard 2A7V, Puma, FLIR MH-60 и UH-1Y. */
-    WHITE_HOT_HD("whot_hd", "FLIR WHT"),
+    // НАТО: зелёный экран, чёткость зависит от поколения прибора.
+    /** Современный прицел высокой чёткости: CITV и GPS Abrams, PERI Leopard 2A7V, Puma, FLIR MH-60. */
+    NATO_HD("nato_hd", "FLIR"),
     /** Прибор предыдущего поколения: M2 Bradley, LAV-25A2. */
-    WHITE_HOT_GEN2("whot_gen2", "TIS WHT"),
+    NATO_GEN2("nato_gen2", "TIS"),
     /** Боевой модуль: M151 Protector, CROWS. Меньше разрешение. */
-    RWS("rws", "RWS WHT"),
-    /** ITAS комплекса TOW в режиме чёрно-горячий. */
-    BLACK_HOT("bhot", "ITAS BLK"),
-    /** Российские приборы: зелёный экран, заметный шум и строки. */
-    GREEN_RU("green_ru", "ТПВ"),
-    /** TADS Apache: монохромный зелёный, но чётче российских. */
-    TADS("tads", "TADS FLIR");
+    NATO_RWS("nato_rws", "RWS"),
+    /** ITAS комплекса TOW. */
+    NATO_ITAS("nato_itas", "ITAS"),
+    /** TADS Apache. */
+    TADS("tads", "TADS FLIR"),
+    /** Российские приборы: белый экран, заметный шум и строки. */
+    RU("ru", "ТПВ");
 
     private static final Map<String, ThermalSight> VEHICLES = Map.ofEntries(
-            Map.entry("m1a2", WHITE_HOT_HD),
-            Map.entry("m1a2_sand", WHITE_HOT_HD),
-            Map.entry("leopard_2a7v", WHITE_HOT_HD),
-            Map.entry("puma", WHITE_HOT_HD),
-            Map.entry("bradley", WHITE_HOT_GEN2),
-            Map.entry("bradley_sand", WHITE_HOT_GEN2),
-            Map.entry("lav25", WHITE_HOT_GEN2),
-            Map.entry("stryker_m2", RWS),
-            Map.entry("rg_33", RWS),
-            Map.entry("humvee_tow", BLACK_HOT),
-            Map.entry("t72av", GREEN_RU),
-            Map.entry("t64", GREEN_RU),
-            Map.entry("t80", GREEN_RU),
-            Map.entry("gaz_tigr_rws", GREEN_RU),
-            Map.entry("sprut", GREEN_RU),
-            Map.entry("bmd4", GREEN_RU),
-            Map.entry("mi8_amtsh", GREEN_RU),
+            Map.entry("m1a2", NATO_HD),
+            Map.entry("m1a2_sand", NATO_HD),
+            Map.entry("leopard_2a7v", NATO_HD),
+            Map.entry("puma", NATO_HD),
+            Map.entry("bradley", NATO_GEN2),
+            Map.entry("bradley_sand", NATO_GEN2),
+            Map.entry("lav25", NATO_GEN2),
+            Map.entry("stryker_m2", NATO_RWS),
+            Map.entry("rg_33", NATO_RWS),
+            Map.entry("humvee_tow", NATO_ITAS),
+            Map.entry("t72av", RU),
+            Map.entry("t64", RU),
+            Map.entry("t80", RU),
+            Map.entry("gaz_tigr_rws", RU),
+            Map.entry("sprut", RU),
+            Map.entry("bmd4", RU),
+            Map.entry("bmp2m", RU),
+            Map.entry("mi8_amtsh", RU),
             Map.entry("ah_64", TADS),
-            Map.entry("mh60l", WHITE_HOT_HD),
-            Map.entry("littlebird", WHITE_HOT_HD),
-            Map.entry("littlebird_heavy", WHITE_HOT_HD),
-            Map.entry("venom", WHITE_HOT_HD),
-            Map.entry("venom_door_guns", WHITE_HOT_HD),
-            Map.entry("venom_gunship", WHITE_HOT_HD),
-            Map.entry("nh_90", WHITE_HOT_HD));
+            Map.entry("mh60l", NATO_HD),
+            Map.entry("littlebird", NATO_HD),
+            Map.entry("littlebird_heavy", NATO_HD),
+            Map.entry("venom", NATO_HD),
+            Map.entry("venom_door_guns", NATO_HD),
+            Map.entry("venom_gunship", NATO_HD),
+            Map.entry("nh_90", NATO_HD));
 
     private final ResourceLocation effect;
     private final String label;

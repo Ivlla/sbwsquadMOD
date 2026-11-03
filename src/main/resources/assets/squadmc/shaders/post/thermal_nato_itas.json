@@ -11,37 +11,37 @@
         {
           "name": "Palette",
           "values": [
-            0.0
+            2.0
           ]
         },
         {
           "name": "PixelSize",
           "values": [
-            1.0
+            2.0
           ]
         },
         {
           "name": "Noise",
           "values": [
-            0.015
+            0.03
           ]
         },
         {
           "name": "Scanlines",
           "values": [
-            0.0
+            0.04
           ]
         },
         {
           "name": "Softness",
           "values": [
-            0.0
+            0.3
           ]
         },
         {
           "name": "Contrast",
           "values": [
-            1.15
+            1.05
           ]
         }
       ]

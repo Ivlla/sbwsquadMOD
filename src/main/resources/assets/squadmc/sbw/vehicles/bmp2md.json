@@ -1,0 +1,7 @@
+{
+  "ID": "squadmc:bmp2md",
+  "Model": {
+    "Model": "squadmc:geo/bmp2md.geo.json",
+    "Texture": "squadmc:textures/entity/bmp2md/1.png"
+  }
+}
