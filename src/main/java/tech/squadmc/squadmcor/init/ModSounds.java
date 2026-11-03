@@ -156,6 +156,7 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> BRDM2_ENGINE_RUNNING_1P = register("brdm2_running_1p");
     public static final RegistryObject<SoundEvent> BRDM2_ENGINE_RUNNING_3P = register("brdm2_running_3p");
 
+    public static final RegistryObject<SoundEvent> VEHICLE_BURN = register("vehicle_burn");
     public static final RegistryObject<SoundEvent> HIT_HEAVY  = register("hit_heavy");
     public static final RegistryObject<SoundEvent> HIT_MEDIUM = register("hit_medium");
     public static final RegistryObject<SoundEvent> HIT_SMALL  = register("hit_small");

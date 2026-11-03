@@ -41,11 +41,11 @@
     20
    ],
    "quantity": 1,
-   "duration": 320,
-   "durationRandomness": 40,
-   "scale": 5.0,
-   "toScale": 34.0,
-   "transparency": 0.6,
+   "duration": 220,
+   "durationRandomness": 30,
+   "scale": 3.0,
+   "toScale": 18.0,
+   "transparency": 0.4,
    "toTransparency": 0.0001,
    "color": "1E1B18",
    "spreadRandomness": [
