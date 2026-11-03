@@ -1,0 +1,10 @@
+{
+  "Skins": [
+    {
+      "Id": "vanilla",
+      "Name": "Base",
+      "Texture": "squadmc:textures/entity/uaz/uaz_dshka.png",
+      "Priority": 1
+    }
+  ]
+}

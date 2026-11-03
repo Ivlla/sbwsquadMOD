@@ -24,11 +24,9 @@ public enum ThermalSight {
 
     private static final Map<String, ThermalSight> VEHICLES = Map.ofEntries(
             Map.entry("m1a2", NATO_HD),
-            Map.entry("m1a2_sand", NATO_HD),
             Map.entry("leopard_2a7v", NATO_HD),
             Map.entry("puma", NATO_HD),
             Map.entry("bradley", NATO_GEN2),
-            Map.entry("bradley_sand", NATO_GEN2),
             Map.entry("lav25", NATO_GEN2),
             Map.entry("stryker_m2", NATO_RWS),
             Map.entry("rg_33", NATO_RWS),

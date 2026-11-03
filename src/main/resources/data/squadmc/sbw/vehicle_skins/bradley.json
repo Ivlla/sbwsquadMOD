@@ -1,0 +1,16 @@
+{
+  "Skins": [
+    {
+      "Id": "vanilla",
+      "Name": "Base",
+      "Texture": "squadmc:textures/entity/bradley.png",
+      "Priority": 1
+    },
+    {
+      "Id": "sand",
+      "Name": "Песочный",
+      "Texture": "squadmc:textures/entity/m3a3_texture_sand.png",
+      "Priority": 2
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "Skins": [
+    {
+      "Id": "vanilla",
+      "Name": "Base",
+      "Texture": "squadmc:textures/entity/humvees/humvee_m2_green.png",
+      "Priority": 1
+    },
+    {
+      "Id": "iraq",
+      "Name": "Песочный",
+      "Texture": "squadmc:textures/entity/humvees/humvee_m2_iraq.png",
+      "Priority": 2
+    }
+  ]
+}

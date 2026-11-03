@@ -24,7 +24,7 @@ public class AGSRender extends OptimizedVehicleRenderer<AGSEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(AGSEntity entity) {
-        return CACHED_RESOURCE_0;
+        return tech.squadmc.squadmcor.client.skin.VehicleSkinTexture.resolve(entity, CACHED_RESOURCE_0);
     }
 }
 

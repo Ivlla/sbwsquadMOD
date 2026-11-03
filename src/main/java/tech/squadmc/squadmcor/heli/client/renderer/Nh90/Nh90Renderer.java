@@ -15,6 +15,6 @@ public class Nh90Renderer extends VehicleRenderer<Nh90Entity> {
 
     @Override
     public ResourceLocation getTextureLocation(Nh90Entity entity) {
-        return new ResourceLocation(squadmc.MODID, "textures/entity/nh90_default.png");
+        return tech.squadmc.squadmcor.client.skin.VehicleSkinTexture.resolve(entity, new ResourceLocation(squadmc.MODID, "textures/entity/nh90_default.png"));
     }
 }

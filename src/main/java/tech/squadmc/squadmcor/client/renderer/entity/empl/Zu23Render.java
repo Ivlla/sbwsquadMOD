@@ -15,6 +15,6 @@ public class Zu23Render extends VehicleRenderer<Zu23Entity> {
 
     @Override
     public ResourceLocation getTextureLocation(Zu23Entity entity) {
-        return TEXTURE;
+        return tech.squadmc.squadmcor.client.skin.VehicleSkinTexture.resolve(entity, TEXTURE);
     }
 }

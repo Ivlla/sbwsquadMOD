@@ -1,0 +1,16 @@
+{
+  "Skins": [
+    {
+      "Id": "vanilla",
+      "Name": "Base",
+      "Texture": "squadmc:textures/entity/fmtv_iraq.png",
+      "Priority": 1
+    },
+    {
+      "Id": "green",
+      "Name": "Зелёный",
+      "Texture": "squadmc:textures/entity/fmtv_green.png",
+      "Priority": 2
+    }
+  ]
+}

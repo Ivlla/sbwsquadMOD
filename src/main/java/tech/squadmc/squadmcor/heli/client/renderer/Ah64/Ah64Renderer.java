@@ -15,6 +15,6 @@ public class Ah64Renderer extends VehicleRenderer<Ah64Entity> {
 
     @Override
     public ResourceLocation getTextureLocation(Ah64Entity entity) {
-        return new ResourceLocation(squadmc.MODID, "textures/entity/ah_64.png");
+        return tech.squadmc.squadmcor.client.skin.VehicleSkinTexture.resolve(entity, new ResourceLocation(squadmc.MODID, "textures/entity/ah_64.png"));
     }
 }

@@ -23,6 +23,6 @@ public class t80Render extends OptimizedVehicleRenderer<t80Entity> {
 
     @Override
     public ResourceLocation getTextureLocation(t80Entity entity) {
-        return CACHED_RESOURCE_0;
+        return tech.squadmc.squadmcor.client.skin.VehicleSkinTexture.resolve(entity, CACHED_RESOURCE_0);
     }
 }

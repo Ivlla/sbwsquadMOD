@@ -22,6 +22,6 @@ public class brdmRender extends OptimizedVehicleRenderer<brdmEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(brdmEntity entity) {
-        return CACHED_RESOURCE_0;
+        return tech.squadmc.squadmcor.client.skin.VehicleSkinTexture.resolve(entity, CACHED_RESOURCE_0);
     }
 }

@@ -52,8 +52,6 @@ public class ModEntityRenders {
         event.registerEntityRenderer(ModEntities.FMTV.get(), FMTVRender::new);
         event.registerEntityRenderer(ModEntities.STRYKER_MORTAR.get(), StrykerMortarRender::new);
         event.registerEntityRenderer(ModEntities.STRYKER_M2.get(), StrykerM2Render::new);
-        event.registerEntityRenderer(ModEntities.M1A2_SAND.get(), m1a2Render_sand::new);
-        event.registerEntityRenderer(ModEntities.BRADLEY_SAND.get(), bradley_sandRenderer::new);
         event.registerEntityRenderer(ModEntities.MTLB.get(), mtlbRender::new);
         event.registerEntityRenderer(ModEntities.MTLB_ZU23.get(), tech.squadmc.squadmcor.client.renderer.entity.MtlbZu23Render::new);
         event.registerEntityRenderer(ModEntities.ZU23.get(), tech.squadmc.squadmcor.client.renderer.entity.empl.Zu23Render::new);
@@ -63,7 +61,6 @@ public class ModEntityRenders {
         event.registerEntityRenderer(ModEntities.AGS17.get(), AGSRender::new);
         event.registerEntityRenderer(ModEntities.ZIS3.get(), ZISRender::new);
         event.registerEntityRenderer(ModEntities.TOW.get(), TowRender::new);
-        event.registerEntityRenderer(ModEntities.FMTV_GREEN.get(), FMTVRednderGreen::new);
         event.registerEntityRenderer(ModEntities.LEOPARD_2A7V.get(), leopardRender::new);
         event.registerEntityRenderer(ModEntities.PUMA.get(), PumaRenderer::new);
         event.registerEntityRenderer(ModEntities.T64.get(), T64Renderer::new);

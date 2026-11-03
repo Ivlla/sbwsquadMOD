@@ -24,7 +24,7 @@ public class m2Render extends OptimizedVehicleRenderer<M2Entity> {
 
     @Override
     public ResourceLocation getTextureLocation(M2Entity entity) {
-        return CACHED_RESOURCE_0;
+        return tech.squadmc.squadmcor.client.skin.VehicleSkinTexture.resolve(entity, CACHED_RESOURCE_0);
     }
 }
 

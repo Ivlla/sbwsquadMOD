@@ -232,11 +232,6 @@ public class ModEntities {
                     .clientTrackingRange(360)
                     .build("fmtv"));
 
-    public static final RegistryObject<EntityType<FMTVEntityGreen>> FMTV_GREEN =
-            ENTITY_TYPES.register("fmtv_green", () -> EntityType.Builder.<FMTVEntityGreen>of(FMTVEntityGreen::new, MobCategory.MISC)
-                    .sized(2.8F, 2.8F)
-                    .clientTrackingRange(360)
-                    .build("fmtv_green"));
 
     public static final RegistryObject<EntityType<StrykerMortalEntity>> STRYKER_MORTAR =
             ENTITY_TYPES.register("stryker_mortar", () -> EntityType.Builder.<StrykerMortalEntity>of(StrykerMortalEntity::new, MobCategory.MISC)
@@ -250,17 +245,7 @@ public class ModEntities {
                     .clientTrackingRange(360)
                     .build("stryker_m2"));
 
-    public static final RegistryObject<EntityType<m1a2Entity_sand>> M1A2_SAND =
-            ENTITY_TYPES.register("m1a2_sand", () -> EntityType.Builder.<m1a2Entity_sand>of(m1a2Entity_sand::new, MobCategory.MISC)
-                    .sized(2.8F, 2.8F)
-                    .clientTrackingRange(360)
-                    .build("m1a2_sand"));
 
-    public static final RegistryObject<EntityType<bradley_sandEntity>> BRADLEY_SAND =
-            ENTITY_TYPES.register("bradley_sand", () -> EntityType.Builder.<bradley_sandEntity>of(bradley_sandEntity::new, MobCategory.MISC)
-                    .sized(2.8F, 2.8F)
-                    .clientTrackingRange(360)
-                    .build("bradley_sand"));
 
     public static final RegistryObject<EntityType<PumaEntity>> PUMA =
             ENTITY_TYPES.register("puma", () -> EntityType.Builder.<PumaEntity>of(PumaEntity::new, MobCategory.MISC)

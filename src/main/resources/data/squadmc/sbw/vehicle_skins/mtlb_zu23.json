@@ -1,0 +1,10 @@
+{
+  "Skins": [
+    {
+      "Id": "vanilla",
+      "Name": "Base",
+      "Texture": "squadmc:textures/entity/mtlb_zu23.png",
+      "Priority": 1
+    }
+  ]
+}

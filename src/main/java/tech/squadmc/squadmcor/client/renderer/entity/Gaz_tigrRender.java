@@ -24,7 +24,7 @@ public class Gaz_tigrRender extends OptimizedVehicleRenderer<Gaz_tigrEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(Gaz_tigrEntity entity) {
-        return CACHED_RESOURCE_0;
+        return tech.squadmc.squadmcor.client.skin.VehicleSkinTexture.resolve(entity, CACHED_RESOURCE_0);
     }
 }
 

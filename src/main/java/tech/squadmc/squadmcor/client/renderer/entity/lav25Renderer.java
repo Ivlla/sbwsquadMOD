@@ -22,6 +22,6 @@ public class lav25Renderer extends OptimizedVehicleRenderer<lav25Entity> {
 
     @Override
     public ResourceLocation getTextureLocation(lav25Entity entity) {
-        return CACHED_RESOURCE_0;
+        return tech.squadmc.squadmcor.client.skin.VehicleSkinTexture.resolve(entity, CACHED_RESOURCE_0);
     }
 }

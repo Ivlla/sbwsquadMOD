@@ -24,6 +24,6 @@ public class UralGradRender extends OptimizedVehicleRenderer<UralGradEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(UralGradEntity entity) {
-        return CACHED_RESOURCE_0;
+        return tech.squadmc.squadmcor.client.skin.VehicleSkinTexture.resolve(entity, CACHED_RESOURCE_0);
     }
 }

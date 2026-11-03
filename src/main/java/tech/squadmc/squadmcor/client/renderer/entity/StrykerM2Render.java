@@ -24,6 +24,6 @@ public class StrykerM2Render extends OptimizedVehicleRenderer<StrykerM2Entity> {
 
     @Override
     public ResourceLocation getTextureLocation(StrykerM2Entity entity) {
-        return CACHED_RESOURCE_0;
+        return tech.squadmc.squadmcor.client.skin.VehicleSkinTexture.resolve(entity, CACHED_RESOURCE_0);
     }
 }

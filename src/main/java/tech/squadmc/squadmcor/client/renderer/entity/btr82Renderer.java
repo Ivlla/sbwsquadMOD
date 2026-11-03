@@ -22,7 +22,7 @@ public class btr82Renderer extends OptimizedVehicleRenderer<btr82Entity> {
     @Override
     public ResourceLocation getTextureLocation(btr82Entity entity) {
 
-        return CACHED_RESOURCE_0;
+        return tech.squadmc.squadmcor.client.skin.VehicleSkinTexture.resolve(entity, CACHED_RESOURCE_0);
     }
 
 

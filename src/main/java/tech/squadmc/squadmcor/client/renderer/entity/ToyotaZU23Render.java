@@ -23,7 +23,7 @@ public class ToyotaZU23Render extends OptimizedVehicleRenderer<ToyotaZU23Entity>
 
     @Override
     public ResourceLocation getTextureLocation(ToyotaZU23Entity entity) {
-        return CACHED_RESOURCE_0;
+        return tech.squadmc.squadmcor.client.skin.VehicleSkinTexture.resolve(entity, CACHED_RESOURCE_0);
     }
 
     @Override

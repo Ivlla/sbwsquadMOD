@@ -23,6 +23,6 @@ public class UralRender extends OptimizedVehicleRenderer<UralEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(UralEntity entity) {
-        return CACHED_RESOURCE_0;
+        return tech.squadmc.squadmcor.client.skin.VehicleSkinTexture.resolve(entity, CACHED_RESOURCE_0);
     }
 }

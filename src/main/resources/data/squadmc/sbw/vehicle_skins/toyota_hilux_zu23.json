@@ -1,0 +1,10 @@
+{
+  "Skins": [
+    {
+      "Id": "vanilla",
+      "Name": "Base",
+      "Texture": "squadmc:textures/entity/toyotas/toyota_hilux.png",
+      "Priority": 1
+    }
+  ]
+}

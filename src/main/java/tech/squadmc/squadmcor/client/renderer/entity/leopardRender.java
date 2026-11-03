@@ -22,6 +22,6 @@ public class leopardRender extends OptimizedVehicleRenderer<leopardEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(leopardEntity entity) {
-        return CACHED_RESOURCE_0;
+        return tech.squadmc.squadmcor.client.skin.VehicleSkinTexture.resolve(entity, CACHED_RESOURCE_0);
     }
 }

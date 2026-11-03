@@ -17,8 +17,7 @@ import tech.squadmc.squadmcor.heli.entity.vehicle.Bmp.Bmp2.BMP2MEntity;
 import tech.squadmc.squadmcor.squadmc;
 
 /**
- * The BMP-2's sights on the BMP-2M and BMP-2MD. Their seat 0 is the gunner, so the seats differ
- * from the BMP-2's, where the driver sits first.
+ * The BMP-2's driver and gunner views on the BMP-2M and BMP-2MD.
  */
 @Mod.EventBusSubscriber(modid = "squadmc", value = Dist.CLIENT)
 public class Bmp2mReticleOverlay {
@@ -41,8 +40,10 @@ public class Bmp2mReticleOverlay {
         if (!mc.options.getCameraType().isFirstPerson() && !ClientEventHandler.zoomVehicle) return;
 
         int seat = vehicle.getSeatIndex(player);
-        boolean commander = vehicle instanceof BMP2MEntity && seat == 1;
-        if (seat != 0 && !commander) return;
+        boolean driver = seat == 0;
+        boolean gunner = seat == vehicle.getTurretControllerIndex();
+        boolean commander = vehicle instanceof BMP2MEntity && seat == 2;
+        if (!driver && !gunner && !commander) return;
 
         int width = mc.getWindow().getGuiScaledWidth();
         int height = mc.getWindow().getGuiScaledHeight();
@@ -51,15 +52,23 @@ public class Bmp2mReticleOverlay {
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
         RenderSystem.setShaderColor(1F, 1F, 1F, 1F);
-        if (commander) {
-            graphics.blit(TRIPLEX, 0, 0, 0, 0, width, height, width, height);
-        } else {
+        if (gunner) {
             boolean atgm = vehicle instanceof BMP2MEntity && vehicle.getWeaponIndex(seat) == BMP2M_ATGM_INDEX;
             graphics.blit(GUNNER, 0, 0, 0, 0, width, height, width, height);
             graphics.blit(atgm ? ATGM_SCOPE : CANNON_SCOPE, 0, 0, 0, 0, width, height, width, height);
             drawRange(graphics, mc, player, width, height);
+        } else {
+            graphics.blit(TRIPLEX, 0, 0, 0, 0, width, height, width, height);
+            if (driver) drawDriverHud(graphics, mc, vehicle, width, height);
         }
         RenderSystem.disableBlend();
+    }
+
+    private static void drawDriverHud(GuiGraphics graphics, Minecraft mc, VehicleEntity vehicle, int width, int height) {
+        double speed = vehicle.getDeltaMovement().horizontalDistance() * 72.0;
+        int health = (int) (vehicle.getHealth() / vehicle.getMaxHealth() * 100);
+        graphics.drawString(mc.font, String.format("SPEED: %.0f km/h", speed), 60, height - 40, 0x66FF00, false);
+        graphics.drawString(mc.font, String.format("HEALTH: %d%%", health), width - 110, height - 40, 0x66FF00, false);
     }
 
     private static void drawRange(GuiGraphics graphics, Minecraft mc, Player player, int width, int height) {

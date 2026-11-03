@@ -29,6 +29,7 @@ public class ModNetworking {
                 tech.squadmc.squadmcor.heli.network.SquadFirePacket::encode,
                 tech.squadmc.squadmcor.heli.network.SquadFirePacket::decode,
                 tech.squadmc.squadmcor.heli.network.SquadFirePacket::handle);
+        CHANNEL.registerMessage(packetId++, SquadReloadPacket.class, SquadReloadPacket::toBytes, SquadReloadPacket::new, SquadReloadPacket::handle);
         CHANNEL.registerMessage(packetId++, tech.squadmc.squadmcor.heli.HeliFirePacket.class,
                 tech.squadmc.squadmcor.heli.HeliFirePacket::toBytes,
                 tech.squadmc.squadmcor.heli.HeliFirePacket::new,

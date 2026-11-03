@@ -114,18 +114,6 @@ public class TDADummyProjectile extends ThrowableItemProjectile {
                         stryker.spawnAdditionalGrenades(this);
                     }
                 }
-                else if (vehicle instanceof m1a2Entity_sand m1a2) {
-                    int seat = m1a2.getSeatIndex(owner);
-                    if (seat == 1) {
-                        m1a2.spawnAdditionalGrenades(this);
-                    }
-                }
-                else if (vehicle instanceof bradley_sandEntity bradley) {
-                    int seat = bradley.getSeatIndex(owner);
-                    if (seat == 1) {
-                        bradley.spawnAdditionalGrenades(this);
-                    }
-                }
                 else if (vehicle instanceof brdmEntity brdm2) {
                     int seat = brdm2.getSeatIndex(owner);
                     if (seat == 1) {
@@ -261,16 +249,6 @@ public class TDADummyProjectile extends ThrowableItemProjectile {
                 }
                 else if (vehicle instanceof t80Entity t80) {
                     if (t80.getSeatIndex(owner) == 0) {
-                        isDriver = true;
-                    }
-                }
-                else if (vehicle instanceof m1a2Entity_sand m1a2) {
-                    if (m1a2.getSeatIndex(owner) == 0) {
-                        isDriver = true;
-                    }
-                }
-                else if (vehicle instanceof bradley_sandEntity bradley) {
-                    if (bradley.getSeatIndex(owner) == 0) {
                         isDriver = true;
                     }
                 }

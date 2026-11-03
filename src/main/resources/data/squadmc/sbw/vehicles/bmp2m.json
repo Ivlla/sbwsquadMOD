@@ -16,7 +16,7 @@
     -6,
     30
   ],
-  "TurretControllerIndex": 0,
+  "TurretControllerIndex": 1,
   "PassengerWeaponStationPos": [
     -0.5864,
     0.6924,
@@ -35,7 +35,7 @@
     -10,
     30
   ],
-  "PassengerWeaponStationControllerIndex": 1,
+  "PassengerWeaponStationControllerIndex": 2,
   "BarrelPos": [
     -0.001541,
     0.252041,
@@ -124,6 +124,30 @@
     }
   ],
   "Seats": [
+    {
+      "IsEnclosed": true,
+      "Transform": "Vehicle",
+      "BanHand": true,
+      "CameraPos": {
+        "UseFixedCameraPos": true,
+        "Transform": "Vehicle",
+        "Position": [
+          0.838312,
+          1.778832,
+          1.921149
+        ]
+      },
+      "HidePassenger": true,
+      "Position": [
+        0.0,
+        -1.0625,
+        0.0
+      ],
+      "MinYaw": -65,
+      "MaxYaw": 65,
+      "MinPitch": -10,
+      "MaxPitch": 30
+    },
     {
       "HidePassenger": true,
       "IsEnclosed": true,
