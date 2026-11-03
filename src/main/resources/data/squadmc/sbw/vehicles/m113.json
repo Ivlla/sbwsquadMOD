@@ -273,14 +273,15 @@
       "CrosshairColor": "0xFFC700",
       "Name": "weapon.squadmc.m2hb",
       "SoundInfo": {
-        "Fire1P": "squadmc:m2_fire",
-        "Fire3P": "squadmc:m2_fire",
-        "Fire3PFar": "superbwarfare:m_2_hb_far",
-        "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
-        "VehicleReload": "squadmc:m2_reload",
-        "Change": "superbwarfare:into_cannon"
+        "Fire1P": "squadmc:squad.silent",
+        "Fire3P": "squadmc:squad.silent",
+        "Fire3PFar": "squadmc:squad.silent",
+        "Fire3PVeryFar": "squadmc:squad.silent",
+        "Change": "squadmc:squad.weapons.common.switch_nsv",
+        "VehicleReload": "squadmc:squad.weapons.common.m2_reload_1p",
+        "VehicleReload3p": "squadmc:squad.weapons.common.m2_reload_3p"
       },
-      "SoundRadius": 24,
+      "SoundRadius": 16,
       "AmmoType": "@HeavyAmmo",
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
       "ShootPos": {
