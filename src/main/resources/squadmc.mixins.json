@@ -14,7 +14,8 @@
     "RepairToolItemMixin",
     "VehicleEngineUtilsMixin",
     "VehicleShootFxMixin",
-    "VehicleWaterStepMixin"
+    "VehicleWaterStepMixin",
+    "VehicleLauncherDamageMixin"
   ],
   "client": [
     "VehicleModelDamageMixin",
@@ -25,6 +26,7 @@
     "ThermalLightTextureMixin",
     "ThermalEntityLightMixin",
     "EngineSoundRangeMixin",
+    "CrossHairRemovalMixin",
     "VehicleSoundInstanceAccessor"
   ],
   "server": [],
