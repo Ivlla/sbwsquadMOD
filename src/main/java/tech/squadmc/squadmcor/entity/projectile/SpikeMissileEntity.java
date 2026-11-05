@@ -23,8 +23,6 @@ import net.minecraft.world.phys.Vec3;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.util.GeckoLibUtil;
 import tech.squadmc.squadmcor.spike.SpikeControl;
 import tech.squadmc.squadmcor.squadmc;
@@ -42,7 +40,6 @@ public final class SpikeMissileEntity extends MissileProjectile implements GeoEn
     private static final float TURN_RATE = 2.2F;
     private static final ResourceKey<DamageType> HIT_DAMAGE = ResourceKey.create(
             Registries.DAMAGE_TYPE, new ResourceLocation(squadmc.MODID, "spike_hit"));
-    private static final RawAnimation FLIGHT = RawAnimation.begin().thenLoop("animation.jvm.idle");
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private UUID launcherId;
@@ -188,7 +185,6 @@ public final class SpikeMissileEntity extends MissileProjectile implements GeoEn
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(new AnimationController<>(this, "flight", 0, state -> state.setAndContinue(FLIGHT)));
     }
 
     @Override public AnimatableInstanceCache getAnimatableInstanceCache() { return cache; }
