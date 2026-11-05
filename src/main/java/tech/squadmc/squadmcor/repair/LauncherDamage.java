@@ -63,8 +63,8 @@ public final class LauncherDamage {
     private static final float[][] TANK_GUN_HITS = {{4, 3, 2}, {2, 1, 1}};
     private static final float[][] ATGM_HITS = {{2, 2, 1}, {1, 1, 1}};
     /** Seconds of sustained fire by target (tank, APC, truck) and side (front, side, rear). */
-    private static final float[][] AUTOCANNON_SECONDS = {{35, 20, 15}, {25, 15, 10}, {15, 10, 10}};
-    private static final float AUTOCANNON_OTHER_SECONDS = 10F;
+    private static final float[][] AUTOCANNON_SECONDS = {{17.5F, 10, 7.5F}, {12.5F, 7.5F, 5}, {7.5F, 5, 5}};
+    private static final float AUTOCANNON_OTHER_SECONDS = 5F;
     private static final double DEFAULT_AUTOCANNON_RPM = 300;
 
     private LauncherDamage() {
