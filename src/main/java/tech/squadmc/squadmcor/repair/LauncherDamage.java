@@ -100,7 +100,7 @@ public final class LauncherDamage {
         float max = vehicle.getMaxHealth();
         if (tankGun) return max * MARGIN / gunHits(TANK_GUN_HITS, target, side);
         if (atgm) return max * MARGIN / gunHits(ATGM_HITS, target, side);
-        if (autocannon) return max / (autocannonSeconds(target, side) * shotsPerSecond(firedFrom, source.getEntity()) * spread(vehicle, firedFrom));
+        if (autocannon) return (float) (max / (autocannonSeconds(target, side) * shotsPerSecond(firedFrom, source.getEntity()) * spread(vehicle, firedFrom)));
         float damage = spike ? TANDEM_STRONG : ((FastThrowableProjectile) round).getDamage();
         return max * share(target == VehicleClass.LIGHT ? VehicleClass.TRUCK : target, side, damage, spike) * MARGIN;
     }
