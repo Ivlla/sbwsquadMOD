@@ -21,6 +21,6 @@ public abstract class ThermalEntityLightMixin {
     private int squadmc$heatAsLight(Entity entity, double x, double y, double z, float yaw, float partialTick,
                                     PoseStack pose, MultiBufferSource buffers, int light) {
         if (!ThermalVision.isActive()) return light;
-        return LightTexture.pack(Math.round(ThermalVision.heatOf(entity) * 15F), 0);
+        return LightTexture.pack(Math.round(ThermalVision.heatOf(entity) * 15F), 1);
     }
 }

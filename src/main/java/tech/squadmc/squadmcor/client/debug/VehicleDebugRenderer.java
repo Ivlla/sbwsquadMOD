@@ -44,6 +44,7 @@ import java.util.List;
  *   - a red cross at the barrel pivot, with an orange ray along the barrel
  *   - a yellow cross at the turret pivot, with a ray along the turret facing
  *   - purple crosses at each weapon's shoot position (where projectiles spawn)
+ *   - a blue cross at the passenger weapon station's pivot
  *
  * Self-registering (Forge @EventBusSubscriber), so nothing else needs wiring. It is
  * client-only and reads existing SBW accessors, so it works for any VehicleEntity.
@@ -112,6 +113,7 @@ public final class VehicleDebugRenderer {
             drawBarrel(vehicle, pt, pose, lines);
             drawTurret(vehicle, pt, pose, lines);
             drawShootPositions(vehicle, pt, pose, lines);
+            drawWeaponStation(vehicle, pt, pose, lines);
         }
 
         pose.popPose();
@@ -189,6 +191,15 @@ public final class VehicleDebugRenderer {
                 Vec3 tip = pos.add(dir.normalize().scale(2.0));
                 line(pose, vc, pos.x, pos.y, pos.z, tip.x, tip.y, tip.z, 0.7f, 0.7f, 0f, 1f);
             }
+        } catch (Throwable ignored) {
+        }
+    }
+
+    private static void drawWeaponStation(VehicleEntity v, float pt, PoseStack pose, VertexConsumer vc) {
+        try {
+            if (v.computed().getPassengerWeaponStationPos() == null) return;
+            Vector4d p = v.transformPosition(v.getPassengerWeaponStationBarrelTransform(pt), 0.0, 0.0, 0.0);
+            cross(pose, vc, new Vec3(p.x, p.y, p.z), 0.12, 0.2f, 0.5f, 1f, 1f); // blue station pivot
         } catch (Throwable ignored) {
         }
     }

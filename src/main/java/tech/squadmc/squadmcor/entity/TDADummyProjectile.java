@@ -60,6 +60,10 @@ public class TDADummyProjectile extends ThrowableItemProjectile {
                     if (seat == 1) {
                         btr.spawnAdditionalGrenades(this);
                     }
+                } else if (vehicle instanceof tech.squadmc.squadmcor.heli.entity.vehicle.Bmp.Bmp2.Bmp2mVehicleBase bmp2m) {
+                    if (bmp2m.getSeatIndex(owner) == 1) {
+                        bmp2m.spawnAdditionalGrenades(this);
+                    }
                 } else if (vehicle instanceof bmp2Entity bmp) {
                     int seat = bmp.getSeatIndex(owner);
                     if (seat == 1) {
@@ -225,6 +229,11 @@ public class TDADummyProjectile extends ThrowableItemProjectile {
                     }
                 } else if (vehicle instanceof Bmp1Entity bmp1) {
                     if (bmp1.getSeatIndex(owner) == 0) {
+                        isDriver = true;
+                    }
+                }
+                else if (vehicle instanceof tech.squadmc.squadmcor.heli.entity.vehicle.Bmp.Bmp2.Bmp2mVehicleBase bmp2m) {
+                    if (bmp2m.getSeatIndex(owner) == 0) {
                         isDriver = true;
                     }
                 }

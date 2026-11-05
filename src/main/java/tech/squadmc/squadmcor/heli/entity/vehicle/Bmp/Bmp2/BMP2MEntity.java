@@ -3,7 +3,6 @@ package tech.squadmc.squadmcor.heli.entity.vehicle.Bmp.Bmp2;
 
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.mojang.math.Axis;
-import tech.squadmc.squadmcor.heli.HeliVehicleBase;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -13,7 +12,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
 import org.joml.Matrix4d;
 
-public class BMP2MEntity extends HeliVehicleBase {
+public class BMP2MEntity extends Bmp2mVehicleBase {
 
 
     private static final EntityDataAccessor<Float> STEERING_ANGLE = SynchedEntityData.defineId(BMP2MEntity.class, EntityDataSerializers.FLOAT);

@@ -59,9 +59,9 @@
         1.8
       ],
       "Position": [
-        0.0,
-        0.4,
-        0.8
+        0.023438,
+        0.369969,
+        0.224069
       ],
       "Part": "Turret",
       "Transform": "Turret",
@@ -104,9 +104,9 @@
       "HidePassenger": true,
       "Transform": "Turret",
       "Position": [
-        0.35,
-        0.5,
-        0.2
+        0.373438,
+        0.469969,
+        -0.375931
       ],
       "CanRotateHead": false,
       "MinPitch": -10,
@@ -120,14 +120,14 @@
         "Transform": "Turret",
         "UseFixedCameraPos": true,
         "Position": [
-          0.35,
-          1.1,
-          1.2
+          0.373438,
+          1.069969,
+          0.624069
         ],
         "ZoomPosition": [
-          0.0,
-          0.61,
-          2.5
+          0.023438,
+          0.579969,
+          1.924069
         ],
         "Direction": "Barrel"
       },
@@ -142,9 +142,9 @@
       "HidePassenger": true,
       "Transform": "WeaponStation",
       "Position": [
-        0.0,
-        -1.6,
-        -0.45
+        0.054222,
+        -1.620277,
+        -0.100634
       ],
       "CanRotateHead": true,
       "MinPitch": -10,
@@ -158,14 +158,14 @@
         "UseFixedCameraPos": true,
         "Transform": "WeaponStationBarrel",
         "Position": [
-          0.0,
-          0.38,
-          0.1
+          0.060472,
+          0.634873,
+          0.118116
         ],
         "ZoomPosition": [
-          0.0,
-          0.38,
-          0.45
+          0.060472,
+          0.634873,
+          0.468116
         ],
         "Direction": "WeaponStationBarrel"
       },
@@ -204,9 +204,9 @@
         "Transform": "WeaponStationBarrel",
         "Positions": [
           [
-            -0.0576,
-            -0.2171,
-            2.253
+            0.002872,
+            0.037773,
+            2.271116
           ]
         ],
         "Directions": [
@@ -262,9 +262,9 @@
         "Transform": "Turret",
         "Positions": [
           [
-            0.0,
-            2.5,
-            0.0
+            0.023438,
+            2.469969,
+            -0.575931
           ]
         ],
         "Directions": [
@@ -325,9 +325,9 @@
         "Transform": "Barrel",
         "Positions": [
           [
-            -0.0323,
-            -0.0141,
-            6.6834
+            0.012476,
+            -0.032064,
+            6.04994
           ]
         ],
         "Directions": [
@@ -365,9 +365,9 @@
         "Transform": "Barrel",
         "Positions": [
           [
-            -0.3423,
-            -0.0042,
-            0.9334
+            -0.297524,
+            -0.022164,
+            0.29994
           ]
         ],
         "Directions": [
@@ -377,9 +377,9 @@
     }
   },
   "TurretPos": [
-    0.023438,
-    1.782469,
-    -0.638431
+    0.0,
+    1.8125,
+    -0.0625
   ],
   "TurretTurnSpeed": [
     2.5,
@@ -390,19 +390,19 @@
     30
   ],
   "BarrelPos": [
-    0.008838,
-    0.251681,
-    1.465037
+    -0.0125,
+    0.239614,
+    1.522566
   ],
   "PassengerWeaponStationPos": [
-    -0.705837,
-    0.900767,
-    0.415396
+    -0.736621,
+    0.891013,
+    -0.509901
   ],
   "PassengerWeaponStationBarrelPos": [
-    0.0,
-    0.3939,
-    0.0
+    -0.00625,
+    0.11875,
+    0.33125
   ],
   "PassengerWeaponStationTurnSpeed": [
     15,

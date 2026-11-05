@@ -20,20 +20,27 @@ public abstract class ThermalLightTextureMixin {
     @Shadow @Final private NativeImage lightPixels;
 
     private static final int SQUADMC$COLD = 0xFF8C8C8C;
+    private static final int SQUADMC$ENTITY_SKY = 1;
+    private static final int SQUADMC$GLOW_FROM = 11;
 
     @Inject(method = "updateLightTexture", at = @At(value = "INVOKE",
             target = "Lnet/minecraft/client/renderer/texture/DynamicTexture;upload()V"))
     private void squadmc$thermalLight(float partialTicks, CallbackInfo ci) {
         if (!ThermalVision.isActive()) return;
-        for (int sky = 1; sky < 16; sky++) {
+        for (int sky = 0; sky < 16; sky++) {
             for (int block = 0; block < 16; block++) {
-                this.lightPixels.setPixelRGBA(block, sky, SQUADMC$COLD);
+                // Sky level 1 is reserved for entities, whose block level carries their heat.
+                if (sky == SQUADMC$ENTITY_SKY) {
+                    this.lightPixels.setPixelRGBA(block, sky, squadmc$heatPixel(block));
+                } else if (block > SQUADMC$GLOW_FROM) {
+                    // Light sources show hot, fading out with their light.
+                    int heat = (block - SQUADMC$GLOW_FROM) * 15 / (15 - SQUADMC$GLOW_FROM);
+                    this.lightPixels.setPixelRGBA(block, sky, squadmc$heatPixel(heat));
+                } else {
+                    this.lightPixels.setPixelRGBA(block, sky, SQUADMC$COLD);
+                }
             }
         }
-        for (int block = 0; block < 16; block++) {
-            this.lightPixels.setPixelRGBA(block, 0, squadmc$heatPixel(block));
-        }
-        this.lightPixels.setPixelRGBA(15, 15, squadmc$heatPixel(15));
     }
 
     /** Формат пикселя ABGR. */

@@ -1,6 +1,5 @@
 {
   "ID": "squadmc:bmp2md",
-  "HasDecoy": true,
   "MaxHealth": 700,
   "MaxEnergy": 46200000,
   "TurretPos": [
@@ -127,7 +126,10 @@
       "MinYaw": -65,
       "MaxYaw": 65,
       "MinPitch": -10,
-      "MaxPitch": 30
+      "MaxPitch": 30,
+      "Weapons": [
+        "SmokeLauncher"
+      ]
     },
     {
       "HidePassenger": true,
@@ -145,7 +147,8 @@
       "CanRotateHead": false,
       "Weapons": [
         "Cannon",
-        "Coax"
+        "Coax",
+        "SmokeGrenades"
       ],
       "Transform": "Turret",
       "Position": [
@@ -383,6 +386,64 @@
         ],
         "Directions": [
           "Barrel"
+        ]
+      }
+    },
+    "SmokeGrenades": {
+      "Icon": "squadmc:textures/overlay/vehicle/weapon/icons/smoke_bombs.png",
+      "DefaultFireMode": "Semi",
+      "AvailableFireModes": "Semi",
+      "Projectile": "squadmc:tda_dummy",
+      "RPM": 40,
+      "Damage": 0,
+      "ShootAnimationTime": 1,
+      "AmmoType": "minecraft:clay_ball",
+      "Crosshair": "@Empty",
+      "Name": "weapon.squadmc.smoke_grenades",
+      "SoundInfo": {
+        "Fire1P": "squadmc:btr82_smoke_launch",
+        "Fire3P": "squadmc:btr82_smoke_launch"
+      },
+      "SoundRadius": 5,
+      "ShootPos": {
+        "Transform": "Turret",
+        "Positions": [
+          [
+            0.0,
+            2.5,
+            0.0
+          ]
+        ],
+        "Directions": [
+          "Turret"
+        ]
+      }
+    },
+    "SmokeLauncher": {
+      "Icon": "squadmc:textures/overlay/vehicle/weapon/icons/smoke_generator.png",
+      "DefaultFireMode": "Auto",
+      "AvailableFireModes": "Auto",
+      "Projectile": "squadmc:tda_dummy",
+      "RPM": 600,
+      "Damage": 0,
+      "ShootAnimationTime": 1,
+      "AmmoType": "minecraft:clay",
+      "Crosshair": "@Empty",
+      "Name": "weapon.squadmc.smoke_launcher",
+      "SoundInfo": {
+        "Fire1P": "squadmc:empty"
+      },
+      "ShootPos": {
+        "Transform": "Vehicle",
+        "Positions": [
+          [
+            0.0,
+            1.0,
+            -3.5
+          ]
+        ],
+        "Directions": [
+          "Vehicle"
         ]
       }
     }

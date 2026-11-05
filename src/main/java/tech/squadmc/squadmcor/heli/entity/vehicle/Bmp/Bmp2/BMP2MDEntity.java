@@ -2,7 +2,6 @@
 package tech.squadmc.squadmcor.heli.entity.vehicle.Bmp.Bmp2;
 
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
-import tech.squadmc.squadmcor.heli.HeliVehicleBase;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -10,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 
-public class BMP2MDEntity extends HeliVehicleBase {
+public class BMP2MDEntity extends Bmp2mVehicleBase {
 
 
     // BMP-2MD uses a single dedicated texture. Index 0 = normal, index 1 = wrecked

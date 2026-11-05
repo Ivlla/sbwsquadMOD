@@ -17,6 +17,10 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.client.event.RenderGuiEvent;
+import net.minecraft.world.entity.decoration.ItemFrame;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.settings.KeyConflictContext;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -40,6 +44,7 @@ public final class ThermalVision {
     /** Остывание заглушённого двигателя примерно за 90 секунд. */
     private static final float COOL_DOWN_PER_TICK = 1F / 1800F;
     private static final float RUNNING_HEAT = 0.95F;
+    private static final float LIT_ITEM_HEAT = 0.9F;
 
     public static final KeyMapping TOGGLE = new KeyMapping("key.squadmc.thermal", KeyConflictContext.IN_GAME,
             InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_B, "key.categories.squadmc_heli");
@@ -58,8 +63,14 @@ public final class ThermalVision {
     public static float heatOf(Entity entity) {
         if (entity instanceof VehicleEntity vehicle) return VEHICLE_HEAT.getOrDefault(vehicle, 0F);
         if (entity.isOnFire() || entity instanceof Projectile) return 1F;
+        if (entity instanceof ItemEntity item && emitsLight(item.getItem())) return LIT_ITEM_HEAT;
+        if (entity instanceof ItemFrame frame && emitsLight(frame.getItem())) return LIT_ITEM_HEAT;
         if (entity instanceof LivingEntity living) return living.getMobType() == MobType.UNDEAD ? 0.2F : 0.85F;
         return 0F;
+    }
+
+    private static boolean emitsLight(ItemStack stack) {
+        return stack.getItem() instanceof BlockItem item && item.getBlock().defaultBlockState().getLightEmission() > 0;
     }
 
     private static boolean engineRunning(VehicleEntity vehicle) {
