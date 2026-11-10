@@ -423,7 +423,7 @@
     "@#superbwarfare:aerial_bomb * 3",
     "#superbwarfare:projectile * 0.6",
     "#superbwarfare:projectile_absolute * 0.85",
-    "superbwarfare:vehicle_strike * 6",
+    "superbwarfare:vehicle_strike * 12",
     "@superbwarfare:mortar_shell * 1",
     "@superbwarfare:gun_grenade * 1.25",
     "@#superbwarfare:at_rocket * 1.1",
