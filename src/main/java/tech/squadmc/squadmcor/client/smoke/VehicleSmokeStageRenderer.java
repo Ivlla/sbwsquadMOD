@@ -23,6 +23,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tech.squadmc.squadmcor.smoke.VehicleSmokeCloudEntity;
 import tech.squadmc.squadmcor.smoke.VehicleSmokeEmitter;
+import tech.squadmc.squadmcor.smoke.VehicleSmokeSystem;
 import tech.squadmc.squadmcor.squadmc;
 
 /**
@@ -92,7 +93,7 @@ public final class VehicleSmokeStageRenderer {
         VISIBLE.clear();
         float partial = event.getPartialTick();
         for (Entity entity : CANDIDATES) {
-            if (entity.isRemoved()) continue;
+            if (entity.isRemoved() || VehicleSmokeSystem.isUnderwater(mc.level, entity.position())) continue;
             VehicleSmokeEmitter emitter = (VehicleSmokeEmitter) entity;
             boolean smoking = emitter.isSmoking() && emitter.getSmokeDensity(partial) > 0.002F;
             if (smoking && event.getFrustum().isVisible(bounds(entity, emitter, partial)))
