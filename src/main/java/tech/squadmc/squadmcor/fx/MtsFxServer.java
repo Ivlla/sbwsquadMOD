@@ -23,11 +23,14 @@ public final class MtsFxServer {
     public static void explosion(ServerLevel level, Vec3 pos, @Nullable ParticleTool.ParticleType type) {
         ParticleTool.ParticleType actual = type != null ? type : ParticleTool.ParticleType.MINI;
         MtsFxPreset preset = switch (actual) {
+            // Keep visual intensity proportional to SBW's explosion size tier.
+            // This API receives ParticleType, not the numeric damage radius.
             case MINI -> MtsFxPreset.BOMBLET;
             case SMALL -> MtsFxPreset.HE_37MM;
-            case MEDIUM -> MtsFxPreset.HE_37MM;
-            case LARGE, HUGE -> MtsFxPreset.ROCKET;
-            case GIANT, EPIC -> MtsFxPreset.BASIC_BOMB;
+            case MEDIUM -> MtsFxPreset.ROCKET;
+            case LARGE -> MtsFxPreset.ROCKET;
+            case HUGE -> MtsFxPreset.BASIC_BOMB;
+            case GIANT, EPIC -> MtsFxPreset.HEAVY_BOMB;
         };
         send(level, pos, new MtsFxPacket(preset, false, pos, Direction.UP));
     }
