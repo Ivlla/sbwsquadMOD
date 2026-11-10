@@ -6,7 +6,9 @@ import net.minecraftforge.network.simple.SimpleChannel;
 import tech.squadmc.squadmcor.squadmc;
 
 public class ModNetworking {
-    private static final String PROTOCOL_VERSION = "1";
+    // Wreck entity metadata now carries a LONG clock origin instead of an INT age.
+    // Reject old clients at login rather than letting an incompatible entity-data packet crash them.
+    private static final String PROTOCOL_VERSION = "2";
     public static final SimpleChannel CHANNEL = NetworkRegistry.newSimpleChannel(
             new ResourceLocation(squadmc.MODID, "main"),
             () -> PROTOCOL_VERSION,

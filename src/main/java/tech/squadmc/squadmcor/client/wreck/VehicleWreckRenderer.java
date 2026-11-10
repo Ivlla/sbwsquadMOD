@@ -43,7 +43,10 @@ public class VehicleWreckRenderer extends EntityRenderer<VehicleWreckEntity> {
             "wheel|whell|^wheR|track|gus|^obb|flare|watermask|laser|_dogtag", Pattern.CASE_INSENSITIVE);
     private static final float BURNT_SHADE = 0.1F;
 
-    private static final Map<String, Optional<Source>> SOURCES = new HashMap<>();
+    // Renderer instances are rebuilt on resource reload: do not retain old baked models globally.
+    private final Map<String, Optional<Source>> sources = new HashMap<>();
+    private final Vector3f quadNormal = new Vector3f();
+    private final Vector4f quadPosition = new Vector4f();
 
     private record Source(BakedGeoModel model, ResourceLocation texture, float groundOffset) {
     }
@@ -58,7 +61,7 @@ public class VehicleWreckRenderer extends EntityRenderer<VehicleWreckEntity> {
 
     @Override
     public void render(VehicleWreckEntity wreck, float yaw, float partialTick, PoseStack poseStack, MultiBufferSource buffers, int light) {
-        Source source = SOURCES.computeIfAbsent(wreck.source(), VehicleWreckRenderer::load).orElse(null);
+        Source source = sources.computeIfAbsent(wreck.source(), VehicleWreckRenderer::load).orElse(null);
         if (source != null) {
             poseStack.pushPose();
             // Same facing GeoEntityRenderer gives a vehicle: its models point along -Z.
@@ -136,11 +139,11 @@ public class VehicleWreckRenderer extends EntityRenderer<VehicleWreckEntity> {
         stack.popPose();
     }
 
-    private static void drawQuad(GeoQuad quad, PoseStack.Pose pose, VertexConsumer buffer, int light) {
+    private void drawQuad(GeoQuad quad, PoseStack.Pose pose, VertexConsumer buffer, int light) {
         Matrix4f matrix = pose.pose();
         Matrix3f normalMatrix = pose.normal();
-        Vector3f normal = normalMatrix.transform(new Vector3f(quad.normal()));
-        Vector4f position = new Vector4f();
+        Vector3f normal = normalMatrix.transform(quadNormal.set(quad.normal()));
+        Vector4f position = quadPosition;
         for (GeoVertex vertex : quad.vertices()) {
             matrix.transform(position.set(vertex.position(), 1F));
             buffer.vertex(position.x(), position.y(), position.z(), BURNT_SHADE, BURNT_SHADE, BURNT_SHADE, 1F,
@@ -150,7 +153,7 @@ public class VehicleWreckRenderer extends EntityRenderer<VehicleWreckEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(VehicleWreckEntity wreck) {
-        Source source = SOURCES.computeIfAbsent(wreck.source(), VehicleWreckRenderer::load).orElse(null);
+        Source source = sources.computeIfAbsent(wreck.source(), VehicleWreckRenderer::load).orElse(null);
         return source != null ? source.texture() : new ResourceLocation("minecraft", "textures/misc/white.png");
     }
 }

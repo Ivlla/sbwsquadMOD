@@ -4,6 +4,8 @@
   "package": "tech.squadmc.squadmcor.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "ProjectileTickGateMixin",
+    "FastProjectileChunkMixin",
     "ExplosionParticleMessageMixin",
     "HelicopterGroundLiftMixin",
     "SmallRocketEntityMixin",

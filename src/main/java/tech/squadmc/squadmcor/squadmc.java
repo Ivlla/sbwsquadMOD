@@ -12,6 +12,9 @@ public class squadmc {
     public static final String MODID = "squadmc";
 
     public squadmc() {
+        net.minecraftforge.fml.ModLoadingContext.get().registerConfig(
+                net.minecraftforge.fml.config.ModConfig.Type.SERVER,
+                tech.squadmc.squadmcor.performance.PerformanceConfig.SPEC, "squadmc-performance-server.toml");
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.ITEMS.register(bus);

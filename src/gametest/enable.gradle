@@ -1,0 +1,18 @@
+// Run only with: bash gradlew runGameTestServer -I src/gametest/enable.gradle
+// These tests are not part of a normal build or published mod JAR.
+allprojects {
+    afterEvaluate {
+        sourceSets.main.java.srcDir('src/gametest/java')
+        // Forge 47 filters these tests by template namespace (forge:empty).
+        minecraft.runs.gameTestServer.property('forge.enabledGameTestNamespaces', 'forge,squadmc')
+        tasks.named('runGameTestServer').configure {
+            doFirst {
+                copy {
+                    from 'src/gametest/structures'
+                    into 'run/gameteststructures'
+                }
+            }
+        }
+        tasks.named('jar').configure { enabled = false }
+    }
+}
