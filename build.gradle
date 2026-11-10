@@ -121,6 +121,8 @@ dependencies {
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.20.1:4.8.4')
     // SBW 0.8.9.2: положи jar в libs/ под именем superbwarfare-0.8.9.2.jar
     implementation fg.deobf("blank:superbwarfare:0.8.9.2")
+    // TACZ 1.1.8 hotfix 2: libs/tacz-1.20.1-1.1.8-hotfix2.jar
+    implementation fg.deobf("blank:tacz-1.20.1:1.1.8-hotfix2")
     // files(...) проходит мимо fg.deobf, поэтому AAS подключён по имени из папки libs
     implementation fg.deobf("blank:aas-beta:1.8.0")
     // SBW 0.8.9 написан на Kotlin и требует эти моды
