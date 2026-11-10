@@ -59,6 +59,8 @@ public class VehicleWreckEntity extends Entity {
             SynchedEntityData.defineId(VehicleWreckEntity.class, EntityDataSerializers.FLOAT);
     private static final EntityDataAccessor<Boolean> TURRET_LOST =
             SynchedEntityData.defineId(VehicleWreckEntity.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> HAS_AMMUNITION =
+            SynchedEntityData.defineId(VehicleWreckEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Float> HALF_X =
             SynchedEntityData.defineId(VehicleWreckEntity.class, EntityDataSerializers.FLOAT);
     private static final EntityDataAccessor<Float> HALF_Z =
@@ -84,12 +86,30 @@ public class VehicleWreckEntity extends Entity {
         wreck.entityData.set(TURRET_YAW, vehicle.getTurretYRot());
         wreck.entityData.set(BARREL_PITCH, vehicle.getTurretXRot());
         wreck.entityData.set(TURRET_LOST, vehicle.getSympatheticDetonated());
+        wreck.entityData.set(HAS_AMMUNITION, hasAmmunition(vehicle));
         wreck.takeShapeOf(vehicle);
         MtsFxServer.vehicleDeath(level, vehicle.position().add(0, 1, 0), vehicle.getMaxHealth() >= HEAVY_VEHICLE_HEALTH);
         vehicle.ejectPassengers();
         vehicle.generateWreckageLoot();
         vehicle.discard();
         level.addFreshEntity(wreck);
+    }
+
+    /**
+     * Only armed vehicles may play ammunition cook-off effects after destruction.
+     * Empty civilian trucks have no weapon entries; unarmed vehicles may use
+     * placeholder entries (Nothing/Empty) or smoke-only launchers.
+     */
+    private static boolean hasAmmunition(VehicleEntity vehicle) {
+        for (String weapon : vehicle.getGunDataMap().keySet()) {
+            if (weapon == null || weapon.isBlank()) continue;
+            String key = weapon.toLowerCase(java.util.Locale.ROOT);
+            if (key.equals("nothing") || key.equals("empty") || key.equals("none")
+                    || key.equals("smokelauncher") || key.equals("smokegrenades")
+                    || key.equals("smoke")) continue;
+            return true;
+        }
+        return false;
     }
 
     /** Records the hull: the vehicle's hitboxes without its wheels, which the wreck no longer has. */
@@ -158,6 +178,7 @@ public class VehicleWreckEntity extends Entity {
         this.entityData.define(TURRET_YAW, 0F);
         this.entityData.define(BARREL_PITCH, 0F);
         this.entityData.define(TURRET_LOST, false);
+        this.entityData.define(HAS_AMMUNITION, false);
         this.entityData.define(HALF_X, 1F);
         this.entityData.define(HALF_Z, 1F);
         this.entityData.define(HEIGHT, 2F);
@@ -210,6 +231,10 @@ public class VehicleWreckEntity extends Entity {
         return this.entityData.get(TURRET_LOST);
     }
 
+    public boolean hasAmmunition() {
+        return this.entityData.get(HAS_AMMUNITION);
+    }
+
     public int age() {
         return this.entityData.get(AGE);
     }
@@ -225,6 +250,7 @@ public class VehicleWreckEntity extends Entity {
         this.entityData.set(TURRET_YAW, tag.getFloat("TurretYaw"));
         this.entityData.set(BARREL_PITCH, tag.getFloat("BarrelPitch"));
         this.entityData.set(TURRET_LOST, tag.getBoolean("TurretLost"));
+        this.entityData.set(HAS_AMMUNITION, tag.getBoolean("HasAmmunition"));
         this.entityData.set(HALF_X, tag.getFloat("HalfX"));
         this.entityData.set(HALF_Z, tag.getFloat("HalfZ"));
         this.entityData.set(HEIGHT, tag.getFloat("Height"));
@@ -245,6 +271,7 @@ public class VehicleWreckEntity extends Entity {
         tag.putFloat("TurretYaw", turretYaw());
         tag.putFloat("BarrelPitch", barrelPitch());
         tag.putBoolean("TurretLost", turretLost());
+        tag.putBoolean("HasAmmunition", hasAmmunition());
         tag.putFloat("HalfX", this.entityData.get(HALF_X));
         tag.putFloat("HalfZ", this.entityData.get(HALF_Z));
         tag.putFloat("Height", this.entityData.get(HEIGHT));
