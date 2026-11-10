@@ -179,6 +179,11 @@ public class VehicleSmokeCloudEntity extends Entity implements VehicleSmokeEmitt
             }
         }
 
+        if (VehicleSmokeSystem.isUnderwater(this.level(), this.position())) {
+            this.discard();
+            return;
+        }
+
         this.smokeTicks++;
         if (this.smokeTicks % SYNC_INTERVAL == 0) {
             this.entityData.set(DATA_SMOKE_TICKS, this.smokeTicks);
