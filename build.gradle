@@ -119,6 +119,8 @@ dependencies {
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.4.2+1.20.1")
     compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.4.2+1.20.1:api")
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.20.1:4.8.4')
+
+    implementation fg.deobf("blank:tacz-1.20.1:1.1.8-hotfix2")
     // SBW 0.8.9.2: положи jar в libs/ под именем superbwarfare-0.8.9.2.jar
     implementation fg.deobf("blank:superbwarfare:0.8.9.2")
     // TACZ 1.1.8 hotfix 2: libs/tacz-1.20.1-1.1.8-hotfix2.jar
