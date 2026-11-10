@@ -25,9 +25,9 @@ public final class MtsFxServer {
         MtsFxPreset preset = switch (actual) {
             case MINI -> MtsFxPreset.BOMBLET;
             case SMALL -> MtsFxPreset.HE_37MM;
-            case MEDIUM -> MtsFxPreset.ROCKET;
-            case LARGE, HUGE -> MtsFxPreset.BASIC_BOMB;
-            case GIANT, EPIC -> MtsFxPreset.HEAVY_BOMB;
+            case MEDIUM -> MtsFxPreset.HE_37MM;
+            case LARGE, HUGE -> MtsFxPreset.ROCKET;
+            case GIANT, EPIC -> MtsFxPreset.BASIC_BOMB;
         };
         send(level, pos, new MtsFxPacket(preset, false, pos, Direction.UP));
     }
