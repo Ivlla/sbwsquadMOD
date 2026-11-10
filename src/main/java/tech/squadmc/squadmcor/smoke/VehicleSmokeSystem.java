@@ -1,6 +1,8 @@
 package tech.squadmc.squadmcor.smoke;
 
 import net.minecraft.network.chat.Component;
+import net.minecraft.core.BlockPos;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -61,14 +63,18 @@ public final class VehicleSmokeSystem {
             return;
         }
 
+        int launched = 0;
         for (Vec3 local : vehicle.getSmokeLauncherPoints()) {
+            Vec3 spawnPos = localToWorld(vehicle, local).add(0.0, 0.35, 0.0);
+            if (isUnderwater(level, spawnPos) || vehicle.isInWater()) continue;
             VehicleSmokeCloudEntity cloud =
                     new VehicleSmokeCloudEntity(ModEntities.VEHICLE_SMOKE_CLOUD.get(), level);
-            cloud.setPos(aboveFluid(level, localToWorld(vehicle, local).add(0.0, 0.35, 0.0)));
+            cloud.setPos(spawnPos);
             cloud.configure(LAUNCHER_RADIUS, LAUNCHER_HEIGHT,
                     LAUNCHER_GROW_TICKS, LAUNCHER_HOLD_TICKS, LAUNCHER_FADE_TICKS);
-            level.addFreshEntity(cloud);
+            if (level.addFreshEntity(cloud)) launched++;
         }
+        if (launched == 0) return;
 
         vehicle.setSmokeCharges(vehicle.getSmokeCharges() - 1);
         vehicle.setSmokeVolleyCooldown(VOLLEY_COOLDOWN_TICKS);
@@ -99,20 +105,19 @@ public final class VehicleSmokeSystem {
         float blendedYRot = (vehicle.yRotO + vehicle.getYRot()) / 2.0F;
         Vec3 puffPos = localToWorldWithYaw(vehicle, offset, blendedYRot);
 
+        if (isUnderwater(level, puffPos) || vehicle.isInWater()) return;
+
         VehicleSmokeCloudEntity puff =
                 new VehicleSmokeCloudEntity(ModEntities.VEHICLE_SMOKE_CLOUD.get(), level);
-        puff.setPos(aboveFluid(level, puffPos));
+        puff.setPos(puffPos);
         puff.configure(GENERATOR_RADIUS, GENERATOR_HEIGHT,
                 GENERATOR_GROW_TICKS, GENERATOR_HOLD_TICKS, GENERATOR_FADE_TICKS);
         puff.setIntensity(GENERATOR_INTENSITY);
         level.addFreshEntity(puff);
     }
-    /** Под водой облако скрыто поверхностью, поэтому точка спавна поднимается над ней. */
-    private static Vec3 aboveFluid(Level level, Vec3 pos) {
-        net.minecraft.core.BlockPos.MutableBlockPos cursor = net.minecraft.core.BlockPos.containing(pos).mutable();
-        if (level.getFluidState(cursor).isEmpty()) return pos;
-        for (int i = 0; i < 32 && !level.getFluidState(cursor).isEmpty(); i++) cursor.move(net.minecraft.core.Direction.UP);
-        return new Vec3(pos.x, cursor.getY() + 0.35, pos.z);
+    /** Prevent volumetric smoke from opening underwater. */
+    public static boolean isUnderwater(Level level, Vec3 pos) {
+        return level.getFluidState(BlockPos.containing(pos)).is(FluidTags.WATER);
     }
 
     public static Vec3 localToWorldWithYaw(Entity vehicle, Vec3 local, float yRotDeg) {
