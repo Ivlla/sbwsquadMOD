@@ -67,8 +67,11 @@ public class VehicleWreckEntity extends Entity {
             SynchedEntityData.defineId(VehicleWreckEntity.class, EntityDataSerializers.FLOAT);
     private static final EntityDataAccessor<Float> HEIGHT =
             SynchedEntityData.defineId(VehicleWreckEntity.class, EntityDataSerializers.FLOAT);
-    private static final EntityDataAccessor<Integer> AGE =
-            SynchedEntityData.defineId(VehicleWreckEntity.class, EntityDataSerializers.INT);
+    // A clock origin stays constant while ticking: late viewers still receive the exact age,
+    // without a dirty metadata packet every tick. Rebased after chunk unload/reload.
+    private static final EntityDataAccessor<Long> AGE_ORIGIN =
+            SynchedEntityData.defineId(VehicleWreckEntity.class, EntityDataSerializers.LONG);
+    private int serverAge;
 
     /** Each is {centerX, centerZ, halfX, halfZ, top} relative to the wreck, in vehicle axes. */
     private final List<float[]> hullBoxes = new ArrayList<>();
@@ -182,7 +185,7 @@ public class VehicleWreckEntity extends Entity {
         this.entityData.define(HALF_X, 1F);
         this.entityData.define(HALF_Z, 1F);
         this.entityData.define(HEIGHT, 2F);
-        this.entityData.define(AGE, 0);
+        this.entityData.define(AGE_ORIGIN, Long.MIN_VALUE);
     }
 
     @Override
@@ -202,12 +205,12 @@ public class VehicleWreckEntity extends Entity {
             DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> VehicleWreckClient.tick(this));
             return;
         }
-        int age = this.entityData.get(AGE) + 1;
+        int age = ++this.serverAge;
         if (age >= LIFETIME_TICKS) {
             discard();
             return;
         }
-        this.entityData.set(AGE, age);
+        this.entityData.set(AGE_ORIGIN, level().getGameTime() - age);
         if (!onGround()) {
             setDeltaMovement(getDeltaMovement().add(0, -GRAVITY, 0));
             move(MoverType.SELF, getDeltaMovement());
@@ -236,7 +239,9 @@ public class VehicleWreckEntity extends Entity {
     }
 
     public int age() {
-        return this.entityData.get(AGE);
+        if (!level().isClientSide) return this.serverAge;
+        long origin = this.entityData.get(AGE_ORIGIN);
+        return origin == Long.MIN_VALUE ? 0 : (int) Math.max(0L, Math.min(LIFETIME_TICKS, level().getGameTime() - origin));
     }
 
     @Override
@@ -254,7 +259,8 @@ public class VehicleWreckEntity extends Entity {
         this.entityData.set(HALF_X, tag.getFloat("HalfX"));
         this.entityData.set(HALF_Z, tag.getFloat("HalfZ"));
         this.entityData.set(HEIGHT, tag.getFloat("Height"));
-        this.entityData.set(AGE, tag.getInt("Age"));
+        this.serverAge = Math.max(0, tag.getInt("Age"));
+        this.entityData.set(AGE_ORIGIN, level().getGameTime() - this.serverAge);
         this.hullBoxes.clear();
         ListTag boxes = tag.getList("HullBoxes", Tag.TAG_LIST);
         for (int i = 0; i < boxes.size(); i++) {
