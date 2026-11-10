@@ -54,7 +54,9 @@ public final class VehicleWreckClient {
         float intensity = Mth.clamp((VehicleWreckEntity.FIRE_TICKS - age) / (float) FIRE_FADE_TICKS, 0F, 1F);
         if (random.nextFloat() < intensity) spawnFire(wreck, random);
         if (wreck.tickCount % BLACK_SMOKE_INTERVAL == 0) play(MtsFxPreset.VEHICLE_SMOKE, wreck, random);
-        if (age < COOK_OFF_TICKS && random.nextFloat() < COOK_OFF_CHANCE) play(MtsFxPreset.BOMBLET, wreck, random);
+        if (wreck.hasAmmunition() && age < COOK_OFF_TICKS && random.nextFloat() < COOK_OFF_CHANCE) {
+            play(MtsFxPreset.BOMBLET, wreck, random);
+        }
 
         if (!BURN_SOUNDS.containsKey(wreck) && mc.player.distanceToSqr(wreck) < SOUND_RANGE * SOUND_RANGE) {
             BurnSound sound = new BurnSound(wreck);
