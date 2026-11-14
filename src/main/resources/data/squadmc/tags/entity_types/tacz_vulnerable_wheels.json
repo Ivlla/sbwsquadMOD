@@ -1,12 +1,27 @@
 {
   "replace": false,
   "values": [
-    "squadmc:fmtv", "squadmc:ural_green", "squadmc:grad",
-    "squadmc:kamaz", "squadmc:kamaz_no_tent", "squadmc:m939",
-    "squadmc:man_hx60", "squadmc:man_hx60_no_tent",
-    "squadmc:humvee", "squadmc:humvee_m2", "squadmc:humvee_tow",
-    "squadmc:gaz_tigr", "squadmc:gaz_tigr_mg", "squadmc:gaz_tigr_rws",
-    "squadmc:fenek", "squadmc:toyota", "squadmc:toyota_hilux_zu23",
-    "squadmc:uaz", "squadmc:uaz_dshka", "squadmc:uaz_452", "squadmc:motuo"
+    "squadmc:fmtv",
+    "squadmc:ural_green",
+    "squadmc:grad",
+    "squadmc:kamaz",
+    "squadmc:kamaz_no_tent",
+    "squadmc:m939",
+    "squadmc:man_hx60",
+    "squadmc:man_hx60_no_tent",
+    "squadmc:humvee",
+    "squadmc:humvee_m2",
+    "squadmc:humvee_tow",
+    "squadmc:gaz_tigr",
+    "squadmc:gaz_tigr_mg",
+    "squadmc:gaz_tigr_rws",
+    "squadmc:fenek",
+    "squadmc:toyota",
+    "squadmc:toyota_hilux_zu23",
+    "squadmc:uaz",
+    "squadmc:uaz_dshka",
+    "squadmc:uaz_452",
+    "squadmc:motuo",
+    "squadmc:stryker_mgs"
   ]
 }
