@@ -4,6 +4,7 @@ import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.tools.OBB;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.Entity;
@@ -39,6 +40,8 @@ import java.util.Set;
 public final class TaczWheelDamage {
     private static final String TACZ_BULLET = "com.tacz.guns.entity.EntityKineticBullet";
     private static final float BULLET_WHEEL_DAMAGE = 12F;
+    private static final float STRYKER_MGS_BULLET_WHEEL_DAMAGE = 6F;
+    private static final ResourceLocation STRYKER_MGS_ID = new ResourceLocation(squadmc.MODID, "stryker_mgs");
     private static final double MAX_TRACE = 16D;
     private static final Map<Entity, Set<Integer>> BULLETS = new HashMap<>();
     private static final TagKey<EntityType<?>> VULNERABLE_WHEELS = TagKey.create(
@@ -106,8 +109,10 @@ public final class TaczWheelDamage {
                 }
                 if (side == null) continue;
                 tracked.getValue().add(vehicle.getId());
+                float wheelDamage = BuiltInRegistries.ENTITY_TYPE.getKey(vehicle.getType()).equals(STRYKER_MGS_ID)
+                        ? STRYKER_MGS_BULLET_WHEEL_DAMAGE : BULLET_WHEEL_DAMAGE;
                 if (side == OBB.Part.WHEEL_LEFT && vehicle.getLeftWheelMaxHealth() > 0F) {
-                    vehicle.setLeftWheelHealth(Math.max(0F, vehicle.getLeftWheelHealth() - BULLET_WHEEL_DAMAGE));
+                    vehicle.setLeftWheelHealth(Math.max(0F, vehicle.getLeftWheelHealth() - wheelDamage));
                 } else if (side == OBB.Part.WHEEL_RIGHT && vehicle.getRightWheelMaxHealth() > 0F) {
                     vehicle.setRightWheelHealth(Math.max(0F, vehicle.getRightWheelHealth() - BULLET_WHEEL_DAMAGE));
                 }
