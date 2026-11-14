@@ -375,7 +375,7 @@
       "RPM": 120,
       "Damage": 180,
       "ExplosionDamage": 300,
-      "ExplosionRadius": 36,
+      "ExplosionRadius": 54,
       "Gravity": 0.1,
       "Velocity": 8,
       "SoundInfo": {

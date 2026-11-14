@@ -1,0 +1,10 @@
+{
+  "Skins": [
+    {
+      "Id": "vanilla",
+      "Name": "Base",
+      "Texture": "squadmc:textures/entity/stryker.png",
+      "Priority": 1
+    }
+  ]
+}

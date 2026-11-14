@@ -76,19 +76,15 @@ public final class VehicleSmokeStageRenderer {
 
     @SubscribeEvent
     public static void onRenderLevelStage(RenderLevelStageEvent event) {
-        if (event.getStage() == RenderLevelStageEvent.Stage.AFTER_BLOCK_ENTITIES) {
+        if (event.getStage() == RenderLevelStageEvent.Stage.AFTER_PARTICLES) {
             prepare(event);
-        } else if (event.getStage() == RenderLevelStageEvent.Stage.AFTER_PARTICLES) {
-            SmokePipeline.afterParticles();
-        } else if (event.getStage() == RenderLevelStageEvent.Stage.AFTER_LEVEL) {
-            SmokePipeline.afterLevel();
         }
     }
 
     private static void prepare(RenderLevelStageEvent event) {
         Minecraft mc = Minecraft.getInstance();
         trackLevel(mc.level);
-        if (mc.level == null || !SmokeShaders.ready()) return;
+        if (mc.level == null) return;
 
         VISIBLE.clear();
         float partial = event.getPartialTick();
@@ -106,34 +102,40 @@ public final class VehicleSmokeStageRenderer {
         EntityRenderDispatcher dispatcher = mc.getEntityRenderDispatcher();
 
         boolean shaders = IrisCompat.shadersActive();
-        SmokeBillboard.shaderMode = shaders;
-        if (shaders) SmokePuffTexture.ensure();
-        BufferBuilder builder = shaders ? null : SmokePipeline.begin(event.getProjectionMatrix());
+        // Use Minecraft's particle path in every graphics mode. Intercepting the
+        // translucent terrain framebuffer corrupted water/glass and resized windows.
+        SmokeBillboard.shaderMode = true;
+        SmokePuffTexture.ensure();
+        net.minecraft.client.renderer.RenderType renderType = shaders
+                ? SmokeRenderTypes.SMOKE_SHADERS : SmokeRenderTypes.SMOKE_PARTICLES;
 
         SmokeTimeOfDay.update(mc.level, partial);
         if (shaders) SmokeTimeOfDay.neutral();
 
-        MultiBufferSource smoke = shaders
-                ? type -> SHADER_BUFFER.getBuffer(SmokeRenderTypes.SMOKE_SHADERS)
-                : type -> builder;
+        MultiBufferSource smoke = type -> SHADER_BUFFER.getBuffer(renderType);
 
-        for (Entity entity : VISIBLE) {
-            poses.pushPose();
+        try {
+            for (Entity entity : VISIBLE) {
+                poses.pushPose();
+                try {
+                    poses.translate(
+                            Mth.lerp(partial, entity.xo, entity.getX()) - camera.x,
+                            Mth.lerp(partial, entity.yo, entity.getY()) - camera.y,
+                            Mth.lerp(partial, entity.zo, entity.getZ()) - camera.z);
+                    int light = dispatcher.getPackedLightCoords(entity, partial);
+                    SmokeBillboard.light = light;
+                    VehicleSmokeCloudRenderer.render((VehicleSmokeEmitter) entity, partial, poses, smoke, light);
+                } finally {
+                    poses.popPose();
+                }
+            }
+        } finally {
             try {
-                poses.translate(
-                        Mth.lerp(partial, entity.xo, entity.getX()) - camera.x,
-                        Mth.lerp(partial, entity.yo, entity.getY()) - camera.y,
-                        Mth.lerp(partial, entity.zo, entity.getZ()) - camera.z);
-                int light = dispatcher.getPackedLightCoords(entity, partial);
-                SmokeBillboard.light = light;
-                VehicleSmokeCloudRenderer.render((VehicleSmokeEmitter) entity, partial, poses, smoke, light);
+                SHADER_BUFFER.endBatch(renderType);
             } finally {
-                poses.popPose();
+                SmokeBillboard.shaderMode = false;
             }
         }
-
-        if (shaders) SHADER_BUFFER.endBatch(SmokeRenderTypes.SMOKE_SHADERS);
-        else SmokePipeline.upload();
     }
 
     private static AABB bounds(Entity entity, VehicleSmokeEmitter emitter, float partial) {

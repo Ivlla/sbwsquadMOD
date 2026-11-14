@@ -24,6 +24,12 @@ public class LittlebirdEntity extends HeliVehicleBase {
         super(type, world);
     }
 
+    /** The pilot's GunData exists only for SBW flight instruments, never for firing. */
+    @Override
+    public boolean canShoot(net.minecraft.world.entity.LivingEntity passenger) {
+        return false;
+    }
+
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();

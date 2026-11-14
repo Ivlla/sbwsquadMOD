@@ -54,6 +54,21 @@ public class SmokeRenderTypes extends RenderType {
                     .setLightmapState(LIGHTMAP)
                     .createCompositeState(false));
 
+    /** Vanilla particles target also preserves Fabulous transparency compositing. */
+    public static final RenderType SMOKE_PARTICLES = RenderType.create(
+            "squadmc_smoke_particles", DefaultVertexFormat.PARTICLE, VertexFormat.Mode.QUADS,
+            512 * 1024, false, true,
+            CompositeState.builder()
+                    .setShaderState(new ShaderStateShard(GameRenderer::getParticleShader))
+                    .setTextureState(new TextureStateShard(SmokePuffTexture.ID, true, false))
+                    .setTransparencyState(TRANSLUCENT_TRANSPARENCY)
+                    .setCullState(NO_CULL)
+                    .setWriteMaskState(COLOR_WRITE)
+                    .setDepthTestState(LEQUAL_DEPTH_TEST)
+                    .setLightmapState(LIGHTMAP)
+                    .setOutputState(PARTICLES_TARGET)
+                    .createCompositeState(false));
+
     /** Искры: аддитивные штрихи (оставлен для симметрии с исходной системой). */
     public static final RenderType SPARKS = RenderType.create(
             "squadmc_sparks",

@@ -29,6 +29,7 @@ public enum ThermalSight {
             Map.entry("bradley", NATO_GEN2),
             Map.entry("lav25", NATO_GEN2),
             Map.entry("stryker_m2", NATO_RWS),
+            Map.entry("stryker_mgs", NATO_GEN2),
             Map.entry("rg_33", NATO_RWS),
             Map.entry("humvee_tow", NATO_ITAS),
             Map.entry("t72av", RU),

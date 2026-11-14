@@ -8,7 +8,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterShadersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import tech.squadmc.squadmcor.squadmc;
 
 /**
@@ -24,11 +23,6 @@ public final class SmokeShaders {
     static ShaderInstance cloud() { return cloud; }
     static ShaderInstance composite() { return composite; }
     static boolean ready() { return cloud != null && composite != null; }
-
-    @SubscribeEvent
-    public static void setup(FMLClientSetupEvent event) {
-        event.enqueueWork(SmokeTransparencyHook::install);
-    }
 
     @SubscribeEvent
     public static void register(RegisterShadersEvent event) throws IOException {

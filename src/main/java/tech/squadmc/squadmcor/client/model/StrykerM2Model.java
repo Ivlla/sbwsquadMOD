@@ -6,29 +6,29 @@ import net.minecraft.util.Mth;
 import tech.squadmc.squadmcor.entity.StrykerM2Entity;
 import org.jetbrains.annotations.Nullable;
 
-public class StrykerM2Model extends VehicleModel<StrykerM2Entity> {
+public class StrykerM2Model<T extends StrykerM2Entity> extends VehicleModel<T> {
     private static final ResourceLocation CACHED_RESOURCE_0 = new ResourceLocation("squadmc", "geo/stryker_m2.geo.json");
     private static final ResourceLocation CACHED_RESOURCE_1 = new ResourceLocation("squadmc", "textures/entity/stryker.png");
     private static final ResourceLocation CACHED_RESOURCE_2 = new ResourceLocation("squadmc", "animations/btr82.animation.json");
 
 
     @Override
-    public ResourceLocation getModelResource(StrykerM2Entity animatable) {
+    public ResourceLocation getModelResource(T animatable) {
         return CACHED_RESOURCE_0;
     }
 
     @Override
-    public ResourceLocation getTextureResource(StrykerM2Entity animatable) {
+    public ResourceLocation getTextureResource(T animatable) {
         return CACHED_RESOURCE_1;
     }
 
     @Override
-    public ResourceLocation getAnimationResource(StrykerM2Entity animatable) {
+    public ResourceLocation getAnimationResource(T animatable) {
         return CACHED_RESOURCE_2;
     }
 
     @Override
-    public VehicleModel.@Nullable TransformContext<StrykerM2Entity> collectTransform(String boneName) {
+    public VehicleModel.@Nullable TransformContext<T> collectTransform(String boneName) {
         // Р­С„С„РµРєС‚ РѕС‚РєР°С‚Р° РїСѓСЃРєРѕРІРѕР№ СѓСЃС‚Р°РЅРѕРІРєРё РїСЂРё РІС‹СЃС‚СЂРµР»Рµ (РµСЃР»Рё РІ geo РЅР°СЃС‚СЂРѕРµРЅР° РєРѕСЃС‚СЊ BarrelOccilator)
         if (boneName.equals("BarrelOccilator")) {
             return (bone, vehicle, state) -> {
