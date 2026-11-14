@@ -400,7 +400,7 @@
         "Fire1P": "squadmc:btr82_smoke_launch",
         "Fire3P": "squadmc:btr82_smoke_launch"
       },
-      "SoundRadius": 5,
+      "SoundRadius": 160,
       "ShootPos": {
         "Transform": "Turret",
         "Positions": [
@@ -441,7 +441,8 @@
         "Directions": [
           "Vehicle"
         ]
-      }
+      },
+      "SoundRadius": 160
     },
     "Coax": {
       "DefaultFireMode": "Auto",
@@ -470,7 +471,7 @@
         "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
         "VehicleReload": "squadmc:m2_reload"
       },
-      "SoundRadius": 16,
+      "SoundRadius": 160,
       "AmmoType": "superbwarfare:small_shell",
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
       "ShootPos": {

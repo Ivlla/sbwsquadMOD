@@ -528,7 +528,7 @@
         ]
       },
       "Crosshair": "@Empty",
-      "SoundRadius": 12
+      "SoundRadius": 160
     }
   },
   "SmokeDecoy": false

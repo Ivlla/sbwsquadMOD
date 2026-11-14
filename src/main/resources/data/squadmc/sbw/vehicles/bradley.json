@@ -285,7 +285,7 @@
       },
       "Crosshair": "@Empty",
       "CrosshairColor": "0x00FF66",
-      "SoundRadius": 32,
+      "SoundRadius": 160,
       "SoundInfo": {
         "Fire1P": "squadmc:konkurs_prefire_1p",
         "Fire3P": "squadmc:konkurs_prefire_3p",
@@ -321,7 +321,7 @@
         "Fire3PVeryFar": "squadmc:bradley_cannon_fire_3p_far_very",
         "Change": "superbwarfare:into_cannon"
       },
-      "SoundRadius": 54,
+      "SoundRadius": 160,
       "AmmoType": [
         "superbwarfare:large_shell_ap",
         {
@@ -391,7 +391,7 @@
         "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
         "Change": "superbwarfare:into_cannon"
       },
-      "SoundRadius": 10
+      "SoundRadius": 160
     },
     "SmokeGrenades": {
       "Icon": "squadmc:textures/overlay/vehicle/weapon/icons/smoke_bombs.png",
@@ -408,7 +408,7 @@
         "Fire1P": "squadmc:btr82_smoke_launch",
         "Fire3P": "squadmc:btr82_smoke_launch"
       },
-      "SoundRadius": 5,
+      "SoundRadius": 160,
       "ShootPos": {
         "Transform": "Turret",
         "Positions": [
@@ -449,7 +449,8 @@
         "Directions": [
           "Vehicle"
         ]
-      }
+      },
+      "SoundRadius": 160
     }
   },
   "TurretPos": [

@@ -73,7 +73,9 @@ public final class SquadWeaponFire {
         // keyed "weapon#index"; clients fall back to the plain weapon when the profile has no such entry.
         if (data != null && data.selectedAmmoType.get() > 0) weapon = weapon + "#" + data.selectedAmmoType.get();
         final String key = weapon;
-        ModNetworking.CHANNEL.send(PacketDistributor.TRACKING_ENTITY.with(() -> vehicle),
-                new SquadFirePacket(vehicle.getId(), key, shooter == null ? -1 : shooter.getId()));
+        ModNetworking.CHANNEL.send(PacketDistributor.NEAR.with(() -> new PacketDistributor.TargetPoint(
+                        vehicle.getX(), vehicle.getY(), vehicle.getZ(), 1024D, vehicle.level().dimension())),
+                new SquadFirePacket(vehicle.getId(), key, shooter == null ? -1 : shooter.getId(),
+                        EngineControl.id(vehicle), vehicle.position()));
     }
 }

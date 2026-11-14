@@ -20,6 +20,8 @@ import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.profiling.ProfilerFiller;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.phys.Vec3;
+import tech.squadmc.squadmcor.client.sound.EngineAudibleRange;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
@@ -106,22 +108,29 @@ public final class SquadWeaponSounds {
      */
     private static final class Burst {
         final int vehicleId;
+        Vec3 position;
         final SquadWeaponProfile.Weapon weapon;
         final boolean firstPerson;
         final List<LoopSound> loops = new java.util.ArrayList<>();
         long lastShot;
 
-        Burst(int vehicleId, SquadWeaponProfile.Weapon weapon, boolean firstPerson) {
+        Burst(int vehicleId, SquadWeaponProfile.Weapon weapon, boolean firstPerson, Vec3 position) {
+            this.position = position;
             this.vehicleId = vehicleId;
             this.weapon = weapon;
             this.firstPerson = firstPerson;
         }
 
-        void start(Minecraft mc, VehicleEntity vehicle) {
-            playLayers(mc, vehicle, weapon, firstPerson ? weapon.start1p : weapon.start3p, firstPerson);
-            int delay = firstPerson ? 0 : soundDelay(mc, vehicle);
+        Vec3 position(Minecraft mc) {
+            Entity entity = mc.level.getEntity(vehicleId);
+            return entity instanceof VehicleEntity ? entity.position() : position;
+        }
+
+        void start(Minecraft mc) {
+            playLayers(mc, position(mc), weapon, firstPerson ? weapon.start1p : weapon.start3p, firstPerson);
+            int delay = firstPerson ? 0 : soundDelay(mc, position(mc));
             for (SquadWeaponProfile.Layer layer : firstPerson ? weapon.loop1p : weapon.loop3p) {
-                LoopSound loop = new LoopSound(vehicle, weapon, layer, firstPerson);
+                LoopSound loop = new LoopSound(this, weapon, layer, firstPerson);
                 loops.add(loop);
                 if (delay > 0) mc.getSoundManager().playDelayed(loop, delay);
                 else mc.getSoundManager().play(loop);
@@ -130,18 +139,16 @@ public final class SquadWeaponSounds {
 
         /** Stops the loops (as late as the sound takes to arrive) and plays the tail. */
         void end(Minecraft mc) {
-            Entity entity = mc.level.getEntity(vehicleId);
-            int delay = !firstPerson && entity instanceof VehicleEntity v ? soundDelay(mc, v) : 0;
+            Vec3 pos = position(mc);
+            int delay = firstPerson ? 0 : soundDelay(mc, pos);
             long endAt = mc.level.getGameTime() + delay;
             loops.forEach(l -> l.endAt = endAt);
-            if (entity instanceof VehicleEntity vehicle) {
-                playLayers(mc, vehicle, weapon, firstPerson ? weapon.tail1p : weapon.tail3p, firstPerson);
-            }
+            playLayers(mc, pos, weapon, firstPerson ? weapon.tail1p : weapon.tail3p, firstPerson);
         }
     }
 
-    private static int soundDelay(Minecraft mc, VehicleEntity vehicle) {
-        return Math.round((float) mc.player.getEyePosition().distanceTo(vehicle.position()) / SOUND_SPEED);
+    private static int soundDelay(Minecraft mc, Vec3 position) {
+        return Math.round((float) mc.player.getEyePosition().distanceTo(position) / SOUND_SPEED);
     }
 
     /** Volume of a layer at distance d: Squad's distance crossfade, plus falloff for non-spatial layers. */
@@ -155,17 +162,17 @@ public final class SquadWeaponSounds {
     }
 
     /** A burst's stitched fire loop; follows the vehicle and re-applies the distance crossfade each tick. */
-    private static final class LoopSound extends AbstractTickableSoundInstance {
-        private final VehicleEntity vehicle;
+    private static final class LoopSound extends AbstractTickableSoundInstance implements EngineAudibleRange.Source {
+        private final Burst burst;
         private final SquadWeaponProfile.Weapon weapon;
         private final SquadWeaponProfile.Layer layer;
         private final boolean firstPerson;
         /** Game time at which the loop stops; -1 while the burst is still going. */
         long endAt = -1;
 
-        LoopSound(VehicleEntity vehicle, SquadWeaponProfile.Weapon weapon, SquadWeaponProfile.Layer layer, boolean firstPerson) {
+        LoopSound(Burst burst, SquadWeaponProfile.Weapon weapon, SquadWeaponProfile.Layer layer, boolean firstPerson) {
             super(SoundEvent.createVariableRangeEvent(layer.sound), SOURCE, SoundInstance.createUnseededRandom());
-            this.vehicle = vehicle;
+            this.burst = burst;
             this.weapon = weapon;
             this.layer = layer;
             this.firstPerson = firstPerson;
@@ -188,12 +195,15 @@ public final class SquadWeaponSounds {
         @Override
         public void tick() {
             Minecraft mc = Minecraft.getInstance();
-            if (vehicle.isRemoved() || mc.level == null || (endAt >= 0 && mc.level.getGameTime() >= endAt)) {
+            if (mc.level == null || (endAt >= 0 && mc.level.getGameTime() >= endAt)) {
                 stop();
                 return;
             }
             update();
         }
+
+        @Override
+        public int audibleRange() { return firstPerson ? 0 : 1024; }
 
         void end() {
             stop();
@@ -202,21 +212,21 @@ public final class SquadWeaponSounds {
         private void update() {
             Minecraft mc = Minecraft.getInstance();
             if (mc.player == null) return;
-            float d = (float) mc.player.getEyePosition().distanceTo(vehicle.position());
+            Vec3 pos = burst.position(mc);
+            float d = (float) mc.player.getEyePosition().distanceTo(pos);
             volume = Math.max(0f, layerVolume(weapon, layer, d, firstPerson));
             if (!relative) {
-                x = vehicle.getX();
-                y = vehicle.getY();
-                z = vehicle.getZ();
+                x = pos.x;
+                y = pos.y;
+                z = pos.z;
             }
         }
     }
 
-    public static void onShot(int vehicleId, String weaponName, int shooterId) {
+    public static void onShot(int vehicleId, String weaponName, int shooterId, String vehicleType, Vec3 position) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.level == null || mc.player == null) return;
-        if (!(mc.level.getEntity(vehicleId) instanceof VehicleEntity vehicle)) return;
-        SquadWeaponProfile profile = byVehicle.get(EngineControl.id(vehicle));
+        SquadWeaponProfile profile = byVehicle.get(vehicleType);
         SquadWeaponProfile.Weapon weapon = profile == null ? null : profile.weapons.get(weaponName);
         if (weapon == null && profile != null && weaponName.contains("#")) {
             // "weapon#ammoIndex" with no cue of its own: the weapon's cue.
@@ -230,29 +240,37 @@ public final class SquadWeaponSounds {
         Burst burst = BURSTS.get(key);
         if (burst == null || burst.firstPerson != firstPerson) {
             if (burst != null) burst.end(mc);
-            burst = new Burst(vehicleId, weapon, firstPerson);
+            burst = new Burst(vehicleId, weapon, firstPerson, position);
             BURSTS.put(key, burst);
-            burst.start(mc, vehicle);
+            burst.start(mc);
         }
+        burst.position = position;
         burst.lastShot = mc.level.getGameTime();
     }
 
-    private static void playLayers(Minecraft mc, VehicleEntity vehicle, SquadWeaponProfile.Weapon weapon,
+    private static void playLayers(Minecraft mc, Vec3 position, SquadWeaponProfile.Weapon weapon,
                                    List<SquadWeaponProfile.Layer> layers, boolean firstPerson) {
         if (layers.isEmpty()) return;
-        float d = (float) mc.player.getEyePosition().distanceTo(vehicle.position());
+        float d = (float) mc.player.getEyePosition().distanceTo(position);
         for (SquadWeaponProfile.Layer layer : layers) {
             float volume = layerVolume(weapon, layer, d, firstPerson);
             if (volume <= 0.001f) continue;
             int delay = Math.round(layer.delay * 20f) + (firstPerson ? 0 : Math.round(d / SOUND_SPEED));
             SoundInstance sound = layer.spatial && !firstPerson
-                    ? new SimpleSoundInstance(layer.sound, SOURCE, volume, 1f, RandomSource.create(), false, 0,
-                    SoundInstance.Attenuation.LINEAR, vehicle.getX(), vehicle.getY(), vehicle.getZ(), false)
+                    ? new DistantShot(layer.sound, volume, position)
                     : new SimpleSoundInstance(layer.sound, SOURCE, volume, 1f, RandomSource.create(), false, 0,
                     SoundInstance.Attenuation.NONE, 0, 0, 0, true);
             if (delay > 0) mc.getSoundManager().playDelayed(sound, delay);
             else mc.getSoundManager().play(sound);
         }
+    }
+
+    private static final class DistantShot extends SimpleSoundInstance implements EngineAudibleRange.Source {
+        DistantShot(ResourceLocation id, float volume, Vec3 pos) {
+            super(id, SOURCE, volume, 1f, RandomSource.create(), false, 0,
+                    SoundInstance.Attenuation.LINEAR, pos.x, pos.y, pos.z, false);
+        }
+        @Override public int audibleRange() { return 1024; }
     }
 
     // ── Tick: burst tails and turret traverse ───────────────────────────────────

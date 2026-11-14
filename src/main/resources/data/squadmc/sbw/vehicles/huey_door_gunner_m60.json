@@ -377,7 +377,7 @@
         "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
         "Change": "superbwarfare:into_cannon"
       },
-      "SoundRadius": 16
+      "SoundRadius": 160
     }
   },
   "EngineType": "Helicopter",

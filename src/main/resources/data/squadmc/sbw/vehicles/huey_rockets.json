@@ -362,7 +362,7 @@
         "Change": "squadmc:squad.weapons.common.switch_launcher"
       },
       "Crosshair": "@Empty",
-      "SoundRadius": 12
+      "SoundRadius": 160
     }
   },
   "EngineType": "Helicopter",

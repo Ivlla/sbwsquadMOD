@@ -29,40 +29,40 @@
       "sound": "squadmc:squad.weapons.m2.3p_loop_3",
       "gain": 0.313,
       "fade": [
-       0,
-       0,
-       3,
-       3
+       0.0,
+       0.0,
+       3.84,
+       3.84
       ]
      },
      {
       "sound": "squadmc:squad.weapons.m2.3p_loop_4",
       "gain": 1,
       "fade": [
-       3,
-       3,
-       70,
-       70
+       3.84,
+       3.84,
+       89.60000000000001,
+       89.60000000000001
       ]
      },
      {
       "sound": "squadmc:squad.weapons.m2.3p_loop_5",
       "gain": 0.15,
       "fade": [
-       70,
-       70,
-       300,
-       300
+       89.60000000000001,
+       89.60000000000001,
+       384.0,
+       384.0
       ]
      },
      {
       "sound": "squadmc:squad.weapons.m2.3p_loop_6",
       "gain": 0.125,
       "fade": [
-       300,
-       300,
-       800,
-       800
+       384.0,
+       384.0,
+       1024.0,
+       1024.0
       ]
      }
     ],
@@ -71,30 +71,30 @@
       "sound": "squadmc:squad.weapons.m2.3p_tail_7",
       "gain": 0.313,
       "fade": [
-       0,
-       0,
-       3,
-       3
+       0.0,
+       0.0,
+       3.84,
+       3.84
       ]
      },
      {
       "sound": "squadmc:squad.weapons.m2.3p_tail_8",
       "gain": 1,
       "fade": [
-       3,
-       3,
-       70,
-       70
+       3.84,
+       3.84,
+       89.60000000000001,
+       89.60000000000001
       ]
      },
      {
       "sound": "squadmc:squad.weapons.m2.3p_tail_9",
       "gain": 0.063,
       "fade": [
-       3,
-       3,
-       70,
-       70
+       3.84,
+       3.84,
+       89.60000000000001,
+       89.60000000000001
       ],
       "delay": 0.35
      },
@@ -102,32 +102,32 @@
       "sound": "squadmc:squad.weapons.m2.3p_tail_10",
       "gain": 0.15,
       "fade": [
-       70,
-       70,
-       300,
-       300
+       89.60000000000001,
+       89.60000000000001,
+       384.0,
+       384.0
       ]
      },
      {
       "sound": "squadmc:squad.weapons.m2.3p_tail_11",
       "gain": 0.087,
       "fade": [
-       70,
-       70,
-       300,
-       300
+       89.60000000000001,
+       89.60000000000001,
+       384.0,
+       384.0
       ],
       "spatial": false,
-      "falloff": 200
+      "falloff": 256.0
      },
      {
       "sound": "squadmc:squad.weapons.m2.3p_tail_12",
       "gain": 0.125,
       "fade": [
-       300,
-       300,
-       800,
-       800
+       384.0,
+       384.0,
+       1024.0,
+       1024.0
       ]
      }
     ]

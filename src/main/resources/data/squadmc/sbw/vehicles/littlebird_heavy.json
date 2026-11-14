@@ -190,7 +190,7 @@
         ]
       },
       "Crosshair": "@Empty",
-      "SoundRadius": 12
+      "SoundRadius": 160
     },
     "Cannon": {
       "AmmoType": "@RifleAmmo",
@@ -231,7 +231,7 @@
         ]
       },
       "Crosshair": "@Empty",
-      "SoundRadius": 12
+      "SoundRadius": 160
     },
     "Hellfire2": {
       "DefaultFireMode": "Semi",
@@ -274,7 +274,7 @@
         "Locked": "superbwarfare:missile_locked"
       },
       "Icon": "squadmc:textures/screens/vehicle_weapon/hellfire.png",
-      "SoundRadius": 48
+      "SoundRadius": 160
     }
   },
   "EngineType": "Helicopter",

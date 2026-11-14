@@ -266,7 +266,7 @@
         "VehicleReload": "squadmc:squad.weapons.common.m2_reload_1p",
         "VehicleReload3p": "squadmc:squad.weapons.common.m2_reload_3p"
       },
-      "SoundRadius": 16,
+      "SoundRadius": 160,
       "AmmoType": "@HeavyAmmo",
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
       "ShootPos": {

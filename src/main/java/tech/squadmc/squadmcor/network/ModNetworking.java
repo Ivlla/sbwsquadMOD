@@ -6,7 +6,7 @@ import net.minecraftforge.network.simple.SimpleChannel;
 import tech.squadmc.squadmcor.squadmc;
 
 public class ModNetworking {
-    private static final String PROTOCOL_VERSION = "1";
+    private static final String PROTOCOL_VERSION = "2";
     public static final SimpleChannel CHANNEL = NetworkRegistry.newSimpleChannel(
             new ResourceLocation(squadmc.MODID, "main"),
             () -> PROTOCOL_VERSION,

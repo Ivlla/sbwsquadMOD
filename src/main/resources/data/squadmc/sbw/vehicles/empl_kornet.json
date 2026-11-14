@@ -65,7 +65,7 @@
       },
       "Crosshair": "@VehicleCommonMissile",
       "CrosshairColor": "0x00FF66",
-      "SoundRadius": 32,
+      "SoundRadius": 160,
       "SoundInfo": {
         "Fire1P": "superbwarfare:bmp_2_missile_fire_1p",
         "Fire3P": "superbwarfare:bmp_2_missile_fire_3p",

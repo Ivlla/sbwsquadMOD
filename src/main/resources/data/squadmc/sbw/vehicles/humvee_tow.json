@@ -240,7 +240,8 @@
         "VehicleReloadSoundTime": 28,
         "Change": "superbwarfare:into_missile"
       },
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_9m113.png"
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_9m113.png",
+      "SoundRadius": 160
     }
   },
   "UpStep": 2.2,

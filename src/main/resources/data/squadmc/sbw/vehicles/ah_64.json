@@ -228,7 +228,7 @@
       },
       "Crosshair": "@VehicleCommonGunDynamic",
       "CrosshairColor": "0xFFC700",
-      "SoundRadius": 24,
+      "SoundRadius": 160,
       "AmmoType": [
         "superbwarfare:small_shell_ap",
         {
@@ -320,7 +320,7 @@
         "Change": "squadmc:into_atgm"
       },
       "Crosshair": "@Empty",
-      "SoundRadius": 12
+      "SoundRadius": 160
     },
     "SeekMissile": {
       "AmmoType": [
@@ -399,7 +399,7 @@
       "CrosshairColor": "0xFFC700",
       "Crosshair": "@VehicleCommonMissile",
       "CrosshairZooming": "@VehicleCommonSeekMissile",
-      "SoundRadius": 8,
+      "SoundRadius": 160,
       "AvailableFireModes": [
         "Semi"
       ]

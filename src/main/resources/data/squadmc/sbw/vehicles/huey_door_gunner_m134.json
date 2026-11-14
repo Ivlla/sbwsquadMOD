@@ -377,7 +377,7 @@
         "VehicleReload": "squadmc:squad.weapons.common.coax_reload_1p",
         "VehicleReload3p": "squadmc:squad.weapons.common.coax_reload_3p"
       },
-      "SoundRadius": 16,
+      "SoundRadius": 160,
       "EmptyReloadTime": 231
     },
     "Rocket": {
@@ -430,7 +430,7 @@
         "Change": "squadmc:squad.weapons.common.switch_launcher"
       },
       "Crosshair": "@Empty",
-      "SoundRadius": 12
+      "SoundRadius": 160
     }
   },
   "EngineType": "Helicopter",

@@ -184,7 +184,7 @@
         "Fire3PFar": "superbwarfare:m_2_hb_far",
         "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar"
       },
-      "SoundRadius": 16,
+      "SoundRadius": 160,
       "AmmoType": "superbwarfare:heavy_ammo",
       "Icon": "fcp:textures/screens/vehicle_weapon/12_7mm.png",
       "ShootPos": {

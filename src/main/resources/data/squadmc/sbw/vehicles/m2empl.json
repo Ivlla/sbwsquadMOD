@@ -78,7 +78,7 @@
         "Change": "fcp:into_coax",
         "VehicleReload": "fcp:m2_reload"
       },
-      "SoundRadius": 16
+      "SoundRadius": 160
     }
   },
   "TurretPos": [

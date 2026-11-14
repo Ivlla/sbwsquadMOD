@@ -308,7 +308,7 @@
         "Fire3PVeryFar": "squadmc:bmp2_cannon_fire_3p_far",
         "Change": "superbwarfare:into_cannon"
       },
-      "SoundRadius": 24,
+      "SoundRadius": 160,
       "AmmoType": [
         "superbwarfare:large_shell_he",
         {
@@ -372,7 +372,7 @@
         "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
         "Change": "superbwarfare:into_cannon"
       },
-      "SoundRadius": 16,
+      "SoundRadius": 160,
       "AmmoType": "@RifleAmmo",
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
       "ShootPos": {
@@ -404,7 +404,7 @@
         "Fire1P": "squadmc:btr82_smoke_launch",
         "Fire3P": "squadmc:btr82_smoke_launch"
       },
-      "SoundRadius": 5,
+      "SoundRadius": 160,
       "ShootPos": {
         "Transform": "Turret",
         "Positions": [
@@ -445,7 +445,8 @@
         "Directions": [
           "Vehicle"
         ]
-      }
+      },
+      "SoundRadius": 160
     }
   },
   "UpStep": 1.5,

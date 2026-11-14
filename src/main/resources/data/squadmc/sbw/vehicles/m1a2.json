@@ -246,7 +246,7 @@
         "Fire1P": "squadmc:btr82_smoke_launch",
         "Fire3P": "squadmc:btr82_smoke_launch"
       },
-      "SoundRadius": 5,
+      "SoundRadius": 160,
       "ShootPos": {
         "Transform": "Turret",
         "Positions": [
@@ -287,7 +287,8 @@
         "Directions": [
           "Vehicle"
         ]
-      }
+      },
+      "SoundRadius": 160
     },
     "Cannon": {
       "Name": "weapon.squamc.120mm_cannon_ap",
@@ -328,7 +329,7 @@
         60
       ],
       "ShootAnimationTime": 10,
-      "SoundRadius": 32,
+      "SoundRadius": 160,
       "SoundInfo": {
         "Fire1P": "squadmc:120mm_fire_1p",
         "Fire3P": "squadmc:120mm_fire_3p",
@@ -369,7 +370,7 @@
       "HeatPerShoot": 5,
       "NaturalCooldown": 1,
       "ShootAnimationTime": 1,
-      "SoundRadius": 16,
+      "SoundRadius": 160,
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",
         "Fire3P": "superbwarfare:m_2_hb_fire_3p",
@@ -411,7 +412,7 @@
       "ShootAnimationTime": 1,
       "Crosshair": "@VehicleCommonGun",
       "CrosshairColor": "0xA31515",
-      "SoundRadius": 16,
+      "SoundRadius": 160,
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",
         "Fire3P": "superbwarfare:m_2_hb_fire_3p",

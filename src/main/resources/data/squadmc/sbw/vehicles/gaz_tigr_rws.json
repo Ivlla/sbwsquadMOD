@@ -269,7 +269,7 @@
         "Fire3PFar": "superbwarfare:m_2_hb_far",
         "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar"
       },
-      "SoundRadius": 16
+      "SoundRadius": 160
     }
   },
   "EngineType": "Wheel",

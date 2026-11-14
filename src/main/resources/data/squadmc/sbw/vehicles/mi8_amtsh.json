@@ -564,7 +564,7 @@
         ]
       },
       "Crosshair": "@Empty",
-      "SoundRadius": 12
+      "SoundRadius": 160
     },
     "Cannon": {
       "Name": "weapon.squadmc.zu23",
@@ -589,7 +589,7 @@
       "ShootAnimationTime": 1,
       "Crosshair": "@Empty",
       "CrosshairColor": "0x00FF66",
-      "SoundRadius": 24,
+      "SoundRadius": 160,
       "SoundInfo": {
         "Fire1P": "squadmc:squad.silent",
         "Fire3P": "squadmc:squad.silent",
@@ -686,7 +686,7 @@
       },
       "Crosshair": "@Empty",
       "CrosshairColor": "0x66FF00",
-      "SoundRadius": 8,
+      "SoundRadius": 160,
       "Damage": 0
     }
   },

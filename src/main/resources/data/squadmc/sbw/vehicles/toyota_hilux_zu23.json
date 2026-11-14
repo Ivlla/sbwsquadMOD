@@ -292,7 +292,7 @@
       "ShootAnimationTime": 1,
       "Crosshair": "@VehicleCommonGun",
       "CrosshairColor": "0x00FF66",
-      "SoundRadius": 24,
+      "SoundRadius": 160,
       "SoundInfo": {
         "Fire1P": "superbwarfare:bmp_2_cannon_fire_1p",
         "Fire3P": "superbwarfare:bmp_2_cannon_fire_3p",

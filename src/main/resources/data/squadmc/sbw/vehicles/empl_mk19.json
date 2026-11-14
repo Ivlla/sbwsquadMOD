@@ -61,7 +61,7 @@
         "Fire3PFar": "fcp:mk19_fire_3p_far",
         "VehicleReload": "fcp:m2_reload"
       },
-      "SoundRadius": 16,
+      "SoundRadius": 160,
       "AmmoType": "superbwarfare:grenade_40mm",
       "Icon": "fcp:textures/screens/vehicle_weapon/40mm.png",
       "ShootPos": {

@@ -373,7 +373,7 @@
         "Fire3PVeryFar": "superbwarfare:mg_17_veryfar",
         "Change": "superbwarfare:into_cannon"
       },
-      "SoundRadius": 16
+      "SoundRadius": 160
     },
     "M60Right": {
       "Icon": "squadmc:textures/screens/vehicle_weapon/7_62mm.png",
@@ -420,7 +420,7 @@
         "Fire3PVeryFar": "superbwarfare:mg_17_veryfar",
         "Change": "superbwarfare:into_cannon"
       },
-      "SoundRadius": 16
+      "SoundRadius": 160
     }
   },
   "EngineType": "Helicopter",

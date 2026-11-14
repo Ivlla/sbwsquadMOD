@@ -236,7 +236,7 @@
         "Fire1P": "squadmc:btr82_smoke_launch",
         "Fire3P": "squadmc:btr82_smoke_launch"
       },
-      "SoundRadius": 5,
+      "SoundRadius": 160,
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
@@ -277,7 +277,8 @@
         "Directions": [
           "Vehicle"
         ]
-      }
+      },
+      "SoundRadius": 160
     },
     "malyutka": {
       "DefaultFireMode": "Semi",
@@ -310,7 +311,7 @@
         ]
       },
       "Crosshair": "@Empty",
-      "SoundRadius": 32,
+      "SoundRadius": 160,
       "SoundInfo": {
         "Fire1P": "squadmc:at3_fire_1p",
         "Fire3P": "squadmc:at3_fire_3p",
@@ -355,7 +356,7 @@
           }
         }
       ],
-      "SoundRadius": 32,
+      "SoundRadius": 160,
       "SoundInfo": {
         "Fire1P": "squadmc:bmp1_fire_1p",
         "Fire3P": "squadmc:bmp1_fire_3p",
@@ -404,7 +405,7 @@
         "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
         "Change": "superbwarfare:into_missile"
       },
-      "SoundRadius": 16,
+      "SoundRadius": 160,
       "AmmoType": "@RifleAmmo",
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
       "ShootPos": {

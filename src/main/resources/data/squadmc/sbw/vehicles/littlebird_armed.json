@@ -171,7 +171,7 @@
         ]
       },
       "Crosshair": "@Empty",
-      "SoundRadius": 12
+      "SoundRadius": 160
     },
     "Cannon": {
       "AmmoType": "@RifleAmmo",
@@ -217,7 +217,7 @@
         ]
       },
       "Crosshair": "@Empty",
-      "SoundRadius": 12
+      "SoundRadius": 160
     }
   },
   "EngineType": "Helicopter",

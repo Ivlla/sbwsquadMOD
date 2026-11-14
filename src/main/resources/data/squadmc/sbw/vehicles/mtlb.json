@@ -242,7 +242,8 @@
         "Directions": [
           "Vehicle"
         ]
-      }
+      },
+      "SoundRadius": 160
     }
   },
   "UpStep": 2.2,

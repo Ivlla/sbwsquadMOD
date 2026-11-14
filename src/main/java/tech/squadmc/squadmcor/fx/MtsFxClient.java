@@ -93,7 +93,7 @@ public final class MtsFxClient {
         double distance = cam.distanceTo(pos);
         for (MtsFxDefs.SoundDef def : fx.sounds) {
             if (active(def.conds, hit, material)) {
-                playSound(mc, level.random, def, distance);
+                playSound(mc, level.random, def, distance, pos);
             }
         }
 
@@ -263,7 +263,7 @@ public final class MtsFxClient {
     }
 
     /** Те же правила громкости, что в AEntityD_Definable.updateSounds из MTS. */
-    private static void playSound(Minecraft mc, RandomSource random, MtsFxDefs.SoundDef def, double distance) {
+    private static void playSound(Minecraft mc, RandomSource random, MtsFxDefs.SoundDef def, double distance, Vec3 pos) {
         if (def.variations == null || def.variations.isEmpty()) return;
         if (def.maxDistance != def.minDistance && (distance >= def.maxDistance || distance < def.minDistance)) return;
 
@@ -289,10 +289,9 @@ public final class MtsFxClient {
             }
             return;
         }
-        // Источник относительно слушателя, как у звуков интерфейса: затухание и громкость посчитаны выше,
-        // а стерео OpenAL всё равно не размещает в пространстве.
+        // World-space mono source; distance gain is already calculated above.
         mc.getSoundManager().play(new SimpleSoundInstance(id, SoundSource.BLOCKS,
                 (float) Math.min(volume, 1D), 1F, random, false, 0, SoundInstance.Attenuation.NONE,
-                0D, 0D, 0D, true));
+                pos.x, pos.y, pos.z, false));
     }
 }

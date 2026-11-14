@@ -225,7 +225,7 @@
       "HeatPerShoot": 4,
       "NaturalCooldown": 1,
       "ShootAnimationTime": 1,
-      "SoundRadius": 20,
+      "SoundRadius": 160,
       "SoundInfo": {
         "Fire1P": "squadmc:pkt_coax",
         "Fire3P": "superbwarfare:m_2_hb_fire_3p",
@@ -272,7 +272,8 @@
         "Directions": [
           "Vehicle"
         ]
-      }
+      },
+      "SoundRadius": 160
     },
     "SmokeGrenades": {
       "Icon": "squadmc:textures/overlay/vehicle/weapon/icons/smoke_bombs.png",
@@ -289,7 +290,7 @@
         "Fire1P": "squadmc:btr82_smoke_launch",
         "Fire3P": "squadmc:btr82_smoke_launch"
       },
-      "SoundRadius": 5,
+      "SoundRadius": 160,
       "ShootPos": {
         "Transform": "Turret",
         "Positions": [
@@ -344,7 +345,7 @@
         60
       ],
       "ShootAnimationTime": 10,
-      "SoundRadius": 92,
+      "SoundRadius": 160,
       "SoundInfo": {
         "Fire1P": "squadmc:120mm_fire_1p",
         "Fire3P": "squadmc:120mm_fire_3p",
@@ -385,7 +386,7 @@
       "HeatPerShoot": 5,
       "NaturalCooldown": 1,
       "ShootAnimationTime": 1,
-      "SoundRadius": 16,
+      "SoundRadius": 160,
       "SoundInfo": {
         "Fire1P": "squadmc:pkt_coax",
         "Fire3P": "superbwarfare:m_60_fire_3p",

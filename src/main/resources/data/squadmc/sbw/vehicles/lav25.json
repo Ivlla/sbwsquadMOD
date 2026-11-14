@@ -350,7 +350,7 @@
         "Fire3PVeryFar": "squadmc:bradley_cannon_fire_3p_far_very",
         "Change": "superbwarfare:into_cannon"
       },
-      "SoundRadius": 24,
+      "SoundRadius": 160,
       "AmmoType": [
         "superbwarfare:large_shell_ap",
         {
@@ -420,7 +420,7 @@
         "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
         "Change": "superbwarfare:into_cannon"
       },
-      "SoundRadius": 12
+      "SoundRadius": 160
     },
     "SmokeGrenades": {
       "Icon": "squadmc:textures/overlay/vehicle/weapon/icons/smoke_bombs.png",
@@ -437,7 +437,7 @@
         "Fire1P": "squadmc:btr82_smoke_launch",
         "Fire3P": "squadmc:btr82_smoke_launch"
       },
-      "SoundRadius": 5,
+      "SoundRadius": 160,
       "ShootPos": {
         "Transform": "Turret",
         "Positions": [
