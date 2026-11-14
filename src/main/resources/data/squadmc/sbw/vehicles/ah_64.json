@@ -429,6 +429,7 @@
   "Mass": 1.2,
   "AllowFreeCam": true,
   "HasDecoy": true,
+  "SmokeDecoy": false,
   "DamageModifiers": [
     "minecraft:arrow * 0.1",
     "minecraft:trident * 0.2",
