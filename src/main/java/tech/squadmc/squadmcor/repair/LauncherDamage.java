@@ -65,7 +65,7 @@ public final class LauncherDamage {
     /** Stryker MGS sits between MBTs and APCs: it takes more launcher damage than a tank, but less than an APC. */
     private static final float[][] STRYKER_NORMAL = {{6, 5}, {4, 4}, {4, 3}};
     private static final float[][] STRYKER_TANDEM = {{4, 3}, {2, 2}, {2, 1}};
-    private static final float[][] STRYKER_TANK_GUN_HITS = {{3, 2, 2}};
+    private static final float[][] STRYKER_TANK_GUN_HITS = {{3, 2, 1.5F}};
     private static final float[][] STRYKER_ATGM_HITS = {{2, 1, 1}};
     /** Seconds of sustained fire by target (tank, APC, truck) and side (front, side, rear). */
     private static final float[][] AUTOCANNON_SECONDS = {{17.5F, 10, 7.5F}, {12.5F, 7.5F, 5}, {7.5F, 5, 5}};
@@ -158,7 +158,8 @@ public final class LauncherDamage {
             hits = NORMAL[vehicleClass.ordinal()][side.ordinal()];
             strength = (damage - NORMAL_WEAK) / (NORMAL_STRONG - NORMAL_WEAK);
         }
-        float shots = Math.round(Mth.lerp(Mth.clamp(strength, 0F, 1F), hits[0], hits[1]));
+        float interpolatedHits = Mth.lerp(Mth.clamp(strength, 0F, 1F), hits[0], hits[1]);
+        float shots = vehicleClass == VehicleClass.STRYKER ? interpolatedHits : Math.round(interpolatedHits);
         // Blast and fragmentation rounds, weaker than any anti-armour round, need more hits still.
         if (damage < NORMAL_WEAK) shots *= NORMAL_WEAK / Math.max(damage, 1F);
         return 1F / shots;
