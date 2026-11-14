@@ -39,7 +39,8 @@ import java.util.Set;
 @Mod.EventBusSubscriber(modid = squadmc.MODID)
 public final class TaczWheelDamage {
     private static final String TACZ_BULLET = "com.tacz.guns.entity.EntityKineticBullet";
-    private static final float BULLET_WHEEL_DAMAGE = 12F;
+    // Light vehicles: one quarter of the former TACZ wheel damage (12 -> 3).
+    private static final float BULLET_WHEEL_DAMAGE = 3F;
     private static final float STRYKER_MGS_BULLET_WHEEL_DAMAGE = 6F;
     private static final ResourceLocation STRYKER_MGS_ID = new ResourceLocation(squadmc.MODID, "stryker_mgs");
     private static final double MAX_TRACE = 16D;
