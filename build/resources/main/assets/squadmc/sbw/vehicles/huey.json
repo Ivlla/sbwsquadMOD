@@ -1,7 +1,0 @@
-{
-  "ID": "squadmc:huey",
-  "Model": {
-    "Model": "squadmc:geo/huey.geo.json",
-    "Texture": "squadmc:textures/entity/toyota.png"
-  }
-}

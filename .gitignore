@@ -13,3 +13,7 @@
 
 !src/**
 !gradle/**
+
+.gradle/
+build/
+run/
