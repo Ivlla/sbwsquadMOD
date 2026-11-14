@@ -29,7 +29,7 @@ import tech.squadmc.squadmcor.squadmc;
  */
 public final class LauncherDamage {
 
-    private enum VehicleClass {TANK, APC, TRUCK, LIGHT, OTHER}
+    private enum VehicleClass {TANK, APC, TRUCK, LIGHT, OTHER, STRYKER}
 
     private enum Side {FRONT, SIDE, REAR}
 
@@ -62,6 +62,11 @@ public final class LauncherDamage {
     /** Hits by target (tank, APC) and side (front, side, rear). */
     private static final float[][] TANK_GUN_HITS = {{4, 3, 2}, {2, 1, 1}};
     private static final float[][] ATGM_HITS = {{2, 2, 1}, {1, 1, 1}};
+    /** Stryker MGS sits between MBTs and APCs: it takes more launcher damage than a tank, but less than an APC. */
+    private static final float[][] STRYKER_NORMAL = {{6, 5}, {4, 4}, {4, 3}};
+    private static final float[][] STRYKER_TANDEM = {{4, 3}, {2, 2}, {2, 1}};
+    private static final float[][] STRYKER_TANK_GUN_HITS = {{3, 2, 2}};
+    private static final float[][] STRYKER_ATGM_HITS = {{2, 1, 1}};
     /** Seconds of sustained fire by target (tank, APC, truck) and side (front, side, rear). */
     private static final float[][] AUTOCANNON_SECONDS = {{17.5F, 10, 7.5F}, {12.5F, 7.5F, 5}, {7.5F, 5, 5}};
     private static final float AUTOCANNON_OTHER_SECONDS = 5F;
@@ -111,6 +116,11 @@ public final class LauncherDamage {
 
     /** Tanks and APCs per the table; anything else dies to one hit. */
     private static float gunHits(float[][] table, VehicleClass target, Side side) {
+        if (target == VehicleClass.STRYKER) {
+            return table == TANK_GUN_HITS
+                    ? STRYKER_TANK_GUN_HITS[0][side.ordinal()]
+                    : STRYKER_ATGM_HITS[0][side.ordinal()];
+        }
         return target == VehicleClass.TANK || target == VehicleClass.APC ? table[target.ordinal()][side.ordinal()] : 1F;
     }
 
@@ -139,7 +149,9 @@ public final class LauncherDamage {
         }
         float[] hits;
         float strength;
-        if (damage >= TANDEM_DAMAGE) {
+        if (vehicleClass == VehicleClass.STRYKER) {
+            hits = (damage >= TANDEM_DAMAGE ? STRYKER_TANDEM : STRYKER_NORMAL)[side.ordinal()];
+        } else if (damage >= TANDEM_DAMAGE) {
             hits = TANDEM[vehicleClass.ordinal()][side.ordinal()];
             strength = (damage - TANDEM_WEAK) / (TANDEM_STRONG - TANDEM_WEAK);
         } else {
@@ -168,6 +180,7 @@ public final class LauncherDamage {
         if (!squadmc.MODID.equals(key.getNamespace())) return null;
         if (EngineControl.isHelicopter(vehicle) || vehicle.computed().getEngineType() == EngineType.FIXED) return VehicleClass.OTHER;
         String id = key.getPath();
+        if (id.equals("stryker_mgs")) return VehicleClass.STRYKER;
         if (matches(id, TANKS)) return VehicleClass.TANK;
         if (matches(id, TRUCKS)) return VehicleClass.TRUCK;
         if (matches(id, LIGHT)) return VehicleClass.LIGHT;
