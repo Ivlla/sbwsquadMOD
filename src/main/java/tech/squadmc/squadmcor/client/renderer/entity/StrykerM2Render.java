@@ -13,7 +13,7 @@ public class StrykerM2Render extends OptimizedVehicleRenderer<StrykerM2Entity> {
 
 
     public StrykerM2Render(EntityRendererProvider.Context renderManager) {
-        super(renderManager, new StrykerM2Model());
+        super(renderManager, new StrykerM2Model<>());
     }
 
     @Override

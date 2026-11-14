@@ -54,6 +54,7 @@ public class ModEntityRenders {
         event.registerEntityRenderer(ModEntities.FMTV.get(), FMTVRender::new);
         event.registerEntityRenderer(ModEntities.STRYKER_MORTAR.get(), StrykerMortarRender::new);
         event.registerEntityRenderer(ModEntities.STRYKER_M2.get(), StrykerM2Render::new);
+        event.registerEntityRenderer(ModEntities.STRYKER_MGS.get(), tech.squadmc.squadmcor.client.renderer.entity.StrykerMgsRenderer::new);
         event.registerEntityRenderer(ModEntities.MTLB.get(), mtlbRender::new);
         event.registerEntityRenderer(ModEntities.MTLB_ZU23.get(), tech.squadmc.squadmcor.client.renderer.entity.MtlbZu23Render::new);
         event.registerEntityRenderer(ModEntities.ZU23.get(), tech.squadmc.squadmcor.client.renderer.entity.empl.Zu23Render::new);

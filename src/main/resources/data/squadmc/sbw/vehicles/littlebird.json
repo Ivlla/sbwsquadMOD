@@ -108,7 +108,10 @@
           0.110425,
           0.152315
         ]
-      }
+      },
+      "Weapons": [
+        "FlightInstruments"
+      ]
     },
     {
       "HasThermalImaging": false,
@@ -292,5 +295,16 @@
       0.01,
       -2.1
     ]
-  ]
+  ],
+  "Weapons": {
+    "FlightInstruments": {
+      "Name": "",
+      "Crosshair": "@Empty",
+      "RPM": 0,
+      "Magazine": 0,
+      "Damage": 0,
+      "ExplosionDamage": 0,
+      "ExplosionRadius": 0
+    }
+  }
 }

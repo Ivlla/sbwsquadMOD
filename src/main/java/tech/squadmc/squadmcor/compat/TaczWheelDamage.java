@@ -3,11 +3,18 @@ package tech.squadmc.squadmcor.compat;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.tools.OBB;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
+import net.minecraftforge.event.entity.EntityLeaveLevelEvent;
+import net.minecraftforge.event.server.ServerStoppedEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.joml.Vector3d;
@@ -34,8 +41,20 @@ public final class TaczWheelDamage {
     private static final float BULLET_WHEEL_DAMAGE = 12F;
     private static final double MAX_TRACE = 16D;
     private static final Map<Entity, Set<Integer>> BULLETS = new HashMap<>();
+    private static final TagKey<EntityType<?>> VULNERABLE_WHEELS = TagKey.create(
+            Registries.ENTITY_TYPE, new ResourceLocation(squadmc.MODID, "tacz_vulnerable_wheels"));
 
     private TaczWheelDamage() {}
+
+    @SubscribeEvent
+    public static void onLeave(EntityLeaveLevelEvent event) {
+        if (!event.getLevel().isClientSide()) BULLETS.remove(event.getEntity());
+    }
+
+    @SubscribeEvent
+    public static void onServerStopped(ServerStoppedEvent event) {
+        BULLETS.clear();
+    }
 
     @SubscribeEvent
     public static void onJoin(EntityJoinLevelEvent event) {
@@ -64,11 +83,14 @@ public final class TaczWheelDamage {
             Vec3 delta = motion.length() > MAX_TRACE ? motion.normalize().scale(MAX_TRACE) : motion;
             Vec3 start = bullet.position();
             Vec3 end = start.add(delta);
+            // Never damage wheels beyond the first solid obstruction.
+            end = level.clip(new ClipContext(start, end, ClipContext.Block.COLLIDER,
+                    ClipContext.Fluid.NONE, bullet)).getLocation();
             AABB swept = bullet.getBoundingBox().expandTowards(delta).inflate(1.5D);
             Vector3d from = new Vector3d(start.x, start.y, start.z);
             Vector3d to = new Vector3d(end.x, end.y, end.z);
             for (VehicleEntity vehicle : level.getEntitiesOfClass(VehicleEntity.class, swept)) {
-                if (vehicle.isWreck() || !WheelLoss.applies(vehicle)
+                if (vehicle.isWreck() || !vehicle.getType().is(VULNERABLE_WHEELS) || !WheelLoss.applies(vehicle)
                         || tracked.getValue().contains(vehicle.getId())) continue;
                 OBB.Part side = null;
                 double nearest = Double.POSITIVE_INFINITY;

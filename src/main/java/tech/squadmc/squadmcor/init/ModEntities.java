@@ -239,6 +239,12 @@ public class ModEntities {
                     .clientTrackingRange(360)
                     .build("stryker_mortar"));
 
+    public static final RegistryObject<EntityType<StrykerMgsEntity>> STRYKER_MGS =
+            ENTITY_TYPES.register("stryker_mgs", () -> EntityType.Builder.<StrykerMgsEntity>of(StrykerMgsEntity::new, MobCategory.MISC)
+                    .sized(2.8F, 2.8F)
+                    .clientTrackingRange(360)
+                    .build("stryker_mgs"));
+
     public static final RegistryObject<EntityType<StrykerM2Entity>> STRYKER_M2 =
             ENTITY_TYPES.register("stryker_m2", () -> EntityType.Builder.<StrykerM2Entity>of(StrykerM2Entity::new, MobCategory.MISC)
                     .sized(2.8F, 2.8F)
