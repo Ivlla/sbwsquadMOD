@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:dirt",
     "minecraft:rooted_dirt",
     "minecraft:coarse_dirt",
     "minecraft:sand",

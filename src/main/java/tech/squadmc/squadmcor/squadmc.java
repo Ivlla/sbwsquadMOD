@@ -3,6 +3,9 @@ package tech.squadmc.squadmcor;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.ModLoadingContext;
+import net.minecraftforge.fml.config.ModConfig;
+import tech.squadmc.squadmcor.explosion.ExplosionSettings;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import tech.squadmc.squadmcor.init.*;
 import tech.squadmc.squadmcor.network.ModNetworking;
@@ -12,6 +15,8 @@ public class squadmc {
     public static final String MODID = "squadmc";
 
     public squadmc() {
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ExplosionSettings.SPEC,
+                "squadmc-explosions.toml");
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.ITEMS.register(bus);

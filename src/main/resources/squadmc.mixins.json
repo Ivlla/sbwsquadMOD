@@ -16,7 +16,8 @@
     "VehicleShootFxMixin",
     "VehicleWaterStepMixin",
     "VehicleLauncherDamageMixin",
-    "CustomExplosionTerrainMixin"
+    "CustomExplosionTerrainMixin",
+    "MortarExplosionRadiusMixin"
   ],
   "client": [
     "VehicleModelDamageMixin",
