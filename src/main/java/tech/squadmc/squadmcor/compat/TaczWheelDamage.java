@@ -114,7 +114,7 @@ public final class TaczWheelDamage {
                 if (side == OBB.Part.WHEEL_LEFT && vehicle.getLeftWheelMaxHealth() > 0F) {
                     vehicle.setLeftWheelHealth(Math.max(0F, vehicle.getLeftWheelHealth() - wheelDamage));
                 } else if (side == OBB.Part.WHEEL_RIGHT && vehicle.getRightWheelMaxHealth() > 0F) {
-                    vehicle.setRightWheelHealth(Math.max(0F, vehicle.getRightWheelHealth() - BULLET_WHEEL_DAMAGE));
+                    vehicle.setRightWheelHealth(Math.max(0F, vehicle.getRightWheelHealth() - wheelDamage));
                 }
                 WheelLoss.update(vehicle);
             }
