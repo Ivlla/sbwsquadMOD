@@ -42,6 +42,7 @@ public final class VehicleHitSounds {
         put("superbwarfare:small_cannon_shell", HitCaliber.MEDIUM);
         put("superbwarfare:gun_grenade", HitCaliber.MEDIUM);
         put("superbwarfare:projectile", HitCaliber.SMALL);
+        put("tacz:bullet", HitCaliber.SMALL);
     }
 
     private static void put(String id, HitCaliber c) {
