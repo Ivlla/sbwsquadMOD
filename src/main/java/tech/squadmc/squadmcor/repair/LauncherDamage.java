@@ -150,7 +150,13 @@ public final class LauncherDamage {
         float[] hits;
         float strength;
         if (vehicleClass == VehicleClass.STRYKER) {
-            hits = (damage >= TANDEM_DAMAGE ? STRYKER_TANDEM : STRYKER_NORMAL)[side.ordinal()];
+            if (damage >= TANDEM_DAMAGE) {
+                hits = STRYKER_TANDEM[side.ordinal()];
+                strength = (damage - TANDEM_WEAK) / (TANDEM_STRONG - TANDEM_WEAK);
+            } else {
+                hits = STRYKER_NORMAL[side.ordinal()];
+                strength = (damage - NORMAL_WEAK) / (NORMAL_STRONG - NORMAL_WEAK);
+            }
         } else if (damage >= TANDEM_DAMAGE) {
             hits = TANDEM[vehicleClass.ordinal()][side.ordinal()];
             strength = (damage - TANDEM_WEAK) / (TANDEM_STRONG - TANDEM_WEAK);
