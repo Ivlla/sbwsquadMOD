@@ -1,0 +1,10 @@
+{
+  "Skins": [
+    {
+      "Id": "base",
+      "Name": "Base",
+      "Texture": "squadmc:textures/entity/dingo_2.png",
+      "Priority": 1
+    }
+  ]
+}
