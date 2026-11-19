@@ -1,9 +1,21 @@
 {
   "Skins": [
     {
-      "Id": "vanilla",
-      "Name": "Default",
-      "Texture": "squadmc:textures/entity/m113.png",
+      "Id": "green",
+      "Name": "Green",
+      "Texture": "squadmc:textures/entity/m113_green.png",
+      "Priority": 3
+    },
+    {
+      "Id": "iraq",
+      "Name": "Iraq",
+      "Texture": "squadmc:textures/entity/m113_iraq.png",
+      "Priority": 2
+    },
+    {
+      "Id": "pmc",
+      "Name": "PMC",
+      "Texture": "squadmc:textures/entity/m113_pmc.png",
       "Priority": 1
     }
   ]

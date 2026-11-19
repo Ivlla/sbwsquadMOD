@@ -175,5 +175,10 @@
   "entity.squadmc.uaz_dshka": "UAZ-469 (DShK)",
   "entity.squadmc.ural_green": "Ural-4320",
   "weapon.squadmc.105mm_cannon_ap": "105 mm M68A1E4 (AP)",
-  "weapon.squadmc.105mm_cannon_he": "105 mm M68A1E4 (HE)"
+  "weapon.squadmc.105mm_cannon_he": "105 mm M68A1E4 (HE)",
+  "entity.squadmc.m113_a2": "M113A2",
+  "entity.squadmc.dingo": "Dingo",
+  "entity.squadmc.dingo_gmg": "Dingo GMG",
+  "entity.squadmc.dingo_m2": "Dingo M2",
+  "entity.squadmc.dingo_mg3": "Dingo MG3"
 }

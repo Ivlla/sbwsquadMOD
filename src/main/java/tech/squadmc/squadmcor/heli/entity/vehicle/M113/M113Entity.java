@@ -6,7 +6,7 @@ import net.minecraft.world.level.Level;
 import tech.squadmc.squadmcor.heli.HeliVehicleBase;
 
 public class M113Entity extends HeliVehicleBase {
-    public M113Entity(EntityType<M113Entity> type, Level world) {
+    public M113Entity(EntityType<? extends M113Entity> type, Level world) {
         super(type, world);
     }
 

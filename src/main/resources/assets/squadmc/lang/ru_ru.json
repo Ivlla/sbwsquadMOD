@@ -167,5 +167,10 @@
   "entity.squadmc.uaz_dshka": "УАЗ-469 (ДШК)",
   "entity.squadmc.ural_green": "Урал-4320",
   "weapon.squadmc.105mm_cannon_ap": "105-мм M68A1E4 (ББ)",
-  "weapon.squadmc.105mm_cannon_he": "105-мм M68A1E4 (ОФ)"
+  "weapon.squadmc.105mm_cannon_he": "105-мм M68A1E4 (ОФ)",
+  "entity.squadmc.m113_a2": "M113A2",
+  "entity.squadmc.dingo": "Dingo",
+  "entity.squadmc.dingo_gmg": "Dingo с АГС",
+  "entity.squadmc.dingo_m2": "Dingo с M2",
+  "entity.squadmc.dingo_mg3": "Dingo с MG3"
 }
