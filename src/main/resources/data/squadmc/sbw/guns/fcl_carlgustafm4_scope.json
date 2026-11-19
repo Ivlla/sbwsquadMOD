@@ -8,15 +8,16 @@
  "ExplosionRadius": 6,
  "ZoomReload": false,
  "Headshot": 0,
- "Velocity": 6.33,
+ "Velocity": 5.5,
  "Magazine": 1,
  "Weight": 7,
  "DrawTime": 16,
  "ZoomTime": 9,
  "EmptyReloadTime": 88,
  "RPM": 88,
- "Gravity": 0.006,
+ "Gravity": 0.0245,
  "ProjectileLife": 140,
+ "Drag": 0.001,
  "GunType": "DirectLauncher",
  "AmmoType": [
   {
@@ -26,10 +27,14 @@
     "Damage": 420,
     "ExplosionDamage": 60,
     "ExplosionRadius": 6,
-    "Velocity": 6.33,
-    "Gravity": 0.006,
+    "Velocity": 5.5,
+    "Gravity": 0.0245,
     "EmptyReloadTime": 88,
-    "Icon": "squadmc:textures/item/fcl_carlgustafm4_icon.png"
+    "Icon": "squadmc:textures/item/fcl_carlgustafm4_icon.png",
+    "Drag": 0.001,
+    "ArmDistance": 15,
+    "Accel": 187.5,
+    "AccelTime": 0.8
    }
   },
   {
@@ -39,10 +44,14 @@
     "Damage": 560,
     "ExplosionDamage": 70,
     "ExplosionRadius": 5,
-    "Velocity": 6.33,
-    "Gravity": 0.006,
+    "Velocity": 3.15,
+    "Gravity": 0.0245,
     "EmptyReloadTime": 88,
-    "Icon": "squadmc:textures/item/fcl_carlgustafm4_icon.png"
+    "Icon": "squadmc:textures/item/fcl_carlgustafm4_icon.png",
+    "Drag": 0.0014,
+    "ArmDistance": 20,
+    "Accel": 214,
+    "AccelTime": 0.7
    }
   },
   {
@@ -52,10 +61,14 @@
     "Damage": 300,
     "ExplosionDamage": 120,
     "ExplosionRadius": 8,
-    "Velocity": 6.33,
-    "Gravity": 0.006,
+    "Velocity": 5.5,
+    "Gravity": 0.0245,
     "EmptyReloadTime": 88,
-    "Icon": "squadmc:textures/item/fcl_carlgustafm4_icon.png"
+    "Icon": "squadmc:textures/item/fcl_carlgustafm4_icon.png",
+    "Drag": 0.001,
+    "ArmDistance": 15,
+    "Accel": 150,
+    "AccelTime": 0.8
    }
   },
   {
@@ -65,10 +78,14 @@
     "Damage": 100,
     "ExplosionDamage": 220,
     "ExplosionRadius": 12,
-    "Velocity": 6.33,
-    "Gravity": 0.006,
+    "Velocity": 12.75,
+    "Gravity": 0.0245,
     "EmptyReloadTime": 88,
-    "Icon": "squadmc:textures/item/fcl_carlgustafm4_icon.png"
+    "Icon": "squadmc:textures/item/fcl_carlgustafm4_icon.png",
+    "Drag": 0.001,
+    "ArmDistance": 15,
+    "Accel": 0,
+    "AccelTime": 0
    }
   }
  ],
@@ -86,5 +103,8 @@
   "Fire3P": "squadmc:fcl_carlgustafm4",
   "Fire3PFar": "superbwarfare:rpg_far",
   "Fire3PVeryFar": "superbwarfare:rpg_veryfar"
- }
+ },
+ "ArmDistance": 15,
+ "Accel": 187.5,
+ "AccelTime": 0.8
 }

@@ -198,6 +198,32 @@ public class ClientAccess {
         }
     }
 
+    public static void handlemarder1a3ClientTick(marder1a3Entity entity) {
+        marder1a3SoundManager.updateSounds(entity);
+
+        Minecraft mc = Minecraft.getInstance();
+        if (mc.player != null && mc.player.getVehicle() == entity) {
+            int playerSeatIndex = entity.getSeatIndex(mc.player);
+            if (playerSeatIndex == 1) { // Gunner
+                float shakeIntensity = 0.0F;
+
+                if (entity.getShootAnimationTimer(1, 0) > 0) {
+                    shakeIntensity = 0.22F;
+                } else if (entity.getShootAnimationTimer(1, 1) > 0) {
+                    shakeIntensity = 0.07F;
+                }
+
+                if (shakeIntensity > 0) {
+                }
+
+                if (entity.atgmShakeTicks > 0) {
+                    float intensity = (entity.atgmShakeTicks / 10.0F) * 10.65F;
+                    entity.atgmShakeTicks--;
+                }
+            }
+        }
+    }
+
     public static void handleBrdm2ClientTick(brdmEntity entity) {
         Brdm2SoundManager.updateSounds(entity);
     }

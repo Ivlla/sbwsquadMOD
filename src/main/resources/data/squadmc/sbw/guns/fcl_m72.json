@@ -8,15 +8,16 @@
  "ExplosionRadius": 5,
  "ZoomReload": false,
  "Headshot": 0,
- "Velocity": 4.4,
+ "Velocity": 7.2,
  "Magazine": 1,
  "Weight": 5,
  "DrawTime": 16,
  "ZoomTime": 9,
  "EmptyReloadTime": 51,
  "RPM": 88,
- "Gravity": 0.032,
+ "Gravity": 0.0245,
  "ProjectileLife": 140,
+ "Drag": 0.0012,
  "GunType": "DirectLauncher",
  "AmmoType": [
   {
@@ -26,10 +27,12 @@
     "Damage": 300,
     "ExplosionDamage": 40,
     "ExplosionRadius": 5,
-    "Velocity": 4.4,
-    "Gravity": 0.032,
+    "Velocity": 7.2,
+    "Gravity": 0.0245,
     "EmptyReloadTime": 51,
-    "Icon": "squadmc:textures/item/fcl_m72_icon.png"
+    "Icon": "squadmc:textures/item/fcl_m72_icon.png",
+    "Drag": 0.0012,
+    "ArmDistance": 15
    }
   }
  ],
@@ -47,5 +50,6 @@
   "Fire3P": "squadmc:fcl_m72",
   "Fire3PFar": "superbwarfare:rpg_far",
   "Fire3PVeryFar": "superbwarfare:rpg_veryfar"
- }
+ },
+ "ArmDistance": 15
 }

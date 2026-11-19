@@ -8,15 +8,16 @@
  "ExplosionRadius": 7,
  "ZoomReload": false,
  "Headshot": 0,
- "Velocity": 5.5,
+ "Velocity": 12.5,
  "Magazine": 1,
  "Weight": 13,
  "DrawTime": 16,
  "ZoomTime": 9,
  "EmptyReloadTime": 73,
  "RPM": 88,
- "Gravity": 0.006,
+ "Gravity": 0.0368,
  "ProjectileLife": 140,
+ "Drag": 0.0012,
  "GunType": "DirectLauncher",
  "AmmoType": [
   {
@@ -26,10 +27,12 @@
     "Damage": 680,
     "ExplosionDamage": 110,
     "ExplosionRadius": 7,
-    "Velocity": 5.5,
-    "Gravity": 0.006,
+    "Velocity": 12.5,
+    "Gravity": 0.0368,
     "EmptyReloadTime": 73,
-    "Icon": "squadmc:textures/item/fcl_rpg28_icon.png"
+    "Icon": "squadmc:textures/item/fcl_rpg28_icon.png",
+    "Drag": 0.0012,
+    "ArmDistance": 20
    }
   }
  ],
@@ -47,5 +50,6 @@
   "Fire3P": "squadmc:fcl_rpg28",
   "Fire3PFar": "superbwarfare:rpg_far",
   "Fire3PVeryFar": "superbwarfare:rpg_veryfar"
- }
+ },
+ "ArmDistance": 20
 }

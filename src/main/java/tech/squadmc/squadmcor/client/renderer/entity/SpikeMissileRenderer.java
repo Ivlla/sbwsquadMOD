@@ -11,8 +11,11 @@ import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 import tech.squadmc.squadmcor.entity.projectile.SpikeMissileEntity;
 import tech.squadmc.squadmcor.squadmc;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import software.bernie.geckolib.cache.object.BakedGeoModel;
 
 public final class SpikeMissileRenderer extends GeoEntityRenderer<SpikeMissileEntity> {
+
     public SpikeMissileRenderer(EntityRendererProvider.Context context) {
         super(context, new Model());
     }
@@ -21,6 +24,16 @@ public final class SpikeMissileRenderer extends GeoEntityRenderer<SpikeMissileEn
     public RenderType getRenderType(SpikeMissileEntity entity, ResourceLocation texture,
                                    MultiBufferSource buffers, float partialTick) {
         return RenderType.entityCutoutNoCull(texture);
+    }
+
+    @Override
+    public void preRender(PoseStack poseStack, SpikeMissileEntity entity, BakedGeoModel model,
+                          MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender,
+                          float partialTick, int packedLight, int packedOverlay,
+                          float red, float green, float blue, float alpha) {
+        super.preRender(poseStack, entity, model, bufferSource, buffer, isReRender,
+                partialTick, packedLight, packedOverlay, red, green, blue, alpha);
+        model.getBone("flare").ifPresent(bone -> bone.setHidden(true));
     }
 
     @Override

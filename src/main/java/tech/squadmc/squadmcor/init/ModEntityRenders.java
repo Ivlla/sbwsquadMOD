@@ -24,9 +24,6 @@ public class ModEntityRenders {
         event.registerEntityRenderer(ModEntities.VEHICLE_WRECK.get(), tech.squadmc.squadmcor.client.wreck.VehicleWreckRenderer::new);
         event.registerEntityRenderer(ModEntities.VEHICLE_WRECK_PART.get(), net.minecraft.client.renderer.entity.NoopRenderer::new);
         event.registerEntityRenderer(ModEntities.KONKURS_DUMMY.get(), NoopRenderer::new);
-
-        // Облако объёмного дыма рисуется stage-проходом (VehicleSmokeStageRenderer) —
-        // штатный рендерер сущности не нужен, ровно как у TDA/KONKURS/TOW.
         event.registerEntityRenderer(ModEntities.VEHICLE_SMOKE_CLOUD.get(), NoopRenderer::new);
         event.registerEntityRenderer(ModEntities.LAV25.get(), lav25Renderer::new);
         event.registerEntityRenderer(ModEntities.BRADLEY.get(), bradleyRenderer::new);
@@ -68,6 +65,7 @@ public class ModEntityRenders {
         event.registerEntityRenderer(ModEntities.PUMA.get(), PumaRenderer::new);
         event.registerEntityRenderer(ModEntities.T64.get(), T64Renderer::new);
         event.registerEntityRenderer(ModEntities.FENEK.get(), FenekRender::new);
+        event.registerEntityRenderer(ModEntities.MARDER.get(), marder1a3Render::new);
     }
 
 }

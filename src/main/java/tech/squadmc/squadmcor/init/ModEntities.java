@@ -259,6 +259,12 @@ public class ModEntities {
                     .clientTrackingRange(360)
                     .build("puma"));
 
+    public static final RegistryObject<EntityType<marder1a3Entity>> MARDER =
+            ENTITY_TYPES.register("marder1a3", () -> EntityType.Builder.<marder1a3Entity>of(marder1a3Entity::new, MobCategory.MISC)
+                    .sized(2.8F, 2.8F)
+                    .clientTrackingRange(360)
+                    .build("marder1a3"));
+
     public static final RegistryObject<EntityType<mtlbEntity>> MTLB =
             ENTITY_TYPES.register("mtlb", () -> EntityType.Builder.<mtlbEntity>of(mtlbEntity::new, MobCategory.MISC)
                     .sized(2.8F, 2.8F)

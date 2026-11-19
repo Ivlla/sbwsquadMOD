@@ -8,15 +8,16 @@
  "ExplosionRadius": 5,
  "ZoomReload": false,
  "Headshot": 0,
- "Velocity": 5.5,
+ "Velocity": 15.5,
  "Magazine": 1,
  "Weight": 12,
  "DrawTime": 16,
  "ZoomTime": 9,
  "EmptyReloadTime": 74,
  "RPM": 88,
- "Gravity": 0.006,
+ "Gravity": 0.0245,
  "ProjectileLife": 140,
+ "Drag": 0.0008,
  "GunType": "DirectLauncher",
  "AmmoType": [
   {
@@ -26,10 +27,12 @@
     "Damage": 620,
     "ExplosionDamage": 70,
     "ExplosionRadius": 5,
-    "Velocity": 5.5,
-    "Gravity": 0.006,
+    "Velocity": 15.5,
+    "Gravity": 0.0245,
     "EmptyReloadTime": 74,
-    "Icon": "squadmc:textures/item/fcl_pf98_icon.png"
+    "Icon": "squadmc:textures/item/fcl_pf98_icon.png",
+    "Drag": 0.0008,
+    "ArmDistance": 20
    }
   },
   {
@@ -39,10 +42,12 @@
     "Damage": 300,
     "ExplosionDamage": 170,
     "ExplosionRadius": 8,
-    "Velocity": 5.5,
-    "Gravity": 0.008,
+    "Velocity": 11.0,
+    "Gravity": 0.0245,
     "EmptyReloadTime": 74,
-    "Icon": "squadmc:textures/item/fcl_pf98_icon.png"
+    "Icon": "squadmc:textures/item/fcl_pf98_icon.png",
+    "Drag": 0.001,
+    "ArmDistance": 20
    }
   },
   {
@@ -52,10 +57,12 @@
     "Damage": 120,
     "ExplosionDamage": 200,
     "ExplosionRadius": 12,
-    "Velocity": 5.5,
-    "Gravity": 0.008,
+    "Velocity": 11.0,
+    "Gravity": 0.0245,
     "EmptyReloadTime": 74,
-    "Icon": "squadmc:textures/item/fcl_pf98_icon.png"
+    "Icon": "squadmc:textures/item/fcl_pf98_icon.png",
+    "Drag": 0.001,
+    "ArmDistance": 20
    }
   }
  ],
@@ -73,5 +80,6 @@
   "Fire3P": "squadmc:fcl_pf98",
   "Fire3PFar": "superbwarfare:rpg_far",
   "Fire3PVeryFar": "superbwarfare:rpg_veryfar"
- }
+ },
+ "ArmDistance": 20
 }

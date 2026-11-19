@@ -8,15 +8,16 @@
  "ExplosionRadius": 5,
  "ZoomReload": false,
  "Headshot": 0,
- "Velocity": 4.67,
+ "Velocity": 14.5,
  "Magazine": 1,
  "Weight": 7,
  "DrawTime": 16,
  "ZoomTime": 9,
  "EmptyReloadTime": 63,
  "RPM": 88,
- "Gravity": 0.018,
+ "Gravity": 0.0245,
  "ProjectileLife": 140,
+ "Drag": 0.001,
  "GunType": "DirectLauncher",
  "AmmoType": [
   {
@@ -26,10 +27,12 @@
     "Damage": 430,
     "ExplosionDamage": 50,
     "ExplosionRadius": 5,
-    "Velocity": 4.67,
-    "Gravity": 0.018,
+    "Velocity": 14.5,
+    "Gravity": 0.0245,
     "EmptyReloadTime": 63,
-    "Icon": "squadmc:textures/item/fcl_at4_icon.png"
+    "Icon": "squadmc:textures/item/fcl_at4_icon.png",
+    "Drag": 0.001,
+    "ArmDistance": 15
    }
   }
  ],
@@ -47,5 +50,6 @@
   "Fire3P": "squadmc:fcl_at4",
   "Fire3PFar": "superbwarfare:rpg_far",
   "Fire3PVeryFar": "superbwarfare:rpg_veryfar"
- }
+ },
+ "ArmDistance": 15
 }

@@ -1,0 +1,97 @@
+{
+ "at4": {
+  "Length": 8,
+  "Width": 2.5,
+  "Damage": 22
+ },
+ "fcl_carlgustaf": {
+  "Length": 14,
+  "Width": 3.5,
+  "Damage": 38
+ },
+ "fcl_carlgustaf_scope": {
+  "Length": 14,
+  "Width": 3.5,
+  "Damage": 38
+ },
+ "fcl_carlgustafm4": {
+  "Length": 14,
+  "Width": 3.5,
+  "Damage": 38
+ },
+ "fcl_carlgustafm4_scope": {
+  "Length": 14,
+  "Width": 3.5,
+  "Damage": 38
+ },
+ "fcl_dzj08": {
+  "Length": 3,
+  "Width": 1.5,
+  "Damage": 10
+ },
+ "fcl_m72": {
+  "Length": 8,
+  "Width": 2.5,
+  "Damage": 19
+ },
+ "fcl_panzerfaust3": {
+  "Length": 12,
+  "Width": 3,
+  "Damage": 32
+ },
+ "fcl_pf98": {
+  "Length": 12,
+  "Width": 3,
+  "Damage": 32
+ },
+ "fcl_rpg26": {
+  "Length": 8,
+  "Width": 2.5,
+  "Damage": 22
+ },
+ "fcl_rpg28": {
+  "Length": 14,
+  "Width": 4,
+  "Damage": 40
+ },
+ "fcl_rpg29": {
+  "Length": 12,
+  "Width": 3.5,
+  "Damage": 35
+ },
+ "fcl_rpg29_scope": {
+  "Length": 12,
+  "Width": 3.5,
+  "Damage": 35
+ },
+ "fcl_rpg29m": {
+  "Length": 12,
+  "Width": 3.5,
+  "Damage": 35
+ },
+ "fcl_rpg29m_scope": {
+  "Length": 12,
+  "Width": 3.5,
+  "Damage": 35
+ },
+ "fcl_rpg7v2": {
+  "Length": 10,
+  "Width": 3,
+  "Damage": 29
+ },
+ "fcl_rpg7v2_scope": {
+  "Length": 10,
+  "Width": 3,
+  "Damage": 29
+ },
+ "fcl_smaw": {
+  "Length": 10,
+  "Width": 3,
+  "Damage": 29
+ },
+ "fcl_smaw_scope": {
+  "Length": 10,
+  "Width": 3,
+  "Damage": 29
+ }
+}
