@@ -14,6 +14,7 @@ import net.minecraftforge.client.event.RenderGuiEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tech.squadmc.squadmcor.entity.DingoEntity;
+import tech.squadmc.squadmcor.entity.DingoArmedEntity;
 import tech.squadmc.squadmcor.squadmc;
 
 @Mod.EventBusSubscriber(modid = squadmc.MODID, value = Dist.CLIENT)
@@ -59,7 +60,7 @@ public class DingoOverlay {
                 // [1] Р’РѕРґРёС‚РµР»СЊ
                 guiGraphics.blit(TRIPLEX_TEXTURE, 0, 0, 0, 0, screenWidth, screenHeight, screenWidth, screenHeight);
                 drawDriverHud(guiGraphics, mc, dingo, screenWidth, screenHeight);
-            } else if (seatIndex == 1) {
+            } else if (seatIndex == 1 && dingo instanceof DingoArmedEntity) {
                 // [2] РЎС‚СЂРµР»РѕРє (РџСѓР»РµРјРµС‚РЅР°СЏ С‚СѓСЂРµР»СЊ)
                 guiGraphics.blit(RWS_FRAME, 0, 0, 0, 0, screenWidth, screenHeight, screenWidth, screenHeight);
                 guiGraphics.blit(RWS_DIGITAL, 0, 0, 0, 0, screenWidth, screenHeight, screenWidth, screenHeight);
@@ -76,23 +77,7 @@ public class DingoOverlay {
                 guiGraphics.blit(RWS_RETICLE, x, y, 0, 0, scopeWidth, scopeHeight, scopeWidth, scopeHeight);
 
                 drawGunnerHud(guiGraphics, mc, player, screenWidth, screenHeight);
-            } else if (seatIndex == 2) {
-                // [3] РљРѕРјР°РЅРґРёСЂ (РћР±Р·РѕСЂРЅС‹Р№ РїРµСЂРёСЃРєРѕРї / РјР°С‡С‚Р°)
-                guiGraphics.blit(RWS_FRAME, 0, 0, 0, 0, screenWidth, screenHeight, screenWidth, screenHeight);
-                guiGraphics.blit(RWS_DIGITAL, 0, 0, 0, 0, screenWidth, screenHeight, screenWidth, screenHeight);
 
-                float aspectRatio = 16.0F / 9.0F;
-                int scopeHeight = screenHeight;
-                int scopeWidth = (int) (scopeHeight * aspectRatio);
-                if (scopeWidth > screenWidth) {
-                    scopeWidth = screenWidth;
-                    scopeHeight = (int) (scopeWidth / aspectRatio);
-                }
-                int x = (screenWidth - scopeWidth) / 2;
-                int y = (screenHeight - scopeHeight) / 2;
-
-                guiGraphics.blit(RWS_RETICLE, x, y, 0, 0, scopeWidth, scopeHeight, scopeWidth, scopeHeight);
-                drawCommanderHud(guiGraphics, mc, player, screenWidth, screenHeight);
             }
 
             RenderSystem.disableBlend();
