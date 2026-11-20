@@ -11,7 +11,7 @@
         2.6563
       ],
       "Position": [
-        0.0,
+        0,
         1.2188,
         -0.3437
       ],
@@ -24,7 +24,7 @@
         0.6563
       ],
       "Position": [
-        0.0,
+        0,
         1.1563,
         1.6562
       ],
@@ -34,12 +34,12 @@
       "Size": [
         1.0625,
         0.9688,
-        2.0
+        2
       ],
       "Position": [
-        0.0,
+        0,
         1.4688,
-        -1.0
+        -1
       ],
       "Part": "Body"
     },
@@ -213,7 +213,7 @@
       "RecoilTime": 16,
       "EmptyReloadTime": 231,
       "Magazine": 250,
-      "RecoilForce": 0.05,
+      "RecoilForce": 0.02,
       "HeatPerShoot": 1,
       "NaturalCooldown": 0.5,
       "ShootAnimationTime": 1,
