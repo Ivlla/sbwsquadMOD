@@ -3,22 +3,22 @@
   "MaxHealth": 350,
   "MaxEnergy": 5000000,
   "TurretPos": [
-    -0.004,
-    2.4,
-    0.525
+    -0.0191,
+    2.2494,
+    0.0645
   ],
   "TurretTurnSpeed": [
-    12,
-    11.5
+    4.5,
+    4.5
   ],
   "TurretPitchRange": [
-    -3,
-    45
+    -15,
+    40
   ],
   "BarrelPos": [
-    0.099,
-    0.444,
-    -0.006
+    0.0015,
+    0.2348,
+    0.8757
   ],
   "TurretControllerIndex": 1,
   "OBB": [
@@ -130,41 +130,27 @@
       }
     },
     {
-      "BanHand": true,
       "IsEnclosed": false,
-      "Transform": "Vehicle",
-      "Position": [
-        0,
-        1.632,
-        -0.205
-      ],
-      "CanRotateBody": true,
       "CameraPos": {
+        "UseFixedCameraPos": true,
+        "Transform": "Barrel",
         "Position": [
           0,
-          0,
-          0
+          0.65,
+          -0.8891
         ],
-        "Transform": "Turret",
-        "Direction": "Barrel",
-        "UseFixedCameraPos": false,
-        "ZoomPosition": [
-          0,
-          0.7,
-          0.4
-        ]
+        "Direction": "Barrel"
       },
-      "MinPitch": -20,
-      "MaxPitch": 70,
-      "MinYaw": -60,
-      "MaxYaw": 60,
-      "Sensitivity": [
-        0.6,
-        0.95,
-        1.25
+      "Transform": "Turret",
+      "Position": [
+        0,
+        -1,
+        0
       ],
+      "MinPitch": -15,
+      "MaxPitch": 40,
       "Weapons": [
-        "Cannon"
+        "PassengerMachineGun"
       ]
     },
     {
@@ -237,26 +223,41 @@
     }
   ],
   "Weapons": {
-    "Cannon": {
+    "PassengerMachineGun": {
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
+      "Spread": 0.25,
+      "Crosshair": "@Empty",
+      "CrosshairColor": "0x00ff66",
       "Projectile": "superbwarfare:projectile",
-      "DefaultZoom": 2,
-      "RPM": 450,
-      "Magazine": 120,
-      "EmptyReloadTime": 100,
-      "Velocity": 10,
-      "Gravity": 0.05,
-      "Damage": 18,
-      "HeatPerShoot": 6,
-      "NaturalCooldown": 1,
-      "RecoilTime": 31,
-      "RecoilForce": 1.62,
-      "ShootAnimationTime": 3,
-      "Spread": 0.6,
-      "Crosshair": "@VehicleCommonGun",
-      "CrosshairColor": "0xFFC700",
-      "Name": "weapon.squadmc.m2hb",
+      "DefaultZoom": 3,
+      "RPM": 500,
+      "Damage": 14.8,
+      "BypassesArmor": 2,
+      "Velocity": 25,
+      "RecoilTime": 32,
+      "EmptyReloadTime": 228,
+      "Magazine": 200,
+      "RecoilForce": 0.1,
+      "HeatPerShoot": 2.4,
+      "NaturalCooldown": 0.5,
+      "ShootAnimationTime": 1,
+      "AmmoType": "@HeavyAmmo",
+      "ShootPos": {
+        "Transform": "Barrel",
+        "Positions": [
+          [
+            -0.0174,
+            0.0758,
+            1.2198
+          ]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
+      },
+      "Name": "weapon.squadmc.m2a1_browning",
       "SoundInfo": {
         "Fire1P": "squadmc:squad.silent",
         "Fire3P": "squadmc:squad.silent",
@@ -266,23 +267,7 @@
         "VehicleReload": "squadmc:squad.weapons.common.m2_reload_1p",
         "VehicleReload3p": "squadmc:squad.weapons.common.m2_reload_3p"
       },
-      "SoundRadius": 160,
-      "AmmoType": "@HeavyAmmo",
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
-      "ShootPos": {
-        "Transform": "Barrel",
-        "Positions": [
-          [
-            -0.095,
-            0.13,
-            1.312
-          ]
-        ],
-        "Directions": [
-          "Barrel"
-        ]
-      },
-      "BypassesArmor": 0.2
+      "SoundRadius": 16
     }
   },
   "EngineType": "Track",
@@ -365,5 +350,6 @@
       1.998
     ]
   ],
-  "InertiaRotateRate": 2
+  "InertiaRotateRate": 2,
+  "PassengerRenderScale": 0.85
 }
