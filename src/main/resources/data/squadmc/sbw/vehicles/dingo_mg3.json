@@ -336,7 +336,7 @@
       ]
     ]
   },
-  "EngineSound": "superbwarfare:lav_150_engine",
+  "EngineSound": "squadmc:empty",
   "HornSound": "superbwarfare:truck_horn",
   "HudType": "@Land",
   "TerrainCompat": [

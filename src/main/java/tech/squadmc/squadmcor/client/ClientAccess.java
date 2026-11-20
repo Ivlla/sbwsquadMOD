@@ -149,6 +149,25 @@ public class ClientAccess {
         }
     }
 
+    public static void handleDingoClientTick(DingoEntity entity) {
+        DingoSoundManager.updateSounds(entity);
+
+        Minecraft mc = Minecraft.getInstance();
+        if (mc.player != null && mc.player.getVehicle() == entity) {
+            int playerSeatIndex = entity.getSeatIndex(mc.player);
+            if (playerSeatIndex == 1) { // РќР°РІРѕРґС‡РёРє
+                float shakeIntensity = 0.0F;
+
+                if (entity.getShootAnimationTimer(1, 0) > 0) {
+                    shakeIntensity = 0.20F;
+                }
+
+                if (shakeIntensity > 0) {
+                }
+            }
+        }
+    }
+
 
 
     public static void handleBmp1ClientTick(Bmp1Entity entity) {
