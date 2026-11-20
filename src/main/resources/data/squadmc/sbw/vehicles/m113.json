@@ -2,25 +2,6 @@
   "ID": "squadmc:m113",
   "MaxHealth": 350,
   "MaxEnergy": 5000000,
-  "TurretPos": [
-    -0.004,
-    2.4,
-    0.525
-  ],
-  "TurretTurnSpeed": [
-    12,
-    11.5
-  ],
-  "TurretPitchRange": [
-    -3,
-    45
-  ],
-  "BarrelPos": [
-    0.099,
-    0.444,
-    -0.006
-  ],
-  "TurretControllerIndex": 1,
   "OBB": [
     {
       "Size": [
@@ -29,7 +10,7 @@
         2.386
       ],
       "Position": [
-        0.0,
+        0,
         1.781,
         -0.713
       ]
@@ -41,7 +22,7 @@
         2.92
       ],
       "Position": [
-        0.0,
+        0,
         0.882,
         -0.138
       ]
@@ -53,7 +34,7 @@
         0.404
       ],
       "Position": [
-        0.0,
+        0,
         1.529,
         1.946
       ]
@@ -106,7 +87,7 @@
       "Position": [
         0.3,
         1,
-        2.0
+        2
       ],
       "Weapons": [
         "SmokeLauncher"
@@ -131,40 +112,27 @@
     },
     {
       "BanHand": true,
-      "IsEnclosed": false,
+      "HidePassenger": true,
+      "IsEnclosed": true,
+      "CanRotateHead": true,
       "Transform": "Vehicle",
-      "Position": [
-        0.0,
-        1.632,
-        -0.205
-      ],
-      "CanRotateBody": true,
+      "MinYaw": -180,
+      "MaxYaw": 180,
+      "MinPitch": 0,
+      "MaxPitch": 0,
       "CameraPos": {
+        "Transform": "Vehicle",
+        "UseFixedCameraPos": true,
         "Position": [
-          0.0,
-          0.0,
-          0.0
-        ],
-        "Transform": "Turret",
-        "Direction": "Barrel",
-        "UseFixedCameraPos": false,
-        "ZoomPosition": [
-          0.0,
-          0.7,
-          0.4
+          0,
+          2.304,
+          -0.16
         ]
       },
-      "MinPitch": -20,
-      "MaxPitch": 70,
-      "MinYaw": -60,
-      "MaxYaw": 60,
-      "Sensitivity": [
+      "Position": [
+        0,
         0.6,
-        0.95,
-        1.25
-      ],
-      "Weapons": [
-        "Cannon"
+        -0.16
       ]
     },
     {
@@ -237,52 +205,12 @@
     }
   ],
   "Weapons": {
-    "Cannon": {
-      "DefaultFireMode": "Auto",
-      "AvailableFireModes": "Auto",
-      "Projectile": "superbwarfare:projectile",
-      "DefaultZoom": 2,
-      "RPM": 450,
-      "Magazine": 120,
-      "EmptyReloadTime": 100,
-      "Velocity": 10,
-      "Gravity": 0.05,
-      "Damage": 18,
-      "HeatPerShoot": 6,
-      "NaturalCooldown": 1,
-      "RecoilTime": 31,
-      "RecoilForce": 1.62,
-      "ShootAnimationTime": 3,
-      "Spread": 0.6,
-      "Crosshair": "@VehicleCommonGun",
-      "CrosshairColor": "0xFFC700",
-      "Name": "weapon.squadmc.m2hb",
-      "SoundInfo": {
-        "Fire1P": "squadmc:squad.silent",
-        "Fire3P": "squadmc:squad.silent",
-        "Fire3PFar": "squadmc:squad.silent",
-        "Fire3PVeryFar": "squadmc:squad.silent",
-        "Change": "squadmc:squad.weapons.common.switch_nsv",
-        "VehicleReload": "squadmc:squad.weapons.common.m2_reload_1p",
-        "VehicleReload3p": "squadmc:squad.weapons.common.m2_reload_3p"
-      },
-      "SoundRadius": 160,
-      "AmmoType": "@HeavyAmmo",
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
-      "ShootPos": {
-        "Transform": "Barrel",
-        "Positions": [
-          [
-            -0.095,
-            0.13,
-            1.312
-          ]
-        ],
-        "Directions": [
-          "Barrel"
-        ]
-      },
-      "BypassesArmor": 0.2
+    "Nothing": {
+      "Name": "",
+      "Crosshair": "@Empty",
+      "RPM": 0,
+      "Magazine": 0,
+      "Damage": 0
     }
   },
   "EngineType": "Track",
