@@ -57,7 +57,7 @@ public final class LauncherDamage {
 
     private static final String[] TANKS = {"m1a2", "leopard", "t64", "t72", "t80", "sprut"};
     private static final String[] TRUCKS = {"fmtv", "kamaz", "m939", "man_hx", "ural", "grad"};
-    private static final String[] LIGHT = {"humvee", "toyota", "uaz", "fenek", "gaz_tigr", "motuo", "motorboat", "rg_33"};
+    private static final String[] LIGHT = {"humvee", "toyota", "uaz", "fenek", "gaz_tigr", "motuo", "motorboat", "rg_33", "dingo_gmg", "dingo_m2", "dingo_mg3", "dingo"};
 
     /** Hits by target (tank, APC) and side (front, side, rear). */
     private static final float[][] TANK_GUN_HITS = {{4, 3, 2}, {2, 1, 1}};
