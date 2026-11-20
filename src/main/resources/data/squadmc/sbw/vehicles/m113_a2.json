@@ -259,15 +259,15 @@
       },
       "Name": "weapon.squadmc.m2a1_browning",
       "SoundInfo": {
-        "Fire1P": "squadmc:squad.silent",
-        "Fire3P": "squadmc:squad.silent",
-        "Fire3PFar": "squadmc:squad.silent",
-        "Fire3PVeryFar": "squadmc:squad.silent",
+        "Fire1P": "superbwarfare:m_2_hb_fire_1p",
+        "Fire3P": "superbwarfare:m_2_hb_fire_3p",
+        "Fire3PFar": "superbwarfare:m_2_hb_fire_3p",
+        "Fire3PVeryFar": "superbwarfare:m_2_hb_fire_3p",
         "Change": "squadmc:squad.weapons.common.switch_nsv",
         "VehicleReload": "squadmc:squad.weapons.common.m2_reload_1p",
         "VehicleReload3p": "squadmc:squad.weapons.common.m2_reload_3p"
       },
-      "SoundRadius": 16
+      "SoundRadius": 160
     }
   },
   "EngineType": "Track",
