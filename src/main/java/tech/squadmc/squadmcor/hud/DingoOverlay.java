@@ -57,11 +57,11 @@ public class DingoOverlay {
             RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
 
             if (seatIndex == 0) {
-                // [1] Р’РѕРґРёС‚РµР»СЊ
+                // Driver seat
                 guiGraphics.blit(TRIPLEX_TEXTURE, 0, 0, 0, 0, screenWidth, screenHeight, screenWidth, screenHeight);
                 drawDriverHud(guiGraphics, mc, dingo, screenWidth, screenHeight);
             } else if (seatIndex == 1 && dingo instanceof DingoArmedEntity) {
-                // [2] РЎС‚СЂРµР»РѕРє (РџСѓР»РµРјРµС‚РЅР°СЏ С‚СѓСЂРµР»СЊ)
+                // Gunner seat
                 guiGraphics.blit(RWS_FRAME, 0, 0, 0, 0, screenWidth, screenHeight, screenWidth, screenHeight);
                 guiGraphics.blit(RWS_DIGITAL, 0, 0, 0, 0, screenWidth, screenHeight, screenWidth, screenHeight);
 
@@ -100,13 +100,6 @@ public class DingoOverlay {
         int color = 0x66FF00;
         double distance = calculateDistance(player);
         String distText = distance > 500 ? "LGR: >500m" : String.format("LGR: %.0fm", distance);
-        guiGraphics.drawCenteredString(mc.font, distText, width / 2, height / 2 + 50, color);
-    }
-
-    private static void drawCommanderHud(GuiGraphics guiGraphics, Minecraft mc, Player player, int width, int height) {
-        int color = 0x00FFCC;
-        double distance = calculateDistance(player);
-        String distText = distance > 1000 ? "LRF: >1000m" : String.format("LRF: %.0fm", distance);
         guiGraphics.drawCenteredString(mc.font, distText, width / 2, height / 2 + 50, color);
     }
 
