@@ -5,6 +5,18 @@
       "Name": "Base",
       "Texture": "squadmc:textures/entity/dingo_3.png",
       "Priority": 1
+    },
+    {
+      "Id": "dingo_2",
+      "Name": "Dingo 2",
+      "Texture": "squadmc:textures/entity/dingo_2.png",
+      "Priority": 2
+    },
+    {
+      "Id": "dingo_3",
+      "Name": "Dingo 3",
+      "Texture": "squadmc:textures/entity/dingo_3.png",
+      "Priority": 3
     }
   ]
 }
