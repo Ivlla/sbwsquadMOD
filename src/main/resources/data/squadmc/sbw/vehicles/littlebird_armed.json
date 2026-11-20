@@ -74,7 +74,7 @@
         "UseFixedCameraPos": true,
         "Position": [
           -0.378609,
-          2.0,
+          2,
           -0.122685
         ],
         "UseAircraftCamera": true,
@@ -107,7 +107,7 @@
         "UseFixedCameraPos": true,
         "Position": [
           0.378609,
-          2.0,
+          2,
           -0.122685
         ]
       },
@@ -140,7 +140,7 @@
       "RPM": 400,
       "Damage": 48.5,
       "ExplosionDamage": 60.5,
-      "ExplosionRadius": 15.0,
+      "ExplosionRadius": 15,
       "Gravity": 0.02,
       "Velocity": 16,
       "SoundInfo": {
@@ -217,7 +217,12 @@
         ]
       },
       "Crosshair": "@Empty",
-      "SoundRadius": 160
+      "SoundRadius": 160,
+      "ShootShake": [
+        4,
+        5,
+        30
+      ]
     }
   },
   "EngineType": "Helicopter",
@@ -240,7 +245,7 @@
   ],
   "UpStep": 1.1,
   "RotateOffsetHeight": 1.139575,
-  "Mass": 1.0,
+  "Mass": 1,
   "AllowFreeCam": true,
   "HasDecoy": true,
   "SmokeDecoy": false,
