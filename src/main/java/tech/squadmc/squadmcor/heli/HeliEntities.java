@@ -47,6 +47,7 @@ import tech.squadmc.squadmcor.heli.entity.vehicle.Bmp.Bmp2.BMP2MDEntity;
 import tech.squadmc.squadmcor.heli.entity.vehicle.M113.M113Entity;
 import tech.squadmc.squadmcor.heli.entity.vehicle.M113.M113A2Entity;
 import tech.squadmc.squadmcor.entity.DingoEntity;
+import tech.squadmc.squadmcor.entity.DingoArmedEntity;
 
 /** Вертолёты и ракеты Hellfire из Frontline Combat Pack. */
 public final class HeliEntities {
@@ -117,12 +118,9 @@ public final class HeliEntities {
             () -> EntityType.Builder.of(M113A2Entity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,2f).build("m113_a2"));
     public static final RegistryObject<EntityType<DingoEntity>> DINGO = ModEntities.ENTITY_TYPES.register("dingo",
             () -> EntityType.Builder.of(DingoEntity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(2f,2f).build("dingo"));
-    public static final RegistryObject<EntityType<DingoEntity>> DINGO_GMG = ModEntities.ENTITY_TYPES.register("dingo_gmg",
-            () -> EntityType.Builder.of(DingoEntity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(2f,2f).build("dingo_gmg"));
-    public static final RegistryObject<EntityType<DingoEntity>> DINGO_M2 = ModEntities.ENTITY_TYPES.register("dingo_m2",
-            () -> EntityType.Builder.of(DingoEntity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(2f,2f).build("dingo_m2"));
-    public static final RegistryObject<EntityType<DingoEntity>> DINGO_MG3 = ModEntities.ENTITY_TYPES.register("dingo_mg3",
-            () -> EntityType.Builder.of(DingoEntity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(2f,2f).build("dingo_mg3"));
+    public static final RegistryObject<EntityType<DingoArmedEntity>> DINGO_GMG = ModEntities.ENTITY_TYPES.register("dingo_gmg", () -> EntityType.Builder.of(DingoArmedEntity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(2f,2f).build("dingo_gmg"));
+    public static final RegistryObject<EntityType<DingoArmedEntity>> DINGO_M2 = ModEntities.ENTITY_TYPES.register("dingo_m2", () -> EntityType.Builder.of(DingoArmedEntity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(2f,2f).build("dingo_m2"));
+    public static final RegistryObject<EntityType<DingoArmedEntity>> DINGO_MG3 = ModEntities.ENTITY_TYPES.register("dingo_mg3", () -> EntityType.Builder.of(DingoArmedEntity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(2f,2f).build("dingo_mg3"));
     public static final RegistryObject<EntityType<RG33Entity>> RG_33 = ModEntities.ENTITY_TYPES.register("rg_33",
             () -> EntityType.Builder.of(RG33Entity::new, MobCategory.MISC).setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(3f,2f).build("rg_33"));
     public static final RegistryObject<EntityType<M939Entity>> M939 = ModEntities.ENTITY_TYPES.register("m939",
