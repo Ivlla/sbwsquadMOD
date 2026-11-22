@@ -131,7 +131,7 @@ public class Bmp1Entity extends SquadBaseVehicleEntity {
         float f2 = (float)Math.cos(f);
 
         float[] angles = new float[]{-25.0F, -8.0F, 8.0F, 25.0F};
-        float speed = 0.55F;
+        float speed = (float) original.getDeltaMovement().length();
         float inaccuracy = 0.6F;
 
         float yaw0 = baseAngle + angles[0];

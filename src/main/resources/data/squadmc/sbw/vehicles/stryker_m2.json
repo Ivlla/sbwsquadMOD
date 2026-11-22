@@ -400,7 +400,7 @@
         "Fire1P": "squadmc:btr82_smoke_launch",
         "Fire3P": "squadmc:btr82_smoke_launch"
       },
-      "SoundRadius": 160,
+      "SoundRadius": 4,
       "ShootPos": {
         "Transform": "Turret",
         "Positions": [
@@ -413,7 +413,8 @@
         "Directions": [
           "Turret"
         ]
-      }
+      },
+      "Velocity": 0.325
     },
     "SmokeLauncher": {
       "Icon": "squadmc:textures/overlay/vehicle/weapon/icons/smoke_generator.png",
@@ -442,7 +443,8 @@
           "Vehicle"
         ]
       },
-      "SoundRadius": 160
+      "SoundRadius": 4,
+      "Velocity": 0.325
     },
     "Coax": {
       "DefaultFireMode": "Auto",

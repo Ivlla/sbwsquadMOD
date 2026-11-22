@@ -398,11 +398,9 @@
       "SoundInfo": {
         "Fire1P": "superbwarfare:mg_17_fire_1p",
         "Fire3P": "superbwarfare:mg_17_fire_3p",
-        "Fire3PFar": "superbwarfare:mg_17_far",
-        "Fire3PVeryFar": "superbwarfare:mg_17_veryfar",
         "Change": "superbwarfare:into_cannon"
       },
-      "SoundRadius": 160
+      "SoundRadius": 4
     },
     "M60Right": {
       "Icon": "squadmc:textures/screens/vehicle_weapon/7_62mm.png",
@@ -445,11 +443,9 @@
       "SoundInfo": {
         "Fire1P": "superbwarfare:mg_17_fire_1p",
         "Fire3P": "superbwarfare:mg_17_fire_3p",
-        "Fire3PFar": "superbwarfare:mg_17_far",
-        "Fire3PVeryFar": "superbwarfare:mg_17_veryfar",
         "Change": "superbwarfare:into_cannon"
       },
-      "SoundRadius": 160
+      "SoundRadius": 4
     },
     "Rocket": {
       "AmmoType": "superbwarfare:small_rocket",

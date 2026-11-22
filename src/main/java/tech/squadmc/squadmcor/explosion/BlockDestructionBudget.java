@@ -4,9 +4,9 @@ package tech.squadmc.squadmcor.explosion;
 public final class BlockDestructionBudget {
     private int remainder;
 
-    public int take(int eligible) {
+    public int take(int eligible, int divisor) {
         int total = eligible + remainder;
-        remainder = total % 2;
-        return total / 2;
+        remainder = total % divisor;
+        return total / divisor;
     }
 }

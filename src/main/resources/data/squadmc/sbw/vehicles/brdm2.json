@@ -213,7 +213,7 @@
         "Fire1P": "squadmc:btr82_smoke_launch",
         "Fire3P": "squadmc:btr82_smoke_launch"
       },
-      "SoundRadius": 160,
+      "SoundRadius": 4,
       "ShootPos": {
         "Transform": "Turret",
         "Positions": [
@@ -226,7 +226,8 @@
         "Directions": [
           "Turret"
         ]
-      }
+      },
+      "Velocity": 0.3
     },
     "Cannon": {
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_20mm.png",
@@ -310,11 +311,9 @@
       "SoundInfo": {
         "Fire1P": "squadmc:pkt_coax",
         "Fire3P": "superbwarfare:m_60_fire_3p",
-        "Fire3PFar": "superbwarfare:m_60_far",
-        "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
         "Change": "superbwarfare:into_cannon"
       },
-      "SoundRadius": 160
+      "SoundRadius": 4
     }
   },
   "EngineType": "Wheel",

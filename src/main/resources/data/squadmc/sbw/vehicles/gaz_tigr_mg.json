@@ -263,7 +263,7 @@
         "Fire3P": "superbwarfare:m_60_fire_3p",
         "VehicleReload": "squadmc:m2_reload"
       },
-      "SoundRadius": 160,
+      "SoundRadius": 4,
       "AmmoType": "@RifleAmmo",
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
       "ShootPos": {

@@ -21,7 +21,6 @@ import javax.annotation.Nullable;
 public abstract class Bmp2mVehicleBase extends SquadBaseVehicleEntity {
 
     private static final float[] GRENADE_ANGLES = {-35F, -12F, 12F, 35F};
-    private static final float GRENADE_SPEED = 0.6F;
     private static final float GRENADE_INACCURACY = 0.5F;
     private static final float GRENADE_PITCH = -10F;
 
@@ -63,6 +62,7 @@ public abstract class Bmp2mVehicleBase extends SquadBaseVehicleEntity {
 
     @Override
     public void spawnAdditionalGrenades(TDADummyProjectile original) {
+        float speed = (float) original.getDeltaMovement().length();
         float baseAngle = getYRot() - getTurretYRot();
         float pitch = -GRENADE_PITCH * (float) Math.PI / 180F;
         double vy = Math.sin(pitch), horizontal = Math.cos(pitch);
@@ -70,14 +70,14 @@ public abstract class Bmp2mVehicleBase extends SquadBaseVehicleEntity {
             float yaw = -(baseAngle + GRENADE_ANGLES[i]) * (float) Math.PI / 180F;
             double vx = Math.sin(yaw) * horizontal, vz = Math.cos(yaw) * horizontal;
             if (i == 0) {
-                original.shoot(vx, vy, vz, GRENADE_SPEED, GRENADE_INACCURACY);
+                original.shoot(vx, vy, vz, speed, GRENADE_INACCURACY);
                 continue;
             }
             TDADummyProjectile grenade = new TDADummyProjectile(ModEntities.TDA_DUMMY.get(), level());
             grenade.setAdditional(true);
             grenade.setPos(original.getX(), original.getY(), original.getZ());
             grenade.setOwner(original.getOwner());
-            grenade.shoot(vx, vy, vz, GRENADE_SPEED, GRENADE_INACCURACY);
+            grenade.shoot(vx, vy, vz, speed, GRENADE_INACCURACY);
             level().addFreshEntity(grenade);
         }
     }

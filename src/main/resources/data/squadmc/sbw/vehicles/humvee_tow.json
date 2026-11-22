@@ -214,9 +214,9 @@
       "Projectile": "squadmc:tow_dummy",
       "Magazine": 1,
       "EmptyReloadTime": 300,
-      "Damage": 780,
-      "ExplosionDamage": 80,
-      "ExplosionRadius": 6,
+      "Damage": 1000,
+      "ExplosionDamage": 150,
+      "ExplosionRadius": 5,
       "Velocity": 3,
       "ShootPos": {
         "Transform": "Barrel",
@@ -241,7 +241,8 @@
         "Change": "superbwarfare:into_missile"
       },
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_9m113.png",
-      "SoundRadius": 160
+      "SoundRadius": 160,
+      "ProjectileLife": 32
     }
   },
   "UpStep": 2.2,

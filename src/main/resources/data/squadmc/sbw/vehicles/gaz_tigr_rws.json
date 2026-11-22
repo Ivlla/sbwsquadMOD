@@ -265,11 +265,9 @@
       "Name": "weapon.squadmc.12_7mm",
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",
-        "Fire3P": "superbwarfare:m_2_hb_fire_3p",
-        "Fire3PFar": "superbwarfare:m_2_hb_far",
-        "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar"
+        "Fire3P": "superbwarfare:m_2_hb_fire_3p"
       },
-      "SoundRadius": 160
+      "SoundRadius": 4
     }
   },
   "EngineType": "Wheel",

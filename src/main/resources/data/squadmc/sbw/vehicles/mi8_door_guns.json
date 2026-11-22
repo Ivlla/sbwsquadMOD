@@ -512,7 +512,7 @@
         "VehicleReload": "squadmc:squad.weapons.common.pkp_doorgun_reload_1p",
         "VehicleReload3p": "squadmc:squad.weapons.common.pkp_doorgun_reload_3p"
       },
-      "SoundRadius": 160
+      "SoundRadius": 4
     },
     "PKMLeft": {
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
@@ -561,7 +561,7 @@
         "VehicleReload": "squadmc:squad.weapons.common.pkp_doorgun_reload_1p",
         "VehicleReload3p": "squadmc:squad.weapons.common.pkp_doorgun_reload_3p"
       },
-      "SoundRadius": 160
+      "SoundRadius": 4
     }
   },
   "TurretPos": [
