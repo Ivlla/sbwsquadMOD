@@ -6,13 +6,13 @@ import net.minecraft.util.Mth;
 import tech.squadmc.squadmcor.entity.DingoEntity;
 import tech.squadmc.squadmcor.squadmc;
 
-public class DingoModel extends VehicleModel<DingoEntity> {
+public class DingoModel<T extends DingoEntity> extends VehicleModel<T> {
     private final String geometry;
     public DingoModel(String geometry) { this.geometry = geometry; }
-    @Override public ResourceLocation getModelResource(DingoEntity entity) { return new ResourceLocation(squadmc.MODID, "geo/" + geometry + ".geo.json"); }
-    @Override public ResourceLocation getTextureResource(DingoEntity entity) { return new ResourceLocation(squadmc.MODID, "textures/entity/dingo_1.png"); }
-    @Override public ResourceLocation getAnimationResource(DingoEntity entity) { return new ResourceLocation(squadmc.MODID, "animations/btr82.animation.json"); }
-    @Override public VehicleModel.@org.jetbrains.annotations.Nullable TransformContext<DingoEntity> collectTransform(String boneName) {
+    @Override public ResourceLocation getModelResource(T entity) { return new ResourceLocation(squadmc.MODID, "geo/" + geometry + ".geo.json"); }
+    @Override public ResourceLocation getTextureResource(T entity) { return new ResourceLocation(squadmc.MODID, "textures/entity/dingo_1.png"); }
+    @Override public ResourceLocation getAnimationResource(T entity) { return new ResourceLocation(squadmc.MODID, "animations/btr82.animation.json"); }
+    @Override public VehicleModel.@org.jetbrains.annotations.Nullable TransformContext<T> collectTransform(String boneName) {
         switch (boneName) {
             case "wheel3": case "wheel4": case "wheel2": case "wheel5":
                 return (bone, vehicle, state) -> {

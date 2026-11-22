@@ -10,12 +10,12 @@ import tech.squadmc.squadmcor.client.skin.VehicleSkinTexture;
 import tech.squadmc.squadmcor.entity.DingoEntity;
 import tech.squadmc.squadmcor.squadmc;
 
-public class DingoRenderer extends OptimizedVehicleRenderer<DingoEntity> {
+public class DingoRenderer<T extends DingoEntity> extends OptimizedVehicleRenderer<T> {
     private final ResourceLocation fallback;
     public DingoRenderer(EntityRendererProvider.Context context, String geometry, String texture) {
-        super(context, new DingoModel(geometry));
+        super(context, new DingoModel<T>(geometry));
         this.fallback = new ResourceLocation(squadmc.MODID, "textures/entity/" + texture + ".png");
     }
-    @Override public RenderType getRenderType(DingoEntity entity, ResourceLocation texture, MultiBufferSource buffers, float partialTick) { return RenderType.entityCutout(getTextureLocation(entity)); }
-    @Override public ResourceLocation getTextureLocation(DingoEntity entity) { return VehicleSkinTexture.resolve(entity, fallback); }
+    @Override public RenderType getRenderType(T entity, ResourceLocation texture, MultiBufferSource buffers, float partialTick) { return RenderType.entityCutout(getTextureLocation(entity)); }
+    @Override public ResourceLocation getTextureLocation(T entity) { return VehicleSkinTexture.resolve(entity, fallback); }
 }
