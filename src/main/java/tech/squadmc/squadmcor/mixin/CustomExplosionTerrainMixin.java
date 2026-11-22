@@ -24,6 +24,9 @@ import java.util.Random;
 @Mixin(value = CustomExplosion.class, remap = false)
 public abstract class CustomExplosionTerrainMixin {
     @Shadow @Final private Level level;
+    @Shadow public abstract double getX();
+    @Shadow public abstract double getY();
+    @Shadow public abstract double getZ();
     @Unique private static final TagKey<Block> SQUADMC$PROTECTED = TagKey.create(
             Registries.BLOCK, new ResourceLocation("squadmc", "explosion_protected"));
     @Unique private final BlockDestructionBudget squadmc$budget = new BlockDestructionBudget();
@@ -33,11 +36,13 @@ public abstract class CustomExplosionTerrainMixin {
     @ModifyVariable(method = "processBlockList", at = @At("HEAD"), argsOnly = true)
     private Collection<BlockPos> squadmc$lessTerrainDamage(Collection<BlockPos> blocks) {
         ArrayList<BlockPos> eligible = new ArrayList<>();
+        double radius = tech.squadmc.squadmcor.Balance.value("terrain", "radius", 2);
         for (BlockPos pos : blocks) {
+            if (pos.distToCenterSqr(getX(), getY(), getZ()) > radius * radius) continue;
             var state = level.getBlockState(pos);
             if (!state.isAir() && !state.is(SQUADMC$PROTECTED)) eligible.add(pos.immutable());
         }
         Collections.shuffle(eligible, squadmc$terrainRandom);
-        return new ArrayList<>(eligible.subList(0, squadmc$budget.take(eligible.size())));
+        return new ArrayList<>(eligible.subList(0, squadmc$budget.take(eligible.size(), Math.max(1, (int) tech.squadmc.squadmcor.Balance.value("terrain", "oneBlockPer", 8)))));
     }
 }

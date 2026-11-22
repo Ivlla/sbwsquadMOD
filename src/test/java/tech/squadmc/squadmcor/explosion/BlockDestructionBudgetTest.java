@@ -9,14 +9,14 @@ public final class BlockDestructionBudgetTest {
             int destroyed = 0;
             for (int batch = 0; batch < 100; batch++) {
                 eligible += batchSize;
-                destroyed += budget.take(batchSize);
-                if (destroyed != eligible / 2) throw new AssertionError("Delayed batch budget drift");
-                if (budget.take(0) != 0) throw new AssertionError("Empty batch consumed budget");
+                destroyed += budget.take(batchSize, 8);
+                if (destroyed != eligible / 8) throw new AssertionError("Delayed batch budget drift");
+                if (budget.take(0, 8) != 0) throw new AssertionError("Empty batch consumed budget");
             }
         }
         BlockDestructionBudget first = new BlockDestructionBudget();
-        first.take(1);
-        if (new BlockDestructionBudget().take(1) != 0) throw new AssertionError("Shared explosion budget");
+        first.take(1, 8);
+        if (new BlockDestructionBudget().take(1, 8) != 0) throw new AssertionError("Shared explosion budget");
         System.out.println("Block destruction budget: 3,100 batch checks passed");
     }
 }

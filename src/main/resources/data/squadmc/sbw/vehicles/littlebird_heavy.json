@@ -210,7 +210,6 @@
       "SoundInfo": {
         "Fire1P": "squadmc:squad.silent",
         "Fire3P": "squadmc:squad.silent",
-        "Fire3PFar": "squadmc:squad.silent",
         "Change": "squadmc:squad.weapons.common.switch_pkt"
       },
       "ShootPos": {
@@ -231,7 +230,7 @@
         ]
       },
       "Crosshair": "@Empty",
-      "SoundRadius": 160
+      "SoundRadius": 4
     },
     "Hellfire2": {
       "DefaultFireMode": "Semi",

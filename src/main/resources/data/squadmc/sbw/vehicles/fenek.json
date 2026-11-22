@@ -272,7 +272,7 @@
         "Fire1P": "squadmc:btr82_smoke_launch",
         "Fire3P": "squadmc:btr82_smoke_launch"
       },
-      "SoundRadius": 160,
+      "SoundRadius": 4,
       "ShootPos": {
         "Transform": "Turret",
         "Positions": [
@@ -314,7 +314,7 @@
           "Vehicle"
         ]
       },
-      "SoundRadius": 160
+      "SoundRadius": 4
     },
     "MachineGun": {
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",

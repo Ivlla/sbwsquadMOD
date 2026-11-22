@@ -71,12 +71,10 @@
       "SoundInfo": {
         "Fire1P": "superbwarfare:coax_fire_1p",
         "Fire3P": "superbwarfare:mg_17_fire_3p",
-        "Fire3PFar": "superbwarfare:mg_17_far",
-        "Fire3PVeryFar": "superbwarfare:mg_17_veryfar",
         "Change": "fcp:coax_equip",
         "VehicleReload": "fcp:m2_reload"
       },
-      "SoundRadius": 160
+      "SoundRadius": 4
     }
   },
   "TurretPos": [

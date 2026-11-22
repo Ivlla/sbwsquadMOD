@@ -1,0 +1,7 @@
+{
+  "life": 32,
+  "velocityMultiplier": 1,
+  "damage": 900,
+  "explosionDamage": 150,
+  "explosionRadius": 5
+}

@@ -200,7 +200,7 @@
         "Fire1P": "squadmc:btr82_smoke_launch",
         "Fire3P": "squadmc:btr82_smoke_launch"
       },
-      "SoundRadius": 160,
+      "SoundRadius": 4,
       "ShootPos": {
         "Transform": "Turret",
         "Positions": [
@@ -242,7 +242,7 @@
           "Vehicle"
         ]
       },
-      "SoundRadius": 160
+      "SoundRadius": 4
     },
     "Cannon": {
       "Name": "weapon.squamc.120mm_cannon_ap",
@@ -326,12 +326,10 @@
       "NaturalCooldown": 1,
       "ShootAnimationTime": 1,
       "AmmoType": "@RifleAmmo",
-      "SoundRadius": 160,
+      "SoundRadius": 4,
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",
         "Fire3P": "superbwarfare:m_2_hb_fire_3p",
-        "Fire3PFar": "superbwarfare:m_2_hb_far",
-        "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
         "Change": "superbwarfare:into_missile"
       },
       "ShootPos": {
@@ -368,12 +366,10 @@
       "NaturalCooldown": 1,
       "ShootAnimationTime": 1,
       "AmmoType": "@RifleAmmo",
-      "SoundRadius": 160,
+      "SoundRadius": 4,
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",
         "Fire3P": "superbwarfare:m_2_hb_fire_3p",
-        "Fire3PFar": "superbwarfare:m_2_hb_far",
-        "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
         "Change": "superbwarfare:into_missile"
       },
       "ShootPos": {

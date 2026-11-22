@@ -1,6 +1,7 @@
 package tech.squadmc.squadmcor.entity;
 
 import com.atsuishio.superbwarfare.entity.projectile.WireGuideMissileEntity;
+import tech.squadmc.squadmcor.Balance;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
@@ -19,9 +20,6 @@ public class TowDummyProjectile extends ThrowableItemProjectile {
     private float initialSpeed;
 
     // --- РќРђРЎРўР РћР™РљР РЈР РћРќРђ TOW ---
-    private static final float MISSILE_DAMAGE = 1000.0F;      // РЈСЂРѕРЅ РїСЂРё РїСЂСЏРјРѕРј РїРѕРїР°РґР°РЅРёРё РІ С†РµР»СЊ
-    private static final float EXPLOSION_DAMAGE = 150.0F;    // РЈСЂРѕРЅ РѕС‚ РІР·СЂС‹РІР° СЂР°РєРµС‚С‹
-    private static final float EXPLOSION_RADIUS = 5.0F;      // Р Р°РґРёСѓСЃ РІР·СЂС‹РІР° (РІ Р±Р»РѕРєР°С…)
 
     public TowDummyProjectile(EntityType<? extends TowDummyProjectile> type, Level level) {
         super(type, level);
@@ -100,13 +98,14 @@ public class TowDummyProjectile extends ThrowableItemProjectile {
                 missile.setPos(spawnPos.x, spawnPos.y, spawnPos.z);
 
                 // РџСЂРёРЅСѓРґРёС‚РµР»СЊРЅРѕ Р·Р°РґР°РµРј СѓСЂРѕРЅ Рё РІР·СЂС‹РІРЅС‹Рµ СЃРІРѕР№СЃС‚РІР° СЂР°РєРµС‚Рµ
-                missile.setDamage(MISSILE_DAMAGE);
-                missile.setExplosionDamage(EXPLOSION_DAMAGE);
-                missile.setExplosionRadius(EXPLOSION_RADIUS);
+                missile.setDamage(Balance.value("tow_prefier", "damage", 1000F));
+                missile.setExplosionDamage(Balance.value("tow_prefier", "explosionDamage", 150F));
+                missile.setExplosionRadius(Balance.value("tow_prefier", "explosionRadius", 5F));
 
+                missile.setLife(Math.max(1, (int) Balance.value("tow_prefier", "life", 32)));
                 missile.setOwner(playerOwner);
                 missile.setLauncherVehicle(vehicle.getUUID());
-                missile.shoot(lookDirection.x, lookDirection.y, lookDirection.z, this.initialSpeed, 0.0F);
+                missile.shoot(lookDirection.x, lookDirection.y, lookDirection.z, this.initialSpeed * Balance.value("tow_prefier", "velocityMultiplier", 1), 0.0F);
 
                 missile.setYRot(playerOwner.getYRot());
                 missile.setXRot(playerOwner.getXRot());
