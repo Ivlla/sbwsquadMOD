@@ -9,6 +9,7 @@
     "SmallRocketEntityMixin",
     "ParticleToolMixin",
     "ProjectileEntityMixin",
+    "ExplosiveProjectileLoadingMixin",
     "VehicleEntityRepairMixin",
     "VehicleEffectUtilsMixin",
     "RepairToolItemMixin",
