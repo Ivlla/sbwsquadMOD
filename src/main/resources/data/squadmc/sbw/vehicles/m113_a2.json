@@ -90,34 +90,24 @@
   ],
   "Seats": [
     {
-      "HidePassenger": true,
       "BanHand": true,
+      "HidePassenger": true,
+      "IsEnclosed": true,
       "Transform": "Vehicle",
-      "Position": [
-        0.3,
-        1,
-        2
-      ],
-      "Weapons": [
-        "SmokeLauncher"
-      ],
-      "MinPitch": -10,
-      "MaxPitch": 10,
-      "MinYaw": -45,
-      "MaxYaw": 45,
+      "MinYaw": -65,
+      "MaxYaw": 65,
+      "MinPitch": -15,
+      "MaxPitch": 30,
       "CameraPos": {
-        "UseFixedCameraPos": true,
         "Transform": "Vehicle",
-        "Position": [
-          1.05,
-          2.623,
-          1.489
-        ],
-        "MinPitch": -10,
-        "MaxPitch": 10,
-        "MinYaw": -45,
-        "MaxYaw": 45
-      }
+        "UseFixedCameraPos": true,
+        "Position": [0.78, 2.147, 1.42]
+      },
+      "Position": [
+        0.78,
+        0.6,
+        1.11
+      ]
     },
     {
       "IsEnclosed": false,
