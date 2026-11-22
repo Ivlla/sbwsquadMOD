@@ -17,6 +17,9 @@ public final class TerrainRules extends SimpleJsonResourceReloadListener {
     public record Settings(double radius, int oneBlockPer) {}
     public static volatile Settings current = new Settings(2, 8);
 
+    public record FlightLimits(int active, int perTick) {}
+    public static volatile FlightLimits flightLimits = new FlightLimits(48, 8);
+
     private TerrainRules() { super(new Gson(), "sbw/explosions"); }
 
     @SubscribeEvent
@@ -29,6 +32,11 @@ public final class TerrainRules extends SimpleJsonResourceReloadListener {
         int divisor = json.get("OneBlockPer").getAsBigDecimal().intValueExact();
         if (!Double.isFinite(radius) || radius < 0 || divisor < 1)
             throw new IllegalArgumentException("Invalid terrain destruction settings");
+        var limits = files.get(new ResourceLocation("squadmc", "projectile_limits")).getAsJsonObject();
+        int active = limits.get("MaxActivePerDimension").getAsBigDecimal().intValueExact();
+        int perTick = limits.get("MaxNewPerTick").getAsBigDecimal().intValueExact();
+        if (active < 1 || perTick < 1) throw new IllegalArgumentException("Projectile limits must be positive");
         current = new Settings(radius, divisor);
+        flightLimits = new FlightLimits(active, perTick);
     }
 }
