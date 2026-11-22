@@ -226,7 +226,8 @@
         "Directions": [
           "Turret"
         ]
-      }
+      },
+      "Velocity": 0.3
     },
     "Cannon": {
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_20mm.png",

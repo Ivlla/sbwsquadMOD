@@ -266,9 +266,9 @@
       "Projectile": "squadmc:tow_dummy",
       "Magazine": 2,
       "EmptyReloadTime": 300,
-      "Damage": 620,
-      "ExplosionDamage": 100,
-      "ExplosionRadius": 8,
+      "Damage": 1000,
+      "ExplosionDamage": 150,
+      "ExplosionRadius": 5,
       "Velocity": 3.2,
       "ShootPos": {
         "Transform": "Turret",
@@ -293,7 +293,8 @@
         "VehicleReloadSoundTime": 28,
         "Change": "superbwarfare:into_missile"
       },
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_9m113.png"
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_9m113.png",
+      "ProjectileLife": 32
     },
     "Cannon": {
       "DefaultFireMode": "Auto",
@@ -419,7 +420,8 @@
         "Directions": [
           "Turret"
         ]
-      }
+      },
+      "Velocity": 0.3
     },
     "SmokeLauncher": {
       "Icon": "squadmc:textures/overlay/vehicle/weapon/icons/smoke_generator.png",
@@ -448,7 +450,8 @@
           "Vehicle"
         ]
       },
-      "SoundRadius": 4
+      "SoundRadius": 4,
+      "Velocity": 0.3
     }
   },
   "TurretPos": [

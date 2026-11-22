@@ -60,7 +60,7 @@ public class leopardEntity extends SquadBaseVehicleEntity {
         float f2 = (float)Math.cos(f);
 
         float[] angles = new float[]{-45.0F, -15.0F, 15.0F, 45.0F};
-        float speed = 0.65F;
+        float speed = (float) original.getDeltaMovement().length();
         float inaccuracy = 0.4F;
 
         float yaw0 = baseAngle + angles[0];

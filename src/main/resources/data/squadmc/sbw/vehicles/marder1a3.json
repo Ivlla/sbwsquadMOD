@@ -323,7 +323,8 @@
         "Directions": [
           "Turret"
         ]
-      }
+      },
+      "Velocity": 0.3
     },
     "SmokeLauncher": {
       "Icon": "squadmc:textures/overlay/vehicle/weapon/icons/smoke_generator.png",
@@ -352,7 +353,8 @@
           "Vehicle"
         ]
       },
-      "SoundRadius": 4
+      "SoundRadius": 4,
+      "Velocity": 0.3
     },
     "Cannon": {
       "DefaultFireMode": "Auto",
@@ -463,8 +465,8 @@
       "Projectile": "squadmc:tow_dummy",
       "Magazine": 1,
       "EmptyReloadTime": 250,
-      "Damage": 174.2,
-      "ExplosionDamage": 14.8,
+      "Damage": 1000,
+      "ExplosionDamage": 150,
       "ExplosionRadius": 5,
       "Velocity": 3.5,
       "ShootPos": {
@@ -496,7 +498,8 @@
       },
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_tow.png",
       "ShootDelayTime": 30,
-      "RPM": 40
+      "RPM": 40,
+      "ProjectileLife": 32
     }
   },
   "UpStep": 1.5,

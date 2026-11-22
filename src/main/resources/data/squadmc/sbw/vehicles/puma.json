@@ -366,9 +366,9 @@
       "Projectile": "squadmc:tow_dummy",
       "Magazine": 2,
       "EmptyReloadTime": 140,
-      "Damage": 600,
-      "ExplosionDamage": 110,
-      "ExplosionRadius": 6.0,
+      "Damage": 1000,
+      "ExplosionDamage": 150,
+      "ExplosionRadius": 5,
       "Velocity": 3,
       "RecoilTime": 18,
       "RecoilForce": 0.05,
@@ -395,7 +395,8 @@
         "Change": "superbwarfare:into_missile"
       },
       "SoundRadius": 160,
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_9m113.png"
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_9m113.png",
+      "ProjectileLife": 32
     },
     "SmokeGrenades": {
       "Icon": "squadmc:textures/overlay/vehicle/weapon/icons/smoke_bombs.png",
@@ -425,7 +426,8 @@
         "Directions": [
           "Turret"
         ]
-      }
+      },
+      "Velocity": 0.3
     },
     "SmokeLauncher": {
       "Icon": "squadmc:textures/overlay/vehicle/weapon/icons/smoke_generator.png",
@@ -454,7 +456,8 @@
           "Vehicle"
         ]
       },
-      "SoundRadius": 4
+      "SoundRadius": 4,
+      "Velocity": 0.3
     }
   },
   "EngineType": "Track",

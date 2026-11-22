@@ -448,7 +448,8 @@
         "Directions": [
           "Turret"
         ]
-      }
+      },
+      "Velocity": 0.3
     }
   },
   "EngineType": "Wheel",

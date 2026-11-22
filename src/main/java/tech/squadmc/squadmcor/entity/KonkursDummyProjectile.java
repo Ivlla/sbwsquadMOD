@@ -1,7 +1,8 @@
 package tech.squadmc.squadmcor.entity;
 
 import com.atsuishio.superbwarfare.entity.projectile.WireGuideMissileEntity;
-import tech.squadmc.squadmcor.Balance;
+import com.atsuishio.superbwarfare.data.gun.GunProp;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
@@ -17,7 +18,7 @@ import tech.squadmc.squadmcor.init.ModSounds;
 public class KonkursDummyProjectile extends ThrowableItemProjectile {
     private static final int LAUNCH_DELAY = 30; // 30 С‚РёРєРѕРІ Р·Р°РґРµСЂР¶РєРё РїРµСЂРµРґ РїСѓСЃРєРѕРј РџРўРЈР 
     private int delayTicks = 0;
-    private float initialSpeed;
+
 
     // --- РќРђРЎРўР РћР™РљР РЈР РћРќРђ РљРћРќРљРЈР РЎ ---
 
@@ -33,7 +34,18 @@ public class KonkursDummyProjectile extends ThrowableItemProjectile {
 
     @Override
     public void shoot(double x, double y, double z, float velocity, float inaccuracy) {
-        this.initialSpeed = velocity;
+        var shot = getPersistentData();
+        shot.putFloat("Velocity", velocity);
+        Entity owner = getOwner();
+        if (owner != null && owner.getVehicle() instanceof VehicleEntity vehicle) {
+            var gun = vehicle.getGunData(owner);
+            if (gun != null) {
+                shot.putFloat("Damage", gun.get(GunProp.DAMAGE).floatValue());
+                shot.putFloat("ExplosionDamage", gun.get(GunProp.EXPLOSION_DAMAGE).floatValue());
+                shot.putFloat("ExplosionRadius", gun.get(GunProp.EXPLOSION_RADIUS).floatValue());
+                shot.putInt("ProjectileLife", gun.get(GunProp.PROJECTILE_LIFE));
+            }
+        }
         super.shoot(x, y, z, velocity, inaccuracy);
     }
 
@@ -84,14 +96,14 @@ public class KonkursDummyProjectile extends ThrowableItemProjectile {
                 missile.setPos(spawnPos.x, spawnPos.y, spawnPos.z);
 
                 // РџСЂРёРЅСѓРґРёС‚РµР»СЊРЅРѕ Р·Р°РґР°РµРј СѓСЂРѕРЅ Рё РІР·СЂС‹РІРЅС‹Рµ СЃРІРѕР№СЃС‚РІР° СЂР°РєРµС‚Рµ
-                missile.setDamage(Balance.value("konkurs_prefier", "damage", 900F));
-                missile.setExplosionDamage(Balance.value("konkurs_prefier", "explosionDamage", 150F));
-                missile.setExplosionRadius(Balance.value("konkurs_prefier", "explosionRadius", 5F));
+                missile.setDamage(getPersistentData().getFloat("Damage"));
+                missile.setExplosionDamage(getPersistentData().getFloat("ExplosionDamage"));
+                missile.setExplosionRadius(getPersistentData().getFloat("ExplosionRadius"));
 
-                missile.setLife(Math.max(1, (int) Balance.value("konkurs_prefier", "life", 32)));
+                missile.setLife(Math.max(1, (int) getPersistentData().getInt("ProjectileLife")));
                 missile.setOwner(playerOwner);
                 missile.setLauncherVehicle(vehicle.getUUID());
-                missile.shoot(lookDirection.x, lookDirection.y, lookDirection.z, this.initialSpeed * Balance.value("konkurs_prefier", "velocityMultiplier", 1), 0.0F);
+                missile.shoot(lookDirection.x, lookDirection.y, lookDirection.z, getPersistentData().getFloat("Velocity"), 0.0F);
 
                 missile.setYRot(playerOwner.getYRot());
                 missile.setXRot(playerOwner.getXRot());

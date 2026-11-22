@@ -26,11 +26,6 @@ public class TDADummyProjectile extends ThrowableItemProjectile {
         super(type, level);
     }
 
-    @Override
-    public void shoot(double x, double y, double z, float velocity, float inaccuracy) {
-        super.shoot(x, y, z, velocity * tech.squadmc.squadmcor.Balance.value("smoke", "velocityMultiplier", 0.5F), inaccuracy);
-    }
-
     public void setAdditional(boolean additional) {
         this.isAdditional = additional;
     }

@@ -1,252 +1,252 @@
 {
-  "_comment": "Generated from Squad SDK fire and turret cues (see squad sound pipeline).",
-  "vehicles": [
-    "squadmc:mi17_door_guns"
-  ],
-  "weapons": {
-    "PKMLeft": {
-      "volume": 0.6,
-      "burst_gap": 4,
-      "first_person": {
-        "start": [
-          {
-            "sound": "squadmc:squad.weapons.pkt.1p_start",
-            "gain": 1.5,
-            "spatial": false
-          }
-        ],
-        "loop": [
-          {
-            "sound": "squadmc:squad.weapons.pkt.1p_loop",
-            "gain": 1.5,
-            "spatial": false
-          }
-        ],
-        "tail": [
-          {
-            "sound": "squadmc:squad.weapons.pkt.1p_tail",
-            "gain": 1.5,
-            "spatial": false
-          }
-        ]
-      },
-      "third_person": {
-        "start": [
-          {
-            "sound": "squadmc:squad.weapons.pkt.3p_close_start",
-            "gain": 4.0,
-            "fade": [
-              0.0,
-              0.0,
-              5.12,
-              9.6
-            ]
-          }
-        ],
-        "loop": [
-          {
-            "sound": "squadmc:squad.weapons.pkt.3p_close_loop",
-            "gain": 5.7,
-            "fade": [
-              0.0,
-              0.0,
-              5.12,
-              9.6
-            ]
-          },
-          {
-            "sound": "squadmc:squad.weapons.pkt.3p_mid_loop",
-            "gain": 1.4,
-            "fade": [
-              1.92,
-              3.2,
-              51.2,
-              64.0
-            ]
-          }
-        ],
-        "tail": [
-          {
-            "sound": "squadmc:squad.weapons.pkt.3p_close_tail",
-            "gain": 5.7,
-            "fade": [
-              0.0,
-              0.0,
-              5.12,
-              9.6
-            ]
-          },
-          {
-            "sound": "squadmc:squad.weapons.pkt.echo_close",
-            "gain": 1.0,
-            "fade": [
-              0.0,
-              0.0,
-              5.12,
-              9.6
-            ],
-            "spatial": false,
-            "falloff": 204.8
-          },
-          {
-            "sound": "squadmc:squad.weapons.pkt.3p_mid_tail",
-            "gain": 1.4,
-            "fade": [
-              1.92,
-              3.2,
-              51.2,
-              64.0
-            ]
-          },
-          {
-            "sound": "squadmc:squad.weapons.pkt.echo_mid",
-            "gain": 0.7,
-            "fade": [
-              1.92,
-              3.2,
-              51.2,
-              64.0
-            ],
-            "spatial": false,
-            "falloff": 1024.0
-          }
-        ]
-      }
-    },
-    "PKMRight": {
-      "volume": 0.6,
-      "burst_gap": 4,
-      "first_person": {
-        "start": [
-          {
-            "sound": "squadmc:squad.weapons.pkt.1p_start",
-            "gain": 1.5,
-            "spatial": false
-          }
-        ],
-        "loop": [
-          {
-            "sound": "squadmc:squad.weapons.pkt.1p_loop",
-            "gain": 1.5,
-            "spatial": false
-          }
-        ],
-        "tail": [
-          {
-            "sound": "squadmc:squad.weapons.pkt.1p_tail",
-            "gain": 1.5,
-            "spatial": false
-          }
-        ]
-      },
-      "third_person": {
-        "start": [
-          {
-            "sound": "squadmc:squad.weapons.pkt.3p_close_start",
-            "gain": 4.0,
-            "fade": [
-              0.0,
-              0.0,
-              5.12,
-              9.6
-            ]
-          }
-        ],
-        "loop": [
-          {
-            "sound": "squadmc:squad.weapons.pkt.3p_close_loop",
-            "gain": 5.7,
-            "fade": [
-              0.0,
-              0.0,
-              5.12,
-              9.6
-            ]
-          },
-          {
-            "sound": "squadmc:squad.weapons.pkt.3p_mid_loop",
-            "gain": 1.4,
-            "fade": [
-              1.92,
-              3.2,
-              51.2,
-              64.0
-            ]
-          }
-        ],
-        "tail": [
-          {
-            "sound": "squadmc:squad.weapons.pkt.3p_close_tail",
-            "gain": 5.7,
-            "fade": [
-              0.0,
-              0.0,
-              5.12,
-              9.6
-            ]
-          },
-          {
-            "sound": "squadmc:squad.weapons.pkt.echo_close",
-            "gain": 1.0,
-            "fade": [
-              0.0,
-              0.0,
-              5.12,
-              9.6
-            ],
-            "spatial": false,
-            "falloff": 204.8
-          },
-          {
-            "sound": "squadmc:squad.weapons.pkt.3p_mid_tail",
-            "gain": 1.4,
-            "fade": [
-              1.92,
-              3.2,
-              51.2,
-              64.0
-            ]
-          },
-          {
-            "sound": "squadmc:squad.weapons.pkt.echo_mid",
-            "gain": 0.7,
-            "fade": [
-              1.92,
-              3.2,
-              51.2,
-              64.0
-            ],
-            "spatial": false,
-            "falloff": 1024.0
-          }
-        ]
-      }
-    }
+ "_comment": "Generated from Squad SDK fire and turret cues (see squad sound pipeline).",
+ "vehicles": [
+  "squadmc:mi17_door_guns"
+ ],
+ "weapons": {
+  "PKMLeft": {
+   "volume": 0.6,
+   "burst_gap": 4,
+   "first_person": {
+    "start": [
+     {
+      "sound": "squadmc:squad.weapons.pkt.1p_start",
+      "gain": 1.5,
+      "spatial": false
+     }
+    ],
+    "loop": [
+     {
+      "sound": "squadmc:squad.weapons.pkt.1p_loop",
+      "gain": 1.5,
+      "spatial": false
+     }
+    ],
+    "tail": [
+     {
+      "sound": "squadmc:squad.weapons.pkt.1p_tail",
+      "gain": 1.5,
+      "spatial": false
+     }
+    ]
+   },
+   "third_person": {
+    "start": [
+     {
+      "sound": "squadmc:squad.weapons.pkt.3p_close_start",
+      "gain": 4.0,
+      "fade": [
+       0.0,
+       0.0,
+       81.92,
+       153.6
+      ]
+     }
+    ],
+    "loop": [
+     {
+      "sound": "squadmc:squad.weapons.pkt.3p_close_loop",
+      "gain": 5.7,
+      "fade": [
+       0.0,
+       0.0,
+       81.92,
+       153.6
+      ]
+     },
+     {
+      "sound": "squadmc:squad.weapons.pkt.3p_mid_loop",
+      "gain": 1.4,
+      "fade": [
+       30.72,
+       51.2,
+       819.2,
+       1024.0
+      ]
+     }
+    ],
+    "tail": [
+     {
+      "sound": "squadmc:squad.weapons.pkt.3p_close_tail",
+      "gain": 5.7,
+      "fade": [
+       0.0,
+       0.0,
+       81.92,
+       153.6
+      ]
+     },
+     {
+      "sound": "squadmc:squad.weapons.pkt.echo_close",
+      "gain": 1.0,
+      "fade": [
+       0.0,
+       0.0,
+       81.92,
+       153.6
+      ],
+      "spatial": false,
+      "falloff": 204.8
+     },
+     {
+      "sound": "squadmc:squad.weapons.pkt.3p_mid_tail",
+      "gain": 1.4,
+      "fade": [
+       30.72,
+       51.2,
+       819.2,
+       1024.0
+      ]
+     },
+     {
+      "sound": "squadmc:squad.weapons.pkt.echo_mid",
+      "gain": 0.7,
+      "fade": [
+       30.72,
+       51.2,
+       819.2,
+       1024.0
+      ],
+      "spatial": false,
+      "falloff": 1024.0
+     }
+    ]
+   }
   },
-  "turret": {
-    "loop": "squadmc:squad.turrets.doorgun.loop",
-    "speed_scale": 5,
-    "pitch_mod": {
-      "in": [
-        0,
-        100
-      ],
-      "out": [
-        0.9,
-        1
+  "PKMRight": {
+   "volume": 0.6,
+   "burst_gap": 4,
+   "first_person": {
+    "start": [
+     {
+      "sound": "squadmc:squad.weapons.pkt.1p_start",
+      "gain": 1.5,
+      "spatial": false
+     }
+    ],
+    "loop": [
+     {
+      "sound": "squadmc:squad.weapons.pkt.1p_loop",
+      "gain": 1.5,
+      "spatial": false
+     }
+    ],
+    "tail": [
+     {
+      "sound": "squadmc:squad.weapons.pkt.1p_tail",
+      "gain": 1.5,
+      "spatial": false
+     }
+    ]
+   },
+   "third_person": {
+    "start": [
+     {
+      "sound": "squadmc:squad.weapons.pkt.3p_close_start",
+      "gain": 4.0,
+      "fade": [
+       0.0,
+       0.0,
+       81.92,
+       153.6
       ]
-    },
-    "volume_mod": {
-      "in": [
-        30,
-        100
-      ],
-      "out": [
-        0,
-        2
+     }
+    ],
+    "loop": [
+     {
+      "sound": "squadmc:squad.weapons.pkt.3p_close_loop",
+      "gain": 5.7,
+      "fade": [
+       0.0,
+       0.0,
+       81.92,
+       153.6
       ]
-    },
-    "inside_volume": 1,
-    "outside_volume": 1
+     },
+     {
+      "sound": "squadmc:squad.weapons.pkt.3p_mid_loop",
+      "gain": 1.4,
+      "fade": [
+       30.72,
+       51.2,
+       819.2,
+       1024.0
+      ]
+     }
+    ],
+    "tail": [
+     {
+      "sound": "squadmc:squad.weapons.pkt.3p_close_tail",
+      "gain": 5.7,
+      "fade": [
+       0.0,
+       0.0,
+       81.92,
+       153.6
+      ]
+     },
+     {
+      "sound": "squadmc:squad.weapons.pkt.echo_close",
+      "gain": 1.0,
+      "fade": [
+       0.0,
+       0.0,
+       81.92,
+       153.6
+      ],
+      "spatial": false,
+      "falloff": 204.8
+     },
+     {
+      "sound": "squadmc:squad.weapons.pkt.3p_mid_tail",
+      "gain": 1.4,
+      "fade": [
+       30.72,
+       51.2,
+       819.2,
+       1024.0
+      ]
+     },
+     {
+      "sound": "squadmc:squad.weapons.pkt.echo_mid",
+      "gain": 0.7,
+      "fade": [
+       30.72,
+       51.2,
+       819.2,
+       1024.0
+      ],
+      "spatial": false,
+      "falloff": 1024.0
+     }
+    ]
+   }
   }
+ },
+ "turret": {
+  "loop": "squadmc:squad.turrets.doorgun.loop",
+  "speed_scale": 5,
+  "pitch_mod": {
+   "in": [
+    0,
+    100
+   ],
+   "out": [
+    0.9,
+    1
+   ]
+  },
+  "volume_mod": {
+   "in": [
+    30,
+    100
+   ],
+   "out": [
+    0,
+    2
+   ]
+  },
+  "inside_volume": 1,
+  "outside_volume": 1
+ }
 }

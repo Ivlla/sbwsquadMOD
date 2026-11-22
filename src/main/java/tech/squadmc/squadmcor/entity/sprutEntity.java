@@ -61,7 +61,7 @@ public class sprutEntity extends SquadBaseVehicleEntity {
         float f2 = (float)Math.cos(f);
 
         float[] angles = new float[]{-30.0F, -10.0F, 10.0F, 30.0F};
-        float speed = 0.55F;
+        float speed = (float) original.getDeltaMovement().length();
         float inaccuracy = 0.5F;
 
         float yaw0 = baseAngle + angles[0];

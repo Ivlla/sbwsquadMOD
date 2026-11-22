@@ -63,7 +63,7 @@ public class marder1a3Entity extends SquadBaseVehicleEntity {
         float f2 = (float)Math.cos(f);
 
         float[] angles = new float[]{-35.0F, -12.0F, 12.0F, 35.0F};
-        float speed = 0.6F;
+        float speed = (float) original.getDeltaMovement().length();
         float inaccuracy = 0.5F;
 
         float yaw0 = baseAngle + angles[0];

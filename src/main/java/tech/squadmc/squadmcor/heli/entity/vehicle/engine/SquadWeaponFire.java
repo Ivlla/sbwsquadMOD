@@ -72,10 +72,12 @@ public final class SquadWeaponFire {
         // A gun firing a second ammo type with its own cue (e.g. the BMP-3's 100 mm firing its 9M117) is
         // keyed "weapon#index"; clients fall back to the plain weapon when the profile has no such entry.
         if (data != null && data.selectedAmmoType.get() > 0) weapon = weapon + "#" + data.selectedAmmoType.get();
+        int range = (int) Math.ceil(data.get(com.atsuishio.superbwarfare.data.gun.GunProp.SOUND_RADIUS) * 6.4D);
+        if (range <= 0) return;
         final String key = weapon;
         ModNetworking.CHANNEL.send(PacketDistributor.NEAR.with(() -> new PacketDistributor.TargetPoint(
-                        vehicle.getX(), vehicle.getY(), vehicle.getZ(), 1024D, vehicle.level().dimension())),
+                        vehicle.getX(), vehicle.getY(), vehicle.getZ(), range, vehicle.level().dimension())),
                 new SquadFirePacket(vehicle.getId(), key, shooter == null ? -1 : shooter.getId(),
-                        EngineControl.id(vehicle), vehicle.position()));
+                        EngineControl.id(vehicle), vehicle.position(), range));
     }
 }

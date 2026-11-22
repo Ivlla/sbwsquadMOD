@@ -15,6 +15,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import tech.squadmc.squadmcor.explosion.BlockDestructionBudget;
 
+import tech.squadmc.squadmcor.explosion.TerrainRules;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -36,13 +38,14 @@ public abstract class CustomExplosionTerrainMixin {
     @ModifyVariable(method = "processBlockList", at = @At("HEAD"), argsOnly = true)
     private Collection<BlockPos> squadmc$lessTerrainDamage(Collection<BlockPos> blocks) {
         ArrayList<BlockPos> eligible = new ArrayList<>();
-        double radius = tech.squadmc.squadmcor.Balance.value("terrain", "radius", 2);
+        var rules = TerrainRules.current;
+        double radius = rules.radius();
         for (BlockPos pos : blocks) {
             if (pos.distToCenterSqr(getX(), getY(), getZ()) > radius * radius) continue;
             var state = level.getBlockState(pos);
             if (!state.isAir() && !state.is(SQUADMC$PROTECTED)) eligible.add(pos.immutable());
         }
         Collections.shuffle(eligible, squadmc$terrainRandom);
-        return new ArrayList<>(eligible.subList(0, squadmc$budget.take(eligible.size(), Math.max(1, (int) tech.squadmc.squadmcor.Balance.value("terrain", "oneBlockPer", 8)))));
+        return new ArrayList<>(eligible.subList(0, squadmc$budget.take(eligible.size(), rules.oneBlockPer())));
     }
 }

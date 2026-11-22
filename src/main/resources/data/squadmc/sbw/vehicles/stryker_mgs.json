@@ -307,7 +307,8 @@
         "Directions": [
           "Turret"
         ]
-      }
+      },
+      "Velocity": 0.3
     },
     "SmokeLauncher": {
       "Icon": "squadmc:textures/overlay/vehicle/weapon/icons/smoke_generator.png",
@@ -336,7 +337,8 @@
           "Vehicle"
         ]
       },
-      "SoundRadius": 4
+      "SoundRadius": 4,
+      "Velocity": 0.3
     },
     "Cannon": {
       "Name": "weapon.squadmc.105mm_cannon_ap",

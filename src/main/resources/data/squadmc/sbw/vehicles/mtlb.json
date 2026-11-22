@@ -243,7 +243,8 @@
           "Vehicle"
         ]
       },
-      "SoundRadius": 4
+      "SoundRadius": 4,
+      "Velocity": 0.3
     }
   },
   "UpStep": 2.2,
